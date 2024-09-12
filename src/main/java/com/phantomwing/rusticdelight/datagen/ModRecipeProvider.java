@@ -11,6 +11,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -55,29 +56,30 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
         // Cotton
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COTTON.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.COTTON_SEEDS.get(), 1)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COTTON.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COTTON_SEEDS.get(), 1)
                 .addResultWithChance(ModItems.COTTON_BOLL.get(), 0.3F)
                 .addResultWithChance(Items.WHITE_DYE, 0.1F)
                 .build(output, ModItems.WILD_COTTON.getId());
 
         // Wool
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), Items.STRING, 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(CommonTags.TOOLS_KNIFE), Items.STRING, 2)
                 .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool"));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL_CARPETS), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), Items.STRING, 1)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL_CARPETS), Ingredient.of(CommonTags.TOOLS_KNIFE), Items.STRING, 1)
                 .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool_carpet"));
 
         // Food
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 1)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 1)
                 .build(output, ModItems.POTATO_SLICES.getId());
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
                 .build(output, ModItems.CALAMARI_SLICE.getId());
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
                 .build(output, ModItems.COOKED_CALAMARI_SLICE.getId());
     }
 
     private void buildCookingRecipes(@NotNull RecipeOutput output) {
+        // Cooking oil
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COOKING_OIL.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
@@ -88,6 +90,26 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.COTTON_SEEDS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.COOKING_OIL.getId());
+
+        // Batter
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BATTER.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(Tags.Items.EGGS)
+                .addIngredient(Items.WHEAT)
+                .addIngredient(Items.WHEAT)
+                .unlockedByAnyIngredient(Items.MILK_BUCKET)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output, ModItems.BATTER.getId());
+
+        // Fried Chicken
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModItems.BATTER)
+                .addIngredient(CommonTags.FOODS_RAW_CHICKEN)
+                .addIngredient(CommonTags.CROPS_ONION)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.FRIED_CHICKEN.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {

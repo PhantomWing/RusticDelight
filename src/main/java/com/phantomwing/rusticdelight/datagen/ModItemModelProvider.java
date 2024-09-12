@@ -19,9 +19,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Items
+        simpleItem(ModItems.BATTER);
+        simpleItem(ModItems.COOKING_OIL);
         simpleItem(ModItems.COTTON_SEEDS);
         simpleItem(ModItems.COTTON_BOLL);
-        simpleItem(ModItems.COOKING_OIL);
         simpleItem(ModItems.POTATO_SLICES);
         simpleItem(ModItems.BAKED_POTATO_SLICES);
         simpleItem(ModItems.CALAMARI);
@@ -29,6 +31,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.COOKED_CALAMARI);
         simpleItem(ModItems.COOKED_CALAMARI_SLICE);
+        simpleItem(ModItems.FRIED_CHICKEN);
+
+        // Blocks
         simpleBlock2D(ModBlocks.WILD_COTTON);
         simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
         simpleBlock(ModBlocks.COTTON_SEEDS_BAG);

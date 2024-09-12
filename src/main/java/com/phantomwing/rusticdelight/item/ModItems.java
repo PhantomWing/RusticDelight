@@ -3,7 +3,6 @@ package com.phantomwing.rusticdelight.item;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.food.FoodValues;
-import com.phantomwing.rusticdelight.item.custom.CookingOilItem;
 import com.google.common.collect.Sets;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -14,6 +13,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -44,8 +44,10 @@ public class ModItems {
             new Item.Properties().food(FoodValues.COOKED_CALAMARI)));
 
     // Cooking products
-    public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new CookingOilItem(
+    public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
             new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(FoodValues.COOKING_OIL).stacksTo(16)));
+    public static final DeferredItem<Item> BATTER = registerWithTab("batter", () -> new DrinkableItem(
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BATTER).stacksTo(16)));
 
     // Sliced food
     public static final DeferredItem<Item> POTATO_SLICES = registerWithTab("potato_slices", () -> new Item(
@@ -60,6 +62,8 @@ public class ModItems {
     // Cooked food
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             new Item.Properties().food(FoodValues.CALAMARI_ROLL)));
+    public static final DeferredItem<Item> FRIED_CHICKEN = registerWithTab("fried_chicken", () -> new Item(
+            new Item.Properties().food(FoodValues.FRIED_CHICKEN)));
 
     public static DeferredItem<Item> registerWithTab(final String name, final Supplier<Item> supplier) {
         DeferredItem<Item> item = ITEMS.register(name, supplier);

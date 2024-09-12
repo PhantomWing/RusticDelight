@@ -10,9 +10,9 @@ It's recommended to also play with <a href="https://www.curseforge.com/minecraft
 ##  Features
 ### 🌼 Cotton
 Find Wild Cotton in the world and grow your own cotton! Cotton integrates well within the mechanics of both Minecraft and Farmer's Delight, as it can be used to craft String, Paper and Canvas.
-This adds a farmer's way of obtaining materials that can otherwise mostly be obtained by hunting monsters! 
+Alternatively, you can now cut Wool to obtain String as well. This adds a farmer's way of obtaining resources that can otherwise mostly be obtained by hunting monsters! 
 
-Alternatively, you can put Cotton Seeds in a Cooking Pot to make Cooking Oil. This can be used as an ingredient for various recipes.
+Additionally, you can put Cotton Seeds in a Cooking Pot to make Cooking Oil. This can be used as an ingredient for various recipes.
 
 
 ### 🦑 Calamari

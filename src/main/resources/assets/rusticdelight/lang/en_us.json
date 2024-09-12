@@ -3,14 +3,16 @@
   "block.rusticdelight.cotton_seeds_bag": "Bag of Cotton Seeds",
   "block.rusticdelight.wild_cotton": "Wild Cotton",
   "item.rusticdelight.baked_potato_slices": "Baked Potato Slices",
-  "item.rusticdelight.calamari": "Calamari",
+  "item.rusticdelight.batter": "Batter",
+  "item.rusticdelight.calamari": "Raw Calamari",
   "item.rusticdelight.calamari_roll": "Calamari Roll",
-  "item.rusticdelight.calamari_slice": "Calamari Slice",
+  "item.rusticdelight.calamari_slice": "Raw Calamari Slice",
   "item.rusticdelight.cooked_calamari": "Cooked Calamari",
   "item.rusticdelight.cooked_calamari_slice": "Cooked Calamari Slice",
   "item.rusticdelight.cooking_oil": "Cooking Oil",
   "item.rusticdelight.cotton_boll": "Cotton Boll",
   "item.rusticdelight.cotton_seeds": "Cotton Seeds",
+  "item.rusticdelight.fried_chicken": "Fried Chicken",
   "item.rusticdelight.potato_slices": "Potato Slices",
   "itemGroup.rusticdelight": "Rustic Delight"
 }
