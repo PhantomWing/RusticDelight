@@ -1,6 +1,6 @@
 package com.phantomwing.rusticdelight.block.custom;
 
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -19,7 +19,7 @@ public class CottonCropBlock extends CropBlock {
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ItemManager.COTTON_SEEDS.get();
+        return ModItems.COTTON_SEEDS.get();
     }
 
     @Override

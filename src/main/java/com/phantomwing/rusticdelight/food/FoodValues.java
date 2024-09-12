@@ -1,8 +1,8 @@
-package com.phantomwing.rusticdelight.item;
+package com.phantomwing.rusticdelight.food;
 
 import net.minecraft.world.food.FoodProperties;
 
-public class FoodManager {
+public class FoodValues {
     // Food
     public static final FoodProperties CALAMARI = (new FoodProperties.Builder()).nutrition(3).saturationModifier(0.3F).build();
     public static final FoodProperties COOKED_CALAMARI = (new FoodProperties.Builder()).nutrition(5).saturationModifier(0.6F).build();

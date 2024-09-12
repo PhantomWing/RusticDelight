@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.BlockManager;
+import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -12,7 +12,6 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 import java.util.function.Function;
 
@@ -23,16 +22,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        makeCottonCrop((CropBlock) BlockManager.COTTON_CROP.get(), "cotton_stage", "cotton_stage");
-        simpleBlockWithItem(BlockManager.WILD_COTTON.get(), models().cross(blockTexture(BlockManager.WILD_COTTON.get()).getPath(),
-                blockTexture(BlockManager.WILD_COTTON.get())).renderType("cutout"));
-        simpleBlockWithItem(BlockManager.POTTED_WILD_COTTON.get(), models()
+        makeCottonCrop((CropBlock) ModBlocks.COTTON_CROP.get(), "cotton_stage", "cotton_stage");
+        simpleBlockWithItem(ModBlocks.WILD_COTTON.get(), models().cross(blockTexture(ModBlocks.WILD_COTTON.get()).getPath(),
+                blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_WILD_COTTON.get(), models()
                 .singleTexture("potted_wild_cotton",
                         ResourceLocation.withDefaultNamespace("flower_pot_cross"),
                         "plant",
-                        blockTexture(BlockManager.WILD_COTTON.get())).renderType("cutout"));
-        farmersDelightCrate(BlockManager.COTTON_BOLL_CRATE.get());
-        farmersDelightBag(BlockManager.COTTON_SEEDS_BAG.get());
+                        blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
+        farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
+        farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
     }
 
     public void makeCottonCrop(CropBlock block, String modelName, String textureName) {
@@ -57,7 +56,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void farmersDelightBag(Block block) {
         String blockName = blockName(block);
-        String riceBag = BuiltInRegistries.BLOCK.getKey(ModBlocks.RICE_BAG.get()).getPath();
+        String riceBag = BuiltInRegistries.BLOCK.getKey(vectorwing.farmersdelight.common.registry.ModBlocks.RICE_BAG.get()).getPath();
         this.simpleBlock(block, models().withExistingParent(blockName, "cube")
                 .texture("particle", resourceBlock(blockName + "_top"))
                 .texture("down", farmersDelightResourceBlock(riceBag + "_bottom"))

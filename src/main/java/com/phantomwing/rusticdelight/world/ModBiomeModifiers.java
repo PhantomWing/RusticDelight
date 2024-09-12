@@ -12,7 +12,7 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-public class BiomeModifierManager {
+public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_WILD_COTTON = registerKey("add_wild_cotton");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context){
@@ -26,7 +26,7 @@ public class BiomeModifierManager {
         // Silver ore
         context.register(ADD_WILD_COTTON, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_FOREST),
-                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatureManager.WILD_COTTON_PLACED_KEY)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.WILD_COTTON_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 

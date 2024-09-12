@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.world;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.BlockManager;
+import com.phantomwing.rusticdelight.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-public class ConfiguredFeatureManager {
+public class ModConfiguredFeatures {
     public static ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WILD_COTTON_KEY = registerKey("wild_cotton");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
@@ -27,7 +27,7 @@ public class ConfiguredFeatureManager {
                         32,
                         6,
                         2,
-                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BlockManager.WILD_COTTON.get())))));
+                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_COTTON.get())))));
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

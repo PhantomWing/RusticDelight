@@ -1,7 +1,6 @@
 package com.phantomwing.rusticdelight.datagen;
 
-import com.phantomwing.rusticdelight.block.BlockManager;
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -19,11 +18,14 @@ public class ModDataMapProvider extends DataMapProvider {
     protected void gather() {
         builder(NeoForgeDataMaps.COMPOSTABLES)
                 // 30% chance
-                .add(ItemManager.COTTON_SEEDS.getId(), new Compostable(0.3f, true), false)
+                .add(ModItems.COTTON_SEEDS.getId(), new Compostable(0.3f, true), false)
+
                 // 50% chance
-                .add(ItemManager.COTTON_BOLL.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.COTTON_BOLL.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.POTATO_SLICES.getId(), new Compostable(0.5f, true), false)
+
                 // 65% chance
-                .add(BlockManager.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
         ;
     }
 }

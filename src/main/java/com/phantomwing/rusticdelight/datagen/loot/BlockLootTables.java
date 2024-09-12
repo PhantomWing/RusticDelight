@@ -1,8 +1,8 @@
 package com.phantomwing.rusticdelight.datagen.loot;
 
-import com.phantomwing.rusticdelight.block.BlockManager;
+import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.item.ModItems;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -36,13 +36,13 @@ public class BlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropCrop(
-                BlockManager.COTTON_CROP.get(), CottonCropBlock.AGE, CottonCropBlock.MAX_AGE,
-                ItemManager.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
-                ItemManager.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
-        dropWildCrop(BlockManager.WILD_COTTON.get(), ItemManager.COTTON_SEEDS.get(), ItemManager.COTTON_BOLL.get());
-        dropPottedFlower(BlockManager.POTTED_WILD_COTTON.get(), BlockManager.WILD_COTTON.get());
-        dropSelf(BlockManager.COTTON_BOLL_CRATE.get());
-        dropSelf(BlockManager.COTTON_SEEDS_BAG.get());
+                ModBlocks.COTTON_CROP.get(), CottonCropBlock.AGE, CottonCropBlock.MAX_AGE,
+                ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
+                ModItems.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
+        dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS.get(), ModItems.COTTON_BOLL.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
+        dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
+        dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
     }
 
     // The contents of this Iterable are used for validation.
@@ -50,7 +50,7 @@ public class BlockLootTables extends BlockLootSubProvider {
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
         // The contents of our DeferredRegister.
-        return BlockManager.BLOCKS.getEntries()
+        return ModBlocks.BLOCKS.getEntries()
                 .stream()
                 // Cast to Block here, otherwise it will be a ? extends Block and Java will complain.
                 .map(e -> (Block) e.value())

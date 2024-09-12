@@ -1,9 +1,9 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.world.BiomeModifierManager;
-import com.phantomwing.rusticdelight.world.ConfiguredFeatureManager;
-import com.phantomwing.rusticdelight.world.PlacedFeatureManager;
+import com.phantomwing.rusticdelight.world.ModBiomeModifiers;
+import com.phantomwing.rusticdelight.world.ModConfiguredFeatures;
+import com.phantomwing.rusticdelight.world.ModPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -28,9 +28,9 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         RegistrySetBuilder registrySetBuilder = new RegistrySetBuilder()
-                .add(Registries.CONFIGURED_FEATURE, ConfiguredFeatureManager::bootstrap)
-                .add(Registries.PLACED_FEATURE, PlacedFeatureManager::bootstrap)
-                .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, BiomeModifierManager::bootstrap);
+                .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+                .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
+                .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(output, lookupProvider));
         generator.addProvider(event.includeServer(), ModLootTableProvider.create(output, lookupProvider));

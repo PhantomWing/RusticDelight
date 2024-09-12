@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.event;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.item.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @EventBusSubscriber(modid = RusticDelight.MOD_ID)
-public class EventManager {
+public class ModEvents {
     @SubscribeEvent
     public static void addVillagerTrades(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
@@ -26,7 +26,7 @@ public class EventManager {
         if (event.getType() == VillagerProfession.FARMER) {
             // Level 1 trades
             trades.get(1).add((trader, random) -> new MerchantOffer(
-                    new ItemCost(ItemManager.COTTON_BOLL.get(), 24),
+                    new ItemCost(ModItems.COTTON_BOLL.get(), 24),
                     new ItemStack(Items.EMERALD, 1),
                     16,
                     2,
@@ -37,8 +37,8 @@ public class EventManager {
             // Level 1 trades
             trades.get(1).add((trader, random) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
-                    Optional.of(new ItemCost(ItemManager.CALAMARI.get(), 6)),
-                    new ItemStack(ItemManager.COOKED_CALAMARI.get(), 6),
+                    Optional.of(new ItemCost(ModItems.CALAMARI.get(), 6)),
+                    new ItemStack(ModItems.COOKED_CALAMARI.get(), 6),
                     16,
                     1,
                     0.05f
@@ -46,7 +46,7 @@ public class EventManager {
 
             // Level 2 trades
             trades.get(2).add((trader, random) -> new MerchantOffer(
-                    new ItemCost(ItemManager.CALAMARI.get(), 15),
+                    new ItemCost(ModItems.CALAMARI.get(), 15),
                     new ItemStack(Items.EMERALD, 1),
                     16,
                     10,
@@ -62,7 +62,7 @@ public class EventManager {
 
         genericTrades.add((trader, random) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 1),
-                new ItemStack(ItemManager.COTTON_SEEDS.get(), 12),
+                new ItemStack(ModItems.COTTON_SEEDS.get(), 12),
                 10,
                 2,
                 0.05f

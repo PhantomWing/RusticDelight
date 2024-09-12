@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.loot.AddItemModifier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -24,7 +24,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 new LootItemCondition[] {
                         defaultLootTable("entities/squid"),
                 },
-                ItemManager.CALAMARI.get(),
+                ModItems.CALAMARI.get(),
                 1,
                 2
         ));
@@ -32,7 +32,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 new LootItemCondition[] {
                         defaultLootTable("entities/glow_squid"),
                 },
-                ItemManager.CALAMARI.get(),
+                ModItems.CALAMARI.get(),
                 1,
                 2
         ));

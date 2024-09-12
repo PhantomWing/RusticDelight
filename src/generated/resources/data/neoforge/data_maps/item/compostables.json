@@ -8,6 +8,10 @@
       "can_villager_compost": true,
       "chance": 0.3
     },
+    "rusticdelight:potato_slices": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
     "rusticdelight:wild_cotton": {
       "can_villager_compost": true,
       "chance": 0.65

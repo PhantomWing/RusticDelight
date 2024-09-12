@@ -1,11 +1,14 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.BlockManager;
+import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.item.ModItems;
+import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -32,17 +35,24 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     private void addMinecraftTags() {
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(
-                        BlockManager.COTTON_BOLL_CRATE.get()
+                        ModBlocks.COTTON_BOLL_CRATE.get()
                 );
 
         this.tag(BlockTags.SMALL_FLOWERS).add(
-                BlockManager.WILD_COTTON.get()
+                ModBlocks.WILD_COTTON.get()
         );
 
         this.tag(BlockTags.CROPS)
                 .add(
-                        BlockManager.COTTON_CROP.get()
+                        ModBlocks.COTTON_CROP.get()
                 );
+    }
+
+    private void addNeoForgeTags() {
+        this.tag(Tags.Blocks.STORAGE_BLOCKS).add(
+                ModBlocks.COTTON_SEEDS_BAG.get(),
+                ModBlocks.COTTON_BOLL_CRATE.get()
+        );
     }
 
     private void addCommonTags() {
@@ -51,18 +61,18 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     private void addCompatibilityTags() {
         // Farmers Delight
         this.tag(ModTags.STRAW_BLOCKS).add(
-                BlockManager.COTTON_SEEDS_BAG.get()
+                ModBlocks.COTTON_SEEDS_BAG.get()
         );
         this.tag(ModTags.WILD_CROPS).add(
-                BlockManager.WILD_COTTON.get()
+                ModBlocks.WILD_COTTON.get()
         );
 
         // Serene Seasons
         tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS_BLOCK).add(
-                BlockManager.COTTON_CROP.get()
+                ModBlocks.COTTON_CROP.get()
         );
         tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
-                BlockManager.COTTON_CROP.get()
+                ModBlocks.COTTON_CROP.get()
         );
     }
 }

@@ -1,8 +1,7 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.BlockManager;
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -14,7 +13,6 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
-import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
@@ -35,32 +33,32 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private void buildCraftingRecipes(@NotNull RecipeOutput output) {
         // Calamari
-        foodCookingRecipes(output, ItemManager.CALAMARI.get(), ItemManager.COOKED_CALAMARI.get(), 0.35f, 200);
-        foodCookingRecipes(output, ItemManager.CALAMARI_SLICE.get(), ItemManager.COOKED_CALAMARI_SLICE.get(), 0.35f, 200);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ItemManager.CALAMARI_ROLL.get(), 2)
-                .requires(ItemManager.CALAMARI_SLICE.get())
-                .requires(ItemManager.CALAMARI_SLICE.get())
-                .requires(ModItems.COOKED_RICE.get())
-                .unlockedBy(getHasName(ItemManager.CALAMARI_ROLL.get()), has(ItemManager.CALAMARI_ROLL.get()))
+        foodCookingRecipes(output, ModItems.CALAMARI.get(), ModItems.COOKED_CALAMARI.get(), 0.35f, 200);
+        foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f, 200);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
+                .requires(ModItems.CALAMARI_SLICE.get())
+                .requires(ModItems.CALAMARI_SLICE.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .unlockedBy(getHasName(ModItems.CALAMARI_ROLL.get()), has(ModItems.CALAMARI_ROLL.get()))
                 .save(output);
 
         // Potato
-        foodCookingRecipes(output, ItemManager.POTATO_SLICES.get(), ItemManager.BAKED_POTATO_SLICES.get(), 0.35f, 200);
+        foodCookingRecipes(output, ModItems.POTATO_SLICES.get(), ModItems.BAKED_POTATO_SLICES.get(), 0.35f, 200);
 
         // Cotton
-        oneToOne(output, RecipeCategory.MISC, ItemManager.COTTON_BOLL.get(), Items.STRING, 1);
-        horizontalRecipe(output, RecipeCategory.MISC, ItemManager.COTTON_BOLL.get(), Items.PAPER, 3);
-        twoBytwo(output, RecipeCategory.MISC, ItemManager.COTTON_BOLL.get(), vectorwing.farmersdelight.common.registry.ModItems.CANVAS.get(), 1);
-        storageItemRecipes(output, RecipeCategory.MISC, ItemManager.COTTON_SEEDS.get(), BlockManager.COTTON_SEEDS_BAG.get());
-        storageItemRecipes(output, RecipeCategory.MISC, ItemManager.COTTON_BOLL.get(), BlockManager.COTTON_BOLL_CRATE.get());
+        oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), Items.STRING, 1);
+        horizontalRecipe(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), Items.PAPER, 3);
+        twoBytwo(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), vectorwing.farmersdelight.common.registry.ModItems.CANVAS.get(), 1);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.COTTON_SEEDS.get(), ModItems.COTTON_SEEDS_BAG.get());
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), ModItems.COTTON_BOLL_CRATE.get());
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
         // Cotton
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(BlockManager.WILD_COTTON.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ItemManager.COTTON_SEEDS.get(), 1)
-                .addResultWithChance(ItemManager.COTTON_BOLL.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COTTON.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.COTTON_SEEDS.get(), 1)
+                .addResultWithChance(ModItems.COTTON_BOLL.get(), 0.3F)
                 .addResultWithChance(Items.WHITE_DYE, 0.1F)
-                .build(output, BlockManager.WILD_COTTON.getId());
+                .build(output, ModItems.WILD_COTTON.getId());
 
         // Wool
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), Items.STRING, 2)
@@ -69,27 +67,27 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool_carpet"));
 
         // Food
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ItemManager.POTATO_SLICES.get(), 1)
-                .build(output, ItemManager.POTATO_SLICES.getId());
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemManager.CALAMARI.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ItemManager.CALAMARI_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 1)
+                .build(output, ModItems.POTATO_SLICES.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
-                .build(output, ItemManager.CALAMARI_SLICE.getId());
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemManager.COOKED_CALAMARI.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ItemManager.COOKED_CALAMARI_SLICE.get(), 2)
+                .build(output, ModItems.CALAMARI_SLICE.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI.get()), Ingredient.of(vectorwing.farmersdelight.common.tag.CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
-                .build(output, ItemManager.COOKED_CALAMARI_SLICE.getId());
+                .build(output, ModItems.COOKED_CALAMARI_SLICE.getId());
     }
 
     private void buildCookingRecipes(@NotNull RecipeOutput output) {
-        CookingPotRecipeBuilder.cookingPotRecipe(ItemManager.COOKING_OIL.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COOKING_OIL.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
                 .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
-                .unlockedByAnyIngredient(ItemManager.COTTON_SEEDS)
+                .unlockedByAnyIngredient(ModItems.COTTON_SEEDS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .save(output, ItemManager.COOKING_OIL.getId());
+                .save(output, ModItems.COOKING_OIL.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {

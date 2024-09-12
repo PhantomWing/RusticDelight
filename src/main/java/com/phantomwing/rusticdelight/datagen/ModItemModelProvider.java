@@ -1,8 +1,8 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.BlockManager;
-import com.phantomwing.rusticdelight.item.ItemManager;
+import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -19,19 +19,19 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ItemManager.COTTON_SEEDS);
-        simpleItem(ItemManager.COTTON_BOLL);
-        simpleItem(ItemManager.COOKING_OIL);
-        simpleItem(ItemManager.POTATO_SLICES);
-        simpleItem(ItemManager.BAKED_POTATO_SLICES);
-        simpleItem(ItemManager.CALAMARI);
-        simpleItem(ItemManager.CALAMARI_SLICE);
-        simpleItem(ItemManager.CALAMARI_ROLL);
-        simpleItem(ItemManager.COOKED_CALAMARI);
-        simpleItem(ItemManager.COOKED_CALAMARI_SLICE);
-        simpleBlock2D(BlockManager.WILD_COTTON);
-        simpleBlock(BlockManager.COTTON_BOLL_CRATE);
-        simpleBlock(BlockManager.COTTON_SEEDS_BAG);
+        simpleItem(ModItems.COTTON_SEEDS);
+        simpleItem(ModItems.COTTON_BOLL);
+        simpleItem(ModItems.COOKING_OIL);
+        simpleItem(ModItems.POTATO_SLICES);
+        simpleItem(ModItems.BAKED_POTATO_SLICES);
+        simpleItem(ModItems.CALAMARI);
+        simpleItem(ModItems.CALAMARI_SLICE);
+        simpleItem(ModItems.CALAMARI_ROLL);
+        simpleItem(ModItems.COOKED_CALAMARI);
+        simpleItem(ModItems.COOKED_CALAMARI_SLICE);
+        simpleBlock2D(ModBlocks.WILD_COTTON);
+        simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
+        simpleBlock(ModBlocks.COTTON_SEEDS_BAG);
     }
 
     // A simple item with a model generated from its sprite.
