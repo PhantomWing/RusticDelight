@@ -1,0 +1,4 @@
+// 1.21	2024-09-12T11:43:01.9443673	Registries
+6990c91de977d05ec2d1e56cf3da4a8508f083c6 data/rusticdelight/neoforge/biome_modifier/add_wild_cotton.json
+6c4533571ca90198bd033fa29e64b8b364f3d193 data/rusticdelight/worldgen/configured_feature/wild_cotton.json
+1f2a49e4480d8188f44b0938199bdfce1aa412ad data/rusticdelight/worldgen/placed_feature/wild_cotton_placed.json

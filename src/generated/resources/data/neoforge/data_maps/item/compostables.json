@@ -1,0 +1,16 @@
+{
+  "values": {
+    "rusticdelight:cotton_boll": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:cotton_seeds": {
+      "can_villager_compost": true,
+      "chance": 0.3
+    },
+    "rusticdelight:wild_cotton": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    }
+  }
+}

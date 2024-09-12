@@ -1,0 +1,6 @@
+// 1.21	2024-09-12T11:43:01.941369	Loot Tables
+6db649a4b4f48bdfa36dddd16d2130cd48b91fa4 data/rusticdelight/loot_table/blocks/cotton.json
+17b24870408d8b61953082f284fa49de58cd5fe7 data/rusticdelight/loot_table/blocks/cotton_boll_crate.json
+a1126e6b0dccae9bd544a275dafe44e14df6ba5e data/rusticdelight/loot_table/blocks/cotton_seeds_bag.json
+64a30ef4e135cffadf930f697013a1c598248e80 data/rusticdelight/loot_table/blocks/potted_wild_cotton.json
+7184fa3fb936c7b92da3386957eab7c2569643e5 data/rusticdelight/loot_table/blocks/wild_cotton.json
