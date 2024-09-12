@@ -15,5 +15,5 @@ This adds a farmer's way of obtaining materials that can otherwise mostly be obt
 Alternatively, you can put Cotton Seeds in a Cooking Pot to make Cooking Oil. This can be used as an ingredient for various recipes.
 
 
-### 🦑 Calimari
-Squids and Glow Squids now drop Calimari! Calimari can be cooked, sliced, and turned into a delicious Calimari Roll. It can also be used in many other fish recipes.
+### 🦑 Calamari
+Squids and Glow Squids now drop Calamari! Calamari can be cooked, sliced, and turned into a delicious Calamari Roll. It can also be used in many other fish recipes.
