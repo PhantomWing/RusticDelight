@@ -4,16 +4,17 @@ import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
+import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,7 +25,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        copy(ModTags.WILD_CROPS, ModTags.WILD_CROPS_ITEM);
+        copy(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS, vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
 
         addModTags();
@@ -35,6 +36,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addModTags() {
+        this.tag(ModTags.Items.COOKING_OIL_INGREDIENTS).add(
+                ModItems.COTTON_SEEDS.get()
+        );
     }
 
     private void addMinecraftTags() {
@@ -66,26 +70,26 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(Tags.Items.FOODS_COOKED_FISH).addTag(
                 CommonTags.FOODS_COOKED_CALAMARI
         );
-
         this.tag(Tags.Items.SEEDS).add(
                 ModItems.COTTON_SEEDS.get()
         );
+        this.tag(Tags.Items.FOODS_FRUIT).add(
+                Items.MELON_SLICE
+        ).addTag(Tags.Items.FOODS_BERRY);
     }
 
     private void addCommonTags() {
-        // Cotton
-        this.tag(CommonTags.COOKING_OIL_INGREDIENTS).add(
-                ModItems.COTTON_SEEDS.get()
-        );
-
         this.tag(CommonTags.FOODS_RAW_CALAMARI).add(
                 ModItems.CALAMARI.get(),
                 ModItems.CALAMARI_SLICE.get()
         );
-
         this.tag(CommonTags.FOODS_COOKED_CALAMARI).add(
                 ModItems.COOKED_CALAMARI.get(),
                 ModItems.COOKED_CALAMARI_SLICE.get()
+        );
+        this.tag(CommonTags.FOODS_POTATO).add(
+                Items.POTATO,
+                ModItems.POTATO_SLICES.get()
         );
     }
 
@@ -93,7 +97,5 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 ModItems.COOKING_OIL.get()
         );
-
     }
-
 }

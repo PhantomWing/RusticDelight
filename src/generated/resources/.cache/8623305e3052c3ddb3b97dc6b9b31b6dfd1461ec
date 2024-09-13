@@ -1,4 +1,4 @@
-// 1.21	2024-09-12T23:04:43.4347575	Item Models: rusticdelight
+// 1.21	2024-09-13T20:24:48.2318756	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 93f0a104e6351261faaf9ae7fbb7983f2f40a74b assets/rusticdelight/models/item/calamari.json
@@ -11,6 +11,9 @@ da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter
 21851d1d453eddc69625f23e8d8f4948575f1e10 assets/rusticdelight/models/item/cotton_boll_crate.json
 66f9de63bdfe0691502676417500fb8c428739f7 assets/rusticdelight/models/item/cotton_seeds.json
 ca90b1e1071bdf904f5fded9b749de01614ba79e assets/rusticdelight/models/item/cotton_seeds_bag.json
+8e155ae135c15f959a1862af027406012a759c0c assets/rusticdelight/models/item/fried_calamari.json
 06c056d59172bbfeb3e367c8d3cf161ba7f2dbcb assets/rusticdelight/models/item/fried_chicken.json
+146716f1a8cbb45a847e6b2a16a7239ea2ead06b assets/rusticdelight/models/item/fruit_beignet.json
 385fef3984c2538dfcedbc3f1b7bf9ad41698850 assets/rusticdelight/models/item/potato_slices.json
+aaf640d3291e40695ec76170478c7bb68c8baffe assets/rusticdelight/models/item/spring_rolls.json
 43a9fe2ef87a91e8e0bf1fc781876fb1aee5bbce assets/rusticdelight/models/item/wild_cotton.json

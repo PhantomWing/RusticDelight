@@ -59,11 +59,21 @@ public class ModItems {
     public static final DeferredItem<Item> COOKED_CALAMARI_SLICE = registerWithTab("cooked_calamari_slice", () -> new Item(
             new Item.Properties().food(FoodValues.COOKED_CALAMARI_SLICE)));
 
-    // Cooked food
+    // Sweets
+    public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new Item(
+            new Item.Properties().food(FoodValues.FRUIT_BEIGNET)));
+
+    // Crafted food
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             new Item.Properties().food(FoodValues.CALAMARI_ROLL)));
+
+    // Fried food
+    public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
+            new Item.Properties().food(FoodValues.SPRING_ROLLS)));
     public static final DeferredItem<Item> FRIED_CHICKEN = registerWithTab("fried_chicken", () -> new Item(
             new Item.Properties().food(FoodValues.FRIED_CHICKEN)));
+    public static final DeferredItem<Item> FRIED_CALAMARI = registerWithTab("fried_calamari", () -> new Item(
+            new Item.Properties().food(FoodValues.FRIED_CALAMARI)));
 
     public static DeferredItem<Item> registerWithTab(final String name, final Supplier<Item> supplier) {
         DeferredItem<Item> item = ITEMS.register(name, supplier);

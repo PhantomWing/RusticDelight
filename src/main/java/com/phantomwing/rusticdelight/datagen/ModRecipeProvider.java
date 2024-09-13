@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.datagen;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
+import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -34,8 +35,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private void buildCraftingRecipes(@NotNull RecipeOutput output) {
         // Calamari
-        foodCookingRecipes(output, ModItems.CALAMARI.get(), ModItems.COOKED_CALAMARI.get(), 0.35f, 200);
-        foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f, 200);
+        foodCookingRecipes(output, ModItems.CALAMARI.get(), ModItems.COOKED_CALAMARI.get(), 0.35f);
+        foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
                 .requires(ModItems.CALAMARI_SLICE.get())
                 .requires(ModItems.CALAMARI_SLICE.get())
@@ -44,7 +45,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output);
 
         // Potato
-        foodCookingRecipes(output, ModItems.POTATO_SLICES.get(), ModItems.BAKED_POTATO_SLICES.get(), 0.35f, 200);
+        foodCookingRecipes(output, ModItems.POTATO_SLICES.get(), ModItems.BAKED_POTATO_SLICES.get(), 0.35f);
 
         // Cotton
         oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), Items.STRING, 1);
@@ -61,14 +62,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addResultWithChance(Items.WHITE_DYE, 0.1F)
                 .build(output, ModItems.WILD_COTTON.getId());
 
-        // Wool
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(CommonTags.TOOLS_KNIFE), Items.STRING, 2)
-                .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool"));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL_CARPETS), Ingredient.of(CommonTags.TOOLS_KNIFE), Items.STRING, 1)
-                .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool_carpet"));
-
         // Food
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 1)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 2)
                 .build(output, ModItems.POTATO_SLICES.getId());
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
@@ -76,17 +71,23 @@ public class ModRecipeProvider extends RecipeProvider {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
                 .build(output, ModItems.COOKED_CALAMARI_SLICE.getId());
+
+        // Salvaging
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(Tags.Items.TOOLS_SHEAR), Items.STRING, 2)
+                .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool"));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL_CARPETS), Ingredient.of(Tags.Items.TOOLS_SHEAR), Items.STRING, 1)
+                .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool_carpet"));
     }
 
     private void buildCookingRecipes(@NotNull RecipeOutput output) {
         // Cooking oil
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COOKING_OIL.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
-                .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
-                .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
-                .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
-                .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
-                .addIngredient(CommonTags.COOKING_OIL_INGREDIENTS)
+                .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
+                .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
+                .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
+                .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
+                .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
+                .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.COTTON_SEEDS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.COOKING_OIL.getId());
@@ -97,19 +98,50 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(Tags.Items.EGGS)
                 .addIngredient(Items.WHEAT)
                 .addIngredient(Items.WHEAT)
-                .unlockedByAnyIngredient(Items.MILK_BUCKET)
+                .unlockedByAnyIngredient(Items.MILK_BUCKET, vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.BATTER.getId());
+
+        // Spring Rolls
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS.get(), 2, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(CommonTags.FOODS_DOUGH)
+                .addIngredient(CommonTags.FOODS_LEAFY_GREEN)
+                .addIngredient(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.SPRING_ROLLS.getId());
+
+        // Fruit Beignet
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRUIT_BEIGNET.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(CommonTags.FOODS_DOUGH)
+                .addIngredient(Tags.Items.FOODS_FRUIT)
+                .addIngredient(Items.SUGAR)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.FRUIT_BEIGNET.getId());
 
         // Fried Chicken
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
                 .addIngredient(ModItems.COOKING_OIL)
                 .addIngredient(ModItems.BATTER)
                 .addIngredient(CommonTags.FOODS_RAW_CHICKEN)
-                .addIngredient(CommonTags.CROPS_ONION)
+                .addIngredient(CommonTags.FOODS_ONION)
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.FRIED_CHICKEN.getId());
+
+        // Fried Calamari
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CALAMARI.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModItems.BATTER)
+                .addIngredient(CommonTags.FOODS_RAW_CALAMARI)
+                .addIngredient(CommonTags.FOODS_TOMATO)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.FRIED_CALAMARI.getId());
+
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {
@@ -153,10 +185,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeOutput, getRecipeName(storageItem, item));
     }
 
-    protected static void foodCookingRecipes(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience, int cookingTime) {
-        foodSmelting(recipeOutput, material, result, experience, cookingTime);
-        foodSmoking(recipeOutput, material, result, experience, cookingTime / 2); // Smoking is twice as fast
-        foodCampfireCooking(recipeOutput, material, result, experience, cookingTime * 3); // Campfire cooking takes three times longer
+    protected static void foodCookingRecipes(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience) {
+        foodSmelting(recipeOutput, material, result, experience, 200);
+        foodSmoking(recipeOutput, material, result, experience, 100); // Smoking is twice as fast
+        foodCampfireCooking(recipeOutput, material, result, experience, 600); // Campfire cooking takes three times longer
     }
 
     protected static void foodSmelting(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience, int cookingTime) {

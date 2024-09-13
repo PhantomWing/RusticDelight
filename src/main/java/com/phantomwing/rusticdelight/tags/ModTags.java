@@ -18,6 +18,8 @@ public class ModTags {
 
     // Item tags
     public static class Items {
+        public static final TagKey<Item> COOKING_OIL_INGREDIENTS = tag("cooking_oil_ingredients");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }

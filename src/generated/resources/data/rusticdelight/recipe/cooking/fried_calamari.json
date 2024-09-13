@@ -13,15 +13,15 @@
       "item": "rusticdelight:batter"
     },
     {
-      "tag": "c:foods/raw_chicken"
+      "tag": "c:foods/raw_calamari"
     },
     {
-      "tag": "c:foods/onion"
+      "tag": "c:foods/tomato"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
     "count": 1,
-    "id": "rusticdelight:fried_chicken"
+    "id": "rusticdelight:fried_calamari"
   }
 }

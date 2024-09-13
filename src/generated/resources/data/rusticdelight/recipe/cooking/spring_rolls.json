@@ -1,27 +1,23 @@
 {
   "type": "farmersdelight:cooking",
-  "container": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  },
   "experience": 1.0,
   "ingredients": [
     {
       "item": "rusticdelight:cooking_oil"
     },
     {
-      "item": "rusticdelight:batter"
+      "tag": "c:foods/dough"
     },
     {
-      "tag": "c:foods/raw_chicken"
+      "tag": "c:foods/leafy_green"
     },
     {
-      "tag": "c:foods/onion"
+      "tag": "farmersdelight:cabbage_roll_ingredients"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
-    "id": "rusticdelight:fried_chicken"
+    "count": 2,
+    "id": "rusticdelight:spring_rolls"
   }
 }

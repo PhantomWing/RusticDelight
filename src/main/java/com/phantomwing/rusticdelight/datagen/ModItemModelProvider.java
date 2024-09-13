@@ -31,7 +31,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.COOKED_CALAMARI);
         simpleItem(ModItems.COOKED_CALAMARI_SLICE);
+        simpleItem(ModItems.FRIED_CALAMARI);
         simpleItem(ModItems.FRIED_CHICKEN);
+        simpleItem(ModItems.FRUIT_BEIGNET);
+        simpleItem(ModItems.SPRING_ROLLS);
 
         // Blocks
         simpleBlock2D(ModBlocks.WILD_COTTON);

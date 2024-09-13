@@ -17,9 +17,9 @@ public class FoodValues {
 
     // Basic foods
     public static final FoodProperties POTATO_SLICES = (new FoodProperties.Builder())
-            .nutrition(1).saturationModifier(0.6F).build();
+            .nutrition(1).saturationModifier(0.3F).build();
     public static final FoodProperties BAKED_POTATO_SLICES = (new FoodProperties.Builder())
-            .nutrition(5).saturationModifier(0.8F).build();
+            .nutrition(3).saturationModifier(0.6F).build();
     public static final FoodProperties CALAMARI = (new FoodProperties.Builder())
             .nutrition(3).saturationModifier(0.3F).build();
     public static final FoodProperties CALAMARI_SLICE = (new FoodProperties.Builder())
@@ -29,14 +29,24 @@ public class FoodValues {
     public static final FoodProperties COOKED_CALAMARI_SLICE = (new FoodProperties.Builder())
             .nutrition(3).saturationModifier(0.6F).build();
 
+    // Sweets
+    public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 800, 0, false, false), 1.0F).build();
+
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder())
             .nutrition(7).saturationModifier(0.6F).build();
+    public static final FoodProperties SPRING_ROLLS = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.6F).build();
 
     // Bowl foods
 
     // Plated foods
     public static final FoodProperties FRIED_CHICKEN = (new FoodProperties.Builder())
+            .nutrition(12).saturationModifier(0.8F)
+            .effect(() -> nourishment(SHORT_DURATION), 1.0f).build();
+    public static final FoodProperties FRIED_CALAMARI = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.8F)
             .effect(() -> nourishment(SHORT_DURATION), 1.0f).build();
 }

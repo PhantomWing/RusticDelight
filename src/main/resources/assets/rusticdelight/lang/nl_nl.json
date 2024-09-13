@@ -8,11 +8,14 @@
   "item.rusticdelight.calamari_roll": "Inktvisrol",
   "item.rusticdelight.calamari_slice": "Rauw Stukje Inktvis",
   "item.rusticdelight.cooked_calamari": "Gekookte Inktvis",
-  "item.rusticdelight.cooked_calamari_slice": "Gebakken Stukje Inktvis",
+  "item.rusticdelight.cooked_calamari_slice": "Gekookt Stukje Inktvis",
   "item.rusticdelight.cooking_oil": "Kookolie",
   "item.rusticdelight.cotton_boll": "Katoenbol",
   "item.rusticdelight.cotton_seeds": "Katoenzaden",
   "item.rusticdelight.fried_chicken": "Gebakken Kip",
   "item.rusticdelight.potato_slices": "Aardappelstukjes",
+  "item.rusticdelight.spring_rolls": "Lenterollen",
+  "item.rusticdelight.fruit_beignet": "Vruchtenbeignet",
+  "item.rusticdelight.fried_calamari": "Gebakken Inktvis",
   "itemGroup.rusticdelight": "Rustic Delight"
 }
