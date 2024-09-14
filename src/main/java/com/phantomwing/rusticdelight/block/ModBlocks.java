@@ -2,6 +2,8 @@ package com.phantomwing.rusticdelight.block;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
+import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
+import com.phantomwing.rusticdelight.food.FoodValues;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -13,13 +15,19 @@ import vectorwing.farmersdelight.common.block.WildCropBlock;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(RusticDelight.MOD_ID);
 
-    // Blocks
-    public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",
-            () -> new WildCropBlock(MobEffects.WEAVING, 12, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+    // Storage blocks
     public static final DeferredBlock<Block> COTTON_SEEDS_BAG = BLOCKS.register("cotton_seeds_bag",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static final DeferredBlock<Block> COTTON_BOLL_CRATE = BLOCKS.register("cotton_boll_crate",
-            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOL)));
+
+    // Edible blocks
+    public static final DeferredBlock<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",
+            () -> new PancakeBlock(FoodValues.HONEY_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+
+    // Wild crops
+    public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",
+            () -> new WildCropBlock(MobEffects.WEAVING, 12, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
 
     // Unobtainable blocks
     public static final DeferredBlock<Block> COTTON_CROP = BLOCKS.register("cotton",

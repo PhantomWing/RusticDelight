@@ -37,15 +37,40 @@ public class ModRecipeProvider extends RecipeProvider {
         // Calamari
         foodCookingRecipes(output, ModItems.CALAMARI.get(), ModItems.COOKED_CALAMARI.get(), 0.35f);
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
                 .requires(ModItems.CALAMARI_SLICE.get())
                 .requires(ModItems.CALAMARI_SLICE.get())
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
-                .unlockedBy(getHasName(ModItems.CALAMARI_ROLL.get()), has(ModItems.CALAMARI_ROLL.get()))
+                .unlockedBy(getHasName(ModItems.CALAMARI_SLICE.get()), has(ModItems.CALAMARI_SLICE.get()))
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
                 .save(output);
 
         // Potato
         foodCookingRecipes(output, ModItems.POTATO_SLICES.get(), ModItems.BAKED_POTATO_SLICES.get(), 0.35f);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.POTATO_SALAD.get(), 1)
+                .requires(Items.BOWL)
+                .requires(CommonTags.FOODS_POTATO)
+                .requires(CommonTags.FOODS_ONION)
+                .requires(CommonTags.FOODS_MILK)
+                .requires(Tags.Items.EGGS)
+                .unlockedBy(getHasName(Items.POTATO), has(Items.POTATO))
+                .unlockedBy(getHasName(ModItems.POTATO_SLICES.get()), has(ModItems.POTATO_SLICES.get()))
+                .save(output);
+
+        // Pancakes
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES.get(), 1)
+                .pattern("XHX")
+                .pattern("SBS")
+                .pattern("XYX")
+                .define('S', Items.SWEET_BERRIES)
+                .define('H', Items.HONEY_BOTTLE)
+                .define('X', Items.SUGAR)
+                .define('B', ModItems.BATTER)
+                .define('Y', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
+                .save(output);
 
         // Cotton
         oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), Items.STRING, 1);
@@ -65,6 +90,8 @@ public class ModRecipeProvider extends RecipeProvider {
         // Food
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 2)
                 .build(output, ModItems.POTATO_SLICES.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAKED_POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 2)
+                .build(output, ModItems.BAKED_POTATO_SLICES.getId());
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE.get(), 2)
                 .addResult(Items.BONE_MEAL)
                 .build(output, ModItems.CALAMARI_SLICE.getId());
@@ -109,7 +136,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(CommonTags.FOODS_LEAFY_GREEN)
                 .addIngredient(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
-                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.SPRING_ROLLS.getId());
 
         // Fruit Beignet
@@ -119,18 +146,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(Tags.Items.FOODS_FRUIT)
                 .addIngredient(Items.SUGAR)
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
-                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.FRUIT_BEIGNET.getId());
-
-        // Fried Chicken
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL)
-                .addIngredient(ModItems.BATTER)
-                .addIngredient(CommonTags.FOODS_RAW_CHICKEN)
-                .addIngredient(CommonTags.FOODS_ONION)
-                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
-                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .save(output, ModItems.FRIED_CHICKEN.getId());
 
         // Fried Calamari
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CALAMARI.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
@@ -142,6 +159,25 @@ public class ModRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.FRIED_CALAMARI.getId());
 
+        // Fried Chicken
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModItems.BATTER)
+                .addIngredient(CommonTags.FOODS_RAW_CHICKEN)
+                .addIngredient(CommonTags.FOODS_ONION)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.FRIED_CHICKEN.getId());
+
+        // Fried Mushrooms
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_MUSHROOMS.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(Items.BROWN_MUSHROOM)
+                .addIngredient(Items.RED_MUSHROOM)
+                .addIngredient(CommonTags.FOODS_ONION)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.FRIED_MUSHROOMS.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {

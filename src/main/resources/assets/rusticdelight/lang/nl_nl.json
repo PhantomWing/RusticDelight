@@ -1,6 +1,7 @@
 {
   "block.rusticdelight.cotton_boll_crate": "Katoenbolkrat",
   "block.rusticdelight.cotton_seeds_bag": "Zak Katoenzaden",
+  "block.rusticdelight.honey_pancakes": "Honingpannenkoeken",
   "block.rusticdelight.wild_cotton": "Wilde Katoen",
   "item.rusticdelight.baked_potato_slices": "Gebakken Aardappelstukjes",
   "item.rusticdelight.batter": "Beslag",
@@ -12,10 +13,12 @@
   "item.rusticdelight.cooking_oil": "Kookolie",
   "item.rusticdelight.cotton_boll": "Katoenbol",
   "item.rusticdelight.cotton_seeds": "Katoenzaden",
+  "item.rusticdelight.fried_calamari": "Gebakken Inktvis",
   "item.rusticdelight.fried_chicken": "Gebakken Kip",
+  "item.rusticdelight.fried_mushrooms": "Gebakken Paddenstoelen",
+  "item.rusticdelight.fruit_beignet": "Vruchtenbeignet",
+  "item.rusticdelight.potato_salad": "Aardappelsalade",
   "item.rusticdelight.potato_slices": "Aardappelstukjes",
   "item.rusticdelight.spring_rolls": "Lenterollen",
-  "item.rusticdelight.fruit_beignet": "Vruchtenbeignet",
-  "item.rusticdelight.fried_calamari": "Gebakken Inktvis",
   "itemGroup.rusticdelight": "Rustic Delight"
 }

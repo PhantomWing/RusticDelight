@@ -33,6 +33,9 @@ public class FoodValues {
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 800, 0, false, false), 1.0F).build();
+    public static final FoodProperties HONEY_PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0, false, false), 1.0F).build();
 
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder())
@@ -41,12 +44,18 @@ public class FoodValues {
             .nutrition(6).saturationModifier(0.6F).build();
 
     // Bowl foods
+    public static final FoodProperties POTATO_SALAD = (new FoodProperties.Builder())
+            .nutrition(8).saturationModifier(0.7f)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 120, 0), 1.0F).build();
 
     // Plated foods
     public static final FoodProperties FRIED_CHICKEN = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.8F)
             .effect(() -> nourishment(SHORT_DURATION), 1.0f).build();
     public static final FoodProperties FRIED_CALAMARI = (new FoodProperties.Builder())
+            .nutrition(12).saturationModifier(0.8F)
+            .effect(() -> nourishment(SHORT_DURATION), 1.0f).build();
+    public static final FoodProperties FRIED_MUSHROOMS = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.8F)
             .effect(() -> nourishment(SHORT_DURATION), 1.0f).build();
 }

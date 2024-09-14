@@ -64,6 +64,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addNeoForgeTags() {
+        tag(Tags.Items.CROPS)
+                .addTag(CommonTags.CROPS_COTTON);
+
         this.tag(Tags.Items.FOODS_RAW_FISH).addTag(
                 CommonTags.FOODS_RAW_CALAMARI
         );
@@ -76,6 +79,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(Tags.Items.FOODS_FRUIT).add(
                 Items.MELON_SLICE
         ).addTag(Tags.Items.FOODS_BERRY);
+        this.tag(Tags.Items.FOODS_VEGETABLE).add(
+                ModItems.POTATO_SLICES.get()
+        );
     }
 
     private void addCommonTags() {
@@ -91,11 +97,19 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 Items.POTATO,
                 ModItems.POTATO_SLICES.get()
         );
+
+        this.tag(CommonTags.CROPS_COTTON).add(
+                ModItems.COTTON_BOLL.get()
+        );
     }
 
     private void addCompatibilityTags() {
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 ModItems.COOKING_OIL.get()
+        );
+
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS).add(
+                ModItems.POTATO_SLICES.get()
         );
     }
 }

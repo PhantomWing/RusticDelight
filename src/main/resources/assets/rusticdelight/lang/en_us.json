@@ -1,6 +1,7 @@
 {
   "block.rusticdelight.cotton_boll_crate": "Cotton Boll Crate",
   "block.rusticdelight.cotton_seeds_bag": "Bag of Cotton Seeds",
+  "block.rusticdelight.honey_pancakes": "Honey Pancakes",
   "block.rusticdelight.wild_cotton": "Wild Cotton",
   "item.rusticdelight.baked_potato_slices": "Baked Potato Slices",
   "item.rusticdelight.batter": "Batter",
@@ -12,10 +13,12 @@
   "item.rusticdelight.cooking_oil": "Cooking Oil",
   "item.rusticdelight.cotton_boll": "Cotton Boll",
   "item.rusticdelight.cotton_seeds": "Cotton Seeds",
+  "item.rusticdelight.fried_calamari": "Fried Calamari",
   "item.rusticdelight.fried_chicken": "Fried Chicken",
+  "item.rusticdelight.fried_mushrooms": "Fried Mushrooms",
+  "item.rusticdelight.fruit_beignet": "Fruit Beignet",
+  "item.rusticdelight.potato_salad": "Potato Salad",
   "item.rusticdelight.potato_slices": "Potato Slices",
   "item.rusticdelight.spring_rolls": "Spring Rolls",
-  "item.rusticdelight.fruit_beignet": "Fruit Beignet",
-  "item.rusticdelight.fried_calamari": "Fried Calamari",
   "itemGroup.rusticdelight": "Rustic Delight"
 }

@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.datagen;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
+import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -10,12 +11,15 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.FarmersDelight;
 
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
+    private static final int DEFAULT_ANGLE_OFFSET = 180;
+
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, RusticDelight.MOD_ID, exFileHelper);
     }
@@ -32,6 +36,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
+        pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
     }
 
     public void makeCottonCrop(CropBlock block, String modelName, String textureName) {
@@ -68,6 +73,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
     }
 
+    private void pancakeBlock(Block block) {
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                            int bites = state.getValue(PancakeBlock.SERVINGS);
+                            String suffix = "_stage" + bites;
+                            return ConfiguredModel.builder()
+                                    .modelFile(existingModel(blockName(block) + suffix))
+                                    .rotationY(((int) state.getValue(PancakeBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
+                                    .build();
+                        }
+                );
+    }
+
     private String blockName(Block block) {
         return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
@@ -75,6 +93,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     public ResourceLocation resourceBlock(String path) {
         return ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + path);
     }
+
+    public ModelFile existingModel(String path) {
+        return new ModelFile.ExistingModelFile(resourceBlock(path), models().existingFileHelper);
+    }
+
     public ResourceLocation farmersDelightResourceBlock(String path) {
         return ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/" + path);
     }

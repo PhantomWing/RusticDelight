@@ -62,18 +62,25 @@ public class ModItems {
     // Sweets
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new Item(
             new Item.Properties().food(FoodValues.FRUIT_BEIGNET)));
+    public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES);
 
-    // Crafted food
+    // Basic meals
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             new Item.Properties().food(FoodValues.CALAMARI_ROLL)));
-
-    // Fried food
+    public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new Item(
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.POTATO_SALAD)));
     public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
             new Item.Properties().food(FoodValues.SPRING_ROLLS)));
-    public static final DeferredItem<Item> FRIED_CHICKEN = registerWithTab("fried_chicken", () -> new Item(
-            new Item.Properties().food(FoodValues.FRIED_CHICKEN)));
+
+    // Plated meals
     public static final DeferredItem<Item> FRIED_CALAMARI = registerWithTab("fried_calamari", () -> new Item(
-            new Item.Properties().food(FoodValues.FRIED_CALAMARI)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_CALAMARI)));
+    public static final DeferredItem<Item> FRIED_CHICKEN = registerWithTab("fried_chicken", () -> new Item(
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_CHICKEN)));
+    public static final DeferredItem<Item> FRIED_MUSHROOMS = registerWithTab("fried_mushrooms", () -> new Item(
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_MUSHROOMS)));
+
+    // Feasts
 
     public static DeferredItem<Item> registerWithTab(final String name, final Supplier<Item> supplier) {
         DeferredItem<Item> item = ITEMS.register(name, supplier);

@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.datagen.loot;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
+import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -9,6 +10,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -43,6 +45,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
+        dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
     }
 
     // The contents of this Iterable are used for validation.
@@ -63,6 +66,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     private void dropCrop(Block block, IntegerProperty age, int maxAge, ItemLike seedsItem, NumberProvider seedsCount, ItemLike cropItem, NumberProvider cropCount) {
         this.add(block, blockParam -> createCropDrops(blockParam, age, maxAge, seedsItem, seedsCount, cropItem, cropCount));
+    }
+
+    private void dropFoodBlock(Block block, IntegerProperty servings, ItemLike containerItem) {
+        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings, containerItem));
     }
 
     private LootTable.Builder createCropDrops(Block cropBlock, IntegerProperty age, int maxAge, ItemLike seedsItem, NumberProvider seedsCount, ItemLike cropItem, NumberProvider cropCount) {
@@ -125,6 +132,29 @@ public class BlockLootTables extends BlockLootSubProvider {
                         .withPool(LootPool.lootPool()
                                 .when(AllOfCondition.allOf(doesNotHaveSilkTouch(), LootItemRandomChanceCondition.randomChance(0.3f)))
                                 .add(LootItem.lootTableItem(cropItem))
+                        )
+        );
+    }
+
+    private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings, ItemLike containerItem) {
+        // Condition that checks if any servings have been taken.
+        LootItemCondition.Builder noServingsTaken = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(block)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(servings, 0));
+
+        return this.applyExplosionDecay(
+                block,
+                LootTable.lootTable()
+                        // If no servings have been taken yet, drop the block.
+                        .withPool(LootPool.lootPool()
+                                .when(noServingsTaken)
+                                .add(LootItem.lootTableItem(block))
+                        )
+                        // Else, drop the tray.
+                        .withPool(LootPool.lootPool()
+                                .when(InvertedLootItemCondition.invert(noServingsTaken))
+                                .add(LootItem.lootTableItem(containerItem)
+                                )
                         )
         );
     }
