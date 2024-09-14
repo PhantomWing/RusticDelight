@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "rusticdelight:batter"
+    },
+    "H": {
+      "tag": "c:foods/milk"
+    },
+    "S": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "XHX",
+    "SBS",
+    "XYX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:chocolate_pancakes"
+  }
+}

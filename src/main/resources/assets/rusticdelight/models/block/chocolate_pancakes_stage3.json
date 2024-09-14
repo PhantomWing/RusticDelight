@@ -1,10 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rusticdelight:block/honey_pancakes_tray_top",
+		"0": "rusticdelight:block/chocolate_pancakes_tray_top",
 		"1": "rusticdelight:block/tray_bottom",
-		"2": "rusticdelight:block/honey_pancakes_pancake",
-		"particle": "rusticdelight:block/honey_pancakes_pancake"
+		"2": "rusticdelight:block/chocolate_pancakes_pancake",
+		"3": "rusticdelight:block/chocolate_pancakes_topping",
+		"particle": "rusticdelight:block/chocolate_pancakes_pancake"
 	},
 	"elements": [
 		{
@@ -59,20 +60,6 @@
 				"east": {"uv": [4, 11, 12, 12], "texture": "#2"},
 				"south": {"uv": [4, 3, 12, 4], "texture": "#2"},
 				"west": {"uv": [4, 4, 12, 5], "texture": "#2"},
-				"up": {"uv": [4, 4, 12, 12], "texture": "#2"},
-				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
-			}
-		},
-		{
-			"name": "pancake_3",
-			"from": [4, 5, 3],
-			"to": [12, 6, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [7, 5, 6]},
-			"faces": {
-				"north": {"uv": [4, 4, 12, 5], "texture": "#2"},
-				"east": {"uv": [4, 3, 12, 4], "texture": "#2"},
-				"south": {"uv": [4, 11, 12, 12], "texture": "#2"},
-				"west": {"uv": [4, 3, 12, 4], "texture": "#2"},
 				"up": {"uv": [4, 4, 12, 12], "texture": "#2"},
 				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
 			}

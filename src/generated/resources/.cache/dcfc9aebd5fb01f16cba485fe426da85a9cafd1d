@@ -1,14 +1,16 @@
-// 1.21	2024-09-14T12:42:39.7326731	Tags for minecraft:item mod id rusticdelight
+// 1.21	2024-09-14T23:39:15.2244951	Tags for minecraft:item mod id rusticdelight
 514f40e981eb1552517ff2c6447d13a8b94dad17 data/create/tags/item/upright_on_belt.json
 311cbbbe75054cd746585cf3f4dde54dcc281cd1 data/c/tags/item/crops.json
+e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
 5605de70b69fcfeb7307d056cf3c0245d8fe94a7 data/c/tags/item/crops/cotton.json
+009a26093de89f1ca5449d6cec3e4e442d993a6d data/c/tags/item/foods/bell_pepper.json
 5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/c/tags/item/foods/cooked_calamari.json
 a687331a8b36b3a1a7c210e5a00f0670b1a91d66 data/c/tags/item/foods/cooked_fish.json
 0e0ea2937fdd0885a3457226892d74390e55b516 data/c/tags/item/foods/fruit.json
 680b2c76c8866d78dcfbeec0e5491643a896c174 data/c/tags/item/foods/potato.json
 b29992e9bd256cd80117a9a1a143832ead5c9a6e data/c/tags/item/foods/raw_calamari.json
 95e40bfc7b683b2a94bf960c464bc8d710a3c280 data/c/tags/item/foods/raw_fish.json
-86e6f2552699e81cdcd6db2f44ae31cc05f21da5 data/c/tags/item/foods/vegetable.json
+83ef19c91323b22ffb30a63f340f558232780550 data/c/tags/item/foods/vegetable.json
 cb96c439d46844b9a4ce7308dad3483c2634fa94 data/c/tags/item/seeds.json
 86e6f2552699e81cdcd6db2f44ae31cc05f21da5 data/farmersdelight/tags/item/cabbage_roll_ingredients.json
 2ac5480a10e6c438ee2f162a8d6961b70ae8576f data/farmersdelight/tags/item/wild_crops.json

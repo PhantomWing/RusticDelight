@@ -16,6 +16,8 @@ public class FoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 0.5f).fast().build();
 
     // Basic foods
+    public static final FoodProperties BELL_PEPPER = (new FoodProperties.Builder())
+            .nutrition(2).saturationModifier(0.4F).build();
     public static final FoodProperties POTATO_SLICES = (new FoodProperties.Builder())
             .nutrition(1).saturationModifier(0.3F).build();
     public static final FoodProperties BAKED_POTATO_SLICES = (new FoodProperties.Builder())
@@ -34,6 +36,9 @@ public class FoodValues {
             .nutrition(6).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 800, 0, false, false), 1.0F).build();
     public static final FoodProperties HONEY_PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0, false, false), 1.0F).build();
+    public static final FoodProperties CHOCOLATE_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0, false, false), 1.0F).build();
 

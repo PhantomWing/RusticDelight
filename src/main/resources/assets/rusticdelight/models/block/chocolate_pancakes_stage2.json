@@ -1,10 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rusticdelight:block/honey_pancakes_tray_top",
+		"0": "rusticdelight:block/chocolate_pancakes_tray_top",
 		"1": "rusticdelight:block/tray_bottom",
-		"2": "rusticdelight:block/honey_pancakes_pancake",
-		"particle": "rusticdelight:block/honey_pancakes_pancake"
+		"2": "rusticdelight:block/chocolate_pancakes_pancake",
+		"3": "rusticdelight:block/chocolate_pancakes_topping",
+		"particle": "rusticdelight:block/chocolate_pancakes_pancake"
 	},
 	"elements": [
 		{

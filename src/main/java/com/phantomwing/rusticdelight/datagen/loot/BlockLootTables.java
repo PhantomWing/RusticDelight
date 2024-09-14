@@ -46,6 +46,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
         dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
     }
 
     // The contents of this Iterable are used for validation.

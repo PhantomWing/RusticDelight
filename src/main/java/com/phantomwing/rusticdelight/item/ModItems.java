@@ -31,6 +31,12 @@ public class ModItems {
 
     // Crop products
     public static final DeferredItem<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BELL_PEPPER_GREEN = registerWithTab("bell_pepper_green", () -> new Item(
+            new Item.Properties().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_YELLOW = registerWithTab("bell_pepper_yellow", () -> new Item(
+            new Item.Properties().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_RED = registerWithTab("bell_pepper_red", () -> new Item(
+            new Item.Properties().food(FoodValues.BELL_PEPPER)));
 
     // Crop seeds
     public static final DeferredItem<Item> COTTON_SEEDS = registerWithTab("cotton_seeds", () -> new ItemNameBlockItem(
@@ -63,6 +69,7 @@ public class ModItems {
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new Item(
             new Item.Properties().food(FoodValues.FRUIT_BEIGNET)));
     public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES);
+    public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES);
 
     // Basic meals
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(

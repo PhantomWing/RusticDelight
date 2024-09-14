@@ -81,10 +81,24 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         ).addTag(Tags.Items.FOODS_BERRY);
         this.tag(Tags.Items.FOODS_VEGETABLE).add(
                 ModItems.POTATO_SLICES.get()
-        );
+        ).addTag(CommonTags.FOODS_BELL_PEPPER);
     }
 
     private void addCommonTags() {
+        // Crops
+        this.tag(CommonTags.CROPS_COTTON).add(
+                ModItems.COTTON_BOLL.get()
+        );
+        this.tag(CommonTags.CROPS_BELL_PEPPER).add(
+                ModItems.BELL_PEPPER_GREEN.get(),
+                ModItems.BELL_PEPPER_YELLOW.get(),
+                ModItems.BELL_PEPPER_RED.get()
+        );
+
+        // Foods
+        this.tag(CommonTags.FOODS_BELL_PEPPER).addTag(
+                CommonTags.CROPS_BELL_PEPPER
+        );
         this.tag(CommonTags.FOODS_RAW_CALAMARI).add(
                 ModItems.CALAMARI.get(),
                 ModItems.CALAMARI_SLICE.get()
@@ -96,10 +110,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(CommonTags.FOODS_POTATO).add(
                 Items.POTATO,
                 ModItems.POTATO_SLICES.get()
-        );
-
-        this.tag(CommonTags.CROPS_COTTON).add(
-                ModItems.COTTON_BOLL.get()
         );
     }
 

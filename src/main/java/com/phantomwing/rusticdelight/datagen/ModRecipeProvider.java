@@ -71,6 +71,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('Y', Items.BOWL)
                 .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
                 .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHOCOLATE_PANCAKES.get(), 1)
+                .pattern("XHX")
+                .pattern("SBS")
+                .pattern("XYX")
+                .define('S', Items.COCOA_BEANS)
+                .define('H', CommonTags.FOODS_MILK)
+                .define('X', Items.SUGAR)
+                .define('B', ModItems.BATTER)
+                .define('Y', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
+                .save(output);
 
         // Cotton
         oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), Items.STRING, 1);

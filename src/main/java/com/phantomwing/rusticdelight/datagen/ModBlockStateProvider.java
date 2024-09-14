@@ -37,6 +37,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
         pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
+        pancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get());
     }
 
     public void makeCottonCrop(CropBlock block, String modelName, String textureName) {

@@ -15,7 +15,7 @@
       "item": "minecraft:sugar"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "misc",
   "result": {
     "count": 1,
     "id": "rusticdelight:fruit_beignet"

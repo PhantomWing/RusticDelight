@@ -1,10 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rusticdelight:block/honey_pancakes_tray_top",
+		"0": "rusticdelight:block/chocolate_pancakes_tray_top",
 		"1": "rusticdelight:block/tray_bottom",
-		"2": "rusticdelight:block/honey_pancakes_pancake",
-		"particle": "rusticdelight:block/honey_pancakes_pancake"
+		"2": "rusticdelight:block/chocolate_pancakes_pancake",
+		"3": "rusticdelight:block/chocolate_pancakes_topping",
+		"particle": "rusticdelight:block/chocolate_pancakes_pancake"
 	},
 	"elements": [
 		{
@@ -75,6 +76,48 @@
 				"west": {"uv": [4, 3, 12, 4], "texture": "#2"},
 				"up": {"uv": [4, 4, 12, 12], "texture": "#2"},
 				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
+			}
+		},
+		{
+			"name": "pancake_4",
+			"from": [3, 6, 4],
+			"to": [11, 7, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 6, 7]},
+			"faces": {
+				"north": {"uv": [4, 9, 12, 10], "texture": "#2"},
+				"east": {"uv": [4, 4, 12, 5], "texture": "#2"},
+				"south": {"uv": [4, 6, 12, 7], "texture": "#2"},
+				"west": {"uv": [4, 11, 12, 12], "texture": "#2"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#2"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
+			}
+		},
+		{
+			"name": "pancake_5",
+			"from": [4, 7, 4],
+			"to": [12, 8, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 7, 7]},
+			"faces": {
+				"north": {"uv": [4, 11, 12, 12], "texture": "#2"},
+				"east": {"uv": [4, 3, 12, 4], "texture": "#2"},
+				"south": {"uv": [4, 4, 12, 5], "texture": "#2"},
+				"west": {"uv": [4, 3, 12, 4], "texture": "#2"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#2"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
+			}
+		},
+		{
+			"name": "topping_cream",
+			"from": [6, 7, 6],
+			"to": [10, 9, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7, 7]},
+			"faces": {
+				"north": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"east": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"south": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"west": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#3"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#3"}
 			}
 		}
 	]

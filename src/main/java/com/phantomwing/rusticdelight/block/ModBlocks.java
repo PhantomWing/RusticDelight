@@ -24,6 +24,8 @@ public class ModBlocks {
     // Edible blocks
     public static final DeferredBlock<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",
             () -> new PancakeBlock(FoodValues.HONEY_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> CHOCOLATE_PANCAKES = BLOCKS.register("chocolate_pancakes",
+            () -> new PancakeBlock(FoodValues.CHOCOLATE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
 
     // Wild crops
     public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",
