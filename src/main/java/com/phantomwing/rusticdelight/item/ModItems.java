@@ -28,6 +28,7 @@ public class ModItems {
 
     // Crops
     public static final DeferredItem<Item> WILD_COTTON = registerBlockWithTab(ModBlocks.WILD_COTTON);
+    public static final DeferredItem<Item> WILD_BELL_PEPPERS = registerBlockWithTab(ModBlocks.WILD_BELL_PEPPERS);
 
     // Crop products
     public static final DeferredItem<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new Item(new Item.Properties()));
@@ -41,6 +42,9 @@ public class ModItems {
     // Crop seeds
     public static final DeferredItem<Item> COTTON_SEEDS = registerWithTab("cotton_seeds", () -> new ItemNameBlockItem(
             ModBlocks.COTTON_CROP.get(),
+            new Item.Properties()));
+    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.BELL_PEPPER_CROP.get(),
             new Item.Properties()));
 
     // Basic food

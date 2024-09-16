@@ -2,8 +2,6 @@ package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
-import com.phantomwing.rusticdelight.item.ModItems;
-import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -44,7 +42,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.CROPS)
                 .add(
-                        ModBlocks.COTTON_CROP.get()
+                        ModBlocks.COTTON_CROP.get(),
+                        ModBlocks.BELL_PEPPER_CROP.get()
                 );
     }
 
@@ -64,7 +63,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COTTON_SEEDS_BAG.get()
         );
         this.tag(ModTags.WILD_CROPS).add(
-                ModBlocks.WILD_COTTON.get()
+                ModBlocks.WILD_COTTON.get(),
+                ModBlocks.WILD_BELL_PEPPERS.get()
         );
 
         // Serene Seasons
@@ -72,7 +72,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COTTON_CROP.get()
         );
         tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
-                ModBlocks.COTTON_CROP.get()
+                ModBlocks.COTTON_CROP.get(),
+                ModBlocks.BELL_PEPPER_CROP.get()
+        );
+        tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(
+                ModBlocks.BELL_PEPPER_CROP.get()
         );
     }
 }

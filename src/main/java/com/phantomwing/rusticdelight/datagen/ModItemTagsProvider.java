@@ -43,14 +43,17 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     private void addMinecraftTags() {
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
-                ModItems.COTTON_SEEDS.get()
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.BELL_PEPPER_SEEDS.get()
         );
-        this.tag(ItemTags.CHICKEN_FOOD)
-                .add(ModItems.COTTON_SEEDS.get()
-                );
-        this.tag(ItemTags.PARROT_FOOD)
-                .add(ModItems.COTTON_SEEDS.get()
-                );
+        this.tag(ItemTags.CHICKEN_FOOD).add(
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.BELL_PEPPER_SEEDS.get()
+        );
+        this.tag(ItemTags.PARROT_FOOD).add(
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.BELL_PEPPER_SEEDS.get()
+        );
         this.tag(ItemTags.CAT_FOOD).add(
                 ModItems.CALAMARI.get()
         );
@@ -64,8 +67,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addNeoForgeTags() {
-        tag(Tags.Items.CROPS)
-                .addTag(CommonTags.CROPS_COTTON);
+        this.tag(Tags.Items.CROPS).addTags(
+                CommonTags.CROPS_COTTON,
+                CommonTags.CROPS_BELL_PEPPER
+        );
 
         this.tag(Tags.Items.FOODS_RAW_FISH).addTag(
                 CommonTags.FOODS_RAW_CALAMARI
@@ -74,7 +79,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 CommonTags.FOODS_COOKED_CALAMARI
         );
         this.tag(Tags.Items.SEEDS).add(
-                ModItems.COTTON_SEEDS.get()
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.BELL_PEPPER_SEEDS.get()
         );
         this.tag(Tags.Items.FOODS_FRUIT).add(
                 Items.MELON_SLICE

@@ -1,6 +1,7 @@
 package com.phantomwing.rusticdelight.datagen.loot;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
 import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
@@ -41,7 +42,12 @@ public class BlockLootTables extends BlockLootSubProvider {
                 ModBlocks.COTTON_CROP.get(), CottonCropBlock.AGE, CottonCropBlock.MAX_AGE,
                 ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
                 ModItems.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
+        dropCrop(
+                ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, BellPepperCropBlock.MAX_AGE,
+                ModItems.BELL_PEPPER_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
+                ModItems.BELL_PEPPER_RED.get(), UniformGenerator.between(1.0F, 1.0F));
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS.get(), ModItems.COTTON_BOLL.get());
+        dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_RED.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());

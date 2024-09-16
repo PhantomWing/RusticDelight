@@ -89,6 +89,11 @@ public class ModRecipeProvider extends RecipeProvider {
         twoBytwo(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), vectorwing.farmersdelight.common.registry.ModItems.CANVAS.get(), 1);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COTTON_SEEDS.get(), ModItems.COTTON_SEEDS_BAG.get());
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), ModItems.COTTON_BOLL_CRATE.get());
+
+        // Bell peppers
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED.get(), ModItems.BELL_PEPPER_SEEDS, 1);
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -97,6 +102,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addResultWithChance(ModItems.COTTON_BOLL.get(), 0.3F)
                 .addResultWithChance(Items.WHITE_DYE, 0.1F)
                 .build(output, ModItems.WILD_COTTON.getId());
+
+        // Bell pepper
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_BELL_PEPPERS.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SEEDS.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_RED.get(), 0.3F)
+                .addResultWithChance(Items.RED_DYE, 0.1F)
+                .build(output, ModItems.WILD_BELL_PEPPERS.getId());
 
         // Food
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES.get(), 2)

@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
 import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -27,8 +28,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         makeCottonCrop((CropBlock) ModBlocks.COTTON_CROP.get(), "cotton_stage", "cotton_stage");
+        makeBellPepperCrop((CropBlock) ModBlocks.BELL_PEPPER_CROP.get(), "bell_peppers_stage", "bell_peppers_stage");
         simpleBlockWithItem(ModBlocks.WILD_COTTON.get(), models().cross(blockTexture(ModBlocks.WILD_COTTON.get()).getPath(),
                 blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.WILD_BELL_PEPPERS.get(), models().cross(blockTexture(ModBlocks.WILD_BELL_PEPPERS.get()).getPath(),
+                blockTexture(ModBlocks.WILD_BELL_PEPPERS.get())).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.POTTED_WILD_COTTON.get(), models()
                 .singleTexture("potted_wild_cotton",
                         ResourceLocation.withDefaultNamespace("flower_pot_cross"),
@@ -47,9 +51,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private ConfiguredModel[] cottonStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        var ageProperty = state.getValue(((CottonCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((CottonCropBlock) block).getAgeProperty()),
-                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + state.getValue(((CottonCropBlock) block).getAgeProperty()))).renderType("cutout"));
+        models[0] = new ConfiguredModel(models().crop(modelName + ageProperty,
+                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
+
+        return models;
+    }
+
+    public void makeBellPepperCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> bellPepperStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] bellPepperStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        var ageProperty = state.getValue(((BellPepperCropBlock) block).getAgeProperty());
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + ageProperty,
+                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;
     }
