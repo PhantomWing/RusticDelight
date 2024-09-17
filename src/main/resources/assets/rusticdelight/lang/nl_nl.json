@@ -1,4 +1,7 @@
 {
+  "block.rusticdelight.bell_pepper_green_crate": "Groene Paprikakrat",
+  "block.rusticdelight.bell_pepper_red_crate": "Rode Paprikakrat",
+  "block.rusticdelight.bell_pepper_yellow_crate": "Gele Paprikakrat",
   "block.rusticdelight.chocolate_pancakes": "Chocolade Pannenkoeken",
   "block.rusticdelight.cotton_boll_crate": "Katoenbolkrat",
   "block.rusticdelight.cotton_seeds_bag": "Zak Katoenzaden",
@@ -8,9 +11,10 @@
   "item.rusticdelight.baked_potato_slices": "Gebakken Aardappelstukjes",
   "item.rusticdelight.batter": "Beslag",
   "item.rusticdelight.bell_pepper_green": "Groene Paprika",
-  "item.rusticdelight.bell_pepper_yellow": "Gele Paprika",
   "item.rusticdelight.bell_pepper_red": "Rode Paprika",
   "item.rusticdelight.bell_pepper_seeds": "Paprikazaden",
+  "item.rusticdelight.bell_pepper_soup": "Paprikasoep",
+  "item.rusticdelight.bell_pepper_yellow": "Gele Paprika",
   "item.rusticdelight.calamari": "Rauwe Inktvis",
   "item.rusticdelight.calamari_roll": "Inktvisrol",
   "item.rusticdelight.calamari_slice": "Rauw Stukje Inktvis",
@@ -25,6 +29,9 @@
   "item.rusticdelight.fruit_beignet": "Vruchtenbeignet",
   "item.rusticdelight.potato_salad": "Aardappelsalade",
   "item.rusticdelight.potato_slices": "Aardappelstukjes",
+  "item.rusticdelight.roasted_bell_pepper_green": "Geroosterde Groene Paprika",
+  "item.rusticdelight.roasted_bell_pepper_red": "Geroosterde Rode Paprika",
+  "item.rusticdelight.roasted_bell_pepper_yellow": "Geroosterde Gele Paprika",
   "item.rusticdelight.spring_rolls": "Lenterollen",
-  "itemGroup.rusticdelight": "Rustic Delight"
+  "itemGroup.rusticdelight": "Rustic Delight",
 }

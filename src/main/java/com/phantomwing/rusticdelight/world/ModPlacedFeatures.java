@@ -15,6 +15,7 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> WILD_COTTON_PLACED_KEY = registerKey("wild_cotton_placed");
+    public static final ResourceKey<PlacedFeature> WILD_BELL_PEPPERS_PLACED_KEY = registerKey("wild_bell_peppers_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context){
         registerFlowers(context);
@@ -24,6 +25,10 @@ public class ModPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, WILD_COTTON_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WILD_COTTON_KEY), List.of(RarityFilter.onAverageOnceEvery(32),
+                InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())
+        );
+
+        register(context, WILD_BELL_PEPPERS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WILD_BELL_PEPPERS_KEY), List.of(RarityFilter.onAverageOnceEvery(32),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())
         );
     }

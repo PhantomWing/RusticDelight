@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BELL_PEPPER_YELLOW);
         simpleItem(ModItems.BELL_PEPPER_RED);
         simpleItem(ModItems.BELL_PEPPER_SEEDS);
+        simpleItem(ModItems.BELL_PEPPER_SOUP);
         simpleItem(ModItems.CALAMARI);
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.CALAMARI_SLICE);
@@ -40,6 +41,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FRUIT_BEIGNET);
         simpleItem(ModItems.POTATO_SALAD);
         simpleItem(ModItems.POTATO_SLICES);
+        simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
+        simpleItem(ModItems.ROASTED_BELL_PEPPER_YELLOW);
+        simpleItem(ModItems.ROASTED_BELL_PEPPER_RED);
         simpleItem(ModItems.SPRING_ROLLS);
 
         // Blocks
@@ -49,6 +53,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlock2D(ModBlocks.WILD_BELL_PEPPERS);
         simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
         simpleBlock(ModBlocks.COTTON_SEEDS_BAG);
+        simpleBlock(ModBlocks.BELL_PEPPER_GREEN_CRATE);
+        simpleBlock(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
+        simpleBlock(ModBlocks.BELL_PEPPER_RED_CRATE);
     }
 
     // A simple item with a model generated from its sprite.

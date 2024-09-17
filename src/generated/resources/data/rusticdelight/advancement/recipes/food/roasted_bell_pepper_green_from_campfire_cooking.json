@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rusticdelight:bell_pepper_seeds_from_bell_pepper_green"
+        "recipe": "rusticdelight:roasted_bell_pepper_green_from_campfire_cooking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "rusticdelight:bell_pepper_seeds_from_bell_pepper_green"
+      "rusticdelight:roasted_bell_pepper_green_from_campfire_cooking"
     ]
   }
 }

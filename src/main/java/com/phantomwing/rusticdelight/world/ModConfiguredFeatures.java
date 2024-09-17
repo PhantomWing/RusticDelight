@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 
 public class ModConfiguredFeatures {
     public static ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WILD_COTTON_KEY = registerKey("wild_cotton");
+    public static ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_WILD_BELL_PEPPERS_KEY = registerKey("wild_bell_peppers");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
         registerFlowers(context);
@@ -28,6 +29,13 @@ public class ModConfiguredFeatures {
                         6,
                         2,
                         PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_COTTON.get())))));
+
+        register(context, OVERWORLD_WILD_BELL_PEPPERS_KEY, Feature.FLOWER,
+                new RandomPatchConfiguration(
+                        32,
+                        6,
+                        2,
+                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_BELL_PEPPERS.get())))));
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

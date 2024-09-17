@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bell_pepper_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_red"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:roasted_bell_pepper_red_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bell_pepper_red"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:roasted_bell_pepper_red_from_smoking"
+    ]
+  }
+}

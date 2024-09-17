@@ -39,6 +39,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         "plant",
                         blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
         farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
         pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
         pancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get());

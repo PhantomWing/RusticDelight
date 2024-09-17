@@ -33,7 +33,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     private void addMinecraftTags() {
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(
-                        ModBlocks.COTTON_BOLL_CRATE.get()
+                        ModBlocks.COTTON_BOLL_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_RED_CRATE.get()
                 );
 
         this.tag(BlockTags.SMALL_FLOWERS).add(
@@ -50,7 +53,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     private void addNeoForgeTags() {
         this.tag(Tags.Blocks.STORAGE_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG.get(),
-                ModBlocks.COTTON_BOLL_CRATE.get()
+                ModBlocks.COTTON_BOLL_CRATE.get(),
+                ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
+                ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
+                ModBlocks.BELL_PEPPER_RED_CRATE.get()
         );
     }
 

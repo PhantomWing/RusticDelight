@@ -20,7 +20,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> COTTON_SEEDS_BAG = BLOCKS.register("cotton_seeds_bag",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static final DeferredBlock<Block> COTTON_BOLL_CRATE = BLOCKS.register("cotton_boll_crate",
-            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOL)));
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_GREEN_CRATE = BLOCKS.register("bell_pepper_green_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_YELLOW_CRATE = BLOCKS.register("bell_pepper_yellow_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_RED_CRATE = BLOCKS.register("bell_pepper_red_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     // Edible blocks
     public static final DeferredBlock<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",

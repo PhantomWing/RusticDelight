@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bell_pepper_red": {
+    "has_bell_pepper_green_crate": {
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:bell_pepper_red"
+            "items": "rusticdelight:bell_pepper_green_crate"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rusticdelight:bell_pepper_seeds_from_bell_pepper_red"
+        "recipe": "rusticdelight:bell_pepper_green_from_bell_pepper_green_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bell_pepper_red"
+      "has_bell_pepper_green_crate"
     ]
   ],
   "rewards": {
     "recipes": [
-      "rusticdelight:bell_pepper_seeds_from_bell_pepper_red"
+      "rusticdelight:bell_pepper_green_from_bell_pepper_green_crate"
     ]
   }
 }

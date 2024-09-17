@@ -42,15 +42,15 @@ public class BlockLootTables extends BlockLootSubProvider {
                 ModBlocks.COTTON_CROP.get(), CottonCropBlock.AGE, CottonCropBlock.MAX_AGE,
                 ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
                 ModItems.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
-        dropCrop(
-                ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, BellPepperCropBlock.MAX_AGE,
-                ModItems.BELL_PEPPER_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
-                ModItems.BELL_PEPPER_RED.get(), UniformGenerator.between(1.0F, 1.0F));
+        dropBellPepperCrop(ModBlocks.BELL_PEPPER_CROP.get());
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS.get(), ModItems.COTTON_BOLL.get());
         dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_RED.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
+        dropSelf(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_RED_CRATE.get());
         dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
     }
@@ -73,6 +73,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     private void dropCrop(Block block, IntegerProperty age, int maxAge, ItemLike seedsItem, NumberProvider seedsCount, ItemLike cropItem, NumberProvider cropCount) {
         this.add(block, blockParam -> createCropDrops(blockParam, age, maxAge, seedsItem, seedsCount, cropItem, cropCount));
+    }
+
+    private void dropBellPepperCrop(Block block) {
+        this.add(block, this::createBellPepperDrops);
     }
 
     private void dropFoodBlock(Block block, IntegerProperty servings, ItemLike containerItem) {
@@ -110,6 +114,52 @@ public class BlockLootTables extends BlockLootSubProvider {
                                         .apply(SetItemCountFunction.setCount(cropCount))
                                         .apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE)))
                                 )
+                        )
+        );
+    }
+
+    private LootTable.Builder createBellPepperDrops(Block cropBlock) {
+        HolderLookup.RegistryLookup<Enchantment> enchantments = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        // Condition that checks if the crop is fully grown.
+        LootItemCondition.Builder dropGrownCropCondition = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(cropBlock)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, BellPepperCropBlock.MAX_AGE));
+
+        return this.applyExplosionDecay(
+                cropBlock,
+                LootTable.lootTable()
+                        // When not fully grown, drop the original seed.
+                        .withPool(LootPool.lootPool()
+                                .when(InvertedLootItemCondition.invert(dropGrownCropCondition))
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_SEEDS.get()))
+                        )
+                        // When fully grown, drop additional seeds (including a Fortune bonus).
+                        .withPool(LootPool.lootPool()
+                                .when(dropGrownCropCondition)
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_SEEDS.get())
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        .apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE)))
+                                )
+                        )
+                        // When fully grown, also drop a bell pepper.
+                        .withPool(LootPool.lootPool()
+                                .when(dropGrownCropCondition)
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_RED.get()).setWeight(6)) // Red bell peppers are more common
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_GREEN.get()))
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_YELLOW.get()))
+                        )
+                        // When fully grown, potentially drop an additional green bell pepper.
+                        .withPool(LootPool.lootPool()
+                                .when(dropGrownCropCondition)
+                                .when(LootItemRandomChanceCondition.randomChance(0.15f))
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_GREEN.get()))
+                        )
+                        // Finally, when fully grown, potentially drop additional yellow bell pepper.
+                        .withPool(LootPool.lootPool()
+                                .when(dropGrownCropCondition)
+                                .when(LootItemRandomChanceCondition.randomChance(0.15f))
+                                .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_YELLOW.get()))
                         )
         );
     }

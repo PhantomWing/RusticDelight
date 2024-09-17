@@ -34,6 +34,23 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     private void buildCraftingRecipes(@NotNull RecipeOutput output) {
+        // Bell pepper
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_GREEN.get(), ModItems.ROASTED_BELL_PEPPER_GREEN.get(), 0.35f);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_YELLOW.get(), ModItems.ROASTED_BELL_PEPPER_YELLOW.get(), 0.35f);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_RED.get(), ModItems.ROASTED_BELL_PEPPER_RED.get(), 0.35f);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BELL_PEPPER_SOUP.get(), 1)
+                .requires(Items.BOWL)
+                .requires(CommonTags.FOODS_BELL_PEPPER)
+                .requires(CommonTags.FOODS_BELL_PEPPER)
+                .requires(CommonTags.FOODS_BELL_PEPPER)
+                .requires(CommonTags.FOODS_BELL_PEPPER)
+                .requires(CommonTags.FOODS_BELL_PEPPER)
+                .requires(CommonTags.FOODS_BELL_PEPPER)
+                .unlockedBy(getHasName(ModItems.BELL_PEPPER_RED.get()), has(ModItems.BELL_PEPPER_RED.get()))
+                .unlockedBy(getHasName(ModItems.BELL_PEPPER_GREEN.get()), has(ModItems.BELL_PEPPER_GREEN.get()))
+                .unlockedBy(getHasName(ModItems.BELL_PEPPER_YELLOW.get()), has(ModItems.BELL_PEPPER_YELLOW.get()))
+                .save(output);
+
         // Calamari
         foodCookingRecipes(output, ModItems.CALAMARI.get(), ModItems.COOKED_CALAMARI.get(), 0.35f);
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f);
@@ -91,9 +108,12 @@ public class ModRecipeProvider extends RecipeProvider {
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), ModItems.COTTON_BOLL_CRATE.get());
 
         // Bell peppers
-        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_SEEDS, 1);
-        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_SEEDS, 1);
-        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED.get(), ModItems.BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN.get(), Items.GREEN_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW.get(), Items.YELLOW_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED.get(), Items.RED_DYE, 1);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_GREEN_CRATE.get());
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_YELLOW_CRATE.get());
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED.get(), ModItems.BELL_PEPPER_RED_CRATE.get());
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -200,6 +220,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.FRIED_MUSHROOMS.getId());
+
+        // Bell Pepper Soup
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BELL_PEPPER_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(CommonTags.FOODS_BELL_PEPPER)
+                .addIngredient(CommonTags.FOODS_BELL_PEPPER)
+                .addIngredient(CommonTags.FOODS_BELL_PEPPER)
+                .addIngredient(CommonTags.FOODS_BELL_PEPPER)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_RED.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.BELL_PEPPER_SOUP.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {

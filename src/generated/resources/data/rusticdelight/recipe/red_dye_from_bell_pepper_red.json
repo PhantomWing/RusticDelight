@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "rusticdelight:bell_pepper_green"
+      "item": "rusticdelight:bell_pepper_red"
     }
   ],
   "result": {
     "count": 1,
-    "id": "rusticdelight:bell_pepper_seeds"
+    "id": "minecraft:red_dye"
   }
 }

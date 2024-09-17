@@ -25,6 +25,9 @@ public class ModItems {
     // Storage blocks
     public static final DeferredItem<Item> COTTON_SEEDS_BAG = registerBlockWithTab(ModBlocks.COTTON_SEEDS_BAG);
     public static final DeferredItem<Item> COTTON_BOLL_CRATE = registerBlockWithTab(ModBlocks.COTTON_BOLL_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_GREEN_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_GREEN_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_YELLOW_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_RED_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_RED_CRATE);
 
     // Crops
     public static final DeferredItem<Item> WILD_COTTON = registerBlockWithTab(ModBlocks.WILD_COTTON);
@@ -52,6 +55,12 @@ public class ModItems {
             new Item.Properties().food(FoodValues.CALAMARI)));
     public static final DeferredItem<Item> COOKED_CALAMARI = registerWithTab("cooked_calamari", () -> new Item(
             new Item.Properties().food(FoodValues.COOKED_CALAMARI)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_GREEN = registerWithTab("roasted_bell_pepper_green", () -> new Item(
+            new Item.Properties().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_YELLOW = registerWithTab("roasted_bell_pepper_yellow", () -> new Item(
+            new Item.Properties().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_RED = registerWithTab("roasted_bell_pepper_red", () -> new Item(
+            new Item.Properties().food(FoodValues.ROASTED_BELL_PEPPER)));
 
     // Cooking products
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
@@ -82,6 +91,10 @@ public class ModItems {
             new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.POTATO_SALAD)));
     public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
             new Item.Properties().food(FoodValues.SPRING_ROLLS)));
+
+    // Soups and stews
+    public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new DrinkableItem(
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BELL_PEPPER_SOUP).stacksTo(16)));
 
     // Plated meals
     public static final DeferredItem<Item> FRIED_CALAMARI = registerWithTab("fried_calamari", () -> new Item(
