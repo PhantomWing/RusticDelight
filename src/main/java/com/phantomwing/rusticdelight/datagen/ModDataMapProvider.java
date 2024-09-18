@@ -19,13 +19,18 @@ public class ModDataMapProvider extends DataMapProvider {
         builder(NeoForgeDataMaps.COMPOSTABLES)
                 // 30% chance
                 .add(ModItems.COTTON_SEEDS.getId(), new Compostable(0.3f, true), false)
+                .add(ModItems.BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f, true), false)
 
                 // 50% chance
                 .add(ModItems.COTTON_BOLL.getId(), new Compostable(0.5f, true), false)
                 .add(ModItems.POTATO_SLICES.getId(), new Compostable(0.5f, true), false)
 
                 // 65% chance
+                .add(ModItems.BELL_PEPPER_GREEN.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_YELLOW.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_RED.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
         ;
     }
 }

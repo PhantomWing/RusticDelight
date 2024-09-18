@@ -40,19 +40,27 @@ public class BlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         dropCrop(
                 ModBlocks.COTTON_CROP.get(), CottonCropBlock.AGE, CottonCropBlock.MAX_AGE,
-                ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 2.0F),
+                ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 3.0F),
                 ModItems.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
         dropBellPepperCrop(ModBlocks.BELL_PEPPER_CROP.get());
+
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS.get(), ModItems.COTTON_BOLL.get());
         dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_RED.get());
+
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
-        dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
+        dropSelf(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+
+        dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_RED_CRATE.get());
+
         dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
     }
 
     // The contents of this Iterable are used for validation.

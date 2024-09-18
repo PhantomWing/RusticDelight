@@ -1,5 +1,21 @@
 {
   "values": {
+    "rusticdelight:bell_pepper_green": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_red": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_seeds": {
+      "can_villager_compost": true,
+      "chance": 0.3
+    },
+    "rusticdelight:bell_pepper_yellow": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
     "rusticdelight:cotton_boll": {
       "can_villager_compost": true,
       "chance": 0.5
@@ -11,6 +27,10 @@
     "rusticdelight:potato_slices": {
       "can_villager_compost": true,
       "chance": 0.5
+    },
+    "rusticdelight:wild_bell_peppers": {
+      "can_villager_compost": true,
+      "chance": 0.65
     },
     "rusticdelight:wild_cotton": {
       "can_villager_compost": true,

@@ -13,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -89,12 +90,22 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
                 .save(output);
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHOCOLATE_PANCAKES.get(), 1)
-                .pattern("XHX")
-                .pattern("SBS")
+                .pattern("XMX")
+                .pattern("CBC")
                 .pattern("XYX")
-                .define('S', Items.COCOA_BEANS)
-                .define('H', CommonTags.FOODS_MILK)
+                .define('C', Items.COCOA_BEANS)
+                .define('M', CommonTags.FOODS_MILK)
                 .define('X', Items.SUGAR)
+                .define('B', ModItems.BATTER)
+                .define('Y', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.VEGETABLE_PANCAKES.get(), 1)
+                .pattern("LVL")
+                .pattern("VBV")
+                .pattern("LYL")
+                .define('L', CommonTags.FOODS_LEAFY_GREEN)
+                .define('V', vegetablesPatch())
                 .define('B', ModItems.BATTER)
                 .define('Y', Items.BOWL)
                 .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
@@ -111,6 +122,7 @@ public class ModRecipeProvider extends RecipeProvider {
         oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN.get(), Items.GREEN_DYE, 1);
         oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW.get(), Items.YELLOW_DYE, 1);
         oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED.get(), Items.RED_DYE, 1);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_SEEDS_BAG.get());
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_GREEN_CRATE.get());
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_YELLOW_CRATE.get());
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED.get(), ModItems.BELL_PEPPER_RED_CRATE.get());
@@ -172,7 +184,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, ModItems.BATTER.getId());
 
         // Spring Rolls
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS.get(), 2, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
                 .addIngredient(ModItems.COOKING_OIL)
                 .addIngredient(CommonTags.FOODS_DOUGH)
                 .addIngredient(CommonTags.FOODS_LEAFY_GREEN)
@@ -182,7 +194,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, ModItems.SPRING_ROLLS.getId());
 
         // Fruit Beignet
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRUIT_BEIGNET.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRUIT_BEIGNET.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
                 .addIngredient(ModItems.COOKING_OIL)
                 .addIngredient(CommonTags.FOODS_DOUGH)
                 .addIngredient(Tags.Items.FOODS_FRUIT)
@@ -230,6 +242,39 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_RED.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.BELL_PEPPER_SOUP.getId());
+
+        // Stuffed Bell Peppers
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_GREEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_GREEN)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(stuffedBellPepperFilling())
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.STUFFED_BELL_PEPPER_GREEN.getId());
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_YELLOW.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_YELLOW)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(stuffedBellPepperFilling())
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_YELLOW.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.STUFFED_BELL_PEPPER_YELLOW.getId());
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_RED.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_RED)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(stuffedBellPepperFilling())
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_RED.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.STUFFED_BELL_PEPPER_RED.getId());
+
+        // Bell Pepper Pasta
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BELL_PEPPER_PASTA.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(CommonTags.FOODS_PASTA)
+                .addIngredient(ModItems.BELL_PEPPER_GREEN)
+                .addIngredient(ModItems.BELL_PEPPER_YELLOW)
+                .addIngredient(ModItems.BELL_PEPPER_RED)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_RED.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.BELL_PEPPER_PASTA.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {
@@ -302,5 +347,13 @@ public class ModRecipeProvider extends RecipeProvider {
 
     protected static String getRecipeName(ItemLike item, ItemLike result) {
         return RusticDelight.MOD_ID + ":" + getConversionRecipeName(result, item);
+    }
+
+    private static Ingredient vegetablesPatch() {
+        return DifferenceIngredient.of(Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Items.MELON_SLICE));
+    }
+
+    private static Ingredient stuffedBellPepperFilling() {
+        return DifferenceIngredient.of(Ingredient.of(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS), Ingredient.of(CommonTags.FOODS_BELL_PEPPER));
     }
 }

@@ -1,4 +1,4 @@
-// 1.21	2024-09-16T15:33:40.2353577	Tags for minecraft:item mod id rusticdelight
+// 1.21	2024-09-18T12:59:29.3259626	Tags for minecraft:item mod id rusticdelight
 514f40e981eb1552517ff2c6447d13a8b94dad17 data/create/tags/item/upright_on_belt.json
 8bbcf2d0644e8e6c90daf75e5e73aae424bb3c6d data/c/tags/item/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
@@ -19,6 +19,6 @@ dbf4a940bd932e09d3a80e4a4c5272383684f445 data/minecraft/tags/item/cat_food.json
 aa2ef08285739c046b93c2ecfb83989927edeb46 data/minecraft/tags/item/fishes.json
 dbf4a940bd932e09d3a80e4a4c5272383684f445 data/minecraft/tags/item/ocelot_food.json
 23e6d5a1e351631ead8399a44112fefa0e3a4d53 data/minecraft/tags/item/parrot_food.json
-2ac5480a10e6c438ee2f162a8d6961b70ae8576f data/minecraft/tags/item/small_flowers.json
+00b915307a61b0b2a799eef268224b33b24903f5 data/minecraft/tags/item/small_flowers.json
 23e6d5a1e351631ead8399a44112fefa0e3a4d53 data/minecraft/tags/item/villager_plantable_seeds.json
 cb96c439d46844b9a4ce7308dad3483c2634fa94 data/rusticdelight/tags/item/cooking_oil_ingredients.json

@@ -12,6 +12,7 @@ public class CommonTags {
     public static final TagKey<Item> FOODS_COOKED_CALAMARI = commonItemTag("foods/cooked_calamari");
     public static final TagKey<Item> FOODS_MILK = commonItemTag("foods/milk");
     public static final TagKey<Item> FOODS_DOUGH = commonItemTag("foods/dough");
+    public static final TagKey<Item> FOODS_PASTA = commonItemTag("foods/pasta");
     public static final TagKey<Item> FOODS_RAW_CHICKEN = commonItemTag("foods/raw_chicken");
     public static final TagKey<Item> FOODS_LEAFY_GREEN = commonItemTag("foods/leafy_green");
     public static final TagKey<Item> FOODS_POTATO = commonItemTag("foods/potato");
@@ -21,6 +22,7 @@ public class CommonTags {
 
     public static final TagKey<Item> CROPS_COTTON = commonItemTag("crops/cotton");
     public static final TagKey<Item> CROPS_BELL_PEPPER = commonItemTag("crops/bell_pepper");
+    public static final TagKey<Item> CROPS_RICE = commonItemTag("crops/rice");
 
     public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
 

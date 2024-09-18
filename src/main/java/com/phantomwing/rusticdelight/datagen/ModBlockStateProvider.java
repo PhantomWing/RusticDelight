@@ -29,22 +29,34 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         makeCottonCrop((CropBlock) ModBlocks.COTTON_CROP.get(), "cotton_stage", "cotton_stage");
         makeBellPepperCrop((CropBlock) ModBlocks.BELL_PEPPER_CROP.get(), "bell_peppers_stage", "bell_peppers_stage");
+
         simpleBlockWithItem(ModBlocks.WILD_COTTON.get(), models().cross(blockTexture(ModBlocks.WILD_COTTON.get()).getPath(),
                 blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.WILD_BELL_PEPPERS.get(), models().cross(blockTexture(ModBlocks.WILD_BELL_PEPPERS.get()).getPath(),
                 blockTexture(ModBlocks.WILD_BELL_PEPPERS.get())).renderType("cutout"));
+
         simpleBlockWithItem(ModBlocks.POTTED_WILD_COTTON.get(), models()
                 .singleTexture("potted_wild_cotton",
                         ResourceLocation.withDefaultNamespace("flower_pot_cross"),
                         "plant",
                         blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), models()
+                .singleTexture("potted_wild_bell_peppers",
+                        ResourceLocation.withDefaultNamespace("flower_pot_cross"),
+                        "plant",
+                        blockTexture(ModBlocks.WILD_BELL_PEPPERS.get())).renderType("cutout"));
+
+        farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
+        farmersDelightBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
-        farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
+
         pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
         pancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get());
+        pancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get());
     }
 
     public void makeCottonCrop(CropBlock block, String modelName, String textureName) {

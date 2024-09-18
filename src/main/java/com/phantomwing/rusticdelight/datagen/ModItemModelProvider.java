@@ -27,6 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BELL_PEPPER_RED);
         simpleItem(ModItems.BELL_PEPPER_SEEDS);
         simpleItem(ModItems.BELL_PEPPER_SOUP);
+        simpleItem(ModItems.BELL_PEPPER_PASTA);
         simpleItem(ModItems.CALAMARI);
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.CALAMARI_SLICE);
@@ -44,15 +45,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_RED);
+        simpleItem(ModItems.STUFFED_BELL_PEPPER_GREEN);
+        simpleItem(ModItems.STUFFED_BELL_PEPPER_YELLOW);
+        simpleItem(ModItems.STUFFED_BELL_PEPPER_RED);
         simpleItem(ModItems.SPRING_ROLLS);
 
         // Blocks
         simpleItem(ModItems.HONEY_PANCAKES);
         simpleItem(ModItems.CHOCOLATE_PANCAKES);
+        simpleItem(ModItems.VEGETABLE_PANCAKES);
         simpleBlock2D(ModBlocks.WILD_COTTON);
         simpleBlock2D(ModBlocks.WILD_BELL_PEPPERS);
-        simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
         simpleBlock(ModBlocks.COTTON_SEEDS_BAG);
+        simpleBlock(ModBlocks.BELL_PEPPER_SEEDS_BAG);
+        simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_GREEN_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_RED_CRATE);

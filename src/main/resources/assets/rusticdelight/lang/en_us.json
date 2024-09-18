@@ -1,16 +1,19 @@
 {
   "block.rusticdelight.bell_pepper_green_crate": "Green Bell Pepper Crate",
   "block.rusticdelight.bell_pepper_red_crate": "Red Bell Pepper Crate",
+  "block.rusticdelight.bell_pepper_seeds_bag": "Bag of Bell Pepper Seeds",
   "block.rusticdelight.bell_pepper_yellow_crate": "Yellow Bell Pepper Crate",
   "block.rusticdelight.chocolate_pancakes": "Chocolate Pancakes",
   "block.rusticdelight.cotton_boll_crate": "Cotton Boll Crate",
   "block.rusticdelight.cotton_seeds_bag": "Bag of Cotton Seeds",
   "block.rusticdelight.honey_pancakes": "Honey Pancakes",
+  "block.rusticdelight.vegetable_pancakes": "Vegetable Pancakes",
   "block.rusticdelight.wild_bell_peppers": "Wild Bell Peppers",
   "block.rusticdelight.wild_cotton": "Wild Cotton",
   "item.rusticdelight.baked_potato_slices": "Baked Potato Slices",
   "item.rusticdelight.batter": "Batter",
   "item.rusticdelight.bell_pepper_green": "Green Bell Pepper",
+  "item.rusticdelight.bell_pepper_pasta": "Bell Pepper Pasta",
   "item.rusticdelight.bell_pepper_red": "Red Bell Pepper",
   "item.rusticdelight.bell_pepper_seeds": "Bell Pepper Seeds",
   "item.rusticdelight.bell_pepper_soup": "Bell Pepper Soup",
@@ -33,5 +36,8 @@
   "item.rusticdelight.roasted_bell_pepper_red": "Roasted Red Bell Pepper",
   "item.rusticdelight.roasted_bell_pepper_yellow": "Roasted Yellow Bell Pepper",
   "item.rusticdelight.spring_rolls": "Spring Rolls",
+  "item.rusticdelight.stuffed_bell_pepper_green": "Stuffed Green Bell Pepper",
+  "item.rusticdelight.stuffed_bell_pepper_red": "Stuffed Red Bell Pepper",
+  "item.rusticdelight.stuffed_bell_pepper_yellow": "Stuffed Yellow Bell Pepper",
   "itemGroup.rusticdelight": "Rustic Delight"
 }

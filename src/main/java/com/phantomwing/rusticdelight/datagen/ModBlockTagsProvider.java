@@ -40,7 +40,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 );
 
         this.tag(BlockTags.SMALL_FLOWERS).add(
-                ModBlocks.WILD_COTTON.get()
+                ModBlocks.WILD_COTTON.get(),
+                ModBlocks.WILD_BELL_PEPPERS.get()
         );
 
         this.tag(BlockTags.CROPS)

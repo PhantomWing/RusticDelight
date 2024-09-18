@@ -51,6 +51,7 @@ public class RusticDelight {
     private void addFlowerPots() {
         FlowerPotBlock flowerPotBlock = ((FlowerPotBlock) Blocks.FLOWER_POT);
         flowerPotBlock.addPlant(ModBlocks.WILD_COTTON.getId(), ModBlocks.POTTED_WILD_COTTON);
+        flowerPotBlock.addPlant(ModBlocks.WILD_BELL_PEPPERS.getId(), ModBlocks.POTTED_WILD_BELL_PEPPERS);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

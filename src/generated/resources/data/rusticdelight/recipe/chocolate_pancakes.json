@@ -5,11 +5,11 @@
     "B": {
       "item": "rusticdelight:batter"
     },
-    "H": {
-      "tag": "c:foods/milk"
-    },
-    "S": {
+    "C": {
       "item": "minecraft:cocoa_beans"
+    },
+    "M": {
+      "tag": "c:foods/milk"
     },
     "X": {
       "item": "minecraft:sugar"
@@ -19,8 +19,8 @@
     }
   },
   "pattern": [
-    "XHX",
-    "SBS",
+    "XMX",
+    "CBC",
     "XYX"
   ],
   "result": {
