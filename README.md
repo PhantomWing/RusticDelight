@@ -1,19 +1,45 @@
-# Rustic Delight
-
-<img src="https://imgur.com/AqMCmwC.png" width="50%">
+<img src="https://cdn.modrinth.com/data/cached_images/6ecede4d7053895d6f424894b35007d35a5b883b.png" />
 
 ## About
 
-**Rustic Delight** is an add-on for <a href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight">Farmer's Delight</a>, aiming to add new crops, blocks and food items that fit very well within the design philisophy of the original mod and Minecraft itself.
-It's recommended to also play with <a href="https://www.curseforge.com/minecraft/mc-mods/jei">JEI</a> and <a href="https://www.curseforge.com/minecraft/mc-mods/appleskin">Appleskin</a> to view recipes and food stats in-game.
+**Rustic Delight** is an add-on for <a href="https://modrinth.com/mod/farmers-delight">Farmer's Delight</a>, adding new crops, blocks and food items that fit very well within the design philosophy of the original mod and Minecraft itself.
+
+**I'm still actively developing this mod, so stay tuned for more features!**
+
+</br>
+
+<img src="https://cdn.modrinth.com/data/cached_images/2cbbb2483353f71ebf702cae0c37b6675f9cdcb3.png" />
+
+_Pancakes are a great way to make your home more cozy. Eat up to six servings for some extra energy.
+</br>
+Which flavor would you pick: **Chocolate** or **Honey**?_
+
+</br>
 
 ##  Features
 ### 🌼 Cotton
-Find Wild Cotton in the world and grow your own cotton! Cotton integrates well within the mechanics of both Minecraft and Farmer's Delight, as it can be used to craft String, Paper and Canvas.
-Alternatively, you can now cut Wool to obtain String as well. This adds a farmer's way of obtaining resources that can otherwise mostly be obtained by hunting monsters! 
+Ever wish to obtain lots of String without needing a spider farm? You're in luck! Find yourself some Wild Cotton in the forest and set up a farm! Use it to craft String, Paper or Canvas.
 
-Additionally, you can put Cotton Seeds in a Cooking Pot to make Cooking Oil. This can be used as an ingredient for various recipes.
+</br>
 
+### 🫑 Bell Peppers
+Make your farms more colorful by growing your own sweet bell peppers! Use them in all-new cooking recipes, like the **Stuffed Bell Pepper** and Bell Pepper Pasta. Available in Red, Yellow and Green.
+
+_**Hot tip:** Explore the Jungle to find yourself some Wild Bell Peppers._
+
+</br>
+
+### 🥞 Pancakes
+Cozy up your home by making your own Pancakes! Similar to Cake, Pancakes can be placed decoratively as a block in your world. Right-click them to eat a single pancake from the stack, giving yourself a little speed boost!
+
+_Which flavor is your favorite? **Honey**, **chocolate**, or the healthy **vegetable** variant?_
+
+</br>
 
 ### 🦑 Calamari
-Squids and Glow Squids now drop Calamari! Calamari can be cooked, sliced, and turned into a delicious Calamari Roll. It can also be used in many other fish recipes.
+Squids and Glow Squids now drop **Calamari**! Cook it, slice it, and turn it a delicious **Calamari Roll**. Or use it in many other fish recipes!
+
+</br>
+
+### 🍳 Cooking Oil
+Time to fry some foods! Use the **Cooking Pot** to turn your **Cotton Seeds** into cooking oil. Use it to cook various fried dishes, like Spring Rolls and Fried Chicken.
