@@ -10,31 +10,30 @@ displayName="${mod_name}"
 displayURL="https://github.com/PhantomWing/RusticDelight"
 logoFile="logo.png"
 logoBlur=false
-credits=""
 authors="${mod_authors}"
 description='''${mod_description}'''
 ## Catalogue mod compatibility
 itemIcon = "rusticdelight:wild_cotton"
 configBackground = "minecraft:textures/block/bricks.png"
 
-[[dependencies.${mod_id}]]
-    modId="neoforge"
-    type="required"
-    versionRange="${neo_version_range}"
+
+[[dependencies.${mod_id}]] #optional
+    modId="forge" #mandatory
+    mandatory=true
+    versionRange="${forge_version_range}" #mandatory
     ordering="NONE"
     side="BOTH"
 
-# Here's another dependency
 [[dependencies.${mod_id}]]
     modId="minecraft"
-    type="required"
+    mandatory=true
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="farmersdelight"
-    type="required"
-    versionRange="${farmersdelight_version_range}"
-    ordering="AFTER"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
     side="BOTH"
