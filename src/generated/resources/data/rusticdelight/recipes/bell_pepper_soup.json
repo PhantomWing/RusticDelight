@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:vegetables/bell_pepper"
+    },
+    {
+      "tag": "forge:vegetables/bell_pepper"
+    },
+    {
+      "tag": "forge:vegetables/bell_pepper"
+    },
+    {
+      "tag": "forge:vegetables/bell_pepper"
+    },
+    {
+      "tag": "forge:vegetables/bell_pepper"
+    },
+    {
+      "tag": "forge:vegetables/bell_pepper"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:bell_pepper_soup"
+  }
+}

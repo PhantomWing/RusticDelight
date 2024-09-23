@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "rusticdelight:baked_potato_slices"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

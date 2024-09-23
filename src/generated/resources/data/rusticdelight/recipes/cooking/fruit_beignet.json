@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "rusticdelight:cooking_oil"
+    },
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "rusticdelight:fruit_beignet"
+  }
+}

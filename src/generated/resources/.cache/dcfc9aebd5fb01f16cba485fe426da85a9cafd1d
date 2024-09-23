@@ -1,0 +1,19 @@
+// 1.20.1	2024-09-23T16:58:54.2573823	Tags for minecraft:item mod id rusticdelight
+514f40e981eb1552517ff2c6447d13a8b94dad17 data/create/tags/items/upright_on_belt.json
+86e6f2552699e81cdcd6db2f44ae31cc05f21da5 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
+00b915307a61b0b2a799eef268224b33b24903f5 data/farmersdelight/tags/items/wild_crops.json
+ae6b6da0134dfa7bb0df90226964388a4cc0eff7 data/forge/tags/items/cooked_fishes.json
+5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/forge/tags/items/cooked_fishes/calamari.json
+4eb2bd7ac0b9236946e0ea9da7ad0ca0097aeeca data/forge/tags/items/crops.json
+e194fa32a22ccba8c878748e41d62f878710a306 data/forge/tags/items/crops/bell_pepper.json
+5605de70b69fcfeb7307d056cf3c0245d8fe94a7 data/forge/tags/items/crops/cotton.json
+541004136102dc131a4370bc2bbecd58c5b431bc data/forge/tags/items/raw_fishes.json
+b29992e9bd256cd80117a9a1a143832ead5c9a6e data/forge/tags/items/raw_fishes/calamari.json
+23e6d5a1e351631ead8399a44112fefa0e3a4d53 data/forge/tags/items/seeds.json
+10d1f23da1ca3676ae3894c7c31d08c6de8a6c80 data/forge/tags/items/vegetables.json
+3334bb74711edea7962cf4155ec9588c2989be22 data/forge/tags/items/vegetables/bell_pepper.json
+680b2c76c8866d78dcfbeec0e5491643a896c174 data/forge/tags/items/vegetables/potato.json
+aa2ef08285739c046b93c2ecfb83989927edeb46 data/minecraft/tags/items/fishes.json
+00b915307a61b0b2a799eef268224b33b24903f5 data/minecraft/tags/items/small_flowers.json
+23e6d5a1e351631ead8399a44112fefa0e3a4d53 data/minecraft/tags/items/villager_plantable_seeds.json
+cb96c439d46844b9a4ce7308dad3483c2634fa94 data/rusticdelight/tags/items/cooking_oil_ingredients.json

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cotton_seeds_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:cotton_seeds_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:cotton_seeds_from_cotton_seeds_bag"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cotton_seeds_bag",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:cotton_seeds_from_cotton_seeds_bag"
+    ]
+  },
+  "sends_telemetry_event": false
+}

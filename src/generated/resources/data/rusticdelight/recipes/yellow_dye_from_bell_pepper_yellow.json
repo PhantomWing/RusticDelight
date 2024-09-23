@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_yellow"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

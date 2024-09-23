@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "rusticdelight:batter"
+    },
+    "H": {
+      "item": "minecraft:honey_bottle"
+    },
+    "S": {
+      "item": "minecraft:sweet_berries"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "XHX",
+    "SBS",
+    "XYX"
+  ],
+  "result": {
+    "item": "rusticdelight:honey_pancakes"
+  },
+  "show_notification": true
+}

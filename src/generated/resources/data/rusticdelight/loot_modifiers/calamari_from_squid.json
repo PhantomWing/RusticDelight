@@ -1,0 +1,12 @@
+{
+  "type": "rusticdelight:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/squid"
+    }
+  ],
+  "item": "rusticdelight:calamari",
+  "maxAmount": 2,
+  "minAmount": 1
+}

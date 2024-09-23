@@ -35,5 +35,5 @@ configBackground = "minecraft:textures/block/bricks.png"
     modId="farmersdelight"
     mandatory=true
     versionRange="${minecraft_version_range}"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"

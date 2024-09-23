@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "rusticdelight:block/crate_bottom",
+    "side": "rusticdelight:block/bell_pepper_green_crate_side",
+    "top": "rusticdelight:block/bell_pepper_green_crate_top"
+  }
+}

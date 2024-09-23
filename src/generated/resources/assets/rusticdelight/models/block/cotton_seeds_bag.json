@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "rusticdelight:block/bag_bottom",
+    "east": "rusticdelight:block/bag_side",
+    "north": "rusticdelight:block/bag_side_tied",
+    "particle": "rusticdelight:block/cotton_seeds_bag_top",
+    "south": "rusticdelight:block/bag_side_tied",
+    "up": "rusticdelight:block/cotton_seeds_bag_top",
+    "west": "rusticdelight:block/bag_side"
+  }
+}
