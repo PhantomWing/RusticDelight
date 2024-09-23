@@ -30,6 +30,13 @@ public class ModEvents {
                     2,
                     0.05f
             ));
+            trades.get(1).add((trader, random) -> new MerchantOffer(
+                    new ItemStack(ModItems.BELL_PEPPER_RED.get(), 24),
+                    new ItemStack(Items.EMERALD, 1),
+                    16,
+                    2,
+                    0.05f
+            ));
 
         } else if (event.getType() == VillagerProfession.FISHERMAN) {
             // Level 1 trades
@@ -60,8 +67,16 @@ public class ModEvents {
 
         genericTrades.add((trader, random) -> new MerchantOffer(
                 new ItemStack(Items.EMERALD, 1),
-                new ItemStack(ModItems.COTTON_SEEDS.get(), 12),
-                10,
+                new ItemStack(ModItems.COTTON_SEEDS.get(), 1),
+                12,
+                2,
+                0.05f
+        ));
+
+        genericTrades.add((trader, random) -> new MerchantOffer(
+                new ItemStack(Items.EMERALD, 1),
+                new ItemStack(ModItems.BELL_PEPPER_SEEDS.get(), 1),
+                12,
                 2,
                 0.05f
         ));

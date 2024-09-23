@@ -7,7 +7,9 @@
 ### Changes
 - Changed maximum stack size for pancakes and plated dishes from 64 to 16
 - Villagers can now plant Cotton and Bell Peppers
-
+- Added Red Bell Pepper trade to Farmer villager (level 1)
+- Added Bell Pepper Seeds trade to Wandering Trader
+- Rebalanced Wandering Trader trades
 
 # 1.1.0
 
