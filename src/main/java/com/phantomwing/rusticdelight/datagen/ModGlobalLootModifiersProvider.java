@@ -2,15 +2,12 @@ package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.item.ModItems;
-import com.phantomwing.rusticdelight.loot.AddItemModifier;
-import net.minecraft.core.HolderLookup;
+import com.phantomwing.rusticdelight.loot.SquidsDropCalamariModifier;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
-
-import java.util.concurrent.CompletableFuture;
 
 public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     public ModGlobalLootModifiersProvider(PackOutput output) {
@@ -20,7 +17,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     @Override
     protected void start() {
         // Entity loot tables
-        add("calamari_from_squid", new AddItemModifier(
+        add("calamari_from_squid", new SquidsDropCalamariModifier(
                 new LootItemCondition[] {
                         defaultLootTable("entities/squid"),
                 },
@@ -28,7 +25,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 1,
                 2
         ));
-        add("calamari_from_glow_squid", new AddItemModifier(
+        add("calamari_from_glow_squid", new SquidsDropCalamariModifier(
                 new LootItemCondition[] {
                         defaultLootTable("entities/glow_squid"),
                 },

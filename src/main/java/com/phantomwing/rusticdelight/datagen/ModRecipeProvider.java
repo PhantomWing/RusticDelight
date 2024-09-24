@@ -59,8 +59,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
-                .requires(ModItems.CALAMARI_SLICE.get())
-                .requires(ModItems.CALAMARI_SLICE.get())
+                .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
+                .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
                 .unlockedBy(getHasName(ModItems.CALAMARI_SLICE.get()), has(ModItems.CALAMARI_SLICE.get()))
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))

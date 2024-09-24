@@ -1,3 +1,13 @@
+# 1.1.2
+
+### Additions
+- Add configuration option `squidsDropCalamari` to disable squids droppping Calamari
+- Add mod compatibility for Cultural Delights and Miner's Delight
+
+### Changes
+- Add `bell_pepper_seeds_bag` to the `farmersdelight:straw_blocks` tag
+
+
 # 1.1.1
 
 ### Additions
@@ -10,6 +20,7 @@
 - Added Red Bell Pepper trade to Farmer villager (level 1)
 - Added Bell Pepper Seeds trade to Wandering Trader
 - Rebalanced Wandering Trader trades
+- Rebalanced wild crop spawn rates
 
 # 1.1.0
 

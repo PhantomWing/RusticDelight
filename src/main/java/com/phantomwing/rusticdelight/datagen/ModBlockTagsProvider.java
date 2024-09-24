@@ -68,7 +68,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     private void addCompatibilityTags() {
         // Farmers Delight
         this.tag(ModTags.STRAW_BLOCKS).add(
-                ModBlocks.COTTON_SEEDS_BAG.get()
+                ModBlocks.COTTON_SEEDS_BAG.get(),
+                ModBlocks.BELL_PEPPER_SEEDS_BAG.get()
         );
         this.tag(ModTags.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON.get(),

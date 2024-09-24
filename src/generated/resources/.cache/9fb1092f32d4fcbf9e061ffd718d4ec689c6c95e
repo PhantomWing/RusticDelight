@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-23T16:58:54.2623806	Recipes
+// 1.20.1	2024-09-24T12:20:58.7297261	Recipes
 62f1b0428d617894161c3839641c976a4ff88974 data/rusticdelight/advancements/recipes/cooking/batter.json
 650a02690052faf5a859729797e603504b23d16b data/rusticdelight/advancements/recipes/cooking/bell_pepper_pasta.json
 37df157239d21e1bc943db3d10b04703843bc268 data/rusticdelight/advancements/recipes/cooking/bell_pepper_soup.json
@@ -65,7 +65,7 @@ a9659a802b1ffe43fa7029376b1b27972d7879a8 data/rusticdelight/recipes/bell_pepper_
 defb7ac61395f6c3a17991322f949ace5a68e227 data/rusticdelight/recipes/bell_pepper_soup.json
 d123cc163656e7c140117ce8e053ecf35d50acee data/rusticdelight/recipes/bell_pepper_yellow_crate_from_bell_pepper_yellow.json
 92fcc924d8e194a2c0232bc95c2af89b0fe13649 data/rusticdelight/recipes/bell_pepper_yellow_from_bell_pepper_yellow_crate.json
-9cc123a09b8166e221db6af733e9fedcd7f3bc4b data/rusticdelight/recipes/calamari_roll.json
+1aeee8a9d2d79b9311d26eb3c7065f4b2129c267 data/rusticdelight/recipes/calamari_roll.json
 fe0ed3e29e5453108948cd5fc5c000ef93343323 data/rusticdelight/recipes/canvas_from_cotton_boll.json
 4474d98c626c54733017cfefcc6acf5c3b2b9cdd data/rusticdelight/recipes/chocolate_pancakes.json
 a633eea80706520372107f55d1806164c34c8e8c data/rusticdelight/recipes/cooked_calamari.json

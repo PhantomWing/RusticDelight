@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.Block;
  */
 public class CompatibilityTags
 {
+    public static final String FORGE = "forge";
+
     // Create
     public static final String CREATE = "create";
     public static final TagKey<Item> CREATE_UPRIGHT_ON_BELT = externalItemTag(CREATE, "upright_on_belt");
@@ -28,6 +30,13 @@ public class CompatibilityTags
     public static final TagKey<Item> SERENE_SEASONS_SPRING_CROPS = externalItemTag(SERENE_SEASONS, "spring_crops");
     public static final TagKey<Item> SERENE_SEASONS_SUMMER_CROPS = externalItemTag(SERENE_SEASONS, "summer_crops");
     public static final TagKey<Item> SERENE_SEASONS_WINTER_CROPS = externalItemTag(SERENE_SEASONS, "winter_crops");
+
+    // Cultural Delights
+    public static final String CULTURAL_DELIGHTS = "culturaldelights";
+
+    // Miner's Delight
+    public static final String MINERS_DELIGHT = "miners_delight";
+    public static final TagKey<Item> MINERS_DELIGHT_TENTACLES = externalItemTag(FORGE, "tentacles");
 
     private static TagKey<Item> externalItemTag(String modId, String path) {
         return ItemTags.create(new ResourceLocation(modId, path));

@@ -1,6 +1,30 @@
 {
   "values": [
     "rusticdelight:calamari",
-    "rusticdelight:calamari_slice"
+    "rusticdelight:calamari_slice",
+    {
+      "id": "culturaldelights:squid",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:glow_squid",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:raw_calamari",
+      "required": false
+    },
+    {
+      "id": "miners_delight:squid",
+      "required": false
+    },
+    {
+      "id": "miners_delight:glow_squid",
+      "required": false
+    },
+    {
+      "id": "miners_delight:tentacles",
+      "required": false
+    }
   ]
 }

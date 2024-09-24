@@ -8,6 +8,7 @@ import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -38,6 +39,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.COOKING_OIL_INGREDIENTS).add(
                 ModItems.COTTON_SEEDS.get()
         );
+
+        this.tag(ModTags.Items.CALAMARI_ROLL_INGREDIENTS).add(
+                ModItems.CALAMARI_SLICE.get()
+        ).addOptional(new ResourceLocation(CompatibilityTags.MINERS_DELIGHT,"tentacles"));
     }
 
     private void addMinecraftTags() {
@@ -73,10 +78,18 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ForgeTags.COOKED_FISHES).addTag(
                 ForgeTags.COOKED_FISHES_CALAMARI
         );
-        this.tag(ForgeTags.RAW_FISHES_CALAMARI).add(
-                ModItems.CALAMARI.get(),
-                ModItems.CALAMARI_SLICE.get()
-        );
+        this.tag(ForgeTags.RAW_FISHES_CALAMARI)
+                .add(
+                    ModItems.CALAMARI.get(),
+                    ModItems.CALAMARI_SLICE.get()
+                )
+                .addOptional(new ResourceLocation(CompatibilityTags.CULTURAL_DELIGHTS,"squid"))
+                .addOptional(new ResourceLocation(CompatibilityTags.CULTURAL_DELIGHTS,"glow_squid"))
+                .addOptional(new ResourceLocation(CompatibilityTags.CULTURAL_DELIGHTS,"raw_calamari"))
+                .addOptional(new ResourceLocation(CompatibilityTags.MINERS_DELIGHT,"squid"))
+                .addOptional(new ResourceLocation(CompatibilityTags.MINERS_DELIGHT,"glow_squid"))
+                .addOptional(new ResourceLocation(CompatibilityTags.MINERS_DELIGHT,"tentacles"));
+
         this.tag(ForgeTags.COOKED_FISHES_CALAMARI).add(
                 ModItems.COOKED_CALAMARI.get(),
                 ModItems.COOKED_CALAMARI_SLICE.get()
@@ -101,12 +114,22 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addCompatibilityTags() {
+        // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 ModItems.COOKING_OIL.get()
         );
 
+        // Farmer's Delight
         this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS).add(
                 ModItems.POTATO_SLICES.get()
+        );
+
+        // Miner's Delight
+        this.tag(CompatibilityTags.MINERS_DELIGHT_TENTACLES).add(
+                ModItems.CALAMARI.get(),
+                ModItems.CALAMARI_SLICE.get(),
+                ModItems.COOKED_CALAMARI.get(),
+                ModItems.COOKED_CALAMARI_SLICE.get()
         );
     }
 }
