@@ -1,9 +1,13 @@
 package com.phantomwing.rusticdelight;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.loot.LootModifierManager;
 import com.phantomwing.rusticdelight.ui.ModCreativeModTab;
 import com.phantomwing.rusticdelight.item.ModItems;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.fml.config.ModConfig;
@@ -21,6 +25,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+
+import java.util.Set;
 
 @Mod(RusticDelight.MOD_ID)
 public class RusticDelight {
@@ -48,6 +54,7 @@ public class RusticDelight {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             addFlowerPots();
+            registerItemSetAdditions();
         });
     }
 
@@ -56,6 +63,19 @@ public class RusticDelight {
         flowerPotBlock.addPlant(ModBlocks.WILD_COTTON.getId(), ModBlocks.POTTED_WILD_COTTON);
         flowerPotBlock.addPlant(ModBlocks.WILD_BELL_PEPPERS.getId(), ModBlocks.POTTED_WILD_BELL_PEPPERS);
     }
+
+    public static void registerItemSetAdditions() {
+        Set<Item> newWantedItems = Sets.newHashSet(
+                ModItems.BELL_PEPPER_GREEN.get(),
+                ModItems.BELL_PEPPER_YELLOW.get(),
+                ModItems.BELL_PEPPER_RED.get(),
+                ModItems.COTTON_BOLL.get(),
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COTTON_SEEDS.get());
+        newWantedItems.addAll(Villager.WANTED_ITEMS);
+        Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
+    }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

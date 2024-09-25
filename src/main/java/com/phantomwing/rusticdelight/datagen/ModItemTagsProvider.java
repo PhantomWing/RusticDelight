@@ -60,6 +60,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.OCELOT_FOOD).add(
                 ModItems.CALAMARI.get()
         );
+        this.tag(ItemTags.PIG_FOOD).addTag(
+                CommonTags.CROPS_BELL_PEPPER
+        );
         this.tag(ItemTags.FISHES).add(
                 ModItems.CALAMARI.get(),
                 ModItems.COOKED_CALAMARI.get()
@@ -67,10 +70,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addNeoForgeTags() {
-        this.tag(Tags.Items.CROPS).addTags(
-                CommonTags.CROPS_COTTON,
-                CommonTags.CROPS_BELL_PEPPER
-        );
+        this.tag(Tags.Items.CROPS)
+                .addTag(CommonTags.CROPS_COTTON)
+                .addTag(CommonTags.CROPS_BELL_PEPPER);
 
         this.tag(Tags.Items.FOODS_RAW_FISH).addTag(
                 CommonTags.FOODS_RAW_CALAMARI
