@@ -33,8 +33,8 @@ public class ModConfiguredFeatures {
         register(context, OVERWORLD_WILD_BELL_PEPPERS_KEY, Feature.FLOWER,
                 new RandomPatchConfiguration(
                         32,
-                        6,
-                        2,
+                        4,
+                        4,
                         PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_BELL_PEPPERS.get())))));
     }
 

@@ -1,5 +1,6 @@
 package com.phantomwing.rusticdelight.event;
 
+import com.phantomwing.rusticdelight.Configuration;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.item.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -32,26 +33,35 @@ public class ModEvents {
                     2,
                     0.05f
             ));
-
-        } else if (event.getType() == VillagerProfession.FISHERMAN) {
-            // Level 1 trades
             trades.get(1).add((trader, random) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 1),
-                    Optional.of(new ItemCost(ModItems.CALAMARI.get(), 6)),
-                    new ItemStack(ModItems.COOKED_CALAMARI.get(), 6),
-                    16,
-                    1,
-                    0.05f
-            ));
-
-            // Level 2 trades
-            trades.get(2).add((trader, random) -> new MerchantOffer(
-                    new ItemCost(ModItems.CALAMARI.get(), 15),
+                    new ItemCost(ModItems.BELL_PEPPER_RED.get(), 24),
                     new ItemStack(Items.EMERALD, 1),
                     16,
-                    10,
+                    2,
                     0.05f
             ));
+
+        } else if (event.getType() == VillagerProfession.FISHERMAN) {
+            if (Configuration.SQUIDS_DROP_CALAMARI.get()) {
+                // Level 1 trades
+                trades.get(1).add((trader, random) -> new MerchantOffer(
+                        new ItemCost(Items.EMERALD, 1),
+                        Optional.of(new ItemCost(ModItems.CALAMARI.get(), 6)),
+                        new ItemStack(ModItems.COOKED_CALAMARI.get(), 6),
+                        16,
+                        1,
+                        0.05f
+                ));
+
+                // Level 2 trades
+                trades.get(2).add((trader, random) -> new MerchantOffer(
+                        new ItemCost(ModItems.CALAMARI.get(), 15),
+                        new ItemStack(Items.EMERALD, 1),
+                        16,
+                        10,
+                        0.05f
+                ));
+            }
         }
     }
 
@@ -62,8 +72,16 @@ public class ModEvents {
 
         genericTrades.add((trader, random) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 1),
-                new ItemStack(ModItems.COTTON_SEEDS.get(), 12),
-                10,
+                new ItemStack(ModItems.COTTON_SEEDS.get(), 1),
+                12,
+                2,
+                0.05f
+        ));
+
+        genericTrades.add((trader, random) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 1),
+                new ItemStack(ModItems.BELL_PEPPER_SEEDS.get(), 1),
+                12,
                 2,
                 0.05f
         ));

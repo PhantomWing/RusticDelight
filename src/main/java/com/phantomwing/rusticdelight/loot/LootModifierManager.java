@@ -13,8 +13,8 @@ public class LootModifierManager {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, RusticDelight.MOD_ID);
 
-    public static final Supplier<MapCodec<AddItemModifier>> ADD_ITEM =
-            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("add_item", () -> AddItemModifier.CODEC);
+    public static final Supplier<MapCodec<SquidsDropCalamariModifier>> ADD_ITEM =
+            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("squids_drop_calamari_modifier", () -> SquidsDropCalamariModifier.CODEC);
 
     public static void register(IEventBus eventBus) {
         GLOBAL_LOOT_MODIFIER_SERIALIZERS.register(eventBus);

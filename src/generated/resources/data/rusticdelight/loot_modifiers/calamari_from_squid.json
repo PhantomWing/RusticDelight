@@ -1,5 +1,5 @@
 {
-  "type": "rusticdelight:add_item",
+  "type": "rusticdelight:squids_drop_calamari_modifier",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",

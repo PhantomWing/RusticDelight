@@ -19,6 +19,9 @@ import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
 public class ModItems {
+    public static final int BOWL_STACK_SIZE = 16;
+    public static final int BOTTLE_STACK_SIZE = 16;
+
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(RusticDelight.MOD_ID);
     public static LinkedHashSet<Supplier<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
@@ -67,9 +70,9 @@ public class ModItems {
 
     // Cooking products
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
-            new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(FoodValues.COOKING_OIL).stacksTo(16)));
+            new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(FoodValues.COOKING_OIL).stacksTo(BOTTLE_STACK_SIZE)));
     public static final DeferredItem<Item> BATTER = registerWithTab("batter", () -> new DrinkableItem(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BATTER).stacksTo(16)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BATTER).stacksTo(BOWL_STACK_SIZE)));
 
     // Sliced food
     public static final DeferredItem<Item> POTATO_SLICES = registerWithTab("potato_slices", () -> new Item(
@@ -84,15 +87,15 @@ public class ModItems {
     // Sweets
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new Item(
             new Item.Properties().food(FoodValues.FRUIT_BEIGNET)));
-    public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES);
-    public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES);
-    public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES);
+    public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
+    public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
+    public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
 
     // Basic meals
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             new Item.Properties().food(FoodValues.CALAMARI_ROLL)));
     public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new Item(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.POTATO_SALAD)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.POTATO_SALAD).stacksTo(BOWL_STACK_SIZE)));
     public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
             new Item.Properties().food(FoodValues.SPRING_ROLLS)));
     public static final DeferredItem<Item> STUFFED_BELL_PEPPER_GREEN = registerWithTab("stuffed_bell_pepper_green", () -> new Item(
@@ -104,17 +107,17 @@ public class ModItems {
 
     // Soups and stews
     public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new DrinkableItem(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BELL_PEPPER_SOUP).stacksTo(16)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BELL_PEPPER_SOUP).stacksTo(BOWL_STACK_SIZE)));
 
     // Plated meals
     public static final DeferredItem<Item> BELL_PEPPER_PASTA = registerWithTab("bell_pepper_pasta", () -> new Item(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BELL_PEPPER_PASTA)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.BELL_PEPPER_PASTA).stacksTo(BOWL_STACK_SIZE)));
     public static final DeferredItem<Item> FRIED_CALAMARI = registerWithTab("fried_calamari", () -> new Item(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_CALAMARI)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_CALAMARI).stacksTo(BOWL_STACK_SIZE)));
     public static final DeferredItem<Item> FRIED_CHICKEN = registerWithTab("fried_chicken", () -> new Item(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_CHICKEN)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_CHICKEN).stacksTo(BOWL_STACK_SIZE)));
     public static final DeferredItem<Item> FRIED_MUSHROOMS = registerWithTab("fried_mushrooms", () -> new Item(
-            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_MUSHROOMS)));
+            new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.FRIED_MUSHROOMS).stacksTo(BOWL_STACK_SIZE)));
 
     // Feasts
 
@@ -126,6 +129,10 @@ public class ModItems {
 
     public static DeferredItem<Item> registerBlockWithTab(DeferredBlock<Block> block) {
         return registerWithTab(block.getRegisteredName().replaceFirst(RusticDelight.MOD_ID + ":", ""), () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    public static DeferredItem<Item> registerBlockWithTab(DeferredBlock<Block> block, Item.Properties properties) {
+        return registerWithTab(block.getRegisteredName().replaceFirst(RusticDelight.MOD_ID + ":", ""), () -> new BlockItem(block.get(), properties));
     }
 
     public static void register(IEventBus eventBus) {

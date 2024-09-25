@@ -6,6 +6,7 @@ import com.phantomwing.rusticdelight.ui.ModCreativeModTab;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.neoforged.fml.config.ModConfig;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -28,6 +29,8 @@ public class RusticDelight {
 
     public RusticDelight(IEventBus eventBus, ModContainer modContainer) {
         eventBus.addListener(this::commonSetup);
+
+        modContainer.registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
 
         NeoForge.EVENT_BUS.register(this);
 

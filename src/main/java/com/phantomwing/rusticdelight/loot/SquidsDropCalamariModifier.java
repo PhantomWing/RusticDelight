@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.loot;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.phantomwing.rusticdelight.Configuration;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
@@ -13,21 +14,21 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 
-public class AddItemModifier extends LootModifier {
-    public static final MapCodec<AddItemModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
+public class SquidsDropCalamariModifier extends LootModifier {
+    public static final MapCodec<SquidsDropCalamariModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
             LootModifier.codecStart(inst).and(inst.group(
                     BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(e -> e.item),
                     Codec.INT.fieldOf("minAmount").forGetter(e -> e.minAmount),
                     Codec.INT.fieldOf("maxAmount").forGetter(e -> e.maxAmount)
                     )
-            ).apply(inst, AddItemModifier::new)
+            ).apply(inst, SquidsDropCalamariModifier::new)
     );
 
     private final Item item;
     private final int minAmount;
     private final int maxAmount;
 
-    public AddItemModifier(LootItemCondition[] conditionsIn, Item item, int minAmount, int maxAmount) {
+    public SquidsDropCalamariModifier(LootItemCondition[] conditionsIn, Item item, int minAmount, int maxAmount) {
         super(conditionsIn);
 
         this.item = item;
@@ -37,6 +38,10 @@ public class AddItemModifier extends LootModifier {
 
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+        if (!Configuration.SQUIDS_DROP_CALAMARI.get()) {
+            return generatedLoot;
+        }
+
         for (LootItemCondition condition: this.conditions) {
             if (!condition.test(context))
             {
