@@ -1,4 +1,4 @@
-// 1.21	2024-09-18T17:02:12.8927565	Item Models: rusticdelight
+// 1.21	2024-10-03T09:41:52.6546808	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -14,6 +14,11 @@ ba13ff0afe06d838e1ada6d13f926337ce9857b8 assets/rusticdelight/models/item/bell_p
 93f0a104e6351261faaf9ae7fbb7983f2f40a74b assets/rusticdelight/models/item/calamari.json
 67e3a7d19adf388a4ab6e7d9fb116f2d13e9d4d2 assets/rusticdelight/models/item/calamari_roll.json
 5f3e6f86fb8b757f76d792d235e6bb21b460a404 assets/rusticdelight/models/item/calamari_slice.json
+3baf44433e412a8002fd2ba513bbb2cf51b4b14a assets/rusticdelight/models/item/cherry_blossom_cheesecake.json
+1e8c175e69802f54f2a580772bfd21a1fefbb6de assets/rusticdelight/models/item/cherry_blossom_cheesecake_slice.json
+194462eb6c484cc3c266bb00ef58f27ea5f79ef5 assets/rusticdelight/models/item/cherry_blossom_cookie.json
+eebf220975f8b7ee4ad5d403c9fba0d1c9a34823 assets/rusticdelight/models/item/cherry_blossom_pancakes.json
+b24df5ed224716b9320e011548a50aa0ed733376 assets/rusticdelight/models/item/cherry_blossom_roll.json
 46eb70bcb06c5322e3db1ad0e8e0aaae8f656395 assets/rusticdelight/models/item/chocolate_pancakes.json
 454252eb084804cf07eecca0d5df1ed7597c8a6e assets/rusticdelight/models/item/cooked_calamari.json
 3ef4f0a92f7ccd4327e90637d40ce8cad9bb79db assets/rusticdelight/models/item/cooked_calamari_slice.json

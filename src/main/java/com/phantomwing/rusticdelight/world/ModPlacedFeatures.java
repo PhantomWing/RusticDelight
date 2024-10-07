@@ -1,6 +1,8 @@
 package com.phantomwing.rusticdelight.world;
 
+import com.phantomwing.rusticdelight.Configuration;
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.world.modifiers.ConfigurableRarityFilter;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -24,11 +26,11 @@ public class ModPlacedFeatures {
     private static void registerFlowers(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, WILD_COTTON_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WILD_COTTON_KEY), List.of(RarityFilter.onAverageOnceEvery(128),
+        register(context, WILD_COTTON_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WILD_COTTON_KEY), List.of(ConfigurableRarityFilter.withConfigurableChance(Configuration.CHANCE_WILD_COTTON_ID),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())
         );
 
-        register(context, WILD_BELL_PEPPERS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WILD_BELL_PEPPERS_KEY), List.of(RarityFilter.onAverageOnceEvery(20),
+        register(context, WILD_BELL_PEPPERS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_WILD_BELL_PEPPERS_KEY), List.of(ConfigurableRarityFilter.withConfigurableChance(Configuration.CHANCE_WILD_BELL_PEPPERS_ID),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())
         );
     }

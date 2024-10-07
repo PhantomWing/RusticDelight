@@ -56,11 +56,21 @@ public class ModRecipeProvider extends RecipeProvider {
         foodCookingRecipes(output, ModItems.CALAMARI, ModItems.COOKED_CALAMARI, 0.35f);
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE, ModItems.COOKED_CALAMARI_SLICE, 0.35f);
 
+        // Rolls
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL, 2)
                 .requires(ModItems.CALAMARI_SLICE)
                 .requires(ModItems.CALAMARI_SLICE)
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
                 .unlockedBy(getHasName(ModItems.CALAMARI_SLICE), has(ModItems.CALAMARI_SLICE))
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_ROLL, 2)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
+                .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
+                .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
                 .save(output);
 
@@ -76,6 +86,34 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.POTATO), has(Items.POTATO))
                 .unlockedBy(getHasName(ModItems.POTATO_SLICES), has(ModItems.POTATO_SLICES))
                 .save(output);
+
+        // Cookies
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COOKIE, 8)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
+                .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
+                .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
+                .save(output);
+
+        // Pies
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
+                .pattern("ccc")
+                .pattern("mmm")
+                .pattern("sOs")
+                .define('c', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .define('s', Items.SUGAR)
+                .define('m', CommonTags.FOODS_MILK)
+                .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get())
+                .unlockedBy(getHasName(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE), has(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE))
+                .save(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "cherry_blossom_cheesecake_from_slices"));
 
         // Pancakes
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES, 1)
@@ -94,6 +132,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("CBC")
                 .pattern("XYX")
                 .define('C', Items.COCOA_BEANS)
+                .define('M', CommonTags.FOODS_MILK)
+                .define('X', Items.SUGAR)
+                .define('B', ModItems.BATTER)
+                .define('Y', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_PANCAKES, 1)
+                .pattern("XMX")
+                .pattern("PBP")
+                .pattern("XYX")
+                .define('P', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .define('M', CommonTags.FOODS_MILK)
                 .define('X', Items.SUGAR)
                 .define('B', ModItems.BATTER)

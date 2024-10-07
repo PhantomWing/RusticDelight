@@ -6,11 +6,14 @@ import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.loot.LootModifierManager;
 import com.phantomwing.rusticdelight.ui.ModCreativeModTab;
 import com.phantomwing.rusticdelight.item.ModItems;
+import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,6 +41,9 @@ public class RusticDelight {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
 
+        // This will use NeoForge's ConfigurationScreen to display this mod's configs
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+
         NeoForge.EVENT_BUS.register(this);
 
         registerManagers(eventBus);
@@ -49,6 +55,7 @@ public class RusticDelight {
         ModBlocks.register(eventBus);
         LootModifierManager.register(eventBus);
         ModCreativeModTab.register(eventBus);
+        ModPlacementModifiers.register(eventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

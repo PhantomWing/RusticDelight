@@ -87,13 +87,21 @@ public class ModItems {
     // Sweets
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new Item(
             new Item.Properties().food(FoodValues.FRUIT_BEIGNET)));
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
+            new Item.Properties().food(FoodValues.CHERRY_BLOSSOM_COOKIE)));
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, new Item.Properties());
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new Item(
+            new Item.Properties().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
     public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
     public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
     public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, new Item.Properties().stacksTo(BOWL_STACK_SIZE));
 
     // Basic meals
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             new Item.Properties().food(FoodValues.CALAMARI_ROLL)));
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_ROLL = registerWithTab("cherry_blossom_roll", () -> new Item(
+            new Item.Properties().food(FoodValues.CHERRY_BLOSSOM_ROLL)));
     public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new Item(
             new Item.Properties().craftRemainder(Items.BOWL).food(FoodValues.POTATO_SALAD).stacksTo(BOWL_STACK_SIZE)));
     public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(

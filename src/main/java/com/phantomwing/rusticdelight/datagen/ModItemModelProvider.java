@@ -31,6 +31,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CALAMARI);
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.CALAMARI_SLICE);
+        simpleItem(ModItems.CHERRY_BLOSSOM_CHEESECAKE);
+        simpleItem(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE);
+        simpleItem(ModItems.CHERRY_BLOSSOM_COOKIE);
+        simpleItem(ModItems.CHERRY_BLOSSOM_PANCAKES);
+        simpleItem(ModItems.CHERRY_BLOSSOM_ROLL);
+        simpleItem(ModItems.CHOCOLATE_PANCAKES);
         simpleItem(ModItems.COOKED_CALAMARI);
         simpleItem(ModItems.COOKED_CALAMARI_SLICE);
         simpleItem(ModItems.COOKING_OIL);
@@ -40,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FRIED_CHICKEN);
         simpleItem(ModItems.FRIED_MUSHROOMS);
         simpleItem(ModItems.FRUIT_BEIGNET);
+        simpleItem(ModItems.HONEY_PANCAKES);
         simpleItem(ModItems.POTATO_SALAD);
         simpleItem(ModItems.POTATO_SLICES);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
@@ -49,11 +56,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.STUFFED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.STUFFED_BELL_PEPPER_RED);
         simpleItem(ModItems.SPRING_ROLLS);
+        simpleItem(ModItems.VEGETABLE_PANCAKES);
 
         // Blocks
-        simpleItem(ModItems.HONEY_PANCAKES);
-        simpleItem(ModItems.CHOCOLATE_PANCAKES);
-        simpleItem(ModItems.VEGETABLE_PANCAKES);
         simpleBlock2D(ModBlocks.WILD_COTTON);
         simpleBlock2D(ModBlocks.WILD_BELL_PEPPERS);
         simpleBlock(ModBlocks.COTTON_SEEDS_BAG);

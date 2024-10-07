@@ -2,8 +2,8 @@
   "feature": "rusticdelight:wild_bell_peppers",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
+      "type": "rusticdelight:configurable_rarity_filter",
+      "option": "wild_bell_peppers_chance"
     },
     {
       "type": "minecraft:in_square"

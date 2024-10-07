@@ -1,7 +1,7 @@
-// 1.21	2024-09-24T15:29:03.6800715	Registries
+// 1.21	2024-10-06T16:33:32.128083	Registries
 387ca416d2c5d2d0d5b1ac91bd27a3bba06a2c3f data/rusticdelight/neoforge/biome_modifier/add_wild_bell_peppers.json
 6990c91de977d05ec2d1e56cf3da4a8508f083c6 data/rusticdelight/neoforge/biome_modifier/add_wild_cotton.json
 d6274b08dfcdf9e2826a33881fa65428c1ef4d4a data/rusticdelight/worldgen/configured_feature/wild_bell_peppers.json
 6c4533571ca90198bd033fa29e64b8b364f3d193 data/rusticdelight/worldgen/configured_feature/wild_cotton.json
-c96a2dab3b683e381559c0009a3d5385a74640f3 data/rusticdelight/worldgen/placed_feature/wild_bell_peppers_placed.json
-def3d4cafcff13623fbae10ff18000d0f41069ac data/rusticdelight/worldgen/placed_feature/wild_cotton_placed.json
+b173041f5ae5e707c99f84b3d2a447c3becf3b08 data/rusticdelight/worldgen/placed_feature/wild_bell_peppers_placed.json
+9537b23c69624e2e11e1eff2d5e6d2c9fb50fbbb data/rusticdelight/worldgen/placed_feature/wild_cotton_placed.json

@@ -27,6 +27,7 @@ import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.Set;
 
@@ -58,8 +59,10 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_RED_CRATE.get());
 
+        dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
     }
 
@@ -85,6 +88,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     private void dropBellPepperCrop(Block block) {
         this.add(block, this::createBellPepperDrops);
+    }
+
+    private void dropFoodBlock(Block block, IntegerProperty servings) {
+        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings));
     }
 
     private void dropFoodBlock(Block block, IntegerProperty servings, ItemLike containerItem) {
@@ -201,6 +208,23 @@ public class BlockLootTables extends BlockLootSubProvider {
         );
     }
 
+    private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings) {
+        // Condition that checks if any servings have been taken.
+        LootItemCondition.Builder noServingsTaken = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(block)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(servings, 0));
+
+        return this.applyExplosionDecay(
+                block,
+                LootTable.lootTable()
+                        // If no servings have been taken yet, drop the block.
+                        .withPool(LootPool.lootPool()
+                                .when(noServingsTaken)
+                                .add(LootItem.lootTableItem(block))
+                        )
+        );
+    }
+
     private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings, ItemLike containerItem) {
         // Condition that checks if any servings have been taken.
         LootItemCondition.Builder noServingsTaken = LootItemBlockStatePropertyCondition
@@ -215,7 +239,7 @@ public class BlockLootTables extends BlockLootSubProvider {
                                 .when(noServingsTaken)
                                 .add(LootItem.lootTableItem(block))
                         )
-                        // Else, drop the tray.
+                        // Else, drop the container item.
                         .withPool(LootPool.lootPool()
                                 .when(InvertedLootItemCondition.invert(noServingsTaken))
                                 .add(LootItem.lootTableItem(containerItem)

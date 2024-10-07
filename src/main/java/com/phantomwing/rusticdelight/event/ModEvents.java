@@ -26,20 +26,25 @@ public class ModEvents {
 
         if (event.getType() == VillagerProfession.FARMER) {
             // Level 1 trades
-            trades.get(1).add((trader, random) -> new MerchantOffer(
-                    new ItemCost(ModItems.COTTON_BOLL.get(), 24),
-                    new ItemStack(Items.EMERALD, 1),
-                    16,
-                    2,
-                    0.05f
-            ));
-            trades.get(1).add((trader, random) -> new MerchantOffer(
-                    new ItemCost(ModItems.BELL_PEPPER_RED.get(), 24),
-                    new ItemStack(Items.EMERALD, 1),
-                    16,
-                    2,
-                    0.05f
-            ));
+            if (Configuration.CHANCE_WILD_COTTON.get() > 0) {
+                trades.get(1).add((trader, random) -> new MerchantOffer(
+                        new ItemCost(ModItems.COTTON_BOLL.get(), 24),
+                        new ItemStack(Items.EMERALD, 1),
+                        16,
+                        2,
+                        0.05f
+                ));
+            }
+
+            if (Configuration.CHANCE_WILD_BELL_PEPPERS.get() > 0) {
+                trades.get(1).add((trader, random) -> new MerchantOffer(
+                        new ItemCost(ModItems.BELL_PEPPER_RED.get(), 24),
+                        new ItemStack(Items.EMERALD, 1),
+                        16,
+                        2,
+                        0.05f
+                ));
+            }
 
         } else if (event.getType() == VillagerProfession.FISHERMAN) {
             if (Configuration.SQUIDS_DROP_CALAMARI.get()) {
@@ -70,20 +75,24 @@ public class ModEvents {
         List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
         // List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
 
-        genericTrades.add((trader, random) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 1),
-                new ItemStack(ModItems.COTTON_SEEDS.get(), 1),
-                12,
-                2,
-                0.05f
-        ));
+        if (Configuration.CHANCE_WILD_COTTON.get() > 0) {
+            genericTrades.add((trader, random) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 1),
+                    new ItemStack(ModItems.COTTON_SEEDS.get(), 1),
+                    12,
+                    2,
+                    0.05f
+            ));
+        }
 
-        genericTrades.add((trader, random) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 1),
-                new ItemStack(ModItems.BELL_PEPPER_SEEDS.get(), 1),
-                12,
-                2,
-                0.05f
-        ));
+        if (Configuration.CHANCE_WILD_BELL_PEPPERS.get() > 0) {
+            genericTrades.add((trader, random) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 1),
+                    new ItemStack(ModItems.BELL_PEPPER_SEEDS.get(), 1),
+                    12,
+                    2,
+                    0.05f
+            ));
+        }
     }
 }

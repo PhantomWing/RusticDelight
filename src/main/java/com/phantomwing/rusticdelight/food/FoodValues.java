@@ -3,7 +3,6 @@ package com.phantomwing.rusticdelight.food;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import static vectorwing.farmersdelight.common.FoodValues.*;
@@ -36,6 +35,7 @@ public class FoodValues {
             .nutrition(3).saturationModifier(0.6F).build();
 
     // Sweets
+    public static final FoodProperties CHERRY_BLOSSOM_COOKIE = (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).build();
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
@@ -43,15 +43,20 @@ public class FoodValues {
             .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F).build();
     public static final FoodProperties CHOCOLATE_PANCAKE = (new FoodProperties.Builder())
-            .nutrition(3).saturationModifier(0.6F)
+            .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F).build();
+    public static final FoodProperties CHERRY_BLOSSOM_PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties VEGETABLE_PANCAKE = (new FoodProperties.Builder())
-            .nutrition(3).saturationModifier(0.6F)
+            .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0, false, false), 1.0F).build();
 
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder())
             .nutrition(7).saturationModifier(0.6F).build();
+    public static final FoodProperties CHERRY_BLOSSOM_ROLL = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.5F).build();
     public static final FoodProperties SPRING_ROLLS = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F).build();
     public static final FoodProperties STUFFED_BELL_PEPPER = (new FoodProperties.Builder())

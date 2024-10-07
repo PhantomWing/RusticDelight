@@ -15,6 +15,7 @@ import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.function.Function;
 
@@ -54,8 +55,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
 
+        pieBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get());
+
         pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
         pancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get());
+        pancakeBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get());
         pancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get());
     }
 
@@ -109,11 +113,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
     }
 
+    private void pieBlock(Block block) {
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                            int bites = state.getValue(PieBlock.BITES);
+                            String suffix = bites == 0 ? "" : "_slice" + bites;
+                            return ConfiguredModel.builder()
+                                    .modelFile(existingModel(blockName(block) + suffix))
+                                    .rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
+                                    .build();
+                        }
+                );
+    }
+
     private void pancakeBlock(Block block) {
         getVariantBuilder(block)
                 .forAllStates(state -> {
-                            int bites = state.getValue(PancakeBlock.SERVINGS);
-                            String suffix = "_stage" + bites;
+                            int servings = state.getValue(PancakeBlock.SERVINGS);
+                            String suffix = "_stage" + servings;
                             return ConfiguredModel.builder()
                                     .modelFile(existingModel(blockName(block) + suffix))
                                     .rotationY(((int) state.getValue(PancakeBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
