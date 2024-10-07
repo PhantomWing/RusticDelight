@@ -21,6 +21,7 @@
   - Added `cooking_oil` tag for better compatability with other mods adding oil
   - Added `calamari_roll_ingredients` tag for better compatability with other mods adding calamari
 - Added language support for Simplified Chinese (Thank you Junnaturefox for providing the translations!)
+- Added language support for Vietnamese (Thank you GodOfLac for providing the translations!)
 
 ### Changes
 - Added `bell_pepper_seeds_bag` to the `farmersdelight:straw_blocks` tag
