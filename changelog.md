@@ -5,6 +5,7 @@
   - Cherry Blossom Pancakes
   - Cherry Blossom Cheesecake
   - Slice of Cherry Blossom Cheesecake
+  - Cherry Blossom Cookie
   - Cherry Blossom Roll
 - Added more mod integration for Villagers
   - Villagers can now plant Cotton and Bell Peppers

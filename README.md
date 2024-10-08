@@ -2,7 +2,7 @@
 
 ## About
 
-**Rustic Delight** is an add-on for <a href="https://modrinth.com/mod/farmers-delight">Farmer's Delight</a>, adding new crops, blocks and food items that fit very well within the design philosophy of the original mod and Minecraft itself.
+**Rustic Delight** is an add-on for <a href="https://modrinth.com/mod/farmers-delight">Farmer's Delight</a>, adding new crops, blocks and food items that fit very well with the original mod and vanilla Minecraft.
 
 **I'm still actively developing this mod, so stay tuned for more features!**
 
@@ -32,7 +32,7 @@ _**Hot tip:** Explore the Jungle to find yourself some Wild Bell Peppers._
 ### 🥞 Pancakes
 Cozy up your home by making your own Pancakes! Similar to Cake, Pancakes can be placed decoratively as a block in your world. Right-click them to eat a single pancake from the stack, giving yourself a little speed boost!
 
-_Which flavor is your favorite? **Honey**, **chocolate**, or the healthy **vegetable** variant?_
+_Which flavor is your favorite? **Honey**, **cherry blossom**, **chocolate**, or the healthy **vegetable** variant?_
 
 </br>
 
