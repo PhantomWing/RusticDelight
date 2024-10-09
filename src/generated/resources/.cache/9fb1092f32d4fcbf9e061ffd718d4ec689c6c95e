@@ -1,4 +1,4 @@
-// 1.21	2024-10-04T08:54:35.9037997	Recipes
+// 1.21	2024-10-09T20:15:01.3908371	Recipes
 80611562675a8cdf2f6e422562ce9bb5b6f6992f data/rusticdelight/advancement/recipes/cooking/batter.json
 c29e31298784c5632344ddd9a3197d84c79af0b6 data/rusticdelight/advancement/recipes/cooking/bell_pepper_pasta.json
 98914b8b7f784f2ce0fed7e0ed5b9e18b1a618e7 data/rusticdelight/advancement/recipes/cooking/bell_pepper_soup.json
@@ -88,11 +88,11 @@ cd8908f416031052b158077539543d080ccf7983 data/rusticdelight/recipe/cooked_calama
 e7100a00f937053b8641f488d6ad5013f1cf909b data/rusticdelight/recipe/cooking/bell_pepper_pasta.json
 7cb5bb8d9a62f1b95fd0ae73c3172fababddd20b data/rusticdelight/recipe/cooking/bell_pepper_soup.json
 75e9f89fb63e65a9dcb2f9e3b3850f6ff722c2b9 data/rusticdelight/recipe/cooking/cooking_oil.json
-3ede54838bd65e07f08ca82424e301f90b76f73c data/rusticdelight/recipe/cooking/fried_calamari.json
-c6cb2c370638187795cab9fd4d60a2979199b6d8 data/rusticdelight/recipe/cooking/fried_chicken.json
-bfef414d0251abfed3539ba74a4758015b8a88ae data/rusticdelight/recipe/cooking/fried_mushrooms.json
-0e90de0f10a5f8699470416ac144d61e7c2ba5af data/rusticdelight/recipe/cooking/fruit_beignet.json
-c020fe56c14f4bb8298624e0bc52bda071390130 data/rusticdelight/recipe/cooking/spring_rolls.json
+4427a8ee0167a8410061f89346db40f68cc8169d data/rusticdelight/recipe/cooking/fried_calamari.json
+9b81a161e71ff6366cf8770a89d89773d97e9fe8 data/rusticdelight/recipe/cooking/fried_chicken.json
+6bfea105a6df27c3fc6ed62accc5ace1a66c5603 data/rusticdelight/recipe/cooking/fried_mushrooms.json
+0321d90688ea5b0b2123d374b9a25ed74d94ddf1 data/rusticdelight/recipe/cooking/fruit_beignet.json
+32329f1a63ad0d8191cf3a7778d7d24e0f558e22 data/rusticdelight/recipe/cooking/spring_rolls.json
 ae3c94b96949ad8f19e598601541bbd2d4dbb0c4 data/rusticdelight/recipe/cooking/stuffed_bell_pepper_green.json
 11d6b7c38408c24c896f4421f59ac2a98bd914ca data/rusticdelight/recipe/cooking/stuffed_bell_pepper_red.json
 98553600c6c3f9bbcbb46458159cb00a0fca9ce8 data/rusticdelight/recipe/cooking/stuffed_bell_pepper_yellow.json

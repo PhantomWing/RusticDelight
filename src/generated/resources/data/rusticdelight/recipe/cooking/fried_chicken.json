@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "rusticdelight:cooking_oil"
+      "tag": "rusticdelight:cooking_oil"
     },
     {
       "item": "rusticdelight:batter"

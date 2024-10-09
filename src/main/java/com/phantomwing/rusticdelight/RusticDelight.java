@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import org.slf4j.Logger;
@@ -41,8 +42,10 @@ public class RusticDelight {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
 
-        // This will use NeoForge's ConfigurationScreen to display this mod's configs
-        modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        // This will use NeoForge's ConfigurationScreen to display this mod's configs (Client only)
+        if (FMLEnvironment.dist.isClient()) {
+            modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        }
 
         NeoForge.EVENT_BUS.register(this);
 

@@ -1,3 +1,11 @@
+# 1.2.1
+### Changes
+- Recipes using Cooking Oil now use the `cooking_oil` tag instead of the item
+
+### Fixes
+- Fixed server crashing when loading Rustic Delight (sorry!)
+
+
 # 1.2.0
 
 ### Additions

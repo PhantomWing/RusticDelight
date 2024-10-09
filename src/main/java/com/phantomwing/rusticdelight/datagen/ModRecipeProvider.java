@@ -234,7 +234,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Spring Rolls
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS, 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
-                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(CommonTags.FOODS_DOUGH)
                 .addIngredient(CommonTags.FOODS_LEAFY_GREEN)
                 .addIngredient(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
@@ -244,7 +244,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Fruit Beignet
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRUIT_BEIGNET, 1, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
-                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(CommonTags.FOODS_DOUGH)
                 .addIngredient(Tags.Items.FOODS_FRUIT)
                 .addIngredient(Items.SUGAR)
@@ -254,7 +254,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Fried Calamari
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CALAMARI, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ModItems.BATTER)
                 .addIngredient(CommonTags.FOODS_RAW_CALAMARI)
                 .addIngredient(CommonTags.FOODS_TOMATO)
@@ -264,7 +264,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Fried Chicken
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CHICKEN, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ModItems.BATTER)
                 .addIngredient(CommonTags.FOODS_RAW_CHICKEN)
                 .addIngredient(CommonTags.FOODS_ONION)
@@ -274,7 +274,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Fried Mushrooms
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_MUSHROOMS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL)
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(Items.BROWN_MUSHROOM)
                 .addIngredient(Items.RED_MUSHROOM)
                 .addIngredient(CommonTags.FOODS_ONION)
