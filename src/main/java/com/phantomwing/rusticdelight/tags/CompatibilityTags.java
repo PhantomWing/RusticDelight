@@ -6,6 +6,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import vectorwing.farmersdelight.FarmersDelight;
 
 /**
  * References to tags belonging to other mods, which Farmer's Delight innately supports.
@@ -37,6 +38,11 @@ public class CompatibilityTags
     // Miner's Delight
     public static final String MINERS_DELIGHT = "miners_delight";
     public static final TagKey<Item> MINERS_DELIGHT_TENTACLES = externalItemTag(FORGE, "tentacles");
+
+    // Frycook's Delight
+    public static final String FRYCOOKS_DELIGHT = "frycooks_delight";
+    public static final TagKey<Item> HAS_FISH_SLICE = externalItemTag(FRYCOOKS_DELIGHT, "has_fish_slice");
+    public static final TagKey<Item> FISH_SLICES = externalItemTag(FarmersDelight.MODID, "fish_slices");
 
     private static TagKey<Item> externalItemTag(String modId, String path) {
         return ItemTags.create(new ResourceLocation(modId, path));

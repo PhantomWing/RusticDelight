@@ -15,6 +15,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -25,7 +26,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
         copy(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS, vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
 
@@ -38,6 +39,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addModTags() {
         this.tag(ModTags.Items.COOKING_OIL_INGREDIENTS).add(
                 ModItems.COTTON_SEEDS.get()
+        );
+
+        this.tag(ModTags.Items.COOKING_OIL).add(
+                ModItems.COOKING_OIL.get()
+        ).addOptional(new ResourceLocation(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_oil"));
+
+        this.tag(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS).add(
+                Items.PINK_PETALS,
+                Items.CHERRY_LEAVES,
+                Items.CHERRY_SAPLING
         );
 
         this.tag(ModTags.Items.CALAMARI_ROLL_INGREDIENTS).add(
@@ -130,6 +141,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.CALAMARI_SLICE.get(),
                 ModItems.COOKED_CALAMARI.get(),
                 ModItems.COOKED_CALAMARI_SLICE.get()
+        );
+
+        // Frycook's Delight
+        this.tag(CompatibilityTags.FISH_SLICES).add(
+                ModItems.CALAMARI_SLICE.get()
+        );
+        this.tag(CompatibilityTags.HAS_FISH_SLICE).add(
+                ModItems.CALAMARI.get()
         );
     }
 }

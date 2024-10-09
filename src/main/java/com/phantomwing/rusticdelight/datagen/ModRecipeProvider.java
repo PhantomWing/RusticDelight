@@ -58,11 +58,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         foodCookingRecipes(output, ModItems.CALAMARI.get(), ModItems.COOKED_CALAMARI.get(), 0.35f);
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), 0.35f);
 
+        // Rolls
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
                 .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
                 .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
                 .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
                 .unlockedBy(getHasName(ModItems.CALAMARI_SLICE.get()), has(ModItems.CALAMARI_SLICE.get()))
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_ROLL.get(), 2)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
+                .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
+                .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
                 .save(output);
 
@@ -78,6 +88,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.POTATO), has(Items.POTATO))
                 .unlockedBy(getHasName(ModItems.POTATO_SLICES.get()), has(ModItems.POTATO_SLICES.get()))
                 .save(output);
+
+        // Cookies
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COOKIE.get(), 8)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
+                .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
+                .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
+                .save(output);
+
+        // Pies
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
+                .pattern("ccc")
+                .pattern("mmm")
+                .pattern("sOs")
+                .define('c', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .define('s', Items.SUGAR)
+                .define('m', ForgeTags.MILK)
+                .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get())
+                .unlockedBy(getHasName(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get()), has(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get()))
+                .save(output, new ResourceLocation(RusticDelight.MOD_ID, "cherry_blossom_cheesecake_from_slices"));
 
         // Pancakes
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES.get(), 1)
@@ -96,6 +134,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("CBC")
                 .pattern("XYX")
                 .define('C', Items.COCOA_BEANS)
+                .define('M', ForgeTags.MILK)
+                .define('X', Items.SUGAR)
+                .define('B', ModItems.BATTER.get())
+                .define('Y', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_PANCAKES.get(), 1)
+                .pattern("XMX")
+                .pattern("PBP")
+                .pattern("XYX")
+                .define('P', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .define('M', ForgeTags.MILK)
                 .define('X', Items.SUGAR)
                 .define('B', ModItems.BATTER.get())
@@ -187,7 +236,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Spring Rolls
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
-                .addIngredient(ModItems.COOKING_OIL.get())
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ForgeTags.DOUGH)
                 .addIngredient(ForgeTags.SALAD_INGREDIENTS)
                 .addIngredient(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
@@ -197,7 +246,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Fruit Beignet
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRUIT_BEIGNET.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
-                .addIngredient(ModItems.COOKING_OIL.get())
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ForgeTags.DOUGH)
                 .addIngredient(ForgeTags.BERRIES)
                 .addIngredient(Items.SUGAR)
@@ -207,7 +256,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Fried Calamari
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CALAMARI.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL.get())
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ModItems.BATTER.get())
                 .addIngredient(ForgeTags.RAW_FISHES_CALAMARI)
                 .addIngredient(ForgeTags.VEGETABLES_TOMATO)
@@ -217,7 +266,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Fried Chicken
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_CHICKEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL.get())
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ModItems.BATTER.get())
                 .addIngredient(ForgeTags.RAW_CHICKEN)
                 .addIngredient(ForgeTags.VEGETABLES_ONION)
@@ -227,7 +276,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Fried Mushrooms
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_MUSHROOMS.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ModItems.COOKING_OIL.get())
+                .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(Items.BROWN_MUSHROOM)
                 .addIngredient(Items.RED_MUSHROOM)
                 .addIngredient(ForgeTags.VEGETABLES_ONION)

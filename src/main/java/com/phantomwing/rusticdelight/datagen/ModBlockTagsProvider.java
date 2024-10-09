@@ -24,7 +24,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         addModTags();
         addMinecraftTags();
-        addCommonTags();
+        addForgeTags();
         addCompatibilityTags();
     }
 
@@ -52,7 +52,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 );
     }
 
-    private void addNeoForgeTags() {
+    private void addForgeTags() {
         this.tag(Tags.Blocks.STORAGE_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG.get(),
                 ModBlocks.COTTON_BOLL_CRATE.get(),
@@ -60,9 +60,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
                 ModBlocks.BELL_PEPPER_RED_CRATE.get()
         );
-    }
-
-    private void addCommonTags() {
     }
 
     private void addCompatibilityTags() {

@@ -2,8 +2,8 @@
   "feature": "rusticdelight:wild_cotton",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 128
+      "type": "rusticdelight:configurable_rarity_filter",
+      "option": "wild_cotton_chance"
     },
     {
       "type": "minecraft:in_square"

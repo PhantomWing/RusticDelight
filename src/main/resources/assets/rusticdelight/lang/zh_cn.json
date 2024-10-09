@@ -3,6 +3,8 @@
   "block.rusticdelight.bell_pepper_red_crate": "箱装红甜椒",
   "block.rusticdelight.bell_pepper_seeds_bag": "袋装甜椒种子",
   "block.rusticdelight.bell_pepper_yellow_crate": "箱装黄甜椒",
+  "block.rusticdelight.cherry_blossom_cheesecake": "樱花芝士派",
+  "block.rusticdelight.cherry_blossom_pancakes": "樱花煎饼",
   "block.rusticdelight.chocolate_pancakes": "巧克力煎饼",
   "block.rusticdelight.cotton_boll_crate": "箱装棉铃",
   "block.rusticdelight.cotton_seeds_bag": "袋装棉花种子",
@@ -21,6 +23,9 @@
   "item.rusticdelight.calamari": "生鱿鱼",
   "item.rusticdelight.calamari_roll": "鱿鱼寿司",
   "item.rusticdelight.calamari_slice": "生鱿鱼片",
+  "item.rusticdelight.cherry_blossom_cheesecake_slice": "樱花芝士派切片",
+  "item.rusticdelight.cherry_blossom_cookie": "樱花饼干",
+  "item.rusticdelight.cherry_blossom_roll": "樱花寿司",
   "item.rusticdelight.cooked_calamari": "熟鱿鱼",
   "item.rusticdelight.cooked_calamari_slice": "熟鱿鱼片",
   "item.rusticdelight.cooking_oil": "食用油",
@@ -39,5 +44,8 @@
   "item.rusticdelight.stuffed_bell_pepper_green": "填馅绿甜椒",
   "item.rusticdelight.stuffed_bell_pepper_red": "填馅红甜椒",
   "item.rusticdelight.stuffed_bell_pepper_yellow": "填馅黄甜椒",
-  "itemGroup.rusticdelight": "乡村乐事"
+  "itemGroup.rusticdelight": "乡村乐事",
+  "rusticdelight.configuration.squids_drop_calamari": "生鱿鱼",
+  "rusticdelight.configuration.wild_cotton_chance": "野生棉花赔率",
+  "rusticdelight.configuration.wild_bell_peppers_chance": "野生甜椒赔率"
 }

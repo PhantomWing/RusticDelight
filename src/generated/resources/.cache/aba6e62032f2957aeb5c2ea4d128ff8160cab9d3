@@ -1,6 +1,7 @@
-// 1.20.1	2024-09-24T10:37:39.501156	Tags for minecraft:block mod id rusticdelight
+// 1.20.1	2024-10-09T09:18:25.0998531	Tags for minecraft:block mod id rusticdelight
 054468a3032f5611746a075a67130eb7c73b1239 data/farmersdelight/tags/blocks/straw_blocks.json
 00b915307a61b0b2a799eef268224b33b24903f5 data/farmersdelight/tags/blocks/wild_crops.json
+ea09bf488d08d19273a681a24a7948abcd6f2d3a data/forge/tags/blocks/storage_blocks.json
 c124348e75bc4b4b209722c73943f1e705b7386f data/minecraft/tags/blocks/crops.json
 e999aae15e6825a415c1577f90ccb0f33e7d4768 data/minecraft/tags/blocks/mineable/axe.json
 00b915307a61b0b2a799eef268224b33b24903f5 data/minecraft/tags/blocks/small_flowers.json
