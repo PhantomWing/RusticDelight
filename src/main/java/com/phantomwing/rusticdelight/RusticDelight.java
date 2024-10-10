@@ -6,9 +6,10 @@ import com.mojang.logging.LogUtils;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.loot.ModLootModifiers;
-import com.phantomwing.rusticdelight.ui.ModCreativeModeTab;
-import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
+import com.phantomwing.rusticdelight.world.WildCropGeneration;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -30,6 +31,7 @@ import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.npc.Villager;
 
+import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
@@ -39,6 +41,15 @@ public class RusticDelight
 {
     public static final String MOD_ID = "rusticdelight";
     private static final Logger LOGGER = LogUtils.getLogger();
+
+    public static final CreativeModeTab CREATIVE_TAB = new CreativeModeTab(RusticDelight.MOD_ID)
+    {
+        @Nonnull
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.WILD_COTTON.get());
+        }
+    };
 
     public RusticDelight()
     {
@@ -58,8 +69,6 @@ public class RusticDelight
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModLootModifiers.register(eventBus);
-        ModCreativeModeTab.register(eventBus);
-        ModPlacementModifiers.register(eventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -67,6 +76,7 @@ public class RusticDelight
             addFlowerPots();
             registerCompostables();
             registerItemSetAdditions();
+            WildCropGeneration.registerWildCropGeneration();
         });
     }
 

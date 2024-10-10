@@ -34,6 +34,6 @@ configBackground = "minecraft:textures/block/bricks.png"
 [[dependencies.${mod_id}]]
     modId="farmersdelight"
     mandatory=true
-    versionRange="${minecraft_version_range}"
+    versionRange="${farmersdelight_version_range}"
     ordering="AFTER"
     side="BOTH"
