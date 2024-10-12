@@ -6,7 +6,9 @@ import com.mojang.logging.LogUtils;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.loot.ModLootModifiers;
-import com.phantomwing.rusticdelight.world.WildCropGeneration;
+import com.phantomwing.rusticdelight.world.ModConfiguredFeatures;
+import com.phantomwing.rusticdelight.world.ModPlacedFeatures;
+import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -68,7 +70,12 @@ public class RusticDelight
     private void registerManagers(IEventBus eventBus) {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+
         ModLootModifiers.register(eventBus);
+
+        ModPlacementModifiers.register(eventBus);
+        ModConfiguredFeatures.register(eventBus);
+        ModPlacedFeatures.register(eventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -76,7 +83,6 @@ public class RusticDelight
             addFlowerPots();
             registerCompostables();
             registerItemSetAdditions();
-            WildCropGeneration.registerWildCropGeneration();
         });
     }
 
