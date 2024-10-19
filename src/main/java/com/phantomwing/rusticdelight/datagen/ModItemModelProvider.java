@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BELL_PEPPER_SEEDS);
         simpleItem(ModItems.BELL_PEPPER_SOUP);
         simpleItem(ModItems.BELL_PEPPER_PASTA);
+        simpleItem(ModItems.BLACK_COFFEE);
         simpleItem(ModItems.CALAMARI);
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.CALAMARI_SLICE);

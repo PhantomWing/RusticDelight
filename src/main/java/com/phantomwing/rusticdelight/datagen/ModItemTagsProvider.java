@@ -1,6 +1,7 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
@@ -153,12 +154,28 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addCompatibilityTags() {
         // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
-                ModItems.COOKING_OIL.get()
+                ModItems.COOKING_OIL.get(),
+                ModItems.BLACK_COFFEE.get(),
+                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get()
         );
 
         // Farmer's Delight
         this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS).add(
                 ModItems.POTATO_SLICES.get()
+        );
+
+        // Serene Seasons
+        tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
+                ModItems.COTTON_SEEDS.get()
+        );
+        tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS).add(
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
+        );
+        tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS).add(
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
         );
 
         // Miner's Delight

@@ -74,6 +74,10 @@ public class ModItems {
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_RED = registerWithTab("roasted_bell_pepper_red", () -> new Item(
             new Item.Properties().food(FoodValues.ROASTED_BELL_PEPPER)));
 
+    // Drinks
+    public static final DeferredItem<Item> BLACK_COFFEE = registerWithTab("black_coffee", () -> new DrinkableItem(
+            new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(FoodValues.BLACK_COFFEE).stacksTo(BOTTLE_STACK_SIZE)));
+
     // Cooking products
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
             new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(FoodValues.COOKING_OIL).stacksTo(BOTTLE_STACK_SIZE)));

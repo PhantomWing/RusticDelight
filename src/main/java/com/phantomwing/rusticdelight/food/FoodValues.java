@@ -36,6 +36,14 @@ public class FoodValues {
     public static final FoodProperties COOKED_CALAMARI_SLICE = (new FoodProperties.Builder())
             .nutrition(3).saturationModifier(0.6F).build();
 
+    // Drinks
+    public static final FoodProperties BLACK_COFFEE = (new FoodProperties.Builder())
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1800, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 0), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
+
     // Sweets
     public static final FoodProperties CHERRY_BLOSSOM_COOKIE = (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).build();
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())

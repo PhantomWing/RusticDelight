@@ -2,6 +2,11 @@
 ### Additions
 - Added new Coffee crop
   - Obtain Coffee Beans by finding Wild Coffee in the jungle or trading with villagers
+- Added drinkable Black Coffee
+  - Drink it to gain a short speed boost
+
+### Changes
+- Added compatibility with Serene Seasons
 
 
 # 1.2.1

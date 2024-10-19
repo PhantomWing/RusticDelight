@@ -334,6 +334,18 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_RED)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.BELL_PEPPER_PASTA.getId());
+
+        // Black Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BLACK_COFFEE, 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModItems.COFFEE_BEANS)
+                .addIngredient(ModItems.COFFEE_BEANS)
+                .addIngredient(ModItems.COFFEE_BEANS)
+                .addIngredient(ModItems.COFFEE_BEANS)
+                .addIngredient(ModItems.COFFEE_BEANS)
+                .addIngredient(ModItems.COFFEE_BEANS)
+                .unlockedByAnyIngredient(ModItems.COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output, ModItems.BLACK_COFFEE.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {

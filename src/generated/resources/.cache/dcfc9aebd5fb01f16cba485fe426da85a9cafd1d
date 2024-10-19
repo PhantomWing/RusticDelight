@@ -1,5 +1,5 @@
-// 1.21	2024-10-16T20:00:49.3489641	Tags for minecraft:item mod id rusticdelight
-514f40e981eb1552517ff2c6447d13a8b94dad17 data/create/tags/item/upright_on_belt.json
+// 1.21	2024-10-19T22:44:38.2534494	Tags for minecraft:item mod id rusticdelight
+25fddc4f0dae30c253466f0f48f995543dd497fe data/create/tags/item/upright_on_belt.json
 dd2f1e75c803f490aeff0d8fceacfec6901fdff8 data/c/tags/item/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
 bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee.json
@@ -30,3 +30,6 @@ ec0254c3e9e3b022f7082c83ef9a2ad314fb3211 data/rusticdelight/tags/item/calamari_r
 c2122a7767958a3c19ee1e3fe408f30bf692f325 data/rusticdelight/tags/item/cherry_blossom_ingredients.json
 5ad45c98c655f0647bf0a4b05337e716ccb2b154 data/rusticdelight/tags/item/cooking_oil.json
 f42464433408611a5257e783da71cbe2854b85c7 data/rusticdelight/tags/item/cooking_oil_ingredients.json
+63327054c5d6984557ad1691fbe9a4f27e619300 data/sereneseasons/tags/item/autumn_crops.json
+cb96c439d46844b9a4ce7308dad3483c2634fa94 data/sereneseasons/tags/item/spring_crops.json
+1c2201126bab91a662673dabe5b0707de378861a data/sereneseasons/tags/item/summer_crops.json

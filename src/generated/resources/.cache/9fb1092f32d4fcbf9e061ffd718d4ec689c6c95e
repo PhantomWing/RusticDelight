@@ -1,7 +1,8 @@
-// 1.21	2024-10-16T20:00:49.3579635	Recipes
+// 1.21	2024-10-19T22:44:38.2579672	Recipes
 80611562675a8cdf2f6e422562ce9bb5b6f6992f data/rusticdelight/advancement/recipes/cooking/batter.json
 c29e31298784c5632344ddd9a3197d84c79af0b6 data/rusticdelight/advancement/recipes/cooking/bell_pepper_pasta.json
 98914b8b7f784f2ce0fed7e0ed5b9e18b1a618e7 data/rusticdelight/advancement/recipes/cooking/bell_pepper_soup.json
+9f862d6e944a97761de1172ac5c5958567f8dc0c data/rusticdelight/advancement/recipes/cooking/black_coffee.json
 b3a99cb6b6334eceb69657fad85d9398fd432b79 data/rusticdelight/advancement/recipes/cooking/cooking_oil.json
 a4295824985944ade2badd597f16ac108f2613fa data/rusticdelight/advancement/recipes/cooking/fried_calamari.json
 42acf512339784d72fea23be6af41d43d91cd878 data/rusticdelight/advancement/recipes/cooking/fried_chicken.json
@@ -93,6 +94,7 @@ cd8908f416031052b158077539543d080ccf7983 data/rusticdelight/recipe/cooked_calama
 710c019335e41aaae3e58aaeb4d4938154d1eb92 data/rusticdelight/recipe/cooking/batter.json
 e7100a00f937053b8641f488d6ad5013f1cf909b data/rusticdelight/recipe/cooking/bell_pepper_pasta.json
 7cb5bb8d9a62f1b95fd0ae73c3172fababddd20b data/rusticdelight/recipe/cooking/bell_pepper_soup.json
+8f8e116b48f316e5ddeb97a51c4f9b88a6e57695 data/rusticdelight/recipe/cooking/black_coffee.json
 75e9f89fb63e65a9dcb2f9e3b3850f6ff722c2b9 data/rusticdelight/recipe/cooking/cooking_oil.json
 4427a8ee0167a8410061f89346db40f68cc8169d data/rusticdelight/recipe/cooking/fried_calamari.json
 9b81a161e71ff6366cf8770a89d89773d97e9fe8 data/rusticdelight/recipe/cooking/fried_chicken.json
