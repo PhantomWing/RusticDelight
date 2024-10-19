@@ -16,6 +16,10 @@
       "can_villager_compost": true,
       "chance": 0.65
     },
+    "rusticdelight:coffee_beans": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
     "rusticdelight:cotton_boll": {
       "can_villager_compost": true,
       "chance": 0.5
@@ -29,6 +33,10 @@
       "chance": 0.5
     },
     "rusticdelight:wild_bell_peppers": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:wild_coffee": {
       "can_villager_compost": true,
       "chance": 0.65
     },

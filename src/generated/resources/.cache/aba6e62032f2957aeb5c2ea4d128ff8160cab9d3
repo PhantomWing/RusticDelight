@@ -1,9 +1,10 @@
-// 1.21	2024-09-24T15:29:03.6810725	Tags for minecraft:block mod id rusticdelight
-054468a3032f5611746a075a67130eb7c73b1239 data/farmersdelight/tags/block/straw_blocks.json
-00b915307a61b0b2a799eef268224b33b24903f5 data/farmersdelight/tags/block/wild_crops.json
-c124348e75bc4b4b209722c73943f1e705b7386f data/minecraft/tags/block/crops.json
+// 1.21	2024-10-16T20:00:49.3729645	Tags for minecraft:block mod id rusticdelight
+8f98225d96ff523e9fed96baa49f240169c0f2cf data/c/tags/block/storage_blocks.json
+c2a6f968f9e1c94504dc476edaefd7426f600bc8 data/farmersdelight/tags/block/straw_blocks.json
+e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/farmersdelight/tags/block/wild_crops.json
+9501eff076167692e3c953c9adaea9e146f77820 data/minecraft/tags/block/crops.json
 e999aae15e6825a415c1577f90ccb0f33e7d4768 data/minecraft/tags/block/mineable/axe.json
-00b915307a61b0b2a799eef268224b33b24903f5 data/minecraft/tags/block/small_flowers.json
-b9e7a9bb0854a52edbbbbf735fb4c91b20986618 data/sereneseasons/tags/block/autumn_crops.json
+e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/minecraft/tags/block/small_flowers.json
+04fc1641f87a36751a45a549c164d5fb563ea14e data/sereneseasons/tags/block/autumn_crops.json
 f41fde453f07e837ddbcb680a9007371f712e6d6 data/sereneseasons/tags/block/spring_crops.json
-c124348e75bc4b4b209722c73943f1e705b7386f data/sereneseasons/tags/block/summer_crops.json
+9501eff076167692e3c953c9adaea9e146f77820 data/sereneseasons/tags/block/summer_crops.json

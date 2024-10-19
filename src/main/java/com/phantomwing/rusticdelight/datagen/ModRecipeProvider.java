@@ -35,7 +35,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     private void buildCraftingRecipes(@NotNull RecipeOutput output) {
-        // Bell pepper
+        // Bell pepper foods
         foodCookingRecipes(output, ModItems.BELL_PEPPER_GREEN, ModItems.ROASTED_BELL_PEPPER_GREEN, 0.35f);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_YELLOW, ModItems.ROASTED_BELL_PEPPER_YELLOW, 0.35f);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_RED, ModItems.ROASTED_BELL_PEPPER_RED, 0.35f);
@@ -175,6 +175,10 @@ public class ModRecipeProvider extends RecipeProvider {
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_GREEN_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_YELLOW_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_RED_CRATE);
+
+        // Coffee
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
+        oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.BROWN_DYE, 1);
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -189,6 +193,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addResultWithChance(ModItems.BELL_PEPPER_RED, 0.3F)
                 .addResultWithChance(Items.RED_DYE, 0.1F)
                 .build(output, ModItems.WILD_BELL_PEPPERS.getId());
+
+        // Coffee
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
+                .addResultWithChance(ModItems.COFFEE_BEANS, 0.3F)
+                .addResultWithChance(Items.BROWN_DYE, 0.1F)
+                .build(output, ModItems.WILD_COFFEE.getId());
 
         // Food
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES, 2)

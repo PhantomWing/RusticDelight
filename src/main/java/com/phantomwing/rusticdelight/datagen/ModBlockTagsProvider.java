@@ -23,6 +23,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         addModTags();
         addMinecraftTags();
+        addNeoForgeTags();
         addCommonTags();
         addCompatibilityTags();
     }
@@ -41,13 +42,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.SMALL_FLOWERS).add(
                 ModBlocks.WILD_COTTON.get(),
-                ModBlocks.WILD_BELL_PEPPERS.get()
+                ModBlocks.WILD_BELL_PEPPERS.get(),
+                ModBlocks.WILD_COFFEE.get()
         );
 
         this.tag(BlockTags.CROPS)
                 .add(
                         ModBlocks.COTTON_CROP.get(),
-                        ModBlocks.BELL_PEPPER_CROP.get()
+                        ModBlocks.BELL_PEPPER_CROP.get(),
+                        ModBlocks.COFFEE_CROP.get()
                 );
     }
 
@@ -57,7 +60,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COTTON_BOLL_CRATE.get(),
                 ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
                 ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
-                ModBlocks.BELL_PEPPER_RED_CRATE.get()
+                ModBlocks.BELL_PEPPER_RED_CRATE.get(),
+                ModBlocks.COFFEE_BEANS_BAG.get()
         );
     }
 
@@ -68,11 +72,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         // Farmers Delight
         this.tag(ModTags.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG.get(),
-                ModBlocks.BELL_PEPPER_SEEDS_BAG.get()
+                ModBlocks.BELL_PEPPER_SEEDS_BAG.get(),
+                ModBlocks.COFFEE_BEANS_BAG.get()
         );
         this.tag(ModTags.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON.get(),
-                ModBlocks.WILD_BELL_PEPPERS.get()
+                ModBlocks.WILD_BELL_PEPPERS.get(),
+                ModBlocks.WILD_COFFEE.get()
         );
 
         // Serene Seasons
@@ -81,10 +87,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         );
         tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
                 ModBlocks.COTTON_CROP.get(),
-                ModBlocks.BELL_PEPPER_CROP.get()
+                ModBlocks.BELL_PEPPER_CROP.get(),
+                ModBlocks.COFFEE_CROP.get()
         );
         tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(
-                ModBlocks.BELL_PEPPER_CROP.get()
+                ModBlocks.BELL_PEPPER_CROP.get(),
+                ModBlocks.COFFEE_CROP.get()
         );
     }
 }

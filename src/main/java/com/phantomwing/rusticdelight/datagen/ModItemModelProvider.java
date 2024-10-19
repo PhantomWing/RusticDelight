@@ -37,6 +37,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CHERRY_BLOSSOM_PANCAKES);
         simpleItem(ModItems.CHERRY_BLOSSOM_ROLL);
         simpleItem(ModItems.CHOCOLATE_PANCAKES);
+        simpleItem(ModItems.COFFEE_BEANS);
         simpleItem(ModItems.COOKED_CALAMARI);
         simpleItem(ModItems.COOKED_CALAMARI_SLICE);
         simpleItem(ModItems.COOKING_OIL);
@@ -59,10 +60,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.VEGETABLE_PANCAKES);
 
         // Blocks
+        simpleBlock2D(ModBlocks.WILD_COFFEE);
         simpleBlock2D(ModBlocks.WILD_COTTON);
         simpleBlock2D(ModBlocks.WILD_BELL_PEPPERS);
         simpleBlock(ModBlocks.COTTON_SEEDS_BAG);
         simpleBlock(ModBlocks.BELL_PEPPER_SEEDS_BAG);
+        simpleBlock(ModBlocks.COFFEE_BEANS_BAG);
         simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_GREEN_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_YELLOW_CRATE);

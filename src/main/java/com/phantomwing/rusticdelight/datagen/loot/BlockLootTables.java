@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.datagen.loot;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
+import com.phantomwing.rusticdelight.block.custom.CoffeeCropBlock;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
 import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
@@ -44,15 +45,22 @@ public class BlockLootTables extends BlockLootSubProvider {
                 ModItems.COTTON_SEEDS, UniformGenerator.between(1.0F, 3.0F),
                 ModItems.COTTON_BOLL, UniformGenerator.between(1.0F, 3.0F));
         dropBellPepperCrop(ModBlocks.BELL_PEPPER_CROP.get());
+        dropCrop(
+                ModBlocks.COFFEE_CROP.get(), CoffeeCropBlock.AGE, CoffeeCropBlock.MAX_AGE,
+                ModItems.COFFEE_BEANS, UniformGenerator.between(1.0F, 1.0F),
+                ModItems.COFFEE_BEANS, UniformGenerator.between(1.0F, 4.0F));
 
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS, ModItems.COTTON_BOLL);
         dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS, ModItems.BELL_PEPPER_RED);
+        dropWildCrop(ModBlocks.WILD_COFFEE.get(), ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS);
 
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
         dropSelf(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        dropSelf(ModBlocks.COFFEE_BEANS_BAG.get());
 
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());

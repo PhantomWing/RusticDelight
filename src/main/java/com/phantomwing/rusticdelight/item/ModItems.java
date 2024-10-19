@@ -28,6 +28,7 @@ public class ModItems {
     // Seed bags
     public static final DeferredItem<Item> COTTON_SEEDS_BAG = registerBlockWithTab(ModBlocks.COTTON_SEEDS_BAG);
     public static final DeferredItem<Item> BELL_PEPPER_SEEDS_BAG = registerBlockWithTab(ModBlocks.BELL_PEPPER_SEEDS_BAG);
+    public static final DeferredItem<Item> COFFEE_BEANS_BAG = registerBlockWithTab(ModBlocks.COFFEE_BEANS_BAG);
 
     // Crop Crates
     public static final DeferredItem<Item> COTTON_BOLL_CRATE = registerBlockWithTab(ModBlocks.COTTON_BOLL_CRATE);
@@ -35,9 +36,10 @@ public class ModItems {
     public static final DeferredItem<Item> BELL_PEPPER_YELLOW_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
     public static final DeferredItem<Item> BELL_PEPPER_RED_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_RED_CRATE);
 
-    // Crops
+    // Wild crops
     public static final DeferredItem<Item> WILD_COTTON = registerBlockWithTab(ModBlocks.WILD_COTTON);
     public static final DeferredItem<Item> WILD_BELL_PEPPERS = registerBlockWithTab(ModBlocks.WILD_BELL_PEPPERS);
+    public static final DeferredItem<Item> WILD_COFFEE = registerBlockWithTab(ModBlocks.WILD_COFFEE);
 
     // Crop products
     public static final DeferredItem<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new Item(new Item.Properties()));
@@ -47,6 +49,9 @@ public class ModItems {
             new Item.Properties().food(FoodValues.BELL_PEPPER)));
     public static final DeferredItem<Item> BELL_PEPPER_RED = registerWithTab("bell_pepper_red", () -> new Item(
             new Item.Properties().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> COFFEE_BEANS = registerWithTab("coffee_beans", () -> new ItemNameBlockItem(
+            ModBlocks.COFFEE_CROP.get(),
+            new Item.Properties().food(FoodValues.COFFEE_BEANS)));
 
     // Crop seeds
     public static final DeferredItem<Item> COTTON_SEEDS = registerWithTab("cotton_seeds", () -> new ItemNameBlockItem(
@@ -55,6 +60,7 @@ public class ModItems {
     public static final DeferredItem<Item> BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", () -> new ItemNameBlockItem(
             ModBlocks.BELL_PEPPER_CROP.get(),
             new Item.Properties()));
+
 
     // Basic food
     public static final DeferredItem<Item> CALAMARI = registerWithTab("calamari", () -> new Item(

@@ -59,7 +59,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addMinecraftTags() {
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
                 ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get()
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
         );
         this.tag(ItemTags.CHICKEN_FOOD).add(
                 ModItems.COTTON_SEEDS.get(),
@@ -87,7 +88,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addNeoForgeTags() {
         this.tag(Tags.Items.CROPS)
                 .addTag(CommonTags.CROPS_COTTON)
-                .addTag(CommonTags.CROPS_BELL_PEPPER);
+                .addTag(CommonTags.CROPS_BELL_PEPPER)
+                .addTag(CommonTags.CROPS_COFFEE);
 
         this.tag(Tags.Items.FOODS_RAW_FISH).addTag(
                 CommonTags.FOODS_RAW_CALAMARI
@@ -97,7 +99,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         );
         this.tag(Tags.Items.SEEDS).add(
                 ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get()
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
         );
         this.tag(Tags.Items.FOODS_FRUIT).add(
                 Items.MELON_SLICE
@@ -116,6 +119,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.BELL_PEPPER_GREEN.get(),
                 ModItems.BELL_PEPPER_YELLOW.get(),
                 ModItems.BELL_PEPPER_RED.get()
+        );
+        this.tag(CommonTags.CROPS_COFFEE).add(
+                ModItems.COFFEE_BEANS.get()
         );
 
         // Foods

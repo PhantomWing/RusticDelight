@@ -29,8 +29,10 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.BELL_PEPPER_GREEN.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.BELL_PEPPER_YELLOW.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.BELL_PEPPER_RED.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.WILD_COFFEE.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
         ;
     }
 }

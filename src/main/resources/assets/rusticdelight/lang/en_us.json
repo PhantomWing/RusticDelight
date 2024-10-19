@@ -6,11 +6,13 @@
   "block.rusticdelight.cherry_blossom_cheesecake": "Cherry Blossom Cheesecake",
   "block.rusticdelight.cherry_blossom_pancakes": "Cherry Blossom Pancakes",
   "block.rusticdelight.chocolate_pancakes": "Chocolate Pancakes",
+  "block.rusticdelight.coffee_beans_bag": "Bag of Coffee Beans",
   "block.rusticdelight.cotton_boll_crate": "Cotton Boll Crate",
   "block.rusticdelight.cotton_seeds_bag": "Bag of Cotton Seeds",
   "block.rusticdelight.honey_pancakes": "Honey Pancakes",
   "block.rusticdelight.vegetable_pancakes": "Vegetable Pancakes",
   "block.rusticdelight.wild_bell_peppers": "Wild Bell Peppers",
+  "block.rusticdelight.wild_coffee": "Wild Coffee",
   "block.rusticdelight.wild_cotton": "Wild Cotton",
   "item.rusticdelight.baked_potato_slices": "Baked Potato Slices",
   "item.rusticdelight.batter": "Batter",
@@ -26,6 +28,7 @@
   "item.rusticdelight.cherry_blossom_cheesecake_slice": "Slice of Cherry Blossom Cheesecake",
   "item.rusticdelight.cherry_blossom_cookie": "Cherry Blossom Cookie",
   "item.rusticdelight.cherry_blossom_roll": "Cherry Blossom Roll",
+  "item.rusticdelight.coffee_beans": "Coffee Beans",
   "item.rusticdelight.cooked_calamari": "Cooked Calamari",
   "item.rusticdelight.cooked_calamari_slice": "Cooked Calamari Slice",
   "item.rusticdelight.cooking_oil": "Cooking Oil",
@@ -47,5 +50,6 @@
   "itemGroup.rusticdelight": "Rustic Delight",
   "rusticdelight.configuration.squids_drop_calamari": "Squids drop Calamari",
   "rusticdelight.configuration.wild_cotton_chance": "Wild Cotton Chance",
-  "rusticdelight.configuration.wild_bell_peppers_chance": "Wild Bell Peppers Chance"
+  "rusticdelight.configuration.wild_bell_peppers_chance": "Wild Bell Peppers Chance",
+  "rusticdelight.configuration.wild_coffee_chance": "Wild Coffee Chance"
 }

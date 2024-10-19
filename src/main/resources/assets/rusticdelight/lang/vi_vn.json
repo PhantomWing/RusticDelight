@@ -6,11 +6,13 @@
   "block.rusticdelight.cherry_blossom_cheesecake": "Bánh phô mai hoa anh đào",
   "block.rusticdelight.cherry_blossom_pancakes": "Bánh nướng chảo hoa anh đào",
   "block.rusticdelight.chocolate_pancakes": "Bánh nướng chảo sô cô la",
+  "block.rusticdelight.coffee_beans_bag": "Bao hạt cà phê",
   "block.rusticdelight.cotton_boll_crate": "Giỏ bông vải",
   "block.rusticdelight.cotton_seeds_bag": "Bao hạt giống bông",
   "block.rusticdelight.honey_pancakes": "Bánh nướng chảo mật ong",
   "block.rusticdelight.vegetable_pancakes": "Bánh nướng chảo chay",
   "block.rusticdelight.wild_bell_peppers": "Ớt chuông dại",
+  "block.rusticdelight.wild_coffee": "Cà phê dại",
   "block.rusticdelight.wild_cotton": "Bông dại",
   "item.rusticdelight.baked_potato_slices": "Khoai tây lát bỏ lò",
   "item.rusticdelight.batter": "Bột nhão",
@@ -26,6 +28,7 @@
   "item.rusticdelight.cherry_blossom_cheesecake_slice": "Miếng bánh phô mai hoa anh đào",
   "item.rusticdelight.cherry_blossom_cookie": "Bánh quy hoa anh đào",
   "item.rusticdelight.cherry_blossom_roll": "Hoa anh đào cuộn",
+  "item.rusticdelight.coffee_beans": "Hạt cà phê",
   "item.rusticdelight.cooked_calamari": "Thịt mực chín",
   "item.rusticdelight.cooked_calamari_slice": "Lát thịt mực chín",
   "item.rusticdelight.cooking_oil": "Dầu ăn",
@@ -47,5 +50,6 @@
   "itemGroup.rusticdelight": "Rustic Delight",
   "rusticdelight.configuration.squids_drop_calamari": "Thịt mực sống",
   "rusticdelight.configuration.wild_cotton_chance": "Bông dại",
-  "rusticdelight.configuration.wild_bell_peppers_chance": "Ớt chuông dại"
+  "rusticdelight.configuration.wild_bell_peppers_chance": "Ớt chuông dại",
+  "rusticdelight.configuration.wild_coffee_chance": "Cà phê dại"
 }

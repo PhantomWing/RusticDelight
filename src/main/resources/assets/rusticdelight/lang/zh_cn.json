@@ -6,11 +6,13 @@
   "block.rusticdelight.cherry_blossom_cheesecake": "樱花芝士派",
   "block.rusticdelight.cherry_blossom_pancakes": "樱花煎饼",
   "block.rusticdelight.chocolate_pancakes": "巧克力煎饼",
+  "block.rusticdelight.coffee_beans_bag": "袋装咖啡豆",
   "block.rusticdelight.cotton_boll_crate": "箱装棉铃",
   "block.rusticdelight.cotton_seeds_bag": "袋装棉花种子",
   "block.rusticdelight.honey_pancakes": "蜂蜜煎饼",
   "block.rusticdelight.vegetable_pancakes": "蔬菜煎饼",
   "block.rusticdelight.wild_bell_peppers": "野生甜椒",
+  "block.rusticdelight.wild_coffee": "野生咖啡",
   "block.rusticdelight.wild_cotton": "野生棉花",
   "item.rusticdelight.baked_potato_slices": "烤马铃薯片",
   "item.rusticdelight.batter": "面糊",
@@ -26,6 +28,7 @@
   "item.rusticdelight.cherry_blossom_cheesecake_slice": "樱花芝士派切片",
   "item.rusticdelight.cherry_blossom_cookie": "樱花饼干",
   "item.rusticdelight.cherry_blossom_roll": "樱花寿司",
+  "item.rusticdelight.coffee_beans": "咖啡豆",
   "item.rusticdelight.cooked_calamari": "熟鱿鱼",
   "item.rusticdelight.cooked_calamari_slice": "熟鱿鱼片",
   "item.rusticdelight.cooking_oil": "食用油",
@@ -47,5 +50,6 @@
   "itemGroup.rusticdelight": "乡村乐事",
   "rusticdelight.configuration.squids_drop_calamari": "生鱿鱼",
   "rusticdelight.configuration.wild_cotton_chance": "野生棉花赔率",
-  "rusticdelight.configuration.wild_bell_peppers_chance": "野生甜椒赔率"
+  "rusticdelight.configuration.wild_bell_peppers_chance": "野生甜椒赔率",
+  "rusticdelight.configuration.wild_coffee_chance": "野生咖啡"
 }

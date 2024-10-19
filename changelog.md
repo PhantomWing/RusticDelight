@@ -1,3 +1,9 @@
+# 1.3.0
+### Additions
+- Added new Coffee crop
+  - Obtain Coffee Beans by finding Wild Coffee in the jungle or trading with villagers
+
+
 # 1.2.1
 ### Changes
 - Recipes using Cooking Oil now use the `cooking_oil` tag instead of the item

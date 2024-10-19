@@ -22,6 +22,7 @@ public class CommonTags {
 
     public static final TagKey<Item> CROPS_COTTON = commonItemTag("crops/cotton");
     public static final TagKey<Item> CROPS_BELL_PEPPER = commonItemTag("crops/bell_pepper");
+    public static final TagKey<Item> CROPS_COFFEE = commonItemTag("crops/coffee");
     public static final TagKey<Item> CROPS_RICE = commonItemTag("crops/rice");
 
     public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
