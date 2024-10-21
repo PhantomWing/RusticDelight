@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "rusticdelight:item/black_coffee"
+    "layer0": "rusticdelight:item/dark_coffee"
   }
 }

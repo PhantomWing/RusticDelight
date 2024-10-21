@@ -22,7 +22,10 @@
   "item.rusticdelight.bell_pepper_seeds": "Hạt ớt chuông",
   "item.rusticdelight.bell_pepper_soup": "Súp ớt chuông",
   "item.rusticdelight.bell_pepper_yellow": "Ớt chuông vàng",
-  "item.rusticdelight.black_coffee": "Cà phê đen",
+  "item.rusticdelight.chocolate_coffee": "Cà phê sô cô la",
+  "item.rusticdelight.coffee": "Cà phê",
+  "item.rusticdelight.dark_coffee": "Cà phê đậm",
+  "item.rusticdelight.honey_coffee": "Cà phê mật ong",
   "item.rusticdelight.calamari": "Thịt mực sống",
   "item.rusticdelight.calamari_roll": "Mực cuộn",
   "item.rusticdelight.calamari_slice": "Lát thịt mực sống",
@@ -30,6 +33,8 @@
   "item.rusticdelight.cherry_blossom_cookie": "Bánh quy hoa anh đào",
   "item.rusticdelight.cherry_blossom_roll": "Hoa anh đào cuộn",
   "item.rusticdelight.coffee_beans": "Hạt cà phê",
+  "item.rusticdelight.roasted_coffee_beans": "Hạt cà phê rang",
+  "item.rusticdelight.coffee_braised_beef": "Thịt bò hầm cà phê",
   "item.rusticdelight.cooked_calamari": "Thịt mực chín",
   "item.rusticdelight.cooked_calamari_slice": "Lát thịt mực chín",
   "item.rusticdelight.cooking_oil": "Dầu ăn",
@@ -39,6 +44,7 @@
   "item.rusticdelight.fried_chicken": "Gà rán",
   "item.rusticdelight.fried_mushrooms": "Nấm chiên giòn",
   "item.rusticdelight.fruit_beignet": "Beignet nhân trái cây",
+  "item.rusticdelight.milk_coffee": "Cà phê sữa",
   "item.rusticdelight.potato_salad": "Salad khoai tây",
   "item.rusticdelight.potato_slices": "Khoai tây lát",
   "item.rusticdelight.roasted_bell_pepper_green": "Ớt chuông xanh nướng",
@@ -52,5 +58,7 @@
   "rusticdelight.configuration.squids_drop_calamari": "Thịt mực sống",
   "rusticdelight.configuration.wild_cotton_chance": "Bông dại",
   "rusticdelight.configuration.wild_bell_peppers_chance": "Ớt chuông dại",
-  "rusticdelight.configuration.wild_coffee_chance": "Cà phê dại"
+  "rusticdelight.configuration.wild_coffee_chance": "Cà phê dại",
+  "farmersdelight.tooltip.milk_coffee": "Xóa 1 hiệu ứng",
+  "farmersdelight.tooltip.chocolate_coffee": "Xóa 1 hiệu ứng xấu"
 }

@@ -82,7 +82,9 @@ public class RusticDelight {
                 ModItems.BELL_PEPPER_RED.get(),
                 ModItems.COTTON_BOLL.get(),
                 ModItems.BELL_PEPPER_SEEDS.get(),
-                ModItems.COTTON_SEEDS.get());
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get());
+
         newWantedItems.addAll(Villager.WANTED_ITEMS);
         Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
     }

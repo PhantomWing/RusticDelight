@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_beef"
+    },
+    {
+      "item": "rusticdelight:coffee"
+    },
+    {
+      "tag": "c:foods/carrot"
+    },
+    {
+      "tag": "c:foods/potato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:coffee_braised_beef"
+  }
+}

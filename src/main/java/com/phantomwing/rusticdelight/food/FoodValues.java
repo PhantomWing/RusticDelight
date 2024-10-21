@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.food;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import static vectorwing.farmersdelight.common.FoodValues.*;
@@ -19,8 +20,8 @@ public class FoodValues {
     // Basic foods
     public static final FoodProperties BELL_PEPPER = (new FoodProperties.Builder())
             .nutrition(1).saturationModifier(0.1F).build();
-    public static final FoodProperties COFFEE_BEANS = (new FoodProperties.Builder())
-            .nutrition(1).saturationModifier(0.1F).build();
+    public static final FoodProperties ROASTED_COFFEE_BEANS = (new FoodProperties.Builder())
+            .nutrition(2).saturationModifier(0.2F).build();
     public static final FoodProperties ROASTED_BELL_PEPPER = (new FoodProperties.Builder())
             .nutrition(5).saturationModifier(0.8F).build();
     public static final FoodProperties POTATO_SLICES = (new FoodProperties.Builder())
@@ -37,15 +38,39 @@ public class FoodValues {
             .nutrition(3).saturationModifier(0.6F).build();
 
     // Drinks
-    public static final FoodProperties BLACK_COFFEE = (new FoodProperties.Builder())
+    public static final FoodProperties COFFEE = (new FoodProperties.Builder())
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1800, 0), 1.0f)
             .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 0), 1.0f)
             .alwaysEdible()
             .fast()
             .build();
+    public static final FoodProperties MILK_COFFEE = (new FoodProperties.Builder())
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
+    public static final FoodProperties CHOCOLATE_COFFEE = (new FoodProperties.Builder())
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
+    public static final FoodProperties HONEY_COFFEE = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.1F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
+    public static final FoodProperties DARK_COFFEE = (new FoodProperties.Builder())
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 1), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 900, 1), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
 
     // Sweets
-    public static final FoodProperties CHERRY_BLOSSOM_COOKIE = (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).build();
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
@@ -83,7 +108,7 @@ public class FoodValues {
     // Plated foods
     public static final FoodProperties BELL_PEPPER_PASTA = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.8F)
-            .effect(() -> nourishment(SHORT_DURATION), 1.0f).build();
+            .effect(() -> nourishment(MEDIUM_DURATION), 1.0f).build();
     public static final FoodProperties FRIED_CHICKEN = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.8F)
             .effect(() -> nourishment(MEDIUM_DURATION), 1.0f).build();
@@ -93,4 +118,7 @@ public class FoodValues {
     public static final FoodProperties FRIED_MUSHROOMS = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.8F)
             .effect(() -> nourishment(MEDIUM_DURATION), 1.0f).build();
+    public static final FoodProperties COFFEE_BRAISED_BEEF = (new FoodProperties.Builder())
+            .nutrition(14).saturationModifier(0.75F)
+            .effect(() -> nourishment(LONG_DURATION), 1.0f).build();
 }

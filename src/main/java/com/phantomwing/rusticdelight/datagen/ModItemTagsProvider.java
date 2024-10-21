@@ -1,7 +1,6 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
@@ -126,6 +125,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         );
 
         // Foods
+        this.tag(CommonTags.FOODS_WATER).add(
+                Items.WATER_BUCKET
+                // Water Bottle (is added as an Ingredient at a later stage, because of NBT tags)
+        );
         this.tag(CommonTags.FOODS_BELL_PEPPER).addTag(
                 CommonTags.CROPS_BELL_PEPPER
         );
@@ -149,13 +152,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 Items.POTATO,
                 ModItems.POTATO_SLICES.get()
         );
+        this.tag(CommonTags.FOODS_CARROT).add(
+                Items.CARROT
+        );
     }
 
     private void addCompatibilityTags() {
         // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 ModItems.COOKING_OIL.get(),
-                ModItems.BLACK_COFFEE.get(),
+                ModItems.COFFEE.get(),
                 ModItems.CHERRY_BLOSSOM_CHEESECAKE.get()
         );
 

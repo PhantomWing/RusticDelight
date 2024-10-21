@@ -22,7 +22,8 @@
   "item.rusticdelight.bell_pepper_seeds": "甜椒种子",
   "item.rusticdelight.bell_pepper_soup": "甜椒汤",
   "item.rusticdelight.bell_pepper_yellow": "黄甜椒",
-  "item.rusticdelight.black_coffee": "黑咖啡",
+  "item.rusticdelight.chocolate_coffee": "巧克力咖啡",
+  "item.rusticdelight.coffee": "咖啡",
   "item.rusticdelight.calamari": "生鱿鱼",
   "item.rusticdelight.calamari_roll": "鱿鱼寿司",
   "item.rusticdelight.calamari_slice": "生鱿鱼片",
@@ -30,6 +31,8 @@
   "item.rusticdelight.cherry_blossom_cookie": "樱花饼干",
   "item.rusticdelight.cherry_blossom_roll": "樱花寿司",
   "item.rusticdelight.coffee_beans": "咖啡豆",
+  "item.rusticdelight.roasted_coffee_beans": "烘焙咖啡豆",
+  "item.rusticdelight.coffee_braised_beef": "咖啡炖牛肉",
   "item.rusticdelight.cooked_calamari": "熟鱿鱼",
   "item.rusticdelight.cooked_calamari_slice": "熟鱿鱼片",
   "item.rusticdelight.cooking_oil": "食用油",
@@ -39,6 +42,9 @@
   "item.rusticdelight.fried_chicken": "炸鸡",
   "item.rusticdelight.fried_mushrooms": "炸蘑菇",
   "item.rusticdelight.fruit_beignet": "水果贝涅饼",
+  "item.rusticdelight.milk_coffee": "咖啡加牛奶",
+  "item.rusticdelight.dark_coffee": "浓咖啡",
+  "item.rusticdelight.honey_coffee": "蜂蜜咖啡",
   "item.rusticdelight.potato_salad": "马铃薯沙拉",
   "item.rusticdelight.potato_slices": "马铃薯片",
   "item.rusticdelight.roasted_bell_pepper_green": "烤绿甜椒",
@@ -52,5 +58,7 @@
   "rusticdelight.configuration.squids_drop_calamari": "生鱿鱼",
   "rusticdelight.configuration.wild_cotton_chance": "野生棉花赔率",
   "rusticdelight.configuration.wild_bell_peppers_chance": "野生甜椒赔率",
-  "rusticdelight.configuration.wild_coffee_chance": "野生咖啡"
+  "rusticdelight.configuration.wild_coffee_chance": "野生咖啡",
+  "farmersdelight.tooltip.milk_coffee": "清除1个效果",
+  "farmersdelight.tooltip.chocolate_coffee": "清除1个有害效果"
 }

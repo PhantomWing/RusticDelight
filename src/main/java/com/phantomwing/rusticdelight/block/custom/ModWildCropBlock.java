@@ -15,6 +15,7 @@ public class ModWildCropBlock extends WildCropBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+        // Make sure we only generate this crop on dirt blocks.
         return state.is(BlockTags.DIRT);
     }
 }

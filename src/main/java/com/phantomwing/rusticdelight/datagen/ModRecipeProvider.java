@@ -5,14 +5,19 @@ import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.crafting.CompoundIngredient;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
@@ -23,6 +28,8 @@ import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider {
+    public static final float FOOD_COOKING_EXP = 0.35f;
+
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider);
     }
@@ -36,9 +43,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private void buildCraftingRecipes(@NotNull RecipeOutput output) {
         // Bell pepper foods
-        foodCookingRecipes(output, ModItems.BELL_PEPPER_GREEN, ModItems.ROASTED_BELL_PEPPER_GREEN, 0.35f);
-        foodCookingRecipes(output, ModItems.BELL_PEPPER_YELLOW, ModItems.ROASTED_BELL_PEPPER_YELLOW, 0.35f);
-        foodCookingRecipes(output, ModItems.BELL_PEPPER_RED, ModItems.ROASTED_BELL_PEPPER_RED, 0.35f);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_GREEN, ModItems.ROASTED_BELL_PEPPER_GREEN, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_YELLOW, ModItems.ROASTED_BELL_PEPPER_YELLOW, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_RED, ModItems.ROASTED_BELL_PEPPER_RED, FOOD_COOKING_EXP);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BELL_PEPPER_SOUP, 1)
                 .requires(Items.BOWL)
                 .requires(CommonTags.FOODS_BELL_PEPPER)
@@ -53,8 +60,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output);
 
         // Calamari
-        foodCookingRecipes(output, ModItems.CALAMARI, ModItems.COOKED_CALAMARI, 0.35f);
-        foodCookingRecipes(output, ModItems.CALAMARI_SLICE, ModItems.COOKED_CALAMARI_SLICE, 0.35f);
+        foodCookingRecipes(output, ModItems.CALAMARI, ModItems.COOKED_CALAMARI, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.CALAMARI_SLICE, ModItems.COOKED_CALAMARI_SLICE, FOOD_COOKING_EXP);
 
         // Rolls
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL, 2)
@@ -75,7 +82,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output);
 
         // Potato
-        foodCookingRecipes(output, ModItems.POTATO_SLICES, ModItems.BAKED_POTATO_SLICES, 0.35f);
+        foodCookingRecipes(output, ModItems.POTATO_SLICES, ModItems.BAKED_POTATO_SLICES, FOOD_COOKING_EXP);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.POTATO_SALAD, 1)
                 .requires(Items.BOWL)
@@ -178,7 +185,42 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Coffee
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
-        oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.BROWN_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.YELLOW_DYE, 1);
+        foodCookingRecipes(output, ModItems.COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS, FOOD_COOKING_EXP);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_COFFEE, 1)
+                .requires(ModItems.COFFEE)
+                .requires(CommonTags.FOODS_MILK)
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .save(output);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_COFFEE, 1)
+                .requires(ModItems.MILK_COFFEE)
+                .requires(Items.COCOA_BEANS)
+                .requires(Items.COCOA_BEANS)
+                .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
+                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.CHOCOLATE_COFFEE) + "_from_" + getItemName(ModItems.MILK_COFFEE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_COFFEE, 1)
+                .requires(ModItems.COFFEE)
+                .requires(CommonTags.FOODS_MILK)
+                .requires(Items.COCOA_BEANS)
+                .requires(Items.COCOA_BEANS)
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.CHOCOLATE_COFFEE) + "_from_" + getItemName(ModItems.COFFEE));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
+                .requires(ModItems.MILK_COFFEE)
+                .requires(Items.HONEY_BOTTLE)
+                .requires(Items.SUGAR)
+                .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
+                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.HONEY_COFFEE) + "_from_" + getItemName(ModItems.MILK_COFFEE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
+                .requires(ModItems.COFFEE)
+                .requires(CommonTags.FOODS_MILK)
+                .requires(Items.HONEY_BOTTLE)
+                .requires(Items.SUGAR)
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.HONEY_COFFEE) + "_from_" + getItemName(ModItems.COFFEE));
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -197,7 +239,7 @@ public class ModRecipeProvider extends RecipeProvider {
         // Coffee
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
                 .addResultWithChance(ModItems.COFFEE_BEANS, 0.3F)
-                .addResultWithChance(Items.BROWN_DYE, 0.1F)
+                .addResultWithChance(Items.YELLOW_DYE, 0.1F)
                 .build(output, ModItems.WILD_COFFEE.getId());
 
         // Food
@@ -335,17 +377,58 @@ public class ModRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.BELL_PEPPER_PASTA.getId());
 
-        // Black Coffee
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BLACK_COFFEE, 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(ModItems.COFFEE_BEANS)
-                .addIngredient(ModItems.COFFEE_BEANS)
-                .addIngredient(ModItems.COFFEE_BEANS)
-                .addIngredient(ModItems.COFFEE_BEANS)
-                .addIngredient(ModItems.COFFEE_BEANS)
-                .addIngredient(ModItems.COFFEE_BEANS)
-                .unlockedByAnyIngredient(ModItems.COFFEE_BEANS)
-                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .save(output, ModItems.BLACK_COFFEE.getId());
+        // Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(waterIngredient())
+                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output, ModItems.COFFEE.getId());
+
+        // Milk Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.MILK_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output, ModItems.MILK_COFFEE.getId());
+
+        // Chocolate Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHOCOLATE_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .addIngredient(Items.COCOA_BEANS, 2)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output, ModItems.CHOCOLATE_COFFEE.getId());
+
+        // Honey Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.HONEY_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .addIngredient(Items.HONEY_BOTTLE, 1)
+                .addIngredient(Items.SUGAR, 1)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output, ModItems.HONEY_COFFEE.getId());
+
+        // Dark Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(waterIngredient())
+                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 5)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output, ModItems.DARK_COFFEE.getId());
+
+        // Coffee-Braised Beef
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COFFEE_BRAISED_BEEF, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(CommonTags.FOODS_RAW_BEEF)
+                .addIngredient(ModItems.COFFEE)
+                .addIngredient(CommonTags.FOODS_CARROT)
+                .addIngredient(CommonTags.FOODS_POTATO)
+                .unlockedByAnyIngredient(ModItems.COFFEE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output, ModItems.COFFEE_BRAISED_BEEF.getId());
     }
 
     protected static void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {
@@ -426,5 +509,10 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private static Ingredient stuffedBellPepperFilling() {
         return DifferenceIngredient.of(Ingredient.of(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS), Ingredient.of(CommonTags.FOODS_BELL_PEPPER));
+    }
+
+    private static Ingredient waterIngredient() {
+        Ingredient waterBottleIngredient = DataComponentIngredient.of(true, DataComponents.POTION_CONTENTS, new PotionContents(Potions.WATER), Items.POTION);
+        return CompoundIngredient.of(waterBottleIngredient, Ingredient.of(CommonTags.FOODS_WATER));
     }
 }
