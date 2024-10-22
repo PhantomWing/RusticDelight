@@ -1,4 +1,4 @@
-// 1.21	2024-10-21T12:02:03.0599472	Item Models: rusticdelight
+// 1.21	2024-10-21T20:27:00.8042433	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -37,6 +37,7 @@ ca90b1e1071bdf904f5fded9b749de01614ba79e assets/rusticdelight/models/item/cotton
 06c056d59172bbfeb3e367c8d3cf161ba7f2dbcb assets/rusticdelight/models/item/fried_chicken.json
 8ed40e4d4244948cd50e282071e1f27f002ac782 assets/rusticdelight/models/item/fried_mushrooms.json
 146716f1a8cbb45a847e6b2a16a7239ea2ead06b assets/rusticdelight/models/item/fruit_beignet.json
+65347a409e2b5ec1b720cf5ccb6598c3e86418a4 assets/rusticdelight/models/item/golden_coffee_beans.json
 8c5d15afeda28e8fde3505db9944555b148cc8e6 assets/rusticdelight/models/item/honey_coffee.json
 3e699113e8d9460c008e0219f1b7ef033782ef65 assets/rusticdelight/models/item/honey_pancakes.json
 bf6b83dd19525f786751b04117db87f3f633a26d assets/rusticdelight/models/item/milk_coffee.json

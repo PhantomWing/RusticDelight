@@ -50,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FRIED_CHICKEN);
         simpleItem(ModItems.FRIED_MUSHROOMS);
         simpleItem(ModItems.FRUIT_BEIGNET);
+        simpleItem(ModItems.GOLDEN_COFFEE_BEANS);
         simpleItem(ModItems.HONEY_PANCAKES);
         simpleItem(ModItems.MILK_COFFEE);
         simpleItem(ModItems.POTATO_SALAD);

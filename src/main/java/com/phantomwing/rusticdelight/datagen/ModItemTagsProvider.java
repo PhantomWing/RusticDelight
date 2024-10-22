@@ -57,11 +57,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addMinecraftTags() {
+        // Villagers
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
                 ModItems.COTTON_SEEDS.get(),
                 ModItems.BELL_PEPPER_SEEDS.get(),
                 ModItems.COFFEE_BEANS.get()
         );
+
+        // Animal food
         this.tag(ItemTags.CHICKEN_FOOD).add(
                 ModItems.COTTON_SEEDS.get(),
                 ModItems.BELL_PEPPER_SEEDS.get()
@@ -79,9 +82,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.PIG_FOOD).addTag(
                 CommonTags.CROPS_BELL_PEPPER
         );
+
+        // Fish
         this.tag(ItemTags.FISHES).add(
                 ModItems.CALAMARI.get(),
                 ModItems.COOKED_CALAMARI.get()
+        );
+
+        // Piglins
+        this.tag(ItemTags.PIGLIN_LOVED).add(
+                ModItems.GOLDEN_COFFEE_BEANS.get()
         );
     }
 

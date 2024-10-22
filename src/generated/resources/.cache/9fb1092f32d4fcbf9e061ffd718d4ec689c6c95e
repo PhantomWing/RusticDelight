@@ -1,4 +1,4 @@
-// 1.21	2024-10-21T12:39:50.6045032	Recipes
+// 1.21	2024-10-21T20:27:00.7982426	Recipes
 80611562675a8cdf2f6e422562ce9bb5b6f6992f data/rusticdelight/advancement/recipes/cooking/batter.json
 c29e31298784c5632344ddd9a3197d84c79af0b6 data/rusticdelight/advancement/recipes/cooking/bell_pepper_pasta.json
 98914b8b7f784f2ce0fed7e0ed5b9e18b1a618e7 data/rusticdelight/advancement/recipes/cooking/bell_pepper_soup.json
@@ -36,6 +36,7 @@ f74b9239a80d50aa3b9e43a1f023021f968c7a29 data/rusticdelight/advancement/recipes/
 5767e8b02c896196a276beb3c225bf6f03cf1a64 data/rusticdelight/advancement/recipes/food/cooked_calamari_slice.json
 169d05553feae936f2d3ae25eb39ccb6e210ea59 data/rusticdelight/advancement/recipes/food/cooked_calamari_slice_from_campfire_cooking.json
 65e2e4734244942d6be3f7364c9b342d1ada2ec9 data/rusticdelight/advancement/recipes/food/cooked_calamari_slice_from_smoking.json
+ebbdcd94abdc8c0550619d32e4299d5a0b086c57 data/rusticdelight/advancement/recipes/food/golden_coffee_beans.json
 23c362c7d60c0b3553d48789cb9143c2275663e8 data/rusticdelight/advancement/recipes/food/honey_coffee_from_coffee.json
 d96100fdc46380ab5d9a3c75ac0a04e6e6665c6f data/rusticdelight/advancement/recipes/food/honey_coffee_from_milk_coffee.json
 55f7026e01886aabcd70c4437df6839422b18f63 data/rusticdelight/advancement/recipes/food/honey_pancakes.json
@@ -136,6 +137,7 @@ a377f0e2c00b97396d3f60a0b6cba505423d73a0 data/rusticdelight/recipe/cutting/potat
 cb7f47eb75adaa87ccf6994408f934658df759d3 data/rusticdelight/recipe/cutting/wild_cotton.json
 d4834e77cbec0dc6c0c2a59e6bb1f2e8e92e7be3 data/rusticdelight/recipe/cutting/wool.json
 b2f0e4bee886017e799022ccdcfeff1e8ea9022f data/rusticdelight/recipe/cutting/wool_carpet.json
+cb1b4618e0befb1ad9af29df358b6b9b53f6289b data/rusticdelight/recipe/golden_coffee_beans.json
 fc5c4f489029c339129fc6b91405ab55f8ebcd6e data/rusticdelight/recipe/green_dye_from_bell_pepper_green.json
 32b65ae460dae2190880c8dcb06595dcbcacf76a data/rusticdelight/recipe/honey_coffee_from_coffee.json
 247d2b2a84df97c769c93c4886f3e60b67664eec data/rusticdelight/recipe/honey_coffee_from_milk_coffee.json

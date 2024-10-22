@@ -66,6 +66,8 @@ public class ModItems {
             ModBlocks.COFFEE_CROP.get(), baseItem()));
     public static final DeferredItem<Item> ROASTED_COFFEE_BEANS = registerWithTab("roasted_coffee_beans", () -> new Item(
             baseItem().food(FoodValues.ROASTED_COFFEE_BEANS)));
+    public static final DeferredItem<Item> GOLDEN_COFFEE_BEANS = registerWithTab("golden_coffee_beans", () -> new Item(
+            baseItem().food(FoodValues.GOLDEN_COFFEE_BEANS)));
 
     // Calamari
     public static final DeferredItem<Item> CALAMARI = registerWithTab("calamari", () -> new Item(

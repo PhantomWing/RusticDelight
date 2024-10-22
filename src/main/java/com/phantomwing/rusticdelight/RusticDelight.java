@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.loot.LootModifierManager;
+import com.phantomwing.rusticdelight.potions.ModPotions;
 import com.phantomwing.rusticdelight.ui.ModCreativeModTab;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
@@ -56,6 +57,7 @@ public class RusticDelight {
     private void registerManagers(IEventBus eventBus) {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModPotions.register(eventBus);
         LootModifierManager.register(eventBus);
         ModCreativeModTab.register(eventBus);
         ModPlacementModifiers.register(eventBus);
@@ -88,7 +90,6 @@ public class RusticDelight {
         newWantedItems.addAll(Villager.WANTED_ITEMS);
         Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
     }
-
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

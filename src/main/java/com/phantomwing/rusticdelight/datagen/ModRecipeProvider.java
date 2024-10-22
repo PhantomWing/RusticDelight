@@ -188,6 +188,15 @@ public class ModRecipeProvider extends RecipeProvider {
         oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.YELLOW_DYE, 1);
         foodCookingRecipes(output, ModItems.COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS, FOOD_COOKING_EXP);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.GOLDEN_COFFEE_BEANS, 1)
+                .pattern("GGG")
+                .pattern("GCG")
+                .pattern("GGG")
+                .define('G', Items.GOLD_NUGGET)
+                .define('C', ModItems.ROASTED_COFFEE_BEANS)
+                .unlockedBy(getHasName(ModItems.COFFEE_BEANS), has(ModItems.COFFEE_BEANS))
+                .save(output);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.FOODS_MILK)
