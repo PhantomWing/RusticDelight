@@ -89,7 +89,7 @@ public class PancakeBlock extends Block {
             if (servingsTaken < MAX_SERVINGS - 1) {
                 level.setBlock(pos, state.setValue(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
             } else {
-                level.removeBlock(pos, false);
+                level.destroyBlock(pos, true);
             }
 
             // Play a sound.

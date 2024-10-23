@@ -25,11 +25,18 @@
   - Enable villager trades
   - Enable wandering trader trades
   - Enable potions (currently enables brewing a Potion of Haste)
+- Added alternative recipes for some Farmer's Delight items
+  - Fried Egg can now be obtained by putting an Egg and Cooking Oil in a Cooking Pot
+  - Fried Rice can now also be cooked by using Cooking Oil instead of an Egg
 
 ### Changes
 - Improved tooltips to include status effects
+- Wild Cotton and Wild Bell Peppers can now be obtained using Shears
+- Batter and Bell Pepper Soup now use the eating sound when consumed, to be more consistent with other soup-like items
+- Tweaked Raw Calamari food values
 
 ### Fixes
+- Fixed pancake blocks not dropping a bowl when the last serving was eaten
 - Fixed compatibility with Serene Seasons
 
 

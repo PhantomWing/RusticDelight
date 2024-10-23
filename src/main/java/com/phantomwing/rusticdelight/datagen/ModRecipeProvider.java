@@ -208,28 +208,28 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.COCOA_BEANS)
                 .requires(Items.COCOA_BEANS)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
-                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.CHOCOLATE_COFFEE) + "_from_" + getItemName(ModItems.MILK_COFFEE));
+                .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.CHOCOLATE_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.FOODS_MILK)
                 .requires(Items.COCOA_BEANS)
                 .requires(Items.COCOA_BEANS)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
-                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.CHOCOLATE_COFFEE) + "_from_" + getItemName(ModItems.COFFEE));
+                .save(output, getRecipeName(ModItems.COFFEE, ModItems.CHOCOLATE_COFFEE));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
                 .requires(ModItems.MILK_COFFEE)
                 .requires(Items.HONEY_BOTTLE)
                 .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
-                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.HONEY_COFFEE) + "_from_" + getItemName(ModItems.MILK_COFFEE));
+                .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.HONEY_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.FOODS_MILK)
                 .requires(Items.HONEY_BOTTLE)
                 .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
-                .save(output, RusticDelight.MOD_ID + ":" + getItemName(ModItems.HONEY_COFFEE) + "_from_" + getItemName(ModItems.COFFEE));
+                .save(output, getRecipeName(ModItems.COFFEE, ModItems.HONEY_COFFEE));
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -342,6 +342,24 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.FRIED_MUSHROOMS.getId());
+
+        // Fried Rice (Override)
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_RICE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(ModTags.Items.COOKING_OIL)))
+                .addIngredient(CommonTags.FOODS_CARROT)
+                .addIngredient(CommonTags.FOODS_ONION)
+                .unlockedByAnyIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get(), Items.EGG, Items.CARROT, vectorwing.farmersdelight.common.registry.ModItems.ONION.get(), ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+
+        // Fried Egg (Alternative)
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
+                .addIngredient(Items.EGG)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output, getRecipeName(ModItems.COOKING_OIL, vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get()));
 
         // Bell Pepper Soup
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BELL_PEPPER_SOUP, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)

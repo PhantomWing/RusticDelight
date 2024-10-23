@@ -98,7 +98,7 @@ public class ModItems {
     // Cooking products
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
             bottleItem().food(FoodValues.COOKING_OIL)));
-    public static final DeferredItem<Item> BATTER = registerWithTab("batter", () -> new DrinkableItem(
+    public static final DeferredItem<Item> BATTER = registerWithTab("batter", () -> new Item(
             bowlItem().food(FoodValues.BATTER)));
 
     // Sliced foods
@@ -141,7 +141,7 @@ public class ModItems {
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
 
     // Soups and stews
-    public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new DrinkableItem(
+    public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new ConsumableItem(
             bowlItem().food(FoodValues.BELL_PEPPER_SOUP), true));
 
     // Plated meals

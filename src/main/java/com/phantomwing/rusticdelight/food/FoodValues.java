@@ -31,7 +31,7 @@ public class FoodValues {
     public static final FoodProperties BAKED_POTATO_SLICES = (new FoodProperties.Builder())
             .nutrition(3).saturationModifier(0.6F).build();
     public static final FoodProperties CALAMARI = (new FoodProperties.Builder())
-            .nutrition(3).saturationModifier(0.3F).build();
+            .nutrition(2).saturationModifier(0.2F).build();
     public static final FoodProperties CALAMARI_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationModifier(0.1F).build();
     public static final FoodProperties COOKED_CALAMARI = (new FoodProperties.Builder())

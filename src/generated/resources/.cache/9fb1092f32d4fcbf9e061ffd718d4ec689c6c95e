@@ -1,4 +1,6 @@
-// 1.21	2024-10-21T20:27:00.7982426	Recipes
+// 1.21	2024-10-23T21:32:48.8056526	Recipes
+95d6e4f19004e99c40e54178e1c5e8f150d43104 data/farmersdelight/advancement/recipes/cooking/fried_rice.json
+7fb6eae28d9af9bf53b76c07a812d895f47fb283 data/farmersdelight/recipe/cooking/fried_rice.json
 80611562675a8cdf2f6e422562ce9bb5b6f6992f data/rusticdelight/advancement/recipes/cooking/batter.json
 c29e31298784c5632344ddd9a3197d84c79af0b6 data/rusticdelight/advancement/recipes/cooking/bell_pepper_pasta.json
 98914b8b7f784f2ce0fed7e0ed5b9e18b1a618e7 data/rusticdelight/advancement/recipes/cooking/bell_pepper_soup.json
@@ -9,6 +11,7 @@ b3a99cb6b6334eceb69657fad85d9398fd432b79 data/rusticdelight/advancement/recipes/
 301d3ee151ca4745ed04d9203b998e65a289148b data/rusticdelight/advancement/recipes/cooking/dark_coffee.json
 a4295824985944ade2badd597f16ac108f2613fa data/rusticdelight/advancement/recipes/cooking/fried_calamari.json
 42acf512339784d72fea23be6af41d43d91cd878 data/rusticdelight/advancement/recipes/cooking/fried_chicken.json
+5d95e2d4bd7ad32d27ddbf836dca81c33c361b4d data/rusticdelight/advancement/recipes/cooking/fried_egg_from_cooking_oil.json
 f24ec0465a2928dcd6c87b0212fe3f8f0f0ad8bc data/rusticdelight/advancement/recipes/cooking/fried_mushrooms.json
 9245fd6d0e3176a040a82661440761b99dac72dd data/rusticdelight/advancement/recipes/cooking/fruit_beignet.json
 a0c1e7e3170ee1174e9dfeeed74bd42593099d03 data/rusticdelight/advancement/recipes/cooking/honey_coffee.json
@@ -116,6 +119,7 @@ b990ae455fa002faa8287d67cdd8e7d5a5ae5c52 data/rusticdelight/recipe/cooking/coffe
 a5425d1b5966bd9feff760e32c3529bf1c903029 data/rusticdelight/recipe/cooking/dark_coffee.json
 4427a8ee0167a8410061f89346db40f68cc8169d data/rusticdelight/recipe/cooking/fried_calamari.json
 9b81a161e71ff6366cf8770a89d89773d97e9fe8 data/rusticdelight/recipe/cooking/fried_chicken.json
+e46212c46b42375c7ba03f12ce14951d5d4b5659 data/rusticdelight/recipe/cooking/fried_egg_from_cooking_oil.json
 6bfea105a6df27c3fc6ed62accc5ace1a66c5603 data/rusticdelight/recipe/cooking/fried_mushrooms.json
 0321d90688ea5b0b2123d374b9a25ed74d94ddf1 data/rusticdelight/recipe/cooking/fruit_beignet.json
 1aff564d0a0d74462401a5f20b8b849b8b01534a data/rusticdelight/recipe/cooking/honey_coffee.json

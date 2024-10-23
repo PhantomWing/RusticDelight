@@ -199,18 +199,18 @@ public class BlockLootTables extends BlockLootSubProvider {
                 LootTable.lootTable()
                         // When using Silk Touch, drop the actual block.
                         .withPool(LootPool.lootPool()
-                                .when(hasSilkTouch())
+                                .when(hasShearsOrSilkTouch())
                                 .add(LootItem.lootTableItem(block))
                         )
                         // Else, drop the seeds item (including a Fortune bonus).
                         .withPool(LootPool.lootPool()
-                                .when(doesNotHaveSilkTouch())
+                                .when(doesNotHaveShearsOrSilkTouch())
                                 .add(LootItem.lootTableItem(seedsItem)
                                         .apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE))))
                         )
                         // Additionally, add a random chance to drop the grown crop item.
                         .withPool(LootPool.lootPool()
-                                .when(AllOfCondition.allOf(doesNotHaveSilkTouch(), LootItemRandomChanceCondition.randomChance(0.3f)))
+                                .when(AllOfCondition.allOf(doesNotHaveShearsOrSilkTouch(), LootItemRandomChanceCondition.randomChance(0.3f)))
                                 .add(LootItem.lootTableItem(cropItem))
                         )
         );
@@ -250,9 +250,16 @@ public class BlockLootTables extends BlockLootSubProvider {
                         // Else, drop the container item.
                         .withPool(LootPool.lootPool()
                                 .when(InvertedLootItemCondition.invert(noServingsTaken))
-                                .add(LootItem.lootTableItem(containerItem)
-                                )
+                                .add(LootItem.lootTableItem(containerItem))
                         )
         );
+    }
+
+    private LootItemCondition.Builder hasShearsOrSilkTouch() {
+        return HAS_SHEARS.or(this.hasSilkTouch());
+    }
+
+    private LootItemCondition.Builder doesNotHaveShearsOrSilkTouch() {
+        return this.hasShearsOrSilkTouch().invert();
     }
 }
