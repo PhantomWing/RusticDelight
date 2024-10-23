@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_jungle",
-  "features": "rusticdelight:wild_bell_peppers_placed",
-  "step": "vegetal_decoration"
-}

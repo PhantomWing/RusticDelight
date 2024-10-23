@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "rusticdelight",
+	"version": "${version}",
+	"name": "Rustic Delight",
+	"description": "A rustic add-on for Farmer's Delight that adds Cotton, Bell Peppers, Pancakes, Calamari and more!",
+	"authors": [
+		"PhantomWing"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/rustic-delight",
+		"sources": "https://github.com/PhantomWing/RusticDelight"
+	},
+	"license": "CC0-1.0",
+	"icon": "logo.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phantomwing.rusticdelight.RusticDelight"
+		],
+		"fabric-datagen": [
+			"com.phantomwing.rusticdelight.RusticDelightDataGenerator"
+		],
+		"client": [
+			"com.phantomwing.rusticdelight.RusticDelightClient"
+		]
+	},
+	"mixins": [
+		"rusticdelight.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
