@@ -1,0 +1,9 @@
+{
+  "values": [
+    "rusticdelight:cooking_oil",
+    {
+      "id": "frycooks_delight:canola_oil",
+      "required": false
+    }
+  ]
+}

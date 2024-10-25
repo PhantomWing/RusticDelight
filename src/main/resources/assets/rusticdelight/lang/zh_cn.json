@@ -61,7 +61,7 @@
   "item.rusticdelight.stuffed_bell_pepper_green": "填馅绿甜椒",
   "item.rusticdelight.stuffed_bell_pepper_red": "填馅红甜椒",
   "item.rusticdelight.stuffed_bell_pepper_yellow": "填馅黄甜椒",
-  "itemGroup.rusticdelight": "乡村乐事",
+  "itemgroup.rusticdelight": "乡村乐事",
   "rusticdelight.configuration.enable_villager_trades": "启用村民交易",
   "rusticdelight.configuration.enable_wandering_trader_trades": "启用流浪商人交易",
   "rusticdelight.configuration.enable_potions": "启用药水",

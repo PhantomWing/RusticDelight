@@ -61,7 +61,7 @@
   "item.rusticdelight.stuffed_bell_pepper_green": "Stuffed Green Bell Pepper",
   "item.rusticdelight.stuffed_bell_pepper_red": "Stuffed Red Bell Pepper",
   "item.rusticdelight.stuffed_bell_pepper_yellow": "Stuffed Yellow Bell Pepper",
-  "itemGroup.rusticdelight": "Rustic Delight",
+  "itemgroup.rusticdelight": "Rustic Delight",
   "rusticdelight.configuration.enable_villager_trades": "Enable villager trades",
   "rusticdelight.configuration.enable_wandering_trader_trades": "Enable wandering trader trades",
   "rusticdelight.configuration.enable_potions": "Enable potions",

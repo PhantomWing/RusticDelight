@@ -1,5 +1,8 @@
 package com.phantomwing.rusticdelight;
 
+import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.item.ModItems;
+import com.phantomwing.rusticdelight.itemGroup.ModItemGroups;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +14,8 @@ public class RusticDelight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+		ModItemGroups.registerModItemGroups();
 	}
 }

@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/bell_pepper"
+    },
+    {
+      "tag": "c:foods/bell_pepper"
+    },
+    {
+      "tag": "c:foods/bell_pepper"
+    },
+    {
+      "tag": "c:foods/bell_pepper"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:bell_pepper_soup"
+  }
+}

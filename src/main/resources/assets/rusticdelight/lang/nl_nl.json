@@ -61,7 +61,7 @@
   "item.rusticdelight.stuffed_bell_pepper_green": "Gevulde groene paprika",
   "item.rusticdelight.stuffed_bell_pepper_red": "Gevulde rode paprika",
   "item.rusticdelight.stuffed_bell_pepper_yellow": "Gevulde gele paprika",
-  "itemGroup.rusticdelight": "Rustic Delight",
+  "itemgroup.rusticdelight": "Rustic Delight",
   "rusticdelight.configuration.enable_villager_trades": "Handelen met dorpelingen inschakelen",
   "rusticdelight.configuration.enable_wandering_trader_trades": "Handelen met handelaar inschakelen",
   "rusticdelight.configuration.enable_potions": "Drankjes inschakelen",

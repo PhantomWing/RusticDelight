@@ -11,11 +11,28 @@ base {
 }
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	maven {
+		name = "Greenhouse Maven"
+		url = 'https://repo.greenhouse.house/releases/'
+	}
+	maven {
+		name = "Greenhouse Maven (Snapshots)"
+		url = 'https://repo.greenhouse.house/snapshots/'
+	}
+
+	maven { url "https://mvn.devos.one/releases/" }
+	maven {
+		url "https://maven.jamieswhiteshirt.com/libs-release"
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
+	}
+	maven {
+		url "https://jitpack.io/" // Fabric ASM
+		content {
+			excludeGroup "io.github.fabricators_of_create"
+		}
+	}
 }
 
 fabricApi {
@@ -30,7 +47,10 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+
+	modImplementation("vectorwing:FarmersDelight:${farmers_delight_version}") {
+		exclude(group: "net.fabricmc")
+	}
 }
 
 processResources {

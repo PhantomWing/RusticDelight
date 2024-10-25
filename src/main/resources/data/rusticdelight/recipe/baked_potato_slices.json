@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "rusticdelight:potato_slices"
+  },
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:baked_potato_slices"
+  }
+}

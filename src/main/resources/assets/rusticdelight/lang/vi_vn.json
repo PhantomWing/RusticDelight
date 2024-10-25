@@ -61,7 +61,7 @@
   "item.rusticdelight.stuffed_bell_pepper_green": "Ớt chuông xanh nhồi thịt",
   "item.rusticdelight.stuffed_bell_pepper_red": "Ớt chuông đỏ nhồi thịt",
   "item.rusticdelight.stuffed_bell_pepper_yellow": "Ớt chuông vàng nhồi thịt",
-  "itemGroup.rusticdelight": "Rustic Delight",
+  "itemgroup.rusticdelight": "Rustic Delight",
   "rusticdelight.configuration.enable_villager_trades": "Cho phép giao dịch dân làng",
   "rusticdelight.configuration.enable_wandering_trader_trades": "Cho phép giao dịch của nhà giao dịch lang thang",
   "rusticdelight.configuration.enable_potions": "Kích hoạt lọ thuốc",
