@@ -3,6 +3,9 @@ package com.phantomwing.rusticdelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.itemGroup.ModItemGroups;
+import com.phantomwing.rusticdelight.potion.ModPotions;
+import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
+import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -14,8 +17,19 @@ public class RusticDelight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		// Items
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModPotions.registerModPotions();
+
+		// World
+		ModWorldGeneration.registerModWorldGeneration();
+
+		// Trades
+		ModVillagerTrades.registerVillagerTrades();
+		ModVillagerTrades.registerWanderingTraderTrades();
+
+		// UI
 		ModItemGroups.registerModItemGroups();
 	}
 }

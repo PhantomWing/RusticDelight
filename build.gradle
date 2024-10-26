@@ -33,6 +33,19 @@ repositories {
 			excludeGroup "io.github.fabricators_of_create"
 		}
 	}
+
+	maven { url "https://maven.shedaniel.me/" }
+	maven {
+		url "https://maven.ryanliptak.com/"
+	}
+
+	maven {
+		name = "CurseMaven"
+		url = "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
 }
 
 fabricApi {
@@ -51,6 +64,11 @@ dependencies {
 	modImplementation("vectorwing:FarmersDelight:${farmers_delight_version}") {
 		exclude(group: "net.fabricmc")
 	}
+
+	modImplementation "curse.maven:cloth-config-348521:5729125"
+
+	modLocalRuntime("curse.maven:jei-238222:5802635")
+	modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_version}")
 }
 
 processResources {
