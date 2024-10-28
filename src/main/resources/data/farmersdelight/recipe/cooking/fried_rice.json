@@ -7,18 +7,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "farmersdelight:rice"
+      "tag": "c:crops/rice"
     },
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "tag": "c:eggs"
-        },
-        {
-          "tag": "rusticdelight:cooking_oil"
-        }
-      ]
+      "tag": "rusticdelight:fried_rice_ingredients"
     },
     {
       "tag": "c:foods/carrot"

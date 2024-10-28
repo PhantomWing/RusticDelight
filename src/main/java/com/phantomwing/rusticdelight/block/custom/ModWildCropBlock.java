@@ -4,7 +4,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.world.WorldView;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.BlockView;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 public class ModWildCropBlock extends WildCropBlock {
@@ -12,8 +13,7 @@ public class ModWildCropBlock extends WildCropBlock {
         super(suspiciousStewEffect, effectDuration, properties);
     }
 
-    @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, net.minecraft.util.math.BlockPos pos) {
+    public boolean canPlantOnTop(BlockState state, BlockView level, BlockPos pos) {
         return state.isIn(BlockTags.DIRT);
     }
 }

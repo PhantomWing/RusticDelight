@@ -3,7 +3,7 @@
 	"id": "rusticdelight",
 	"version": "${version}",
 	"name": "Rustic Delight",
-	"description": "A rustic add-on for Farmer's Delight that adds Cotton, Bell Peppers, Pancakes, Calamari and more!",
+	"description": "A rustic add-on for Farmer's Delight that adds Coffee, Cotton, Bell Peppers, Pancakes, Calamari and more!",
 	"authors": [
 		"PhantomWing"
 	],
@@ -15,11 +15,11 @@
 	"icon": "logo.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
-			"com.phantomwing.rusticdelight.RusticDelight"
-		],
 		"fabric-datagen": [
 			"com.phantomwing.rusticdelight.RusticDelightDataGenerator"
+		],
+		"main": [
+			"com.phantomwing.rusticdelight.RusticDelight"
 		],
 		"client": [
 			"com.phantomwing.rusticdelight.RusticDelightClient"

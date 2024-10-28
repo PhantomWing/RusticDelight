@@ -9,13 +9,7 @@
       "tag": "c:foods/leafy_green"
     },
     "V": {
-      "type": "neoforge:difference",
-      "base": {
-        "tag": "c:foods/vegetable"
-      },
-      "subtracted": {
-        "item": "minecraft:melon_slice"
-      }
+      "tag": "c:foods/vegetable"
     },
     "Y": {
       "item": "minecraft:bowl"

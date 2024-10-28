@@ -105,7 +105,7 @@ public class PancakeBlock extends Block {
 
     @Override
     protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isSolid();
+        return world.getBlockState(pos.down()).isSolidBlock(world, pos);
     }
 
     @Override

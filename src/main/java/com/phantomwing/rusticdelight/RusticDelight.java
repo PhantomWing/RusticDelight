@@ -4,6 +4,7 @@ import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.itemGroup.ModItemGroups;
 import com.phantomwing.rusticdelight.potion.ModPotions;
+import com.phantomwing.rusticdelight.util.ComposterHelper;
 import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
 import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -31,5 +32,8 @@ public class RusticDelight implements ModInitializer {
 
 		// UI
 		ModItemGroups.registerModItemGroups();
+
+		ComposterHelper.registerCompostableItems();
+		//VillagerHelper.registerGatherableItems();
 	}
 }
