@@ -1,4 +1,4 @@
-// 1.21	2024-10-23T21:32:48.8056526	Recipes
+// 1.21	2024-10-28T22:19:38.7275176	Recipes
 95d6e4f19004e99c40e54178e1c5e8f150d43104 data/farmersdelight/advancement/recipes/cooking/fried_rice.json
 7fb6eae28d9af9bf53b76c07a812d895f47fb283 data/farmersdelight/recipe/cooking/fried_rice.json
 80611562675a8cdf2f6e422562ce9bb5b6f6992f data/rusticdelight/advancement/recipes/cooking/batter.json
@@ -134,6 +134,7 @@ c366e27e7cceb48e205d683b08cd3fcd07b2ae1f data/rusticdelight/recipe/cotton_seeds_
 0d8350f509102f4cdbaa5bed3306879c8ef48086 data/rusticdelight/recipe/cotton_seeds_from_cotton_seeds_bag.json
 1aa17805bd7e8b315cbf6acf780558b82953197a data/rusticdelight/recipe/cutting/baked_potato_slices.json
 e0bf89f0dc5f121a9c1f509389a53b58886f75a0 data/rusticdelight/recipe/cutting/calamari_slice.json
+10976072914f6913cbdebafa9c28f6f14ee569de data/rusticdelight/recipe/cutting/cherry_blossom_cheesecake_slice.json
 ea02a2dff2d35ce3d16ab1db6dd4a691951478ca data/rusticdelight/recipe/cutting/cooked_calamari_slice.json
 a377f0e2c00b97396d3f60a0b6cba505423d73a0 data/rusticdelight/recipe/cutting/potato_slices.json
 4bbb6cd5e856e006dc62fee794228b4ab1550db1 data/rusticdelight/recipe/cutting/wild_bell_peppers.json

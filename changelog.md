@@ -1,3 +1,8 @@
+# 1.3.1
+### Additions
+- Added German translations
+
+
 # 1.3.0
 ### Additions
 - Added new Coffee feature. Obtain Coffee Beans by finding Wild Coffee in the jungle or trading with villagers.
@@ -34,6 +39,7 @@
 - Wild Cotton and Wild Bell Peppers can now be obtained using Shears
 - Batter and Bell Pepper Soup now use the eating sound when consumed, to be more consistent with other soup-like items
 - Tweaked Raw Calamari food values
+- Cherry Blossom Cheesecake can now be cut into slices using the Cutting Board
 
 ### Fixes
 - Fixed pancake blocks not dropping a bowl when the last serving was eaten

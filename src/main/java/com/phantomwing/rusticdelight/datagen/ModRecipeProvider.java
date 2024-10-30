@@ -263,6 +263,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addResult(Items.BONE_MEAL)
                 .build(output, ModItems.COOKED_CALAMARI_SLICE.getId());
 
+        // Pie
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CHERRY_BLOSSOM_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, 4)
+                .build(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId());
+
         // Salvaging
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(Tags.Items.TOOLS_SHEAR), Items.STRING, 2)
                 .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool"));
