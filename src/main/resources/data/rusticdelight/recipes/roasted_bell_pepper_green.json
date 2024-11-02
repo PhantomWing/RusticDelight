@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "rusticdelight:bell_pepper_green"
+  },
+  "result": "rusticdelight:roasted_bell_pepper_green"
+}

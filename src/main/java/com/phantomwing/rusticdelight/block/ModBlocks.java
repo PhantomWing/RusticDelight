@@ -48,7 +48,7 @@ public class ModBlocks {
 
     // Wild crops
     public static final Block WILD_COTTON = registerBlock("wild_cotton",
-            new ModWildCropBlock(StatusEffects.WEAVING, 12, AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
+            new ModWildCropBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
     public static final Block WILD_BELL_PEPPERS = registerBlock("wild_bell_peppers",
             new ModWildCropBlock(StatusEffects.FIRE_RESISTANCE, 10, AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
     public static final Block WILD_COFFEE = registerBlock("wild_coffee",

@@ -1,6 +1,5 @@
 package com.phantomwing.rusticdelight.tag;
 
-import com.phantomwing.rusticdelight.RusticDelight;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;

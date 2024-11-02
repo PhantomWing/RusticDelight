@@ -7,21 +7,38 @@ version = project.mod_version
 group = project.maven_group
 
 base {
-	archivesName = project.archives_base_name
+	archivesName = "${project.archives_base_name}-fabric-${project.minecraft_version}"
 }
 
 repositories {
-	// Porting Lib
-	maven { url = 'https://repo.greenhouse.house/snapshots/' }
-	maven { url = "https://mvn.devos.one/snapshots/" } // Registrate, Porting Lib, Forge Tags, Milk Lib
-	maven { url = "https://mvn.devos.one/releases/" }
-	maven { url = "https://jitpack.io/" } // for Porting Lib: Fabric ASM
-
-	maven { url "https://maven.shedaniel.me/" }
+	// Farmer's Delight
 	maven {
-		url "https://maven.ryanliptak.com/"
+		name = "Greenhouse Maven"
+		url = 'https://repo.greenhouse.house/releases/'
 	}
 
+	// Porting Lib
+	maven { url "https://mvn.devos.one/releases/" }
+	maven {
+		url "https://maven.jamieswhiteshirt.com/libs-release"
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
+	}
+	maven {
+		url "https://jitpack.io/"
+		content {
+			excludeGroup "io.github.fabricators_of_create"
+		}
+	}
+
+	// JEI
+	maven {
+		name = "BlameJared"
+		url = "https://maven.blamejared.com/"
+	}
+
+	// Cloth Config, Appleskin
 	maven {
 		name = "CurseMaven"
 		url = "https://cursemaven.com"
@@ -36,24 +53,39 @@ fabricApi {
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+	// Fabric
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	for (String module in port_lib_modules.split(",")) {
-		modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
+	// Farmer's Delight
+	modImplementation("vectorwing:FarmersDelight:1.20.1-2.1.6+refabricated") {
+		exclude(group: "net.fabricmc")
 	}
 
-	modImplementation "curse.maven:farmers-delight-refabricated-993166:5852406"
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${mixin_extras_version}")))
+	annotationProcessor 'net.fabricmc:sponge-mixin:0.12.5+mixin.0.8.5'
 
-	modImplementation "curse.maven:cloth-config-348521:5729125"
+	// Porting Lib
+	include(modImplementation("com.github.Chocohead:Fabric-ASM:${fabric_asm_version}")) {
+		exclude (group: "net.fabricmc.fabric-api")
+	}
+	for (String module in port_lib_modules.split(",")) {
+		include(modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version"))
+	}
 
-	modLocalRuntime("curse.maven:jei-238222:5802635")
-	modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_version}")
+	// JEI
+	//modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+	//modCompileOnly("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
+	modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+
+	// Cloth Config
+	modLocalRuntime "curse.maven:cloth-config-348521:4973440"
+
+	// Appleskin
+	modLocalRuntime "curse.maven:appleskin-248787:4770825"
 }
 
 processResources {
@@ -65,7 +97,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 17
 }
 
 java {

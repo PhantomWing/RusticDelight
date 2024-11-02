@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_red_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "rusticdelight:bell_pepper_red"
+  }
+}

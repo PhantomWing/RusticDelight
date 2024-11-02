@@ -5,10 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
-
-import java.util.Optional;
 
 public class ModVillagerTrades {
     public static float PRICE_MULTIPLIER = 0.05f;
@@ -18,19 +15,19 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
                 factories -> {
                     factories.add(((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.COTTON_BOLL, 24),
+                            new ItemStack(ModItems.COTTON_BOLL, 24),
                             new ItemStack(Items.EMERALD, 1),
                             16, 2, PRICE_MULTIPLIER
                     )));
 
                     factories.add(((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.BELL_PEPPER_RED, 24),
+                            new ItemStack(ModItems.BELL_PEPPER_RED, 24),
                             new ItemStack(Items.EMERALD, 1),
                             16, 2, PRICE_MULTIPLIER
                     )));
 
                     factories.add(((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.COFFEE_BEANS, 26),
+                            new ItemStack(ModItems.COFFEE_BEANS, 26),
                             new ItemStack(Items.EMERALD, 1),
                             16, 2, PRICE_MULTIPLIER
                     )));
@@ -41,7 +38,7 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 5,
                 factories -> {
                     factories.add(((entity, random) -> new TradeOffer(
-                            new TradedItem(Items.EMERALD, 3),
+                            new ItemStack(Items.EMERALD, 3),
                             new ItemStack(ModItems.GOLDEN_COFFEE_BEANS, 3),
                             12, 30, PRICE_MULTIPLIER
                     )));
@@ -52,8 +49,8 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 1,
                 factories -> {
                     factories.add(((entity, random) -> new TradeOffer(
-                            new TradedItem(Items.EMERALD, 1),
-                            Optional.of(new TradedItem(ModItems.CALAMARI, 6)),
+                            new ItemStack(Items.EMERALD, 1),
+                            new ItemStack(ModItems.CALAMARI, 6),
                             new ItemStack(ModItems.COOKED_CALAMARI, 6),
                             16, 1, PRICE_MULTIPLIER
                     )));
@@ -64,7 +61,7 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 2,
                 factories -> {
                     factories.add(((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.CALAMARI, 15),
+                            new ItemStack(ModItems.CALAMARI, 15),
                             new ItemStack(Items.EMERALD, 1),
                             16, 10, PRICE_MULTIPLIER
                     )));
@@ -75,19 +72,19 @@ public class ModVillagerTrades {
     public static void registerWanderingTraderTrades() {
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
             factories.add(((entity, random) -> new TradeOffer(
-                    new TradedItem(Items.EMERALD, 1),
+                    new ItemStack(Items.EMERALD, 1),
                     new ItemStack(ModItems.COTTON_SEEDS, 1),
                     12, 2, PRICE_MULTIPLIER
             )));
 
             factories.add(((entity, random) -> new TradeOffer(
-                    new TradedItem(Items.EMERALD, 1),
+                    new ItemStack(Items.EMERALD, 1),
                     new ItemStack(ModItems.BELL_PEPPER_SEEDS, 1),
                     12, 2, PRICE_MULTIPLIER
             )));
 
             factories.add(((entity, random) -> new TradeOffer(
-                    new TradedItem(Items.EMERALD, 1),
+                    new ItemStack(Items.EMERALD, 1),
                     new ItemStack(ModItems.COFFEE_BEANS, 1),
                     12, 2, PRICE_MULTIPLIER
             )));

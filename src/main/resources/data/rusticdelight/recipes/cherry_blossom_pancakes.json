@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "rusticdelight:batter"
+    },
+    "M": {
+      "tag": "forge:milk"
+    },
+    "P": {
+      "tag": "rusticdelight:cherry_blossom_ingredients"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "XMX",
+    "PBP",
+    "XYX"
+  ],
+  "result": "rusticdelight:cherry_blossom_pancakes",
+  "show_notification": true
+}

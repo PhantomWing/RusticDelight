@@ -1,12 +1,14 @@
 package com.phantomwing.rusticdelight.block.custom;
 
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -15,6 +17,7 @@ import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -52,7 +55,16 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    protected @NotNull ActionResult onUse(BlockState state, World level, BlockPos pos, PlayerEntity player, BlockHitResult hitResult) {
+    public @NotNull ActionResult onUse(BlockState state, World level, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hitResult) {
+        if (level.isClient) {
+            if (this.consumeServing(level, pos, state, player).isAccepted()) {
+                return ActionResult.SUCCESS;
+            }
+            if (player.getStackInHand(hand).isEmpty()) {
+                return ActionResult.CONSUME;
+            }
+        }
+
         return consumeServing(level, pos, state, player);
     }
 
@@ -65,10 +77,10 @@ public class PancakeBlock extends Block {
         } else {
             // Apply food effect to the player
             if (foodProperties != null) {
-                playerIn.getHungerManager().eat(foodProperties);
-                for (FoodComponent.StatusEffectEntry effect : foodProperties.effects()) {
-                    if (!level.isClient && effect != null && level.random.nextFloat() < effect.probability()) {
-                        playerIn.addStatusEffect(effect.effect());
+                playerIn.getHungerManager().add(foodProperties.getHunger(), foodProperties.getSaturationModifier());
+                for (Pair<StatusEffectInstance, Float> effect : foodProperties.getStatusEffects()) {
+                    if (!level.isClient && effect != null && level.random.nextFloat() < effect.getSecond()) {
+                        playerIn.addStatusEffect(effect.getFirst());
                     }
                 }
             }
@@ -99,12 +111,12 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         return world.getBlockState(pos.down()).isSolidBlock(world, pos);
     }
 
@@ -124,7 +136,7 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
+    public boolean canPathfindThrough(BlockState state, BlockView level, BlockPos pos, NavigationType type) {
         return false;
     }
 }

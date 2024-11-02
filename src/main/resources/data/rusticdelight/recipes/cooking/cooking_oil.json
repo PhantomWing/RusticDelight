@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "rusticdelight:cooking_oil_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cooking_oil_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cooking_oil_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cooking_oil_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cooking_oil_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cooking_oil_ingredients"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 2,
+    "item": "rusticdelight:cooking_oil"
+  }
+}
