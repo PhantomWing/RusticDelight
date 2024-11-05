@@ -27,7 +27,7 @@ public class FoodValues {
     public static final FoodProperties BAKED_POTATO_SLICES = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.6F).build();
     public static final FoodProperties CALAMARI = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.3F).build();
+            .nutrition(2).saturationMod(0.2F).build();
     public static final FoodProperties CALAMARI_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1F).build();
     public static final FoodProperties COOKED_CALAMARI = (new FoodProperties.Builder())
@@ -68,7 +68,7 @@ public class FoodValues {
     // Plated foods
     public static final FoodProperties BELL_PEPPER_PASTA = (new FoodProperties.Builder())
             .nutrition(12).saturationMod(0.8F)
-            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), SHORT_DURATION, 0), 1.0f).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0f).build();
     public static final FoodProperties FRIED_CHICKEN = (new FoodProperties.Builder())
             .nutrition(12).saturationMod(0.8F)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0f).build();
