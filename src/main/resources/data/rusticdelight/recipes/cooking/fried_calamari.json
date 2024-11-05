@@ -13,10 +13,10 @@
       "item": "rusticdelight:batter"
     },
     {
-      "tag": "forge:raw_fishes/calamari"
+      "tag": "c:foods/raw_fishes/calamari"
     },
     {
-      "tag": "forge:vegetables/tomato"
+      "tag": "c:foods/vegetables/tomatoes"
     }
   ],
   "recipe_book_tab": "meals",

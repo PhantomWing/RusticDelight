@@ -12,5 +12,7 @@
       "item": "minecraft:cocoa_beans"
     }
   ],
-  "result": "rusticdelight:chocolate_coffee"
+  "result": {
+    "item": "rusticdelight:chocolate_coffee"
+  }
 }

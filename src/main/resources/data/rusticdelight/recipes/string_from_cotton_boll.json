@@ -6,5 +6,7 @@
       "item": "rusticdelight:cotton_boll"
     }
   ],
-  "result": "minecraft:string"
+  "result": {
+    "item": "minecraft:string"
+  }
 }

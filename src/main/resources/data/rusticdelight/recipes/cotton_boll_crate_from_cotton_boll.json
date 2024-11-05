@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "rusticdelight:cotton_boll"
@@ -11,6 +11,8 @@
     "###",
     "###"
   ],
-  "result": "rusticdelight:cotton_boll_crate",
+  "result": {
+    "item": "rusticdelight:cotton_boll_crate"
+  },
   "show_notification": true
 }

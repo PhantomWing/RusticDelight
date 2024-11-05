@@ -7,10 +7,10 @@
       "tag": "rusticdelight:cooking_oil"
     },
     {
-      "tag": "forge:dough"
+      "tag": "c:foods/doughs"
     },
     {
-      "tag": "forge:berries"
+      "tag": "c:foods/berries"
     },
     {
       "item": "minecraft:sugar"

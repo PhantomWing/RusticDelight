@@ -7,10 +7,10 @@
       "tag": "rusticdelight:cooking_oil"
     },
     {
-      "tag": "forge:dough"
+      "tag": "c:foods/doughs"
     },
     {
-      "tag": "forge:salad_ingredients"
+      "tag": "c:salad_ingredients"
     },
     {
       "tag": "farmersdelight:cabbage_roll_ingredients"

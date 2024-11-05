@@ -7,10 +7,10 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "c:foods/milks"
+      "tag": "c:milks"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     },
     {
       "item": "minecraft:wheat"

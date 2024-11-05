@@ -6,5 +6,7 @@
       "item": "rusticdelight:bell_pepper_red"
     }
   ],
-  "result": "minecraft:red_dye"
+  "result": {
+    "item": "minecraft:red_dye"
+  }
 }

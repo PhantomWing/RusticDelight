@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:bell_pepper_yellow"
+            "items": [
+              "rusticdelight:bell_pepper_yellow"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_bell_pepper_yellow"
+      "has_bell_pepper_yellow",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:roasted_bell_pepper_yellow_from_campfire_cooking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:bell_pepper_red"
+            "items": [
+              "rusticdelight:bell_pepper_red"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_bell_pepper_red"
+      "has_bell_pepper_red",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:roasted_bell_pepper_red_from_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

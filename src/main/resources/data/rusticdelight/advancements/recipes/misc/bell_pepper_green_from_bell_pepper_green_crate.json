@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:bell_pepper_green_crate"
+            "items": [
+              "rusticdelight:bell_pepper_green_crate"
+            ]
           }
         ]
       },

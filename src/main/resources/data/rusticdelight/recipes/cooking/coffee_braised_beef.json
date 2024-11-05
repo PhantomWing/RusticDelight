@@ -13,10 +13,10 @@
       "item": "rusticdelight:coffee"
     },
     {
-      "tag": "c:foods/carrot"
+      "tag": "c:foods/vegetables/carrots"
     },
     {
-      "tag": "c:foods/potato"
+      "tag": "c:foods/vegetables/potatoes"
     }
   ],
   "recipe_book_tab": "meals",

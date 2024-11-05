@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:batter"
+            "items": [
+              "rusticdelight:batter"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_batter"
+      "has_batter",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:honey_pancakes"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

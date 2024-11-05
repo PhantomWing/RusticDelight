@@ -16,7 +16,7 @@
       "item": "minecraft:red_mushroom"
     },
     {
-      "tag": "forge:vegetables/onion"
+      "tag": "c:foods/vegetables/onions"
     }
   ],
   "recipe_book_tab": "meals",

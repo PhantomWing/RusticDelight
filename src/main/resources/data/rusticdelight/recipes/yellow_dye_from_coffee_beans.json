@@ -6,5 +6,7 @@
       "item": "rusticdelight:coffee_beans"
     }
   ],
-  "result": "minecraft:yellow_dye"
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
 }

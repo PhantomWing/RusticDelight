@@ -9,7 +9,7 @@
       "item": "minecraft:cocoa_beans"
     },
     "M": {
-      "tag": "forge:milk"
+      "tag": "c:milks"
     },
     "X": {
       "item": "minecraft:sugar"
@@ -23,6 +23,8 @@
     "CBC",
     "XYX"
   ],
-  "result": "rusticdelight:chocolate_pancakes",
+  "result": {
+    "item": "rusticdelight:chocolate_pancakes"
+  },
   "show_notification": true
 }

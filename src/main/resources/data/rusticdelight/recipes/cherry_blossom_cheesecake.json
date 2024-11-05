@@ -9,7 +9,7 @@
       "tag": "rusticdelight:cherry_blossom_ingredients"
     },
     "m": {
-      "tag": "forge:milk"
+      "tag": "c:milks"
     },
     "s": {
       "item": "minecraft:sugar"
@@ -20,6 +20,8 @@
     "mmm",
     "sOs"
   ],
-  "result": "rusticdelight:cherry_blossom_cheesecake",
+  "result": {
+    "item": "rusticdelight:cherry_blossom_cheesecake"
+  },
   "show_notification": true
 }

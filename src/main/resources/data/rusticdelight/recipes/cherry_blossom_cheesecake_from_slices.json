@@ -10,6 +10,8 @@
     "##",
     "##"
   ],
-  "result": "rusticdelight:cherry_blossom_cheesecake",
+  "result": {
+    "item": "rusticdelight:cherry_blossom_cheesecake"
+  },
   "show_notification": true
 }

@@ -2,6 +2,10 @@
   "values": [
     "rusticdelight:cooking_oil",
     "rusticdelight:coffee",
+    "rusticdelight:milk_coffee",
+    "rusticdelight:chocolate_coffee",
+    "rusticdelight:honey_coffee",
+    "rusticdelight:dark_coffee",
     "rusticdelight:cherry_blossom_cheesecake"
   ]
 }

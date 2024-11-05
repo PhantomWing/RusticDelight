@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cherry_leaves"
+            "items": [
+              "minecraft:cherry_leaves"
+            ]
           }
         ]
       },
@@ -15,7 +17,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cherry_sapling"
+            "items": [
+              "minecraft:cherry_sapling"
+            ]
           }
         ]
       },
@@ -25,7 +29,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:pink_petals"
+            "items": [
+              "minecraft:pink_petals"
+            ]
           }
         ]
       },
@@ -40,15 +46,16 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_pink_petals",
       "has_cherry_sapling",
-      "has_cherry_leaves"
+      "has_cherry_leaves",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:cherry_blossom_cookie"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

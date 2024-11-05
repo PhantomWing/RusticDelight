@@ -23,6 +23,8 @@
     "SBS",
     "XYX"
   ],
-  "result": "rusticdelight:honey_pancakes",
+  "result": {
+    "item": "rusticdelight:honey_pancakes"
+  },
   "show_notification": true
 }

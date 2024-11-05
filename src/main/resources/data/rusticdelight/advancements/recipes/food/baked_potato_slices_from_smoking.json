@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:potato_slices"
+            "items": [
+              "rusticdelight:potato_slices"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_potato_slices"
+      "has_potato_slices",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:baked_potato_slices_from_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

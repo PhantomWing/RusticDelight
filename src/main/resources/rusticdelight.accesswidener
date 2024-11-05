@@ -1,0 +1,18 @@
+accessWidener v2 named
+
+accessible field net/minecraft/entity/passive/ChickenEntity BREEDING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+mutable field net/minecraft/entity/passive/ChickenEntity BREEDING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+
+accessible field net/minecraft/entity/passive/PigEntity BREEDING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+mutable field net/minecraft/entity/passive/PigEntity BREEDING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+
+accessible field net/minecraft/entity/passive/CatEntity TAMING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+mutable field net/minecraft/entity/passive/CatEntity TAMING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+
+accessible field net/minecraft/entity/passive/OcelotEntity TAMING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+mutable field net/minecraft/entity/passive/OcelotEntity TAMING_INGREDIENT Lnet/minecraft/recipe/Ingredient;
+
+accessible field net/minecraft/entity/passive/ParrotEntity TAMING_INGREDIENTS Ljava/util/Set;
+
+accessible field net/minecraft/entity/passive/VillagerEntity GATHERABLE_ITEMS Ljava/util/Set;
+mutable field net/minecraft/entity/passive/VillagerEntity GATHERABLE_ITEMS Ljava/util/Set;

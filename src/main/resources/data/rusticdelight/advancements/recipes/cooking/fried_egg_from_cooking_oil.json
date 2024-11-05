@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:cooking_oil"
+            "items": [
+              "rusticdelight:cooking_oil"
+            ]
           }
         ]
       },

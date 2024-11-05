@@ -2,13 +2,13 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:baked_potato"
+      "item": "rusticdelight:cherry_blossom_cheesecake"
     }
   ],
   "result": [
     {
-      "count": 2,
-      "item": "rusticdelight:baked_potato_slices"
+        "count": 4,
+        "item": "rusticdelight:cherry_blossom_cheesecake_slice"
     }
   ],
   "tool": {

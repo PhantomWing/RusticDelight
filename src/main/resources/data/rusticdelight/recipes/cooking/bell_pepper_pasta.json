@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:/foods/pastas"
+      "tag": "c:foods/pastas"
     },
     {
       "item": "rusticdelight:bell_pepper_green"

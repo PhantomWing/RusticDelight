@@ -6,16 +6,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:crops/rice"
+      "tag": "c:grains/rices"
     },
     {
       "tag": "rusticdelight:fried_rice_ingredients"
     },
     {
-      "tag": "c:foods/carrot"
+      "tag": "c:foods/vegetables/carrots"
     },
     {
-      "tag": "c:foods/onion"
+      "tag": "c:foods/vegetables/onions"
     }
   ],
   "recipe_book_tab": "meals",

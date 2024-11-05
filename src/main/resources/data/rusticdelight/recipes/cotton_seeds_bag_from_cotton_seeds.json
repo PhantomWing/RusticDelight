@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "rusticdelight:cotton_seeds"
@@ -11,6 +11,8 @@
     "###",
     "###"
   ],
-  "result": "rusticdelight:cotton_seeds_bag",
+  "result": {
+    "item": "rusticdelight:cotton_seeds_bag"
+  },
   "show_notification": true
 }

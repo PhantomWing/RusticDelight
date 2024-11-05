@@ -6,7 +6,7 @@
       "item": "rusticdelight:batter"
     },
     "M": {
-      "tag": "forge:milk"
+      "tag": "c:milks"
     },
     "P": {
       "tag": "rusticdelight:cherry_blossom_ingredients"
@@ -23,6 +23,8 @@
     "PBP",
     "XYX"
   ],
-  "result": "rusticdelight:cherry_blossom_pancakes",
+  "result": {
+    "item": "rusticdelight:cherry_blossom_pancakes"
+  },
   "show_notification": true
 }

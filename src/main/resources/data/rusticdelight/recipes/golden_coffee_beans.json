@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "C": {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "item": "rusticdelight:coffee_beans"
     },
     "G": {
       "item": "minecraft:gold_nugget"
@@ -14,5 +14,7 @@
     "GCG",
     "GGG"
   ],
-  "result": "rusticdelight:golden_coffee_beans"
+  "result": {
+    "item": "rusticdelight:golden_coffee_beans"
+  }
 }

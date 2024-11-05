@@ -6,10 +6,10 @@
       "item": "rusticdelight:batter"
     },
     "L": {
-      "tag": "forge:salad_ingredients"
+      "tag": "c:salad_ingredients"
     },
     "V": {
-      "tag": "forge:vegetables"
+      "tag": "c:foods/vegetables"
     },
     "Y": {
       "item": "minecraft:bowl"
@@ -20,6 +20,8 @@
     "VBV",
     "LYL"
   ],
-  "result": "rusticdelight:vegetable_pancakes",
+  "result": {
+    "item": "rusticdelight:vegetable_pancakes"
+  },
   "show_notification": true
 }

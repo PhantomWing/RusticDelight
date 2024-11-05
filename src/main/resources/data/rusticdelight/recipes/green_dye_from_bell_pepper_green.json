@@ -6,5 +6,7 @@
       "item": "rusticdelight:bell_pepper_green"
     }
   ],
-  "result": "minecraft:green_dye"
+  "result": {
+    "item": "minecraft:green_dye"
+  }
 }

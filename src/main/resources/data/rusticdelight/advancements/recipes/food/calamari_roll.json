@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:calamari_slice"
+            "items": [
+              "rusticdelight:calamari_slice"
+            ]
           }
         ]
       },
@@ -15,7 +17,9 @@
       "conditions": {
         "items": [
           {
-            "items": "farmersdelight:cooked_rice"
+            "items": [
+              "farmersdelight:cooked_rice"
+            ]
           }
         ]
       },
@@ -30,14 +34,15 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_calamari_slice",
-      "has_cooked_rice"
+      "has_cooked_rice",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:calamari_roll"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

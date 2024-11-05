@@ -19,7 +19,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/fried_rice"
+        "recipe": "rusticdelight:cooking/fried_rice_from_cooking_oil"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -32,7 +32,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/fried_rice"
+      "rusticdelight:cooking/fried_rice_from_cooking_oil"
     ]
   }
 }

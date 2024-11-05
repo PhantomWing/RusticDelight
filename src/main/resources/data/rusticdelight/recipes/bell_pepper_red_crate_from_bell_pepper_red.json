@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "rusticdelight:bell_pepper_red"
@@ -11,6 +11,8 @@
     "###",
     "###"
   ],
-  "result": "rusticdelight:bell_pepper_red_crate",
+  "result": {
+    "item": "rusticdelight:bell_pepper_red_crate"
+  },
   "show_notification": true
 }

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:calamari"
+            "items": [
+              "rusticdelight:calamari"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_calamari"
+      "has_calamari",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:cooked_calamari_from_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

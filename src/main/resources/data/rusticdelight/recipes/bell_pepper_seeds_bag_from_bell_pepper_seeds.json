@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "rusticdelight:bell_pepper_seeds"
@@ -11,6 +11,8 @@
     "###",
     "###"
   ],
-  "result": "rusticdelight:bell_pepper_seeds_bag",
+  "result": {
+    "item": "rusticdelight:bell_pepper_seeds_bag"
+  },
   "show_notification": true
 }

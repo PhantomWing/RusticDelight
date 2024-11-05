@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:cherry_blossom_cheesecake_slice"
+            "items": [
+              "rusticdelight:cherry_blossom_cheesecake_slice"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_cherry_blossom_cheesecake_slice"
+      "has_cherry_blossom_cheesecake_slice",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:cherry_blossom_cheesecake_from_slices"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

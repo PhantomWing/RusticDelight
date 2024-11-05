@@ -6,7 +6,7 @@
       "item": "rusticdelight:coffee"
     },
     {
-      "tag": "c:foods/milk"
+      "tag": "c:milks"
     },
     {
       "item": "minecraft:cocoa_beans"
@@ -15,5 +15,7 @@
       "item": "minecraft:cocoa_beans"
     }
   ],
-  "result": "rusticdelight:chocolate_coffee"
+  "result": {
+    "item": "rusticdelight:chocolate_coffee"
+  }
 }

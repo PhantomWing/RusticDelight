@@ -6,17 +6,19 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "forge:vegetables/potato"
+      "tag": "c:foods/vegetables/potatoes"
     },
     {
-      "tag": "forge:vegetables/onion"
+      "tag": "c:foods/vegetables/onions"
     },
     {
-      "tag": "forge:milk"
+      "tag": "c:milks"
     },
     {
-      "tag": "forge:eggs"
+      "tag": "c:eggs"
     }
   ],
-  "result": "rusticdelight:potato_salad"
+  "result": {
+    "item": "rusticdelight:potato_salad"
+  }
 }

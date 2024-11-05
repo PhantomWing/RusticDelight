@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:coffee"
+            "items": [
+              "rusticdelight:coffee"
+            ]
           }
         ]
       },

@@ -6,23 +6,25 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "forge:vegetables/bell_pepper"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "tag": "forge:vegetables/bell_pepper"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "tag": "forge:vegetables/bell_pepper"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "tag": "forge:vegetables/bell_pepper"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "tag": "forge:vegetables/bell_pepper"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "tag": "forge:vegetables/bell_pepper"
+      "tag": "c:foods/vegetables/bell_peppers"
     }
   ],
-  "result": "rusticdelight:bell_pepper_soup"
+  "result": {
+    "item": "rusticdelight:bell_pepper_soup"
+  }
 }

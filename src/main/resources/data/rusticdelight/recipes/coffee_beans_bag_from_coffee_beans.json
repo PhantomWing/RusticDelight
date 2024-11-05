@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "rusticdelight:coffee_beans"
@@ -11,5 +11,7 @@
     "###",
     "###"
   ],
-  "result": "rusticdelight:coffee_beans_bag"
+  "result": {
+    "item": "rusticdelight:coffee_beans_bag"
+  }
 }

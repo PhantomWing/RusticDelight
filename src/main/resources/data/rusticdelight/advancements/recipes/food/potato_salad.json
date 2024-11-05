@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:potato"
+            "items": [
+              "minecraft:potato"
+            ]
           }
         ]
       },
@@ -15,7 +17,9 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:potato_slices"
+            "items": [
+              "rusticdelight:potato_slices"
+            ]
           }
         ]
       },
@@ -30,14 +34,15 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_potato",
-      "has_potato_slices"
+      "has_potato_slices",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:potato_salad"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "farmersdelight:pie_crust"
+            "items": [
+              "farmersdelight:pie_crust"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_pie_crust"
+      "has_pie_crust",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:cherry_blossom_cheesecake"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
