@@ -6,15 +6,20 @@ import com.mojang.logging.LogUtils;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.loot.ModLootModifiers;
+import com.phantomwing.rusticdelight.potions.ModBrewingRecipe;
+import com.phantomwing.rusticdelight.potions.ModPotions;
 import com.phantomwing.rusticdelight.ui.ModCreativeModeTab;
 import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -60,6 +65,7 @@ public class RusticDelight
         ModLootModifiers.register(eventBus);
         ModCreativeModeTab.register(eventBus);
         ModPlacementModifiers.register(eventBus);
+        ModPotions.register(eventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -67,6 +73,7 @@ public class RusticDelight
             addFlowerPots();
             registerCompostables();
             registerItemSetAdditions();
+            registerPotionRecipes();
         });
     }
 
@@ -74,6 +81,7 @@ public class RusticDelight
         FlowerPotBlock flowerPotBlock = ((FlowerPotBlock) Blocks.FLOWER_POT);
         flowerPotBlock.addPlant(ModBlocks.WILD_COTTON.getId(), ModBlocks.POTTED_WILD_COTTON);
         flowerPotBlock.addPlant(ModBlocks.WILD_BELL_PEPPERS.getId(), ModBlocks.POTTED_WILD_BELL_PEPPERS);
+        flowerPotBlock.addPlant(ModBlocks.WILD_COFFEE.getId(), ModBlocks.POTTED_WILD_COFFEE);
     }
 
     private void registerCompostables() {
@@ -91,6 +99,8 @@ public class RusticDelight
         ComposterBlock.COMPOSTABLES.put(ModItems.BELL_PEPPER_RED.get(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModItems.WILD_COTTON.get(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModItems.WILD_BELL_PEPPERS.get(), 0.65f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.WILD_COFFEE.get(), 0.65f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.COFFEE_BEANS.get(), 0.65f);
     }
 
     public static void registerItemSetAdditions() {
@@ -112,9 +122,25 @@ public class RusticDelight
                 ModItems.BELL_PEPPER_RED.get(),
                 ModItems.COTTON_BOLL.get(),
                 ModItems.BELL_PEPPER_SEEDS.get(),
-                ModItems.COTTON_SEEDS.get());
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get());
         newWantedItems.addAll(Villager.WANTED_ITEMS);
         Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
+    }
+
+    public static void registerPotionRecipes() {
+        // Disable custom potions entirely.
+        if (!Configuration.ENABLE_POTIONS.get()) {
+            return;
+        }
+
+        // Add Potion of Haste recipes. (Only if Coffee feature is enabled)
+        if (Configuration.CHANCE_WILD_COFFEE.get() > 0) {
+            // Use addRecipe to add brewing recipes for each potion container type (potion, splash potion, lingering potion, tipped arrow)
+            BrewingRecipeRegistry.addRecipe(new ModBrewingRecipe(Potions.AWKWARD, ModItems.GOLDEN_COFFEE_BEANS.get(), ModPotions.HASTE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new ModBrewingRecipe(ModPotions.HASTE_POTION.get(), Items.REDSTONE, ModPotions.LONG_HASTE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new ModBrewingRecipe(ModPotions.HASTE_POTION.get(), Items.GLOWSTONE_DUST, ModPotions.STRONG_HASTE_POTION.get()));
+        }
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

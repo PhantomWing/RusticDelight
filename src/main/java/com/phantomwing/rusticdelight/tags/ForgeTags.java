@@ -34,6 +34,7 @@ public class ForgeTags {
     public static final TagKey<Item> CROPS_TOMATO = forgeItemTag("crops/tomato");
     public static final TagKey<Item> CROPS_COTTON = forgeItemTag("crops/cotton");
     public static final TagKey<Item> CROPS_BELL_PEPPER = forgeItemTag("crops/bell_pepper");
+    public static final TagKey<Item> CROPS_COFFEE = forgeItemTag("crops/coffee");
 
     public static final TagKey<Item> DOUGH = forgeItemTag("dough");
     public static final TagKey<Item> DOUGH_WHEAT = forgeItemTag("dough/wheat");

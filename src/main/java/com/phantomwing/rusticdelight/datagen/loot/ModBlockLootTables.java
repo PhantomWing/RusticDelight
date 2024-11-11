@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.datagen.loot;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
+import com.phantomwing.rusticdelight.block.custom.CoffeeCropBlock;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
 import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
@@ -41,15 +42,22 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 3.0F),
                 ModItems.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
         dropBellPepperCrop(ModBlocks.BELL_PEPPER_CROP.get());
+        dropCrop(
+                ModBlocks.COFFEE_CROP.get(), CoffeeCropBlock.AGE, CoffeeCropBlock.MAX_AGE,
+                ModItems.COFFEE_BEANS.get(), UniformGenerator.between(1.0F, 1.0F),
+                ModItems.COFFEE_BEANS.get(), UniformGenerator.between(1.0F, 4.0F));
 
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS.get(), ModItems.COTTON_BOLL.get());
         dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_RED.get());
+        dropWildCrop(ModBlocks.WILD_COFFEE.get(), ModItems.COFFEE_BEANS.get(), ModItems.COFFEE_BEANS.get());
 
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
         dropSelf(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        dropSelf(ModBlocks.COFFEE_BEANS_BAG.get());
 
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
@@ -175,18 +183,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 LootTable.lootTable()
                         // When using Silk Touch, drop the actual block.
                         .withPool(LootPool.lootPool()
-                                .when(HAS_SILK_TOUCH)
+                                .when(HAS_SHEARS.or(HAS_SILK_TOUCH))
                                 .add(LootItem.lootTableItem(block))
                         )
                         // Else, drop the seeds item (including a Fortune bonus).
                         .withPool(LootPool.lootPool()
-                                .when(HAS_NO_SILK_TOUCH)
+                                .when((HAS_SHEARS.or(HAS_SILK_TOUCH).invert()))
                                 .add(LootItem.lootTableItem(seedsItem)
                                         .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
                         )
                         // Additionally, add a random chance to drop the grown crop item.
                         .withPool(LootPool.lootPool()
-                                .when(AllOfCondition.allOf(HAS_NO_SILK_TOUCH, LootItemRandomChanceCondition.randomChance(0.3f)))
+                                .when(AllOfCondition.allOf((HAS_SHEARS.or(HAS_SILK_TOUCH)).invert(), LootItemRandomChanceCondition.randomChance(0.3f)))
                                 .add(LootItem.lootTableItem(cropItem))
                         )
         );

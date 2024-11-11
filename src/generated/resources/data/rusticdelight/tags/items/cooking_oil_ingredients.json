@@ -1,5 +1,9 @@
 {
   "values": [
-    "rusticdelight:cotton_seeds"
+    "rusticdelight:cotton_seeds",
+    {
+      "id": "frycooks_delight:canola_seeds",
+      "required": false
+    }
   ]
 }

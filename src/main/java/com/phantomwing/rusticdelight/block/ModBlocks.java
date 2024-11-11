@@ -1,9 +1,7 @@
 package com.phantomwing.rusticdelight.block;
 
 import com.phantomwing.rusticdelight.RusticDelight;
-import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
-import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
+import com.phantomwing.rusticdelight.block.custom.*;
 import com.phantomwing.rusticdelight.food.FoodValues;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.world.effect.MobEffects;
@@ -17,7 +15,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -26,7 +23,9 @@ public class ModBlocks {
     // Seed bags
     public static final RegistryObject<Block> COTTON_SEEDS_BAG = BLOCKS.register("cotton_seeds_bag",
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
-    public static final  RegistryObject<Block> BELL_PEPPER_SEEDS_BAG = BLOCKS.register("bell_pepper_seeds_bag",
+    public static final RegistryObject<Block> BELL_PEPPER_SEEDS_BAG = BLOCKS.register("bell_pepper_seeds_bag",
+            () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<Block> COFFEE_BEANS_BAG = BLOCKS.register("coffee_beans_bag",
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
 
     // Crop crates
@@ -53,19 +52,26 @@ public class ModBlocks {
 
     // Wild crops
     public static final RegistryObject<Block> WILD_COTTON = BLOCKS.register("wild_cotton",
-            () -> new WildCropBlock(MobEffects.DIG_SPEED, 12, Block.Properties.copy(Blocks.TALL_GRASS)));
+            () -> new ModWildCropBlock(MobEffects.JUMP, 5, Block.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistryObject<Block> WILD_BELL_PEPPERS = BLOCKS.register("wild_bell_peppers",
-            () -> new WildCropBlock(MobEffects.FIRE_RESISTANCE, 10, Block.Properties.copy(Blocks.TALL_GRASS)));
+            () -> new ModWildCropBlock(MobEffects.FIRE_RESISTANCE, 6, Block.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistryObject<Block> WILD_COFFEE = BLOCKS.register("wild_coffee",
+            () -> new ModWildCropBlock(MobEffects.DIG_SPEED, 8, Block.Properties.copy(Blocks.TALL_GRASS)));
 
     // Unobtainable blocks
     public static final RegistryObject<Block> COTTON_CROP = BLOCKS.register("cotton",
             () -> new CottonCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission()));
     public static final RegistryObject<Block> BELL_PEPPER_CROP = BLOCKS.register("bell_peppers",
             () -> new BellPepperCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> COFFEE_CROP = BLOCKS.register("coffee",
+            () -> new CoffeeCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission()));
+
     public static final RegistryObject<Block> POTTED_WILD_COTTON = BLOCKS.register("potted_wild_cotton",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_COTTON, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
     public static final RegistryObject<Block> POTTED_WILD_BELL_PEPPERS = BLOCKS.register("potted_wild_bell_peppers",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_BELL_PEPPERS, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final RegistryObject<Block> POTTED_WILD_COFFEE = BLOCKS.register("potted_wild_coffee",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_COFFEE, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

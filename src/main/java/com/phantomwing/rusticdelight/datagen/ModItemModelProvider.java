@@ -27,6 +27,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BELL_PEPPER_SEEDS);
         simpleItem(ModItems.BELL_PEPPER_SOUP);
         simpleItem(ModItems.BELL_PEPPER_PASTA);
+        simpleItem(ModItems.COFFEE);
+        simpleItem(ModItems.CHOCOLATE_COFFEE);
         simpleItem(ModItems.CALAMARI);
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.CALAMARI_SLICE);
@@ -36,6 +38,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CHERRY_BLOSSOM_PANCAKES);
         simpleItem(ModItems.CHERRY_BLOSSOM_ROLL);
         simpleItem(ModItems.CHOCOLATE_PANCAKES);
+        simpleItem(ModItems.COFFEE_BEANS);
+        simpleItem(ModItems.COFFEE_BRAISED_BEEF);
         simpleItem(ModItems.COOKED_CALAMARI);
         simpleItem(ModItems.COOKED_CALAMARI_SLICE);
         simpleItem(ModItems.COOKING_OIL);
@@ -45,12 +49,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FRIED_CHICKEN);
         simpleItem(ModItems.FRIED_MUSHROOMS);
         simpleItem(ModItems.FRUIT_BEIGNET);
+        simpleItem(ModItems.GOLDEN_COFFEE_BEANS);
         simpleItem(ModItems.HONEY_PANCAKES);
+        simpleItem(ModItems.MILK_COFFEE);
         simpleItem(ModItems.POTATO_SALAD);
         simpleItem(ModItems.POTATO_SLICES);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_RED);
+        simpleItem(ModItems.ROASTED_COFFEE_BEANS);
+        simpleItem(ModItems.DARK_COFFEE);
+        simpleItem(ModItems.HONEY_COFFEE);
         simpleItem(ModItems.STUFFED_BELL_PEPPER_GREEN);
         simpleItem(ModItems.STUFFED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.STUFFED_BELL_PEPPER_RED);
@@ -58,10 +67,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.VEGETABLE_PANCAKES);
 
         // Blocks
+        simpleBlock2D(ModBlocks.WILD_COFFEE);
         simpleBlock2D(ModBlocks.WILD_COTTON);
         simpleBlock2D(ModBlocks.WILD_BELL_PEPPERS);
         simpleBlock(ModBlocks.COTTON_SEEDS_BAG);
         simpleBlock(ModBlocks.BELL_PEPPER_SEEDS_BAG);
+        simpleBlock(ModBlocks.COFFEE_BEANS_BAG);
         simpleBlock(ModBlocks.COTTON_BOLL_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_GREEN_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_YELLOW_CRATE);

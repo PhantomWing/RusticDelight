@@ -3,9 +3,11 @@ package com.phantomwing.rusticdelight.datagen;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
+import com.phantomwing.rusticdelight.block.custom.CoffeeCropBlock;
 import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
 import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -30,25 +32,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         makeCottonCrop((CropBlock) ModBlocks.COTTON_CROP.get(), "cotton_stage", "cotton_stage");
         makeBellPepperCrop((CropBlock) ModBlocks.BELL_PEPPER_CROP.get(), "bell_peppers_stage", "bell_peppers_stage");
+        makeCoffeeCrop((CropBlock) ModBlocks.COFFEE_CROP.get(), "coffee_stage", "coffee_stage");
 
-        simpleBlockWithItem(ModBlocks.WILD_COTTON.get(), models().cross(blockTexture(ModBlocks.WILD_COTTON.get()).getPath(),
-                blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
-        simpleBlockWithItem(ModBlocks.WILD_BELL_PEPPERS.get(), models().cross(blockTexture(ModBlocks.WILD_BELL_PEPPERS.get()).getPath(),
-                blockTexture(ModBlocks.WILD_BELL_PEPPERS.get())).renderType("cutout"));
+        makeWildCrop(ModBlocks.WILD_COTTON.get());
+        makeWildCrop(ModBlocks.WILD_BELL_PEPPERS.get());
+        makeWildCrop(ModBlocks.WILD_COFFEE.get());
 
-        simpleBlockWithItem(ModBlocks.POTTED_WILD_COTTON.get(), models()
-                .singleTexture("potted_wild_cotton",
-                        new ResourceLocation("flower_pot_cross"),
-                        "plant",
-                        blockTexture(ModBlocks.WILD_COTTON.get())).renderType("cutout"));
-        simpleBlockWithItem(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), models()
-                .singleTexture("potted_wild_bell_peppers",
-                        new ResourceLocation("flower_pot_cross"),
-                        "plant",
-                        blockTexture(ModBlocks.WILD_BELL_PEPPERS.get())).renderType("cutout"));
+        makePottedFlower(ModBlocks.POTTED_WILD_COTTON.get(),ModBlocks.WILD_COTTON.get());
+        makePottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+        makePottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
         farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
         farmersDelightBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        farmersDelightBag(ModBlocks.COFFEE_BEANS_BAG.get());
 
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
@@ -61,6 +57,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         pancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get());
         pancakeBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get());
         pancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get());
+    }
+
+    private void makeWildCrop(Block block) {
+        simpleBlockWithItem(block, models().cross(blockTexture(block).getPath(),
+                blockTexture(block)).renderType("cutout"));
+    }
+
+    private void makePottedFlower(Block pottedBlock, Block block) {
+        simpleBlockWithItem(pottedBlock, models()
+                .singleTexture(blockName(pottedBlock),
+                        new ResourceLocation("flower_pot_cross"),
+                        "plant",
+                        blockTexture(block)).renderType("cutout"));
     }
 
     public void makeCottonCrop(CropBlock block, String modelName, String textureName) {
@@ -86,6 +95,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private ConfiguredModel[] bellPepperStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((BellPepperCropBlock) block).getAgeProperty());
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + ageProperty,
+                new ResourceLocation(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
+
+        return models;
+    }
+
+    private void makeCoffeeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> coffeeStates(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] coffeeStates(BlockState state, CropBlock block, String modelName, String textureName) {
+        var ageProperty = state.getValue(((CoffeeCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().cross(modelName + ageProperty,
                 new ResourceLocation(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));

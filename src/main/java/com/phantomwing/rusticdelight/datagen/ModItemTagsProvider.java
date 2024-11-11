@@ -39,7 +39,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addModTags() {
         this.tag(ModTags.Items.COOKING_OIL_INGREDIENTS).add(
                 ModItems.COTTON_SEEDS.get()
-        );
+        ).addOptional(new ResourceLocation(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_seeds"));;
 
         this.tag(ModTags.Items.COOKING_OIL).add(
                 ModItems.COOKING_OIL.get()
@@ -57,22 +57,32 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addMinecraftTags() {
+        // Villagers
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
                 ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get()
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
         );
 
+        // Fish
         this.tag(ItemTags.FISHES).add(
                 ModItems.CALAMARI.get(),
                 ModItems.COOKED_CALAMARI.get()
         );
+
+        // Piglins
+        this.tag(ItemTags.PIGLIN_LOVED).add(
+                ModItems.GOLDEN_COFFEE_BEANS.get()
+        );
+
     }
 
     private void addForgeTags() {
         // Crops
         this.tag(ForgeTags.CROPS)
                 .addTag(ForgeTags.CROPS_COTTON)
-                .addTag(ForgeTags.CROPS_BELL_PEPPER);
+                .addTag(ForgeTags.CROPS_BELL_PEPPER)
+                .addTag(ForgeTags.CROPS_COFFEE);
         this.tag(ForgeTags.CROPS_COTTON).add(
                 ModItems.COTTON_BOLL.get()
         );
@@ -80,6 +90,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.BELL_PEPPER_GREEN.get(),
                 ModItems.BELL_PEPPER_YELLOW.get(),
                 ModItems.BELL_PEPPER_RED.get()
+        );
+        this.tag(ForgeTags.CROPS_COFFEE).add(
+                ModItems.COFFEE_BEANS.get()
         );
 
         // Fish
@@ -108,7 +121,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         this.tag(Tags.Items.SEEDS).add(
                 ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get()
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
         );
 
         // Vegetables
@@ -127,12 +141,32 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addCompatibilityTags() {
         // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
-                ModItems.COOKING_OIL.get()
+                ModItems.COOKING_OIL.get(),
+                ModItems.COFFEE.get(),
+                ModItems.MILK_COFFEE.get(),
+                ModItems.HONEY_COFFEE.get(),
+                ModItems.CHOCOLATE_COFFEE.get(),
+                ModItems.DARK_COFFEE.get(),
+                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get()
         );
 
         // Farmer's Delight
         this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS).add(
                 ModItems.POTATO_SLICES.get()
+        );
+
+        // Serene Seasons
+        this.tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
+                ModItems.COTTON_SEEDS.get()
+        );
+        this.tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS).add(
+                ModItems.COTTON_SEEDS.get(),
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
+        );
+        this.tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS).add(
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.COFFEE_BEANS.get()
         );
 
         // Miner's Delight

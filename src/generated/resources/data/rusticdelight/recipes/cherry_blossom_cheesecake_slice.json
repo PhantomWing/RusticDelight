@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:cherry_blossom_cheesecake"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "rusticdelight:cherry_blossom_cheesecake_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}
