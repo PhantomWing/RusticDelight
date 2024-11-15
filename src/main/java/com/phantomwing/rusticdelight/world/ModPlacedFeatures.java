@@ -26,6 +26,10 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.WILD_BELL_PEPPERS.getHolder().get(), List.of(ConfigurableRarityFilter.withConfigurableChance(Configuration.CHANCE_WILD_BELL_PEPPERS_ID),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> WILD_COFFEE = PLACED_FEATURES.register("wild_coffee_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.WILD_COFFEE.getHolder().get(), List.of(ConfigurableRarityFilter.withConfigurableChance(Configuration.CHANCE_WILD_COFFEE_ID),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
     public static void register(IEventBus eventBus) {
         PLACED_FEATURES.register(eventBus);
     }

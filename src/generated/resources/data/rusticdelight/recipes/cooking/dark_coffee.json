@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "rusticdelight:dark_coffee"
+  }
+}

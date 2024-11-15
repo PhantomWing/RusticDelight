@@ -3,6 +3,8 @@ package com.phantomwing.rusticdelight.item;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.food.FoodValues;
+import com.phantomwing.rusticdelight.item.custom.ChocolateCoffeeItem;
+import com.phantomwing.rusticdelight.item.custom.MilkCoffeeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -27,6 +29,7 @@ public class ModItems {
     // Seed bags
     public static final RegistryObject<Item> COTTON_SEEDS_BAG = registerBlock(ModBlocks.COTTON_SEEDS_BAG);
     public static final RegistryObject<Item> BELL_PEPPER_SEEDS_BAG = registerBlock(ModBlocks.BELL_PEPPER_SEEDS_BAG);
+    public static final RegistryObject<Item> COFFEE_BEANS_BAG = registerBlock(ModBlocks.COFFEE_BEANS_BAG);
 
     // Crop Crates
     public static final RegistryObject<Item> COTTON_BOLL_CRATE = registerBlock(ModBlocks.COTTON_BOLL_CRATE);
@@ -37,6 +40,7 @@ public class ModItems {
     // Crops
     public static final RegistryObject<Item> WILD_COTTON = registerBlock(ModBlocks.WILD_COTTON);
     public static final RegistryObject<Item> WILD_BELL_PEPPERS = registerBlock(ModBlocks.WILD_BELL_PEPPERS);
+    public static final RegistryObject<Item> WILD_COFFEE = registerBlock(ModBlocks.WILD_COFFEE);
 
     // Crop products
     public static final RegistryObject<Item> COTTON_BOLL = registerItem("cotton_boll", () -> new Item(baseItem()));
@@ -55,17 +59,39 @@ public class ModItems {
             ModBlocks.BELL_PEPPER_CROP.get(),
             baseItem()));
 
-    // Basic food
+    // Coffee Beans
+    public static final RegistryObject<Item> COFFEE_BEANS = registerItem("coffee_beans", () -> new ItemNameBlockItem(
+            ModBlocks.COFFEE_CROP.get(), baseItem()));
+    public static final RegistryObject<Item> ROASTED_COFFEE_BEANS = registerItem("roasted_coffee_beans", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_COFFEE_BEANS)));
+    public static final RegistryObject<Item> GOLDEN_COFFEE_BEANS = registerItem("golden_coffee_beans", () -> new Item(
+            baseItem().food(FoodValues.GOLDEN_COFFEE_BEANS)));
+
+    // Calamari
     public static final RegistryObject<Item> CALAMARI = registerItem("calamari", () -> new Item(
             baseItem().food(FoodValues.CALAMARI)));
     public static final RegistryObject<Item> COOKED_CALAMARI = registerItem("cooked_calamari", () -> new Item(
             baseItem().food(FoodValues.COOKED_CALAMARI)));
+
+    // Roasted bell peppers
     public static final RegistryObject<Item> ROASTED_BELL_PEPPER_GREEN = registerItem("roasted_bell_pepper_green", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
     public static final RegistryObject<Item> ROASTED_BELL_PEPPER_YELLOW = registerItem("roasted_bell_pepper_yellow", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
     public static final RegistryObject<Item> ROASTED_BELL_PEPPER_RED = registerItem("roasted_bell_pepper_red", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+
+    // Coffee
+    public static final RegistryObject<Item> COFFEE = registerItem("coffee", () -> new DrinkableItem(
+            bottleItem().food(FoodValues.COFFEE), true));
+    public static final RegistryObject<Item> MILK_COFFEE = registerItem("milk_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.MILK_COFFEE)));
+    public static final RegistryObject<Item> CHOCOLATE_COFFEE = registerItem("chocolate_coffee", () -> new ChocolateCoffeeItem(
+            bottleItem().food(FoodValues.CHOCOLATE_COFFEE)));
+    public static final RegistryObject<Item> HONEY_COFFEE = registerItem("honey_coffee", () -> new DrinkableItem(
+            bottleItem().food(FoodValues.HONEY_COFFEE), true));
+    public static final RegistryObject<Item> DARK_COFFEE = registerItem("dark_coffee", () -> new DrinkableItem(
+            bottleItem().food(FoodValues.DARK_COFFEE), true));
 
     // Cooking products
     public static final RegistryObject<Item> COOKING_OIL = registerItem("cooking_oil", () -> new DrinkableItem(
@@ -117,6 +143,8 @@ public class ModItems {
             bowlItem().food(FoodValues.FRIED_CHICKEN), true));
     public static final RegistryObject<Item> FRIED_MUSHROOMS = registerItem("fried_mushrooms", () -> new ConsumableItem(
             bowlItem().food(FoodValues.FRIED_MUSHROOMS), true));
+    public static final RegistryObject<Item> COFFEE_BRAISED_BEEF = registerItem("coffee_braised_beef", () -> new ConsumableItem(
+            bowlItem().food(FoodValues.COFFEE_BRAISED_BEEF), true));
 
     // Feasts
     public static Item.Properties baseItem() {

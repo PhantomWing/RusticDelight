@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "rusticdelight:honey_coffee"
+  }
+}

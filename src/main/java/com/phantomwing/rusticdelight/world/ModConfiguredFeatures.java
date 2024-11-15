@@ -24,8 +24,13 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_BELL_PEPPERS = CONFIGURED_FEATURES.register("wild_bell_peppers_feature",
             () -> new ConfiguredFeature<>(Feature.FLOWER,
-                    new RandomPatchConfiguration(32, 4, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                    new RandomPatchConfiguration(48, 4, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_BELL_PEPPERS.get()))))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> WILD_COFFEE = CONFIGURED_FEATURES.register("wild_coffee_feature",
+            () -> new ConfiguredFeature<>(Feature.FLOWER,
+                    new RandomPatchConfiguration(48, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_COFFEE.get()))))));
 
     public static void register(IEventBus eventBus) {
         CONFIGURED_FEATURES.register(eventBus);

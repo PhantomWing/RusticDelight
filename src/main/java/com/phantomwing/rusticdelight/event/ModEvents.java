@@ -18,8 +18,15 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = RusticDelight.MOD_ID)
 public class ModEvents {
+    public static float PRICE_MULTIPLIER = 0.05f;
+
     @SubscribeEvent
     public static void addVillagerTrades(VillagerTradesEvent event) {
+        // Check if trades are enabled.
+        if (!Configuration.ENABLE_VILLAGER_TRADES.get()) {
+            return;
+        }
+
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
         if (event.getType() == VillagerProfession.FARMER) {
@@ -30,7 +37,7 @@ public class ModEvents {
                         new ItemStack(Items.EMERALD, 1),
                         16,
                         2,
-                        0.05f
+                        PRICE_MULTIPLIER
                 ));
             }
 
@@ -40,7 +47,26 @@ public class ModEvents {
                         new ItemStack(Items.EMERALD, 1),
                         16,
                         2,
-                        0.05f
+                        PRICE_MULTIPLIER
+                ));
+            }
+
+            if (Configuration.CHANCE_WILD_COFFEE.get() > 0) {
+                trades.get(1).add((trader, random) -> new MerchantOffer(
+                        new ItemStack(ModItems.COFFEE_BEANS.get(), 26),
+                        new ItemStack(Items.EMERALD, 1),
+                        16,
+                        2,
+                        PRICE_MULTIPLIER
+                ));
+
+                // Master
+                trades.get(5).add((trader, random) -> new MerchantOffer(
+                        new ItemStack(Items.EMERALD, 3),
+                        new ItemStack(ModItems.GOLDEN_COFFEE_BEANS.get(), 3),
+                        12,
+                        30,
+                        PRICE_MULTIPLIER
                 ));
             }
 
@@ -53,7 +79,7 @@ public class ModEvents {
                         new ItemStack(ModItems.COOKED_CALAMARI.get(), 6),
                         16,
                         1,
-                        0.05f
+                        PRICE_MULTIPLIER
                 ));
 
                 // Level 2 trades
@@ -62,7 +88,7 @@ public class ModEvents {
                         new ItemStack(Items.EMERALD, 1),
                         16,
                         10,
-                        0.05f
+                        PRICE_MULTIPLIER
                 ));
             }
         }
@@ -70,8 +96,12 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void addWanderingTraderTrades(WandererTradesEvent event) {
+        // Check if trades are enabled.
+        if (!Configuration.ENABLE_WANDERING_TRADER_TRADES.get()) {
+            return;
+        }
+
         List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
-        // List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
 
         if (Configuration.CHANCE_WILD_COTTON.get() > 0) {
             genericTrades.add((trader, random) -> new MerchantOffer(
@@ -79,7 +109,7 @@ public class ModEvents {
                     new ItemStack(ModItems.COTTON_SEEDS.get(), 1),
                     12,
                     2,
-                    0.05f
+                    PRICE_MULTIPLIER
             ));
         }
 
@@ -89,7 +119,17 @@ public class ModEvents {
                     new ItemStack(ModItems.BELL_PEPPER_SEEDS.get(), 1),
                     12,
                     2,
-                    0.05f
+                    PRICE_MULTIPLIER
+            ));
+        }
+
+        if (Configuration.CHANCE_WILD_COFFEE.get() > 0) {
+            genericTrades.add((trader, random) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 1),
+                    new ItemStack(ModItems.COFFEE_BEANS.get(), 1),
+                    12,
+                    2,
+                    PRICE_MULTIPLIER
             ));
         }
     }
