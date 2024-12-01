@@ -69,15 +69,9 @@ dependencies {
 		exclude(group: "net.fabricmc")
 	}
 
-	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${mixin_extras_version}")))
-	annotationProcessor 'net.fabricmc:sponge-mixin:0.12.5+mixin.0.8.5'
-
 	// Porting Lib
-	include(modImplementation("com.github.Chocohead:Fabric-ASM:${fabric_asm_version}")) {
-		exclude (group: "net.fabricmc.fabric-api")
-	}
 	for (String module in port_lib_modules.split(",")) {
-		include(modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version"))
+		modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
 	}
 
 	// JEI
