@@ -1,3 +1,13 @@
+# 1.0.2
+
+### Additions
+- Added Taiwanese Mandarin translations (thank you Lobster0228!)
+- Villagers can now farm Rustic Delight crops
+
+### Fixes
+- Fixed squids and glow squids not dropping Calamari
+
+
 # 1.0.1
 
 ### Additions
