@@ -62,7 +62,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
                 ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
                 ModBlocks.BELL_PEPPER_RED_CRATE.get(),
-                ModBlocks.COFFEE_BEANS_BAG.get()
+                ModBlocks.COFFEE_BEANS_BAG.get(),
+                ModBlocks.ROASTED_COFFEE_BEANS_BAG.get()
         );
     }
 
@@ -71,7 +72,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         this.tag(ModTags.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG.get(),
                 ModBlocks.BELL_PEPPER_SEEDS_BAG.get(),
-                ModBlocks.COFFEE_BEANS_BAG.get()
+                ModBlocks.COFFEE_BEANS_BAG.get(),
+                ModBlocks.ROASTED_COFFEE_BEANS_BAG.get()
         );
         this.tag(ModTags.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON.get(),

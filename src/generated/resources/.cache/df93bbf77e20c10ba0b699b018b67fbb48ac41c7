@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-09T11:18:03.5559299	Block States: rusticdelight
+// 1.20.1	2025-01-21T22:08:18.8100297	Block States: rusticdelight
 9dddb8259a512ad8915b8982b6f5f459fd26bed0 assets/rusticdelight/blockstates/bell_peppers.json
 6bd5c40607e471c6536cd95255f83144082a6596 assets/rusticdelight/blockstates/bell_pepper_green_crate.json
 4cdba16c8d47f2245a909a378a610ca9e7bca275 assets/rusticdelight/blockstates/bell_pepper_red_crate.json
@@ -16,6 +16,7 @@ c3c899da609b969e80a7275628d132916130992b assets/rusticdelight/blockstates/cotton
 8c808f8fce6497e7aa7ff6395a1047bf3b578366 assets/rusticdelight/blockstates/potted_wild_bell_peppers.json
 9265db5023209f8a8fb8fa7c8e61b0ff60bb41e6 assets/rusticdelight/blockstates/potted_wild_coffee.json
 9bd4ba9aae38b8e88f369c13146cd0917c6253b5 assets/rusticdelight/blockstates/potted_wild_cotton.json
+d73572c76da1696fd527c4146b80acba3f483bc6 assets/rusticdelight/blockstates/roasted_coffee_beans_bag.json
 8ed5a4be41f081a12dcfc91374402757c33d7ac9 assets/rusticdelight/blockstates/vegetable_pancakes.json
 ca7954f94c7cc645877d14ea83ec358b073736ac assets/rusticdelight/blockstates/wild_bell_peppers.json
 4ffb115d40fc986ab3a5775343215c7ab466b278 assets/rusticdelight/blockstates/wild_coffee.json
@@ -48,6 +49,7 @@ bbaef41b23f12420b868a65d2c7fb969b1616419 assets/rusticdelight/models/block/cotto
 513d939350191972343ed83a6a9aa7e7fcb7fe5e assets/rusticdelight/models/block/potted_wild_bell_peppers.json
 61f8e9c1930ce0703a8100a0bfdc13d230e1cb67 assets/rusticdelight/models/block/potted_wild_coffee.json
 714140c3e103eee11bf9c3656cc00d4511234e70 assets/rusticdelight/models/block/potted_wild_cotton.json
+d667ca1b1fd3dd7ae0b8e2bc070c31c1b0d454ea assets/rusticdelight/models/block/roasted_coffee_beans_bag.json
 32f8ea7da572d8f4987a8b9f33463c8a3939fa14 assets/rusticdelight/models/block/wild_bell_peppers.json
 36abd11f54117c9fd35786f1e0ed664ed1b1a2a3 assets/rusticdelight/models/block/wild_coffee.json
 53295343af67eb7fc28c9acc82a4c4ed2430ac1c assets/rusticdelight/models/block/wild_cotton.json

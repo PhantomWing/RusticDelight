@@ -1,3 +1,14 @@
+# 1.3.1
+### Additions
+- Added Bag of Roasted Coffee Beans
+- Added Japanese translations (thank you EndilCrafter!)
+
+### Changes
+- Added compatibility with Farmer's Respite
+  - Brew Farmer's Respite Coffee with Rustic Delight's Roasted Coffee Beans using a Kettle
+  - Rustic Delight Coffee (and variants) can be brewed with Farmer's Respite Coffee Beans using the Cooking Pot
+- Updated textures for Coffee Beans, Roasted Coffee Beans, Coffee Beans Bag
+
 # 1.3.0
 ### Additions
 - Added new Coffee feature. Obtain Coffee Beans by finding Wild Coffee in the jungle or trading with villagers.

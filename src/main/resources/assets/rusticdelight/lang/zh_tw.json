@@ -10,6 +10,7 @@
   "block.rusticdelight.cotton_boll_crate": "棉莢板條箱",
   "block.rusticdelight.cotton_seeds_bag": "棉籽袋",
   "block.rusticdelight.honey_pancakes": "蜂蜜煎餅",
+  "block.rusticdelight.roasted_coffee_beans_bag": "熟咖啡豆袋",
   "block.rusticdelight.vegetable_pancakes": "蔬菜煎餅",
   "block.rusticdelight.wild_bell_peppers": "野生甜椒叢",
   "block.rusticdelight.wild_coffee": "野生咖啡叢",
@@ -61,12 +62,13 @@
   "item.rusticdelight.stuffed_bell_pepper_green": "青椒釀",
   "item.rusticdelight.stuffed_bell_pepper_red": "紅椒釀",
   "item.rusticdelight.stuffed_bell_pepper_yellow": "黃椒釀",
-  "itemGroup.rusticdelight": "Rustic Delight",
+  "itemgroup.rusticdelight": "Rustic Delight",
   "rusticdelight.configuration.enable_villager_trades": "村民模組交易啟用",
   "rusticdelight.configuration.enable_wandering_trader_trades": "流浪商人模組交易啟用",
   "rusticdelight.configuration.enable_potions": "藥水模組啟用",
   "rusticdelight.configuration.squids_drop_calamari": "是否掉落魷魚",
   "rusticdelight.configuration.wild_bell_peppers_chance": "野生甜椒生成",
   "rusticdelight.configuration.wild_coffee_chance": "野生咖啡生成",
-  "rusticdelight.configuration.wild_cotton_chance": "野生棉花生成"
+  "rusticdelight.configuration.wild_cotton_chance": "野生棉花生成",
+  "itemGroup.rusticdelight": "Rustic Delight"
 }

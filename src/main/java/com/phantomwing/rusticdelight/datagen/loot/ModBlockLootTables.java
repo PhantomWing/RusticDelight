@@ -58,6 +58,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
         dropSelf(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
         dropSelf(ModBlocks.COFFEE_BEANS_BAG.get());
+        dropSelf(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
 
         dropSelf(ModBlocks.COTTON_BOLL_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());

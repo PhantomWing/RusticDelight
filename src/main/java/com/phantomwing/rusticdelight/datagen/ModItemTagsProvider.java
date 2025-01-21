@@ -54,6 +54,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.CALAMARI_ROLL_INGREDIENTS).add(
                 ModItems.CALAMARI_SLICE.get()
         ).addOptional(new ResourceLocation(CompatibilityTags.MINERS_DELIGHT,"tentacles"));
+
+        // Coffee
+        this.tag(ModTags.Items.COFFEE_INGREDIENTS).add(
+                ModItems.ROASTED_COFFEE_BEANS.get()
+        ).addOptional(new ResourceLocation(CompatibilityTags.FARMERS_RESPITE, "coffee_beans"));
+
+        this.tag(ModTags.Items.COFFEE_FOOD_INGREDIENTS).add(
+                ModItems.COFFEE.get(),
+                ModItems.DARK_COFFEE.get()
+        ).addOptional(new ResourceLocation(CompatibilityTags.FARMERS_RESPITE, "coffee"));
     }
 
     private void addMinecraftTags() {
