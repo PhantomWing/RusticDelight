@@ -27,6 +27,8 @@ public class ForgeTags {
     public static final TagKey<Item> COOKED_FISHES_SALMON = forgeItemTag("cooked_fishes/salmon");
     public static final TagKey<Item> COOKED_FISHES_CALAMARI = forgeItemTag("cooked_fishes/calamari");
 
+    public static final TagKey<Item> COOKIES = forgeItemTag("cookies");
+
     public static final TagKey<Item> CROPS = forgeItemTag("crops");
     public static final TagKey<Item> CROPS_CABBAGE = forgeItemTag("crops/cabbage");
     public static final TagKey<Item> CROPS_ONION = forgeItemTag("crops/onion");

@@ -146,6 +146,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ForgeTags.VEGETABLES_BELL_PEPPER).addTag(
                 ForgeTags.CROPS_BELL_PEPPER
         );
+
+        // Cookies
+        this.tag(ForgeTags.COOKIES).add(
+                ModItems.CHERRY_BLOSSOM_COOKIE.get()
+        );
     }
 
     private void addCompatibilityTags() {
@@ -193,6 +198,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         );
         this.tag(CompatibilityTags.HAS_FISH_SLICE).add(
                 ModItems.CALAMARI.get()
+        );
+
+        // Supplementaries
+        this.tag(CompatibilityTags.COOKIES).addTag(
+                ForgeTags.COOKIES
         );
     }
 }

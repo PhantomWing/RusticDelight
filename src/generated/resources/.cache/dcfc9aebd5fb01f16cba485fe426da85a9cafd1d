@@ -1,10 +1,11 @@
-// 1.20.1	2025-01-21T20:08:06.54519	Tags for minecraft:item mod id rusticdelight
+// 1.20.1	2025-01-22T08:59:05.9831902	Tags for minecraft:item mod id rusticdelight
 0430fba6e0d034afc79cd1b2042b308fd4e42847 data/create/tags/items/upright_on_belt.json
 86e6f2552699e81cdcd6db2f44ae31cc05f21da5 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
 d8f33fa3dbef149f2ee2afa3700c1d7d7bc6910e data/farmersdelight/tags/items/fish_slices.json
 e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/farmersdelight/tags/items/wild_crops.json
 ae6b6da0134dfa7bb0df90226964388a4cc0eff7 data/forge/tags/items/cooked_fishes.json
 5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/forge/tags/items/cooked_fishes/calamari.json
+0c00add997e5feb2578c74a3581af2d1d26087b5 data/forge/tags/items/cookies.json
 9c660cb6947223370f8d239884cba76ee705e145 data/forge/tags/items/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/forge/tags/items/crops/bell_pepper.json
 bb9074cd193000ab8955f73439e5de8ac0610360 data/forge/tags/items/crops/coffee_beans.json
@@ -30,3 +31,4 @@ f42464433408611a5257e783da71cbe2854b85c7 data/rusticdelight/tags/items/cooking_o
 63327054c5d6984557ad1691fbe9a4f27e619300 data/sereneseasons/tags/items/autumn_crops.json
 cb96c439d46844b9a4ce7308dad3483c2634fa94 data/sereneseasons/tags/items/spring_crops.json
 1c2201126bab91a662673dabe5b0707de378861a data/sereneseasons/tags/items/summer_crops.json
+3e3ce51fe20970106efee67862b16099b5b66733 data/supplementaries/tags/items/cookies.json
