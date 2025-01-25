@@ -16,6 +16,18 @@
       "can_villager_compost": true,
       "chance": 0.65
     },
+    "rusticdelight:cherry_blossom_cheesecake": {
+      "can_villager_compost": true,
+      "chance": 1.0
+    },
+    "rusticdelight:cherry_blossom_cheesecake_slice": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "rusticdelight:cherry_blossom_cookie": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
     "rusticdelight:coffee_beans": {
       "can_villager_compost": true,
       "chance": 0.65

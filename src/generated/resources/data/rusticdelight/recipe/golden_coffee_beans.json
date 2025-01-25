@@ -2,9 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "rusticdelight:roasted_coffee_beans"
-    },
+    "C": [
+      {
+        "item": "rusticdelight:coffee_beans"
+      },
+      {
+        "item": "rusticdelight:roasted_coffee_beans"
+      }
+    ],
     "G": {
       "item": "minecraft:gold_nugget"
     }

@@ -54,6 +54,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.CALAMARI_ROLL_INGREDIENTS).add(
                 ModItems.CALAMARI_SLICE.get()
         ).addOptional(ResourceLocation.fromNamespaceAndPath(CompatibilityTags.MINERS_DELIGHT, "tentacles"));
+
+        // Coffee
+        this.tag(ModTags.Items.COFFEE_INGREDIENTS).add(
+                ModItems.ROASTED_COFFEE_BEANS.get()
+        ).addOptional(ResourceLocation.fromNamespaceAndPath(CompatibilityTags.FARMERS_RESPITE, "coffee_beans"));
+
+        this.tag(ModTags.Items.COFFEE_FOOD_INGREDIENTS).add(
+                ModItems.COFFEE.get(),
+                ModItems.DARK_COFFEE.get()
+        ).addOptional(ResourceLocation.fromNamespaceAndPath(CompatibilityTags.FARMERS_RESPITE, "coffee"));
     }
 
     private void addMinecraftTags() {
@@ -99,7 +109,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(Tags.Items.CROPS)
                 .addTag(CommonTags.CROPS_COTTON)
                 .addTag(CommonTags.CROPS_BELL_PEPPER)
-                .addTag(CommonTags.CROPS_COFFEE);
+                .addTag(CommonTags.CROPS_COFFEE_BEANS);
 
         this.tag(Tags.Items.FOODS_RAW_FISH).addTag(
                 CommonTags.FOODS_RAW_CALAMARI
@@ -130,7 +140,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.BELL_PEPPER_YELLOW.get(),
                 ModItems.BELL_PEPPER_RED.get()
         );
-        this.tag(CommonTags.CROPS_COFFEE).add(
+        this.tag(CommonTags.CROPS_COFFEE_BEANS).add(
                 ModItems.COFFEE_BEANS.get()
         );
 
@@ -164,6 +174,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         );
         this.tag(CommonTags.FOODS_CARROT).add(
                 Items.CARROT
+        );
+
+        this.tag(CommonTags.FOODS_COOKIE).add(
+                ModItems.CHERRY_BLOSSOM_COOKIE.get()
         );
     }
 

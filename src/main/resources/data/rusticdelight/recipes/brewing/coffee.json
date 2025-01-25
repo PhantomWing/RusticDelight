@@ -1,0 +1,21 @@
+{
+  "type": "farmersrespite:brewing",
+  "base": {
+    "count": 1000,
+    "fluid": "minecraft:water"
+  },
+  "cookingtime": 2400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    },
+    {
+      "item": "rusticdelight:roasted_coffee_beans"
+    }
+  ],
+  "result": {
+    "count": 1000,
+    "fluid": "farmersrespite:coffee"
+  }
+}

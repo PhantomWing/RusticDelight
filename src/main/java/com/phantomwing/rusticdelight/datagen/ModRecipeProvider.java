@@ -185,16 +185,21 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Coffee
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS_BAG);
+
         oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.YELLOW_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS, Items.BROWN_DYE, 1);
         foodCookingRecipes(output, ModItems.COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS, FOOD_COOKING_EXP);
 
+        var goldenCoffeeBeansIngredient = Ingredient.of(ModItems.COFFEE_BEANS.get(), ModItems.ROASTED_COFFEE_BEANS.get());
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.GOLDEN_COFFEE_BEANS, 1)
                 .pattern("GGG")
                 .pattern("GCG")
                 .pattern("GGG")
                 .define('G', Items.GOLD_NUGGET)
-                .define('C', ModItems.ROASTED_COFFEE_BEANS)
+                .define('C', goldenCoffeeBeansIngredient)
                 .unlockedBy(getHasName(ModItems.COFFEE_BEANS), has(ModItems.COFFEE_BEANS))
+                .unlockedBy(getHasName(ModItems.ROASTED_COFFEE_BEANS), has(ModItems.ROASTED_COFFEE_BEANS))
                 .save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_COFFEE, 1)
@@ -411,7 +416,9 @@ public class ModRecipeProvider extends RecipeProvider {
         // Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(waterIngredient())
-                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(output, ModItems.COFFEE.getId());
@@ -419,7 +426,9 @@ public class ModRecipeProvider extends RecipeProvider {
         // Milk Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.MILK_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(CommonTags.FOODS_MILK)
-                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(output, ModItems.MILK_COFFEE.getId());
@@ -427,7 +436,9 @@ public class ModRecipeProvider extends RecipeProvider {
         // Chocolate Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHOCOLATE_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(CommonTags.FOODS_MILK)
-                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(Items.COCOA_BEANS, 2)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
@@ -436,7 +447,9 @@ public class ModRecipeProvider extends RecipeProvider {
         // Honey Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.HONEY_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(CommonTags.FOODS_MILK)
-                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 3)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(Items.HONEY_BOTTLE, 1)
                 .addIngredient(Items.SUGAR, 1)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
@@ -446,7 +459,11 @@ public class ModRecipeProvider extends RecipeProvider {
         // Dark Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(waterIngredient())
-                .addIngredient(ModItems.ROASTED_COFFEE_BEANS, 5)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(output, ModItems.DARK_COFFEE.getId());
@@ -454,7 +471,7 @@ public class ModRecipeProvider extends RecipeProvider {
         // Coffee-Braised Beef
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COFFEE_BRAISED_BEEF, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
                 .addIngredient(CommonTags.FOODS_RAW_BEEF)
-                .addIngredient(ModItems.COFFEE)
+                .addIngredient(ModTags.Items.COFFEE_FOOD_INGREDIENTS)
                 .addIngredient(CommonTags.FOODS_CARROT)
                 .addIngredient(CommonTags.FOODS_POTATO)
                 .unlockedByAnyIngredient(ModItems.COFFEE)

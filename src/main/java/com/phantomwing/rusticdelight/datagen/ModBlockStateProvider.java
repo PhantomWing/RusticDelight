@@ -44,6 +44,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
         farmersDelightBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
         farmersDelightBag(ModBlocks.COFFEE_BEANS_BAG.get());
+        farmersDelightBag(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
 
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());

@@ -22,6 +22,8 @@ public class ModTags {
         public static final TagKey<Item> CHERRY_BLOSSOM_INGREDIENTS = tag("cherry_blossom_ingredients");
         public static final TagKey<Item> COOKING_OIL_INGREDIENTS = tag("cooking_oil_ingredients");
         public static final TagKey<Item> COOKING_OIL = tag("cooking_oil");
+        public static final TagKey<Item> COFFEE_INGREDIENTS = tag("coffee_ingredients");
+        public static final TagKey<Item> COFFEE_FOOD_INGREDIENTS = tag("coffee_food_ingredients");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));

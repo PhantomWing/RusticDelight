@@ -1,13 +1,14 @@
-// 1.21	2024-10-23T20:04:14.6123767	Tags for minecraft:item mod id rusticdelight
+// 1.21	2025-01-25T17:43:21.3366346	Tags for minecraft:item mod id rusticdelight
 3d80867c35b4dab690e2b542b10dd7c208b93521 data/create/tags/item/upright_on_belt.json
-dd2f1e75c803f490aeff0d8fceacfec6901fdff8 data/c/tags/item/crops.json
+175cef2829e9ac9472592f4c9c5a175b821f5011 data/c/tags/item/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
-bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee.json
+bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee_beans.json
 5605de70b69fcfeb7307d056cf3c0245d8fe94a7 data/c/tags/item/crops/cotton.json
 009a26093de89f1ca5449d6cec3e4e442d993a6d data/c/tags/item/foods/bell_pepper.json
 3a6049fdf6a247720cef5ea417a0c9519f707e01 data/c/tags/item/foods/carrot.json
 5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/c/tags/item/foods/cooked_calamari.json
 a687331a8b36b3a1a7c210e5a00f0670b1a91d66 data/c/tags/item/foods/cooked_fish.json
+0c00add997e5feb2578c74a3581af2d1d26087b5 data/c/tags/item/foods/cookie.json
 0e0ea2937fdd0885a3457226892d74390e55b516 data/c/tags/item/foods/fruit.json
 680b2c76c8866d78dcfbeec0e5491643a896c174 data/c/tags/item/foods/potato.json
 0c9f970b2bc6e25bfe0ee22cf647f391100fb734 data/c/tags/item/foods/raw_calamari.json
@@ -31,6 +32,8 @@ e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/minecraft/tags/item/small_flowers.
 1c2201126bab91a662673dabe5b0707de378861a data/minecraft/tags/item/villager_plantable_seeds.json
 ec0254c3e9e3b022f7082c83ef9a2ad314fb3211 data/rusticdelight/tags/item/calamari_roll_ingredients.json
 c2122a7767958a3c19ee1e3fe408f30bf692f325 data/rusticdelight/tags/item/cherry_blossom_ingredients.json
+5eaa9c938d5b2d9533a84b05dc7e3576dc41bc5a data/rusticdelight/tags/item/coffee_food_ingredients.json
+a7387aef78a41ec6c4f4b6d82fc2a75a82bd272b data/rusticdelight/tags/item/coffee_ingredients.json
 5ad45c98c655f0647bf0a4b05337e716ccb2b154 data/rusticdelight/tags/item/cooking_oil.json
 f42464433408611a5257e783da71cbe2854b85c7 data/rusticdelight/tags/item/cooking_oil_ingredients.json
 63327054c5d6984557ad1691fbe9a4f27e619300 data/sereneseasons/tags/item/autumn_crops.json

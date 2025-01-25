@@ -45,6 +45,9 @@ public class CompatibilityTags
     public static final TagKey<Item> HAS_FISH_SLICE = externalItemTag(FRYCOOKS_DELIGHT, "has_fish_slice");
     public static final TagKey<Item> FISH_SLICES = externalItemTag(FarmersDelight.MODID, "fish_slices");
 
+    // Farmer's Respite
+    public static final String FARMERS_RESPITE = "farmersrespite";
+
     private static TagKey<Item> externalItemTag(String modId, String path) {
         return ItemTags.create(ResourceLocation.fromNamespaceAndPath(modId, path));
     }

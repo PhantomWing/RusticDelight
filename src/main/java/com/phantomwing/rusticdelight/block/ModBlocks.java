@@ -23,6 +23,8 @@ public class ModBlocks {
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static final DeferredBlock<Block> COFFEE_BEANS_BAG = BLOCKS.register("coffee_beans_bag",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+    public static final DeferredBlock<Block> ROASTED_COFFEE_BEANS_BAG = BLOCKS.register("roasted_coffee_beans_bag",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
 
     // Crop crates
     public static final DeferredBlock<Block> COTTON_BOLL_CRATE = BLOCKS.register("cotton_boll_crate",
