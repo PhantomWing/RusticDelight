@@ -99,6 +99,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks.COTTON_SEEDS_BAG.asItem(), Models.CUBE);
         itemModelGenerator.register(ModBlocks.BELL_PEPPER_SEEDS_BAG.asItem(), Models.CUBE);
         itemModelGenerator.register(ModBlocks.COFFEE_BEANS_BAG.asItem(), Models.CUBE);
+        itemModelGenerator.register(ModBlocks.ROASTED_COFFEE_BEANS_BAG.asItem(), Models.CUBE);
         itemModelGenerator.register(ModBlocks.COTTON_BOLL_CRATE.asItem(), Models.CUBE);
         itemModelGenerator.register(ModBlocks.BELL_PEPPER_GREEN_CRATE.asItem(), Models.CUBE);
         itemModelGenerator.register(ModBlocks.BELL_PEPPER_YELLOW_CRATE.asItem(), Models.CUBE);

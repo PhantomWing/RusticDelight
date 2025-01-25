@@ -1,0 +1,10 @@
+{
+  "values": [
+    "rusticdelight:coffee",
+    "rusticdelight:dark_coffee",
+    {
+      "id": "farmersrespite:coffee",
+      "required": false
+    }
+  ]
+}

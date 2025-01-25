@@ -8,22 +8,22 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "tag": "rusticdelight:coffee_ingredients"
     },
     {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "tag": "rusticdelight:coffee_ingredients"
     },
     {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "tag": "rusticdelight:coffee_ingredients"
     },
     {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "tag": "rusticdelight:coffee_ingredients"
     },
     {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "tag": "rusticdelight:coffee_ingredients"
     },
     {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "tag": "rusticdelight:coffee_ingredients"
     }
   ],
   "recipe_book_tab": "drinks",

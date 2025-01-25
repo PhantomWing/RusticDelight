@@ -1,3 +1,20 @@
+# 1.3.1
+
+### Additions
+- Added Bag of Roasted Coffee Beans
+- Added Japanese translations (thank you EndilCrafter!)
+- Added Cherry Blossom Cookie to the `c/foods/cookie` tag
+
+### Changes
+- Changed mod version to match Forge/NeoForge version
+- Golden Coffee Beans can now also be crafted with Roasted Coffee Beans
+- Roasted Coffee Beans can now be crafted into Brown Dye
+- Made the following items compostable
+  - Cherry Blossom Cookie
+  - Cherry Blossom Cheesecake
+  - Slice of Cherry Blossom Cheesecake
+- Updated textures for Coffee Beans, Roasted Coffee Beans, Bag of Coffee Beans
+ 
 # 1.0.2
 
 ### Additions

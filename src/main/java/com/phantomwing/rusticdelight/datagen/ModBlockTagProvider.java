@@ -62,7 +62,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 ModBlocks.BELL_PEPPER_GREEN_CRATE,
                 ModBlocks.BELL_PEPPER_YELLOW_CRATE,
                 ModBlocks.BELL_PEPPER_RED_CRATE,
-                ModBlocks.COFFEE_BEANS_BAG
+                ModBlocks.COFFEE_BEANS_BAG,
+                ModBlocks.ROASTED_COFFEE_BEANS_BAG
         );
     }
 
@@ -71,7 +72,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(ModTags.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG,
                 ModBlocks.BELL_PEPPER_SEEDS_BAG,
-                ModBlocks.COFFEE_BEANS_BAG
+                ModBlocks.COFFEE_BEANS_BAG,
+                ModBlocks.ROASTED_COFFEE_BEANS_BAG
         );
         getOrCreateTagBuilder(ModTags.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON,

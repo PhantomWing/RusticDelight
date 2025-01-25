@@ -59,6 +59,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.COTTON_SEEDS_BAG);
         addDrop(ModBlocks.BELL_PEPPER_SEEDS_BAG);
         addDrop(ModBlocks.COFFEE_BEANS_BAG);
+        addDrop(ModBlocks.ROASTED_COFFEE_BEANS_BAG);
 
         addDrop(ModBlocks.COTTON_BOLL_CRATE);
         addDrop(ModBlocks.BELL_PEPPER_GREEN_CRATE);

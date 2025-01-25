@@ -23,6 +23,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL)));
     public static final Block COFFEE_BEANS_BAG = registerBlock("coffee_beans_bag",
             new Block(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL)));
+    public static final Block ROASTED_COFFEE_BEANS_BAG = registerBlock("roasted_coffee_beans_bag",
+            new Block(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL)));
 
     // Crop crates
     public static final Block COTTON_BOLL_CRATE = registerBlock("cotton_boll_crate",
