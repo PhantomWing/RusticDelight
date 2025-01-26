@@ -10,7 +10,8 @@
     - Brew Farmer's Respite Coffee with Rustic Delight's Roasted Coffee Beans using a Kettle
     - Rustic Delight Coffee (and variants) can be brewed with Farmer's Respite Coffee Beans using the Cooking Pot
     - Rustic Delight Coffee variants can be crafted using Farmer's Respite Coffee
-- Added Cherry Blossom Cookie to the `c/foods/cookie` tag
+- Added compatibility with Supplementaries:
+  - Cherry Blossom Cookie can now be put in a jar
 
 ### Changes
 - Changed mod version to match Forge/NeoForge version
