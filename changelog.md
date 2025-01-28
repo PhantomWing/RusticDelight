@@ -1,3 +1,7 @@
+# 1.3.2
+### Fixes
+- Implement conditional loading for Botany Pots and Farmer's Respite recipes, to prevent parsing errors
+
 # 1.3.1
 ### Additions
 - Added Bag of Roasted Coffee Beans
