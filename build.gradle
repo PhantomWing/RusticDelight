@@ -75,15 +75,13 @@ dependencies {
 	}
 
 	// JEI
-	//modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-	//modCompileOnly("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
-	modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+	//modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
 
 	// Cloth Config
-	modLocalRuntime "curse.maven:cloth-config-348521:4973440"
+	//modLocalRuntime "curse.maven:cloth-config-348521:4973440"
 
 	// Appleskin
-	modLocalRuntime "curse.maven:appleskin-248787:4770825"
+	//modLocalRuntime "curse.maven:appleskin-248787:4770825"
 }
 
 processResources {

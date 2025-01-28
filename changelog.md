@@ -1,3 +1,9 @@
+# 1.3.2
+
+### Fixes
+- Implement conditional loading for Botany Pots and Farmer's Respite recipes, to prevent parsing errors on load
+
+
 # 1.3.1
 
 ### Additions
