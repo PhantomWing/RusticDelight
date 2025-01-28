@@ -114,9 +114,9 @@ dependencies {
     implementation fg.deobf("curse.maven:farmersdelight-398521:${farmersdelight_version}")
 
     // Optional dependencies
-    //implementation fg.deobf("curse.maven:farmers-respite-551453:5543547")
-    //implementation fg.deobf("curse.maven:botany-pots-353928:6002825")
-    //implementation fg.deobf("curse.maven:bookshelf-228525:5423987") // Required by Botany Pots
+    // implementation fg.deobf("curse.maven:farmers-respite-551453:5543547")
+    // implementation fg.deobf("curse.maven:botany-pots-353928:6002825")
+    // implementation fg.deobf("curse.maven:bookshelf-228525:5423987") // Required by Botany Pots
 
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")

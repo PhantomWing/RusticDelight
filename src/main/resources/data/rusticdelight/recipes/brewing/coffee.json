@@ -1,21 +1,34 @@
 {
-  "type": "farmersrespite:brewing",
-  "base": {
-    "count": 1000,
-    "fluid": "minecraft:water"
-  },
-  "cookingtime": 2400,
-  "experience": 0.35,
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "rusticdelight:roasted_coffee_beans"
-    },
-    {
-      "item": "rusticdelight:roasted_coffee_beans"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "minecraft:water"
+        },
+        "cookingtime": 2400,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "item": "rusticdelight:roasted_coffee_beans"
+          },
+          {
+            "item": "rusticdelight:roasted_coffee_beans"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "farmersrespite:coffee"
+        }
+      }
     }
-  ],
-  "result": {
-    "count": 1000,
-    "fluid": "farmersrespite:coffee"
-  }
+  ]
 }

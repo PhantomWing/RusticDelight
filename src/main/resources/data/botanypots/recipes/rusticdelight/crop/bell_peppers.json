@@ -1,57 +1,70 @@
 {
-  "bookshelf:load_conditions": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "type": "bookshelf:item_exists",
-      "values": [
-        "rusticdelight:bell_pepper_seeds",
-        "rusticdelight:bell_pepper_red"
-      ]
-    }
-  ],
-  "type": "botanypots:crop",
-  "seed": {
-    "item": "rusticdelight:bell_pepper_seeds"
-  },
-  "categories": [
-    "dirt"
-  ],
-  "growthTicks": 1200,
-  "display": {
-    "type": "botanypots:aging",
-    "block": "rusticdelight:bell_peppers"
-  },
-  "drops": [
-    {
-      "chance": 1.00,
-      "output": {
-        "item": "rusticdelight:bell_pepper_red"
-      },
-      "minRolls": 1,
-      "maxRolls": 2
-    },
-    {
-      "chance": 0.15,
-      "output": {
-        "item": "rusticdelight:bell_pepper_yellow"
-      },
-      "minRolls": 1,
-      "maxRolls": 1
-    },
-    {
-      "chance": 0.15,
-      "output": {
-        "item": "rusticdelight:bell_pepper_green"
-      },
-      "minRolls": 1,
-      "maxRolls": 1
-    },
-    {
-      "chance": 0.05,
-      "output": {
-        "item": "rusticdelight:bell_pepper_seeds"
-      },
-      "minRolls": 1,
-      "maxRolls": 3
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "botanypots"
+        }
+      ],
+      "recipe": {
+        "bookshelf:load_conditions": [
+          {
+            "type": "bookshelf:item_exists",
+            "values": [
+              "rusticdelight:bell_pepper_seeds",
+              "rusticdelight:bell_pepper_red"
+            ]
+          }
+        ],
+        "type": "botanypots:crop",
+        "seed": {
+          "item": "rusticdelight:bell_pepper_seeds"
+        },
+        "categories": [
+          "dirt"
+        ],
+        "growthTicks": 1200,
+        "display": {
+          "type": "botanypots:aging",
+          "block": "rusticdelight:bell_peppers"
+        },
+        "drops": [
+          {
+            "chance": 1.00,
+            "output": {
+              "item": "rusticdelight:bell_pepper_red"
+            },
+            "minRolls": 1,
+            "maxRolls": 2
+          },
+          {
+            "chance": 0.15,
+            "output": {
+              "item": "rusticdelight:bell_pepper_yellow"
+            },
+            "minRolls": 1,
+            "maxRolls": 1
+          },
+          {
+            "chance": 0.15,
+            "output": {
+              "item": "rusticdelight:bell_pepper_green"
+            },
+            "minRolls": 1,
+            "maxRolls": 1
+          },
+          {
+            "chance": 0.05,
+            "output": {
+              "item": "rusticdelight:bell_pepper_seeds"
+            },
+            "minRolls": 1,
+            "maxRolls": 3
+          }
+        ]
+      }
     }
   ]
 }

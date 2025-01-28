@@ -1,3 +1,7 @@
+# 1.3.2
+### Fixes
+- Include conditional checks for Farmer's Respite and Botany Pots recipes, to fix parsing errors when the mods are not present.
+
 # 1.3.1
 ### Additions
 - Added Bag of Roasted Coffee Beans
