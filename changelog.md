@@ -1,3 +1,8 @@
+# 1.3.2
+
+### Fixes
+- Removed data files for Botany Pots and Farmer's Respite, as those mods are not available for 1.21 yet and were causing parsing errors.
+
 # 1.3.1
 
 ### Additions
