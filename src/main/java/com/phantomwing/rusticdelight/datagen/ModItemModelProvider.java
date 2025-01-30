@@ -25,6 +25,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BELL_PEPPER_GREEN);
         simpleItem(ModItems.BELL_PEPPER_YELLOW);
         simpleItem(ModItems.BELL_PEPPER_RED);
+        simpleItem(ModItems.BELL_PEPPER_ROLL_GREEN);
+        simpleItem(ModItems.BELL_PEPPER_ROLL_YELLOW);
+        simpleItem(ModItems.BELL_PEPPER_ROLL_RED);
         simpleItem(ModItems.BELL_PEPPER_SEEDS);
         simpleItem(ModItems.BELL_PEPPER_SOUP);
         simpleItem(ModItems.BELL_PEPPER_PASTA);
@@ -55,6 +58,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MILK_COFFEE);
         simpleItem(ModItems.POTATO_SALAD);
         simpleItem(ModItems.POTATO_SLICES);
+        simpleItem(ModItems.PUMPKIN_PANCAKES);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_RED);

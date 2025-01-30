@@ -47,6 +47,8 @@ public class ModBlocks {
             () -> new PancakeBlock(FoodValues.CHERRY_BLOSSOM_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> VEGETABLE_PANCAKES = BLOCKS.register("vegetable_pancakes",
             () -> new PancakeBlock(FoodValues.VEGETABLE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> PUMPKIN_PANCAKES = BLOCKS.register("pumpkin_pancakes",
+            () -> new PancakeBlock(FoodValues.PUMPKIN_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
 
     // Wild crops
     public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",

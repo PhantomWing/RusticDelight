@@ -124,8 +124,15 @@ public class ModItems {
     public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
     public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
     public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
+    public static final DeferredItem<Item> PUMPKIN_PANCAKES = registerBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
 
     // Basic meals
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_GREEN = registerWithTab("bell_pepper_roll_green", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_YELLOW = registerWithTab("bell_pepper_roll_yellow", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_RED = registerWithTab("bell_pepper_roll_red", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             baseItem().food(FoodValues.CALAMARI_ROLL)));
     public static final DeferredItem<Item> CHERRY_BLOSSOM_ROLL = registerWithTab("cherry_blossom_roll", () -> new Item(

@@ -1,3 +1,13 @@
+# 1.4.0
+### Additions
+- Added Green Bell Pepper Roll
+- Added Yellow Bell Pepper Roll
+- Added Red Bell Pepper Roll
+- Added Pumpkin Pancakes
+
+### Changes
+- Improved textures for Vegetable Pancakes, Coffee-Braised Beef
+
 # 1.3.2
 ### Fixes
 - Implement conditional loading for Botany Pots and Farmer's Respite recipes, to prevent parsing errors

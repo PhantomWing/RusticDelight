@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "rusticdelight:batter"
+    },
+    "P": {
+      "item": "farmersdelight:pumpkin_slice"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "XPX",
+    "PBP",
+    "XYX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:pumpkin_pancakes"
+  }
+}

@@ -64,13 +64,11 @@ public class ModRecipeProvider extends RecipeProvider {
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE, ModItems.COOKED_CALAMARI_SLICE, FOOD_COOKING_EXP);
 
         // Rolls
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL, 2)
-                .requires(ModItems.CALAMARI_SLICE)
-                .requires(ModItems.CALAMARI_SLICE)
-                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
-                .unlockedBy(getHasName(ModItems.CALAMARI_SLICE), has(ModItems.CALAMARI_SLICE))
-                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
-                .save(output);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_ROLL_GREEN);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_ROLL_YELLOW);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_ROLL_RED);
+        simpleSushiRoll(output, ModItems.CALAMARI_SLICE, ModItems.CALAMARI_ROLL);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_ROLL, 2)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
@@ -162,6 +160,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("LYL")
                 .define('L', CommonTags.FOODS_LEAFY_GREEN)
                 .define('V', vegetablesPatch())
+                .define('B', ModItems.BATTER)
+                .define('Y', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.PUMPKIN_PANCAKES, 1)
+                .pattern("XPX")
+                .pattern("PBP")
+                .pattern("XYX")
+                .define('P', vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get())
+                .define('X', Items.SUGAR)
                 .define('B', ModItems.BATTER)
                 .define('Y', Items.BOWL)
                 .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
@@ -545,6 +553,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .generic(Ingredient.of(material), RecipeCategory.FOOD, result, experience, cookingTime, RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new)
                 .unlockedBy(getHasName(material), has(material))
                 .save(recipeOutput, RusticDelight.MOD_ID + ":" + getItemName(result) + "_from_campfire_cooking");
+    }
+
+    protected static void simpleSushiRoll(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike ingredient, @NotNull ItemLike result) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, result, 2)
+                .requires(ingredient)
+                .requires(ingredient)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
+                .save(recipeOutput);
     }
 
     protected static String getRecipeName(ItemLike item, ItemLike result) {
