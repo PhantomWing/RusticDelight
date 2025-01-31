@@ -4,6 +4,8 @@
 - Added Yellow Bell Pepper Roll
 - Added Red Bell Pepper Roll
 - Added Pumpkin Pancakes
+- Added ability to take a single pancake from a pancakes block, with a knife
+  - Added Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
 
 ### Changes
 - Improved textures for Vegetable Pancakes, Coffee-Braised Beef

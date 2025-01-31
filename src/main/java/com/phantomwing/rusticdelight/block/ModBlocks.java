@@ -40,15 +40,15 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHERRY_BLOSSOM_CHEESECAKE = BLOCKS.register("cherry_blossom_cheesecake",
             () -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
     public static final DeferredBlock<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",
-            () -> new PancakeBlock(FoodValues.HONEY_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.HONEY_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> CHOCOLATE_PANCAKES = BLOCKS.register("chocolate_pancakes",
-            () -> new PancakeBlock(FoodValues.CHOCOLATE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.CHOCOLATE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> CHERRY_BLOSSOM_PANCAKES = BLOCKS.register("cherry_blossom_pancakes",
-            () -> new PancakeBlock(FoodValues.CHERRY_BLOSSOM_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.CHERRY_BLOSSOM_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> VEGETABLE_PANCAKES = BLOCKS.register("vegetable_pancakes",
-            () -> new PancakeBlock(FoodValues.VEGETABLE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.VEGETABLE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> PUMPKIN_PANCAKES = BLOCKS.register("pumpkin_pancakes",
-            () -> new PancakeBlock(FoodValues.PUMPKIN_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.PUMPKIN_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
 
     // Wild crops
     public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",

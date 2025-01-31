@@ -121,10 +121,20 @@ public class ModItems {
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
     public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
+    public static final DeferredItem<Item> HONEY_PANCAKE = registerWithTab("honey_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.HONEY_PANCAKE), true));
     public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
+    public static final DeferredItem<Item> CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.CHOCOLATE_PANCAKE), true));
     public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.CHERRY_BLOSSOM_PANCAKE), true));
     public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
+    public static final DeferredItem<Item> VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.VEGETABLE_PANCAKE), true));
     public static final DeferredItem<Item> PUMPKIN_PANCAKES = registerBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
+    public static final DeferredItem<Item> PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.PUMPKIN_PANCAKE), true));
 
     // Basic meals
     public static final DeferredItem<Item> BELL_PEPPER_ROLL_GREEN = registerWithTab("bell_pepper_roll_green", () -> new Item(

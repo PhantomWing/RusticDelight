@@ -6,8 +6,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -27,13 +30,18 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
+import vectorwing.farmersdelight.common.utility.TextUtils;
+
+import java.util.function.Supplier;
 
 public class PancakeBlock extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final Integer MAX_SERVINGS = 6;
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, MAX_SERVINGS - 1);
 
-    public final FoodProperties foodProperties;
+    public final Supplier<Item> servingItem;
 
     protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
     protected static final VoxelShape[] PANCAKES_SHAPES =  new VoxelShape[]{
@@ -45,11 +53,35 @@ public class PancakeBlock extends Block {
             Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 3.0D, 13.0D), BooleanOp.OR)
     };
 
-    public PancakeBlock(FoodProperties foodProperties, Properties properties) {
+    public PancakeBlock(Supplier<Item> servingItem, Properties properties) {
         super(properties);
 
-        this.foodProperties = foodProperties;
+        this.servingItem = servingItem;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SERVINGS, 0));
+    }
+
+    @Override
+    public ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (heldStack.is(ModTags.KNIVES)) {
+            return takeServing(level, pos, state, player);
+        }
+
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    protected ItemInteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
+        int bites = state.getValue(SERVINGS);
+        if (bites < MAX_SERVINGS - 1) {
+            level.setBlock(pos, state.setValue(SERVINGS, bites + 1), 3);
+        } else {
+            level.removeBlock(pos, false);
+        }
+
+        Direction direction = player.getDirection().getOpposite();
+        ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
+                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
+        level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+        return ItemInteractionResult.SUCCESS;
     }
 
     @Override
@@ -74,6 +106,9 @@ public class PancakeBlock extends Block {
         if (!playerIn.canEat(false)) {
             return InteractionResult.PASS;
         } else {
+            ItemStack servingStack = this.getServingItem();
+            FoodProperties foodProperties = servingStack.getItem().getFoodProperties(servingStack, playerIn);
+
             // Apply food effect to the player
             if (foodProperties != null) {
                 playerIn.getFoodData().eat(foodProperties);
@@ -97,6 +132,10 @@ public class PancakeBlock extends Block {
 
             return InteractionResult.SUCCESS;
         }
+    }
+
+    public ItemStack getServingItem() {
+        return new ItemStack(this.servingItem.get());
     }
 
     @Override
