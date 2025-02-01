@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:vegetable_pancake"
+    },
+    {
+      "item": "rusticdelight:vegetable_pancake"
+    },
+    {
+      "item": "rusticdelight:vegetable_pancake"
+    },
+    {
+      "item": "rusticdelight:vegetable_pancake"
+    },
+    {
+      "item": "rusticdelight:vegetable_pancake"
+    },
+    {
+      "item": "rusticdelight:vegetable_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:vegetable_pancakes"
+  }
+}

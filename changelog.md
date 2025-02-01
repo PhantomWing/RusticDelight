@@ -1,18 +1,22 @@
 # 1.4.0
 ### Additions
-- Added Green Bell Pepper Roll
-- Added Yellow Bell Pepper Roll
-- Added Red Bell Pepper Roll
-- Added Pumpkin Pancakes
-- Added ability to take a single pancake from a pancakes block, with a knife
+- Added Syrup, a new cooking ingredient used in multiple recipes
+- Improved Pancakes feature:
+  - Added ability to take a single pancake from a pancakes block, with a knife
+  - New pancake variants: Syrup Pancakes, Pumpkin Pancakes
   - Added Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
+- Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
+
 
 ### Changes
+- Rebalanced pancake food effects
 - Improved textures for Vegetable Pancakes, Coffee-Braised Beef
+
 
 # 1.3.2
 ### Fixes
 - Implement conditional loading for Botany Pots and Farmer's Respite recipes, to prevent parsing errors
+
 
 # 1.3.1
 ### Additions

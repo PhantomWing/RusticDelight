@@ -1,4 +1,4 @@
-// 1.21	2025-01-30T22:16:43.9745403	Loot Tables
+// 1.21	2025-02-01T20:07:23.4564057	Loot Tables
 fda0d21d33e490b1a3732bbd23158dea165de98e data/rusticdelight/loot_table/blocks/bell_peppers.json
 f59eb3ac1f0a492aed56be3030ed112950e3992a data/rusticdelight/loot_table/blocks/bell_pepper_green_crate.json
 bf89f8e0124babeb230fe27122661206e430acdf data/rusticdelight/loot_table/blocks/bell_pepper_red_crate.json
@@ -18,6 +18,7 @@ df0de5376f6c139877e7f94f06958ef2e7aa8d1f data/rusticdelight/loot_table/blocks/po
 64a30ef4e135cffadf930f697013a1c598248e80 data/rusticdelight/loot_table/blocks/potted_wild_cotton.json
 3aa9c03b7348668116dd77aa449480dabc04f733 data/rusticdelight/loot_table/blocks/pumpkin_pancakes.json
 5686033186fa570f3cb8ffed044ffb1682818bb5 data/rusticdelight/loot_table/blocks/roasted_coffee_beans_bag.json
+a0ccda3c3ae069f7bbc125189e0116c60260195f data/rusticdelight/loot_table/blocks/syrup_pancakes.json
 75e8bfa84c4b6ddd5815d9cc4d533ea0fcd51269 data/rusticdelight/loot_table/blocks/vegetable_pancakes.json
 4348bd7d75425588f89ff563e659b38c8ef82194 data/rusticdelight/loot_table/blocks/wild_bell_peppers.json
 7145d6debff536ab77ccaa6a43c0b85426a690ee data/rusticdelight/loot_table/blocks/wild_coffee.json

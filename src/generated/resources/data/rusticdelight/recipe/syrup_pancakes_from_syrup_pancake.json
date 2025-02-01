@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:syrup_pancake"
+    },
+    {
+      "item": "rusticdelight:syrup_pancake"
+    },
+    {
+      "item": "rusticdelight:syrup_pancake"
+    },
+    {
+      "item": "rusticdelight:syrup_pancake"
+    },
+    {
+      "item": "rusticdelight:syrup_pancake"
+    },
+    {
+      "item": "rusticdelight:syrup_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:syrup_pancakes"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21	2025-01-31T21:31:36.6977884	Item Models: rusticdelight
+// 1.21	2025-02-01T20:07:23.4654057	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -60,6 +60,9 @@ aaf640d3291e40695ec76170478c7bb68c8baffe assets/rusticdelight/models/item/spring
 486428c5ca4735fc79328ace95746abc7ef69e2c assets/rusticdelight/models/item/stuffed_bell_pepper_green.json
 f9476ed989411045bf8dc822fb5f68c465afc332 assets/rusticdelight/models/item/stuffed_bell_pepper_red.json
 43507b769d4409aba44af1d874bb3d187ca8cf96 assets/rusticdelight/models/item/stuffed_bell_pepper_yellow.json
+48d1bcbd2528fa66aec467071d467c7aef7a4de7 assets/rusticdelight/models/item/syrup.json
+14b6000a72bcf642c30e90d79daea1978c5d4ea3 assets/rusticdelight/models/item/syrup_pancake.json
+ec74d4a23bf18a278e6b30d5a6735038973305f9 assets/rusticdelight/models/item/syrup_pancakes.json
 53ed152a2c18822126bdb0ce00f57699a936d5b8 assets/rusticdelight/models/item/vegetable_pancake.json
 4e353117fac6bf87d54ea94d14571198fd3c2c4a assets/rusticdelight/models/item/vegetable_pancakes.json
 59795b1136ef35efadd2e6b38fe57e408bf84530 assets/rusticdelight/models/item/wild_bell_peppers.json

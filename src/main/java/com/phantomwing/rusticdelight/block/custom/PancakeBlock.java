@@ -32,7 +32,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import java.util.function.Supplier;
 
@@ -61,7 +60,7 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (heldStack.is(ModTags.KNIVES)) {
             return takeServing(level, pos, state, player);
         }
@@ -69,23 +68,8 @@ public class PancakeBlock extends Block {
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
-    protected ItemInteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
-        int bites = state.getValue(SERVINGS);
-        if (bites < MAX_SERVINGS - 1) {
-            level.setBlock(pos, state.setValue(SERVINGS, bites + 1), 3);
-        } else {
-            level.removeBlock(pos, false);
-        }
-
-        Direction direction = player.getDirection().getOpposite();
-        ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
-                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
-        level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-        return ItemInteractionResult.SUCCESS;
-    }
-
     @Override
-    protected @NotNull InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
         if (level.isClientSide) {
             if (consumeServing(level, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
@@ -99,15 +83,31 @@ public class PancakeBlock extends Block {
         return consumeServing(level, pos, state, player);
     }
 
+    protected ItemInteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
+        // Drop the serving item.
+        Direction direction = player.getDirection().getOpposite();
+        ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
+                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
+
+        // Remove a serving from the block.
+        this.removeServing(level, pos, state);
+
+        // Play a sound, for taking the serving.
+        level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+
+        return ItemInteractionResult.SUCCESS;
+    }
+
     /**
      * Eats a pancake from the stack, feeding the player.
      */
     protected InteractionResult consumeServing(Level level, BlockPos pos, BlockState state, Player playerIn) {
         if (!playerIn.canEat(false)) {
+            // If the player is full, no interaction is possible.
             return InteractionResult.PASS;
         } else {
             ItemStack servingStack = this.getServingItem();
-            FoodProperties foodProperties = servingStack.getItem().getFoodProperties(servingStack, playerIn);
+            FoodProperties foodProperties = servingStack.getFoodProperties(playerIn);
 
             // Apply food effect to the player
             if (foodProperties != null) {
@@ -119,13 +119,8 @@ public class PancakeBlock extends Block {
                 }
             }
 
-            // Update the block model. If there are no more servings left, destroy the block.
-            int servingsTaken = state.getValue(SERVINGS);
-            if (servingsTaken < MAX_SERVINGS - 1) {
-                level.setBlock(pos, state.setValue(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
-            } else {
-                level.destroyBlock(pos, true);
-            }
+            // Remove a serving from the block.
+            this.removeServing(level, pos, state);
 
             // Play a sound.
             level.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 0.8F);
@@ -134,12 +129,22 @@ public class PancakeBlock extends Block {
         }
     }
 
+    /** Update the block model. If there are no more servings left, destroy the block. */
+    private void removeServing(Level level, BlockPos pos, BlockState state) {
+        int servingsTaken = state.getValue(SERVINGS);
+        if (servingsTaken < MAX_SERVINGS - 1) {
+            level.setBlock(pos, state.setValue(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
+        } else {
+            level.destroyBlock(pos, true);
+        }
+    }
+
     public ItemStack getServingItem() {
         return new ItemStack(this.servingItem.get());
     }
 
     @Override
-    public @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return PANCAKES_SHAPES[state.getValue(SERVINGS)];
     }
 
@@ -149,12 +154,12 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+    public @NotNull BlockState updateShape(@NotNull BlockState stateIn, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
         return facing == Direction.DOWN && !stateIn.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.below()).isSolid();
     }
 
@@ -164,17 +169,17 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState blockState, @NotNull Level level, @NotNull BlockPos pos) {
         return blockState.getValue(SERVINGS);
     }
 
     @Override
-    public boolean hasAnalogOutputSignal(BlockState state) {
+    public boolean hasAnalogOutputSignal(@NotNull BlockState state) {
         return true;
     }
 
     @Override
-    public boolean isPathfindable(BlockState state, PathComputationType type) {
+    public boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType type) {
         return false;
     }
 }

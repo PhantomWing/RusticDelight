@@ -16,6 +16,9 @@ public class FoodValues {
     public static final FoodProperties COOKING_OIL = (new FoodProperties.Builder())
             .nutrition(2).saturationModifier(0.3F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 0.5f).fast().build();
+    public static final FoodProperties BEET_SYRUP = (new FoodProperties.Builder())
+            .nutrition(2).saturationModifier(0.2F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), 1.0F).build();
 
     // Basic foods
     public static final FoodProperties BELL_PEPPER = (new FoodProperties.Builder())
@@ -76,21 +79,24 @@ public class FoodValues {
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
+    public static final FoodProperties SYRUP_PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties HONEY_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties CHOCOLATE_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties CHERRY_BLOSSOM_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 300, 0, false, false), 1.0F).build();
     public static final FoodProperties VEGETABLE_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0, false, false), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties PUMPKIN_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 300, 0, false, false), 1.0F).build();
 
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder())

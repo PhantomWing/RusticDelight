@@ -1,6 +1,7 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
@@ -10,6 +11,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
@@ -19,6 +21,7 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
+import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -120,10 +123,20 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE), has(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE))
                 .save(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "cherry_blossom_cheesecake_from_slices"));
 
-        // Pancakes
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES, 1)
-                .pattern("XHX")
+        // Pancake stacks
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SYRUP_PANCAKES, 1)
+                .pattern(" X ")
+                .pattern("SMS")
                 .pattern("SBS")
+                .define('X', ModTags.Items.SYRUP)
+                .define('S', Items.SUGAR)
+                .define('M', ModItems.BATTER)
+                .define('B', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES, 1)
+                .pattern("SHS")
+                .pattern("XBX")
                 .pattern("XYX")
                 .define('S', Items.SWEET_BERRIES)
                 .define('H', Items.HONEY_BOTTLE)
@@ -174,6 +187,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('Y', Items.BOWL)
                 .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
                 .save(output);
+
+        // Single pancakes
+        pancakeRecipes(output, ModItems.SYRUP_PANCAKES, ModItems.SYRUP_PANCAKE);
+        pancakeRecipes(output, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE);
+        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE);
+        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE);
+        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE);
+        pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE);
+
 
         // Cotton
         oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL, Items.STRING, 1);
@@ -243,6 +265,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output, getRecipeName(ModItems.COFFEE, ModItems.HONEY_COFFEE));
+
+        // Syrup-based recipes
+        oneToOne(output, RecipeCategory.MISC, ModItems.SYRUP, Items.SUGAR, 3);
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -309,6 +334,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(Items.MILK_BUCKET, vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.BATTER.getId());
+
+        // Syrup
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP, 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
+                .addIngredient(ModTags.Items.SYRUP_INGREDIENTS)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SUGAR)
+                .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output, ModItems.SYRUP.getId());
 
         // Spring Rolls
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS, 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
@@ -563,6 +597,23 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
                 .save(recipeOutput);
+    }
+
+    protected static void pancakeRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pancakeBlock, @NotNull DeferredItem<Item> singlePancake) {
+        // Add a cutting recipe for pancakes to separate them into single pancakes.
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock), Ingredient.of(CommonTags.TOOLS_KNIFE), singlePancake, PancakeBlock.MAX_SERVINGS)
+                .addResult(Items.BOWL)
+                .build(recipeOutput, pancakeBlock.getId());
+
+        // Split a stack of pancakes into separate pancakes.
+        oneToOne(recipeOutput, RecipeCategory.MISC, pancakeBlock, singlePancake.get(), PancakeBlock.MAX_SERVINGS);
+
+        // Combine separate pancakes together into a single stack
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, pancakeBlock)
+                .requires(singlePancake, PancakeBlock.MAX_SERVINGS)
+                .requires(Items.BOWL) // Pancakes are always placed on a bowl
+                .unlockedBy(getHasName(singlePancake), has(singlePancake))
+                .save(recipeOutput, getRecipeName(singlePancake, pancakeBlock));
     }
 
     protected static String getRecipeName(ItemLike item, ItemLike result) {

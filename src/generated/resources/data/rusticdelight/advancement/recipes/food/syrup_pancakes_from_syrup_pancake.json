@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_syrup_pancake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:syrup_pancake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:syrup_pancakes_from_syrup_pancake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_syrup_pancake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:syrup_pancakes_from_syrup_pancake"
+    ]
+  }
+}

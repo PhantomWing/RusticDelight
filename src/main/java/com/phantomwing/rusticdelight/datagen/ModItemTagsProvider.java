@@ -64,6 +64,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.COFFEE.get(),
                 ModItems.DARK_COFFEE.get()
         ).addOptional(ResourceLocation.fromNamespaceAndPath(CompatibilityTags.FARMERS_RESPITE, "coffee"));
+
+        // Syrup
+        this.tag(ModTags.Items.SYRUP_INGREDIENTS).add(
+                Items.APPLE
+        ).addTag(Tags.Items.CROPS_BEETROOT);
+
+        this.tag(ModTags.Items.SYRUP).add(
+                ModItems.SYRUP.get()
+        );
     }
 
     private void addMinecraftTags() {
