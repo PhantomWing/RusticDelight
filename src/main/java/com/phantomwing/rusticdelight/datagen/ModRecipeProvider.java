@@ -104,6 +104,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
                 .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
                 .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COFFEE_COOKIE, 8)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .requires(ModTags.Items.COFFEE_INGREDIENTS)
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .unlockedBy(getHasName(ModItems.DARK_COFFEE), has(ModItems.DARK_COFFEE))
+                .save(output);
 
         // Pies
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
@@ -255,16 +262,26 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
                 .requires(ModItems.MILK_COFFEE)
                 .requires(Items.HONEY_BOTTLE)
-                .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
                 .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.HONEY_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.FOODS_MILK)
                 .requires(Items.HONEY_BOTTLE)
-                .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output, getRecipeName(ModItems.COFFEE, ModItems.HONEY_COFFEE));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE, 1)
+                .requires(ModItems.MILK_COFFEE)
+                .requires(ModItems.SYRUP)
+                .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
+                .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.SYRUP_COFFEE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE, 1)
+                .requires(ModItems.COFFEE)
+                .requires(CommonTags.FOODS_MILK)
+                .requires(ModItems.SYRUP)
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .save(output, getRecipeName(ModItems.COFFEE, ModItems.SYRUP_COFFEE));
 
         // Syrup-based recipes
         oneToOne(output, RecipeCategory.MISC, ModItems.SYRUP, Items.SUGAR, 3);
@@ -493,10 +510,20 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(Items.HONEY_BOTTLE, 1)
-                .addIngredient(Items.SUGAR, 1)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(output, ModItems.HONEY_COFFEE.getId());
+
+        // Syrup Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModItems.SYRUP, 1)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output, ModItems.SYRUP_COFFEE.getId());
 
         // Dark Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)

@@ -1,4 +1,4 @@
-// 1.21	2025-02-01T20:07:23.4654057	Item Models: rusticdelight
+// 1.21	2025-02-02T17:37:22.3974906	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -30,6 +30,7 @@ f5a2085f103a7b547691f8ba9f1c83a3509c5fd9 assets/rusticdelight/models/item/chocol
 127a6700c6a6c798f3a186349f66dbb13f16753e assets/rusticdelight/models/item/coffee_beans.json
 f04a1a97fea898ecb4f0035c090d581ac2b15a3a assets/rusticdelight/models/item/coffee_beans_bag.json
 2f658b270c4f401091be88becb867b5f67a1ba3f assets/rusticdelight/models/item/coffee_braised_beef.json
+2972d4cace4b2b989b0642ce22605f79817a27d1 assets/rusticdelight/models/item/coffee_cookie.json
 454252eb084804cf07eecca0d5df1ed7597c8a6e assets/rusticdelight/models/item/cooked_calamari.json
 3ef4f0a92f7ccd4327e90637d40ce8cad9bb79db assets/rusticdelight/models/item/cooked_calamari_slice.json
 742cfeea550a73ca5966e6586132d61e62311cc0 assets/rusticdelight/models/item/cooking_oil.json
@@ -61,6 +62,7 @@ aaf640d3291e40695ec76170478c7bb68c8baffe assets/rusticdelight/models/item/spring
 f9476ed989411045bf8dc822fb5f68c465afc332 assets/rusticdelight/models/item/stuffed_bell_pepper_red.json
 43507b769d4409aba44af1d874bb3d187ca8cf96 assets/rusticdelight/models/item/stuffed_bell_pepper_yellow.json
 48d1bcbd2528fa66aec467071d467c7aef7a4de7 assets/rusticdelight/models/item/syrup.json
+10efd7379c72cea930cde6a809174b1ff73afdb3 assets/rusticdelight/models/item/syrup_coffee.json
 14b6000a72bcf642c30e90d79daea1978c5d4ea3 assets/rusticdelight/models/item/syrup_pancake.json
 ec74d4a23bf18a278e6b30d5a6735038973305f9 assets/rusticdelight/models/item/syrup_pancakes.json
 53ed152a2c18822126bdb0ce00f57699a936d5b8 assets/rusticdelight/models/item/vegetable_pancake.json

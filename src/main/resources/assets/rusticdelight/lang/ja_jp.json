@@ -18,6 +18,8 @@
   "block.rusticdelight.wild_cotton": "野生のコットン",
   "farmersdelight.tooltip.chocolate_coffee": "1種類の負の効果を除去",
   "farmersdelight.tooltip.milk_coffee": "1種類の効果を除去",
+  "farmersdelight.tooltip.honey_coffee": "1種類の効果を除去",
+  "farmersdelight.tooltip.syrup_coffee": "1種類の効果を除去",
   "item.minecraft.lingering_potion.effect.haste": "採掘速度上昇の残留ポーション",
   "item.minecraft.potion.effect.haste": "採掘速度上昇のポーション",
   "item.minecraft.splash_potion.effect.haste": "採掘速度上昇のスプラッシュポーション",

@@ -1,15 +1,19 @@
 # 1.4.0
 ### Additions
 - Added Syrup, a new cooking ingredient used in multiple recipes
-- Improved Pancakes feature:
+- Expanded Pancakes feature:
   - Added ability to take a single pancake from a pancakes block, with a knife
   - New pancake variants: Syrup Pancakes, Pumpkin Pancakes
   - Added Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
-- Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
-
+- Expanded Coffee feature:
+  - Added Syrup Coffee
+  - Added Coffee Cookie
+- Expanded Bell Peppers feature:
+  - Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
 
 ### Changes
-- Rebalanced pancake food effects
+- Rebalanced coffee effects
+- Rebalanced pancake effects
 - Improved textures for Vegetable Pancakes, Coffee-Braised Beef
 
 

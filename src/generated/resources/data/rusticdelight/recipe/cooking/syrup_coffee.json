@@ -19,12 +19,12 @@
       "tag": "rusticdelight:coffee_ingredients"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "item": "rusticdelight:syrup"
     }
   ],
   "recipe_book_tab": "drinks",
   "result": {
     "count": 1,
-    "id": "rusticdelight:honey_coffee"
+    "id": "rusticdelight:syrup_coffee"
   }
 }

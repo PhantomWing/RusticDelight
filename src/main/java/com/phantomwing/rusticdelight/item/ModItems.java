@@ -91,8 +91,10 @@ public class ModItems {
             bottleItem().food(FoodValues.MILK_COFFEE)));
     public static final DeferredItem<Item> CHOCOLATE_COFFEE = registerWithTab("chocolate_coffee", () -> new ChocolateCoffeeItem(
             bottleItem().food(FoodValues.CHOCOLATE_COFFEE)));
-    public static final DeferredItem<Item> HONEY_COFFEE = registerWithTab("honey_coffee", () -> new DrinkableItem(
-            bottleItem().food(FoodValues.HONEY_COFFEE), true));
+    public static final DeferredItem<Item> HONEY_COFFEE = registerWithTab("honey_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.HONEY_COFFEE)));
+    public static final DeferredItem<Item> SYRUP_COFFEE = registerWithTab("syrup_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.SYRUP_COFFEE)));
     public static final DeferredItem<Item> DARK_COFFEE = registerWithTab("dark_coffee", () -> new DrinkableItem(
             bottleItem().food(FoodValues.DARK_COFFEE), true));
 
@@ -117,6 +119,8 @@ public class ModItems {
     // Sweets
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
             baseItem().food(FoodValues.FRUIT_BEIGNET), true));
+    public static final DeferredItem<Item> COFFEE_COOKIE = registerWithTab("coffee_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
     public static final DeferredItem<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());

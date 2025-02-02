@@ -9,11 +9,11 @@
       "tag": "c:foods/milk"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "item": "rusticdelight:syrup"
     }
   ],
   "result": {
     "count": 1,
-    "id": "rusticdelight:honey_coffee"
+    "id": "rusticdelight:syrup_coffee"
   }
 }

@@ -18,6 +18,8 @@
   "block.rusticdelight.wild_cotton": "野生棉花",
   "farmersdelight.tooltip.chocolate_coffee": "清除1个有害效果",
   "farmersdelight.tooltip.milk_coffee": "清除1个效果",
+  "farmersdelight.tooltip.honey_coffee": "清除1个效果",
+  "farmersdelight.tooltip.syrup_coffee": "清除1个效果",
   "item.minecraft.lingering_potion.effect.haste": "滞留型加速药水",
   "item.minecraft.potion.effect.haste": "加速药水",
   "item.minecraft.splash_potion.effect.haste": "喷溅型加速药水",

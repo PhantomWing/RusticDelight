@@ -18,6 +18,8 @@
   "block.rusticdelight.wild_cotton": "Wildbaumwolle",
   "farmersdelight.tooltip.chocolate_coffee": "Löscht einen negativen Statuseffekt",
   "farmersdelight.tooltip.milk_coffee": "Löscht einen Statuseffekt",
+  "farmersdelight.tooltip.honey_coffee": "Löscht einen Statuseffekt",
+  "farmersdelight.tooltip.syrup_coffee": "Löscht einen Statuseffekt",
   "item.minecraft.lingering_potion.effect.haste": "Verweiltrank der Eile",
   "item.minecraft.potion.effect.haste": "Trank der Eile",
   "item.minecraft.splash_potion.effect.haste": "Wurftrank der Eile",
