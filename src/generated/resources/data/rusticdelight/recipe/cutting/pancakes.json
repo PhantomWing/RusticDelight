@@ -2,14 +2,14 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "rusticdelight:syrup_pancakes"
+      "item": "rusticdelight:pancakes"
     }
   ],
   "result": [
     {
       "item": {
         "count": 6,
-        "id": "rusticdelight:syrup_pancake"
+        "id": "rusticdelight:pancake"
       }
     },
     {

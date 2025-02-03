@@ -28,6 +28,7 @@ import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider {
@@ -130,78 +131,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE), has(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE))
                 .save(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "cherry_blossom_cheesecake_from_slices"));
 
-        // Pancake stacks
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SYRUP_PANCAKES, 1)
-                .pattern(" X ")
-                .pattern("SMS")
-                .pattern("SBS")
-                .define('X', ModTags.Items.SYRUP)
-                .define('S', Items.SUGAR)
-                .define('M', ModItems.BATTER)
-                .define('B', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES, 1)
-                .pattern("SHS")
-                .pattern("XBX")
-                .pattern("XYX")
-                .define('S', Items.SWEET_BERRIES)
-                .define('H', Items.HONEY_BOTTLE)
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER)
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHOCOLATE_PANCAKES, 1)
-                .pattern("XMX")
-                .pattern("CBC")
-                .pattern("XYX")
-                .define('C', Items.COCOA_BEANS)
-                .define('M', CommonTags.FOODS_MILK)
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER)
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_PANCAKES, 1)
-                .pattern("XMX")
-                .pattern("PBP")
-                .pattern("XYX")
-                .define('P', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
-                .define('M', CommonTags.FOODS_MILK)
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER)
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.VEGETABLE_PANCAKES, 1)
-                .pattern("LVL")
-                .pattern("VBV")
-                .pattern("LYL")
-                .define('L', CommonTags.FOODS_LEAFY_GREEN)
-                .define('V', vegetablesPatch())
-                .define('B', ModItems.BATTER)
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.PUMPKIN_PANCAKES, 1)
-                .pattern("XPX")
-                .pattern("PBP")
-                .pattern("XYX")
-                .define('P', vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get())
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER)
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
-                .save(output);
-
-        // Single pancakes
-        pancakeRecipes(output, ModItems.SYRUP_PANCAKES, ModItems.SYRUP_PANCAKE);
-        pancakeRecipes(output, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE);
-        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE);
-        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE);
-        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE);
-        pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE);
+        // Pancakes
+        pancakeRecipes(output, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
+        pancakeRecipes(output, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE, Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SUGAR));
+        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Items.COCOA_BEANS));
+        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), vegetablesPatch(), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
+        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
+        pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
 
 
         // Cotton
@@ -353,9 +289,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, ModItems.BATTER.getId());
 
         // Syrup
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP, 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP, 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
                 .addIngredient(ModTags.Items.SYRUP_INGREDIENTS)
-                .addIngredient(Items.SUGAR)
                 .addIngredient(Items.SUGAR)
                 .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
@@ -626,8 +561,25 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    protected static void pancakeRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pancakeBlock, @NotNull DeferredItem<Item> singlePancake) {
-        // Add a cutting recipe for pancakes to separate them into single pancakes.
+    protected static void pancakeRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pancakeBlock, @NotNull DeferredItem<Item> singlePancake, Ingredient topping, Ingredient ingredient) {
+        pancakeRecipes(recipeOutput, pancakeBlock, singlePancake, topping, ingredient, ingredient);
+    }
+
+    protected static void pancakeRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pancakeBlock, @NotNull DeferredItem<Item> singlePancake, Ingredient topping, Ingredient ingredient, Ingredient ingredient2) {
+        // Crafting a pancake block.
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pancakeBlock, 1)
+                .pattern(" T ")
+                .pattern("XMX")
+                .pattern("YBY")
+                .define('T', topping) // Topping
+                .define('X', ingredient) // Main ingredient
+                .define('Y', ingredient2) // Optional secondary ingredient
+                .define('M', ModItems.BATTER)
+                .define('B', Items.BOWL)
+                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
+                .save(recipeOutput);
+
+        // Cutting recipe for pancakes to separate them into single pancakes.
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock), Ingredient.of(CommonTags.TOOLS_KNIFE), singlePancake, PancakeBlock.MAX_SERVINGS)
                 .addResult(Items.BOWL)
                 .build(recipeOutput, pancakeBlock.getId());

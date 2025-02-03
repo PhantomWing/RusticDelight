@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "rusticdelight:syrup_pancakes"
+      "item": "rusticdelight:pancakes"
     }
   ],
   "result": {
     "count": 6,
-    "id": "rusticdelight:syrup_pancake"
+    "id": "rusticdelight:pancake"
   }
 }

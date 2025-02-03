@@ -3,22 +3,25 @@
   "category": "misc",
   "key": {
     "B": {
+      "item": "minecraft:bowl"
+    },
+    "M": {
       "item": "rusticdelight:batter"
     },
-    "P": {
-      "item": "farmersdelight:pumpkin_slice"
+    "T": {
+      "tag": "rusticdelight:syrup"
     },
     "X": {
-      "item": "minecraft:sugar"
+      "item": "farmersdelight:pumpkin_slice"
     },
     "Y": {
-      "item": "minecraft:bowl"
+      "item": "farmersdelight:pumpkin_slice"
     }
   },
   "pattern": [
-    "XPX",
-    "PBP",
-    "XYX"
+    " T ",
+    "XMX",
+    "YBY"
   ],
   "result": {
     "count": 1,

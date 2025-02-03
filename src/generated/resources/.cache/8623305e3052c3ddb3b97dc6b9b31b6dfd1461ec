@@ -1,4 +1,4 @@
-// 1.21	2025-02-02T17:37:22.3974906	Item Models: rusticdelight
+// 1.21	2025-02-03T10:39:24.8210132	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -48,6 +48,8 @@ ca90b1e1071bdf904f5fded9b749de01614ba79e assets/rusticdelight/models/item/cotton
 fe9f314cf0eabd7b1b5221b3dbc66a2e7ab45282 assets/rusticdelight/models/item/honey_pancake.json
 3e699113e8d9460c008e0219f1b7ef033782ef65 assets/rusticdelight/models/item/honey_pancakes.json
 bf6b83dd19525f786751b04117db87f3f633a26d assets/rusticdelight/models/item/milk_coffee.json
+6a55189bd10fade9e44427476be0a88644ea0677 assets/rusticdelight/models/item/pancake.json
+4dee014dd837855f7f672477008d3fa172c81793 assets/rusticdelight/models/item/pancakes.json
 8faf0191d2ecf991725777260198b1d6ecbc248e assets/rusticdelight/models/item/potato_salad.json
 385fef3984c2538dfcedbc3f1b7bf9ad41698850 assets/rusticdelight/models/item/potato_slices.json
 7014afb7b8124846c6322969b2090e92c9e7c583 assets/rusticdelight/models/item/pumpkin_pancake.json
@@ -63,8 +65,6 @@ f9476ed989411045bf8dc822fb5f68c465afc332 assets/rusticdelight/models/item/stuffe
 43507b769d4409aba44af1d874bb3d187ca8cf96 assets/rusticdelight/models/item/stuffed_bell_pepper_yellow.json
 48d1bcbd2528fa66aec467071d467c7aef7a4de7 assets/rusticdelight/models/item/syrup.json
 10efd7379c72cea930cde6a809174b1ff73afdb3 assets/rusticdelight/models/item/syrup_coffee.json
-14b6000a72bcf642c30e90d79daea1978c5d4ea3 assets/rusticdelight/models/item/syrup_pancake.json
-ec74d4a23bf18a278e6b30d5a6735038973305f9 assets/rusticdelight/models/item/syrup_pancakes.json
 53ed152a2c18822126bdb0ce00f57699a936d5b8 assets/rusticdelight/models/item/vegetable_pancake.json
 4e353117fac6bf87d54ea94d14571198fd3c2c4a assets/rusticdelight/models/item/vegetable_pancakes.json
 59795b1136ef35efadd2e6b38fe57e408bf84530 assets/rusticdelight/models/item/wild_bell_peppers.json

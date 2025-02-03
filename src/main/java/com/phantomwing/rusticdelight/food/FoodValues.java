@@ -3,7 +3,6 @@ package com.phantomwing.rusticdelight.food;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import static vectorwing.farmersdelight.common.FoodValues.*;
@@ -85,9 +84,8 @@ public class FoodValues {
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
-    public static final FoodProperties SYRUP_PANCAKE = (new FoodProperties.Builder())
-            .nutrition(4).saturationModifier(0.6F)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
+    public static final FoodProperties PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F).build();
     public static final FoodProperties HONEY_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0, false, false), 1.0F).build();

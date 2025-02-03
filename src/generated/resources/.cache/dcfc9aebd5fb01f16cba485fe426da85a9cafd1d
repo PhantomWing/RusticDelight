@@ -1,4 +1,4 @@
-// 1.21	2025-02-02T17:00:37.8620875	Tags for minecraft:item mod id rusticdelight
+// 1.21	2025-02-03T23:20:59.227237	Tags for minecraft:item mod id rusticdelight
 3d80867c35b4dab690e2b542b10dd7c208b93521 data/create/tags/item/upright_on_belt.json
 175cef2829e9ac9472592f4c9c5a175b821f5011 data/c/tags/item/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
@@ -8,7 +8,7 @@ bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee_beans.jso
 3a6049fdf6a247720cef5ea417a0c9519f707e01 data/c/tags/item/foods/carrot.json
 5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/c/tags/item/foods/cooked_calamari.json
 a687331a8b36b3a1a7c210e5a00f0670b1a91d66 data/c/tags/item/foods/cooked_fish.json
-0c00add997e5feb2578c74a3581af2d1d26087b5 data/c/tags/item/foods/cookie.json
+2d9b90d7ed5c205c3d7ffe19736b0ea708097c38 data/c/tags/item/foods/cookie.json
 0e0ea2937fdd0885a3457226892d74390e55b516 data/c/tags/item/foods/fruit.json
 680b2c76c8866d78dcfbeec0e5491643a896c174 data/c/tags/item/foods/potato.json
 0c9f970b2bc6e25bfe0ee22cf647f391100fb734 data/c/tags/item/foods/raw_calamari.json

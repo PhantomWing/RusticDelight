@@ -186,7 +186,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         );
 
         this.tag(CommonTags.FOODS_COOKIE).add(
-                ModItems.CHERRY_BLOSSOM_COOKIE.get()
+                ModItems.CHERRY_BLOSSOM_COOKIE.get(),
+                ModItems.COFFEE_COOKIE.get()
         );
     }
 

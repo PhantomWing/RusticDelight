@@ -63,6 +63,20 @@
 				"up": {"uv": [4, 4, 12, 12], "texture": "#2"},
 				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
 			}
+		},
+		{
+			"name": "topping_cream",
+			"from": [7, 5, 6],
+			"to": [11, 6, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 5, 7]},
+			"faces": {
+				"north": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"east": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"south": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"west": {"uv": [0, 4, 4, 5], "texture": "#3"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#3"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#3"}
+			}
 		}
 	]
 }

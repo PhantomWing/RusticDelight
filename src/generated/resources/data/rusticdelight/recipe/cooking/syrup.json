@@ -12,14 +12,11 @@
     },
     {
       "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "misc",
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "rusticdelight:syrup"
   }
 }

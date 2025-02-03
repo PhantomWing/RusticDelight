@@ -8,20 +8,23 @@
     "M": {
       "item": "rusticdelight:batter"
     },
-    "S": {
-      "item": "minecraft:sugar"
+    "T": {
+      "tag": "rusticdelight:syrup"
     },
     "X": {
-      "tag": "rusticdelight:syrup"
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:sugar"
     }
   },
   "pattern": [
-    " X ",
-    "SMS",
-    "SBS"
+    " T ",
+    "XMX",
+    "YBY"
   ],
   "result": {
     "count": 1,
-    "id": "rusticdelight:syrup_pancakes"
+    "id": "rusticdelight:pancakes"
   }
 }

@@ -1,10 +1,12 @@
 # 1.4.0
 ### Additions
 - Added Syrup, a new cooking ingredient used in multiple recipes
-- Expanded Pancakes feature:
+- Reimagined the pancake feature:
   - Added ability to take a single pancake from a pancakes block, with a knife
-  - New pancake variants: Syrup Pancakes, Pumpkin Pancakes
-  - Added Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
+  - Added new pancake variants: Pancakes (the classic variant), Pumpkin Pancakes
+  - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
+  - Rebalanced crafting recipes for pancakes
+  - Rebalanced gained effects when eating a pancake
 - Expanded Coffee feature:
   - Added Syrup Coffee
   - Added Coffee Cookie
@@ -13,7 +15,7 @@
 
 ### Changes
 - Rebalanced coffee effects
-- Rebalanced pancake effects
+- Improved all pancake models
 - Improved textures for Vegetable Pancakes, Coffee-Braised Beef
 
 

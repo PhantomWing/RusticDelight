@@ -10,7 +10,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "rusticdelight:syrup_pancakes",
+          "block": "rusticdelight:pancakes",
           "condition": "minecraft:block_state_property",
           "properties": {
             "servings": "0"
@@ -20,7 +20,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "rusticdelight:syrup_pancakes"
+          "name": "rusticdelight:pancakes"
         }
       ],
       "rolls": 1.0
@@ -31,7 +31,7 @@
         {
           "condition": "minecraft:inverted",
           "term": {
-            "block": "rusticdelight:syrup_pancakes",
+            "block": "rusticdelight:pancakes",
             "condition": "minecraft:block_state_property",
             "properties": {
               "servings": "0"
@@ -48,5 +48,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "rusticdelight:blocks/syrup_pancakes"
+  "random_sequence": "rusticdelight:blocks/pancakes"
 }

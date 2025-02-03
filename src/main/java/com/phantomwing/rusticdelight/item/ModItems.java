@@ -127,9 +127,9 @@ public class ModItems {
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
 
-    public static final DeferredItem<Item> SYRUP_PANCAKES = registerBlockWithTab(ModBlocks.SYRUP_PANCAKES, bowlItem());
-    public static final DeferredItem<Item> SYRUP_PANCAKE = registerWithTab("syrup_pancake", () -> new ConsumableItem(
-            baseItem().food(FoodValues.SYRUP_PANCAKE), true));
+    public static final DeferredItem<Item> PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
+    public static final DeferredItem<Item> PANCAKE = registerWithTab("pancake", () -> new Item(
+            baseItem().food(FoodValues.PANCAKE)));
     public static final DeferredItem<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
     public static final DeferredItem<Item> HONEY_PANCAKE = registerWithTab("honey_pancake", () -> new ConsumableItem(
             baseItem().food(FoodValues.HONEY_PANCAKE), true));
