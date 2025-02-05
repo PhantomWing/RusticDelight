@@ -1,21 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_coffee": {
+    "has_roasted_coffee_beans": {
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:coffee"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_dark_coffee": {
-      "conditions": {
-        "items": [
-          {
-            "items": "rusticdelight:dark_coffee"
+            "items": "rusticdelight:roasted_coffee_beans"
           }
         ]
       },
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_coffee",
-      "has_dark_coffee"
+      "has_roasted_coffee_beans"
     ]
   ],
   "rewards": {

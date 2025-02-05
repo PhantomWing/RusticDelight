@@ -28,7 +28,6 @@ import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider {
@@ -98,38 +97,29 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Cookies
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COOKIE, 8)
-                .requires(Items.WHEAT)
-                .requires(Items.WHEAT)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
                 .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
                 .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
                 .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
                 .save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COFFEE_COOKIE, 8)
-                .requires(Items.WHEAT)
-                .requires(Items.WHEAT)
                 .requires(ModTags.Items.COFFEE_INGREDIENTS)
-                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
-                .unlockedBy(getHasName(ModItems.DARK_COFFEE), has(ModItems.DARK_COFFEE))
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy(getHasName(ModItems.ROASTED_COFFEE_BEANS), has(ModItems.ROASTED_COFFEE_BEANS))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COOKIE, 8)
+                .requires(ModTags.Items.SYRUP)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy(getHasName(ModItems.SYRUP), has(ModItems.SYRUP))
                 .save(output);
 
         // Pies
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
-                .pattern("ccc")
-                .pattern("mmm")
-                .pattern("sOs")
-                .define('c', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
-                .define('s', Items.SUGAR)
-                .define('m', CommonTags.FOODS_MILK)
-                .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
-                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
-                .pattern("##")
-                .pattern("##")
-                .define('#', ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get())
-                .unlockedBy(getHasName(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE), has(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE))
-                .save(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "cherry_blossom_cheesecake_from_slices"));
+        pieRecipes(output, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP));
+        pieRecipes(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
 
         // Pancakes
         pancakeRecipes(output, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
@@ -138,7 +128,6 @@ public class ModRecipeProvider extends RecipeProvider {
         pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), vegetablesPatch(), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
         pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
         pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
-
 
         // Cotton
         oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL, Items.STRING, 1);
@@ -221,6 +210,12 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Syrup-based recipes
         oneToOne(output, RecipeCategory.MISC, ModItems.SYRUP, Items.SUGAR, 3);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_SANDWICH, 1)
+                .requires(Tags.Items.FOODS_BREAD)
+                .requires(ModTags.Items.SYRUP)
+                .requires(Items.SUGAR)
+                .unlockedBy(getHasName(ModItems.SYRUP), has(ModItems.SYRUP))
+                .save(output);
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -295,6 +290,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.SYRUP.getId());
+
+        // Fried Dough
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_DOUGH, 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .addIngredient(CommonTags.FOODS_DOUGH)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output, ModItems.FRIED_DOUGH.getId());
 
         // Spring Rolls
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS, 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
@@ -409,7 +412,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(waterIngredient())
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -462,7 +465,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Dark Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(waterIngredient())
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -566,6 +569,9 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     protected static void pancakeRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pancakeBlock, @NotNull DeferredItem<Item> singlePancake, Ingredient topping, Ingredient ingredient, Ingredient ingredient2) {
+        var batter = ModItems.BATTER;
+        var servingItem = Items.BOWL;
+
         // Crafting a pancake block.
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pancakeBlock, 1)
                 .pattern(" T ")
@@ -574,14 +580,24 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('T', topping) // Topping
                 .define('X', ingredient) // Main ingredient
                 .define('Y', ingredient2) // Optional secondary ingredient
-                .define('M', ModItems.BATTER)
-                .define('B', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER), has(ModItems.BATTER))
+                .define('M', batter)
+                .define('B', servingItem)
+                .unlockedBy(getHasName(batter), has(batter))
                 .save(recipeOutput);
+
+        // Cooking a pancake block
+        CookingPotRecipeBuilder.cookingPotRecipe(pancakeBlock, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.LARGE_EXP, servingItem)
+                .addIngredient(batter)
+                .addIngredient(topping)
+                .addIngredient(ingredient, 2)
+                .addIngredient(ingredient2, 2)
+                .unlockedByAnyIngredient(batter)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(recipeOutput, pancakeBlock.getId());
 
         // Cutting recipe for pancakes to separate them into single pancakes.
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock), Ingredient.of(CommonTags.TOOLS_KNIFE), singlePancake, PancakeBlock.MAX_SERVINGS)
-                .addResult(Items.BOWL)
+                .addResult(servingItem)
                 .build(recipeOutput, pancakeBlock.getId());
 
         // Split a stack of pancakes into separate pancakes.
@@ -590,9 +606,28 @@ public class ModRecipeProvider extends RecipeProvider {
         // Combine separate pancakes together into a single stack
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, pancakeBlock)
                 .requires(singlePancake, PancakeBlock.MAX_SERVINGS)
-                .requires(Items.BOWL) // Pancakes are always placed on a bowl
+                .requires(servingItem) // Pancakes are always placed on a bowl
                 .unlockedBy(getHasName(singlePancake), has(singlePancake))
                 .save(recipeOutput, getRecipeName(singlePancake, pancakeBlock));
+    }
+
+    protected static void pieRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pieBlock, @NotNull DeferredItem<Item> sliceItem, Ingredient topping) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pieBlock, 1)
+                .pattern("TTT")
+                .pattern("MMM")
+                .pattern("SCS")
+                .define('T', topping)
+                .define('M', CommonTags.FOODS_MILK)
+                .define('S', Items.SUGAR)
+                .define('C', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pieBlock, 1)
+                .pattern("##")
+                .pattern("##")
+                .define('#', sliceItem)
+                .unlockedBy(getHasName(sliceItem), has(sliceItem))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, getItemName(pieBlock) + "_from_slices"));
     }
 
     protected static String getRecipeName(ItemLike item, ItemLike result) {

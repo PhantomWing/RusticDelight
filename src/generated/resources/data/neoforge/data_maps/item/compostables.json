@@ -32,6 +32,10 @@
       "can_villager_compost": true,
       "chance": 0.65
     },
+    "rusticdelight:coffee_cookie": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
     "rusticdelight:cotton_boll": {
       "can_villager_compost": true,
       "chance": 0.5
@@ -43,6 +47,14 @@
     "rusticdelight:potato_slices": {
       "can_villager_compost": true,
       "chance": 0.5
+    },
+    "rusticdelight:syrup_cheesecake": {
+      "can_villager_compost": true,
+      "chance": 1.0
+    },
+    "rusticdelight:syrup_cheesecake_slice": {
+      "can_villager_compost": true,
+      "chance": 0.85
     },
     "rusticdelight:wild_bell_peppers": {
       "can_villager_compost": true,

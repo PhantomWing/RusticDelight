@@ -41,16 +41,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         makePottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
         makePottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
-        farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
-        farmersDelightBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
-        farmersDelightBag(ModBlocks.COFFEE_BEANS_BAG.get());
-        farmersDelightBag(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
+        canvasBag(ModBlocks.COTTON_SEEDS_BAG.get());
+        canvasBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        canvasBag(ModBlocks.COFFEE_BEANS_BAG.get());
+        canvasBag(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
 
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
 
+        pieBlock(ModBlocks.SYRUP_CHEESECAKE.get());
         pieBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get());
 
         pancakeBlock(ModBlocks.PANCAKES.get());
@@ -136,6 +137,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("south", farmersDelightResourceBlock(riceBag + "_side_tied"))
                 .texture("east", farmersDelightResourceBlock(riceBag + "_side"))
                 .texture("west", farmersDelightResourceBlock(riceBag + "_side"))
+        );
+    }
+    private void canvasBag(Block block) {
+        String blockName = blockName(block);
+        this.simpleBlock(block, models().withExistingParent(blockName, "cube")
+                .texture("particle", resourceBlock(blockName + "_top"))
+                .texture("down", resourceBlock(blockName + "_bottom"))
+                .texture("up", resourceBlock(blockName + "_top"))
+                .texture("north", resourceBlock(blockName + "_side_tied"))
+                .texture("south", resourceBlock(blockName + "_side_tied"))
+                .texture("east", resourceBlock(blockName + "_side"))
+                .texture("west", resourceBlock(blockName + "_side"))
         );
     }
 

@@ -79,7 +79,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PANCAKE);
         simpleItem(ModItems.PANCAKES);
         simpleItem(ModItems.SYRUP_COFFEE);
+        simpleItem(ModItems.SYRUP_COOKIE);
         simpleItem(ModItems.COFFEE_COOKIE);
+        simpleItem(ModItems.SYRUP_SANDWICH);
+        simpleItem(ModItems.SYRUP_CHEESECAKE);
+        simpleItem(ModItems.SYRUP_CHEESECAKE_SLICE);
+        simpleItem(ModItems.FRIED_DOUGH);
 
         // Blocks
         simpleBlock2D(ModBlocks.WILD_COFFEE);

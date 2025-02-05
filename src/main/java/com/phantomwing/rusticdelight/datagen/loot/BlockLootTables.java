@@ -68,6 +68,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_RED_CRATE.get());
 
+        dropFoodBlock(ModBlocks.SYRUP_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);

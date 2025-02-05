@@ -1,22 +1,28 @@
 # 1.4.0
 ### Additions
-- Added Syrup, a new cooking ingredient used in multiple recipes
-- Reimagined the pancake feature:
+- Overhauled the pancake feature:
   - Added ability to take a single pancake from a pancakes block, with a knife
+  - Added Cooking Pot recipes for all pancakes
   - Added new pancake variants: Pancakes (the classic variant), Pumpkin Pancakes
   - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
-  - Rebalanced crafting recipes for pancakes
-  - Rebalanced gained effects when eating a pancake
-- Expanded Coffee feature:
-  - Added Syrup Coffee
-  - Added Coffee Cookie
-- Expanded Bell Peppers feature:
-  - Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
+  - Rebalanced pancake recipes and gained effects
+- Added new cooking ingredient: Syrup
+  - Syrup Coffee
+  - Syrup Cheesecake
+  - Syrup Cookie
+  - The new Pancakes and Pumpkin Pancakes require Syrup
+- Added Coffee Cookie
+- Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
+- Added more fried foods
+  - Fried Dough
+
 
 ### Changes
+- Updated seed bag textures to have distinct colors
+- Cotton Boll can now be used as fuel
 - Rebalanced coffee effects
 - Improved all pancake models
-- Improved textures for Vegetable Pancakes, Coffee-Braised Beef
+- Improved textures for various items, such as Vegetable Pancakes, Coffee-Braised Beef
 
 
 # 1.3.2

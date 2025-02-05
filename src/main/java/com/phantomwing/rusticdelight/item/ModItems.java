@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.item;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.ChocolateCoffeeItem;
+import com.phantomwing.rusticdelight.block.custom.FuelItem;
 import com.phantomwing.rusticdelight.block.custom.MilkCoffeeItem;
 import com.phantomwing.rusticdelight.food.FoodValues;
 import com.google.common.collect.Sets;
@@ -46,7 +47,7 @@ public class ModItems {
     public static final DeferredItem<Item> WILD_COFFEE = registerBlockWithTab(ModBlocks.WILD_COFFEE);
 
     // Crop products
-    public static final DeferredItem<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new Item(baseItem()));
+    public static final DeferredItem<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new FuelItem(100, baseItem()));
     public static final DeferredItem<Item> BELL_PEPPER_GREEN = registerWithTab("bell_pepper_green", () -> new Item(
            baseItem().food(FoodValues.BELL_PEPPER)));
     public static final DeferredItem<Item> BELL_PEPPER_YELLOW = registerWithTab("bell_pepper_yellow", () -> new Item(
@@ -116,17 +117,30 @@ public class ModItems {
     public static final DeferredItem<Item> COOKED_CALAMARI_SLICE = registerWithTab("cooked_calamari_slice", () -> new Item(
             baseItem().food(FoodValues.COOKED_CALAMARI_SLICE)));
 
-    // Sweets
-    public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
-            baseItem().food(FoodValues.FRUIT_BEIGNET), true));
-    public static final DeferredItem<Item> COFFEE_COOKIE = registerWithTab("coffee_cookie", () -> new Item(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
-    public static final DeferredItem<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+    // Pies & cakes
+    public static final DeferredItem<Item> SYRUP_CHEESECAKE = registerBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
+    public static final DeferredItem<Item> SYRUP_CHEESECAKE_SLICE = registerWithTab("syrup_cheesecake_slice", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
+
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
 
+    // Cookies
+    public static final DeferredItem<Item> SYRUP_COOKIE = registerWithTab("syrup_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+    public static final DeferredItem<Item> COFFEE_COOKIE = registerWithTab("coffee_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+
+    // Sweets
+    public static final DeferredItem<Item> FRIED_DOUGH = registerWithTab("fried_dough", () -> new Item(
+            baseItem().food(FoodValues.FRIED_DOUGH)));
+    public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
+            baseItem().food(FoodValues.FRUIT_BEIGNET), true));
+
+    // Pancakes
     public static final DeferredItem<Item> PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
     public static final DeferredItem<Item> PANCAKE = registerWithTab("pancake", () -> new Item(
             baseItem().food(FoodValues.PANCAKE)));
@@ -146,7 +160,25 @@ public class ModItems {
     public static final DeferredItem<Item> PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", () -> new ConsumableItem(
             baseItem().food(FoodValues.PUMPKIN_PANCAKE), true));
 
+    // Salads
+    public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new ConsumableItem(
+            bowlItem().food(FoodValues.POTATO_SALAD), true));
+
+    // Sandwiches
+    public static final DeferredItem<Item> SYRUP_SANDWICH = registerWithTab("syrup_sandwich", () -> new Item(
+            baseItem().food(FoodValues.SYRUP_SANDWICH)));
+
     // Basic meals
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_GREEN = registerWithTab("stuffed_bell_pepper_green", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_YELLOW = registerWithTab("stuffed_bell_pepper_yellow", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_RED = registerWithTab("stuffed_bell_pepper_red", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
+            baseItem().food(FoodValues.SPRING_ROLLS)));
+
+    // Sushi rolls
     public static final DeferredItem<Item> BELL_PEPPER_ROLL_GREEN = registerWithTab("bell_pepper_roll_green", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
     public static final DeferredItem<Item> BELL_PEPPER_ROLL_YELLOW = registerWithTab("bell_pepper_roll_yellow", () -> new Item(
@@ -157,16 +189,6 @@ public class ModItems {
             baseItem().food(FoodValues.CALAMARI_ROLL)));
     public static final DeferredItem<Item> CHERRY_BLOSSOM_ROLL = registerWithTab("cherry_blossom_roll", () -> new Item(
             baseItem().food(FoodValues.CHERRY_BLOSSOM_ROLL)));
-    public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new ConsumableItem(
-            bowlItem().food(FoodValues.POTATO_SALAD), true));
-    public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
-            baseItem().food(FoodValues.SPRING_ROLLS)));
-    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_GREEN = registerWithTab("stuffed_bell_pepper_green", () -> new Item(
-            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
-    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_YELLOW = registerWithTab("stuffed_bell_pepper_yellow", () -> new Item(
-            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
-    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_RED = registerWithTab("stuffed_bell_pepper_red", () -> new Item(
-            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
 
     // Soups and stews
     public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new ConsumableItem(

@@ -35,6 +35,8 @@ public class ModBlocks {
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     // Edible blocks
+    public static final DeferredBlock<Block> SYRUP_CHEESECAKE = BLOCKS.register("syrup_cheesecake",
+            () -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ModItems.SYRUP_CHEESECAKE_SLICE));
     public static final DeferredBlock<Block> CHERRY_BLOSSOM_CHEESECAKE = BLOCKS.register("cherry_blossom_cheesecake",
             () -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
     public static final DeferredBlock<Block> PANCAKES = BLOCKS.register("pancakes",

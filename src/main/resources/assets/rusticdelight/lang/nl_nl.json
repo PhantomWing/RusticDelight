@@ -75,5 +75,18 @@
   "rusticdelight.configuration.squids_drop_calamari": "Voedsel van inktvis",
   "rusticdelight.configuration.wild_bell_peppers_chance": "Kans op wilde paprika's",
   "rusticdelight.configuration.wild_coffee_chance": "Kans op wilde koffieplant",
-  "rusticdelight.configuration.wild_cotton_chance": "Kans op wilde katoen"
+  "rusticdelight.configuration.wild_cotton_chance": "Kans op wilde katoen",
+  "block.rusticdelight.pancakes": "Pannenkoeken",
+  "item.rusticdelight.coffee_cookie": "Koffie koekje",
+  "item.rusticdelight.syrup": "Stroop",
+  "item.rusticdelight.syrup_coffee": "Koffie met siroop",
+  "item.rusticdelight.syrup_sandwich": "Broodje stroop",
+  "block.rusticdelight.syrup_cheesecake": "Stroop cheesecake",
+  "item.rusticdelight.syrup_cheesecake_slice": "Stukje stroop cheesecake",
+  "item.rusticdelight.pancake": "Pannenkoek",
+  "item.rusticdelight.cherry_blossom_pancake": "Kersenbloesem pannenkoek",
+  "item.rusticdelight.chocolate_pancake": "Chocolade pannenkoek",
+  "item.rusticdelight.honey_pancake": "Honing pannenkoek",
+  "item.rusticdelight.pumpkin_pancake": "Pompoen pannenkoek",
+  "item.rusticdelight.vegetable_pancake": "Groente pannenkoek"
 }

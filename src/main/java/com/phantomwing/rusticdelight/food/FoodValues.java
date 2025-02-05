@@ -81,8 +81,10 @@ public class FoodValues {
             .build();
 
     // Sweets
+    public static final FoodProperties FRIED_DOUGH = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.5F).build();
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
-            .nutrition(6).saturationModifier(0.6F)
+            .nutrition(7).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F).build();
@@ -113,6 +115,8 @@ public class FoodValues {
             .nutrition(6).saturationModifier(0.6F).build();
     public static final FoodProperties STUFFED_BELL_PEPPER = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.7F).build();
+    public static final FoodProperties SYRUP_SANDWICH = (new FoodProperties.Builder())
+            .nutrition(8).saturationModifier(0.7F).build();
 
     // Bowl foods
     public static final FoodProperties POTATO_SALAD = (new FoodProperties.Builder())

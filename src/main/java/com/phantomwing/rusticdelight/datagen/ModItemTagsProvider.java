@@ -187,7 +187,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         this.tag(CommonTags.FOODS_COOKIE).add(
                 ModItems.CHERRY_BLOSSOM_COOKIE.get(),
-                ModItems.COFFEE_COOKIE.get()
+                ModItems.COFFEE_COOKIE.get(),
+                ModItems.SYRUP_COOKIE.get()
         );
     }
 
@@ -195,8 +196,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 ModItems.COOKING_OIL.get(),
+                ModItems.SYRUP.get(),
                 ModItems.COFFEE.get(),
-                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get()
+                ModItems.MILK_COFFEE.get(),
+                ModItems.CHOCOLATE_COFFEE.get(),
+                ModItems.HONEY_COFFEE.get(),
+                ModItems.SYRUP_COFFEE.get(),
+                ModItems.DARK_COFFEE.get(),
+                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
+                ModItems.SYRUP_CHEESECAKE.get()
         );
 
         // Farmer's Delight
