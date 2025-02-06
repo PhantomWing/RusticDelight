@@ -6,16 +6,16 @@
   - Added new pancake variants: Pancakes (the classic variant), Pumpkin Pancakes
   - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
   - Rebalanced pancake recipes and gained effects
-- Added new cooking ingredient: Syrup
+- Added new cooking ingredient: Syrup, required for some new items:
   - Syrup Coffee
   - Syrup Cheesecake
   - Syrup Cookie
   - The new Pancakes and Pumpkin Pancakes require Syrup
+  - Sweet Salad
 - Added Coffee Cookie
 - Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
 - Added more fried foods
   - Fried Dough
-
 
 ### Changes
 - Updated seed bag textures to have distinct colors
@@ -28,7 +28,6 @@
 # 1.3.2
 ### Fixes
 - Implement conditional loading for Botany Pots and Farmer's Respite recipes, to prevent parsing errors
-
 
 # 1.3.1
 ### Additions

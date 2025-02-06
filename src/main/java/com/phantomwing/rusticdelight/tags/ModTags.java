@@ -27,6 +27,7 @@ public class ModTags {
 
         public static final TagKey<Item> SYRUP_INGREDIENTS = tag("syrup_ingredients");
         public static final TagKey<Item> SYRUP = tag("syrup");
+        public static final TagKey<Item> SWEET_LIQUIDS = tag("sweet_liquids");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));

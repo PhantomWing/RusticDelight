@@ -73,6 +73,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.SYRUP).add(
                 ModItems.SYRUP.get()
         );
+
+        this.tag(ModTags.Items.SWEET_LIQUIDS).add(
+                Items.HONEY_BOTTLE
+        ).addTag(ModTags.Items.SYRUP);
     }
 
     private void addMinecraftTags() {

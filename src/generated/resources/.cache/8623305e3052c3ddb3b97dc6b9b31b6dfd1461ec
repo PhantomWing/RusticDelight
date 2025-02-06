@@ -1,4 +1,4 @@
-// 1.21	2025-02-04T21:43:06.4209543	Item Models: rusticdelight
+// 1.21	2025-02-06T23:08:49.1443311	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -42,6 +42,7 @@ ca90b1e1071bdf904f5fded9b749de01614ba79e assets/rusticdelight/models/item/cotton
 8e155ae135c15f959a1862af027406012a759c0c assets/rusticdelight/models/item/fried_calamari.json
 06c056d59172bbfeb3e367c8d3cf161ba7f2dbcb assets/rusticdelight/models/item/fried_chicken.json
 8515af5f78b165a9ac9d5d30f4a910c694eb0e5b assets/rusticdelight/models/item/fried_dough.json
+8a933077a6c570e043f46c3a1331a596434c17cd assets/rusticdelight/models/item/fried_dumplings.json
 8ed40e4d4244948cd50e282071e1f27f002ac782 assets/rusticdelight/models/item/fried_mushrooms.json
 146716f1a8cbb45a847e6b2a16a7239ea2ead06b assets/rusticdelight/models/item/fruit_beignet.json
 65347a409e2b5ec1b720cf5ccb6598c3e86418a4 assets/rusticdelight/models/item/golden_coffee_beans.json
@@ -64,6 +65,7 @@ aaf640d3291e40695ec76170478c7bb68c8baffe assets/rusticdelight/models/item/spring
 486428c5ca4735fc79328ace95746abc7ef69e2c assets/rusticdelight/models/item/stuffed_bell_pepper_green.json
 f9476ed989411045bf8dc822fb5f68c465afc332 assets/rusticdelight/models/item/stuffed_bell_pepper_red.json
 43507b769d4409aba44af1d874bb3d187ca8cf96 assets/rusticdelight/models/item/stuffed_bell_pepper_yellow.json
+fbe1537d27336e8c95bc20e43878b95891aef77e assets/rusticdelight/models/item/sweet_salad.json
 48d1bcbd2528fa66aec467071d467c7aef7a4de7 assets/rusticdelight/models/item/syrup.json
 5edabb037c211e94d2a055a1eee5501bb0a45d3d assets/rusticdelight/models/item/syrup_cheesecake.json
 de82d70a1dfcea2026e0b6916489f2ffacc23f7b assets/rusticdelight/models/item/syrup_cheesecake_slice.json

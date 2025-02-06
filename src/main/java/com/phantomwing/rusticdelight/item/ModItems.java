@@ -135,8 +135,8 @@ public class ModItems {
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
 
     // Sweets
-    public static final DeferredItem<Item> FRIED_DOUGH = registerWithTab("fried_dough", () -> new Item(
-            baseItem().food(FoodValues.FRIED_DOUGH)));
+    public static final DeferredItem<Item> SYRUP_SANDWICH = registerWithTab("syrup_sandwich", () -> new Item(
+            baseItem().food(FoodValues.SYRUP_SANDWICH)));
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
             baseItem().food(FoodValues.FRUIT_BEIGNET), true));
 
@@ -163,10 +163,8 @@ public class ModItems {
     // Salads
     public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new ConsumableItem(
             bowlItem().food(FoodValues.POTATO_SALAD), true));
-
-    // Sandwiches
-    public static final DeferredItem<Item> SYRUP_SANDWICH = registerWithTab("syrup_sandwich", () -> new Item(
-            baseItem().food(FoodValues.SYRUP_SANDWICH)));
+    public static final DeferredItem<Item> SWEET_SALAD = registerWithTab("sweet_salad", () -> new ConsumableItem(
+            bowlItem().food(FoodValues.SWEET_SALAD), true));
 
     // Basic meals
     public static final DeferredItem<Item> STUFFED_BELL_PEPPER_GREEN = registerWithTab("stuffed_bell_pepper_green", () -> new Item(
@@ -175,6 +173,12 @@ public class ModItems {
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
     public static final DeferredItem<Item> STUFFED_BELL_PEPPER_RED = registerWithTab("stuffed_bell_pepper_red", () -> new Item(
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+
+    // Fried foods
+    public static final DeferredItem<Item> FRIED_DOUGH = registerWithTab("fried_dough", () -> new Item(
+            baseItem().food(FoodValues.FRIED_DOUGH)));
+    public static final DeferredItem<Item> FRIED_DUMPLINGS = registerWithTab("fried_dumplings", () -> new Item(
+            baseItem().food(FoodValues.FRIED_DUMPLINGS)));
     public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
             baseItem().food(FoodValues.SPRING_ROLLS)));
 

@@ -95,6 +95,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ModItems.POTATO_SLICES), has(ModItems.POTATO_SLICES))
                 .save(output);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SWEET_SALAD, 1)
+                .requires(Items.BOWL)
+                .requires(ModTags.Items.SWEET_LIQUIDS)
+                .requires(CommonTags.FOODS_LEAFY_GREEN)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Tags.Items.FOODS_FRUIT)
+                .requires(Tags.Items.FOODS_FRUIT)
+                .unlockedBy(getHasName(Items.HONEY_BOTTLE), has(Items.HONEY_BOTTLE))
+                .unlockedBy(getHasName(ModItems.SYRUP), has(ModItems.SYRUP))
+                .save(output);
+
         // Cookies
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COOKIE, 8)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
@@ -298,6 +309,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.FRIED_DOUGH.getId());
+
+        // Fried Dumplings
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_DUMPLINGS, 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get(), 2)
+                .unlockedByAnyIngredient(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output, ModItems.FRIED_DUMPLINGS.getId());
 
         // Spring Rolls
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS, 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)

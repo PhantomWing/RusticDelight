@@ -81,8 +81,8 @@ public class FoodValues {
             .build();
 
     // Sweets
-    public static final FoodProperties FRIED_DOUGH = (new FoodProperties.Builder())
-            .nutrition(6).saturationModifier(0.5F).build();
+    public static final FoodProperties SYRUP_SANDWICH = (new FoodProperties.Builder())
+            .nutrition(8).saturationModifier(0.7F).build();
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
             .nutrition(7).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
@@ -111,15 +111,22 @@ public class FoodValues {
             .nutrition(6).saturationModifier(0.5F).build();
     public static final FoodProperties BELL_PEPPER_ROLL = (new FoodProperties.Builder())
             .nutrition(7).saturationModifier(0.8F).build();
-    public static final FoodProperties SPRING_ROLLS = (new FoodProperties.Builder())
-            .nutrition(6).saturationModifier(0.6F).build();
     public static final FoodProperties STUFFED_BELL_PEPPER = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.7F).build();
-    public static final FoodProperties SYRUP_SANDWICH = (new FoodProperties.Builder())
-            .nutrition(8).saturationModifier(0.7F).build();
+
+    // Fried foods
+    public static final FoodProperties FRIED_DOUGH = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.5F).build();
+    public static final FoodProperties SPRING_ROLLS = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.6F).build();
+    public static final FoodProperties FRIED_DUMPLINGS = (new FoodProperties.Builder())
+            .nutrition(10).saturationModifier(0.8F).build();
 
     // Bowl foods
     public static final FoodProperties POTATO_SALAD = (new FoodProperties.Builder())
+            .nutrition(8).saturationModifier(0.7f)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 1.0F).build();
+    public static final FoodProperties SWEET_SALAD = (new FoodProperties.Builder())
             .nutrition(8).saturationModifier(0.7f)
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 1.0F).build();
     public static final FoodProperties BELL_PEPPER_SOUP = (new FoodProperties.Builder())

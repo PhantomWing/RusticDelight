@@ -1,4 +1,4 @@
-// 1.21	2025-02-04T18:43:32.3856396	Tags for minecraft:item mod id rusticdelight
+// 1.21	2025-02-06T09:07:06.396233	Tags for minecraft:item mod id rusticdelight
 ac19be0483ea982446c0f611386d184484451141 data/create/tags/item/upright_on_belt.json
 175cef2829e9ac9472592f4c9c5a175b821f5011 data/c/tags/item/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
@@ -36,6 +36,7 @@ c2122a7767958a3c19ee1e3fe408f30bf692f325 data/rusticdelight/tags/item/cherry_blo
 a7387aef78a41ec6c4f4b6d82fc2a75a82bd272b data/rusticdelight/tags/item/coffee_ingredients.json
 5ad45c98c655f0647bf0a4b05337e716ccb2b154 data/rusticdelight/tags/item/cooking_oil.json
 f42464433408611a5257e783da71cbe2854b85c7 data/rusticdelight/tags/item/cooking_oil_ingredients.json
+21cd4aca6b91e052ae5e281e30902b44d2471223 data/rusticdelight/tags/item/sweet_liquids.json
 937167656a077d434dbc4d95d3f1714dd1eac16e data/rusticdelight/tags/item/syrup.json
 144bb192b5dbf1871ba485964db6edb86dccdbb0 data/rusticdelight/tags/item/syrup_ingredients.json
 63327054c5d6984557ad1691fbe9a4f27e619300 data/sereneseasons/tags/item/autumn_crops.json
