@@ -5,7 +5,10 @@
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:cotton_seeds"
+            "items": [
+              "rusticdelight:cotton_seeds",
+              "minecraft:pumpkin_seeds"
+            ]
           }
         ]
       },

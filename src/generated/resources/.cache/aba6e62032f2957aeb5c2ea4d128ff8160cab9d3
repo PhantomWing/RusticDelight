@@ -1,5 +1,14 @@
-// 1.21	2025-01-25T15:42:51.3658637	Tags for minecraft:block mod id rusticdelight
-09318569494f28a39a46db11a9f90171147b89e6 data/c/tags/block/storage_blocks.json
+// 1.21	2025-02-09T15:04:04.2794471	Tags for minecraft:block mod id rusticdelight
+18c541978e02fce5c683000e6a73caa096ae10dd data/c/tags/block/storage_blocks.json
+1cec6da17afe1bab0224a43e548e6cfe1c29eab2 data/c/tags/block/storage_blocks/bell_pepper_green.json
+6c046fbca2b96f49d7fc21b67757f5b83627b2bb data/c/tags/block/storage_blocks/bell_pepper_red.json
+147affa826853a7c30121e33701890560cec2e62 data/c/tags/block/storage_blocks/bell_pepper_seeds.json
+cfef245811c07028206d993e69a2164441dd1964 data/c/tags/block/storage_blocks/bell_pepper_yellow.json
+4ab337e06a6d7e8666bcb681db9fb15d257f6292 data/c/tags/block/storage_blocks/coffee.json
+4ab337e06a6d7e8666bcb681db9fb15d257f6292 data/c/tags/block/storage_blocks/coffee_beans.json
+827fde13383fed86e216a1839664b871f5670127 data/c/tags/block/storage_blocks/cotton.json
+dccdc9242e0fb949583e797084780e91b6c7ded9 data/c/tags/block/storage_blocks/cotton_seeds.json
+93c13f9cd23064f76edeaa613ca663dfa31d0ada data/c/tags/block/storage_blocks/roasted_coffee_beans.json
 a4110d81c2a646ad11f9ebba5407edead86214b2 data/farmersdelight/tags/block/straw_blocks.json
 e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/farmersdelight/tags/block/wild_crops.json
 9501eff076167692e3c953c9adaea9e146f77820 data/minecraft/tags/block/crops.json

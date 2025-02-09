@@ -1,4 +1,4 @@
-// 1.21	2025-02-06T23:08:49.1443311	Item Models: rusticdelight
+// 1.21	2025-02-09T09:48:19.1272282	Item Models: rusticdelight
 8176c834b19687f00a6bae451b80f98e4816e5d6 assets/rusticdelight/models/item/baked_potato_slices.json
 da9bbe5d9d42f6fd1ac74625af3a14a231fe8aa5 assets/rusticdelight/models/item/batter.json
 5b6a4212ce1572c09a1d5b6e8504b507b79f0891 assets/rusticdelight/models/item/bell_pepper_green.json
@@ -56,6 +56,7 @@ bf6b83dd19525f786751b04117db87f3f633a26d assets/rusticdelight/models/item/milk_c
 385fef3984c2538dfcedbc3f1b7bf9ad41698850 assets/rusticdelight/models/item/potato_slices.json
 7014afb7b8124846c6322969b2090e92c9e7c583 assets/rusticdelight/models/item/pumpkin_pancake.json
 119454e8d8f4fbeb4d04f5b9a213e6502666ba8c assets/rusticdelight/models/item/pumpkin_pancakes.json
+eba457cc3917b16d5fc7547f5936b74977bde9ca assets/rusticdelight/models/item/rice_roll_royale.json
 7638e0612edf945a2c42ffb830b3891f5903c704 assets/rusticdelight/models/item/roasted_bell_pepper_green.json
 5eaa8a85def8d498ed12e3e556a04831614b5ad7 assets/rusticdelight/models/item/roasted_bell_pepper_red.json
 27b81358558e1c9e8ab50fd7912e1811961a07a0 assets/rusticdelight/models/item/roasted_bell_pepper_yellow.json

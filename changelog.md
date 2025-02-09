@@ -6,24 +6,28 @@
   - Added new pancake variants: Pancakes (the classic variant), Pumpkin Pancakes
   - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
   - Rebalanced pancake recipes and gained effects
-- Added new cooking ingredient: Syrup, required for some new items:
-  - Syrup Coffee
+  - Updated all pancake models
+- Added a new cooking ingredient: Syrup, required for some new items:
+  - Pancakes and Pumpkin Pancakes require Syrup to craft
   - Syrup Cheesecake
   - Syrup Cookie
-  - The new Pancakes and Pumpkin Pancakes require Syrup
   - Sweet Salad
-- Added Coffee Cookie
-- Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
+- Added more Coffee-related foods:
+  - Syrup Coffee
+  - Coffee Cookie
+- Added new Feast: Rice Roll Royale (requires one of each Rustic Delight rice roll item)
+  - Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
 - Added more fried foods
   - Fried Dough
+  - Fried Dumplings
 
 ### Changes
-- Updated seed bag textures to have distinct colors
 - Cotton Boll can now be used as fuel
+- Cooking Oil can now also be obtained with Pumpkin Seeds
+- Updated item tags of crops & calamari for better compatibility with other mods
 - Rebalanced coffee effects
-- Improved all pancake models
-- Improved textures for various items, such as Vegetable Pancakes, Coffee-Braised Beef
-
+- Updated seed bags to have distinct colors
+- Improved various item textures
 
 # 1.3.2
 ### Fixes

@@ -1,10 +1,7 @@
 package com.phantomwing.rusticdelight.datagen.loot;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
-import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CoffeeCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
-import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
+import com.phantomwing.rusticdelight.block.custom.*;
 import com.phantomwing.rusticdelight.item.ModItems;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -76,6 +73,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.PUMPKIN_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, Items.BOWL);
     }
 
     // The contents of this Iterable are used for validation.

@@ -5,21 +5,18 @@ import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionContents;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
-import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +67,14 @@ public class ModRecipeProvider extends RecipeProvider {
         simpleSushiRoll(output, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_ROLL_GREEN);
         simpleSushiRoll(output, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_ROLL_YELLOW);
         simpleSushiRoll(output, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_ROLL_RED);
-        simpleSushiRoll(output, ModItems.CALAMARI_SLICE, ModItems.CALAMARI_ROLL);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL, 2)
+                .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
+                .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .unlockedBy(getHasName(ModItems.CALAMARI_SLICE), has(ModItems.CALAMARI_SLICE))
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
+                .save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_ROLL, 2)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
@@ -227,6 +231,26 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.SYRUP), has(ModItems.SYRUP))
                 .save(output);
+
+        // Feasts
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RICE_ROLL_ROYALE)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get())
+                .requires(ModItems.BELL_PEPPER_ROLL_GREEN.get())
+                .requires(ModItems.BELL_PEPPER_ROLL_YELLOW.get())
+                .requires(ModItems.BELL_PEPPER_ROLL_RED.get())
+                .requires(ModItems.CALAMARI_ROLL.get())
+                .requires(Items.BOWL)
+                .requires(ModItems.CHERRY_BLOSSOM_ROLL.get())
+                .unlockedBy("has_rice_roll", InventoryChangeTrigger.TriggerInstance.hasItems(
+                        ModItems.BELL_PEPPER_ROLL_GREEN.get(),
+                        ModItems.BELL_PEPPER_ROLL_YELLOW.get(),
+                        ModItems.BELL_PEPPER_ROLL_RED.get(),
+                        ModItems.CALAMARI_ROLL.get(),
+                        ModItems.CHERRY_BLOSSOM_ROLL.get(),
+                        vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get()))
+                .save(output);
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -280,7 +304,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
-                .unlockedByAnyIngredient(ModItems.COTTON_SEEDS)
+                .unlockedByAnyIngredient(ModItems.COTTON_SEEDS, Items.PUMPKIN_SEEDS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(output, ModItems.COOKING_OIL.getId());
 
@@ -659,10 +683,5 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private static Ingredient stuffedBellPepperFilling() {
         return DifferenceIngredient.of(Ingredient.of(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS), Ingredient.of(CommonTags.FOODS_BELL_PEPPER));
-    }
-
-    private static Ingredient waterIngredient() {
-        Ingredient waterBottleIngredient = DataComponentIngredient.of(true, DataComponents.POTION_CONTENTS, new PotionContents(Potions.WATER), Items.POTION);
-        return CompoundIngredient.of(waterBottleIngredient, Ingredient.of(CommonTags.FOODS_WATER));
     }
 }

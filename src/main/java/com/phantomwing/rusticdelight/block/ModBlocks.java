@@ -52,6 +52,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PUMPKIN_PANCAKES = BLOCKS.register("pumpkin_pancakes",
             () -> new PancakeBlock(ModItems.PUMPKIN_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
 
+    // Feasts
+    public static final DeferredBlock<Block> RICE_ROLL_ROYALE = BLOCKS.register("rice_roll_royale",
+            () -> new RiceRollRoyaleBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
+
     // Wild crops
     public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",
             () -> new ModWildCropBlock(MobEffects.WEAVING, 12, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));

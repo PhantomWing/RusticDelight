@@ -211,6 +211,7 @@ public class ModItems {
             bowlItem().food(FoodValues.COFFEE_BRAISED_BEEF), true));
 
     // Feasts
+    public static final DeferredItem<Item> RICE_ROLL_ROYALE = registerBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
 
     // Helper functions
     public static Item.Properties baseItem() {
@@ -223,6 +224,10 @@ public class ModItems {
 
     public static Item.Properties bowlItem() {
         return baseItem().craftRemainder(Items.BOWL).stacksTo(BOWL_STACK_SIZE);
+    }
+
+    public static Item.Properties feastItem() {
+        return baseItem().craftRemainder(Items.BOWL).stacksTo(1);
     }
 
     // Registry functions
