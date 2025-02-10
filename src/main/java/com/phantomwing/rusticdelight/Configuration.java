@@ -60,7 +60,7 @@ public class Configuration {
 
         // Crop settings
         CHANCE_WILD_COTTON = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")
-                .defineInRange(CHANCE_WILD_COTTON_ID, 96, 0, Integer.MAX_VALUE);
+                .defineInRange(CHANCE_WILD_COTTON_ID, 32, 0, Integer.MAX_VALUE);
         CHANCE_WILD_BELL_PEPPERS = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")
                 .defineInRange(CHANCE_WILD_BELL_PEPPERS_ID, 15, 0, Integer.MAX_VALUE);
         CHANCE_WILD_COFFEE = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")

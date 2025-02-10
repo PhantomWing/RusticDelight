@@ -22,12 +22,12 @@
   - Fried Dumplings
 
 ### Changes
+- Increased default Wild Cotton spawn chance
 - Cotton Boll can now be used as fuel
-- Cooking Oil can now also be obtained with Pumpkin Seeds
-- Updated item tags of crops & calamari for better compatibility with other mods
+- Cooking Oil can now also be obtained with Pumpkin Seeds (in addition to Sunflower and Canola Seeds, if the proper mods are installed)
+- Updated item tags for better compatibility with other mods
 - Rebalanced coffee effects
-- Updated seed bags to have distinct colors
-- Improved various item textures
+- Updated textures for seed bags and various items 
 
 # 1.3.2
 ### Fixes
