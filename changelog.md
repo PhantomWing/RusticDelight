@@ -1,3 +1,9 @@
+# 1.3.3
+
+### Changes
+- Bell Pepper Soup is now cooked with 3 bell peppers instead of 4, fixing a recipe conflict with Farmer's Delight Refabricated
+
+
 # 1.3.2
 
 ### Fixes
