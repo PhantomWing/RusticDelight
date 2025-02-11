@@ -1,4 +1,4 @@
-// 1.21	2025-02-09T17:56:31.3127437	Recipes
+// 1.21	2025-02-11T22:03:26.4043344	Recipes
 95d6e4f19004e99c40e54178e1c5e8f150d43104 data/farmersdelight/advancement/recipes/cooking/fried_rice.json
 7fb6eae28d9af9bf53b76c07a812d895f47fb283 data/farmersdelight/recipe/cooking/fried_rice.json
 80611562675a8cdf2f6e422562ce9bb5b6f6992f data/rusticdelight/advancement/recipes/cooking/batter.json
@@ -160,7 +160,7 @@ e42af33150ed166c33b359a02a0d34cb358f76fe data/rusticdelight/recipe/cooked_calama
 cd8908f416031052b158077539543d080ccf7983 data/rusticdelight/recipe/cooked_calamari_slice_from_smoking.json
 710c019335e41aaae3e58aaeb4d4938154d1eb92 data/rusticdelight/recipe/cooking/batter.json
 e7100a00f937053b8641f488d6ad5013f1cf909b data/rusticdelight/recipe/cooking/bell_pepper_pasta.json
-7cb5bb8d9a62f1b95fd0ae73c3172fababddd20b data/rusticdelight/recipe/cooking/bell_pepper_soup.json
+0928d94c994c80da91b4aa6c7a9338cf676b5d34 data/rusticdelight/recipe/cooking/bell_pepper_soup.json
 7f5b7dc1df71ff337566f8db7658ecd6a43f6f79 data/rusticdelight/recipe/cooking/cherry_blossom_pancakes.json
 c1431660571a6b8a9d5989f0c4f1aba8e0b3e356 data/rusticdelight/recipe/cooking/chocolate_coffee.json
 8eb2d46f2d0d9cec049cfda32f9c0eca1b968731 data/rusticdelight/recipe/cooking/chocolate_pancakes.json

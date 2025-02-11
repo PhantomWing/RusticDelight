@@ -415,7 +415,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(CommonTags.FOODS_BELL_PEPPER)
                 .addIngredient(CommonTags.FOODS_BELL_PEPPER)
                 .addIngredient(CommonTags.FOODS_BELL_PEPPER)
-                .addIngredient(CommonTags.FOODS_BELL_PEPPER)
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_RED)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output, ModItems.BELL_PEPPER_SOUP.getId());
