@@ -28,7 +28,7 @@
 - Bell Pepper Soup is now crafted with 3 bell peppers instead of 4
 - Updated item & block tags for better compatibility with other mods
 - Rebalanced coffee effects
-- Updated textures for seed bags and various items 
+- Improved textures most blocks and items 
 
 # 1.3.2
 ### Fixes
