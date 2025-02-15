@@ -89,6 +89,7 @@ public class ModRecipeProvider extends RecipeProvider {
         // Potato
         foodCookingRecipes(output, ModItems.POTATO_SLICES, ModItems.BAKED_POTATO_SLICES, FOOD_COOKING_EXP);
 
+        // Salads
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.POTATO_SALAD, 1)
                 .requires(Items.BOWL)
                 .requires(CommonTags.FOODS_POTATO)
@@ -98,7 +99,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.POTATO), has(Items.POTATO))
                 .unlockedBy(getHasName(ModItems.POTATO_SLICES), has(ModItems.POTATO_SLICES))
                 .save(output);
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SWEET_SALAD, 1)
                 .requires(Items.BOWL)
                 .requires(ModTags.Items.SWEET_LIQUIDS)
@@ -213,13 +213,13 @@ public class ModRecipeProvider extends RecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE, 1)
                 .requires(ModItems.MILK_COFFEE)
-                .requires(ModItems.SYRUP)
+                .requires(ModTags.Items.SYRUP)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
                 .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.SYRUP_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.FOODS_MILK)
-                .requires(ModItems.SYRUP)
+                .requires(ModTags.Items.SYRUP)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output, getRecipeName(ModItems.COFFEE, ModItems.SYRUP_COFFEE));
 
@@ -287,6 +287,8 @@ public class ModRecipeProvider extends RecipeProvider {
         // Pie
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CHERRY_BLOSSOM_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, 4)
                 .build(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.SYRUP_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.SYRUP_CHEESECAKE_SLICE, 4)
+                .build(output, ModItems.SYRUP_CHEESECAKE_SLICE.getId());
 
         // Salvaging
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(Tags.Items.TOOLS_SHEAR), Items.STRING, 2)

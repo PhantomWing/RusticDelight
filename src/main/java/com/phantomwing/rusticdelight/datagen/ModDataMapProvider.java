@@ -33,9 +33,11 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.ROASTED_COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
 
                 // 85% chance
                 .add(ModItems.COFFEE_COOKIE.getId(), new Compostable(0.85f, true), false)
+                .add(ModItems.SYRUP_COOKIE.getId(), new Compostable(0.85f, true), false)
                 .add(ModItems.CHERRY_BLOSSOM_COOKIE.getId(), new Compostable(0.85f, true), false)
                 .add(ModItems.SYRUP_CHEESECAKE_SLICE.getId(), new Compostable(0.85f, true), false)
                 .add(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId(), new Compostable(0.85f, true), false)

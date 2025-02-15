@@ -1,3 +1,11 @@
+# 1.4.1
+### Additions
+- Added cutting board recipe for Syrup Cheesecake
+
+### Changes
+- Syrup Cookie, Roasted Coffee Beans are now compostable
+- Updated Chinese translations (thank you Junnaturefox!)
+
 # 1.4.0
 ### Additions
 - Overhauled the pancake feature:

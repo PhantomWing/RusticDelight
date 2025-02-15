@@ -103,7 +103,7 @@ public class ModItems {
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
             bottleItem().food(FoodValues.COOKING_OIL)));
     public static final DeferredItem<Item> SYRUP = registerWithTab("syrup", () -> new DrinkableItem(
-            bottleItem().food(FoodValues.BEET_SYRUP), true));
+            bottleItem().food(FoodValues.SYRUP), true));
     public static final DeferredItem<Item> BATTER = registerWithTab("batter", () -> new Item(
             bowlItem().food(FoodValues.BATTER)));
 

@@ -15,7 +15,7 @@ public class FoodValues {
     public static final FoodProperties COOKING_OIL = (new FoodProperties.Builder())
             .nutrition(2).saturationModifier(0.3F)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 0.5f).fast().build();
-    public static final FoodProperties BEET_SYRUP = (new FoodProperties.Builder())
+    public static final FoodProperties SYRUP = (new FoodProperties.Builder())
             .nutrition(2).saturationModifier(0.2F)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), 1.0F).build();
 

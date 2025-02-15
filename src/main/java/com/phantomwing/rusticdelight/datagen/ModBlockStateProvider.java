@@ -125,19 +125,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cubeBottomTop(blockName, resourceBlock(blockName + "_side"), farmersDelightResourceBlock("crate_bottom"), resourceBlock(blockName + "_top")));
     }
 
-    private void farmersDelightBag(Block block) {
-        String blockName = blockName(block);
-        String riceBag = BuiltInRegistries.BLOCK.getKey(vectorwing.farmersdelight.common.registry.ModBlocks.RICE_BAG.get()).getPath();
-        this.simpleBlock(block, models().withExistingParent(blockName, "cube")
-                .texture("particle", resourceBlock(blockName + "_top"))
-                .texture("down", farmersDelightResourceBlock(riceBag + "_bottom"))
-                .texture("up", resourceBlock(blockName + "_top"))
-                .texture("north", farmersDelightResourceBlock(riceBag + "_side_tied"))
-                .texture("south", farmersDelightResourceBlock(riceBag + "_side_tied"))
-                .texture("east", farmersDelightResourceBlock(riceBag + "_side"))
-                .texture("west", farmersDelightResourceBlock(riceBag + "_side"))
-        );
-    }
     private void canvasBag(Block block) {
         String blockName = blockName(block);
         this.simpleBlock(block, models().withExistingParent(blockName, "cube")
