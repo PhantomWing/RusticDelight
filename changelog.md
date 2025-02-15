@@ -7,7 +7,7 @@
   - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
   - Rebalanced pancake recipes and gained effects
   - Updated all pancake models
-- Added a new cooking ingredient: Syrup, required for some new items:
+- Added a new cooking ingredient: Syrup! Required for some new items:
   - Pancakes and Pumpkin Pancakes require Syrup to craft
   - Syrup Cheesecake
   - Syrup Cookie
@@ -28,7 +28,7 @@
 - Bell Pepper Soup is now crafted with 3 bell peppers instead of 4
 - Updated item & block tags for better compatibility with other mods
 - Rebalanced coffee effects
-- Improved textures most blocks and items 
+- Improved textures for most blocks and items 
 
 # 1.3.2
 ### Fixes
