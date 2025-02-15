@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:honey_pancakes"
+    }
+  ],
+  "result": [
+    {
+      "count": 6,
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

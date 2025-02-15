@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:syrup_cheesecake"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "rusticdelight:syrup_cheesecake_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

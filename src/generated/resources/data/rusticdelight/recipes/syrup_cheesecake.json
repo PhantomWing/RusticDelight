@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "M": {
+      "tag": "forge:milk"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "T": {
+      "tag": "rusticdelight:syrup"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "MMM",
+    "SCS"
+  ],
+  "result": {
+    "item": "rusticdelight:syrup_cheesecake"
+  },
+  "show_notification": true
+}

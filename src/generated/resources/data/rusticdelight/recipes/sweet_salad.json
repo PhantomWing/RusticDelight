@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "rusticdelight:sweet_liquids"
+    },
+    {
+      "tag": "forge:salad_ingredients"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "tag": "forge:berries"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:sweet_salad"
+  }
+}

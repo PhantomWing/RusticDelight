@@ -1,10 +1,7 @@
 package com.phantomwing.rusticdelight.datagen.loot;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
-import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CoffeeCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
-import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
+import com.phantomwing.rusticdelight.block.custom.*;
 import com.phantomwing.rusticdelight.item.ModItems;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -65,11 +62,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_RED_CRATE.get());
 
+        dropFoodBlock(ModBlocks.SYRUP_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get(), PieBlock.BITES);
+
+        dropFoodBlock(ModBlocks.PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.PUMPKIN_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+
+        dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, Items.BOWL);
     }
 
     @Override

@@ -1,7 +1,8 @@
 {
   "values": [
-    "rusticdelight:cotton_seeds",
-    "rusticdelight:bell_pepper_seeds",
-    "rusticdelight:coffee_beans"
+    "#forge:seeds/cotton",
+    "#forge:seeds/bell_pepper",
+    "#forge:seeds/coffee_beans",
+    "#forge:seeds/coffee"
   ]
 }

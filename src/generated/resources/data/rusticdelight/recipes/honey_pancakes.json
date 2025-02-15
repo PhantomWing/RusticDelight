@@ -3,25 +3,25 @@
   "category": "misc",
   "key": {
     "B": {
+      "item": "minecraft:bowl"
+    },
+    "M": {
       "item": "rusticdelight:batter"
     },
-    "H": {
+    "T": {
       "item": "minecraft:honey_bottle"
     },
-    "S": {
+    "X": {
       "item": "minecraft:sweet_berries"
     },
-    "X": {
-      "item": "minecraft:sugar"
-    },
     "Y": {
-      "item": "minecraft:bowl"
+      "item": "minecraft:sugar"
     }
   },
   "pattern": [
-    "XHX",
-    "SBS",
-    "XYX"
+    " T ",
+    "XMX",
+    "YBY"
   ],
   "result": {
     "item": "rusticdelight:honey_pancakes"

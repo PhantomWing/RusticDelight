@@ -21,9 +21,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Items
         simpleItem(ModItems.BAKED_POTATO_SLICES);
         simpleItem(ModItems.BATTER);
+        simpleItem(ModItems.SYRUP);
         simpleItem(ModItems.BELL_PEPPER_GREEN);
         simpleItem(ModItems.BELL_PEPPER_YELLOW);
         simpleItem(ModItems.BELL_PEPPER_RED);
+        simpleItem(ModItems.BELL_PEPPER_ROLL_GREEN);
+        simpleItem(ModItems.BELL_PEPPER_ROLL_YELLOW);
+        simpleItem(ModItems.BELL_PEPPER_ROLL_RED);
         simpleItem(ModItems.BELL_PEPPER_SEEDS);
         simpleItem(ModItems.BELL_PEPPER_SOUP);
         simpleItem(ModItems.BELL_PEPPER_PASTA);
@@ -35,8 +39,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CHERRY_BLOSSOM_CHEESECAKE);
         simpleItem(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE);
         simpleItem(ModItems.CHERRY_BLOSSOM_COOKIE);
+        simpleItem(ModItems.CHERRY_BLOSSOM_PANCAKE);
         simpleItem(ModItems.CHERRY_BLOSSOM_PANCAKES);
         simpleItem(ModItems.CHERRY_BLOSSOM_ROLL);
+        simpleItem(ModItems.CHOCOLATE_PANCAKE);
         simpleItem(ModItems.CHOCOLATE_PANCAKES);
         simpleItem(ModItems.COFFEE_BEANS);
         simpleItem(ModItems.COFFEE_BRAISED_BEEF);
@@ -50,10 +56,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FRIED_MUSHROOMS);
         simpleItem(ModItems.FRUIT_BEIGNET);
         simpleItem(ModItems.GOLDEN_COFFEE_BEANS);
+        simpleItem(ModItems.HONEY_PANCAKE);
         simpleItem(ModItems.HONEY_PANCAKES);
         simpleItem(ModItems.MILK_COFFEE);
         simpleItem(ModItems.POTATO_SALAD);
         simpleItem(ModItems.POTATO_SLICES);
+        simpleItem(ModItems.PUMPKIN_PANCAKE);
+        simpleItem(ModItems.PUMPKIN_PANCAKES);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_RED);
@@ -64,7 +73,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.STUFFED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.STUFFED_BELL_PEPPER_RED);
         simpleItem(ModItems.SPRING_ROLLS);
+        simpleItem(ModItems.VEGETABLE_PANCAKE);
         simpleItem(ModItems.VEGETABLE_PANCAKES);
+        simpleItem(ModItems.PANCAKE);
+        simpleItem(ModItems.PANCAKES);
+        simpleItem(ModItems.SYRUP_COFFEE);
+        simpleItem(ModItems.SYRUP_COOKIE);
+        simpleItem(ModItems.COFFEE_COOKIE);
+        simpleItem(ModItems.SYRUP_SANDWICH);
+        simpleItem(ModItems.SYRUP_CHEESECAKE);
+        simpleItem(ModItems.SYRUP_CHEESECAKE_SLICE);
+        simpleItem(ModItems.FRIED_DOUGH);
+        simpleItem(ModItems.FRIED_DUMPLINGS);
+        simpleItem(ModItems.SWEET_SALAD);
+        simpleItem(ModItems.RICE_ROLL_ROYALE);
 
         // Blocks
         simpleBlock2D(ModBlocks.WILD_COFFEE);

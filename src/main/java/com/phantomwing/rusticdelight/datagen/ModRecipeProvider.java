@@ -1,9 +1,11 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.ForgeTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.nbt.CompoundTag;
@@ -21,6 +23,7 @@ import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.common.crafting.PartialNBTIngredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -67,6 +70,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), FOOD_COOKING_EXP);
 
         // Rolls
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_ROLL_GREEN);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_ROLL_YELLOW);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_ROLL_RED);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
                 .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
                 .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
@@ -74,6 +81,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.CALAMARI_SLICE.get()), has(ModItems.CALAMARI_SLICE.get()))
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
                 .save(output);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_ROLL.get(), 2)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
@@ -87,6 +95,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Potato
         foodCookingRecipes(output, ModItems.POTATO_SLICES.get(), ModItems.BAKED_POTATO_SLICES.get(), FOOD_COOKING_EXP);
 
+        // Salads
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.POTATO_SALAD.get(), 1)
                 .requires(Items.BOWL)
                 .requires(ForgeTags.VEGETABLES_POTATO)
@@ -95,6 +104,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Tags.Items.EGGS)
                 .unlockedBy(getHasName(Items.POTATO), has(Items.POTATO))
                 .unlockedBy(getHasName(ModItems.POTATO_SLICES.get()), has(ModItems.POTATO_SLICES.get()))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SWEET_SALAD.get(), 1)
+                .requires(Items.BOWL)
+                .requires(ModTags.Items.SWEET_LIQUIDS)
+                .requires(ForgeTags.SALAD_INGREDIENTS)
+                .requires(ForgeTags.VEGETABLES)
+                .requires(ForgeTags.BERRIES)
+                .requires(ForgeTags.BERRIES)
+                .unlockedBy(getHasName(Items.HONEY_BOTTLE), has(Items.HONEY_BOTTLE))
+                .unlockedBy(getHasName(ModItems.SYRUP.get()), has(ModItems.SYRUP.get()))
                 .save(output);
 
         // Cookies
@@ -106,69 +125,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
                 .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
                 .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COFFEE_COOKIE.get(), 8)
+                .requires(ModTags.Items.COFFEE_INGREDIENTS)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy(getHasName(ModItems.ROASTED_COFFEE_BEANS.get()), has(ModItems.ROASTED_COFFEE_BEANS.get()))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COOKIE.get(), 8)
+                .requires(ModTags.Items.SYRUP)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
+                .unlockedBy(getHasName(ModItems.SYRUP.get()), has(ModItems.SYRUP.get()))
+                .save(output);
 
         // Pies
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
-                .pattern("ccc")
-                .pattern("mmm")
-                .pattern("sOs")
-                .define('c', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
-                .define('s', Items.SUGAR)
-                .define('m', ForgeTags.MILK)
-                .define('O', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
-                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1)
-                .pattern("##")
-                .pattern("##")
-                .define('#', ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get())
-                .unlockedBy(getHasName(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get()), has(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get()))
-                .save(output, new ResourceLocation(RusticDelight.MOD_ID, "cherry_blossom_cheesecake_from_slices"));
+        pieRecipes(output, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP));
+        pieRecipes(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
 
         // Pancakes
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.HONEY_PANCAKES.get(), 1)
-                .pattern("XHX")
-                .pattern("SBS")
-                .pattern("XYX")
-                .define('S', Items.SWEET_BERRIES)
-                .define('H', Items.HONEY_BOTTLE)
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER.get())
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHOCOLATE_PANCAKES.get(), 1)
-                .pattern("XMX")
-                .pattern("CBC")
-                .pattern("XYX")
-                .define('C', Items.COCOA_BEANS)
-                .define('M', ForgeTags.MILK)
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER.get())
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_PANCAKES.get(), 1)
-                .pattern("XMX")
-                .pattern("PBP")
-                .pattern("XYX")
-                .define('P', ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
-                .define('M', ForgeTags.MILK)
-                .define('X', Items.SUGAR)
-                .define('B', ModItems.BATTER.get())
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.VEGETABLE_PANCAKES.get(), 1)
-                .pattern("LVL")
-                .pattern("VBV")
-                .pattern("LYL")
-                .define('L', ForgeTags.SALAD_INGREDIENTS)
-                .define('V', ForgeTags.VEGETABLES)
-                .define('B', ModItems.BATTER.get())
-                .define('Y', Items.BOWL)
-                .unlockedBy(getHasName(ModItems.BATTER.get()), has(ModItems.BATTER.get()))
-                .save(output);
+        pancakeRecipes(output, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
+        pancakeRecipes(output, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE, Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SUGAR));
+        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE, Ingredient.of(ForgeTags.MILK), Ingredient.of(Items.COCOA_BEANS));
+        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(ForgeTags.MILK), Ingredient.of(ForgeTags.VEGETABLES), Ingredient.of(ForgeTags.SALAD_INGREDIENTS));
+        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(ForgeTags.MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
+        pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
 
         // Cotton
         oneToOne(output, RecipeCategory.MISC, ModItems.COTTON_BOLL.get(), Items.STRING, 1);
@@ -189,6 +169,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Coffee
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS.get(), ModItems.COFFEE_BEANS_BAG.get());
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS.get(), ModItems.ROASTED_COFFEE_BEANS_BAG.get());
+
         oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS.get(), Items.YELLOW_DYE, 1);
         oneToOne(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS.get(), Items.BROWN_DYE, 1);
         foodCookingRecipes(output, ModItems.COFFEE_BEANS.get(), ModItems.ROASTED_COFFEE_BEANS.get(), FOOD_COOKING_EXP);
@@ -201,6 +182,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Items.GOLD_NUGGET)
                 .define('C', goldenCoffeeBeansIngredient)
                 .unlockedBy(getHasName(ModItems.COFFEE_BEANS.get()), has(ModItems.COFFEE_BEANS.get()))
+                .unlockedBy(getHasName(ModItems.ROASTED_COFFEE_BEANS.get()), has(ModItems.ROASTED_COFFEE_BEANS.get()))
                 .save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_COFFEE.get(), 1)
@@ -236,6 +218,47 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.COFFEE.get()), has(ModItems.COFFEE.get()))
                 .save(output, getRecipeName(ModItems.COFFEE.get(), ModItems.HONEY_COFFEE.get()));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE.get(), 1)
+                .requires(ModItems.MILK_COFFEE.get())
+                .requires(ModTags.Items.SYRUP)
+                .unlockedBy(getHasName(ModItems.MILK_COFFEE.get()), has(ModItems.MILK_COFFEE.get()))
+                .save(output, getRecipeName(ModItems.MILK_COFFEE.get(), ModItems.SYRUP_COFFEE.get()));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE.get(), 1)
+                .requires(ModItems.COFFEE.get())
+                .requires(ForgeTags.MILK)
+                .requires(ModTags.Items.SYRUP)
+                .unlockedBy(getHasName(ModItems.COFFEE.get()), has(ModItems.COFFEE.get()))
+                .save(output, getRecipeName(ModItems.COFFEE.get(), ModItems.SYRUP_COFFEE.get()));
+
+        // Syrup-based recipes
+        oneToOne(output, RecipeCategory.MISC, ModItems.SYRUP.get(), Items.SUGAR, 3);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_SANDWICH.get(), 1)
+                .requires(ForgeTags.BREAD)
+                .requires(ModTags.Items.SYRUP)
+                .requires(Items.SUGAR)
+                .unlockedBy(getHasName(ModItems.SYRUP.get()), has(ModItems.SYRUP.get()))
+                .save(output);
+
+        // Feasts
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RICE_ROLL_ROYALE.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get())
+                .requires(ModItems.BELL_PEPPER_ROLL_GREEN.get())
+                .requires(ModItems.BELL_PEPPER_ROLL_YELLOW.get())
+                .requires(ModItems.BELL_PEPPER_ROLL_RED.get())
+                .requires(ModItems.CALAMARI_ROLL.get())
+                .requires(Items.BOWL)
+                .requires(ModItems.CHERRY_BLOSSOM_ROLL.get())
+                .unlockedBy("has_rice_roll", InventoryChangeTrigger.TriggerInstance.hasItems(
+                        ModItems.BELL_PEPPER_ROLL_GREEN.get(),
+                        ModItems.BELL_PEPPER_ROLL_YELLOW.get(),
+                        ModItems.BELL_PEPPER_ROLL_RED.get(),
+                        ModItems.CALAMARI_ROLL.get(),
+                        ModItems.CHERRY_BLOSSOM_ROLL.get(),
+                        vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get()))
+                .save(output);
     }
 
     private void buildCuttingRecipes(@NotNull Consumer<FinishedRecipe> output) {
@@ -272,6 +295,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Pie
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CHERRY_BLOSSOM_CHEESECAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get(), 4)
                 .build(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.SYRUP_CHEESECAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.SYRUP_CHEESECAKE_SLICE.get(), 4)
+                .build(output, ModItems.SYRUP_CHEESECAKE_SLICE.getId());
 
         // Salvaging
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(Tags.Items.SHEARS), Items.STRING, 2)
@@ -302,6 +327,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedByAnyIngredient(Items.MILK_BUCKET, vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(output, getCookingPath(ModItems.BATTER.get()));
+
+        // Syrup
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
+                .addIngredient(ModTags.Items.SYRUP_INGREDIENTS)
+                .addIngredient(Items.SUGAR)
+                .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(output, ModItems.SYRUP.getId());
+
+        // Fried Dough
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_DOUGH.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .addIngredient(ForgeTags.DOUGH)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(output, ModItems.FRIED_DOUGH.getId());
+
+        // Fried Dumplings
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_DUMPLINGS.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get(), 2)
+                .unlockedByAnyIngredient(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(output, ModItems.FRIED_DUMPLINGS.getId());
 
         // Spring Rolls
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SPRING_ROLLS.get(), 2, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
@@ -373,7 +422,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Bell Pepper Soup
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BELL_PEPPER_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
                 .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
                 .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
                 .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
@@ -456,6 +504,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .build(output, ModItems.HONEY_COFFEE.getId());
+
+        // Syrup Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP_COFFEE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ForgeTags.MILK)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModItems.SYRUP.get(), 1)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .build(output, ModItems.SYRUP_COFFEE.getId());
 
         // Dark Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE.get(), 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -548,8 +607,84 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, RusticDelight.MOD_ID + ":" + getItemName(result) + "_from_campfire_cooking");
     }
 
-    protected static String getRecipeName(ItemLike from, ItemLike to) {
-        return RusticDelight.MOD_ID + ":" + getConversionRecipeName(to, from);
+    protected static void simpleSushiRoll(@NotNull Consumer<FinishedRecipe> recipeOutput, @NotNull RegistryObject<Item> ingredient, @NotNull RegistryObject<Item> result) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, result.get(), 2)
+                .requires(ingredient.get())
+                .requires(ingredient.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .unlockedBy(getHasName(ingredient.get()), has(ingredient.get()))
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
+                .save(recipeOutput);
+    }
+
+    protected static void pancakeRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput, @NotNull RegistryObject<Item> pancakeBlock, @NotNull RegistryObject<Item> singlePancake, Ingredient topping, Ingredient ingredient) {
+        pancakeRecipes(recipeOutput, pancakeBlock, singlePancake, topping, ingredient, ingredient);
+    }
+
+    protected static void pancakeRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput, @NotNull RegistryObject<Item> pancakeBlock, @NotNull RegistryObject<Item> singlePancake, Ingredient topping, Ingredient ingredient, Ingredient ingredient2) {
+        var batter = ModItems.BATTER;
+        var servingItem = Items.BOWL;
+
+        // Crafting a pancake block.
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pancakeBlock.get(), 1)
+                .pattern(" T ")
+                .pattern("XMX")
+                .pattern("YBY")
+                .define('T', topping) // Topping
+                .define('X', ingredient) // Main ingredient
+                .define('Y', ingredient2) // Optional secondary ingredient
+                .define('M', batter.get())
+                .define('B', servingItem)
+                .unlockedBy(getHasName(batter.get()), has(batter.get()))
+                .save(recipeOutput);
+
+        // Cooking a pancake block
+        CookingPotRecipeBuilder.cookingPotRecipe(pancakeBlock.get(), 1, CookingRecipes.SLOW_COOKING, CookingRecipes.LARGE_EXP, servingItem)
+                .addIngredient(batter.get())
+                .addIngredient(topping)
+                .addIngredient(ingredient, 2)
+                .addIngredient(ingredient2, 2)
+                .unlockedByAnyIngredient(batter.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(recipeOutput, getCookingPath(pancakeBlock.get()));
+
+        // Cutting recipe for pancakes to separate them into single pancakes.
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), singlePancake.get(), PancakeBlock.MAX_SERVINGS)
+                .addResult(servingItem)
+                .build(recipeOutput, getCuttingPath(pancakeBlock.get()));
+
+        // Split a stack of pancakes into separate pancakes.
+        oneToOne(recipeOutput, RecipeCategory.MISC, pancakeBlock.get(), singlePancake.get(), PancakeBlock.MAX_SERVINGS);
+
+        // Combine separate pancakes together into a single stack
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, pancakeBlock.get())
+                .requires(singlePancake.get(), PancakeBlock.MAX_SERVINGS)
+                .requires(servingItem) // Pancakes are always placed on a bowl
+                .unlockedBy(getHasName(singlePancake.get()), has(singlePancake.get()))
+                .save(recipeOutput, getRecipeName(singlePancake.get(), pancakeBlock.get()));
+    }
+
+    protected static void pieRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput, @NotNull RegistryObject<Item> pieBlock, @NotNull RegistryObject<Item> sliceItem, Ingredient topping) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pieBlock.get(), 1)
+                .pattern("TTT")
+                .pattern("MMM")
+                .pattern("SCS")
+                .define('T', topping)
+                .define('M', ForgeTags.MILK)
+                .define('S', Items.SUGAR)
+                .define('C', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
+                .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pieBlock.get(), 1)
+                .pattern("##")
+                .pattern("##")
+                .define('#', sliceItem.get())
+                .unlockedBy(getHasName(sliceItem.get()), has(sliceItem.get()))
+                .save(recipeOutput, new ResourceLocation(RusticDelight.MOD_ID, getItemName(pieBlock.get()) + "_from_slices"));
+    }
+
+    protected static String getRecipeName(ItemLike item, ItemLike result) {
+        return RusticDelight.MOD_ID + ":" + getConversionRecipeName(result, item);
     }
 
     protected static String getCookingPath(Item item) {

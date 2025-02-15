@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "rusticdelight:cooking_oil"
+    },
+    {
+      "tag": "forge:dough"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "rusticdelight:fried_dough"
+  }
+}

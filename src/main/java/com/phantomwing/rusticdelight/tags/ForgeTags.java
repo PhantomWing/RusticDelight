@@ -29,15 +29,6 @@ public class ForgeTags {
 
     public static final TagKey<Item> COOKIES = forgeItemTag("cookies");
 
-    public static final TagKey<Item> CROPS = forgeItemTag("crops");
-    public static final TagKey<Item> CROPS_CABBAGE = forgeItemTag("crops/cabbage");
-    public static final TagKey<Item> CROPS_ONION = forgeItemTag("crops/onion");
-    public static final TagKey<Item> CROPS_RICE = forgeItemTag("crops/rice");
-    public static final TagKey<Item> CROPS_TOMATO = forgeItemTag("crops/tomato");
-    public static final TagKey<Item> CROPS_COTTON = forgeItemTag("crops/cotton");
-    public static final TagKey<Item> CROPS_BELL_PEPPER = forgeItemTag("crops/bell_pepper");
-    public static final TagKey<Item> CROPS_COFFEE = forgeItemTag("crops/coffee_beans");
-
     public static final TagKey<Item> DOUGH = forgeItemTag("dough");
     public static final TagKey<Item> DOUGH_WHEAT = forgeItemTag("dough/wheat");
 
@@ -68,11 +59,30 @@ public class ForgeTags {
     public static final TagKey<Item> SALAD_INGREDIENTS = forgeItemTag("salad_ingredients");
     public static final TagKey<Item> SALAD_INGREDIENTS_CABBAGE = forgeItemTag("salad_ingredients/cabbage");
 
+    // Seeds
     public static final TagKey<Item> SEEDS = forgeItemTag("seeds");
+    public static final TagKey<Item> SEEDS_CANOLA = forgeItemTag("seeds/canola");
+    public static final TagKey<Item> SEEDS_SUNFLOWER = forgeItemTag("seeds/sunflower");
     public static final TagKey<Item> SEEDS_CABBAGE = forgeItemTag("seeds/cabbage");
     public static final TagKey<Item> SEEDS_RICE = forgeItemTag("seeds/rice");
     public static final TagKey<Item> SEEDS_TOMATO = forgeItemTag("seeds/tomato");
+    public static final TagKey<Item> SEEDS_BELL_PEPPER = forgeItemTag("seeds/bell_pepper");
+    public static final TagKey<Item> SEEDS_COTTON = forgeItemTag("seeds/cotton");
+    public static final TagKey<Item> SEEDS_COFFEE = forgeItemTag("seeds/coffee");
+    public static final TagKey<Item> SEEDS_COFFEE_BEANS = forgeItemTag("seeds/coffee_beans");
 
+    // Crops
+    public static final TagKey<Item> CROPS = forgeItemTag("crops");
+    public static final TagKey<Item> CROPS_CABBAGE = forgeItemTag("crops/cabbage");
+    public static final TagKey<Item> CROPS_ONION = forgeItemTag("crops/onion");
+    public static final TagKey<Item> CROPS_RICE = forgeItemTag("crops/rice");
+    public static final TagKey<Item> CROPS_TOMATO = forgeItemTag("crops/tomato");
+    public static final TagKey<Item> CROPS_COTTON = forgeItemTag("crops/cotton");
+    public static final TagKey<Item> CROPS_BELL_PEPPER = forgeItemTag("crops/bell_pepper");
+    public static final TagKey<Item> CROPS_COFFEE = forgeItemTag("crops/coffee");
+    public static final TagKey<Item> CROPS_COFFEE_BEANS = forgeItemTag("crops/coffee_beans");
+
+    // Vegetables
     public static final TagKey<Item> VEGETABLES = forgeItemTag("vegetables");
     public static final TagKey<Item> VEGETABLES_BEETROOT = forgeItemTag("vegetables/beetroot");
     public static final TagKey<Item> VEGETABLES_CARROT = forgeItemTag("vegetables/carrot");
@@ -81,11 +91,34 @@ public class ForgeTags {
     public static final TagKey<Item> VEGETABLES_TOMATO = forgeItemTag("vegetables/tomato");
     public static final TagKey<Item> VEGETABLES_BELL_PEPPER = forgeItemTag("vegetables/bell_pepper");
 
+    // Tools
     public static final TagKey<Item> TOOLS = forgeItemTag("tools");
     public static final TagKey<Item> TOOLS_AXES = forgeItemTag("tools/axes");
     public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
     public static final TagKey<Item> TOOLS_PICKAXES = forgeItemTag("tools/pickaxes");
     public static final TagKey<Item> TOOLS_SHOVELS = forgeItemTag("tools/shovels");
+
+    // Storage blocks
+    public static final TagKey<Block> STORAGE_BLOCKS_COTTON_SEEDS = forgeBlockTag("storage_blocks/cotton_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_SEEDS = forgeBlockTag("storage_blocks/bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_COFFEE_BEANS = forgeBlockTag("storage_blocks/coffee_beans");
+    public static final TagKey<Block> STORAGE_BLOCKS_COFFEE = forgeBlockTag("storage_blocks/coffee"); // Alternate tag for Coffee Beans, for better compatibility
+    public static final TagKey<Block> STORAGE_BLOCKS_ROASTED_COFFEE_BEANS = forgeBlockTag("storage_blocks/roasted_coffee_beans");
+    public static final TagKey<Block> STORAGE_BLOCKS_COTTON = forgeBlockTag("storage_blocks/cotton");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_RED = forgeBlockTag("storage_blocks/bell_pepper_red");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_GREEN = forgeBlockTag("storage_blocks/bell_pepper_green");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_YELLOW = forgeBlockTag("storage_blocks/bell_pepper_yellow");
+
+    // Storage blocks (items)
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COTTON_SEEDS = forgeItemTag("storage_blocks/cotton_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_SEEDS = forgeItemTag("storage_blocks/bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COFFEE_BEANS = forgeItemTag("storage_blocks/coffee_beans");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COFFEE = forgeItemTag("storage_blocks/coffee"); // Alternate tag for Coffee Beans, for better compatibility
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ROASTED_COFFEE_BEANS = forgeItemTag("storage_blocks/roasted_coffee_beans");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COTTON = forgeItemTag("storage_blocks/cotton");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED = forgeItemTag("storage_blocks/bell_pepper_red");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN = forgeItemTag("storage_blocks/bell_pepper_green");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW = forgeItemTag("storage_blocks/bell_pepper_yellow");
 
     private static TagKey<Block> forgeBlockTag(String path) {
         return BlockTags.create(new ResourceLocation("forge", path));

@@ -1,3 +1,36 @@
+# 1.4.0
+### Additions
+- Overhauled the pancake feature:
+  - Added ability to take a single pancake from a pancakes block, with a knife
+  - Added Cooking Pot recipes for all pancakes
+  - Added new pancake variants: Pancakes (the classic variant), Pumpkin Pancakes
+  - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
+  - Rebalanced pancake recipes and gained effects
+  - Updated all pancake models
+- Added a new cooking ingredient: Syrup! Required for some new items:
+  - Pancakes and Pumpkin Pancakes require Syrup to craft
+  - Syrup Cheesecake
+  - Syrup Cookie
+  - Sweet Salad
+- Added more Coffee-related foods:
+  - Syrup Coffee
+  - Coffee Cookie
+- Added new Feast: Rice Roll Royale (requires one of each Rustic Delight rice roll item)
+  - Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
+- Added more fried foods
+  - Fried Dough
+  - Fried Dumplings
+
+### Changes
+- Wild Cotton now spawns more often, by default
+- Cotton Boll can now be used as fuel
+- Cooking Oil can now also be obtained with Pumpkin Seeds (in addition to Sunflower and Canola Seeds, if the proper mods are installed)
+- Bell Pepper Soup is now crafted with 3 bell peppers instead of 4
+- Updated item & block tags for better compatibility with other mods
+- Rebalanced coffee effects
+- Improved textures for most blocks and items
+
+
 # 1.3.2
 ### Fixes
 - Include conditional checks for Farmer's Respite and Botany Pots recipes, to fix parsing errors when the mods are not present.

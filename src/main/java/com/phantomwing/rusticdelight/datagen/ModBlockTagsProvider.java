@@ -4,6 +4,7 @@ import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
+import com.phantomwing.rusticdelight.tags.ForgeTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -55,16 +56,48 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     }
 
     private void addForgeTags() {
-        this.tag(Tags.Blocks.STORAGE_BLOCKS).add(
-                ModBlocks.COTTON_SEEDS_BAG.get(),
-                ModBlocks.COTTON_BOLL_CRATE.get(),
-                ModBlocks.BELL_PEPPER_SEEDS_BAG.get(),
-                ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
-                ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
-                ModBlocks.BELL_PEPPER_RED_CRATE.get(),
-                ModBlocks.COFFEE_BEANS_BAG.get(),
+        // Storage blocks
+        this.tag(ForgeTags.STORAGE_BLOCKS_COTTON_SEEDS).add(
+                ModBlocks.COTTON_SEEDS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_COTTON).add(
+                ModBlocks.COTTON_BOLL_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_SEEDS).add(
+                ModBlocks.BELL_PEPPER_SEEDS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN).add(
+                ModBlocks.BELL_PEPPER_GREEN_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW).add(
+                ModBlocks.BELL_PEPPER_YELLOW_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_RED).add(
+                ModBlocks.BELL_PEPPER_RED_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_COFFEE_BEANS).add(
+                ModBlocks.COFFEE_BEANS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS).add(
                 ModBlocks.ROASTED_COFFEE_BEANS_BAG.get()
         );
+
+        // Duplicate tags
+        this.tag(ForgeTags.STORAGE_BLOCKS_COFFEE).add(
+                ModBlocks.COFFEE_BEANS_BAG.get()
+        );
+
+        // Main storage block tag
+        this.tag(Tags.Blocks.STORAGE_BLOCKS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_COTTON_SEEDS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_COTTON)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_SEEDS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_RED)
+                .addTag(ForgeTags.STORAGE_BLOCKS_COFFEE_BEANS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_COFFEE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS);
     }
 
     private void addCompatibilityTags() {

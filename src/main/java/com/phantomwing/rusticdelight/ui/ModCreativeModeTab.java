@@ -18,7 +18,7 @@ public class ModCreativeModeTab {
     public static final RegistryObject<CreativeModeTab> MOD_TAB =
             CREATIVE_MODE_TABS.register(RusticDelight.MOD_ID + "_tab", () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.WILD_COTTON.get()))
-                    .title(Component.translatable(("itemgroup." + RusticDelight.MOD_ID)))
+                    .title(Component.translatable(("itemGroup." + RusticDelight.MOD_ID)))
                     .displayItems((pParameters, pOutput) -> {
                         // Add items to this tab.
                         ModItems.CREATIVE_TAB_ITEMS.forEach((item) -> pOutput.accept(item.get()));

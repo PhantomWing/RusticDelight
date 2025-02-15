@@ -2,23 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "O": {
+    "C": {
       "item": "farmersdelight:pie_crust"
     },
-    "c": {
-      "tag": "rusticdelight:cherry_blossom_ingredients"
-    },
-    "m": {
+    "M": {
       "tag": "forge:milk"
     },
-    "s": {
+    "S": {
       "item": "minecraft:sugar"
+    },
+    "T": {
+      "tag": "rusticdelight:cherry_blossom_ingredients"
     }
   },
   "pattern": [
-    "ccc",
-    "mmm",
-    "sOs"
+    "TTT",
+    "MMM",
+    "SCS"
   ],
   "result": {
     "item": "rusticdelight:cherry_blossom_cheesecake"

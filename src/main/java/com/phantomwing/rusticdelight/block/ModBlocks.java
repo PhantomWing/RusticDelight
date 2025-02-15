@@ -41,16 +41,26 @@ public class ModBlocks {
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     // Edible blocks
+    public static final RegistryObject<Block> SYRUP_CHEESECAKE = BLOCKS.register("syrup_cheesecake",
+            () -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ModItems.SYRUP_CHEESECAKE_SLICE));
     public static final RegistryObject<Block> CHERRY_BLOSSOM_CHEESECAKE = BLOCKS.register("cherry_blossom_cheesecake",
             () -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
+    public static final RegistryObject<Block> PANCAKES = BLOCKS.register("pancakes",
+            () -> new PancakeBlock(ModItems.PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",
-            () -> new PancakeBlock(FoodValues.HONEY_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.HONEY_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> CHOCOLATE_PANCAKES = BLOCKS.register("chocolate_pancakes",
-            () -> new PancakeBlock(FoodValues.CHOCOLATE_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.CHOCOLATE_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> CHERRY_BLOSSOM_PANCAKES = BLOCKS.register("cherry_blossom_pancakes",
-            () -> new PancakeBlock(FoodValues.CHERRY_BLOSSOM_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.CHERRY_BLOSSOM_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> VEGETABLE_PANCAKES = BLOCKS.register("vegetable_pancakes",
-            () -> new PancakeBlock(FoodValues.VEGETABLE_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+            () -> new PancakeBlock(ModItems.VEGETABLE_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> PUMPKIN_PANCAKES = BLOCKS.register("pumpkin_pancakes",
+            () -> new PancakeBlock(ModItems.PUMPKIN_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+
+    // Feasts
+    public static final RegistryObject<Block> RICE_ROLL_ROYALE = BLOCKS.register("rice_roll_royale",
+            () -> new RiceRollRoyaleBlock(Block.Properties.copy(Blocks.CAKE)));
 
     // Wild crops
     public static final RegistryObject<Block> WILD_COTTON = BLOCKS.register("wild_cotton",

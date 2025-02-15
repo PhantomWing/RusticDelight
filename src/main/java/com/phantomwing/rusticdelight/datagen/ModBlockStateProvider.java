@@ -2,12 +2,8 @@ package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
-import com.phantomwing.rusticdelight.block.custom.BellPepperCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CoffeeCropBlock;
-import com.phantomwing.rusticdelight.block.custom.CottonCropBlock;
-import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
+import com.phantomwing.rusticdelight.block.custom.*;
 
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -42,22 +38,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         makePottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
         makePottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
-        farmersDelightBag(ModBlocks.COTTON_SEEDS_BAG.get());
-        farmersDelightBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
-        farmersDelightBag(ModBlocks.COFFEE_BEANS_BAG.get());
-        farmersDelightBag(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
+        canvasBag(ModBlocks.COTTON_SEEDS_BAG.get());
+        canvasBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        canvasBag(ModBlocks.COFFEE_BEANS_BAG.get());
+        canvasBag(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
 
         farmersDelightCrate(ModBlocks.COTTON_BOLL_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
 
+        pieBlock(ModBlocks.SYRUP_CHEESECAKE.get());
         pieBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get());
 
+        pancakeBlock(ModBlocks.PANCAKES.get());
         pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
         pancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get());
         pancakeBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get());
         pancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get());
+        pancakeBlock(ModBlocks.PUMPKIN_PANCAKES.get());
+
+        riceRollBlock(ModBlocks.RICE_ROLL_ROYALE.get());
     }
 
     private void makeWildCrop(Block block) {
@@ -124,16 +125,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cubeBottomTop(blockName, resourceBlock(blockName + "_side"), resourceBlock("crate_bottom"), resourceBlock(blockName + "_top")));
     }
 
-    private void farmersDelightBag(Block block) {
+    private void canvasBag(Block block) {
         String blockName = blockName(block);
         this.simpleBlock(block, models().withExistingParent(blockName, "cube")
                 .texture("particle", resourceBlock(blockName + "_top"))
-                .texture("down", resourceBlock("bag_bottom"))
+                .texture("down", resourceBlock(blockName + "_bottom"))
                 .texture("up", resourceBlock(blockName + "_top"))
-                .texture("north", resourceBlock("bag_side_tied"))
-                .texture("south", resourceBlock("bag_side_tied"))
-                .texture("east", resourceBlock("bag_side"))
-                .texture("west", resourceBlock("bag_side"))
+                .texture("north", resourceBlock(blockName + "_side_tied"))
+                .texture("south", resourceBlock(blockName + "_side_tied"))
+                .texture("east", resourceBlock(blockName + "_side"))
+                .texture("west", resourceBlock(blockName + "_side"))
         );
     }
 
@@ -145,6 +146,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             return ConfiguredModel.builder()
                                     .modelFile(existingModel(blockName(block) + suffix))
                                     .rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
+                                    .build();
+                        }
+                );
+    }
+
+    private void riceRollBlock(Block block) {
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                            int servings = RiceRollRoyaleBlock.MAX_SERVINGS - state.getValue(RiceRollRoyaleBlock.ROLL_SERVINGS);
+                            String suffix = servings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftover" : "_stage" + servings;
+                            return ConfiguredModel.builder()
+                                    .modelFile(existingModel(blockName(block) + suffix))
+                                    .rotationY(((int) state.getValue(RiceRollRoyaleBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
                                     .build();
                         }
                 );

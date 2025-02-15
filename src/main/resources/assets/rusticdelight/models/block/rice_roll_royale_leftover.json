@@ -1,0 +1,83 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"tray_top": "rusticdelight:block/rice_roll_royale_tray_top",
+		"particle": "rusticdelight:block/rice_roll_royale_tray_top",
+		"food": "rusticdelight:block/rice_roll_royale",
+		"tray_bottom": "rusticdelight:block/tray_bottom"
+	},
+	"elements": [
+		{
+			"name": "tray",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"faces": {
+				"north": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#tray_top"}
+			}
+		},
+		{
+			"name": "container",
+			"from": [12, 2, 12],
+			"to": [14, 6, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 3, 12]},
+			"faces": {
+				"north": {"uv": [12, 8, 14, 12], "texture": "#food"},
+				"east": {"uv": [12, 8, 14, 12], "texture": "#food"},
+				"south": {"uv": [12, 8, 14, 12], "texture": "#food"},
+				"west": {"uv": [12, 8, 14, 12], "texture": "#food"},
+				"up": {"uv": [12, 12, 14, 14], "texture": "#food"},
+				"down": {"uv": [12, 12, 14, 14], "texture": "#food"}
+			}
+		},
+		{
+			"name": "chopstick 1",
+			"from": [13, 6, 12],
+			"to": [14, 11, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 7, 13]},
+			"faces": {
+				"north": {"uv": [15, 8, 16, 12], "texture": "#food"},
+				"east": {"uv": [14, 8, 15, 12], "texture": "#food"},
+				"south": {"uv": [15, 8, 16, 12], "texture": "#food"},
+				"west": {"uv": [14, 8, 15, 12], "texture": "#food"},
+				"up": {"uv": [15, 12, 16, 13], "texture": "#food"},
+				"down": {"uv": [14, 12, 15, 13], "texture": "#food"}
+			}
+		},
+		{
+			"name": "chopstick 2",
+			"from": [12, 6, 13],
+			"to": [13, 11, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 7, 14]},
+			"faces": {
+				"north": {"uv": [15, 8, 16, 12], "texture": "#food"},
+				"east": {"uv": [14, 8, 15, 12], "texture": "#food"},
+				"south": {"uv": [15, 8, 16, 12], "texture": "#food"},
+				"west": {"uv": [14, 8, 15, 12], "texture": "#food"},
+				"up": {"uv": [15, 12, 16, 13], "texture": "#food"},
+				"down": {"uv": [14, 12, 15, 13], "texture": "#food"}
+			}
+		}
+	],
+	"groups": [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		{
+			"name": "chopsticks",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [9, 10, 11]
+		}
+	]
+}

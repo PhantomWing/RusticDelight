@@ -104,10 +104,14 @@ public class RusticDelight
         ComposterBlock.COMPOSTABLES.put(ModItems.ROASTED_COFFEE_BEANS.get(), 0.65f);
 
         // 85% chance
+        ComposterBlock.COMPOSTABLES.put(ModItems.COFFEE_COOKIE.get(), 0.85f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.SYRUP_COOKIE.get(), 0.85f);
         ComposterBlock.COMPOSTABLES.put(ModItems.CHERRY_BLOSSOM_COOKIE.get(), 0.85f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.SYRUP_CHEESECAKE_SLICE.get(), 0.85f);
         ComposterBlock.COMPOSTABLES.put(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.get(), 0.85f);
 
         // 100% chance
+        ComposterBlock.COMPOSTABLES.put(ModItems.SYRUP_CHEESECAKE.get(), 1f);
         ComposterBlock.COMPOSTABLES.put(ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(), 1f);
     }
 

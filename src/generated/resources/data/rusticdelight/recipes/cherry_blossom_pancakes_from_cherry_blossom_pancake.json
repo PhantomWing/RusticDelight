@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:cherry_blossom_pancake"
+    },
+    {
+      "item": "rusticdelight:cherry_blossom_pancake"
+    },
+    {
+      "item": "rusticdelight:cherry_blossom_pancake"
+    },
+    {
+      "item": "rusticdelight:cherry_blossom_pancake"
+    },
+    {
+      "item": "rusticdelight:cherry_blossom_pancake"
+    },
+    {
+      "item": "rusticdelight:cherry_blossom_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:cherry_blossom_pancakes"
+  }
+}

@@ -1,6 +1,15 @@
 {
   "values": [
     "rusticdelight:cotton_seeds",
+    "minecraft:pumpkin_seeds",
+    {
+      "id": "#forge:seeds/canola",
+      "required": false
+    },
+    {
+      "id": "#forge:seeds/sunflower",
+      "required": false
+    },
     {
       "id": "frycooks_delight:canola_seeds",
       "required": false

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "rusticdelight:honey_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:honey_pancakes"
+  }
+}

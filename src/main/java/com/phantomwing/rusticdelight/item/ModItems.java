@@ -5,6 +5,7 @@ import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.food.FoodValues;
 import com.phantomwing.rusticdelight.item.custom.ChocolateCoffeeItem;
+import com.phantomwing.rusticdelight.item.custom.FuelItem;
 import com.phantomwing.rusticdelight.item.custom.MilkCoffeeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -44,7 +45,7 @@ public class ModItems {
     public static final RegistryObject<Item> WILD_COFFEE = registerBlockWithTab(ModBlocks.WILD_COFFEE);
 
     // Crop products
-    public static final RegistryObject<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new Item(baseItem()));
+    public static final RegistryObject<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new FuelItem(100, baseItem()));
     public static final RegistryObject<Item> BELL_PEPPER_GREEN = registerWithTab("bell_pepper_green", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER)));
     public static final RegistryObject<Item> BELL_PEPPER_YELLOW = registerWithTab("bell_pepper_yellow", () -> new Item(
@@ -89,14 +90,18 @@ public class ModItems {
             bottleItem().food(FoodValues.MILK_COFFEE)));
     public static final RegistryObject<Item> CHOCOLATE_COFFEE = registerWithTab("chocolate_coffee", () -> new ChocolateCoffeeItem(
             bottleItem().food(FoodValues.CHOCOLATE_COFFEE)));
-    public static final RegistryObject<Item> HONEY_COFFEE = registerWithTab("honey_coffee", () -> new DrinkableItem(
-            bottleItem().food(FoodValues.HONEY_COFFEE), true));
+    public static final RegistryObject<Item> HONEY_COFFEE = registerWithTab("honey_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.HONEY_COFFEE)));
+    public static final RegistryObject<Item> SYRUP_COFFEE = registerWithTab("syrup_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.SYRUP_COFFEE)));
     public static final RegistryObject<Item> DARK_COFFEE = registerWithTab("dark_coffee", () -> new DrinkableItem(
             bottleItem().food(FoodValues.DARK_COFFEE), true));
 
     // Cooking products
     public static final RegistryObject<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
             bottleItem().food(FoodValues.COOKING_OIL)));
+    public static final RegistryObject<Item> SYRUP = registerWithTab("syrup", () -> new DrinkableItem(
+            bottleItem().food(FoodValues.SYRUP), true));
     public static final RegistryObject<Item> BATTER = registerWithTab("batter", () -> new Item(
             bowlItem().food(FoodValues.BATTER)));
 
@@ -110,34 +115,82 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_CALAMARI_SLICE = registerWithTab("cooked_calamari_slice", () -> new Item(
             baseItem().food(FoodValues.COOKED_CALAMARI_SLICE)));
 
-    // Sweets
-    public static final RegistryObject<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
-            baseItem().food(FoodValues.FRUIT_BEIGNET), true));
-    public static final RegistryObject<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+    // Pies & cakes
+    public static final RegistryObject<Item> SYRUP_CHEESECAKE = registerBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
+    public static final RegistryObject<Item> SYRUP_CHEESECAKE_SLICE = registerWithTab("syrup_cheesecake_slice", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
+
     public static final RegistryObject<Item> CHERRY_BLOSSOM_CHEESECAKE = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
     public static final RegistryObject<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
-    public static final RegistryObject<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
-    public static final RegistryObject<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
-    public static final RegistryObject<Item> CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
-    public static final RegistryObject<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
 
-    // Basic meals
-    public static final RegistryObject<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
-            baseItem().food(FoodValues.CALAMARI_ROLL)));
-    public static final RegistryObject<Item> CHERRY_BLOSSOM_ROLL = registerWithTab("cherry_blossom_roll", () -> new Item(
-            baseItem().food(FoodValues.CHERRY_BLOSSOM_ROLL)));
+    // Cookies
+    public static final RegistryObject<Item> SYRUP_COOKIE = registerWithTab("syrup_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+    public static final RegistryObject<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+    public static final RegistryObject<Item> COFFEE_COOKIE = registerWithTab("coffee_cookie", () -> new Item(
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+
+    // Sweets
+    public static final RegistryObject<Item> SYRUP_SANDWICH = registerWithTab("syrup_sandwich", () -> new Item(
+            baseItem().food(FoodValues.SYRUP_SANDWICH)));
+    public static final RegistryObject<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
+            baseItem().food(FoodValues.FRUIT_BEIGNET), true));
+
+    // Pancakes
+    public static final RegistryObject<Item> PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
+    public static final RegistryObject<Item> PANCAKE = registerWithTab("pancake", () -> new Item(
+            baseItem().food(FoodValues.PANCAKE)));
+    public static final RegistryObject<Item> HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
+    public static final RegistryObject<Item> HONEY_PANCAKE = registerWithTab("honey_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.HONEY_PANCAKE), true));
+    public static final RegistryObject<Item> CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
+    public static final RegistryObject<Item> CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.CHOCOLATE_PANCAKE), true));
+    public static final RegistryObject<Item> CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
+    public static final RegistryObject<Item> CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.CHERRY_BLOSSOM_PANCAKE), true));
+    public static final RegistryObject<Item> VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
+    public static final RegistryObject<Item> VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.VEGETABLE_PANCAKE), true));
+    public static final RegistryObject<Item> PUMPKIN_PANCAKES = registerBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
+    public static final RegistryObject<Item> PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.PUMPKIN_PANCAKE), true));
+
+    // Salads
     public static final RegistryObject<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new ConsumableItem(
             bowlItem().food(FoodValues.POTATO_SALAD), true));
-    public static final RegistryObject<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
-            baseItem().food(FoodValues.SPRING_ROLLS)));
+    public static final RegistryObject<Item> SWEET_SALAD = registerWithTab("sweet_salad", () -> new ConsumableItem(
+            bowlItem().food(FoodValues.SWEET_SALAD), true));
+
+    // Basic meals
     public static final RegistryObject<Item> STUFFED_BELL_PEPPER_GREEN = registerWithTab("stuffed_bell_pepper_green", () -> new Item(
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
     public static final RegistryObject<Item> STUFFED_BELL_PEPPER_YELLOW = registerWithTab("stuffed_bell_pepper_yellow", () -> new Item(
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
     public static final RegistryObject<Item> STUFFED_BELL_PEPPER_RED = registerWithTab("stuffed_bell_pepper_red", () -> new Item(
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+
+    // Fried foods
+    public static final RegistryObject<Item> FRIED_DOUGH = registerWithTab("fried_dough", () -> new Item(
+            baseItem().food(FoodValues.FRIED_DOUGH)));
+    public static final RegistryObject<Item> FRIED_DUMPLINGS = registerWithTab("fried_dumplings", () -> new Item(
+            baseItem().food(FoodValues.FRIED_DUMPLINGS)));
+    public static final RegistryObject<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
+            baseItem().food(FoodValues.SPRING_ROLLS)));
+
+    // Sushi rolls
+    public static final RegistryObject<Item> BELL_PEPPER_ROLL_GREEN = registerWithTab("bell_pepper_roll_green", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final RegistryObject<Item> BELL_PEPPER_ROLL_YELLOW = registerWithTab("bell_pepper_roll_yellow", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final RegistryObject<Item> BELL_PEPPER_ROLL_RED = registerWithTab("bell_pepper_roll_red", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final RegistryObject<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
+            baseItem().food(FoodValues.CALAMARI_ROLL)));
+    public static final RegistryObject<Item> CHERRY_BLOSSOM_ROLL = registerWithTab("cherry_blossom_roll", () -> new Item(
+            baseItem().food(FoodValues.CHERRY_BLOSSOM_ROLL)));
 
     // Soups and stews
     public static final RegistryObject<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new ConsumableItem(
@@ -155,6 +208,9 @@ public class ModItems {
     public static final RegistryObject<Item> COFFEE_BRAISED_BEEF = registerWithTab("coffee_braised_beef", () -> new ConsumableItem(
             bowlItem().food(FoodValues.COFFEE_BRAISED_BEEF), true));
 
+    // Feasts
+    public static final RegistryObject<Item> RICE_ROLL_ROYALE = registerBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
+
     // Helper functions
     public static Item.Properties baseItem() {
         return new Item.Properties();
@@ -168,6 +224,9 @@ public class ModItems {
         return baseItem().craftRemainder(Items.BOWL).stacksTo(16);
     }
 
+    public static Item.Properties feastItem() {
+        return baseItem().craftRemainder(Items.BOWL).stacksTo(1);
+    }
 
     public static RegistryObject<Item> registerWithTab(final String name, final Supplier<Item> supplier) {
         RegistryObject<Item> item = ITEMS.register(name, supplier);
