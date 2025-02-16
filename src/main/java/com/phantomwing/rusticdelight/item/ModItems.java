@@ -139,7 +139,7 @@ public class ModItems {
 
     // Pancakes
     public static final Item PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
-    public static final Item PANCAKE = registerWithTab("pancake", new ConsumableItem(baseItem().food(FoodValues.PANCAKE), true));
+    public static final Item PANCAKE = registerWithTab("pancake", new Item(baseItem().food(FoodValues.PANCAKE)));
     public static final Item HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
     public static final Item HONEY_PANCAKE = registerWithTab("honey_pancake", new ConsumableItem(baseItem().food(FoodValues.HONEY_PANCAKE), true));
     public static final Item CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());

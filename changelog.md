@@ -1,3 +1,27 @@
+# 1.4.0
+### Additions
+- Overhauled the pancake feature:
+  - Added ability to take a single pancake from a pancakes block, with a knife
+  - Added Cooking Pot recipes for all pancakes
+  - Added new pancake variants: Pancakes (the classic variant), Pumpkin Pancakes
+  - Added Pancake, Honey Pancake, Chocolate Pancake, Vegetable Pancake, Cherry Blossom Pancake, Pumpkin Pancake
+  - Rebalanced pancake recipes and gained effects
+  - Updated all pancake models
+- Added a new cooking ingredient: Syrup! Required for some new items:
+  - Pancakes and Pumpkin Pancakes require Syrup to craft
+  - Syrup Cheesecake
+  - Syrup Cookie
+  - Sweet Salad
+- Added more Coffee-related foods:
+  - Syrup Coffee
+  - Coffee Cookie
+- Added new Feast: Rice Roll Royale (requires one of each Rustic Delight rice roll item)
+  - Added Green Bell Pepper Roll, Yellow Bell Pepper Roll, Red Bell Pepper Roll
+- Added more fried foods
+  - Fried Dough
+  - Fried Dumplings
+
+
 # 1.3.3
 
 ### Changes
