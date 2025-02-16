@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:vegetable_pancakes_from_vegetable_pancake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vegetable_pancake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:vegetable_pancake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_vegetable_pancake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:vegetable_pancakes_from_vegetable_pancake"
+    ]
+  }
+}

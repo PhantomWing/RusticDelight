@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pancake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:pancake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:pancakes_from_pancake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pancake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:pancakes_from_pancake"
+    ]
+  }
+}

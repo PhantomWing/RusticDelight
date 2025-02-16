@@ -3,22 +3,25 @@
   "category": "misc",
   "key": {
     "B": {
+      "item": "minecraft:bowl"
+    },
+    "M": {
       "item": "rusticdelight:batter"
     },
-    "L": {
-      "tag": "c:foods/leafy_green"
+    "T": {
+      "tag": "c:foods/milk"
     },
-    "V": {
+    "X": {
       "tag": "c:foods/vegetable"
     },
     "Y": {
-      "item": "minecraft:bowl"
+      "tag": "c:foods/leafy_green"
     }
   },
   "pattern": [
-    "LVL",
-    "VBV",
-    "LYL"
+    " T ",
+    "XMX",
+    "YBY"
   ],
   "result": {
     "count": 1,

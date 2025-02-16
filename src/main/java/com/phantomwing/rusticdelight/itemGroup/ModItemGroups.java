@@ -16,7 +16,7 @@ public class ModItemGroups {
     public static final ItemGroup MOD_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(RusticDelight.MOD_ID, "item_group"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.WILD_COTTON))
-                    .displayName(Text.translatable("itemgroup." + RusticDelight.MOD_ID))
+                    .displayName(Text.translatable("itemGroup." + RusticDelight.MOD_ID))
                     .entries((displayContext, entries) -> {
                         // Add items to this tab.
                         ModItems.CREATIVE_TAB_ITEMS.forEach(entries::add);

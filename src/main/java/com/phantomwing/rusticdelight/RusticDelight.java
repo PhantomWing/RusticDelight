@@ -11,6 +11,7 @@ import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
 import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,5 +39,8 @@ public class RusticDelight implements ModInitializer {
 		ComposterHelper.registerCompostableItems();
 		EntityLootHelper.modifyLootTables();
 		VillagerHelper.registerGatherableItems();
+
+		// Fuel
+		FuelRegistry.INSTANCE.add(ModItems.COTTON_BOLL, 100);
 	}
 }

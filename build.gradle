@@ -55,8 +55,8 @@ dependencies {
 	modImplementation "curse.maven:farmers-delight-refabricated-993166:5852406"
 	modImplementation "curse.maven:cloth-config-348521:5729125"
 
-	//modLocalRuntime("curse.maven:jei-238222:5802635")
-	//modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_version}")
+	modLocalRuntime("curse.maven:jei-238222:5802635")
+	modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_version}")
 }
 
 processResources {

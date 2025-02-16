@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_honey_pancake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:honey_pancake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:honey_pancakes_from_honey_pancake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_honey_pancake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:honey_pancakes_from_honey_pancake"
+    ]
+  }
+}
