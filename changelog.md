@@ -21,6 +21,15 @@
   - Fried Dough
   - Fried Dumplings
 
+### Changes
+- Wild Cotton now spawns more often, by default
+- Cotton Boll can now be used as fuel
+- Cooking Oil can now also be obtained with Pumpkin Seeds (in addition to Sunflower and Canola Seeds, if the proper mods are installed)
+- Bell Pepper Soup is now crafted with 3 bell peppers instead of 4
+- Updated item & block tags for better compatibility with other mods
+- Rebalanced coffee effects
+- Improved textures for most blocks and items
+
 
 # 1.3.3
 
