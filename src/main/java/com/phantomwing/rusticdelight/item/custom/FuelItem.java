@@ -1,4 +1,4 @@
-package com.phantomwing.rusticdelight.block.custom;
+package com.phantomwing.rusticdelight.item.custom;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

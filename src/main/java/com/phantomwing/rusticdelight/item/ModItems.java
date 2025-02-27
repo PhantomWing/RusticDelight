@@ -2,9 +2,9 @@ package com.phantomwing.rusticdelight.item;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
-import com.phantomwing.rusticdelight.block.custom.ChocolateCoffeeItem;
-import com.phantomwing.rusticdelight.block.custom.FuelItem;
-import com.phantomwing.rusticdelight.block.custom.MilkCoffeeItem;
+import com.phantomwing.rusticdelight.item.custom.ChocolateCoffeeItem;
+import com.phantomwing.rusticdelight.item.custom.FuelItem;
+import com.phantomwing.rusticdelight.item.custom.MilkCoffeeItem;
 import com.phantomwing.rusticdelight.food.FoodValues;
 import com.google.common.collect.Sets;
 import net.minecraft.world.item.BlockItem;

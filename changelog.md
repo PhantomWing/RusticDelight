@@ -6,6 +6,10 @@
 - Syrup Cookie, Roasted Coffee Beans are now compostable
 - Updated Chinese translations (thank you Junnaturefox!)
 
+### Fixes
+- Syrup now requires a Glass Bottle as a container, instead of a Bowl
+- Rice Roll Royale now drops a bowl when empty (instead of a copy of itself, resulting in infinite sushi)
+
 # 1.4.0
 ### Additions
 - Overhauled the pancake feature:

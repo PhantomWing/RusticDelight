@@ -6,7 +6,7 @@
       "item": "rusticdelight:milk_coffee"
     },
     {
-      "item": "rusticdelight:syrup"
+      "tag": "rusticdelight:syrup"
     }
   ],
   "result": {

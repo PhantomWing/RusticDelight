@@ -30,7 +30,7 @@
     },
     "rusticdelight:coffee_beans": {
       "can_villager_compost": true,
-      "chance": 0.65
+      "chance": 0.5
     },
     "rusticdelight:coffee_cookie": {
       "can_villager_compost": true,
@@ -48,11 +48,19 @@
       "can_villager_compost": true,
       "chance": 0.5
     },
+    "rusticdelight:roasted_coffee_beans": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
     "rusticdelight:syrup_cheesecake": {
       "can_villager_compost": true,
       "chance": 1.0
     },
     "rusticdelight:syrup_cheesecake_slice": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
+    "rusticdelight:syrup_cookie": {
       "can_villager_compost": true,
       "chance": 0.85
     },

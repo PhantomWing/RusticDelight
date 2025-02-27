@@ -24,6 +24,7 @@ public class ModDataMapProvider extends DataMapProvider {
                 // 50% chance
                 .add(ModItems.COTTON_BOLL.getId(), new Compostable(0.5f, true), false)
                 .add(ModItems.POTATO_SLICES.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.COFFEE_BEANS.getId(), new Compostable(0.5f, true), false)
 
                 // 65% chance
                 .add(ModItems.BELL_PEPPER_GREEN.getId(), new Compostable(0.65f, true), false)
@@ -32,7 +33,6 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.WILD_COFFEE.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
-                .add(ModItems.COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.ROASTED_COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
 
                 // 85% chance

@@ -13,7 +13,7 @@
           "block": "rusticdelight:rice_roll_royale",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "servings": "0"
+            "servings": "8"
           }
         }
       ],
@@ -34,7 +34,7 @@
             "block": "rusticdelight:rice_roll_royale",
             "condition": "minecraft:block_state_property",
             "properties": {
-              "servings": "0"
+              "servings": "8"
             }
           }
         }

@@ -321,7 +321,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, ModItems.BATTER.getId());
 
         // Syrup
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP, 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP, 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(ModTags.Items.SYRUP_INGREDIENTS)
                 .addIngredient(Items.SUGAR)
                 .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)

@@ -17,7 +17,7 @@ public class FoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 0.5f).fast().build();
     public static final FoodProperties SYRUP = (new FoodProperties.Builder())
             .nutrition(2).saturationModifier(0.2F)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), 1.0F).build();
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), 1.0F).fast().build();
 
     // Basic foods
     public static final FoodProperties BELL_PEPPER = (new FoodProperties.Builder())
