@@ -1,3 +1,8 @@
+# 1.4.1
+### Fixes
+- Added farmersdelight dependency to fabric.mod.json
+- Removed another-mod suggestion from fabric.mod.json
+
 # 1.4.0
 ### Additions
 - Overhauled the pancake feature:
