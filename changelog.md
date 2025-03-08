@@ -1,3 +1,8 @@
+# 1.4.0
+### Changes
+- Removed another-mod suggestion from fabric.mod.json
+- Added farmersdelight dependency to fabric.mod.json
+
 # 1.3.2
 
 ### Fixes
