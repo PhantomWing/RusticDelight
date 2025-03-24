@@ -71,8 +71,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.PUMPKIN_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-
-        dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, RiceRollRoyaleBlock.MAX_SERVINGS, Items.BOWL);
     }
 
     @Override
@@ -93,11 +92,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     private void dropFoodBlock(Block block, IntegerProperty servings) {
-        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings));
+        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings, 0, null));
     }
 
     private void dropFoodBlock(Block block, IntegerProperty servings, ItemLike containerItem) {
-        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings, containerItem));
+        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings, 0, containerItem));
+    }
+
+    private void dropFoodBlock(Block block, IntegerProperty servings, int defaultServings, ItemLike containerItem) {
+        this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings, defaultServings, containerItem));
     }
 
     private LootTable.Builder createCropDrops(Block cropBlock, IntegerProperty age, int maxAge, ItemLike seedsItem, NumberProvider seedsCount, ItemLike cropItem, NumberProvider cropCount) {
@@ -204,43 +207,26 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         );
     }
 
-    private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings) {
+    private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings, int defaultServings, ItemLike containerItem) {
         // Condition that checks if any servings have been taken.
         LootItemCondition.Builder noServingsTaken = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(block)
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(servings, 0));
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(servings, defaultServings));
 
-        return this.applyExplosionDecay(
-                block,
-                LootTable.lootTable()
-                        // If no servings have been taken yet, drop the block.
-                        .withPool(LootPool.lootPool()
-                                .when(noServingsTaken)
-                                .add(LootItem.lootTableItem(block))
-                        )
-        );
-    }
+        // If no servings have been taken yet, drop the block.
+        LootTable.Builder lootTable = LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .when(noServingsTaken)
+                        .add(LootItem.lootTableItem(block))
+                );
 
-    private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings, ItemLike containerItem) {
-        // Condition that checks if any servings have been taken.
-        LootItemCondition.Builder noServingsTaken = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(block)
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(servings, 0));
+        // Else, drop the container item (if there is any).
+        if (containerItem != null) {
+            lootTable.withPool(LootPool.lootPool()
+                    .when(InvertedLootItemCondition.invert(noServingsTaken))
+                    .add(LootItem.lootTableItem(containerItem)));
+        }
 
-        return this.applyExplosionDecay(
-                block,
-                LootTable.lootTable()
-                        // If no servings have been taken yet, drop the block.
-                        .withPool(LootPool.lootPool()
-                                .when(noServingsTaken)
-                                .add(LootItem.lootTableItem(block))
-                        )
-                        // Else, drop the tray.
-                        .withPool(LootPool.lootPool()
-                                .when(InvertedLootItemCondition.invert(noServingsTaken))
-                                .add(LootItem.lootTableItem(containerItem)
-                                )
-                        )
-        );
+        return this.applyExplosionDecay(block, lootTable);
     }
 }

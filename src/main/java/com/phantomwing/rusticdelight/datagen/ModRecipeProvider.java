@@ -329,7 +329,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .build(output, getCookingPath(ModItems.BATTER.get()));
 
         // Syrup
-        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(ModTags.Items.SYRUP_INGREDIENTS)
                 .addIngredient(Items.SUGAR)
                 .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
