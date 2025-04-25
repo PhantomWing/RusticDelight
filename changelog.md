@@ -1,3 +1,7 @@
+# 1.4.2
+### Additions
+- Added Russian translations (thank you MaxKuz67)
+
 # 1.4.1
 ### Additions
 - Added cutting board recipe for Syrup Cheesecake
