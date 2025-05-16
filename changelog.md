@@ -1,7 +1,14 @@
 # 1.4.1
+### Additions
+- Added Russian translations (thank you MaxKuz67)
+
 ### Fixes
 - Added farmersdelight dependency to fabric.mod.json
 - Removed another-mod suggestion from fabric.mod.json
+- Added missing translations for crop blocks
+- Rice Roll Royale now drops a bowl when empty (instead of a copy of itself, resulting in infinite sushi)
+- Syrup now requires a Glass Bottle as a container, instead of a Bowl
+
 
 # 1.4.0
 ### Additions
