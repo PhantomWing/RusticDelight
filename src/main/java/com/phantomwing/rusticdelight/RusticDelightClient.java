@@ -5,7 +5,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.renderer.RenderType;
 
 @Environment(EnvType.CLIENT)
 public class RusticDelightClient implements ClientModInitializer {
@@ -13,7 +13,7 @@ public class RusticDelightClient implements ClientModInitializer {
     public void onInitializeClient() {
         // Make sure some blocks are rendered correctly as a cutout.
         BlockRenderLayerMap.INSTANCE.putBlocks(
-                RenderLayer.getCutout(),
+                RenderType.cutout(),
                 ModBlocks.WILD_BELL_PEPPERS,
                 ModBlocks.WILD_COTTON,
                 ModBlocks.WILD_COFFEE,

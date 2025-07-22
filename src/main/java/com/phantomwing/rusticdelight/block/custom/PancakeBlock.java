@@ -1,122 +1,142 @@
 package com.phantomwing.rusticdelight.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.FoodComponent;
-import net.minecraft.entity.ai.pathing.NavigationType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
-import net.minecraft.util.function.BooleanBiFunction;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 import java.util.function.Supplier;
 
 public class PancakeBlock extends Block {
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final Integer MAX_SERVINGS = 6;
-    public static final IntProperty SERVINGS = IntProperty.of("servings", 0, MAX_SERVINGS - 1);
+    public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, MAX_SERVINGS - 1);
 
     public final Supplier<Item> servingItem;
 
-    protected static final VoxelShape PLATE_SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
+    protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
     protected static final VoxelShape[] PANCAKES_SHAPES =  new VoxelShape[]{
-            VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 8.0D, 13.0D), BooleanBiFunction.OR),
-            VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 7.0D, 13.0D), BooleanBiFunction.OR),
-            VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 6.0D, 13.0D), BooleanBiFunction.OR),
-            VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 5.0D, 13.0D), BooleanBiFunction.OR),
-            VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 4.0D, 13.0D), BooleanBiFunction.OR),
-            VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 3.0D, 13.0D), BooleanBiFunction.OR)
+            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 8.0D, 13.0D), BooleanOp.OR),
+            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 7.0D, 13.0D), BooleanOp.OR),
+            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 6.0D, 13.0D), BooleanOp.OR),
+            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 5.0D, 13.0D), BooleanOp.OR),
+            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 4.0D, 13.0D), BooleanOp.OR),
+            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 3.0D, 13.0D), BooleanOp.OR)
     };
 
-    public PancakeBlock(Supplier<Item> servingItem, Settings settings) {
-        super(settings);
+    public PancakeBlock(Supplier<Item> servingItem, Properties properties) {
+        super(properties);
 
         this.servingItem = servingItem;
-        this.setDefaultState(getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(SERVINGS, 0));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SERVINGS, 0));
     }
 
     @Override
-    protected @NotNull ActionResult onUse(BlockState state, World level, BlockPos pos, PlayerEntity player, BlockHitResult hitResult) {
+    public @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+        if (heldStack.is(ModTags.KNIVES)) {
+            return takeServing(level, pos, state, player);
+        }
+
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    @Override
+    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
+        if (level.isClientSide) {
+            if (consumeServing(level, pos, state, player).consumesAction()) {
+                return InteractionResult.SUCCESS;
+            }
+
+            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+                return InteractionResult.CONSUME;
+            }
+        }
+
         return consumeServing(level, pos, state, player);
     }
 
-    @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (stack.isIn(CommonTags.TOOLS_KNIFE)) {
-            return takeServing(world, pos, state, player);
-        }
-
-        return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-    }
-
-    protected ItemActionResult takeServing(World level, BlockPos pos, BlockState state, PlayerEntity player) {
+    protected ItemInteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
         // Drop the serving item.
-        Direction direction = player.getMovementDirection().getOpposite();
+        Direction direction = player.getDirection().getOpposite();
         ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
-                direction.getOffsetX() * 0.15, 0.05, direction.getOffsetZ() * 0.15);
+                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 
         // Remove a serving from the block.
         this.removeServing(level, pos, state);
 
         // Play a sound, for taking the serving.
-        level.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
+        level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 
-        return ItemActionResult.SUCCESS;
+        return ItemInteractionResult.SUCCESS;
     }
 
     /**
      * Eats a pancake from the stack, feeding the player.
      */
-    protected ActionResult consumeServing(World level, BlockPos pos, BlockState state, PlayerEntity playerIn) {
-        if (!playerIn.canConsume(false)) {
-            return ActionResult.PASS;
+    protected InteractionResult consumeServing(Level level, BlockPos pos, BlockState state, Player playerIn) {
+        if (!playerIn.canEat(false)) {
+            // If the player is full, no interaction is possible.
+            return InteractionResult.PASS;
         } else {
             ItemStack servingStack = this.getServingItem();
-            FoodComponent foodProperties = servingStack.get(DataComponentTypes.FOOD);
+            FoodProperties foodProperties = servingStack.get(DataComponents.FOOD);
 
             // Apply food effect to the player
             if (foodProperties != null) {
-                playerIn.getHungerManager().eat(foodProperties);
-                for (FoodComponent.StatusEffectEntry effect : foodProperties.effects()) {
-                    if (!level.isClient && effect != null && level.random.nextFloat() < effect.probability()) {
-                        playerIn.addStatusEffect(effect.effect());
+                playerIn.getFoodData().eat(foodProperties);
+                for (FoodProperties.PossibleEffect effect : foodProperties.effects()) {
+                    if (!level.isClientSide && effect != null && level.random.nextFloat() < effect.probability()) {
+                        playerIn.addEffect(effect.effect());
                     }
                 }
             }
 
-            // Update the block model. If there are no more servings left, destroy the block.
+            // Remove a serving from the block.
             this.removeServing(level, pos, state);
 
             // Play a sound.
-            level.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.PLAYERS, 0.8F, 0.8F);
+            level.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 0.8F);
 
-            return ActionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
+        }
+    }
+
+    /** Update the block model. If there are no more servings left, destroy the block. */
+    private void removeServing(Level level, BlockPos pos, BlockState state) {
+        int servingsTaken = state.getValue(SERVINGS);
+        if (servingsTaken < MAX_SERVINGS - 1) {
+            level.setBlock(pos, state.setValue(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
+        } else {
+            level.destroyBlock(pos, true);
         }
     }
 
@@ -124,53 +144,43 @@ public class PancakeBlock extends Block {
         return new ItemStack(this.servingItem.get());
     }
 
-    /** Update the block model. If there are no more servings left, destroy the block. */
-    private void removeServing(World level, BlockPos pos, BlockState state) {
-        int servingsTaken = state.get(SERVINGS);
-        if (servingsTaken < MAX_SERVINGS - 1) {
-            level.setBlockState(pos, state.with(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
-        } else {
-            level.breakBlock(pos, true);
-        }
+    @Override
+    public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+        return PANCAKES_SHAPES[state.getValue(SERVINGS)];
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView level, BlockPos pos, ShapeContext context) {
-        return PANCAKES_SHAPES[state.get(SERVINGS)];
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext context) {
-        return this.getDefaultState().with(FACING, context.getHorizontalPlayerFacing().getOpposite());
+    public @NotNull BlockState updateShape(@NotNull BlockState stateIn, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
+        return facing == Direction.DOWN && !stateIn.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
     }
 
     @Override
-    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    public boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
+        return level.getBlockState(pos.below()).isSolid();
     }
 
     @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isSolidBlock(world, pos);
-    }
-
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, SERVINGS);
     }
 
     @Override
-    public int getComparatorOutput(BlockState blockState, World level, BlockPos pos) {
-        return blockState.get(SERVINGS);
+    public int getAnalogOutputSignal(BlockState blockState, @NotNull Level level, @NotNull BlockPos pos) {
+        return blockState.getValue(SERVINGS);
     }
 
     @Override
-    public boolean hasComparatorOutput(BlockState state) {
+    public boolean hasAnalogOutputSignal(@NotNull BlockState state) {
         return true;
     }
 
     @Override
-    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
+    public boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType type) {
         return false;
     }
 }

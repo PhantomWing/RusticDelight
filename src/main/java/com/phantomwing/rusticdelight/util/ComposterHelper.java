@@ -1,13 +1,13 @@
 package com.phantomwing.rusticdelight.util;
 
 import com.phantomwing.rusticdelight.item.ModItems;
-import net.minecraft.block.ComposterBlock;
-import net.minecraft.item.ItemConvertible;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.ComposterBlock;
 
 public class ComposterHelper {
-    private static void registerCompostableItems (float chance, ItemConvertible ...items) {
-        for (ItemConvertible item : items) {
-            ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(item, chance);
+    private static void registerCompostableItems (float chance, ItemLike...items) {
+        for (ItemLike item : items) {
+            ComposterBlock.COMPOSTABLES.put(item, chance);
         }
     }
 

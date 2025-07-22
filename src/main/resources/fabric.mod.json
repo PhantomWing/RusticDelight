@@ -15,9 +15,6 @@
 	"icon": "logo.png",
 	"environment": "*",
 	"entrypoints": {
-		"fabric-datagen": [
-			"com.phantomwing.rusticdelight.RusticDelightDataGenerator"
-		],
 		"main": [
 			"com.phantomwing.rusticdelight.RusticDelight"
 		],

@@ -1,40 +1,40 @@
 package com.phantomwing.rusticdelight.item.custom;
 
-import io.github.fabricators_of_create.porting_lib.entity.EffectCures;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.world.World;
+import net.minecraft.core.Holder;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class MilkCoffeeItem extends DrinkableItem
 {
-    public MilkCoffeeItem(Item.Settings settings) {
-        super(settings, true, true);
+    public MilkCoffeeItem(Item.Properties properties) {
+        super(properties, true, true);
     }
 
     @Override
-    public void affectConsumer(ItemStack stack, World level, LivingEntity consumer) {
-        Iterator<StatusEffectInstance> itr = consumer.getStatusEffects().iterator();
-        ArrayList<RegistryEntry<StatusEffect>> compatibleEffects = new ArrayList<>();
+    public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
+        Iterator<MobEffectInstance> itr = consumer.getActiveEffects().iterator();
+        ArrayList<Holder<MobEffect>> compatibleEffects = new ArrayList<>();
 
         while (itr.hasNext()) {
-            StatusEffectInstance effect = itr.next();
-            if (effect.getCures().contains(EffectCures.MILK)) {
-                compatibleEffects.add(effect.getEffectType());
+            MobEffectInstance effect = itr.next();
+            if (!effect.getEffect().is(ModTags.MILK_BOTTLE_IGNORED)) {
+                compatibleEffects.add(effect.getEffect());
             }
         }
 
         if (!compatibleEffects.isEmpty()) {
-            StatusEffectInstance selectedEffect = consumer.getStatusEffect(compatibleEffects.get(level.random.nextInt(compatibleEffects.size())));
+            MobEffectInstance selectedEffect = consumer.getEffect(compatibleEffects.get(level.random.nextInt(compatibleEffects.size())));
             if (selectedEffect != null) {
-                consumer.removeStatusEffect(selectedEffect.getEffectType());
+                consumer.removeEffect(selectedEffect.getEffect());
             }
         }
     }

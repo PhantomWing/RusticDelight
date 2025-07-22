@@ -2,37 +2,48 @@ package com.phantomwing.rusticdelight.potion;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.item.ModItems;
-import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Items;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.Potions;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.fabricmc.fabric.mixin.content.registry.BrewingRecipeRegistryBuilderMixin;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
 
 public class ModPotions {
     // Potions
-    public static final Potion HASTE_POTION = register("haste", StatusEffects.HASTE, 3600);
-    public static final Potion LONG_HASTE_POTION = register("long_haste", "haste", StatusEffects.HASTE, 9600, 0);
-    public static final Potion STRONG_HASTE_POTION = register("strong_haste", "haste", StatusEffects.HASTE, 1800, 1);
+    public static final Holder<Potion> HASTE_POTION = register("haste", MobEffects.DIG_SPEED, 3600);
+    public static final Holder<Potion> LONG_HASTE_POTION = register("long_haste", "haste", MobEffects.DIG_SPEED, 9600, 0);
+    public static final Holder<Potion> STRONG_HASTE_POTION = register("strong_haste", "haste", MobEffects.DIG_SPEED, 1800, 1);
 
-    private static Potion register(String name, RegistryEntry<StatusEffect> effect, int duration) {
-        return Registry.register(Registries.POTION, name, new Potion(name, new StatusEffectInstance(effect, duration, 0)));
+    private static Holder<Potion> register(String name, Holder<MobEffect> effect, int duration) {
+        return Registry.registerForHolder(
+                BuiltInRegistries.POTION,
+                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
+                new Potion(name, new MobEffectInstance(effect, duration, 0))
+        );
     }
 
-    private static Potion  register(String name, String potionName, RegistryEntry<StatusEffect> effect, int duration, int amplifier) {
-        return Registry.register(Registries.POTION, name, new Potion(potionName, new StatusEffectInstance(effect, duration, amplifier)));
+    private static Holder<Potion> register(String name, String potionName, Holder<MobEffect> effect, int duration, int amplifier) {
+        return Registry.registerForHolder(
+                BuiltInRegistries.POTION,
+                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
+                new Potion(potionName, new MobEffectInstance(effect, duration, amplifier))
+        );
     }
 
-    public static void registerPotionRecipes() {
-        FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+    private static void registerPotionRecipes() {
+        PotionBrewing.Builder.BUILD.register(builder -> {
             // Haste
-            builder.registerPotionRecipe(Potions.WATER, ModItems.GOLDEN_COFFEE_BEANS, Registries.POTION.getEntry(HASTE_POTION));
-            builder.registerPotionRecipe(Registries.POTION.getEntry(HASTE_POTION), Items.REDSTONE, Registries.POTION.getEntry(LONG_HASTE_POTION));
-            builder.registerPotionRecipe(Registries.POTION.getEntry(HASTE_POTION), Items.GLOWSTONE_DUST, Registries.POTION.getEntry(STRONG_HASTE_POTION));
+            builder.registerPotionRecipe(Potions.WATER, Ingredient.of(ModItems.GOLDEN_COFFEE_BEANS), HASTE_POTION);
+            builder.registerPotionRecipe(HASTE_POTION, Ingredient.of(Items.REDSTONE), LONG_HASTE_POTION);
+            builder.registerPotionRecipe(HASTE_POTION, Ingredient.of(Items.GLOWSTONE_DUST), STRONG_HASTE_POTION);
         });
     }
 

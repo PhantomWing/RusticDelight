@@ -6,14 +6,14 @@ import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.item.custom.ChocolateCoffeeItem;
 import com.phantomwing.rusticdelight.item.custom.MilkCoffeeItem;
 import com.phantomwing.rusticdelight.food.FoodValues;
-import net.minecraft.block.Block;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 
@@ -52,15 +52,15 @@ public class ModItems {
             baseItem().food(FoodValues.BELL_PEPPER)));
 
     // Crop seeds
-    public static final Item COTTON_SEEDS = registerWithTab("cotton_seeds", new AliasedBlockItem(
+    public static final Item COTTON_SEEDS = registerWithTab("cotton_seeds", new ItemNameBlockItem(
             ModBlocks.COTTON_CROP,
             baseItem()));
-    public static final Item BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", new AliasedBlockItem(
+    public static final Item BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", new ItemNameBlockItem(
             ModBlocks.BELL_PEPPER_CROP,
             baseItem()));
 
     // Coffee Beans
-    public static final Item COFFEE_BEANS = registerWithTab("coffee_beans", new AliasedBlockItem(
+    public static final Item COFFEE_BEANS = registerWithTab("coffee_beans", new ItemNameBlockItem(
             ModBlocks.COFFEE_CROP,
             baseItem()));
     public static final Item ROASTED_COFFEE_BEANS = registerWithTab("roasted_coffee_beans", new Item(
@@ -197,24 +197,25 @@ public class ModItems {
     public static final Item RICE_ROLL_ROYALE = registerBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
 
     // Helper functions
-    public static Item.Settings baseItem() {
-        return new Item.Settings();
+    public static Item.Properties baseItem() {
+        return new Item.Properties();
     }
 
-    public static Item.Settings bottleItem() {
-        return baseItem().recipeRemainder(Items.GLASS_BOTTLE).maxCount(BOTTLE_STACK_SIZE);
+    public static Item.Properties bottleItem() {
+        return baseItem().craftRemainder(Items.GLASS_BOTTLE).stacksTo(BOTTLE_STACK_SIZE);
     }
 
-    public static Item.Settings bowlItem() {
-        return baseItem().recipeRemainder(Items.BOWL).maxCount(BOWL_STACK_SIZE);
+    public static Item.Properties bowlItem() {
+        return baseItem().craftRemainder(Items.BOWL).stacksTo(BOWL_STACK_SIZE);
     }
 
-    public static Item.Settings feastItem() {
-        return baseItem().recipeRemainder(Items.BOWL).maxCount(1);
+    public static Item.Properties feastItem() {
+        return baseItem().craftRemainder(Items.BOWL).stacksTo(1);
     }
 
+    // Registry functions
     private static Item registerWithTab(String name, Item item) {
-        Item registeredItem = Registry.register(Registries.ITEM, Identifier.of(RusticDelight.MOD_ID, name), item);
+        Item registeredItem = Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name), item);
 
         CREATIVE_TAB_ITEMS.add(registeredItem);
 
@@ -222,8 +223,8 @@ public class ModItems {
     }
 
     private static Item registerBlockWithTab(Block block) {
-        String name = Registries.BLOCK.getId(block).getPath();
-        Item item = Registry.register(Registries.ITEM, Identifier.of(RusticDelight.MOD_ID, name),
+        String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+        Item item = Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
                 new BlockItem(block, baseItem()));
 
         CREATIVE_TAB_ITEMS.add(item);
@@ -231,9 +232,9 @@ public class ModItems {
         return item;
     }
 
-    private static Item registerBlockWithTab(Block block, Item.Settings settings) {
-        String name = Registries.BLOCK.getId(block).getPath();
-        Item item = Registry.register(Registries.ITEM, Identifier.of(RusticDelight.MOD_ID, name),
+    private static Item registerBlockWithTab(Block block, Item.Properties settings) {
+        String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+        Item item = Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
                 new BlockItem(block, settings));
 
         CREATIVE_TAB_ITEMS.add(item);

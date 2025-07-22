@@ -3,17 +3,17 @@ package com.phantomwing.rusticdelight.util;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.phantomwing.rusticdelight.item.ModItems;
-import net.minecraft.entity.passive.VillagerEntity;
-import net.minecraft.item.Item;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.item.Item;
 
 import java.util.Set;
 
 public class VillagerHelper {
     public static void addGatherableItems(Item... itemsToAdd) {
         Set<Item> newWantedItems = Sets.newHashSet(itemsToAdd);
-        newWantedItems.addAll(VillagerEntity.GATHERABLE_ITEMS);
+        newWantedItems.addAll(Villager.WANTED_ITEMS);
 
-        VillagerEntity.GATHERABLE_ITEMS = ImmutableSet.copyOf(newWantedItems);
+        Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
     }
 
     public static void registerGatherableItems() {

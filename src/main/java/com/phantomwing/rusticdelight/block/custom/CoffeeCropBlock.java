@@ -1,29 +1,29 @@
 package com.phantomwing.rusticdelight.block.custom;
 
 import com.phantomwing.rusticdelight.item.ModItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CropBlock;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class CoffeeCropBlock extends CropBlock {
     public static final int MAX_AGE = 5;
-    public static final IntProperty AGE = Properties.AGE_5;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
 
-    public CoffeeCropBlock(Settings settings) {
-        super(settings);
+    public CoffeeCropBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
-    protected ItemConvertible getSeedsItem() {
+    protected ItemLike getBaseSeedId() {
         return ModItems.COFFEE_BEANS;
     }
 
     @Override
-    public IntProperty getAgeProperty() {
+    public IntegerProperty getAgeProperty() {
         return AGE;
     }
 
@@ -33,7 +33,7 @@ public class CoffeeCropBlock extends CropBlock {
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(AGE);
     }
 }

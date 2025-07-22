@@ -1,6 +1,15 @@
+# 1.4.2
+### Technical Changes
+- Removed dependency on PortingLib
+- Changed code to use parchment mappings, instead of yarn mappings
+
+### Fixes
+- Fix compatibility issues with Farmer's Delight Refabricated 3.0.0 and onwards
+- Fix crash when drinking Milk Coffee, Chocolate Coffee, Honey Coffee or Syrup Coffee
+
 # 1.4.1
 ### Additions
-- Added Russian translations (thank you MaxKuz67)
+- Added Russian translations (thank you MaxKuz67!)
 
 ### Fixes
 - Added farmersdelight dependency to fabric.mod.json

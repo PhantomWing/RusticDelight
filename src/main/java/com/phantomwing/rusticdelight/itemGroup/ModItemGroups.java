@@ -3,23 +3,21 @@ package com.phantomwing.rusticdelight.itemGroup;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 public class ModItemGroups {
-    public static final ItemGroup MOD_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(RusticDelight.MOD_ID, "item_group"),
+    public static final CreativeModeTab MOD_ITEM_GROUP = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "item_group"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.WILD_COTTON))
-                    .displayName(Text.translatable("itemGroup." + RusticDelight.MOD_ID))
-                    .entries((displayContext, entries) -> {
+                    .title(Component.translatable("itemGroup." + RusticDelight.MOD_ID))
+                    .displayItems((displayContext, entries) -> {
                         // Add items to this tab.
-                        ModItems.CREATIVE_TAB_ITEMS.forEach(entries::add);
+                        ModItems.CREATIVE_TAB_ITEMS.forEach(entries::accept);
                     })
                     .build());
 

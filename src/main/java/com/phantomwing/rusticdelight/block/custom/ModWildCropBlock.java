@@ -1,19 +1,21 @@
 package com.phantomwing.rusticdelight.block.custom;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.state.BlockState;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 public class ModWildCropBlock extends WildCropBlock {
-    public ModWildCropBlock(RegistryEntry<StatusEffect> suspiciousStewEffect, int effectDuration, Settings properties) {
+    public ModWildCropBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
         super(suspiciousStewEffect, effectDuration, properties);
     }
 
-    public boolean canPlantOnTop(BlockState state, BlockView level, BlockPos pos) {
-        return state.isIn(BlockTags.DIRT);
+    @Override
+    public boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
+        // Make sure we only generate this crop on dirt blocks.
+        return state.is(BlockTags.DIRT);
     }
 }

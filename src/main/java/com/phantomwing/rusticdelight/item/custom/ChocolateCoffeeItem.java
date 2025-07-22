@@ -1,41 +1,42 @@
 package com.phantomwing.rusticdelight.item.custom;
 
-import io.github.fabricators_of_create.porting_lib.entity.EffectCures;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.world.World;
+import net.minecraft.core.Holder;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ChocolateCoffeeItem extends DrinkableItem
 {
-    public ChocolateCoffeeItem(Item.Settings settings) {
-        super(settings, true, true);
+    public ChocolateCoffeeItem(Item.Properties properties) {
+        super(properties, true, true);
     }
 
     @Override
-    public void affectConsumer(ItemStack stack, World level, LivingEntity consumer) {
-        Iterator<StatusEffectInstance> itr = consumer.getStatusEffects().iterator();
-        ArrayList<RegistryEntry<StatusEffect>> compatibleEffects = new ArrayList<>();
+    public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
+        Iterator<MobEffectInstance> itr = consumer.getActiveEffects().iterator();
+        ArrayList<Holder<MobEffect>> compatibleEffects = new ArrayList<>();
 
         while (itr.hasNext()) {
-            StatusEffectInstance effect = itr.next();
-            if (effect.getEffectType().value().getCategory().equals(StatusEffectCategory.HARMFUL) && effect.getCures().contains(EffectCures.MILK)) {
-                compatibleEffects.add(effect.getEffectType());
+            MobEffectInstance effect = itr.next();
+            if (effect.getEffect().value().getCategory().equals(MobEffectCategory.HARMFUL) && !effect.getEffect().is(ModTags.HOT_COCOA_IGNORED)) {
+                compatibleEffects.add(effect.getEffect());
             }
         }
 
         if (!compatibleEffects.isEmpty()) {
-            StatusEffectInstance selectedEffect = consumer.getStatusEffect(compatibleEffects.get(level.random.nextInt(compatibleEffects.size())));
+            MobEffectInstance selectedEffect = consumer.getEffect(compatibleEffects.get(level.random.nextInt(compatibleEffects.size())));
+            // There is no equivalent for MobEffectEvent, people are expected to mixin with instances like this on Fabric, so we don't bother.
             if (selectedEffect != null) {
-                consumer.removeStatusEffect(selectedEffect.getEffectType());
+                consumer.removeEffect(selectedEffect.getEffect());
             }
         }
     }
