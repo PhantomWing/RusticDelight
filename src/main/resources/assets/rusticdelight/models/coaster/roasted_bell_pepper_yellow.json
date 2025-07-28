@@ -1,0 +1,6 @@
+{
+  "parent": "rusticdelight:coaster/roasted_bell_pepper_red",
+  "textures": {
+    "bell_pepper": "rusticdelight:block/coaster/roasted_bell_pepper_yellow"
+  }
+}

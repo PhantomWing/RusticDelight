@@ -1,3 +1,12 @@
+# 1.5.0
+### Additions
+- Added compatibility with Brewin' and Chewin'
+  - Place any of Rustic Delight's drinks, dishes and crops on a Coaster to display them in your world!
+
+### Fixes
+- Improved Russian translations (thank you JedaiGames!)
+
+
 # 1.4.2
 ### Additions
 - Added Russian translations (thank you MaxKuz67)
