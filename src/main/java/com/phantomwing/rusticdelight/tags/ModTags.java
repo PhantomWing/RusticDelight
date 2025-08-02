@@ -18,16 +18,23 @@ public class ModTags {
 
     // Item tags
     public static class Items {
+        // Food ingredients
         public static final TagKey<Item> CALAMARI_ROLL_INGREDIENTS = tag("calamari_roll_ingredients");
         public static final TagKey<Item> CHERRY_BLOSSOM_INGREDIENTS = tag("cherry_blossom_ingredients");
+        public static final TagKey<Item> SYRUP_INGREDIENTS = tag("syrup_ingredients");
         public static final TagKey<Item> COOKING_OIL_INGREDIENTS = tag("cooking_oil_ingredients");
-        public static final TagKey<Item> COOKING_OIL = tag("cooking_oil");
         public static final TagKey<Item> COFFEE_INGREDIENTS = tag("coffee_ingredients");
         public static final TagKey<Item> COFFEE_FOOD_INGREDIENTS = tag("coffee_food_ingredients");
+        public static final TagKey<Item> SPRING_ROLL_INGREDIENTS = tag("spring_roll_ingredients");
+        public static final TagKey<Item> STUFFED_BELL_PEPPER_INGREDIENTS = tag("stuffed_bell_pepper_ingredients");
 
-        public static final TagKey<Item> SYRUP_INGREDIENTS = tag("syrup_ingredients");
+        // Tags to improve compatibility
+        public static final TagKey<Item> COOKING_OIL = tag("cooking_oil");
         public static final TagKey<Item> SYRUP = tag("syrup");
-        public static final TagKey<Item> SWEET_LIQUIDS = tag("sweet_liquids");
+        public static final TagKey<Item> SWEET_LIQUIDS = tag("sweet_liquids"); // Honey, Syrup, ...
+
+        // Combines raw and cooked eggs together in a single tag
+        public static final TagKey<Item> RAW_AND_COOKED_EGGS = tag("raw_cooked_eggs");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));

@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "rusticdelight:block/coaster/pancake",
+		"pancake": "rusticdelight:block/coaster/pancake"
+	},
+	"elements": [
+		{
+			"name": "pancake",
+			"from": [4, 0, 6.5],
+			"to": [12, 2, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 6]},
+			"faces": {
+				"north": {"uv": [8, 4, 0, 6], "texture": "#pancake"},
+				"east": {"uv": [3, 7, 0, 9], "texture": "#pancake"},
+				"south": {"uv": [0, 4, 8, 6], "texture": "#pancake"},
+				"west": {"uv": [7, 7, 4, 9], "texture": "#pancake"},
+				"up": {"uv": [0, 0, 8, 3], "texture": "#pancake"},
+				"down": {"uv": [0, 0, 8, 3], "texture": "#pancake"}
+			}
+		},
+		{
+			"name": "pancake_sauce",
+			"from": [3, 0.01, 4.5],
+			"to": [13, 0.01, 11.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 0], "texture": "#pancake"},
+				"east": {"uv": [0, 0, 7, 0], "texture": "#pancake"},
+				"south": {"uv": [0, 0, 8, 0], "texture": "#pancake"},
+				"west": {"uv": [0, 0, 7, 0], "texture": "#pancake"},
+				"up": {"uv": [0, 9, 10, 16], "texture": "#pancake"},
+				"down": {"uv": [0, 9, 10, 16], "texture": "#pancake"}
+			}
+		}
+	]
+}

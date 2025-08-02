@@ -112,6 +112,21 @@ public class ModItems {
             baseItem().food(FoodValues.POTATO_SLICES)));
     public static final DeferredItem<Item> BAKED_POTATO_SLICES = registerWithTab("baked_potato_slices", () -> new Item(
             baseItem().food(FoodValues.BAKED_POTATO_SLICES)));
+
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_GREEN = registerWithTab("bell_pepper_slice_green", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_YELLOW = registerWithTab("bell_pepper_slice_yellow", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_RED = registerWithTab("bell_pepper_slice_red", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_GREEN = registerWithTab("roasted_bell_pepper_slice_green", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_YELLOW = registerWithTab("roasted_bell_pepper_slice_yellow", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_RED = registerWithTab("roasted_bell_pepper_slice_red", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+
     public static final DeferredItem<Item> CALAMARI_SLICE = registerWithTab("calamari_slice", () -> new Item(
             baseItem().food(FoodValues.CALAMARI_SLICE)));
     public static final DeferredItem<Item> COOKED_CALAMARI_SLICE = registerWithTab("cooked_calamari_slice", () -> new Item(

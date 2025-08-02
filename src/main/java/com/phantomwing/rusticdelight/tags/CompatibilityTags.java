@@ -48,6 +48,11 @@ public class CompatibilityTags
     // Farmer's Respite
     public static final String FARMERS_RESPITE = "farmersrespite";
 
+    // Brewin' and Chewin'
+    public static final String BREWIN_AND_CHEWIN = "brewinandchewin";
+    public static final TagKey<Item> BREWIN_AND_CHEWIN_PIZZA_TOPPING = externalItemTag(BREWIN_AND_CHEWIN, "foods/pizza_topping");
+    public static final TagKey<Item> BREWIN_AND_CHEWIN_CHEESE_WEDGE = externalItemTag(BREWIN_AND_CHEWIN, "foods/cheese_wedge");
+
     private static TagKey<Item> externalItemTag(String modId, String path) {
         return ItemTags.create(ResourceLocation.fromNamespaceAndPath(modId, path));
     }

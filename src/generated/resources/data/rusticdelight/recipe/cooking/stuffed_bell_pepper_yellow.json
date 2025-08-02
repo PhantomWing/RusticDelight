@@ -9,13 +9,7 @@
       "tag": "c:crops/rice"
     },
     {
-      "type": "neoforge:difference",
-      "base": {
-        "tag": "farmersdelight:cabbage_roll_ingredients"
-      },
-      "subtracted": {
-        "tag": "c:foods/bell_pepper"
-      }
+      "tag": "rusticdelight:stuffed_bell_pepper_ingredients"
     }
   ],
   "recipe_book_tab": "meals",

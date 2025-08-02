@@ -1,0 +1,21 @@
+{
+  "values": [
+    "#c:foods/safe_raw_fish",
+    "#c:foods/raw_pork",
+    "#c:foods/raw_chicken",
+    "#c:foods/raw_beef",
+    "#c:foods/raw_mutton",
+    "#c:eggs",
+    "#c:mushrooms",
+    "#c:foods/carrot",
+    "#c:foods/potato",
+    "#c:foods/beetroot",
+    "#c:foods/tomato",
+    "#c:foods/cabbage",
+    "#c:foods/onion",
+    {
+      "id": "#brewinandchewin:foods/cheese_wedge",
+      "required": false
+    }
+  ]
+}

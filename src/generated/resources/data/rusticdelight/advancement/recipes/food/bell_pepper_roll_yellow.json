@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bell_pepper_yellow": {
+    "has_bell_pepper_slice_yellow": {
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:bell_pepper_yellow"
+            "items": "rusticdelight:bell_pepper_slice_yellow"
           }
         ]
       },
@@ -31,7 +31,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bell_pepper_yellow",
+      "has_bell_pepper_slice_yellow",
       "has_cooked_rice"
     ]
   ],

@@ -2,7 +2,7 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"particle": "rusticdelight:block/coaster/roasted_bell_pepper_red",
+		"particle": "#bell_pepper",
 		"bell_pepper": "rusticdelight:block/coaster/roasted_bell_pepper_red"
 	},
 	"elements": [

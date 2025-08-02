@@ -37,6 +37,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addModTags() {
+        // Cooking oil
         this.tag(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .add(ModItems.COTTON_SEEDS.get(), Items.PUMPKIN_SEEDS)
                 .addOptionalTag(CommonTags.SEEDS_CANOLA)
@@ -47,12 +48,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.COOKING_OIL.get()
         ).addOptional(ResourceLocation.fromNamespaceAndPath(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_oil"));
 
+        // Cherry blossom foods
         this.tag(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS).add(
                 Items.PINK_PETALS,
                 Items.CHERRY_LEAVES,
                 Items.CHERRY_SAPLING
         );
 
+        // Calamari
         this.tag(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
                 .addTag(CommonTags.FOODS_RAW_CALAMARI)
                 .remove(ModItems.CALAMARI.get());
@@ -81,44 +84,79 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.SWEET_LIQUIDS).add(
                 Items.HONEY_BOTTLE
         ).addTag(ModTags.Items.SYRUP);
+
+        // Eggs
+        this.tag(ModTags.Items.RAW_AND_COOKED_EGGS)
+            .addTag(Tags.Items.EGGS)
+            .addTag(CommonTags.FOODS_COOKED_EGG);
+
+        // Spring rolls
+        this.tag(ModTags.Items.SPRING_ROLL_INGREDIENTS)
+            .addTag(CommonTags.FOODS_SAFE_RAW_FISH)
+            .addTag(CommonTags.FOODS_RAW_PORK)
+            .addTag(CommonTags.FOODS_RAW_CHICKEN)
+            .addTag(CommonTags.FOODS_RAW_BEEF)
+            .addTag(CommonTags.FOODS_RAW_MUTTON)
+            .addTag(Tags.Items.EGGS)
+            .addTag(Tags.Items.MUSHROOMS)
+            .addTag(CommonTags.FOODS_CARROT)
+            .addTag(CommonTags.FOODS_POTATO)
+            .addTag(CommonTags.FOODS_BEETROOT)
+            .addTag(CommonTags.FOODS_BELL_PEPPER);
+
+        this.tag(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+            .addTag(CommonTags.FOODS_SAFE_RAW_FISH)
+            .addTag(CommonTags.FOODS_RAW_PORK)
+            .addTag(CommonTags.FOODS_RAW_CHICKEN)
+            .addTag(CommonTags.FOODS_RAW_BEEF)
+            .addTag(CommonTags.FOODS_RAW_MUTTON)
+            .addTag(Tags.Items.EGGS)
+            .addTag(Tags.Items.MUSHROOMS)
+            .addTag(CommonTags.FOODS_CARROT)
+            .addTag(CommonTags.FOODS_POTATO)
+            .addTag(CommonTags.FOODS_BEETROOT)
+            .addTag(CommonTags.FOODS_TOMATO)
+            .addTag(CommonTags.FOODS_CABBAGE)
+            .addTag(CommonTags.FOODS_ONION)
+            .addOptionalTag(CompatibilityTags.BREWIN_AND_CHEWIN_CHEESE_WEDGE);
     }
 
     private void addMinecraftTags() {
         // Villagers
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
-                ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get(),
-                ModItems.COFFEE_BEANS.get()
+            ModItems.COTTON_SEEDS.get(),
+            ModItems.BELL_PEPPER_SEEDS.get(),
+            ModItems.COFFEE_BEANS.get()
         );
 
         // Animal food
         this.tag(ItemTags.CHICKEN_FOOD).add(
-                ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get()
+            ModItems.COTTON_SEEDS.get(),
+            ModItems.BELL_PEPPER_SEEDS.get()
         );
         this.tag(ItemTags.PARROT_FOOD).add(
-                ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get()
+            ModItems.COTTON_SEEDS.get(),
+            ModItems.BELL_PEPPER_SEEDS.get()
         );
         this.tag(ItemTags.CAT_FOOD).add(
-                ModItems.CALAMARI.get()
+            ModItems.CALAMARI.get()
         );
         this.tag(ItemTags.OCELOT_FOOD).add(
-                ModItems.CALAMARI.get()
+            ModItems.CALAMARI.get()
         );
         this.tag(ItemTags.PIG_FOOD).addTag(
-                CommonTags.CROPS_BELL_PEPPER
+            CommonTags.CROPS_BELL_PEPPER
         );
 
         // Fish
         this.tag(ItemTags.FISHES).add(
-                ModItems.CALAMARI.get(),
-                ModItems.COOKED_CALAMARI.get()
+            ModItems.CALAMARI.get(),
+            ModItems.COOKED_CALAMARI.get()
         );
 
         // Piglins
         this.tag(ItemTags.PIGLIN_LOVED).add(
-                ModItems.GOLDEN_COFFEE_BEANS.get()
+            ModItems.GOLDEN_COFFEE_BEANS.get()
         );
     }
 
@@ -132,33 +170,33 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     private void addCompatibilityTags() {
         // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
-                ModItems.COOKING_OIL.get(),
-                ModItems.SYRUP.get(),
-                ModItems.COFFEE.get(),
-                ModItems.MILK_COFFEE.get(),
-                ModItems.CHOCOLATE_COFFEE.get(),
-                ModItems.HONEY_COFFEE.get(),
-                ModItems.SYRUP_COFFEE.get(),
-                ModItems.DARK_COFFEE.get(),
-                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
-                ModItems.SYRUP_CHEESECAKE.get()
+            ModItems.COOKING_OIL.get(),
+            ModItems.SYRUP.get(),
+            ModItems.COFFEE.get(),
+            ModItems.MILK_COFFEE.get(),
+            ModItems.CHOCOLATE_COFFEE.get(),
+            ModItems.HONEY_COFFEE.get(),
+            ModItems.SYRUP_COFFEE.get(),
+            ModItems.DARK_COFFEE.get(),
+            ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
+            ModItems.SYRUP_CHEESECAKE.get()
         );
 
         // Farmer's Delight
-        this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS).add(
-                ModItems.POTATO_SLICES.get()
-        );
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
+            .add(ModItems.POTATO_SLICES.get())
+            .addTag(CommonTags.FOODS_BELL_PEPPER);
 
         // Serene Seasons
-        tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
-                ModItems.COTTON_SEEDS.get()
+        this.tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
+            ModItems.COTTON_SEEDS.get()
         );
-        tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS).add(
-                ModItems.COTTON_SEEDS.get(),
-                ModItems.BELL_PEPPER_SEEDS.get(),
-                ModItems.COFFEE_BEANS.get()
+        this.tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS).add(
+            ModItems.COTTON_SEEDS.get(),
+            ModItems.BELL_PEPPER_SEEDS.get(),
+            ModItems.COFFEE_BEANS.get()
         );
-        tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS).add(
+        this.tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS).add(
                 ModItems.BELL_PEPPER_SEEDS.get(),
                 ModItems.COFFEE_BEANS.get()
         );
@@ -178,6 +216,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(CompatibilityTags.HAS_FISH_SLICE).add(
                 ModItems.CALAMARI.get()
         );
+
+        // Brewin' and Chewin
+        this.tag(CompatibilityTags.BREWIN_AND_CHEWIN_PIZZA_TOPPING).addTag(CommonTags.FOODS_BELL_PEPPER);
     }
 
     private void addStorageBlockTags() {
@@ -283,17 +324,28 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Veggies
         this.tag(CommonTags.FOODS_BELL_PEPPER).addTag(
                 CommonTags.CROPS_BELL_PEPPER
+        ).add(
+                ModItems.BELL_PEPPER_SLICE_GREEN.get(),
+                ModItems.BELL_PEPPER_SLICE_YELLOW.get(),
+                ModItems.BELL_PEPPER_SLICE_RED.get()
         );
+
         this.tag(CommonTags.FOODS_POTATO).add(
-                Items.POTATO,
-                ModItems.POTATO_SLICES.get()
+            Items.POTATO,
+            ModItems.POTATO_SLICES.get()
         );
+
         this.tag(CommonTags.FOODS_CARROT).add(
-                Items.CARROT
+            Items.CARROT
         );
-        this.tag(Tags.Items.FOODS_VEGETABLE).add(
-                ModItems.POTATO_SLICES.get()
-        ).addTag(CommonTags.FOODS_BELL_PEPPER);
+
+        this.tag(CommonTags.FOODS_BEETROOT).add(
+            Items.BEETROOT
+        );
+
+        this.tag(Tags.Items.FOODS_VEGETABLE)
+            .add(ModItems.POTATO_SLICES.get())
+            .addTag(CommonTags.FOODS_BELL_PEPPER);
 
         // Fish
         this.tag(CommonTags.FOODS_RAW_CALAMARI)

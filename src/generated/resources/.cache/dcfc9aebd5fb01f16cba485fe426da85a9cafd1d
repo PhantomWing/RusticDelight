@@ -1,11 +1,13 @@
-// 1.21	2025-02-09T22:57:28.8839742	Tags for minecraft:item mod id rusticdelight
+// 1.21.1	2025-08-02T23:49:00.6695973	Tags for minecraft:item mod id rusticdelight
+0f0efcbc0207989b10b6d539c1c07fdcfb511057 data/brewinandchewin/tags/item/foods/pizza_topping.json
 ac19be0483ea982446c0f611386d184484451141 data/create/tags/item/upright_on_belt.json
 05c900f170935a44f0c545ed1638ffc415b2daee data/c/tags/item/crops.json
 e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
 bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee.json
 bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee_beans.json
 5605de70b69fcfeb7307d056cf3c0245d8fe94a7 data/c/tags/item/crops/cotton.json
-009a26093de89f1ca5449d6cec3e4e442d993a6d data/c/tags/item/foods/bell_pepper.json
+f9570db096e701a0b8872dddbb31d8dffea2a204 data/c/tags/item/foods/beetroot.json
+60e4ed5a7af8c220660b3aa4cfa471ed27cfbe24 data/c/tags/item/foods/bell_pepper.json
 3a6049fdf6a247720cef5ea417a0c9519f707e01 data/c/tags/item/foods/carrot.json
 5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/c/tags/item/foods/cooked_calamari.json
 a687331a8b36b3a1a7c210e5a00f0670b1a91d66 data/c/tags/item/foods/cooked_fish.json
@@ -32,7 +34,7 @@ cfef245811c07028206d993e69a2164441dd1964 data/c/tags/item/storage_blocks/bell_pe
 827fde13383fed86e216a1839664b871f5670127 data/c/tags/item/storage_blocks/cotton.json
 dccdc9242e0fb949583e797084780e91b6c7ded9 data/c/tags/item/storage_blocks/cotton_seeds.json
 93c13f9cd23064f76edeaa613ca663dfa31d0ada data/c/tags/item/storage_blocks/roasted_coffee_beans.json
-86e6f2552699e81cdcd6db2f44ae31cc05f21da5 data/farmersdelight/tags/item/cabbage_roll_ingredients.json
+83ef19c91323b22ffb30a63f340f558232780550 data/farmersdelight/tags/item/cabbage_roll_ingredients.json
 d8f33fa3dbef149f2ee2afa3700c1d7d7bc6910e data/farmersdelight/tags/item/fish_slices.json
 e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/farmersdelight/tags/item/wild_crops.json
 5b0cd6b147e8a465b5c830f57d3edc65fba70fb9 data/forge/tags/item/tentacles.json
@@ -52,6 +54,9 @@ c2122a7767958a3c19ee1e3fe408f30bf692f325 data/rusticdelight/tags/item/cherry_blo
 f0be0b0cf546e11db65b52b03cd50fa3eecbb44d data/rusticdelight/tags/item/coffee_ingredients.json
 5ad45c98c655f0647bf0a4b05337e716ccb2b154 data/rusticdelight/tags/item/cooking_oil.json
 edaaaea7b35b1f22a5c7c71f324bea1476338232 data/rusticdelight/tags/item/cooking_oil_ingredients.json
+46e3258e2744808f1f648cb91f62aad3f84cefa7 data/rusticdelight/tags/item/raw_cooked_eggs.json
+899d6e39f74ea19ed26c2067409497eb49f1a4fa data/rusticdelight/tags/item/spring_roll_ingredients.json
+4f1b02a287b86e66960229bd0ed35415be428c38 data/rusticdelight/tags/item/stuffed_bell_pepper_ingredients.json
 21cd4aca6b91e052ae5e281e30902b44d2471223 data/rusticdelight/tags/item/sweet_liquids.json
 937167656a077d434dbc4d95d3f1714dd1eac16e data/rusticdelight/tags/item/syrup.json
 144bb192b5dbf1871ba485964db6edb86dccdbb0 data/rusticdelight/tags/item/syrup_ingredients.json

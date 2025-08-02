@@ -8,21 +8,42 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class CommonTags {
-    public static final TagKey<Item> FOODS_RAW_CALAMARI = commonItemTag("foods/raw_calamari");
-    public static final TagKey<Item> FOODS_COOKED_CALAMARI = commonItemTag("foods/cooked_calamari");
-    public static final TagKey<Item> FOODS_RAW_SQUID = commonItemTag("foods/raw_squid");
-    public static final TagKey<Item> FOODS_COOKED_SQUID = commonItemTag("foods/cooked_squid");
-    public static final TagKey<Item> FOODS_MILK = commonItemTag("foods/milk");
-    public static final TagKey<Item> FOODS_DOUGH = commonItemTag("foods/dough");
-    public static final TagKey<Item> FOODS_PASTA = commonItemTag("foods/pasta");
-    public static final TagKey<Item> FOODS_RAW_BEEF = commonItemTag("foods/raw_beef");
-    public static final TagKey<Item> FOODS_RAW_CHICKEN = commonItemTag("foods/raw_chicken");
-    public static final TagKey<Item> FOODS_LEAFY_GREEN = commonItemTag("foods/leafy_green");
+    // Tags under the "foods" subgroup.
+    public static final TagKey<Item> FOODS_CABBAGE = commonItemTag("foods/cabbage");
+    public static final TagKey<Item> FOODS_TOMATO = commonItemTag("foods/tomato");
+    public static final TagKey<Item> FOODS_ONION = commonItemTag("foods/onion");
     public static final TagKey<Item> FOODS_POTATO = commonItemTag("foods/potato");
     public static final TagKey<Item> FOODS_CARROT = commonItemTag("foods/carrot");
-    public static final TagKey<Item> FOODS_ONION = commonItemTag("foods/onion");
-    public static final TagKey<Item> FOODS_TOMATO = commonItemTag("foods/tomato");
     public static final TagKey<Item> FOODS_BELL_PEPPER = commonItemTag("foods/bell_pepper");
+    public static final TagKey<Item> FOODS_BEETROOT = commonItemTag("foods/beetroot");
+
+    public static final TagKey<Item> FOODS_LEAFY_GREEN = commonItemTag("foods/leafy_green");
+    public static final TagKey<Item> FOODS_DOUGH = commonItemTag("foods/dough");
+    public static final TagKey<Item> FOODS_PASTA = commonItemTag("foods/pasta");
+    public static final TagKey<Item> FOODS_MILK = commonItemTag("foods/milk");
+
+    public static final TagKey<Item> FOODS_RAW_BACON = commonItemTag("foods/raw_bacon");
+    public static final TagKey<Item> FOODS_RAW_BEEF = commonItemTag("foods/raw_beef");
+    public static final TagKey<Item> FOODS_RAW_CHICKEN = commonItemTag("foods/raw_chicken");
+    public static final TagKey<Item> FOODS_RAW_PORK = commonItemTag("foods/raw_pork");
+    public static final TagKey<Item> FOODS_RAW_MUTTON = commonItemTag("foods/raw_mutton");
+    public static final TagKey<Item> FOODS_SAFE_RAW_FISH = commonItemTag("foods/safe_raw_fish");
+    public static final TagKey<Item> FOODS_RAW_COD = commonItemTag("foods/raw_cod");
+    public static final TagKey<Item> FOODS_RAW_SALMON = commonItemTag("foods/raw_salmon");
+    public static final TagKey<Item> FOODS_RAW_CALAMARI = commonItemTag("foods/raw_calamari");
+    public static final TagKey<Item> FOODS_RAW_SQUID = commonItemTag("foods/raw_squid");
+
+    public static final TagKey<Item> FOODS_COOKED_BACON = commonItemTag("foods/cooked_bacon");
+    public static final TagKey<Item> FOODS_COOKED_BEEF = commonItemTag("foods/cooked_beef");
+    public static final TagKey<Item> FOODS_COOKED_CHICKEN = commonItemTag("foods/cooked_chicken");
+    public static final TagKey<Item> FOODS_COOKED_PORK = commonItemTag("foods/cooked_pork");
+    public static final TagKey<Item> FOODS_COOKED_MUTTON = commonItemTag("foods/cooked_mutton");
+    public static final TagKey<Item> FOODS_COOKED_EGG = commonItemTag("foods/cooked_egg");
+    public static final TagKey<Item> FOODS_COOKED_COD = commonItemTag("foods/cooked_cod");
+    public static final TagKey<Item> FOODS_COOKED_SALMON = commonItemTag("foods/cooked_salmon");
+    public static final TagKey<Item> FOODS_COOKED_CALAMARI = commonItemTag("foods/cooked_calamari");
+    public static final TagKey<Item> FOODS_COOKED_SQUID = commonItemTag("foods/cooked_squid");
+
     public static final TagKey<Item> FOODS_COOKIE = commonItemTag("foods/cookie");
 
     public static final TagKey<Item> CROPS_COTTON = commonItemTag("crops/cotton");

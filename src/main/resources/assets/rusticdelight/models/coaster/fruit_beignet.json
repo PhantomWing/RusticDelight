@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "rusticdelight:block/coaster/fruit_beignet",
+		"fruit_beignet": "rusticdelight:block/coaster/fruit_beignet"
+	},
+	"elements": [
+		{
+			"name": "fruit_beignet",
+			"from": [6, 0, 6],
+			"to": [10, 4, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 6]},
+			"faces": {
+				"north": {"uv": [4, 5, 0, 9], "texture": "#fruit_beignet"},
+				"east": {"uv": [9, 5, 5, 9], "texture": "#fruit_beignet"},
+				"south": {"uv": [0, 5, 4, 9], "texture": "#fruit_beignet"},
+				"west": {"uv": [9, 5, 5, 9], "texture": "#fruit_beignet"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#fruit_beignet"},
+				"down": {"uv": [5, 0, 9, 4], "texture": "#fruit_beignet"}
+			}
+		}
+	]
+}

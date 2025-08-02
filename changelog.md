@@ -1,9 +1,28 @@
 # 1.5.0
 ### Additions
+- Added ability to cut Bell Pepper into Bell Pepper Slice
+  - Red Bell Pepper Slice
+  - Green Bell Pepper Slice
+  - Yellow Bell Pepper Slice
 - Added compatibility with Brewin' and Chewin'
-  - Place any of Rustic Delight's drinks, dishes and crops on a Coaster to display them in your world!
+  - Added Coaster models for most of Rustic Delight's items, allowing you to place them in your world!
+  - Added Coaster models for the following Farmer's Delight items:
+    - Wheat Dough
+    - Dumplings
+    - Cabbage Rolls
+  - Use bell peppers as a crafting ingredient for Pizza
+  - Use Cheese as a crafting ingredient for Stuffed Bell Pepper
+- Added new tags: `spring_roll_ingredients` and `stuffed_bell_pepper_ingredients`
+
+### Changes
+- Bell Pepper can now be used to cook: Spring Rolls, Cabbage Rolls
+- Adapted some Farmer's Delight recipes to allow Potato Slices: Baked Cod Stew, Beef Stew, Vegetable Soup, Mushroom Rice
+- Simplified Bell Pepper Pasta recipe to allow any combination of bell peppers
+- Bell Pepper Roll now requires a Bell Pepper Slice, instead of a whole Bell Pepper
+- Improved various textures
 
 ### Fixes
+- Fixed cutting recipe for Baked Potato (yielded Potato Slices instead of Baked Potato Slices)
 - Improved Russian translations (thank you JedaiGames!)
 
 

@@ -12,6 +12,18 @@
       "can_villager_compost": true,
       "chance": 0.3
     },
+    "rusticdelight:bell_pepper_slice_green": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:bell_pepper_slice_red": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:bell_pepper_slice_yellow": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
     "rusticdelight:bell_pepper_yellow": {
       "can_villager_compost": true,
       "chance": 0.65
