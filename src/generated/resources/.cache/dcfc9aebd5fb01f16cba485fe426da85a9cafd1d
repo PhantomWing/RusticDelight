@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-02T23:49:00.6695973	Tags for minecraft:item mod id rusticdelight
+// 1.21.1	2025-08-03T22:20:53.7221026	Tags for minecraft:item mod id rusticdelight
 0f0efcbc0207989b10b6d539c1c07fdcfb511057 data/brewinandchewin/tags/item/foods/pizza_topping.json
 ac19be0483ea982446c0f611386d184484451141 data/create/tags/item/upright_on_belt.json
 05c900f170935a44f0c545ed1638ffc415b2daee data/c/tags/item/crops.json
@@ -6,6 +6,7 @@ e194fa32a22ccba8c878748e41d62f878710a306 data/c/tags/item/crops/bell_pepper.json
 bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee.json
 bb9074cd193000ab8955f73439e5de8ac0610360 data/c/tags/item/crops/coffee_beans.json
 5605de70b69fcfeb7307d056cf3c0245d8fe94a7 data/c/tags/item/crops/cotton.json
+680b2c76c8866d78dcfbeec0e5491643a896c174 data/c/tags/item/crops/potato.json
 f9570db096e701a0b8872dddbb31d8dffea2a204 data/c/tags/item/foods/beetroot.json
 60e4ed5a7af8c220660b3aa4cfa471ed27cfbe24 data/c/tags/item/foods/bell_pepper.json
 3a6049fdf6a247720cef5ea417a0c9519f707e01 data/c/tags/item/foods/carrot.json
@@ -14,7 +15,7 @@ a687331a8b36b3a1a7c210e5a00f0670b1a91d66 data/c/tags/item/foods/cooked_fish.json
 5cad44f59112fab32d9d3e1a46b540676ffdf3bd data/c/tags/item/foods/cooked_squid.json
 d5889afce5cb2185d3f0f64fbe046fd294612e43 data/c/tags/item/foods/cookie.json
 0e0ea2937fdd0885a3457226892d74390e55b516 data/c/tags/item/foods/fruit.json
-680b2c76c8866d78dcfbeec0e5491643a896c174 data/c/tags/item/foods/potato.json
+c26ee0f880204c8f6be61f1b717a2bc17feecf9e data/c/tags/item/foods/potato.json
 0c9f970b2bc6e25bfe0ee22cf647f391100fb734 data/c/tags/item/foods/raw_calamari.json
 95e40bfc7b683b2a94bf960c464bc8d710a3c280 data/c/tags/item/foods/raw_fish.json
 b29992e9bd256cd80117a9a1a143832ead5c9a6e data/c/tags/item/foods/raw_squid.json

@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-03T00:06:30.4074986	Recipes
+// 1.21.1	2025-08-03T10:35:25.1144467	Recipes
 c0b4aeb951e3205fbf45085d6101c03afcb62002 data/farmersdelight/advancement/recipes/cooking/baked_cod_stew.json
 cc1f405c14398baea18bf61b822b27045e7f1ad5 data/farmersdelight/advancement/recipes/cooking/beef_stew.json
 95d6e4f19004e99c40e54178e1c5e8f150d43104 data/farmersdelight/advancement/recipes/cooking/fried_rice.json
@@ -221,6 +221,9 @@ ea02a2dff2d35ce3d16ab1db6dd4a691951478ca data/rusticdelight/recipe/cutting/cooke
 bd8c465cbb6c86ab31c2e7dfdf381055240ffcb6 data/rusticdelight/recipe/cutting/pancakes.json
 a377f0e2c00b97396d3f60a0b6cba505423d73a0 data/rusticdelight/recipe/cutting/potato_slices.json
 403b0699b1582d352c9200ffec74b2cdc926a219 data/rusticdelight/recipe/cutting/pumpkin_pancakes.json
+b774466b5d7247a1410c863502f805ddb01540db data/rusticdelight/recipe/cutting/roasted_bell_pepper_green.json
+4f3d765652570af13dd931690e2ed8830ebcf2c0 data/rusticdelight/recipe/cutting/roasted_bell_pepper_red.json
+19ac17d37cf714438b1ecccfe65efe1d9d7f2e1b data/rusticdelight/recipe/cutting/roasted_bell_pepper_yellow.json
 d0c5b5d5e4812f6e35f83c2d1413d29bc56a6441 data/rusticdelight/recipe/cutting/syrup_cheesecake_slice.json
 e085be33125512358861185116453a9fb66fa812 data/rusticdelight/recipe/cutting/vegetable_pancakes.json
 4bbb6cd5e856e006dc62fee794228b4ab1550db1 data/rusticdelight/recipe/cutting/wild_bell_peppers.json

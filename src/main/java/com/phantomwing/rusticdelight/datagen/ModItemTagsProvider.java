@@ -307,6 +307,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.COFFEE_BEANS.get()
         );
 
+        // Potato
+        this.tag(CommonTags.CROPS_POTATO).add(
+                Items.POTATO,
+                ModItems.POTATO_SLICES.get()
+        );
+
         // Main crops tag
         this.tag(Tags.Items.CROPS)
                 .addTag(CommonTags.CROPS_COTTON)
@@ -330,9 +336,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.BELL_PEPPER_SLICE_RED.get()
         );
 
-        this.tag(CommonTags.FOODS_POTATO).add(
-            Items.POTATO,
-            ModItems.POTATO_SLICES.get()
+        this.tag(CommonTags.FOODS_POTATO).addTag(
+            CommonTags.CROPS_POTATO
         );
 
         this.tag(CommonTags.FOODS_CARROT).add(

@@ -51,6 +51,7 @@ public class CommonTags {
     public static final TagKey<Item> CROPS_COFFEE_BEANS = commonItemTag("crops/coffee_beans");
     public static final TagKey<Item> CROPS_COFFEE = commonItemTag("crops/coffee"); // Duplicate tag, because some mods call it coffee instead of coffee beans
     public static final TagKey<Item> CROPS_RICE = commonItemTag("crops/rice");
+    public static final TagKey<Item> CROPS_POTATO = commonItemTag("crops/potato");
 
     public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
 

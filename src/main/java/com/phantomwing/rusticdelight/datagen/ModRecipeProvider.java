@@ -284,6 +284,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                 .build(output, ModItems.BELL_PEPPER_RED.getId());
 
+        // Roasted bell pepper slices
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+                .build(output, ModItems.ROASTED_BELL_PEPPER_GREEN.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+                .build(output, ModItems.ROASTED_BELL_PEPPER_YELLOW.getId());
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+                .build(output, ModItems.ROASTED_BELL_PEPPER_RED.getId());
+
         // Coffee
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
                 .addResultWithChance(ModItems.COFFEE_BEANS, 0.3F)
