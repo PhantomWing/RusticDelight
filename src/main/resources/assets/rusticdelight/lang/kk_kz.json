@@ -54,7 +54,7 @@
   "item.rusticdelight.coffee_beans": "Кофе дәндері",
   "item.rusticdelight.coffee_braised_beef": "Кофеде бұқтырылған сиыр еті",
   "item.rusticdelight.coffee_cookie": "Кофе піспенаны",
-  "item.rusticdelight.cooked_calamari": "Пісірілген кальмар",
+  "item.rusticdelight.cooked_calamari": "Пісірілген кальмар еті",
   "item.rusticdelight.cooked_calamari_slice": "Пісірілген кальмар тілімі",
   "item.rusticdelight.cooking_oil": "Ас майы",
   "item.rusticdelight.cotton_boll": "мақта қауашағы",
@@ -96,7 +96,7 @@
   "rusticdelight.configuration.enable_potions": "Ішірткіні қосу",
   "rusticdelight.configuration.enable_villager_trades": "Шаруамен сауданы қосу",
   "rusticdelight.configuration.enable_wandering_trader_trades": "Кезбе саудагермен сауданы қосу",
-  "rusticdelight.configuration.squids_drop_calamari": "Кальмар еті кальмардан түседі",
+  "rusticdelight.configuration.squids_drop_calamari": "Кальмар еті cегізаяқтан түседі",
   "rusticdelight.configuration.wild_bell_peppers_chance": "Жабайы тәтті бұрыш ықтималдығы",
   "rusticdelight.configuration.wild_coffee_chance": "Жабайы кофе ықтималдығы",
   "rusticdelight.configuration.wild_cotton_chance": "Жабайы мақта ықтималдығы"
