@@ -1,13 +1,13 @@
 package com.phantomwing.rusticdelight.world;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -29,9 +29,9 @@ public class ModBiomeModifiers {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 
-        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_COTTON, ModPlacedFeatures.WILD_COTTON_PLACED_KEY, BiomeTags.IS_FOREST);
-        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_BELL_PEPPERS, ModPlacedFeatures.WILD_BELL_PEPPERS_PLACED_KEY, BiomeTags.IS_JUNGLE);
-        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_COFFEE, ModPlacedFeatures.WILD_COFFEE_PLACED_KEY, BiomeTags.IS_JUNGLE);
+        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_COTTON, ModPlacedFeatures.WILD_COTTON_PLACED_KEY, ModTags.Biomes.HAS_WILD_COTTON);
+        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_BELL_PEPPERS, ModPlacedFeatures.WILD_BELL_PEPPERS_PLACED_KEY, ModTags.Biomes.HAS_WILD_BELL_PEPPERS);
+        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_COFFEE, ModPlacedFeatures.WILD_COFFEE_PLACED_KEY, ModTags.Biomes.HAS_WILD_COFFEE);
     }
 
     private static void registerWithBiomeFilter(BootstrapContext<BiomeModifier> context, HolderGetter<PlacedFeature> placedFeatures, HolderGetter<Biome> biomes, ResourceKey<BiomeModifier> biomeModifierKey, ResourceKey<PlacedFeature> placedFeatureKey, TagKey<Biome> biomeTag) {

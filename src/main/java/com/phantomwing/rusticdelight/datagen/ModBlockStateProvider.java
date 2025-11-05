@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.datagen;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.*;
+import com.phantomwing.rusticdelight.tags.CommonTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -98,7 +99,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] bellPepperStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((BellPepperCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().cross(modelName + ageProperty,
+        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, farmersDelightResourceBlock("crop_cross"), "cross",
                 ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;
@@ -113,7 +114,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] coffeeStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((CoffeeCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().cross(modelName + ageProperty,
+        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, farmersDelightResourceBlock("crop_cross"), "cross",
                 ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;

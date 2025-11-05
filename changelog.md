@@ -1,3 +1,19 @@
+# 1.5.1
+### Additions
+- Added Kazakh translations (thank you ninsent!)
+
+### Changes
+- Add biome tags to control spawning of Wild Bell Peppers, Wild Cotton and Wild Coffee
+  - Wild Cotton now also spawns in biomes tagged with #c:is_forest (in addition to #minecraft:is_forest)
+  - Wild Bell Peppers & Wild Coffee now also spawn in biomes tagged with #c:is_jungle (in addition to #minecraft:is_jungle)
+- Add missing translation keys for item tags, potted plants & crops
+
+### Fixes
+- Fix crop models for Bell Peppers and Coffee floating above the ground
+  - They now use Farmer's Delight's `crop_cross` model
+- Fix incorrect Russian translations (thank you mpustovoi!)
+
+
 # 1.5.0
 ### Additions
 - Added slices for Bell Peppers

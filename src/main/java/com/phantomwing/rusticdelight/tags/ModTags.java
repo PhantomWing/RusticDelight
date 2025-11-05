@@ -1,14 +1,28 @@
 package com.phantomwing.rusticdelight.tags;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
+    // Block tags
+    public static class Biomes {
+        public static final TagKey<Biome> HAS_WILD_COTTON = create("has_wild_cotton");
+        public static final TagKey<Biome> HAS_WILD_BELL_PEPPERS = create("has_wild_bell_peppers");
+        public static final TagKey<Biome> HAS_WILD_COFFEE = create("has_wild_coffee");
+
+        private static TagKey<Biome> create(String name) {
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
+        }
+    }
+
     // Block tags
     public static class Blocks {
         private static TagKey<Block> tag(String name) {
