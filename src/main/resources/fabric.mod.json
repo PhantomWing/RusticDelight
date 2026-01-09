@@ -11,12 +11,15 @@
 		"homepage": "https://www.curseforge.com/minecraft/mc-mods/rustic-delight",
 		"sources": "https://github.com/PhantomWing/RusticDelight"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "logo.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"com.phantomwing.rusticdelight.RusticDelight"
+		],
+		"fabric-datagen": [
+			"com.phantomwing.rusticdelight.RusticDelightDataGenerator"
 		],
 		"client": [
 			"com.phantomwing.rusticdelight.RusticDelightClient"

@@ -1,0 +1,6 @@
+{
+	"parent": "rusticdelight:coaster/dumplings",
+	"textures": {
+		"dumplings": "rusticdelight:block/coaster/fried_dumplings"
+	}
+}

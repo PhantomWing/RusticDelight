@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "#c:foods/safe_raw_fish",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_pork",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_chicken",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_beef",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_mutton",
+      "required": false
+    },
+    "#c:foods/carrot",
+    "#c:foods/potato",
+    "#c:foods/beetroot",
+    "#c:foods/bell_pepper",
+    {
+      "id": "#c:eggs",
+      "required": false
+    },
+    {
+      "id": "#c:mushrooms",
+      "required": false
+    }
+  ]
+}

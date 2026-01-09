@@ -1,0 +1,6 @@
+{
+	"parent": "rusticdelight:coaster/cabbage_rolls",
+	"textures": {
+		"rolls": "rusticdelight:block/coaster/spring_rolls"
+	}
+}

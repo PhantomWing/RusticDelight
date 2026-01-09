@@ -1,0 +1,51 @@
+{
+  "values": [
+    {
+      "id": "#c:foods/safe_raw_fish",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_pork",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_chicken",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_beef",
+      "required": false
+    },
+    {
+      "id": "#c:foods/raw_mutton",
+      "required": false
+    },
+    "#c:foods/carrot",
+    "#c:foods/potato",
+    "#c:foods/beetroot",
+    {
+      "id": "#c:foods/tomato",
+      "required": false
+    },
+    {
+      "id": "#c:foods/cabbage",
+      "required": false
+    },
+    {
+      "id": "#c:foods/onion",
+      "required": false
+    },
+    {
+      "id": "#c:eggs",
+      "required": false
+    },
+    {
+      "id": "#c:mushrooms",
+      "required": false
+    },
+    {
+      "id": "#brewinandchewin:foods/cheese_wedge",
+      "required": false
+    }
+  ]
+}

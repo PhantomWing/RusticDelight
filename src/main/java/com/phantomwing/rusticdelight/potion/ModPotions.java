@@ -1,6 +1,7 @@
 package com.phantomwing.rusticdelight.potion;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.mixin.content.registry.BrewingRecipeRegistryBuilderMixin;
 import net.minecraft.core.Holder;
@@ -39,6 +40,10 @@ public class ModPotions {
     }
 
     private static void registerPotionRecipes() {
+        if (!RusticDelightConfig.get().enable_potions) {
+            return;
+        }
+
         PotionBrewing.Builder.BUILD.register(builder -> {
             // Haste
             builder.registerPotionRecipe(Potions.WATER, Ingredient.of(ModItems.GOLDEN_COFFEE_BEANS), HASTE_POTION);

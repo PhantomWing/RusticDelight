@@ -1,0 +1,6 @@
+{
+  "parent": "farmersdelight:block/crop_cross",
+  "textures": {
+    "cross": "rusticdelight:block/bell_peppers_stage3"
+  }
+}

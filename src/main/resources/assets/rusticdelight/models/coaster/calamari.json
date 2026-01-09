@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "#calamari",
+		"calamari": "rusticdelight:block/coaster/calamari"
+	},
+	"elements": [
+		{
+			"name": "calamari",
+			"from": [4, 0, 6],
+			"to": [12, 2, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 6]},
+			"faces": {
+				"north": {"uv": [8, 10, 0, 12], "texture": "#calamari"},
+				"east": {"uv": [4, 13, 0, 15], "texture": "#calamari"},
+				"south": {"uv": [0, 10, 8, 12], "texture": "#calamari"},
+				"west": {"uv": [9, 13, 5, 15], "texture": "#calamari"},
+				"up": {"uv": [0, 0, 8, 4], "texture": "#calamari"},
+				"down": {"uv": [0, 5, 8, 9], "texture": "#calamari"}
+			}
+		}
+	]
+}
