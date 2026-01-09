@@ -1,3 +1,59 @@
+# 1.5.0
+### Additions
+- Added configuration options (JSON file)
+  - `squids_drop_calamari` to disable squids droppping Calamari and remove calamari villager trades
+  - `wild_cotton_chance`, used to configure Wild Cotton spawning. Set to zero to disable the Cotton feature entirely (including trades).
+  - `wild_bell_peppers_chance`, used to configure Wild Bell Peppers spawning. Set to zero to disable the Bell Pepper feature entirely (including trades).
+  - `wild_coffee_chance`, used to configure Wild Coffee spawning. Set to zero to disable the Coffee feature entirely (including trades).
+  - `enable_villager_trades`
+  - `enable_wandering_trader_trades`
+  - `enable_potions`(currently enables brewing a Potion of Haste)
+- Added slices for Bell Peppers
+  - Red Bell Pepper Slice
+  - Green Bell Pepper Slice
+  - Yellow Bell Pepper Slice
+- Added slices for Roasted Bell Peppers
+  - Roasted Red Bell Pepper Slice
+  - Roasted Green Bell Pepper Slice
+  - Roasted Yellow Bell Pepper Slice
+- Added compatibility with Brewin' and Chewin'
+  - Added Coaster models for most of Rustic Delight's items, allowing you to place them in your world!
+  - Added Coaster models for the following Farmer's Delight items:
+    - Wheat Dough
+    - Dumplings
+    - Cabbage Rolls
+  - Use bell peppers as a crafting ingredient for Pizza
+  - Use Cheese as a crafting ingredient for Stuffed Bell Pepper
+- Added compatibility with Botany Pots
+  - Added support for Cotton, Coffee and Bell Peppers, Wild Cotton, Wild Coffee and Wild Bell Peppers
+- Added new tags: `spring_roll_ingredients` and `stuffed_bell_pepper_ingredients`
+- Added Kazakh translations (thank you ninsent!)
+
+### Changes
+- Bell Pepper can now be used to cook: Spring Rolls, Cabbage Rolls
+- Overridden some Farmer's Delight recipes to allow Potato Slices: Baked Cod Stew, Beef Stew, Vegetable Soup, Mushroom Rice
+- Added Potato Slices to the `crops/potato` tag, for better compatibility with other mods
+- Simplified Bell Pepper Pasta recipe to allow any combination of bell peppers
+- Bell Pepper Roll now requires a Bell Pepper Slice, instead of a whole Bell Pepper
+- Bell Pepper now restores 2 hunger points instead of 1
+- Improved various textures
+- Added biome tags to control spawning of Wild Bell Peppers, Wild Cotton and Wild Coffee
+  - Wild Cotton now also spawns in biomes tagged with `#c:is_forest` (in addition to `#minecraft:is_forest`)
+  - Wild Bell Peppers & Wild Coffee now also spawn in biomes tagged with `#c:is_jungle` (in addition to `#minecraft:is_jungle`)
+- Added missing translation keys for item tags, potted plants & crops
+- Added Bell Pepper Soup to the `#c:foods/soup` tag
+
+### Technical Changes
+- Implemented data generation for easier future updates
+- Updated versions for some dependencies
+
+### Fixes
+- Fix crop models for Bell Peppers and Coffee floating above the ground
+  - They now use Farmer's Delight's `crop_cross` model
+- Fixed cutting recipe for Baked Potato (yielded Potato Slices instead of Baked Potato Slices)
+- Fix incorrect Russian translations (thank you JedaiGames & mpustovoi!)
+
+
 # 1.4.2
 ### Technical Changes
 - Removed dependency on PortingLib

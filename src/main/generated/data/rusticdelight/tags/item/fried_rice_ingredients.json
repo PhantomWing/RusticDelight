@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "#c:eggs",
+      "required": false
+    },
+    "#rusticdelight:cooking_oil"
+  ]
+}

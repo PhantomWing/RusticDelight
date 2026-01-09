@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "#bell_pepper",
+		"bell_pepper": "rusticdelight:block/coaster/roasted_bell_pepper_red"
+	},
+	"elements": [
+		{
+			"name": "bell_pepper",
+			"from": [4.5, 0, 6.5],
+			"to": [11.5, 3, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5.5, 5, 10.5]},
+			"faces": {
+				"north": {"uv": [5, 5, 8, 11], "rotation": 270, "texture": "#bell_pepper"},
+				"east": {"uv": [1, 1, 4, 4], "texture": "#bell_pepper"},
+				"south": {"uv": [5, 5, 8, 11], "rotation": 90, "texture": "#bell_pepper"},
+				"west": {"uv": [1, 12, 4, 15], "rotation": 180, "texture": "#bell_pepper"},
+				"up": {"uv": [1, 5, 4, 11], "rotation": 90, "texture": "#bell_pepper"},
+				"down": {"uv": [1, 5, 4, 11], "rotation": 90, "texture": "#bell_pepper"}
+			}
+		},
+		{
+			"name": "stem",
+			"from": [11.5, 0, 7.5],
+			"to": [12.5, 2, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [11, 0, 6]},
+			"faces": {
+				"north": {"uv": [6, 1, 7, 3], "texture": "#bell_pepper"},
+				"east": {"uv": [6, 1, 7, 3], "texture": "#bell_pepper"},
+				"south": {"uv": [6, 1, 7, 3], "texture": "#bell_pepper"},
+				"west": {"uv": [6, 1, 7, 3], "texture": "#bell_pepper"},
+				"up": {"uv": [6, 1, 7, 2], "texture": "#bell_pepper"},
+				"down": {"uv": [6, 2, 7, 3], "texture": "#bell_pepper"}
+			}
+		},
+		{
+			"name": "bell_pepper_end",
+			"from": [3.5, 0, 6.5],
+			"to": [4.5, 2, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 6]},
+			"faces": {
+				"north": {"uv": [3, 13, 4, 15], "texture": "#bell_pepper"},
+				"east": {"uv": [1, 13, 4, 15], "texture": "#bell_pepper"},
+				"south": {"uv": [1, 13, 2, 15], "texture": "#bell_pepper"},
+				"west": {"uv": [1, 13, 4, 15], "texture": "#bell_pepper"},
+				"up": {"uv": [1, 12, 2, 15], "texture": "#bell_pepper"},
+				"down": {"uv": [3, 12, 4, 15], "texture": "#bell_pepper"}
+			}
+		}
+	]
+}

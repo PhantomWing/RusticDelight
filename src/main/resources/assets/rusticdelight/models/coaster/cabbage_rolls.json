@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "rusticdelight:block/coaster/cabbage_rolls",
+		"rolls": "rusticdelight:block/coaster/cabbage_rolls"
+	},
+	"elements": [
+		{
+			"name": "roll_1",
+			"from": [4, 0, 8.5],
+			"to": [10, 2, 10.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 7]},
+			"faces": {
+				"north": {"uv": [0, 3, 6, 5], "texture": "#rolls"},
+				"east": {"uv": [3, 6, 5, 8], "texture": "#rolls"},
+				"south": {"uv": [7, 3, 13, 5], "texture": "#rolls"},
+				"west": {"uv": [0, 6, 2, 8], "texture": "#rolls"},
+				"up": {"uv": [0, 0, 6, 2], "texture": "#rolls"},
+				"down": {"uv": [7, 0, 13, 2], "texture": "#rolls"}
+			}
+		},
+		{
+			"name": "roll_2",
+			"from": [6, 0, 5.5],
+			"to": [12, 2, 7.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 4]},
+			"faces": {
+				"north": {"uv": [0, 3, 6, 5], "texture": "#rolls"},
+				"east": {"uv": [3, 6, 5, 8], "texture": "#rolls"},
+				"south": {"uv": [7, 3, 13, 5], "texture": "#rolls"},
+				"west": {"uv": [0, 6, 2, 8], "texture": "#rolls"},
+				"up": {"uv": [0, 0, 6, 2], "texture": "#rolls"},
+				"down": {"uv": [7, 0, 13, 2], "texture": "#rolls"}
+			}
+		}
+	]
+}

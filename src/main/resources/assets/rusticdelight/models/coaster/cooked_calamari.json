@@ -1,0 +1,6 @@
+{
+	"parent": "rusticdelight:coaster/calamari",
+	"textures": {
+		"calamari": "rusticdelight:block/coaster/cooked_calamari"
+	}
+}

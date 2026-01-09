@@ -1,0 +1,21 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "botanypots"
+      ]
+    }
+  ],
+  "bookshelf:load_conditions": [
+    {
+      "type": "bookshelf:item_exists",
+      "values": [
+        "rusticdelight:cotton_seeds",
+        "rusticdelight:cotton_boll"
+      ]
+    }
+  ],
+  "type": "botanypots:block_derived_crop",
+  "block": "rusticdelight:cotton"
+}

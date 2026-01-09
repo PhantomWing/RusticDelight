@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:eggs",
+      "required": false
+    },
+    {
+      "id": "#c:foods/cooked_egg",
+      "required": false
+    }
+  ]
+}

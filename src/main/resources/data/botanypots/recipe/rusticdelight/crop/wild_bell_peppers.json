@@ -1,0 +1,23 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "botanypots"
+      ]
+    }
+  ],
+  "bookshelf:load_conditions": [
+    {
+      "type": "bookshelf:item_exists",
+      "values": [
+        "rusticdelight:wild_bell_peppers"
+      ]
+    }
+  ],
+  "type": "botanypots:block_derived_crop",
+  "block": "rusticdelight:wild_bell_peppers",
+  "input": {
+    "item": "rusticdelight:wild_bell_peppers"
+  }
+}

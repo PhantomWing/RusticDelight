@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "rusticdelight:block/cotton_stage0"
+  }
+}

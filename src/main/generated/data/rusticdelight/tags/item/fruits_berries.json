@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:foods/fruit",
+      "required": false
+    },
+    {
+      "id": "#c:foods/berry",
+      "required": false
+    }
+  ]
+}

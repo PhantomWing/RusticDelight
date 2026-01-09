@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_cod"
+    },
+    {
+      "tag": "c:foods/potato"
+    },
+    {
+      "tag": "rusticdelight:raw_cooked_eggs"
+    },
+    {
+      "tag": "c:foods/tomato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:baked_cod_stew"
+  }
+}
