@@ -6,13 +6,12 @@ import com.phantomwing.rusticdelight.itemGroup.ModItemGroups;
 import com.phantomwing.rusticdelight.potion.ModPotions;
 import com.phantomwing.rusticdelight.util.ComposterHelper;
 import com.phantomwing.rusticdelight.util.EntityLootHelper;
-import com.phantomwing.rusticdelight.util.VillagerHelper;
+import com.phantomwing.rusticdelight.util.FuelHelper;
 import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
 import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
 import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,9 +42,6 @@ public class RusticDelight implements ModInitializer {
 
 		ComposterHelper.registerCompostableItems();
 		EntityLootHelper.modifyLootTables();
-		VillagerHelper.registerGatherableItems();
-
-		// Fuel
-		FuelRegistry.INSTANCE.add(ModItems.COTTON_BOLL, 100);
+		FuelHelper.registerFuelItems();
 	}
 }

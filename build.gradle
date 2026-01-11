@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.8-SNAPSHOT'
+	id 'fabric-loom' version '1.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -50,20 +50,20 @@ fabricApi {
 
 dependencies {
 	// Minecraft
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	minecraft "com.mojang:minecraft:${minecraft_version}"
 
 	// Fabric
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}+${minecraft_version}"
 
 	// Parchment mappings
 	mappings loom.layered() {
 		officialMojangMappings()
-		parchment("org.parchmentmc.data:parchment-${project.parchment_version}")
+		parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
 	}
 
 	// Farmer's Delight Refabricated
-	modImplementation("vectorwing:FarmersDelight:${project.minecraft_version}-${project.farmersdelight_version}+refabricated") {
+	modImplementation("vectorwing:FarmersDelight:1.21.5-${farmersdelight_version}+refabricated") {
 		exclude(group: "net.fabricmc")
 	}
 
@@ -72,15 +72,13 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	// JEI API
-	modCompileOnly("mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei_version}")
-	modCompileOnly("mezz.jei:jei-${project.minecraft_version}-fabric-api:${project.jei_version}")
-
 	// JEI
-	modLocalRuntime("mezz.jei:jei-${project.minecraft_version}-fabric:${project.jei_version}")
+	//modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+	//modCompileOnly("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
+	//modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
 
 	// Appleskin
-	modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_version}")
+	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc${minecraft_version}-${appleskin_version}")
 }
 
 processResources {

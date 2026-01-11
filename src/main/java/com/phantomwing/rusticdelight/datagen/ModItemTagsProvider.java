@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.tag.ConventionalTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -75,7 +76,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
         // Eggs
         getOrCreateTagBuilder(ModTags.Items.RAW_AND_COOKED_EGGS)
-            .addOptionalTag(ConventionalItemTags.EGGS)
+            .addOptionalTag(CommonTags.EGGS)
             .addOptionalTag(CommonTags.FOODS_COOKED_EGG);
 
         // Spring rolls
@@ -89,8 +90,8 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
             .addTag(CommonTags.FOODS_POTATO)
             .addTag(CommonTags.FOODS_BEETROOT)
             .addTag(CommonTags.FOODS_BELL_PEPPER)
-            .addOptionalTag(ConventionalItemTags.EGGS)
-            .addOptionalTag(ConventionalItemTags.MUSHROOMS);
+            .addOptionalTag(CommonTags.EGGS)
+            .addOptionalTag(CommonTags.MUSHROOMS);
 
         // Stuffed bell peppers
         getOrCreateTagBuilder(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
@@ -105,13 +106,13 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
             .addOptionalTag(CommonTags.FOODS_TOMATO)
             .addOptionalTag(CommonTags.FOODS_CABBAGE)
             .addOptionalTag(CommonTags.FOODS_ONION)
-            .addOptionalTag(ConventionalItemTags.EGGS)
-            .addOptionalTag(ConventionalItemTags.MUSHROOMS)
+            .addOptionalTag(CommonTags.EGGS)
+            .addOptionalTag(CommonTags.MUSHROOMS)
             .addOptionalTag(CompatibilityTags.BREWIN_AND_CHEWIN_CHEESE_WEDGE);
 
         // Fried rice
         getOrCreateTagBuilder(ModTags.Items.FRIED_RICE_INGREDIENTS)
-            .addOptionalTag(ConventionalItemTags.EGGS)
+            .addOptionalTag(CommonTags.EGGS)
             .addTag(ModTags.Items.COOKING_OIL);
 
         // Mushroom rice
@@ -126,6 +127,15 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
             ModItems.COTTON_SEEDS,
             ModItems.BELL_PEPPER_SEEDS,
             ModItems.COFFEE_BEANS
+        );
+        getOrCreateTagBuilder(ItemTags.VILLAGER_PICKS_UP).add(
+                ModItems.BELL_PEPPER_GREEN,
+                ModItems.BELL_PEPPER_YELLOW,
+                ModItems.BELL_PEPPER_RED,
+                ModItems.COTTON_BOLL,
+                ModItems.BELL_PEPPER_SEEDS,
+                ModItems.COTTON_SEEDS,
+                ModItems.COFFEE_BEANS
         );
 
         this.getOrCreateTagBuilder(ItemTags.SMALL_FLOWERS).add(
@@ -290,7 +300,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         );
 
         // Main seeds tag
-        getOrCreateTagBuilder(ConventionalItemTags.SEEDS)
+        getOrCreateTagBuilder(ConventionalTags.SEEDS)
                 .addTag(CommonTags.SEEDS_COTTON)
                 .addTag(CommonTags.SEEDS_BELL_PEPPER)
                 .addTag(CommonTags.SEEDS_COFFEE_BEANS)

@@ -48,6 +48,11 @@ public class CommonTags {
     // Tools
     public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
 
+    // Root tags
+    public static final TagKey<Item> EGGS = commonItemTag("eggs");
+    public static final TagKey<Item> MUSHROOMS = commonItemTag("mushrooms");
+
+
     // Storage blocks
     public static final TagKey<Block> STORAGE_BLOCKS_COTTON_SEEDS = commonBlockTag("storage_blocks/cotton_seeds");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/bell_pepper_seeds");

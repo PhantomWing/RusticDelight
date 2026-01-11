@@ -64,7 +64,7 @@ public class ModBlockStateProvider {
     private static void createCrossCrop(BlockModelGenerators g, Block cropBlock, Property<Integer> ageProperty) {
         int[] ageToVisualStageMapping = ageProperty.getPossibleValues().stream().mapToInt(Integer::intValue).toArray();
         Int2ObjectMap<ResourceLocation> int2ObjectMap = new Int2ObjectOpenHashMap<>();
-        ModelTemplate crossModel = new ModelTemplate(Optional.of(farmersDelightResourceBlock("crop_cross")), Optional.empty(), TextureSlot.CROSS);
+        ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("crop_cross")), Optional.empty(), TextureSlot.CROSS);
 
         PropertyDispatch propertyDispatch = PropertyDispatch.property(ageProperty).generate((integer) -> {
             int i = ageToVisualStageMapping[integer];
@@ -83,26 +83,26 @@ public class ModBlockStateProvider {
     private static void farmersDelightCrate(BlockModelGenerators g, Block block) {
         String blockName = blockName(block);
         TextureMapping mapping = (new TextureMapping())
-                .put(TextureSlot.PARTICLE, resourceBlock(blockName + "_top"))
-                .put(TextureSlot.SIDE, resourceBlock(blockName + "_side"))
-                .put(TextureSlot.BOTTOM, farmersDelightResourceBlock("crate_bottom"))
-                .put(TextureSlot.TOP, resourceBlock(blockName + "_top"));
+                .put(TextureSlot.PARTICLE, blockResource(blockName + "_top"))
+                .put(TextureSlot.SIDE, blockResource(blockName + "_side"))
+                .put(TextureSlot.BOTTOM, blockResourceFD("crate_bottom"))
+                .put(TextureSlot.TOP, blockResource(blockName + "_top"));
 
-        g.createTrivialBlock(block, mapping, ModelTemplates.CUBE_BOTTOM_TOP);
+        createBlock(g, block, mapping, ModelTemplates.CUBE_BOTTOM_TOP);
     }
 
     private static void canvasBag(BlockModelGenerators g, Block block) {
         String blockName = blockName(block);
         TextureMapping mapping = (new TextureMapping())
-                .put(TextureSlot.PARTICLE, resourceBlock(blockName + "_top"))
-                .put(TextureSlot.DOWN, resourceBlock(blockName + "_bottom"))
-                .put(TextureSlot.UP, resourceBlock(blockName + "_top"))
-                .put(TextureSlot.NORTH, resourceBlock(blockName + "_side_tied"))
-                .put(TextureSlot.SOUTH, resourceBlock(blockName + "_side_tied"))
-                .put(TextureSlot.EAST, resourceBlock(blockName + "_side"))
-                .put(TextureSlot.WEST, resourceBlock(blockName + "_side"));
+                .put(TextureSlot.PARTICLE, blockResource(blockName + "_top"))
+                .put(TextureSlot.DOWN, blockResource(blockName + "_bottom"))
+                .put(TextureSlot.UP, blockResource(blockName + "_top"))
+                .put(TextureSlot.NORTH, blockResource(blockName + "_side_tied"))
+                .put(TextureSlot.SOUTH, blockResource(blockName + "_side_tied"))
+                .put(TextureSlot.EAST, blockResource(blockName + "_side"))
+                .put(TextureSlot.WEST, blockResource(blockName + "_side"));
 
-        g.createTrivialBlock(block, mapping, ModelTemplates.CUBE);
+        createBlock(g, block, mapping, ModelTemplates.CUBE);
     }
 
     private static void pieBlock(BlockModelGenerators g, Block block) {
@@ -112,7 +112,7 @@ public class ModBlockStateProvider {
                             String suffix = bites == 0 ? "" : "_slice" + bites;
                             return Variant.variant()
                                     .with(VariantProperties.Y_ROT, dirToRot(direction))
-                                    .with(VariantProperties.MODEL, resourceBlock(blockName(block) + suffix));
+                                    .with(VariantProperties.MODEL, blockResource(blockName(block) + suffix));
                         })
                 );
         g.blockStateOutput.accept(generator);
@@ -125,7 +125,7 @@ public class ModBlockStateProvider {
                             String suffix = "_stage" + servings;
                             return Variant.variant()
                                     .with(VariantProperties.Y_ROT, dirToRot(direction))
-                                    .with(VariantProperties.MODEL, resourceBlock(blockName(block) + suffix));
+                                    .with(VariantProperties.MODEL, blockResource(blockName(block) + suffix));
                         })
                 );
         g.blockStateOutput.accept(generator);
@@ -139,7 +139,7 @@ public class ModBlockStateProvider {
                             String suffix = invertedServings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftover" : "_stage" + invertedServings;
                             return Variant.variant()
                                     .with(VariantProperties.Y_ROT, dirToRot(direction))
-                                    .with(VariantProperties.MODEL, resourceBlock(blockName(block) + suffix));
+                                    .with(VariantProperties.MODEL, blockResource(blockName(block) + suffix));
                         })
                 );
         g.blockStateOutput.accept(generator);
@@ -149,12 +149,19 @@ public class ModBlockStateProvider {
         return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 
-    private static ResourceLocation resourceBlock(String path) {
+    private static ResourceLocation blockResource(String path) {
         return ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + path);
     }
 
-    private static ResourceLocation farmersDelightResourceBlock(String path) {
+    private static ResourceLocation blockResourceFD(String path) {
         return ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/" + path);
+    }
+
+    private static void createBlock(BlockModelGenerators g, Block block, TextureMapping textureMapping, ModelTemplate modelTemplate) {
+        ResourceLocation resourceLocation = modelTemplate.create(block, textureMapping, g.modelOutput);
+        MultiVariantGenerator variantGenerator = MultiVariantGenerator.multiVariant(block, Variant.variant().with(VariantProperties.MODEL, resourceLocation));
+
+        g.blockStateOutput.accept(variantGenerator);
     }
 
     private static VariantProperties.Rotation dirToRot(Direction direction) {

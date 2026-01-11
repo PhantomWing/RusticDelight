@@ -5,24 +5,23 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.ConsumableListener;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
@@ -37,7 +36,7 @@ import vectorwing.farmersdelight.common.utility.ItemUtils;
 import java.util.function.Supplier;
 
 public class PancakeBlock extends Block {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final Integer MAX_SERVINGS = 6;
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, MAX_SERVINGS - 1);
 
@@ -61,12 +60,12 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    public @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+    public @NotNull InteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         if (heldStack.is(ModTags.KNIVES)) {
             return takeServing(level, pos, state, player);
         }
 
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
 
     @Override
@@ -84,7 +83,7 @@ public class PancakeBlock extends Block {
         return consumeServing(level, pos, state, player);
     }
 
-    protected ItemInteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
+    protected InteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
         // Drop the serving item.
         Direction direction = player.getDirection().getOpposite();
         ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
@@ -96,7 +95,7 @@ public class PancakeBlock extends Block {
         // Play a sound, for taking the serving.
         level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 
-        return ItemInteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
     /**
@@ -109,14 +108,14 @@ public class PancakeBlock extends Block {
         } else {
             ItemStack servingStack = this.getServingItem();
             FoodProperties foodProperties = servingStack.get(DataComponents.FOOD);
+            Consumable consumable = servingStack.get(DataComponents.CONSUMABLE);
 
             // Apply food effect to the player
-            if (foodProperties != null) {
+            if (foodProperties != null && consumable != null) {
                 playerIn.getFoodData().eat(foodProperties);
-                for (FoodProperties.PossibleEffect effect : foodProperties.effects()) {
-                    if (!level.isClientSide && effect != null && level.random.nextFloat() < effect.probability()) {
-                        playerIn.addEffect(effect.effect());
-                    }
+                servingStack.getAllOfType(ConsumableListener.class).forEach(consumableListener -> consumableListener.onConsume(level, playerIn, servingStack, consumable));
+                if (!level.isClientSide) {
+                    consumable.onConsumeEffects().forEach(consumeEffect -> consumeEffect.apply(level, servingStack, playerIn));
                 }
             }
 
@@ -124,7 +123,7 @@ public class PancakeBlock extends Block {
             this.removeServing(level, pos, state);
 
             // Play a sound.
-            level.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 0.8F);
+            level.playSound(null, pos, SoundEvents.GENERIC_EAT.value(), SoundSource.PLAYERS, 0.8F, 0.8F);
 
             return InteractionResult.SUCCESS;
         }
@@ -155,8 +154,8 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    public @NotNull BlockState updateShape(@NotNull BlockState stateIn, @NotNull Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor level, @NotNull BlockPos currentPos, @NotNull BlockPos facingPos) {
-        return facing == Direction.DOWN && !stateIn.canSurvive(level, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
+    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+        return direction == Direction.DOWN && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override
