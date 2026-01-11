@@ -1,12 +1,9 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.item.ModItems;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
 public class ModItemModelProvider {
     public static void registerModels(ItemModelGenerators g) {
@@ -86,6 +83,6 @@ public class ModItemModelProvider {
 
     // A simple item with a model generated from its sprite.
     private static void simpleItem(ItemModelGenerators generator, Item item) {
-        ModelTemplates.FLAT_ITEM.create(ModelLocationUtils.getModelLocation(item), TextureMapping.layer0(item), generator.output);
+        generator.createFlatItemModel(item, ModelTemplates.FLAT_ITEM);
     }
 }
