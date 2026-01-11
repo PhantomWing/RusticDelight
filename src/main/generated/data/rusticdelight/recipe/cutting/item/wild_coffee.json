@@ -1,9 +1,7 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "rusticdelight:wild_coffee"
-    }
+    "rusticdelight:wild_coffee"
   ],
   "result": [
     {
@@ -27,7 +25,5 @@
       }
     }
   ],
-  "tool": {
-    "tag": "c:tools/knife"
-  }
+  "tool": "#c:tools/knife"
 }

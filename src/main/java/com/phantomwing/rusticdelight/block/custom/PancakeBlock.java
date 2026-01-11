@@ -154,13 +154,14 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+    protected @NotNull BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
         return direction == Direction.DOWN && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override
     public boolean canSurvive(@NotNull BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).isSolid();
+        BlockPos floorPos = pos.below();
+        return canSupportRigidBlock(level, floorPos) || canSupportCenter(level, floorPos, Direction.UP);
     }
 
     @Override

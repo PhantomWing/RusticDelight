@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:bowl"
-    },
-    "M": {
-      "item": "rusticdelight:batter"
-    },
-    "T": {
-      "tag": "rusticdelight:syrup"
-    },
-    "X": {
-      "item": "minecraft:sugar"
-    },
-    "Y": {
-      "item": "minecraft:sugar"
-    }
+    "B": "minecraft:bowl",
+    "M": "rusticdelight:batter",
+    "T": "#rusticdelight:syrup",
+    "X": "minecraft:sugar",
+    "Y": "minecraft:sugar"
   },
   "pattern": [
     " T ",

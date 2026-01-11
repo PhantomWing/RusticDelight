@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:bowl"
-    },
-    "M": {
-      "item": "rusticdelight:batter"
-    },
-    "T": {
-      "tag": "c:foods/milk"
-    },
-    "X": {
-      "tag": "rusticdelight:cherry_blossom_ingredients"
-    },
-    "Y": {
-      "tag": "rusticdelight:cherry_blossom_ingredients"
-    }
+    "B": "minecraft:bowl",
+    "M": "rusticdelight:batter",
+    "T": "#c:foods/milk",
+    "X": "#rusticdelight:cherry_blossom_ingredients",
+    "Y": "#rusticdelight:cherry_blossom_ingredients"
   },
   "pattern": [
     " T ",

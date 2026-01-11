@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": {
-    "item": "rusticdelight:bell_pepper_yellow"
-  },
+  "ingredient": "rusticdelight:bell_pepper_yellow",
   "result": {
     "id": "rusticdelight:roasted_bell_pepper_yellow"
   }

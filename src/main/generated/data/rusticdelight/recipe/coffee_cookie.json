@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "#rusticdelight:coffee_ingredients",
+    "minecraft:wheat",
+    "minecraft:wheat"
   ],
   "result": {
     "count": 8,

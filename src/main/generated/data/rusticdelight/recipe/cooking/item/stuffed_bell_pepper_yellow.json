@@ -1,18 +1,12 @@
 {
   "type": "farmersdelight:cooking",
+  "category": "meals",
   "experience": 1.0,
   "ingredients": [
-    {
-      "item": "rusticdelight:bell_pepper_yellow"
-    },
-    {
-      "tag": "c:crops/rice"
-    },
-    {
-      "tag": "rusticdelight:stuffed_bell_pepper_ingredients"
-    }
+    "rusticdelight:bell_pepper_yellow",
+    "#c:crops/rice",
+    "#rusticdelight:stuffed_bell_pepper_ingredients"
   ],
-  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "rusticdelight:stuffed_bell_pepper_yellow"

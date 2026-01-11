@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "c:foods/potato"
-    },
-    {
-      "tag": "c:foods/onion"
-    },
-    {
-      "tag": "c:foods/milk"
-    },
-    {
-      "tag": "c:eggs"
-    }
+    "minecraft:bowl",
+    "#c:foods/potato",
+    "#c:foods/onion",
+    "#c:foods/milk",
+    "#c:eggs"
   ],
   "result": {
     "count": 1,

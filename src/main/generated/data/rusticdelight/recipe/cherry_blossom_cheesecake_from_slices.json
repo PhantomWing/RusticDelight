@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "rusticdelight:cherry_blossom_cheesecake_slice"
-    }
+    "#": "rusticdelight:cherry_blossom_cheesecake_slice"
   },
   "pattern": [
     "##",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:roasted_coffee_beans_bag"
-    }
+    "rusticdelight:roasted_coffee_beans_bag"
   ],
   "result": {
     "count": 9,

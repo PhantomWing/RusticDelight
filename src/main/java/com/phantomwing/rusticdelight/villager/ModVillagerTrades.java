@@ -1,8 +1,10 @@
 package com.phantomwing.rusticdelight.villager;
 
+import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -96,29 +98,32 @@ public class ModVillagerTrades {
             return;
         }
 
-        TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
+        TradeOfferHelper.registerWanderingTraderOffers(factories -> {
             if (config.wild_cotton_chance > 0) {
-                factories.add(((entity, random) -> new MerchantOffer(
+                ResourceLocation cottonPool = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_cotton_seeds");
+                factories.addAll(cottonPool, (entity, random) -> new MerchantOffer(
                         new ItemCost(Items.EMERALD, 1),
                         new ItemStack(ModItems.COTTON_SEEDS, 1),
                         12, 2, PRICE_MULTIPLIER
-                )));
+                ));
             }
 
             if (config.wild_bell_peppers_chance > 0) {
-                factories.add(((entity, random) -> new MerchantOffer(
+                ResourceLocation bellPepperPool = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_bell_pepper_seeds");
+                factories.addAll(bellPepperPool,(entity, random) -> new MerchantOffer(
                         new ItemCost(Items.EMERALD, 1),
                         new ItemStack(ModItems.BELL_PEPPER_SEEDS, 1),
                         12, 2, PRICE_MULTIPLIER
-                )));
+                ));
             }
 
             if (config.wild_coffee_chance > 0) {
-                factories.add(((entity, random) -> new MerchantOffer(
+                ResourceLocation coffeePool = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_coffee_beans");
+                factories.addAll(coffeePool, (entity, random) -> new MerchantOffer(
                         new ItemCost(Items.EMERALD, 1),
                         new ItemStack(ModItems.COFFEE_BEANS, 1),
                         12, 2, PRICE_MULTIPLIER
-                )));
+                ));
             }
         });
     }

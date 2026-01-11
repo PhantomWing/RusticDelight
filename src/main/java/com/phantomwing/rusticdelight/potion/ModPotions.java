@@ -3,7 +3,6 @@ package com.phantomwing.rusticdelight.potion;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
-import net.fabricmc.fabric.mixin.content.registry.BrewingRecipeRegistryBuilderMixin;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,9 +18,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class ModPotions {
     // Potions
-    public static final Holder<Potion> HASTE_POTION = register("haste", MobEffects.DIG_SPEED, 3600);
-    public static final Holder<Potion> LONG_HASTE_POTION = register("long_haste", "haste", MobEffects.DIG_SPEED, 9600, 0);
-    public static final Holder<Potion> STRONG_HASTE_POTION = register("strong_haste", "haste", MobEffects.DIG_SPEED, 1800, 1);
+    public static final Holder<Potion> HASTE_POTION = register("haste", MobEffects.HASTE, 3600);
+    public static final Holder<Potion> LONG_HASTE_POTION = register("long_haste", "haste", MobEffects.HASTE, 9600, 0);
+    public static final Holder<Potion> STRONG_HASTE_POTION = register("strong_haste", "haste", MobEffects.HASTE, 1800, 1);
 
     private static Holder<Potion> register(String name, Holder<MobEffect> effect, int duration) {
         return Registry.registerForHolder(

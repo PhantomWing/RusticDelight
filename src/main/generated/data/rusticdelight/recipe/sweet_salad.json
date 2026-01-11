@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "rusticdelight:sweet_liquids"
-    },
-    {
-      "tag": "c:foods/leafy_green"
-    },
-    {
-      "tag": "c:foods/vegetable"
-    },
-    {
-      "tag": "rusticdelight:fruits_berries"
-    },
-    {
-      "tag": "rusticdelight:fruits_berries"
-    }
+    "minecraft:bowl",
+    "#rusticdelight:sweet_liquids",
+    "#c:foods/leafy_green",
+    "#c:foods/vegetable",
+    "#rusticdelight:fruits_berries",
+    "#rusticdelight:fruits_berries"
   ],
   "result": {
     "count": 1,

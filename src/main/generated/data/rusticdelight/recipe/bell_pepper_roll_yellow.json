@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:bell_pepper_slice_yellow"
-    },
-    {
-      "item": "rusticdelight:bell_pepper_slice_yellow"
-    },
-    {
-      "item": "farmersdelight:cooked_rice"
-    }
+    "rusticdelight:bell_pepper_slice_yellow",
+    "rusticdelight:bell_pepper_slice_yellow",
+    "farmersdelight:cooked_rice"
   ],
   "result": {
     "count": 2,

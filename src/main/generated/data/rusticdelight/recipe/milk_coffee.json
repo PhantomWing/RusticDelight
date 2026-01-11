@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:coffee"
-    },
-    {
-      "tag": "c:foods/milk"
-    }
+    "rusticdelight:coffee",
+    "#c:foods/milk"
   ],
   "result": {
     "count": 1,

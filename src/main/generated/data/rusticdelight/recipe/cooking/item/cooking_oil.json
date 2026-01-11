@@ -7,26 +7,13 @@
   "cookingtime": 100,
   "experience": 0.35,
   "ingredients": [
-    {
-      "tag": "rusticdelight:cooking_oil_ingredients"
-    },
-    {
-      "tag": "rusticdelight:cooking_oil_ingredients"
-    },
-    {
-      "tag": "rusticdelight:cooking_oil_ingredients"
-    },
-    {
-      "tag": "rusticdelight:cooking_oil_ingredients"
-    },
-    {
-      "tag": "rusticdelight:cooking_oil_ingredients"
-    },
-    {
-      "tag": "rusticdelight:cooking_oil_ingredients"
-    }
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients"
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 2,
     "id": "rusticdelight:cooking_oil"

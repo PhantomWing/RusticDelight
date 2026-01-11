@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:coffee"
-    },
-    {
-      "tag": "c:foods/milk"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    }
+    "rusticdelight:coffee",
+    "#c:foods/milk",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans"
   ],
   "result": {
     "count": 1,

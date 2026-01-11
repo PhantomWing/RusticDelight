@@ -1,31 +1,19 @@
 {
   "type": "farmersdelight:cooking",
+  "category": "drinks",
   "container": {
     "count": 1,
     "id": "minecraft:glass_bottle"
   },
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "c:foods/milk"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    }
+    "#c:foods/milk",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans"
   ],
-  "recipe_book_tab": "drinks",
   "result": {
     "count": 1,
     "id": "rusticdelight:chocolate_coffee"

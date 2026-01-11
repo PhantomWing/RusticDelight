@@ -1,25 +1,17 @@
 {
   "type": "farmersdelight:cooking",
+  "category": "meals",
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
   },
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "rusticdelight:cooking_oil"
-    },
-    {
-      "item": "rusticdelight:batter"
-    },
-    {
-      "tag": "c:foods/raw_calamari"
-    },
-    {
-      "tag": "c:foods/tomato"
-    }
+    "#rusticdelight:cooking_oil",
+    "rusticdelight:batter",
+    "#c:foods/raw_calamari",
+    "#c:foods/tomato"
   ],
-  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "rusticdelight:fried_calamari"

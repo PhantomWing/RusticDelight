@@ -1,6 +1,5 @@
 package com.phantomwing.rusticdelight.datagen;
 
-import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;

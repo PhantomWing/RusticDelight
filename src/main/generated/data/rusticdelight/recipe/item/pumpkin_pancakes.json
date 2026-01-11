@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    "rusticdelight:batter",
+    "#rusticdelight:syrup",
+    "farmersdelight:pumpkin_slice",
+    "farmersdelight:pumpkin_slice",
+    "farmersdelight:pumpkin_slice",
+    "farmersdelight:pumpkin_slice"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:pumpkin_pancakes"
+  }
+}

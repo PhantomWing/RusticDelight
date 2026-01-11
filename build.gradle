@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.10-SNAPSHOT'
+	id 'fabric-loom' version '1.14-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -61,7 +61,7 @@ dependencies {
 	}
 
 	// Farmer's Delight Refabricated
-	modImplementation("vectorwing:FarmersDelight:1.21.5-${farmersdelight_version}+refabricated") {
+	modImplementation("vectorwing:FarmersDelight:${minecraft_version}-${farmersdelight_version}+refabricated") {
 		exclude(group: "net.fabricmc")
 	}
 
@@ -71,12 +71,10 @@ dependencies {
 	}
 
 	// JEI
-	//modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-	//modCompileOnly("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
-	//modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+	modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
 
 	// Appleskin
-	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc1.21.3-${appleskin_version}")
+	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc${minecraft_version}-${appleskin_version}")
 }
 
 processResources {

@@ -5,8 +5,7 @@
       "y": 90
     },
     "bites=0,facing=north": {
-      "model": "rusticdelight:block/syrup_cheesecake",
-      "y": 0
+      "model": "rusticdelight:block/syrup_cheesecake"
     },
     "bites=0,facing=south": {
       "model": "rusticdelight:block/syrup_cheesecake",
@@ -21,8 +20,7 @@
       "y": 90
     },
     "bites=1,facing=north": {
-      "model": "rusticdelight:block/syrup_cheesecake_slice1",
-      "y": 0
+      "model": "rusticdelight:block/syrup_cheesecake_slice1"
     },
     "bites=1,facing=south": {
       "model": "rusticdelight:block/syrup_cheesecake_slice1",
@@ -37,8 +35,7 @@
       "y": 90
     },
     "bites=2,facing=north": {
-      "model": "rusticdelight:block/syrup_cheesecake_slice2",
-      "y": 0
+      "model": "rusticdelight:block/syrup_cheesecake_slice2"
     },
     "bites=2,facing=south": {
       "model": "rusticdelight:block/syrup_cheesecake_slice2",
@@ -53,8 +50,7 @@
       "y": 90
     },
     "bites=3,facing=north": {
-      "model": "rusticdelight:block/syrup_cheesecake_slice3",
-      "y": 0
+      "model": "rusticdelight:block/syrup_cheesecake_slice3"
     },
     "bites=3,facing=south": {
       "model": "rusticdelight:block/syrup_cheesecake_slice3",

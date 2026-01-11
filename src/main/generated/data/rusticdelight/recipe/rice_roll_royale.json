@@ -2,33 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "farmersdelight:kelp_roll_slice"
-    },
-    {
-      "item": "farmersdelight:kelp_roll_slice"
-    },
-    {
-      "item": "farmersdelight:kelp_roll_slice"
-    },
-    {
-      "item": "rusticdelight:bell_pepper_roll_green"
-    },
-    {
-      "item": "rusticdelight:bell_pepper_roll_yellow"
-    },
-    {
-      "item": "rusticdelight:bell_pepper_roll_red"
-    },
-    {
-      "item": "rusticdelight:calamari_roll"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "rusticdelight:cherry_blossom_roll"
-    }
+    "farmersdelight:kelp_roll_slice",
+    "farmersdelight:kelp_roll_slice",
+    "farmersdelight:kelp_roll_slice",
+    "rusticdelight:bell_pepper_roll_green",
+    "rusticdelight:bell_pepper_roll_yellow",
+    "rusticdelight:bell_pepper_roll_red",
+    "rusticdelight:calamari_roll",
+    "minecraft:bowl",
+    "rusticdelight:cherry_blossom_roll"
   ],
   "result": {
     "count": 1,

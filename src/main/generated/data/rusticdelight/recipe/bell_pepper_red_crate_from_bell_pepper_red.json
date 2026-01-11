@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "rusticdelight:bell_pepper_red"
-    }
+    "#": "rusticdelight:bell_pepper_red"
   },
   "pattern": [
     "###",

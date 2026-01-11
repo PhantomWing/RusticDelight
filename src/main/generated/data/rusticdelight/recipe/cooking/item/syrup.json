@@ -7,14 +7,9 @@
   "cookingtime": 100,
   "experience": 0.35,
   "ingredients": [
-    {
-      "tag": "rusticdelight:syrup_ingredients"
-    },
-    {
-      "item": "minecraft:sugar"
-    }
+    "#rusticdelight:syrup_ingredients",
+    "minecraft:sugar"
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 1,
     "id": "rusticdelight:syrup"

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "rusticdelight:coffee_beans"
-    }
+    "#": "rusticdelight:coffee_beans"
   },
   "pattern": [
     "###",

@@ -3,20 +3,11 @@
   "cookingtime": 100,
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "rusticdelight:cooking_oil"
-    },
-    {
-      "tag": "c:foods/dough"
-    },
-    {
-      "tag": "c:foods/leafy_green"
-    },
-    {
-      "tag": "rusticdelight:spring_roll_ingredients"
-    }
+    "#rusticdelight:cooking_oil",
+    "#c:foods/dough",
+    "#c:foods/leafy_green",
+    "#rusticdelight:spring_roll_ingredients"
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 2,
     "id": "rusticdelight:spring_rolls"

@@ -83,6 +83,6 @@ public class ModItemModelProvider {
 
     // A simple item with a model generated from its sprite.
     private static void simpleItem(ItemModelGenerators generator, Item item) {
-        generator.createFlatItemModel(item, ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
     }
 }

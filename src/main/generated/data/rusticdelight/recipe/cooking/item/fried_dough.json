@@ -3,14 +3,9 @@
   "cookingtime": 100,
   "experience": 0.35,
   "ingredients": [
-    {
-      "tag": "rusticdelight:cooking_oil"
-    },
-    {
-      "tag": "c:foods/dough"
-    }
+    "#rusticdelight:cooking_oil",
+    "#c:foods/dough"
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 1,
     "id": "rusticdelight:fried_dough"

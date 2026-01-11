@@ -25,28 +25,22 @@
       "y": 90
     },
     "facing=north,servings=0": {
-      "model": "rusticdelight:block/pumpkin_pancakes_stage0",
-      "y": 0
+      "model": "rusticdelight:block/pumpkin_pancakes_stage0"
     },
     "facing=north,servings=1": {
-      "model": "rusticdelight:block/pumpkin_pancakes_stage1",
-      "y": 0
+      "model": "rusticdelight:block/pumpkin_pancakes_stage1"
     },
     "facing=north,servings=2": {
-      "model": "rusticdelight:block/pumpkin_pancakes_stage2",
-      "y": 0
+      "model": "rusticdelight:block/pumpkin_pancakes_stage2"
     },
     "facing=north,servings=3": {
-      "model": "rusticdelight:block/pumpkin_pancakes_stage3",
-      "y": 0
+      "model": "rusticdelight:block/pumpkin_pancakes_stage3"
     },
     "facing=north,servings=4": {
-      "model": "rusticdelight:block/pumpkin_pancakes_stage4",
-      "y": 0
+      "model": "rusticdelight:block/pumpkin_pancakes_stage4"
     },
     "facing=north,servings=5": {
-      "model": "rusticdelight:block/pumpkin_pancakes_stage5",
-      "y": 0
+      "model": "rusticdelight:block/pumpkin_pancakes_stage5"
     },
     "facing=south,servings=0": {
       "model": "rusticdelight:block/pumpkin_pancakes_stage0",

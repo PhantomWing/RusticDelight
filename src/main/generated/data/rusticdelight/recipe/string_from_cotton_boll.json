@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:cotton_boll"
-    }
+    "rusticdelight:cotton_boll"
   ],
   "result": {
     "count": 1,

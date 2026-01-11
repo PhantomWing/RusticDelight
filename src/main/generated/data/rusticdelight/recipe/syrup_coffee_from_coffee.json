@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:coffee"
-    },
-    {
-      "tag": "c:foods/milk"
-    },
-    {
-      "tag": "rusticdelight:syrup"
-    }
+    "rusticdelight:coffee",
+    "#c:foods/milk",
+    "#rusticdelight:syrup"
   ],
   "result": {
     "count": 1,

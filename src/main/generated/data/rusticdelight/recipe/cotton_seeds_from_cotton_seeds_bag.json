@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:cotton_seeds_bag"
-    }
+    "rusticdelight:cotton_seeds_bag"
   ],
   "result": {
     "count": 9,

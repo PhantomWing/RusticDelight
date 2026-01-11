@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:bowl"
-    },
-    "M": {
-      "item": "rusticdelight:batter"
-    },
-    "T": {
-      "tag": "rusticdelight:syrup"
-    },
-    "X": {
-      "item": "farmersdelight:pumpkin_slice"
-    },
-    "Y": {
-      "item": "farmersdelight:pumpkin_slice"
-    }
+    "B": "minecraft:bowl",
+    "M": "rusticdelight:batter",
+    "T": "#rusticdelight:syrup",
+    "X": "farmersdelight:pumpkin_slice",
+    "Y": "farmersdelight:pumpkin_slice"
   },
   "pattern": [
     " T ",

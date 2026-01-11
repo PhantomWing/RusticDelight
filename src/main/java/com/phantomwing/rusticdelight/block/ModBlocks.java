@@ -63,7 +63,7 @@ public class ModBlocks {
     public static final Block WILD_BELL_PEPPERS = registerBlock("wild_bell_peppers", Blocks.TALL_GRASS,
             props -> new ModWildCropBlock(MobEffects.FIRE_RESISTANCE, 10, props));
     public static final Block WILD_COFFEE = registerBlock("wild_coffee", Blocks.TALL_GRASS,
-            props -> new ModWildCropBlock(MobEffects.MOVEMENT_SPEED, 10, props));
+            props -> new ModWildCropBlock(MobEffects.SPEED, 10, props));
 
     // Unobtainable blocks
     public static final Block COTTON_CROP = registerBlock("cotton", Blocks.CARROTS,

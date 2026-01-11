@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:coffee"
-    },
-    {
-      "tag": "c:foods/milk"
-    },
-    {
-      "item": "minecraft:honey_bottle"
-    }
+    "rusticdelight:coffee",
+    "#c:foods/milk",
+    "minecraft:honey_bottle"
   ],
   "result": {
     "count": 1,

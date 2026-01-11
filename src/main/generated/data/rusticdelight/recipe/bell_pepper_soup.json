@@ -2,27 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "c:foods/bell_pepper"
-    },
-    {
-      "tag": "c:foods/bell_pepper"
-    },
-    {
-      "tag": "c:foods/bell_pepper"
-    },
-    {
-      "tag": "c:foods/bell_pepper"
-    },
-    {
-      "tag": "c:foods/bell_pepper"
-    },
-    {
-      "tag": "c:foods/bell_pepper"
-    }
+    "minecraft:bowl",
+    "#c:foods/bell_pepper",
+    "#c:foods/bell_pepper",
+    "#c:foods/bell_pepper",
+    "#c:foods/bell_pepper",
+    "#c:foods/bell_pepper",
+    "#c:foods/bell_pepper"
   ],
   "result": {
     "count": 1,

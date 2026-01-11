@@ -16,7 +16,9 @@ public class EntityLootHelper {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             RusticDelightConfig config = RusticDelightConfig.get();
 
-            if (config.squids_drop_calamari && source.isBuiltin() && (EntityType.SQUID.getDefaultLootTable().equals(key) || EntityType.GLOW_SQUID.getDefaultLootTable().equals(key))) {
+            if (config.squids_drop_calamari && source.isBuiltin() && (
+                    (EntityType.SQUID.getDefaultLootTable().isPresent() && EntityType.SQUID.getDefaultLootTable().get().equals(key)) ||
+                            (EntityType.GLOW_SQUID.getDefaultLootTable().isPresent() && EntityType.GLOW_SQUID.getDefaultLootTable().get().equals(key)))) {
                 LootPool.Builder poolBuilder = LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(1.0f)) // 100% chance

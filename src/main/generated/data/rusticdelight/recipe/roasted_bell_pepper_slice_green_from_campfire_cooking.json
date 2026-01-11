@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 600,
   "experience": 0.35,
-  "ingredient": {
-    "item": "rusticdelight:bell_pepper_slice_green"
-  },
+  "ingredient": "rusticdelight:bell_pepper_slice_green",
   "result": {
     "id": "rusticdelight:roasted_bell_pepper_slice_green"
   }

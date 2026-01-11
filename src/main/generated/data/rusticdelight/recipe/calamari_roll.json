@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "rusticdelight:calamari_roll_ingredients"
-    },
-    {
-      "tag": "rusticdelight:calamari_roll_ingredients"
-    },
-    {
-      "item": "farmersdelight:cooked_rice"
-    }
+    "#rusticdelight:calamari_roll_ingredients",
+    "#rusticdelight:calamari_roll_ingredients",
+    "farmersdelight:cooked_rice"
   ],
   "result": {
     "count": 2,

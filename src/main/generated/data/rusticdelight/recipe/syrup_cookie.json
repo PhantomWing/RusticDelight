@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "rusticdelight:syrup"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "#rusticdelight:syrup",
+    "minecraft:wheat",
+    "minecraft:wheat"
   ],
   "result": {
     "count": 8,

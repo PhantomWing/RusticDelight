@@ -72,16 +72,16 @@ public class ModItems {
     public static final Item ROASTED_BELL_PEPPER_RED = registerWithTab("roasted_bell_pepper_red", foodItem(FoodValues.ROASTED_BELL_PEPPER));
 
     // Coffee
-    public static final Item COFFEE = registerWithTab("coffee", props -> new ConsumableItem(props, true), bottleItem(FoodValues.COFFEE, ConsumableValues.COFFEE));
-    public static final Item MILK_COFFEE = registerWithTab("milk_coffee", props -> new ConsumableItem(props, true), bottleItem(FoodValues.MILK_COFFEE, ConsumableValues.MILK_COFFEE));
-    public static final Item CHOCOLATE_COFFEE = registerWithTab("chocolate_coffee", props -> new ConsumableItem(props, true), bottleItem(FoodValues.CHOCOLATE_COFFEE, ConsumableValues.CHOCOLATE_COFFEE));
-    public static final Item HONEY_COFFEE = registerWithTab("honey_coffee", props -> new ConsumableItem(props, true), bottleItem(FoodValues.HONEY_COFFEE, ConsumableValues.HONEY_COFFEE));
-    public static final Item SYRUP_COFFEE = registerWithTab("syrup_coffee", props -> new ConsumableItem(props, true), bottleItem(FoodValues.SYRUP_COFFEE, ConsumableValues.MILK_COFFEE));
-    public static final Item DARK_COFFEE = registerWithTab("dark_coffee", props -> new ConsumableItem(props, true), bottleItem(FoodValues.DARK_COFFEE, ConsumableValues.DARK_COFFEE));
+    public static final Item COFFEE = registerWithTab("coffee", props -> new ConsumableItem(props, true), bottleFoodItem(FoodValues.COFFEE, ConsumableValues.COFFEE));
+    public static final Item MILK_COFFEE = registerWithTab("milk_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.MILK_COFFEE, ConsumableValues.MILK_COFFEE));
+    public static final Item CHOCOLATE_COFFEE = registerWithTab("chocolate_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.CHOCOLATE_COFFEE, ConsumableValues.CHOCOLATE_COFFEE));
+    public static final Item HONEY_COFFEE = registerWithTab("honey_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.HONEY_COFFEE, ConsumableValues.HONEY_COFFEE));
+    public static final Item SYRUP_COFFEE = registerWithTab("syrup_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.SYRUP_COFFEE, ConsumableValues.MILK_COFFEE));
+    public static final Item DARK_COFFEE = registerWithTab("dark_coffee", props -> new ConsumableItem(props, true), bottleFoodItem(FoodValues.DARK_COFFEE, ConsumableValues.DARK_COFFEE));
 
     // Cooking products
-    public static final Item COOKING_OIL = registerWithTab("cooking_oil", ConsumableItem::new, bottleItem(FoodValues.COOKING_OIL, ConsumableValues.COOKING_OIL));
-    public static final Item SYRUP = registerWithTab("syrup", props -> new ConsumableItem(props, true), bottleItem(FoodValues.SYRUP, ConsumableValues.SYRUP));
+    public static final Item COOKING_OIL = registerWithTab("cooking_oil", ConsumableItem::new, bottleFoodItem(FoodValues.COOKING_OIL, ConsumableValues.COOKING_OIL));
+    public static final Item SYRUP = registerWithTab("syrup", props -> new ConsumableItem(props, true), bottleFoodItem(FoodValues.SYRUP, ConsumableValues.SYRUP));
     public static final Item BATTER = registerWithTab("batter", ConsumableItem::new, bowlFoodItem(FoodValues.BATTER, ConsumableValues.BATTER));
 
     // Sliced foods
@@ -133,15 +133,15 @@ public class ModItems {
     public static final Item PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
     public static final Item PANCAKE = registerWithTab("pancake", foodItem(FoodValues.PANCAKE));
     public static final Item HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
-    public static final Item HONEY_PANCAKE = registerWithTab("honey_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.HONEY_PANCAKE));
+    public static final Item HONEY_PANCAKE = registerWithTab("honey_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.HONEY_PANCAKE, ConsumableValues.HONEY_PANCAKE));
     public static final Item CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
-    public static final Item CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.CHOCOLATE_PANCAKE));
+    public static final Item CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.CHOCOLATE_PANCAKE, ConsumableValues.CHOCOLATE_PANCAKE));
     public static final Item CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
-    public static final Item CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.CHERRY_BLOSSOM_PANCAKE));
+    public static final Item CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.CHERRY_BLOSSOM_PANCAKE, ConsumableValues.CHERRY_BLOSSOM_PANCAKE));
     public static final Item VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
-    public static final Item VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.VEGETABLE_PANCAKE));
+    public static final Item VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.VEGETABLE_PANCAKE, ConsumableValues.VEGETABLE_PANCAKE));
     public static final Item PUMPKIN_PANCAKES = registerBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
-    public static final Item PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.PUMPKIN_PANCAKE));
+    public static final Item PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.PUMPKIN_PANCAKE, ConsumableValues.PUMPKIN_PANCAKE));
 
     // Salads
     public static final Item POTATO_SALAD = registerWithTab("potato_salad", props -> new ConsumableItem(props, true), bowlFoodItem(FoodValues.POTATO_SALAD, ConsumableValues.POTATO_SALAD));
@@ -189,38 +189,19 @@ public class ModItems {
     }
 
     public static Item.Properties foodItem(FoodProperties food) {
-        return foodItem(food, null);
+        return foodItem(food, Consumables.DEFAULT_FOOD);
     }
 
-    public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable consumable) {
-        return foodItem(food).component(DataComponents.CONSUMABLE, consumable != null ? consumable : Consumables.DEFAULT_FOOD);
+    public static Item.Properties foodItem(FoodProperties food, Consumable consumable) {
+        return baseItem().food(food).component(DataComponents.CONSUMABLE, consumable);
     }
 
-    public static Item.Properties bottleItem() {
-        return bottleItem(null, null);
+    public static Item.Properties bottleFoodItem(FoodProperties food) {
+        return bottleFoodItem(food, Consumables.DEFAULT_DRINK);
     }
 
-    public static Item.Properties bottleItem(FoodProperties food) {
-        return bottleItem(food, null);
-    }
-
-    public static Item.Properties bottleItem(Consumable consumable) {
-        return bottleItem(null, consumable);
-    }
-
-    public static Item.Properties bottleItem(@Nullable FoodProperties food, @Nullable Consumable consumable) {
-        Item.Properties drink = baseItem().craftRemainder(Items.GLASS_BOTTLE).stacksTo(BOTTLE_STACK_SIZE)
-                .component(DataComponents.CONSUMABLE, consumable != null ? consumable : Consumables.DEFAULT_DRINK);
-
-        if (food != null) {
-            drink = drink.food(food);
-        }
-
-        return drink;
-    }
-
-    public static Item.Properties bowlFoodItem(FoodProperties food) {
-        return bowlFoodItem(food, null);
+    public static Item.Properties bottleFoodItem(FoodProperties food, Consumable consumable) {
+        return foodItem(food, consumable).craftRemainder(Items.GLASS_BOTTLE).stacksTo(BOTTLE_STACK_SIZE);
     }
 
     public static Item.Properties bowlFoodItem(FoodProperties food, @Nullable Consumable consumable) {
@@ -236,14 +217,9 @@ public class ModItems {
     }
 
     // Registry functions
-    private static Item registerWithTab(String name, Function<Item.Properties, Item> function) {
-        return registerWithTab(name, function, baseItem());
-    }
-
     private static Item registerWithTab(String name, Item.Properties props) {
         return registerWithTab(name, Item::new, props);
     }
-
 
     private static Item registerWithTab(String name, Function<Item.Properties, Item> function, Item.Properties props) {
         ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name);

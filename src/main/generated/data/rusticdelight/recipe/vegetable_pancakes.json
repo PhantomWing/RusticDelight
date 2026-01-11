@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:bowl"
-    },
-    "M": {
-      "item": "rusticdelight:batter"
-    },
-    "T": {
-      "tag": "c:foods/milk"
-    },
-    "X": {
-      "tag": "c:foods/vegetable"
-    },
-    "Y": {
-      "tag": "c:foods/leafy_green"
-    }
+    "B": "minecraft:bowl",
+    "M": "rusticdelight:batter",
+    "T": "#c:foods/milk",
+    "X": "#c:foods/vegetable",
+    "Y": "#c:foods/leafy_green"
   },
   "pattern": [
     " T ",

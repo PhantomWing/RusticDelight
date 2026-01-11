@@ -6,14 +6,14 @@ import com.phantomwing.rusticdelight.block.custom.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.blockstates.Variant;
-import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +23,8 @@ import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.Optional;
+
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
 public class ModBlockStateProvider {
     public static void registerStatesAndModels(BlockModelGenerators g) {
@@ -62,22 +64,20 @@ public class ModBlockStateProvider {
     }
 
     private static void createCrossCrop(BlockModelGenerators g, Block cropBlock, Property<Integer> ageProperty) {
+        g.registerSimpleFlatItemModel(cropBlock.asItem());
+
         int[] ageToVisualStageMapping = ageProperty.getPossibleValues().stream().mapToInt(Integer::intValue).toArray();
         Int2ObjectMap<ResourceLocation> int2ObjectMap = new Int2ObjectOpenHashMap<>();
         ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("crop_cross")), Optional.empty(), TextureSlot.CROSS);
 
-        PropertyDispatch propertyDispatch = PropertyDispatch.property(ageProperty).generate((integer) -> {
+        g.blockStateOutput.accept(MultiVariantGenerator.dispatch(cropBlock).with(PropertyDispatch.initial(ageProperty).generate((integer) -> {
             int i = ageToVisualStageMapping[integer];
-            ResourceLocation resourceLocation = int2ObjectMap.computeIfAbsent(i, (j) -> g.createSuffixedVariant(cropBlock, "_stage" + i, crossModel, TextureMapping::cross));
-            return Variant.variant().with(VariantProperties.MODEL, resourceLocation);
-        });
-
-        g.createFlatItemModel(cropBlock.asItem());
-        g.blockStateOutput.accept(MultiVariantGenerator.multiVariant(cropBlock).with(propertyDispatch));
+            return BlockModelGenerators.plainVariant(int2ObjectMap.computeIfAbsent(i, (ix) -> g.createSuffixedVariant(cropBlock, "_stage" + ix, crossModel, TextureMapping::cross)));
+        })));
     }
 
     private static void makePottedFlower(BlockModelGenerators g, Block pottedBlock, Block block) {
-        g.createPlant(block, pottedBlock, BlockModelGenerators.PlantType.NOT_TINTED);
+        g.createPlantWithDefaultItem(block, pottedBlock, PlantType.NOT_TINTED);
     }
 
     private static void farmersDelightCrate(BlockModelGenerators g, Block block) {
@@ -106,40 +106,58 @@ public class ModBlockStateProvider {
     }
 
     private static void pieBlock(BlockModelGenerators g, Block block) {
-        MultiVariantGenerator generator = MultiVariantGenerator.multiVariant(block)
-                .with(PropertyDispatch.properties(PieBlock.FACING, PieBlock.BITES)
+        MultiVariantGenerator generator = MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(PieBlock.FACING, PieBlock.BITES)
                         .generate((direction, bites) -> {
                             String suffix = bites == 0 ? "" : "_slice" + bites;
-                            return Variant.variant()
-                                    .with(VariantProperties.Y_ROT, dirToRot(direction))
-                                    .with(VariantProperties.MODEL, blockResource(blockName(block) + suffix));
+
+                            ResourceLocation modelLoc = blockResource(blockName(block) + suffix);
+                            MultiVariant variant = plainVariant(modelLoc);
+                            VariantMutator rotation = dirToRot(direction);
+                            if (rotation != null) {
+                                variant = variant.with(rotation);
+                            }
+
+                            return variant;
                         })
                 );
         g.blockStateOutput.accept(generator);
     }
 
     private static void pancakeBlock(BlockModelGenerators g, Block block) {
-        MultiVariantGenerator generator = MultiVariantGenerator.multiVariant(block)
-                .with(PropertyDispatch.properties(PancakeBlock.FACING, PancakeBlock.SERVINGS)
+        MultiVariantGenerator generator = MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(PancakeBlock.FACING, PancakeBlock.SERVINGS)
                         .generate((direction, servings) -> {
                             String suffix = "_stage" + servings;
-                            return Variant.variant()
-                                    .with(VariantProperties.Y_ROT, dirToRot(direction))
-                                    .with(VariantProperties.MODEL, blockResource(blockName(block) + suffix));
+
+                            ResourceLocation modelLoc = blockResource(blockName(block) + suffix);
+                            MultiVariant variant = plainVariant(modelLoc);
+                            VariantMutator rotation = dirToRot(direction);
+                            if (rotation != null) {
+                                variant = variant.with(rotation);
+                            }
+
+                            return variant;
                         })
                 );
         g.blockStateOutput.accept(generator);
     }
 
     private static void riceRollBlock(BlockModelGenerators g, Block block) {
-        MultiVariantGenerator generator = MultiVariantGenerator.multiVariant(block)
-                .with(PropertyDispatch.properties(RiceRollRoyaleBlock.FACING, RiceRollRoyaleBlock.ROLL_SERVINGS)
+        MultiVariantGenerator generator = MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(RiceRollRoyaleBlock.FACING, RiceRollRoyaleBlock.ROLL_SERVINGS)
                         .generate((direction, servings) -> {
                             int invertedServings = RiceRollRoyaleBlock.MAX_SERVINGS - servings;
                             String suffix = invertedServings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftover" : "_stage" + invertedServings;
-                            return Variant.variant()
-                                    .with(VariantProperties.Y_ROT, dirToRot(direction))
-                                    .with(VariantProperties.MODEL, blockResource(blockName(block) + suffix));
+
+                            ResourceLocation modelLoc = blockResource(blockName(block) + suffix);
+                            MultiVariant variant = plainVariant(modelLoc);
+                            VariantMutator rotation = dirToRot(direction);
+                            if (rotation != null) {
+                                variant = variant.with(rotation);
+                            }
+
+                            return variant;
                         })
                 );
         g.blockStateOutput.accept(generator);
@@ -159,15 +177,15 @@ public class ModBlockStateProvider {
 
     private static void createBlock(BlockModelGenerators g, Block block, TextureMapping textureMapping, ModelTemplate modelTemplate) {
         ResourceLocation resourceLocation = modelTemplate.create(block, textureMapping, g.modelOutput);
-        MultiVariantGenerator variantGenerator = MultiVariantGenerator.multiVariant(block, Variant.variant().with(VariantProperties.MODEL, resourceLocation));
+        MultiVariantGenerator variantGenerator = MultiVariantGenerator.dispatch(block, plainVariant(resourceLocation));
 
         g.blockStateOutput.accept(variantGenerator);
     }
 
-    private static VariantProperties.Rotation dirToRot(Direction direction) {
-        return direction == Direction.NORTH ? VariantProperties.Rotation.R0
-                : direction == Direction.EAST ? VariantProperties.Rotation.R90
-                : direction == Direction.SOUTH ? VariantProperties.Rotation.R180
-                : VariantProperties.Rotation.R270;
+    private static VariantMutator dirToRot(Direction direction) {
+        return direction == Direction.NORTH ? null
+                : direction == Direction.EAST ? BlockModelGenerators.Y_ROT_90
+                : direction == Direction.SOUTH ? BlockModelGenerators.Y_ROT_180
+                : BlockModelGenerators.Y_ROT_270;
     }
 }

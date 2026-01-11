@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": {
-    "item": "rusticdelight:coffee_beans"
-  },
+  "ingredient": "rusticdelight:coffee_beans",
   "result": {
     "id": "rusticdelight:roasted_coffee_beans"
   }

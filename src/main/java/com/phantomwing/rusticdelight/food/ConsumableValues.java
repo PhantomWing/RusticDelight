@@ -29,71 +29,71 @@ public class ConsumableValues {
 
     public static final Consumable COOKING_OIL = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.CONFUSION, 400, 0, false, false), 0.5F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.NAUSEA, 400, 0, false, false), 0.5F))
             .build();
 
     public static final Consumable SYRUP = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .sound(SoundEvents.HONEY_DRINK)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 300, 0, false, false), 1.0F))
             .build();
 
     // Coffees
     public static final Consumable COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1800, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1800, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1800, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable MILK_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.MILK_BOTTLE_IGNORED))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable CHOCOLATE_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.HOT_COCOA_IGNORED, true))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable HONEY_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.MILK_BOTTLE_IGNORED))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable SYRUP_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.MILK_BOTTLE_IGNORED))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1800, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1800, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1800, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable DARK_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 1, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 900, 1, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 1, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 1, false, false), 1.0F))
             .build();
 
     // Sweets
     public static final Consumable FRUIT_BEIGNET = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0,false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 600, 0,false, false), 1.0F))
             .build();
     public static final Consumable HONEY_PANCAKE = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
             .build();
     public static final Consumable CHOCOLATE_PANCAKE = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
             .build();
     public static final Consumable CHERRY_BLOSSOM_PANCAKE = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F))
             .build();
     public static final Consumable VEGETABLE_PANCAKE = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 0, false, false), 1.0F))
             .build();
     public static final Consumable PUMPKIN_PANCAKE = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F))

@@ -2,27 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "rusticdelight:pumpkin_pancake"
-    },
-    {
-      "item": "rusticdelight:pumpkin_pancake"
-    },
-    {
-      "item": "rusticdelight:pumpkin_pancake"
-    },
-    {
-      "item": "rusticdelight:pumpkin_pancake"
-    },
-    {
-      "item": "rusticdelight:pumpkin_pancake"
-    },
-    {
-      "item": "rusticdelight:pumpkin_pancake"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "rusticdelight:pumpkin_pancake",
+    "rusticdelight:pumpkin_pancake",
+    "rusticdelight:pumpkin_pancake",
+    "rusticdelight:pumpkin_pancake",
+    "rusticdelight:pumpkin_pancake",
+    "rusticdelight:pumpkin_pancake",
+    "minecraft:bowl"
   ],
   "result": {
     "count": 1,

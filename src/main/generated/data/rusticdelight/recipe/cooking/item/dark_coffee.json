@@ -1,5 +1,6 @@
 {
   "type": "farmersdelight:cooking",
+  "category": "drinks",
   "container": {
     "count": 1,
     "id": "minecraft:glass_bottle"
@@ -7,26 +8,13 @@
   "cookingtime": 400,
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    }
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients"
   ],
-  "recipe_book_tab": "drinks",
   "result": {
     "count": 1,
     "id": "rusticdelight:dark_coffee"

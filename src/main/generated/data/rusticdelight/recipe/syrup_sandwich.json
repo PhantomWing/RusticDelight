@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:foods/bread"
-    },
-    {
-      "tag": "rusticdelight:syrup"
-    },
-    {
-      "item": "minecraft:sugar"
-    }
+    "#c:foods/bread",
+    "#rusticdelight:syrup",
+    "minecraft:sugar"
   ],
   "result": {
     "count": 1,

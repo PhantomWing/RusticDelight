@@ -1,18 +1,12 @@
 {
   "type": "farmersdelight:cooking",
+  "category": "meals",
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "c:foods/raw_beef"
-    },
-    {
-      "tag": "c:foods/carrot"
-    },
-    {
-      "tag": "c:foods/potato"
-    }
+    "#c:foods/raw_beef",
+    "#c:foods/carrot",
+    "#c:foods/potato"
   ],
-  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "farmersdelight:beef_stew"
