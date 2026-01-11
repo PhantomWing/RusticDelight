@@ -5,17 +5,17 @@ import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.block.custom.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.blockstates.Variant;
+import net.minecraft.client.data.models.blockstates.VariantProperties;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.data.models.blockstates.PropertyDispatch;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
-import net.minecraft.data.models.model.ModelTemplate;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
-import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -72,12 +72,12 @@ public class ModBlockStateProvider {
             return Variant.variant().with(VariantProperties.MODEL, resourceLocation);
         });
 
-        g.createSimpleFlatItemModel(cropBlock.asItem());
+        g.createFlatItemModel(cropBlock.asItem());
         g.blockStateOutput.accept(MultiVariantGenerator.multiVariant(cropBlock).with(propertyDispatch));
     }
 
     private static void makePottedFlower(BlockModelGenerators g, Block pottedBlock, Block block) {
-        g.createPlant(block, pottedBlock, BlockModelGenerators.TintState.NOT_TINTED);
+        g.createPlant(block, pottedBlock, BlockModelGenerators.PlantType.NOT_TINTED);
     }
 
     private static void farmersDelightCrate(BlockModelGenerators g, Block block) {
