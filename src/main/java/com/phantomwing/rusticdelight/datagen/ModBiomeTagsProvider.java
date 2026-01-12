@@ -21,15 +21,15 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
 
     private void addModTags() {
         this.tag(ModTags.Biomes.HAS_WILD_COTTON)
-            .addOptionalTag(BiomeTags.IS_FOREST.location())
-            .addOptionalTag(ConventionalBiomeTags.IS_FOREST.location());
+            .addOptionalTag(BiomeTags.IS_FOREST)
+            .addOptionalTag(ConventionalBiomeTags.IS_FOREST);
 
         this.tag(ModTags.Biomes.HAS_WILD_COFFEE)
-            .addOptionalTag(BiomeTags.IS_JUNGLE.location())
-            .addOptionalTag(ConventionalBiomeTags.IS_JUNGLE.location());
+            .addOptionalTag(BiomeTags.IS_JUNGLE)
+            .addOptionalTag(ConventionalBiomeTags.IS_JUNGLE);
 
         this.tag(ModTags.Biomes.HAS_WILD_BELL_PEPPERS)
-            .addOptionalTag(BiomeTags.IS_JUNGLE.location())
-            .addOptionalTag(ConventionalBiomeTags.IS_JUNGLE.location());
+            .addOptionalTag(BiomeTags.IS_JUNGLE)
+            .addOptionalTag(ConventionalBiomeTags.IS_JUNGLE);
     }
 }

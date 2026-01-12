@@ -18,7 +18,7 @@ public class ConsumableValues {
 
     // Generic
     public static final Consumable FAST_FOOD = Consumables.defaultFood()
-            .consumeSeconds(0.8F)
+            .consumeSeconds(CONSUME_FAST)
             .build();
 
     // Cooking products

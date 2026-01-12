@@ -30,7 +30,7 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
     }
 
     private void addMinecraftTags() {
-        this.getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
+        this.valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(
                         ModBlocks.COTTON_BOLL_CRATE,
                         ModBlocks.BELL_PEPPER_GREEN_CRATE,
@@ -38,13 +38,13 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
                         ModBlocks.BELL_PEPPER_RED_CRATE
                 );
 
-        this.getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(
+        this.valueLookupBuilder(BlockTags.SMALL_FLOWERS).add(
             ModBlocks.WILD_COTTON,
             ModBlocks.WILD_BELL_PEPPERS,
             ModBlocks.WILD_COFFEE
         );
 
-        this.getOrCreateTagBuilder(BlockTags.CROPS)
+        this.valueLookupBuilder(BlockTags.CROPS)
                 .add(
                         ModBlocks.COTTON_CROP,
                         ModBlocks.BELL_PEPPER_CROP,
@@ -54,38 +54,38 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     private void addCommonTags() {
         // Storage blocks
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_COTTON_SEEDS).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_COTTON_SEEDS).add(
                 ModBlocks.COTTON_SEEDS_BAG
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_COTTON).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_COTTON).add(
                 ModBlocks.COTTON_BOLL_CRATE
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_SEEDS).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_SEEDS).add(
                 ModBlocks.BELL_PEPPER_SEEDS_BAG
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN).add(
                 ModBlocks.BELL_PEPPER_GREEN_CRATE
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW).add(
                 ModBlocks.BELL_PEPPER_YELLOW_CRATE
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_RED).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_RED).add(
                 ModBlocks.BELL_PEPPER_RED_CRATE
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_COFFEE_BEANS).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_COFFEE_BEANS).add(
                 ModBlocks.COFFEE_BEANS_BAG
         );
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS).add(
                 ModBlocks.ROASTED_COFFEE_BEANS_BAG
         );
 
         // Duplicate tags
-        this.getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_COFFEE).add(
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_COFFEE).add(
                 ModBlocks.COFFEE_BEANS_BAG
         );
 
         // Main storage block tag
-        this.getOrCreateTagBuilder(ConventionalBlockTags.STORAGE_BLOCKS)
+        this.valueLookupBuilder(ConventionalBlockTags.STORAGE_BLOCKS)
                 .addTag(CommonTags.STORAGE_BLOCKS_COTTON_SEEDS)
                 .addTag(CommonTags.STORAGE_BLOCKS_COTTON)
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_SEEDS)
@@ -99,28 +99,28 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     private void addCompatibilityTags() {
         // Farmers Delight
-        this.getOrCreateTagBuilder(ModTags.STRAW_BLOCKS).add(
+        this.valueLookupBuilder(ModTags.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG,
                 ModBlocks.BELL_PEPPER_SEEDS_BAG,
                 ModBlocks.COFFEE_BEANS_BAG,
                 ModBlocks.ROASTED_COFFEE_BEANS_BAG
         );
-        this.getOrCreateTagBuilder(ModTags.WILD_CROPS).add(
+        this.valueLookupBuilder(ModTags.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON,
                 ModBlocks.WILD_BELL_PEPPERS,
                 ModBlocks.WILD_COFFEE
         );
 
         // Serene Seasons
-        this.getOrCreateTagBuilder(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS_BLOCK).add(
+        this.valueLookupBuilder(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS_BLOCK).add(
                 ModBlocks.COTTON_CROP
         );
-        this.getOrCreateTagBuilder(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
+        this.valueLookupBuilder(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
                 ModBlocks.COTTON_CROP,
                 ModBlocks.BELL_PEPPER_CROP,
                 ModBlocks.COFFEE_CROP
         );
-        this.getOrCreateTagBuilder(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(
+        this.valueLookupBuilder(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(
                 ModBlocks.BELL_PEPPER_CROP,
                 ModBlocks.COFFEE_CROP
         );
