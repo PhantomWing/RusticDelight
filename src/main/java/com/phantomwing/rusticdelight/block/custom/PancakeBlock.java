@@ -70,7 +70,7 @@ public class PancakeBlock extends Block {
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             if (consumeServing(level, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
@@ -114,7 +114,7 @@ public class PancakeBlock extends Block {
             if (foodProperties != null && consumable != null) {
                 playerIn.getFoodData().eat(foodProperties);
                 servingStack.getAllOfType(ConsumableListener.class).forEach(consumableListener -> consumableListener.onConsume(level, playerIn, servingStack, consumable));
-                if (!level.isClientSide) {
+                if (!level.isClientSide()) {
                     consumable.onConsumeEffects().forEach(consumeEffect -> consumeEffect.apply(level, servingStack, playerIn));
                 }
             }
@@ -170,8 +170,8 @@ public class PancakeBlock extends Block {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState blockState, @NotNull Level level, @NotNull BlockPos pos) {
-        return blockState.getValue(SERVINGS);
+    protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
+        return state.getValue(SERVINGS);
     }
 
     @Override

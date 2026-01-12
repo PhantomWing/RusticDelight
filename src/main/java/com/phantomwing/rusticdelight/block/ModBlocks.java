@@ -67,11 +67,11 @@ public class ModBlocks {
 
     // Unobtainable blocks
     public static final Block COTTON_CROP = registerBlock("cotton", Blocks.CARROTS,
-            props -> new CottonCropBlock(props.noOcclusion().noCollission()));
+            props -> new CottonCropBlock(props.noOcclusion().noCollision()));
     public static final Block BELL_PEPPER_CROP = registerBlock("bell_peppers", Blocks.CARROTS,
-            props -> new BellPepperCropBlock(props.noOcclusion().noCollission()));
+            props -> new BellPepperCropBlock(props.noOcclusion().noCollision()));
     public static final Block COFFEE_CROP = registerBlock("coffee", Blocks.CARROTS,
-            props -> new CoffeeCropBlock(props.noOcclusion().noCollission()));
+            props -> new CoffeeCropBlock(props.noOcclusion().noCollision()));
 
     public static final Block POTTED_WILD_COTTON = registerBlock("potted_wild_cotton", Blocks.POTTED_ALLIUM,
             props -> new FlowerPotBlock(ModBlocks.WILD_COTTON, props.noOcclusion()));
