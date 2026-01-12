@@ -28,7 +28,7 @@
 	"mixins": [],
 	"depends": {
 		"fabricloader": ">=0.18.4",
-		"minecraft": ">=1.21.6 <=1.21.6",
+		"minecraft": ">=1.21.7 <=1.21.7",
 		"java": ">=21",
 		"fabric-api": "*",
 		"farmersdelight": "*"

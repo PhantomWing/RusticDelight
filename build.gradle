@@ -74,7 +74,7 @@ dependencies {
 	//modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
 
 	// Appleskin
-	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc${minecraft_version}-${appleskin_version}")
+	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc1.21.6-${appleskin_version}")
 }
 
 processResources {
