@@ -6,16 +6,9 @@
   "cookingtime": 400,
   "experience": 1.0,
   "ingredients": [
-    [
-      {
-        "type": "forge:partial_nbt",
-        "item": "minecraft:potion",
-        "nbt": "{Potion:\"minecraft:water\"}"
-      },
-      {
-        "item": "minecraft:water_bucket"
-      }
-    ],
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
     {
       "tag": "rusticdelight:coffee_ingredients"
     },

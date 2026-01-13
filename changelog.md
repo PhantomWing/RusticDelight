@@ -1,3 +1,41 @@
+# 1.5.0
+### Additions
+- Added slices for Bell Peppers
+  - Red Bell Pepper Slice
+  - Green Bell Pepper Slice
+  - Yellow Bell Pepper Slice
+- Added slices for Roasted Bell Peppers
+  - Roasted Red Bell Pepper Slice
+  - Roasted Green Bell Pepper Slice
+  - Roasted Yellow Bell Pepper Slice
+- Added compatibility with Brewin' and Chewin'
+  - Added Coaster models for most of Rustic Delight's items, allowing you to place them in your world!
+  - Added Coaster models for the following Farmer's Delight items:
+    - Wheat Dough
+    - Dumplings
+    - Cabbage Rolls
+  - Use bell peppers as a crafting ingredient for Pizza
+  - Use Cheese as a crafting ingredient for Stuffed Bell Pepper
+- Added new tags: `spring_roll_ingredients` and `stuffed_bell_pepper_ingredients`
+- Added Kazakh translations (thank you ninsent!)
+- Added Russian translations (thank you MaxKuz67, mpustovoi & JedaiGames!)
+
+### Changes
+- Bell Pepper can now be used to cook: Spring Rolls, Cabbage Rolls
+- Overridden some Farmer's Delight recipes to allow Potato Slices: Baked Cod Stew, Beef Stew, Vegetable Soup, Mushroom Rice
+- Simplified Bell Pepper Pasta recipe to allow any combination of bell peppers
+- Bell Pepper Roll now requires a Bell Pepper Slice, instead of a whole Bell Pepper
+- Bell Pepper now restores 2 hunger points instead of 1
+- Simplified Coffee and Dark Coffee recipes to only require Roasted Coffee Beans (you don't need a Water Bottle anymore)
+- Simplified Honey Coffee recipe (you don't need to add Sugar anymore)
+- Improved various textures
+- Add biome tags to control spawning of Wild Bell Peppers, Wild Cotton and Wild Coffee
+- Add missing translation keys for item tags, potted plants & crops
+
+### Fixes
+- Fix crop models for Bell Peppers and Coffee floating above the ground
+  - They now use Farmer's Delight's `crop_cross` model
+
 # 1.4.1
 ### Additions
 - Added Spanish (Argentina) translations (thank you ex0planet!)

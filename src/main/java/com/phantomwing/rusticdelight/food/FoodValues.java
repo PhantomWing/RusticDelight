@@ -21,6 +21,8 @@ public class FoodValues {
 
     // Basic foods
     public static final FoodProperties BELL_PEPPER = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.2F).build();
+    public static final FoodProperties BELL_PEPPER_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1F).build();
     public static final FoodProperties ROASTED_COFFEE_BEANS = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.2F).build();
@@ -28,6 +30,8 @@ public class FoodValues {
             .nutrition(5).saturationMod(1.2F).build();
     public static final FoodProperties ROASTED_BELL_PEPPER = (new FoodProperties.Builder())
             .nutrition(5).saturationMod(0.8F).build();
+    public static final FoodProperties ROASTED_BELL_PEPPER_SLICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.6F).build();
     public static final FoodProperties POTATO_SLICES = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.3F).build();
     public static final FoodProperties BAKED_POTATO_SLICES = (new FoodProperties.Builder())

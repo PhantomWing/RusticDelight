@@ -17,6 +17,7 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.DifferenceIngredient;
@@ -45,6 +46,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buildCraftingRecipes(output);
         buildCuttingRecipes(output);
         buildCookingRecipes(output);
+        buildFarmersDelightOverrideRecipes(output);
     }
 
     private void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> output) {
@@ -52,6 +54,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         foodCookingRecipes(output, ModItems.BELL_PEPPER_GREEN.get(), ModItems.ROASTED_BELL_PEPPER_GREEN.get(), FOOD_COOKING_EXP);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_YELLOW.get(), ModItems.ROASTED_BELL_PEPPER_YELLOW.get(), FOOD_COOKING_EXP);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_RED.get(), ModItems.ROASTED_BELL_PEPPER_RED.get(), FOOD_COOKING_EXP);
+
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_GREEN.get(), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN.get(), FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_YELLOW.get(), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW.get(), FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_RED.get(), ModItems.ROASTED_BELL_PEPPER_SLICE_RED.get(), FOOD_COOKING_EXP);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BELL_PEPPER_SOUP.get(), 1)
                 .requires(Items.BOWL)
                 .requires(ForgeTags.VEGETABLES_BELL_PEPPER)
@@ -70,9 +77,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         foodCookingRecipes(output, ModItems.CALAMARI_SLICE.get(), ModItems.COOKED_CALAMARI_SLICE.get(), FOOD_COOKING_EXP);
 
         // Rolls
-        simpleSushiRoll(output, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_ROLL_GREEN);
-        simpleSushiRoll(output, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_ROLL_YELLOW);
-        simpleSushiRoll(output, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_ROLL_RED);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_ROLL_GREEN);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_ROLL_YELLOW);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_ROLL_RED);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL.get(), 2)
                 .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
@@ -208,14 +215,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE.get(), 1)
                 .requires(ModItems.MILK_COFFEE.get())
                 .requires(Items.HONEY_BOTTLE)
-                .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE.get()), has(ModItems.MILK_COFFEE.get()))
                 .save(output, getRecipeName(ModItems.MILK_COFFEE.get(), ModItems.HONEY_COFFEE.get()));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE.get(), 1)
                 .requires(ModItems.COFFEE.get())
                 .requires(ForgeTags.MILK)
                 .requires(Items.HONEY_BOTTLE)
-                .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.COFFEE.get()), has(ModItems.COFFEE.get()))
                 .save(output, getRecipeName(ModItems.COFFEE.get(), ModItems.HONEY_COFFEE.get()));
 
@@ -273,6 +278,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResultWithChance(ModItems.BELL_PEPPER_RED.get(), 0.3F)
                 .addResultWithChance(Items.RED_DYE, 0.1F)
                 .build(output, getCuttingPath(ModItems.WILD_BELL_PEPPERS.get()));
+
+        // Bell pepper slices
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_GREEN.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+                .build(output, getCuttingPath(ModItems.BELL_PEPPER_GREEN.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_YELLOW.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+                .build(output, getCuttingPath(ModItems.BELL_PEPPER_YELLOW.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_RED.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+                .build(output, getCuttingPath(ModItems.BELL_PEPPER_RED.get()));
+
+        // Roasted bell pepper slices
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+                .build(output, getCuttingPath(ModItems.ROASTED_BELL_PEPPER_GREEN.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+                .build(output, getCuttingPath(ModItems.ROASTED_BELL_PEPPER_YELLOW.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_RED.get(), 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+                .build(output, getCuttingPath(ModItems.ROASTED_BELL_PEPPER_RED.get()));
 
         // Coffee
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.COFFEE_BEANS.get(), 1)
@@ -357,7 +384,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addIngredient(ModTags.Items.COOKING_OIL)
                 .addIngredient(ForgeTags.DOUGH)
                 .addIngredient(ForgeTags.SALAD_INGREDIENTS)
-                .addIngredient(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
+                .addIngredient(ModTags.Items.SPRING_ROLL_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(output, getCookingPath(ModItems.SPRING_ROLLS.get()));
@@ -402,24 +429,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(output, getCookingPath(ModItems.FRIED_MUSHROOMS.get()));
 
-        // Fried Rice (Override)
-        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_RICE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
-                .addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(ModTags.Items.COOKING_OIL)))
-                .addIngredient(ForgeTags.VEGETABLES_CARROT)
-                .addIngredient(ForgeTags.VEGETABLES_ONION)
-                .unlockedByAnyIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get(), Items.EGG, Items.CARROT, vectorwing.farmersdelight.common.registry.ModItems.ONION.get(), ModItems.COOKING_OIL.get())
-                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(output);
-
-        // Fried Egg (Alternative)
-        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
-                .addIngredient(Items.EGG)
-                .addIngredient(ModTags.Items.COOKING_OIL)
-                .unlockedByAnyIngredient(ModItems.COOKING_OIL.get())
-                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .build(output, getRecipeName(ModItems.COOKING_OIL.get(), vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get()));
-
         // Bell Pepper Soup
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BELL_PEPPER_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
                 .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
@@ -433,21 +442,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_GREEN.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
                 .addIngredient(ModItems.BELL_PEPPER_GREEN.get())
                 .addIngredient(ForgeTags.GRAIN_RICE)
-                .addIngredient(stuffedBellPepperFilling())
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(output, getCookingPath(ModItems.STUFFED_BELL_PEPPER_GREEN.get()));
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_YELLOW.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
                 .addIngredient(ModItems.BELL_PEPPER_YELLOW.get())
                 .addIngredient(ForgeTags.GRAIN_RICE)
-                .addIngredient(stuffedBellPepperFilling())
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_YELLOW.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(output, getCookingPath(ModItems.STUFFED_BELL_PEPPER_YELLOW.get()));
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_RED.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
                 .addIngredient(ModItems.BELL_PEPPER_RED.get())
                 .addIngredient(ForgeTags.GRAIN_RICE)
-                .addIngredient(stuffedBellPepperFilling())
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_RED.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(output, getCookingPath(ModItems.STUFFED_BELL_PEPPER_RED.get()));
@@ -455,16 +464,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Bell Pepper Pasta
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BELL_PEPPER_PASTA.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
                 .addIngredient(ForgeTags.PASTA)
-                .addIngredient(ModItems.BELL_PEPPER_GREEN.get())
-                .addIngredient(ModItems.BELL_PEPPER_YELLOW.get())
-                .addIngredient(ModItems.BELL_PEPPER_RED.get())
+                .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
+                .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
+                .addIngredient(ForgeTags.VEGETABLES_BELL_PEPPER)
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN.get(), ModItems.BELL_PEPPER_YELLOW.get(), ModItems.BELL_PEPPER_RED.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(output, getCookingPath(ModItems.BELL_PEPPER_PASTA.get()));
 
         // Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COFFEE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(waterIngredient())
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -500,7 +509,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(Items.HONEY_BOTTLE, 1)
-                .addIngredient(Items.SUGAR, 1)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .build(output, ModItems.HONEY_COFFEE.getId());
@@ -518,7 +526,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Dark Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE.get(), 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(waterIngredient())
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -537,6 +545,65 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedByAnyIngredient(ModItems.COFFEE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(output, ModItems.COFFEE_BRAISED_BEEF.getId());
+    }
+
+    private void buildFarmersDelightOverrideRecipes(@NotNull Consumer<FinishedRecipe> output) {
+        // Fried Rice
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_RICE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .addIngredient(CompoundIngredient.of(Ingredient.of(Tags.Items.EGGS), Ingredient.of(ModTags.Items.COOKING_OIL)))
+                .addIngredient(ForgeTags.VEGETABLES_CARROT)
+                .addIngredient(ForgeTags.VEGETABLES_ONION)
+                .unlockedByAnyIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get(), Items.EGG, Items.CARROT, vectorwing.farmersdelight.common.registry.ModItems.ONION.get(), ModItems.COOKING_OIL.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(output);
+
+        // Fried Egg
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
+                .addIngredient(Items.EGG)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(output, getRecipeName(ModItems.COOKING_OIL.get(), vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get()));
+
+        // Baked Cod Stew
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.BAKED_COD_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ForgeTags.RAW_FISHES_COD)
+                .addIngredient(ForgeTags.VEGETABLES_POTATO)
+                .addIngredient(ModTags.Items.RAW_AND_COOKED_EGGS)
+                .addIngredient(ForgeTags.VEGETABLES_TOMATO)
+                .unlockedByAnyIngredient(Items.COD, Items.POTATO, vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get(), Items.EGG)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(output);
+
+        // Beef Stew
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.BEEF_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ForgeTags.RAW_BEEF)
+                .addIngredient(ForgeTags.VEGETABLES_CARROT)
+                .addIngredient(ForgeTags.VEGETABLES_POTATO)
+                .unlockedByAnyIngredient(Items.BEEF, Items.CARROT, Items.POTATO)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(output);
+
+        // Mushroom Rice
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.MUSHROOM_RICE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(Items.BROWN_MUSHROOM)
+                .addIngredient(Items.RED_MUSHROOM)
+                .addIngredient(ForgeTags.CROPS_RICE)
+                .addIngredient(CompoundIngredient.of(Ingredient.of(ForgeTags.VEGETABLES_CARROT), Ingredient.of(ForgeTags.VEGETABLES_POTATO)))
+                .unlockedByAnyIngredient(Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(output);
+
+        // Vegetable Soup
+        CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.VEGETABLE_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ForgeTags.VEGETABLES_CARROT)
+                .addIngredient(ForgeTags.VEGETABLES_POTATO)
+                .addIngredient(ForgeTags.VEGETABLES_BEETROOT)
+                .addIngredient(ForgeTags.SALAD_INGREDIENTS)
+                .unlockedByAnyIngredient(Items.CARROT, vectorwing.farmersdelight.common.registry.ModItems.ONION.get(), Items.BEETROOT)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(output);
     }
 
     protected static void oneToOne(Consumer<FinishedRecipe> recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {
@@ -697,17 +764,5 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static String getCuttingPath(String itemName) {
         return RusticDelight.MOD_ID + ":cutting/" + itemName;
-    }
-
-    private static Ingredient stuffedBellPepperFilling() {
-        return DifferenceIngredient.of(Ingredient.of(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS), Ingredient.of(ForgeTags.VEGETABLES_BELL_PEPPER));
-    }
-
-    private static Ingredient waterIngredient() {
-        CompoundTag waterPotionTag = new CompoundTag();
-        waterPotionTag.putString(PotionUtils.TAG_POTION, Objects.requireNonNull(ForgeRegistries.POTIONS.getKey(Potions.WATER)).toString());
-        Ingredient waterBottleIngredient = PartialNBTIngredient.of(waterPotionTag, Items.POTION);
-
-        return CompoundIngredient.of(waterBottleIngredient, Ingredient.of(Items.WATER_BUCKET));
     }
 }

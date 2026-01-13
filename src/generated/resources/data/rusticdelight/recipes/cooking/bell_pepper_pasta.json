@@ -10,13 +10,13 @@
       "tag": "forge:pasta"
     },
     {
-      "item": "rusticdelight:bell_pepper_green"
+      "tag": "forge:vegetables/bell_pepper"
     },
     {
-      "item": "rusticdelight:bell_pepper_yellow"
+      "tag": "forge:vegetables/bell_pepper"
     },
     {
-      "item": "rusticdelight:bell_pepper_red"
+      "tag": "forge:vegetables/bell_pepper"
     }
   ],
   "recipe_book_tab": "meals",

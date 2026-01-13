@@ -51,6 +51,11 @@ public class CompatibilityTags
     public static final String SUPPLEMENTARIES = "supplementaries";
     public static final TagKey<Item> COOKIES = externalItemTag(SUPPLEMENTARIES, "cookies");
 
+    // Brewin' and Chewin'
+    public static final String BREWIN_AND_CHEWIN = "brewinandchewin";
+    public static final TagKey<Item> BREWIN_AND_CHEWIN_PIZZA_TOPPING = externalItemTag(BREWIN_AND_CHEWIN, "pizza_toppings");
+    public static final TagKey<Item> BREWIN_AND_CHEWIN_CHEESE_WEDGE = externalItemTag(BREWIN_AND_CHEWIN, "cheese_wedges");
+
     private static TagKey<Item> externalItemTag(String modId, String path) {
         return ItemTags.create(new ResourceLocation(modId, path));
     }

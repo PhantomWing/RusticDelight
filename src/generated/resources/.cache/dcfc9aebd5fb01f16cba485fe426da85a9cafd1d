@@ -1,6 +1,7 @@
-// 1.20.1	2025-02-15T16:55:05.2282773	Tags for minecraft:item mod id rusticdelight
-0430fba6e0d034afc79cd1b2042b308fd4e42847 data/create/tags/items/upright_on_belt.json
-86e6f2552699e81cdcd6db2f44ae31cc05f21da5 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
+// 1.20.1	2026-01-13T22:54:27.9942088	Tags for minecraft:item mod id rusticdelight
+572bbd8b87c32e0eac439c2848b5d22522bd21f6 data/brewinandchewin/tags/items/pizza_toppings.json
+898238bce37bc57fa381434d1d295232bdd9976e data/create/tags/items/upright_on_belt.json
+e16c29676990f9af38af6c110cf055a5689e2f23 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
 d8f33fa3dbef149f2ee2afa3700c1d7d7bc6910e data/farmersdelight/tags/items/fish_slices.json
 e9e417a7c3cd0dfc639374364ae6c703402fe1e6 data/farmersdelight/tags/items/wild_crops.json
 ae6b6da0134dfa7bb0df90226964388a4cc0eff7 data/forge/tags/items/cooked_fishes.json
@@ -30,7 +31,7 @@ dccdc9242e0fb949583e797084780e91b6c7ded9 data/forge/tags/items/storage_blocks/co
 93c13f9cd23064f76edeaa613ca663dfa31d0ada data/forge/tags/items/storage_blocks/roasted_coffee_beans.json
 5b0cd6b147e8a465b5c830f57d3edc65fba70fb9 data/forge/tags/items/tentacles.json
 10d1f23da1ca3676ae3894c7c31d08c6de8a6c80 data/forge/tags/items/vegetables.json
-3334bb74711edea7962cf4155ec9588c2989be22 data/forge/tags/items/vegetables/bell_pepper.json
+a66cab3ab69e21915f179d80b330b26e2e5df45f data/forge/tags/items/vegetables/bell_pepper.json
 680b2c76c8866d78dcfbeec0e5491643a896c174 data/forge/tags/items/vegetables/potato.json
 dbf4a940bd932e09d3a80e4a4c5272383684f445 data/frycooks_delight/tags/items/has_fish_slice.json
 aa2ef08285739c046b93c2ecfb83989927edeb46 data/minecraft/tags/items/fishes.json
@@ -43,6 +44,9 @@ c2122a7767958a3c19ee1e3fe408f30bf692f325 data/rusticdelight/tags/items/cherry_bl
 20aa1b973badfb11d7e4780c1c228ffa741c85f2 data/rusticdelight/tags/items/coffee_ingredients.json
 5ad45c98c655f0647bf0a4b05337e716ccb2b154 data/rusticdelight/tags/items/cooking_oil.json
 2e49b93bd0afeb1c3a6507c90202c9f38966934f data/rusticdelight/tags/items/cooking_oil_ingredients.json
+864449f8ea075edf339578a03214357f4b4bbed5 data/rusticdelight/tags/items/raw_cooked_eggs.json
+a53c61b8725c099e5df8962c431960801780f09f data/rusticdelight/tags/items/spring_roll_ingredients.json
+eb39dc1a1806445e8d86d3196a985c5135dd96d6 data/rusticdelight/tags/items/stuffed_bell_pepper_ingredients.json
 21cd4aca6b91e052ae5e281e30902b44d2471223 data/rusticdelight/tags/items/sweet_liquids.json
 937167656a077d434dbc4d95d3f1714dd1eac16e data/rusticdelight/tags/items/syrup.json
 901f61aac8244af1984f67a080b8137a87585753 data/rusticdelight/tags/items/syrup_ingredients.json

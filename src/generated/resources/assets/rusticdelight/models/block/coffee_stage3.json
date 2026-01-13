@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "rusticdelight:block/crop_cross",
   "render_type": "minecraft:cutout",
   "textures": {
     "cross": "rusticdelight:block/coffee_stage3"

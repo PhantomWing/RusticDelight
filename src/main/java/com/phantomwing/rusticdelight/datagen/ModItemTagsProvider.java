@@ -37,6 +37,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addModTags() {
+        // Cooking oil
         this.tag(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .add(ModItems.COTTON_SEEDS.get(), Items.PUMPKIN_SEEDS)
                 .addOptionalTag(ForgeTags.SEEDS_CANOLA)
@@ -47,12 +48,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.COOKING_OIL.get()
         ).addOptional(new ResourceLocation(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_oil"));
 
+        // Cherry blossom foods
         this.tag(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS).add(
                 Items.PINK_PETALS,
                 Items.CHERRY_LEAVES,
                 Items.CHERRY_SAPLING
         );
 
+        // Calamari
         this.tag(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
                 .addTag(ForgeTags.RAW_FISHES_CALAMARI)
                 .remove(ModItems.CALAMARI.get())
@@ -83,6 +86,42 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ModTags.Items.SWEET_LIQUIDS).add(
                 Items.HONEY_BOTTLE
         ).addTag(ModTags.Items.SYRUP);
+
+        // Eggs
+        this.tag(ModTags.Items.RAW_AND_COOKED_EGGS)
+                .addTag(Tags.Items.EGGS)
+                .addOptionalTag(ForgeTags.COOKED_EGGS);
+
+        // Spring rolls
+        this.tag(ModTags.Items.SPRING_ROLL_INGREDIENTS)
+                .addTag(ForgeTags.RAW_FISHES)
+                .addOptionalTag(ForgeTags.RAW_PORK)
+                .addOptionalTag(ForgeTags.RAW_CHICKEN)
+                .addOptionalTag(ForgeTags.RAW_BEEF)
+                .addOptionalTag(ForgeTags.RAW_MUTTON)
+                .addTag(Tags.Items.EGGS)
+                .addTag(Tags.Items.MUSHROOMS)
+                .addOptionalTag(ForgeTags.VEGETABLES_CARROT)
+                .addTag(ForgeTags.VEGETABLES_POTATO)
+                .addOptionalTag(ForgeTags.VEGETABLES_BEETROOT)
+                .addTag(ForgeTags.VEGETABLES_BELL_PEPPER);
+
+        // Stuffed bell peppers
+        this.tag(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .addTag(ForgeTags.RAW_FISHES)
+                .addOptionalTag(ForgeTags.RAW_PORK)
+                .addOptionalTag(ForgeTags.RAW_CHICKEN)
+                .addOptionalTag(ForgeTags.RAW_BEEF)
+                .addOptionalTag(ForgeTags.RAW_MUTTON)
+                .addTag(Tags.Items.EGGS)
+                .addTag(Tags.Items.MUSHROOMS)
+                .addOptionalTag(ForgeTags.VEGETABLES_CARROT)
+                .addOptionalTag(ForgeTags.VEGETABLES_POTATO)
+                .addOptionalTag(ForgeTags.VEGETABLES_BEETROOT)
+                .addOptionalTag(ForgeTags.VEGETABLES_TOMATO)
+                .addOptionalTag(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+                .addOptionalTag(ForgeTags.VEGETABLES_ONION)
+                .addOptionalTag(CompatibilityTags.BREWIN_AND_CHEWIN_CHEESE_WEDGE);
     }
 
     private void addMinecraftTags() {
@@ -117,18 +156,21 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Create
         this.tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT).add(
                 ModItems.COOKING_OIL.get(),
+                ModItems.SYRUP.get(),
                 ModItems.COFFEE.get(),
                 ModItems.MILK_COFFEE.get(),
                 ModItems.HONEY_COFFEE.get(),
                 ModItems.CHOCOLATE_COFFEE.get(),
+                ModItems.SYRUP_COFFEE.get(),
                 ModItems.DARK_COFFEE.get(),
-                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get()
+                ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
+                ModItems.SYRUP_CHEESECAKE.get()
         );
 
         // Farmer's Delight
-        this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS).add(
-                ModItems.POTATO_SLICES.get()
-        );
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
+                .add(ModItems.POTATO_SLICES.get())
+                .addTag(ForgeTags.VEGETABLES_BELL_PEPPER);
 
         // Serene Seasons
         this.tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
@@ -159,6 +201,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(CompatibilityTags.HAS_FISH_SLICE).add(
                 ModItems.CALAMARI.get()
         );
+
+        // Brewin' and Chewin
+        this.tag(CompatibilityTags.BREWIN_AND_CHEWIN_PIZZA_TOPPING).addTag(ForgeTags.VEGETABLES_BELL_PEPPER);
 
         // Supplementaries
         this.tag(CompatibilityTags.COOKIES).addTag(
@@ -294,6 +339,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         );
         this.tag(ForgeTags.VEGETABLES_BELL_PEPPER).addTag(
                 ForgeTags.CROPS_BELL_PEPPER
+        ).add(
+                ModItems.BELL_PEPPER_SLICE_GREEN.get(),
+                ModItems.BELL_PEPPER_SLICE_YELLOW.get(),
+                ModItems.BELL_PEPPER_SLICE_RED.get()
         );
 
         // Cookies

@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_jungle",
+  "biomes": "#rusticdelight:has_wild_coffee",
   "features": "rusticdelight:wild_coffee_placed",
   "step": "vegetal_decoration"
 }

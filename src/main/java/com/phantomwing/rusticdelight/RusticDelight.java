@@ -92,6 +92,10 @@ public class RusticDelight
         // 50% chance
         ComposterBlock.COMPOSTABLES.put(ModItems.COTTON_BOLL.get(), 0.5f);
         ComposterBlock.COMPOSTABLES.put(ModItems.POTATO_SLICES.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.COFFEE_BEANS.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.BELL_PEPPER_SLICE_GREEN.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.BELL_PEPPER_SLICE_YELLOW.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.BELL_PEPPER_SLICE_RED.get(), 0.5f);
 
         // 65% chance
         ComposterBlock.COMPOSTABLES.put(ModItems.BELL_PEPPER_GREEN.get(), 0.65f);
@@ -100,7 +104,6 @@ public class RusticDelight
         ComposterBlock.COMPOSTABLES.put(ModItems.WILD_COTTON.get(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModItems.WILD_BELL_PEPPERS.get(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModItems.WILD_COFFEE.get(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.COFFEE_BEANS.get(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModItems.ROASTED_COFFEE_BEANS.get(), 0.65f);
 
         // 85% chance
