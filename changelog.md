@@ -1,3 +1,13 @@
+# 1.5.1
+### Additions
+- Added Spanish (Argentina) translations (thank you ex0planet!)
+- Added Korean translations (thank you TAILS!)
+
+### Fixes
+- Added Cloth Config as a dependency
+- Added rusticdelightrefabricated to the "breaks" list in fabric.mod.json to prevent conflicts with (unofficial) Rustic Delight Refabricated
+
+
 # 1.5.0
 ### Additions
 - Added configuration options (JSON file)
