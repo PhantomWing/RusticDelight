@@ -10,7 +10,7 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -420,7 +420,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private Item compatItem(String namespace, String itemName) {
-        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM,ResourceLocation.fromNamespaceAndPath(namespace, itemName));
+        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(namespace, itemName));
         return new Item(new Item.Properties().setId(key));
     }
 

@@ -10,7 +10,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -222,7 +222,7 @@ public class ModItems {
     }
 
     private static Item registerWithTab(String name, Function<Item.Properties, Item> function, Item.Properties props) {
-        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
+        Identifier loc = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
         props.setId(ResourceKey.create(Registries.ITEM, loc));
 
         Item item = function.apply(props);
@@ -237,7 +237,7 @@ public class ModItems {
 
     private static Item registerBlockWithTab(Block block, Item.Properties props) {
         String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
-        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
+        Identifier loc = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
 
         props.useBlockDescriptionPrefix();
         props.setId(ResourceKey.create(Registries.ITEM, loc));
@@ -253,7 +253,7 @@ public class ModItems {
     }
 
     private static Item registerItemNameBlockWithTab(String name, Block block, Item.Properties props) {
-        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
+        Identifier loc = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
 
         props.setId(ResourceKey.create(Registries.ITEM, loc));
 

@@ -6,7 +6,7 @@ import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -25,7 +25,7 @@ public class ModPotions {
     private static Holder<Potion> register(String name, Holder<MobEffect> effect, int duration) {
         return Registry.registerForHolder(
                 BuiltInRegistries.POTION,
-                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
+                Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
                 new Potion(name, new MobEffectInstance(effect, duration, 0))
         );
     }
@@ -33,7 +33,7 @@ public class ModPotions {
     private static Holder<Potion> register(String name, String potionName, Holder<MobEffect> effect, int duration, int amplifier) {
         return Registry.registerForHolder(
                 BuiltInRegistries.POTION,
-                ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
+                Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name),
                 new Potion(potionName, new MobEffectInstance(effect, duration, amplifier))
         );
     }

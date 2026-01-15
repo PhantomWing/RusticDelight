@@ -13,8 +13,8 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import static vectorwing.farmersdelight.common.FoodValues.*;
 
 public class ConsumableValues {
-    private static float CONSUME_FAST = 0.8f;
-    private static float CONSUME_SLOW = 2.0f;
+    private static final float CONSUME_FAST = 0.8f;
+    private static final float CONSUME_SLOW = 2.0f;
 
     // Generic
     public static final Consumable FAST_FOOD = Consumables.defaultFood()

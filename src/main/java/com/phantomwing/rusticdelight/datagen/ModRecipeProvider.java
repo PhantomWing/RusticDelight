@@ -9,13 +9,13 @@ import com.phantomwing.rusticdelight.util.ItemUtils;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -43,7 +43,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
+    protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.@NotNull Provider registryLookup, @NotNull RecipeOutput exporter) {
         return new RecipeProvider(registryLookup, exporter) {
             final HolderGetter<Item> holderGetter = registryLookup.lookupOrThrow(Registries.ITEM);
 
@@ -277,65 +277,65 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COTTON), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.COTTON_SEEDS, 1)
                         .addResultWithChance(ModItems.COTTON_BOLL, 0.3F)
                         .addResultWithChance(Items.WHITE_DYE, 0.1F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.WILD_COTTON));
+                        .build(output, ItemUtils.getIdentifier(ModItems.WILD_COTTON));
 
                 // Bell pepper
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_BELL_PEPPERS), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SEEDS, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_RED, 0.3F)
                         .addResultWithChance(Items.RED_DYE, 0.1F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.WILD_BELL_PEPPERS));
+                        .build(output, ItemUtils.getIdentifier(ModItems.WILD_BELL_PEPPERS));
 
                 // Bell pepper slices
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BELL_PEPPER_GREEN));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_GREEN));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BELL_PEPPER_YELLOW));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_YELLOW));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BELL_PEPPER_RED));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_RED));
 
                 // Roasted bell pepper slices
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.ROASTED_BELL_PEPPER_GREEN));
+                        .build(output, ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_GREEN));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.ROASTED_BELL_PEPPER_YELLOW));
+                        .build(output, ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_YELLOW));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
-                        .build(output,ItemUtils.getResourceLocation(ModItems.ROASTED_BELL_PEPPER_RED));
+                        .build(output,ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_RED));
 
                 // Coffee
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
                         .addResultWithChance(ModItems.COFFEE_BEANS, 0.3F)
                         .addResultWithChance(Items.YELLOW_DYE, 0.1F)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.WILD_COFFEE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.WILD_COFFEE));
 
                 // Food
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES, 2)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.POTATO_SLICES));
+                        .build(output, ItemUtils.getIdentifier(ModItems.POTATO_SLICES));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAKED_POTATO), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BAKED_POTATO_SLICES, 2)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BAKED_POTATO_SLICES));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BAKED_POTATO_SLICES));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE, 2)
                         .addResult(Items.BONE_MEAL)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.CALAMARI_SLICE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.CALAMARI_SLICE));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE, 2)
                         .addResult(Items.BONE_MEAL)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.COOKED_CALAMARI_SLICE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.COOKED_CALAMARI_SLICE));
 
                 // Pie
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CHERRY_BLOSSOM_CHEESECAKE), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, 4)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.SYRUP_CHEESECAKE), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.SYRUP_CHEESECAKE_SLICE, 4)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.SYRUP_CHEESECAKE_SLICE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.SYRUP_CHEESECAKE_SLICE));
 
                 // Salvaging
                 CuttingBoardRecipeBuilder.cuttingRecipe(tagIngredient(ItemTags.WOOL), tagIngredient(ConventionalItemTags.SHEAR_TOOLS), Items.STRING, 2)
-                        .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool"));
+                        .build(output, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool"));
                 CuttingBoardRecipeBuilder.cuttingRecipe(tagIngredient(ItemTags.WOOL_CARPETS), tagIngredient(ConventionalItemTags.SHEAR_TOOLS), Items.STRING, 1)
-                        .build(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool_carpet"));
+                        .build(output, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, "wool_carpet"));
             }
 
             private void buildCookingRecipes(@NotNull RecipeOutput output) {
@@ -351,7 +351,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.COOKING_OIL_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.COTTON_SEEDS, Items.PUMPKIN_SEEDS)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.COOKING_OIL));
+                        .build(output, ItemUtils.getIdentifier(ModItems.COOKING_OIL));
 
                 // Batter
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.BATTER, 2, FAST_COOKING, SMALL_EXP, Items.BOWL)
@@ -361,7 +361,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Items.WHEAT)
                         .unlockedByAnyIngredient(Items.MILK_BUCKET, vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BATTER));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BATTER));
 
                 // Syrup
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.SYRUP, 1, FAST_COOKING, SMALL_EXP, Items.GLASS_BOTTLE)
@@ -369,7 +369,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Items.SUGAR)
                         .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.SYRUP));
+                        .build(output, ItemUtils.getIdentifier(ModItems.SYRUP));
 
                 // Fried Dough
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.FRIED_DOUGH, 1, FAST_COOKING, SMALL_EXP)
@@ -377,7 +377,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_DOUGH)
                         .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.FRIED_DOUGH));
+                        .build(output, ItemUtils.getIdentifier(ModItems.FRIED_DOUGH));
 
                 // Fried Dumplings
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.FRIED_DUMPLINGS, 2, FAST_COOKING, MEDIUM_EXP)
@@ -385,7 +385,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get(), 2)
                         .unlockedByAnyIngredient(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get())
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.FRIED_DUMPLINGS));
+                        .build(output, ItemUtils.getIdentifier(ModItems.FRIED_DUMPLINGS));
 
                 // Spring Rolls
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.SPRING_ROLLS, 2, FAST_COOKING, MEDIUM_EXP)
@@ -395,7 +395,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.SPRING_ROLL_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.SPRING_ROLLS));
+                        .build(output, ItemUtils.getIdentifier(ModItems.SPRING_ROLLS));
 
                 // Fruit Beignet
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.FRUIT_BEIGNET, 1, FAST_COOKING, MEDIUM_EXP)
@@ -405,7 +405,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Items.SUGAR)
                         .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.FRUIT_BEIGNET));
+                        .build(output, ItemUtils.getIdentifier(ModItems.FRUIT_BEIGNET));
 
                 // Fried Calamari
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.FRIED_CALAMARI, 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
@@ -415,7 +415,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_TOMATO)
                         .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.FRIED_CALAMARI));
+                        .build(output, ItemUtils.getIdentifier(ModItems.FRIED_CALAMARI));
 
                 // Fried Chicken
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.FRIED_CHICKEN, 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
@@ -425,7 +425,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_ONION)
                         .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.FRIED_CHICKEN));
+                        .build(output, ItemUtils.getIdentifier(ModItems.FRIED_CHICKEN));
 
                 // Fried Mushrooms
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.FRIED_MUSHROOMS, 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
@@ -435,7 +435,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_ONION)
                         .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.FRIED_MUSHROOMS));
+                        .build(output, ItemUtils.getIdentifier(ModItems.FRIED_MUSHROOMS));
 
                 // Bell Pepper Soup
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.BELL_PEPPER_SOUP, 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
@@ -444,7 +444,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_BELL_PEPPER)
                         .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_RED)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BELL_PEPPER_SOUP));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_SOUP));
 
                 // Stuffed Bell Peppers
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.STUFFED_BELL_PEPPER_GREEN, 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -453,21 +453,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.STUFFED_BELL_PEPPER_GREEN));
+                        .build(output, ItemUtils.getIdentifier(ModItems.STUFFED_BELL_PEPPER_GREEN));
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.STUFFED_BELL_PEPPER_YELLOW, 1, NORMAL_COOKING, MEDIUM_EXP)
                         .addIngredient(ModItems.BELL_PEPPER_YELLOW)
                         .addIngredient(CommonTags.CROPS_RICE)
                         .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.BELL_PEPPER_YELLOW)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.STUFFED_BELL_PEPPER_YELLOW));
+                        .build(output, ItemUtils.getIdentifier(ModItems.STUFFED_BELL_PEPPER_YELLOW));
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.STUFFED_BELL_PEPPER_RED, 1, NORMAL_COOKING, MEDIUM_EXP)
                         .addIngredient(ModItems.BELL_PEPPER_RED)
                         .addIngredient(CommonTags.CROPS_RICE)
                         .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.BELL_PEPPER_RED)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.STUFFED_BELL_PEPPER_RED));
+                        .build(output, ItemUtils.getIdentifier(ModItems.STUFFED_BELL_PEPPER_RED));
 
                 // Bell Pepper Pasta
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.BELL_PEPPER_PASTA, 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
@@ -477,7 +477,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_BELL_PEPPER)
                         .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_RED)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.BELL_PEPPER_PASTA));
+                        .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_PASTA));
 
                 // Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -487,7 +487,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output,ItemUtils.getResourceLocation(ModItems.COFFEE));
+                        .build(output,ItemUtils.getIdentifier(ModItems.COFFEE));
 
                 // Milk Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.MILK_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -497,7 +497,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.MILK_COFFEE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.MILK_COFFEE));
 
                 // Chocolate Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.CHOCOLATE_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -508,7 +508,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Items.COCOA_BEANS, 2)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.CHOCOLATE_COFFEE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.CHOCOLATE_COFFEE));
 
                 // Honey Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.HONEY_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -519,7 +519,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Items.HONEY_BOTTLE, 1)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.HONEY_COFFEE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.HONEY_COFFEE));
 
                 // Syrup Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.SYRUP_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -530,7 +530,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModItems.SYRUP, 1)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.SYRUP_COFFEE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.SYRUP_COFFEE));
 
                 // Dark Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.DARK_COFFEE, 1, SLOW_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -542,7 +542,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.DARK_COFFEE));
+                        .build(output, ItemUtils.getIdentifier(ModItems.DARK_COFFEE));
 
                 // Coffee-Braised Beef
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.COFFEE_BRAISED_BEEF, 1, SLOW_COOKING, MEDIUM_EXP, Items.BOWL)
@@ -552,7 +552,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_POTATO)
                         .unlockedByAnyIngredient(ModItems.COFFEE)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.COFFEE_BRAISED_BEEF));
+                        .build(output, ItemUtils.getIdentifier(ModItems.COFFEE_BRAISED_BEEF));
             }
 
             private void buildFarmersDelightOverrideRecipes(@NotNull RecipeOutput output, HolderGetter<Item> holderGetter) {
@@ -721,12 +721,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ingredient2, 2)
                         .unlockedByAnyIngredient(batter)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, ItemUtils.getResourceLocation(pancakeBlock)));
+                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, ItemUtils.getIdentifier(pancakeBlock)));
 
                 // Cutting recipe for pancakes to separate them into single pancakes.
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock), tagIngredient(CommonTags.TOOLS_KNIFE), singlePancake, PancakeBlock.MAX_SERVINGS)
                         .addResult(servingItem)
-                        .build(recipeOutput, ItemUtils.getResourceLocation(pancakeBlock));
+                        .build(recipeOutput, ItemUtils.getIdentifier(pancakeBlock));
 
                 // Split a stack of pancakes into separate pancakes.
                 oneToOne(recipeOutput, RecipeCategory.MISC, pancakeBlock, singlePancake, PancakeBlock.MAX_SERVINGS);
@@ -755,7 +755,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("##")
                         .define('#', sliceItem)
                         .unlockedBy(getHasName(sliceItem), has(sliceItem))
-                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, getItemName(pieBlock) + "_from_slices")));
+                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, getItemName(pieBlock) + "_from_slices")));
             }
 
             private String getRecipeName(ItemLike item, ItemLike result) {

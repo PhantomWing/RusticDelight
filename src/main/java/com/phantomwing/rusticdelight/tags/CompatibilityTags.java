@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.tags;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -53,10 +53,10 @@ public class CompatibilityTags
     public static final TagKey<Item> BREWIN_AND_CHEWIN_CHEESE_WEDGE = externalItemTag(BREWIN_AND_CHEWIN, "foods/cheese_wedge");
 
     private static TagKey<Item> externalItemTag(String modId, String path) {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(modId, path));
+        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(modId, path));
     }
 
     private static TagKey<Block> externalBlockTag(String modId, String path) {
-        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(modId, path));
+        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(modId, path));
     }
 }

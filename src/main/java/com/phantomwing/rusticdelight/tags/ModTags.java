@@ -2,7 +2,7 @@ package com.phantomwing.rusticdelight.tags;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -16,14 +16,14 @@ public class ModTags {
         public static final TagKey<Biome> HAS_WILD_COFFEE = create("has_wild_coffee");
 
         private static TagKey<Biome> create(String name) {
-            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
+            return TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }
     }
 
     // Block tags
     public static class Blocks {
         private static TagKey<Block> tag(String name) {
-            return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
+            return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }
     }
 
@@ -51,7 +51,7 @@ public class ModTags {
         public static final TagKey<Item> FRUITS_AND_BERRIES = tag("fruits_berries");
 
         private static TagKey<Item> tag(String name) {
-            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
+            return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }
     }
 }

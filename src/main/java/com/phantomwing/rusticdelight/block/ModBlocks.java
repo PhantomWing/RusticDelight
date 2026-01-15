@@ -6,8 +6,8 @@ import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -89,7 +89,7 @@ public class ModBlocks {
     }
 
     private static Block registerBlock(String name, BlockBehaviour.Properties baseProps, Function<Block.Properties, Block> function) {
-        ResourceLocation loc = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
+        Identifier loc = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
         return Registry.register(BuiltInRegistries.BLOCK, loc,
                 function.apply(baseProps.setId(ResourceKey.create(Registries.BLOCK, loc))));
     }

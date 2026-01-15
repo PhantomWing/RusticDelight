@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.tags;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -86,14 +86,14 @@ public class CommonTags {
     public static final TagKey<Item> SEEDS_SUNFLOWER = commonItemTag("seeds/sunflower");
 
     private static TagKey<Block> commonBlockTag(String path) {
-        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
+        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
     }
 
     private static TagKey<Item> commonItemTag(String path) {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
+        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
     }
 
     private static TagKey<Biome> commonBiomeTag(String path) {
-        return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
+        return TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
     }
 }

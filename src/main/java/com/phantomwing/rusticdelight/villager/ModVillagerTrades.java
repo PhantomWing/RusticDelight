@@ -4,8 +4,8 @@ import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
@@ -26,7 +26,7 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
                 factories -> {
                     if (config.wild_cotton_chance > 0) {
-                        factories.add(((entity, random) -> new MerchantOffer(
+                        factories.add(((world, entity, random) -> new MerchantOffer(
                                 new ItemCost(ModItems.COTTON_BOLL, 24),
                                 new ItemStack(Items.EMERALD, 1),
                                 16, 2, PRICE_MULTIPLIER
@@ -34,7 +34,7 @@ public class ModVillagerTrades {
                     }
 
                     if (config.wild_bell_peppers_chance > 0) {
-                        factories.add(((entity, random) -> new MerchantOffer(
+                        factories.add(((world, entity, random) -> new MerchantOffer(
                                 new ItemCost(ModItems.BELL_PEPPER_RED, 24),
                                 new ItemStack(Items.EMERALD, 1),
                                 16, 2, PRICE_MULTIPLIER
@@ -42,7 +42,7 @@ public class ModVillagerTrades {
                     }
 
                     if (config.wild_coffee_chance > 0) {
-                        factories.add(((entity, random) -> new MerchantOffer(
+                        factories.add(((world, entity, random) -> new MerchantOffer(
                                 new ItemCost(ModItems.COFFEE_BEANS, 26),
                                 new ItemStack(Items.EMERALD, 1),
                                 16, 2, PRICE_MULTIPLIER
@@ -55,7 +55,7 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 5,
                 factories -> {
                     if (config.wild_coffee_chance > 0) {
-                        factories.add(((entity, random) -> new MerchantOffer(
+                        factories.add(((world, entity, random) -> new MerchantOffer(
                                 new ItemCost(Items.EMERALD, 3),
                                 new ItemStack(ModItems.GOLDEN_COFFEE_BEANS, 3),
                                 12, 30, PRICE_MULTIPLIER
@@ -68,7 +68,7 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 1,
                 factories -> {
                     if (config.squids_drop_calamari) {
-                        factories.add(((entity, random) -> new MerchantOffer(
+                        factories.add(((world, entity, random) -> new MerchantOffer(
                                 new ItemCost(Items.EMERALD, 1),
                                 Optional.of(new ItemCost(ModItems.CALAMARI, 6)),
                                 new ItemStack(ModItems.COOKED_CALAMARI, 6),
@@ -82,7 +82,7 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 2,
                 factories -> {
                     if (config.squids_drop_calamari) {
-                        factories.add(((entity, random) -> new MerchantOffer(
+                        factories.add(((world, entity, random) -> new MerchantOffer(
                                 new ItemCost(ModItems.CALAMARI, 15),
                                 new ItemStack(Items.EMERALD, 1),
                                 16, 10, PRICE_MULTIPLIER
@@ -100,8 +100,8 @@ public class ModVillagerTrades {
 
         TradeOfferHelper.registerWanderingTraderOffers(factories -> {
             if (config.wild_cotton_chance > 0) {
-                ResourceLocation cottonPool = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_cotton_seeds");
-                factories.addAll(cottonPool, (entity, random) -> new MerchantOffer(
+                Identifier cottonPool = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_cotton_seeds");
+                factories.addAll(cottonPool, (world, entity, random) -> new MerchantOffer(
                         new ItemCost(Items.EMERALD, 1),
                         new ItemStack(ModItems.COTTON_SEEDS, 1),
                         12, 2, PRICE_MULTIPLIER
@@ -109,8 +109,8 @@ public class ModVillagerTrades {
             }
 
             if (config.wild_bell_peppers_chance > 0) {
-                ResourceLocation bellPepperPool = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_bell_pepper_seeds");
-                factories.addAll(bellPepperPool,(entity, random) -> new MerchantOffer(
+                Identifier bellPepperPool = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_bell_pepper_seeds");
+                factories.addAll(bellPepperPool, (world, entity, random) -> new MerchantOffer(
                         new ItemCost(Items.EMERALD, 1),
                         new ItemStack(ModItems.BELL_PEPPER_SEEDS, 1),
                         12, 2, PRICE_MULTIPLIER
@@ -118,8 +118,8 @@ public class ModVillagerTrades {
             }
 
             if (config.wild_coffee_chance > 0) {
-                ResourceLocation coffeePool = ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_coffee_beans");
-                factories.addAll(coffeePool, (entity, random) -> new MerchantOffer(
+                Identifier coffeePool = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, "emerald_for_coffee_beans");
+                factories.addAll(coffeePool, (world, entity, random) -> new MerchantOffer(
                         new ItemCost(Items.EMERALD, 1),
                         new ItemStack(ModItems.COFFEE_BEANS, 1),
                         12, 2, PRICE_MULTIPLIER

@@ -16,7 +16,7 @@ import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.Property;
 import vectorwing.farmersdelight.FarmersDelight;
@@ -67,7 +67,7 @@ public class ModBlockStateProvider {
         g.registerSimpleFlatItemModel(cropBlock.asItem());
 
         int[] ageToVisualStageMapping = ageProperty.getPossibleValues().stream().mapToInt(Integer::intValue).toArray();
-        Int2ObjectMap<ResourceLocation> int2ObjectMap = new Int2ObjectOpenHashMap<>();
+        Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
         ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("crop_cross")), Optional.empty(), TextureSlot.CROSS);
 
         g.blockStateOutput.accept(MultiVariantGenerator.dispatch(cropBlock).with(PropertyDispatch.initial(ageProperty).generate((integer) -> {
@@ -111,7 +111,7 @@ public class ModBlockStateProvider {
                         .generate((direction, bites) -> {
                             String suffix = bites == 0 ? "" : "_slice" + bites;
 
-                            ResourceLocation modelLoc = blockResource(blockName(block) + suffix);
+                            Identifier modelLoc = blockResource(blockName(block) + suffix);
                             MultiVariant variant = plainVariant(modelLoc);
                             VariantMutator rotation = dirToRot(direction);
                             if (rotation != null) {
@@ -130,7 +130,7 @@ public class ModBlockStateProvider {
                         .generate((direction, servings) -> {
                             String suffix = "_stage" + servings;
 
-                            ResourceLocation modelLoc = blockResource(blockName(block) + suffix);
+                            Identifier modelLoc = blockResource(blockName(block) + suffix);
                             MultiVariant variant = plainVariant(modelLoc);
                             VariantMutator rotation = dirToRot(direction);
                             if (rotation != null) {
@@ -150,7 +150,7 @@ public class ModBlockStateProvider {
                             int invertedServings = RiceRollRoyaleBlock.MAX_SERVINGS - servings;
                             String suffix = invertedServings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftover" : "_stage" + invertedServings;
 
-                            ResourceLocation modelLoc = blockResource(blockName(block) + suffix);
+                            Identifier modelLoc = blockResource(blockName(block) + suffix);
                             MultiVariant variant = plainVariant(modelLoc);
                             VariantMutator rotation = dirToRot(direction);
                             if (rotation != null) {
@@ -167,17 +167,17 @@ public class ModBlockStateProvider {
         return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 
-    private static ResourceLocation blockResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + path);
+    private static Identifier blockResource(String path) {
+        return Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + path);
     }
 
-    private static ResourceLocation blockResourceFD(String path) {
-        return ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "block/" + path);
+    private static Identifier blockResourceFD(String path) {
+        return Identifier.fromNamespaceAndPath(FarmersDelight.MODID, "block/" + path);
     }
 
     private static void createBlock(BlockModelGenerators g, Block block, TextureMapping textureMapping, ModelTemplate modelTemplate) {
-        ResourceLocation resourceLocation = modelTemplate.create(block, textureMapping, g.modelOutput);
-        MultiVariantGenerator variantGenerator = MultiVariantGenerator.dispatch(block, plainVariant(resourceLocation));
+        Identifier Identifier = modelTemplate.create(block, textureMapping, g.modelOutput);
+        MultiVariantGenerator variantGenerator = MultiVariantGenerator.dispatch(block, plainVariant(Identifier));
 
         g.blockStateOutput.accept(variantGenerator);
     }

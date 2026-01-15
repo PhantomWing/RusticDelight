@@ -57,11 +57,11 @@ dependencies {
 	// Parchment mappings
 	mappings loom.layered() {
 		officialMojangMappings()
-		parchment("org.parchmentmc.data:parchment-1.21.10:${parchment_version}@zip")
+		parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
 	}
 
 	// Farmer's Delight Refabricated
-	modImplementation("vectorwing:FarmersDelight:1.21.10-${farmersdelight_version}+refabricated") {
+	modImplementation("vectorwing:FarmersDelight:${minecraft_version}-${farmersdelight_version}+refabricated") {
 		exclude(group: "net.fabricmc")
 	}
 
@@ -71,10 +71,11 @@ dependencies {
 	}
 
 	// JEI
-	modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
+	//modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+	//modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
 
 	// Appleskin
-	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc1.21.9-${appleskin_version}")
+	modLocalRuntime("squeek.appleskin:appleskin-fabric:mc${minecraft_version}-${appleskin_version}")
 }
 
 processResources {
