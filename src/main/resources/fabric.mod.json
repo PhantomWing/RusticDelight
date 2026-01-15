@@ -32,6 +32,10 @@
 		"minecraft": ">=1.21 <=1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
-		"farmersdelight": "*"
+		"farmersdelight": "*",
+		"cloth-config": "*"
+	},
+	"breaks": {
+		"rusticdelightrefabricated": "*"
 	}
 }
