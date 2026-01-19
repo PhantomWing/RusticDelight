@@ -1,3 +1,8 @@
+# 1.5.2
+### Fixes
+- Fix farmers not being able to consume Rustic Delight crops or trade them with other villagers.
+
+
 # 1.5.1
 ### Additions
 - Added Spanish (Argentina) translations (thank you ex0planet!)

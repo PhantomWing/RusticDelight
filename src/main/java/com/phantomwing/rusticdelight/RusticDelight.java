@@ -7,7 +7,7 @@ import com.phantomwing.rusticdelight.potion.ModPotions;
 import com.phantomwing.rusticdelight.util.ComposterHelper;
 import com.phantomwing.rusticdelight.util.EntityLootHelper;
 import com.phantomwing.rusticdelight.util.FuelHelper;
-import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
+import com.phantomwing.rusticdelight.villager.ModVillagers;
 import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
 import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -33,9 +33,8 @@ public class RusticDelight implements ModInitializer {
 		ModWorldGeneration.registerModWorldGeneration();
 		ModPlacementModifiers.registerPlacementModfiiers();
 
-		// Trades
-		ModVillagerTrades.registerVillagerTrades();
-		ModVillagerTrades.registerWanderingTraderTrades();
+		// Villagers
+		ModVillagers.registerFoodsAndTrades();
 
 		// UI
 		ModItemGroups.registerModItemGroups();

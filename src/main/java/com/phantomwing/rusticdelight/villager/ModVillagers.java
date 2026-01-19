@@ -5,18 +5,37 @@ import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 
+import java.util.HashMap;
 import java.util.Optional;
 
-public class ModVillagerTrades {
+public class ModVillagers {
     public static float PRICE_MULTIPLIER = 0.05f;
 
-    public static void registerVillagerTrades() {
+    public static void registerFoodsAndTrades() {
+        registerFoodPoints();
+        registerVillagerTrades();
+        registerWanderingTraderTrades();
+    }
+
+    private static void registerFoodPoints() {
+        HashMap<Item, Integer> foodPoints = new HashMap<>(Villager.FOOD_POINTS);
+        foodPoints.put(ModItems.COTTON_BOLL, 1);
+        foodPoints.put(ModItems.BELL_PEPPER_GREEN, 1);
+        foodPoints.put(ModItems.BELL_PEPPER_YELLOW, 1);
+        foodPoints.put(ModItems.BELL_PEPPER_RED, 1);
+        foodPoints.put(ModItems.COFFEE_BEANS, 1);
+        Villager.FOOD_POINTS = foodPoints;
+    }
+
+    private static void registerVillagerTrades() {
         RusticDelightConfig config = RusticDelightConfig.get();
         if (!config.enable_villager_trades) {
             return;
@@ -92,7 +111,7 @@ public class ModVillagerTrades {
         );
     }
 
-    public static void registerWanderingTraderTrades() {
+    private static void registerWanderingTraderTrades() {
         RusticDelightConfig config = RusticDelightConfig.get();
         if (!config.enable_wandering_trader_trades) {
             return;

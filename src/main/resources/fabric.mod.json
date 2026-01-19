@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
-	"id": "rusticdelight",
-	"version": "${version}",
+	"id": "${mod_id}",
+	"version": "${mod_version}",
 	"name": "Rustic Delight",
 	"description": "A rustic add-on for Farmer's Delight that adds Coffee, Cotton, Bell Peppers, Pancakes, Calamari and more!",
 	"authors": [
@@ -26,9 +26,10 @@
 		]
 	},
 	"mixins": [],
+	"accessWidener": "rusticdelight.accesswidener",
 	"depends": {
-		"fabricloader": ">=0.18.4",
-		"minecraft": ">=1.21.11 <=1.21.11",
+		"fabricloader": ">=${fabric_loader_version}",
+		"minecraft": ">=${minecraft_min_version} <=${minecraft_max_version}",
 		"java": ">=21",
 		"fabric-api": "*",
 		"farmersdelight": "*",

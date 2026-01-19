@@ -4,7 +4,7 @@ plugins {
 }
 
 version = project.mod_version
-group = project.maven_group
+group = project.mod_group_id
 
 tasks.withType(Copy).configureEach {
 	// Only override during runData execution
@@ -12,7 +12,11 @@ tasks.withType(Copy).configureEach {
 }
 
 base {
-	archivesName = "${project.archives_base_name}-fabric-${project.minecraft_version}"
+	archivesName = "${project.mod_id}-fabric-${project.minecraft_version}"
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/rusticdelight.accesswidener")
 }
 
 repositories {
@@ -51,8 +55,8 @@ dependencies {
 	minecraft "com.mojang:minecraft:${minecraft_version}"
 
 	// Fabric
-	modImplementation "net.fabricmc:fabric-loader:${loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}+${minecraft_version}"
+	modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}+${minecraft_version}"
 
 	// Parchment mappings
 	mappings loom.layered() {
@@ -79,10 +83,21 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", project.version
+	var replaceProperties = [
+			minecraft_version    : minecraft_version,
+			minecraft_min_version: minecraft_min_version,
+			minecraft_max_version: minecraft_max_version,
+
+			mod_id               : mod_id,
+			mod_version          : version,
+			fabric_loader_version: fabric_loader_version,
+			fabric_api_version   : fabric_api_version
+	]
+
+	inputs.properties replaceProperties
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand replaceProperties + [project: project]
 	}
 }
 
@@ -110,7 +125,7 @@ jar {
 publishing {
 	publications {
 		create("mavenJava", MavenPublication) {
-			artifactId = project.archives_base_name
+			artifactId = project.mod_id
 			from components.java
 		}
 	}
