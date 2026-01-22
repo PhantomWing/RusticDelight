@@ -1,3 +1,10 @@
+# 1.5.3
+### Changes
+- Calamari drops from Squids & Glow Squids are now affected by Looting enchantment.
+
+### Fixes
+- Fix Squids & Glow Squids never dropping Calamari if the LootTable is already overridden by another mod, regardless of configuration settings.
+
 # 1.5.2
 ### Fixes
 - Fix farmers not being able to consume Rustic Delight crops or trade them with other villagers.

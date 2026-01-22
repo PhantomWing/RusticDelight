@@ -3,28 +3,31 @@ package com.phantomwing.rusticdelight.util;
 import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.EnchantedCountIncreaseFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class EntityLootHelper {
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
-            RusticDelightConfig config = RusticDelightConfig.get();
+            Identifier id = key.identifier();
 
-            if (config.squids_drop_calamari && source.isBuiltin() && (
-                    (EntityType.SQUID.getDefaultLootTable().isPresent() && EntityType.SQUID.getDefaultLootTable().get().equals(key)) ||
-                            (EntityType.GLOW_SQUID.getDefaultLootTable().isPresent() && EntityType.GLOW_SQUID.getDefaultLootTable().get().equals(key)))) {
-                LootPool.Builder poolBuilder = LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .when(LootItemRandomChanceCondition.randomChance(1.0f)) // 100% chance
-                        .add(LootItem.lootTableItem(ModItems.CALAMARI))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)).build());
-                tableBuilder.pool(poolBuilder.build());
+            if (id.getNamespace().equalsIgnoreCase("minecraft")) {
+                String path = id.getPath();
+                switch (path) {
+                    case "entities/squid", "entities/glow_squid" -> {
+                        if (RusticDelightConfig.get().squids_drop_calamari) {
+                            LootPool.Builder poolBuilder = LootPool.lootPool().add(LootItem.lootTableItem(ModItems.CALAMARI)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(registries, UniformGenerator.between(0.0F, 1.0F)))
+                            );
+                            tableBuilder.withPool(poolBuilder);
+                        }
+                    }
+                }
             }
         });
     }
