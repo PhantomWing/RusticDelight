@@ -277,6 +277,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 slicerRecipes(output, Items.GOLD_INGOT, ModItems.GOLDEN_SLICER);
                 slicerRecipes(output, Items.DIAMOND, ModItems.DIAMOND_SLICER);
                 slicerRecipes(output, Items.NETHERITE_INGOT, ModItems.NETHERITE_SLICER);
+                netheriteUpgrade(output, ModItems.DIAMOND_SLICER, ModItems.NETHERITE_SLICER, "netherite_slicer_smithing");
             }
 
             private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -776,6 +777,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('S', Items.STICK)
                         .unlockedBy(getHasName(material), has(material))
                         .save(recipeOutput);
+            }
+
+            private void netheriteUpgrade(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike baseItem, @NotNull ItemLike resultItem, @NotNull String recipeName) {
+                SmithingTransformRecipeBuilder.smithing(
+                                Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                                Ingredient.of(baseItem),
+                                tagIngredient(ItemTags.NETHERITE_TOOL_MATERIALS),
+                                RecipeCategory.TOOLS,
+                                resultItem.asItem()
+                        )
+                        .unlocks(getHasName(baseItem), has(baseItem))
+                        .unlocks(getHasName(Items.NETHERITE_INGOT), has(Items.NETHERITE_INGOT))
+                        .save(recipeOutput, RusticDelight.MOD_ID + ":" + recipeName);
             }
 
             private String getRecipeName(ItemLike item, ItemLike result) {
