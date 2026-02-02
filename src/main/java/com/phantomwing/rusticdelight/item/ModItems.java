@@ -11,10 +11,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.level.block.Block;
@@ -183,6 +185,13 @@ public class ModItems {
     // Feasts
     public static final Item RICE_ROLL_ROYALE = registerBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
 
+    // Slicers
+    public static final Item FLINT_SLICER = registerWithTab("flint_slicer", slicerItem(ToolMaterial.STONE, -0.5f, -2.0f));
+    public static final Item IRON_SLICER = registerWithTab("iron_slicer", slicerItem(ToolMaterial.IRON, -1.5f, -2.0f));
+    public static final Item GOLDEN_SLICER = registerWithTab("golden_slicer", slicerItem(ToolMaterial.GOLD, 0.0f, -2.0f));
+    public static final Item DIAMOND_SLICER = registerWithTab("diamond_slicer", slicerItem(ToolMaterial.DIAMOND, -2.5f, -2.0f));
+    public static final Item NETHERITE_SLICER = registerWithTab("netherite_slicer", slicerItem(ToolMaterial.NETHERITE, -3.5f, -2.0f));
+
     // Helper functions
     public static Item.Properties baseItem() {
         return new Item.Properties();
@@ -214,6 +223,14 @@ public class ModItems {
 
     public static Item.Properties feastItem() {
         return baseItem().craftRemainder(Items.BOWL).stacksTo(1);
+    }
+
+    public static Item.Properties slicerItem(ToolMaterial tool, float attackDamage, float attackSpeed) {
+        return baseItem().tool(tool, BlockTags.AIR, attackDamage, attackSpeed, 0.0f);
+    }
+
+    public static Item.Properties slicerItem(ToolMaterial tool) {
+        return slicerItem(tool, 1.0f, 1.0f);
     }
 
     // Registry functions
