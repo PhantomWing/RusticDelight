@@ -270,6 +270,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                 ModItems.CHERRY_BLOSSOM_ROLL,
                                 vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get()))
                         .save(output);
+
+                // Slicers
+                slicerRecipes(output, Items.FLINT, ModItems.FLINT_SLICER);
+                slicerRecipes(output, Items.IRON_INGOT, ModItems.IRON_SLICER);
+                slicerRecipes(output, Items.GOLD_INGOT, ModItems.GOLDEN_SLICER);
+                slicerRecipes(output, Items.DIAMOND, ModItems.DIAMOND_SLICER);
+                slicerRecipes(output, Items.NETHERITE_INGOT, ModItems.NETHERITE_SLICER);
             }
 
             private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -314,8 +321,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .build(output, ItemUtils.getResourceLocation(ModItems.WILD_COFFEE));
 
                 // Food
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), tagIngredient(CommonTags.TOOLS_SLICER), ModItems.POTATO_SLICES, 2)
+                        .build(output, ItemUtils.getResourceLocation("item/potato_slices_from_slicer"));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.POTATO_SLICES, 2)
-                        .build(output, ItemUtils.getResourceLocation(ModItems.POTATO_SLICES));
+                        .build(output, ItemUtils.getResourceLocation("item/potato_slices_from_knife"));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAKED_POTATO), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BAKED_POTATO_SLICES, 2)
                         .build(output, ItemUtils.getResourceLocation(ModItems.BAKED_POTATO_SLICES));
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE, 2)
@@ -756,6 +765,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('#', sliceItem)
                         .unlockedBy(getHasName(sliceItem), has(sliceItem))
                         .save(recipeOutput, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, getItemName(pieBlock) + "_from_slices")));
+            }
+
+            private void slicerRecipes(@NotNull RecipeOutput recipeOutput, @NotNull Item material, @NotNull Item slicerItem) {
+                shaped(RecipeCategory.TOOLS, slicerItem, 1)
+                        .pattern("MM ")
+                        .pattern("MS ")
+                        .pattern("  S")
+                        .define('M', material)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(material), has(material))
+                        .save(recipeOutput);
             }
 
             private String getRecipeName(ItemLike item, ItemLike result) {
