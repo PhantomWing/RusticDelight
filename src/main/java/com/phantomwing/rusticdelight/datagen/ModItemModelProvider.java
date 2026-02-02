@@ -79,10 +79,19 @@ public class ModItemModelProvider {
         simpleItem(g, ModItems.FRIED_DUMPLINGS);
         simpleItem(g, ModItems.SWEET_SALAD);
         simpleItem(g, ModItems.RICE_ROLL_ROYALE);
+        handholdItem(g, ModItems.FLINT_SLICER);
+        handholdItem(g, ModItems.IRON_SLICER);
+        handholdItem(g, ModItems.GOLDEN_SLICER);
+        handholdItem(g, ModItems.DIAMOND_SLICER);
+        handholdItem(g, ModItems.NETHERITE_SLICER);
     }
 
     // A simple item with a model generated from its sprite.
     private static void simpleItem(ItemModelGenerators generator, Item item) {
         generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
+    }
+
+    private static void handholdItem(ItemModelGenerators generator, Item item) {
+        generator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }
