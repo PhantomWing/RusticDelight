@@ -19,4 +19,8 @@ public class ItemUtils {
     public static ResourceLocation getResourceLocation(Item item) {
         return getResourceLocation(RusticDelight.MOD_ID, item);
     }
+
+    public static ResourceLocation getResourceLocation(String path) {
+        return ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, path);
+    }
 }
