@@ -183,6 +183,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         addSeedTags();
         addCropTags();
         addFoodTags();
+        addSlicerTags();
     }
 
     private void addCompatibilityTags() {
@@ -416,6 +417,16 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
                 ModItems.CHERRY_BLOSSOM_COOKIE,
                 ModItems.COFFEE_COOKIE,
                 ModItems.SYRUP_COOKIE
+        );
+    }
+
+    private void addSlicerTags() {
+        valueLookupBuilder(CommonTags.TOOLS_SLICER).add(
+                ModItems.FLINT_SLICER,
+                ModItems.IRON_SLICER,
+                ModItems.GOLDEN_SLICER,
+                ModItems.DIAMOND_SLICER,
+                ModItems.NETHERITE_SLICER
         );
     }
 
