@@ -47,6 +47,7 @@ public class CommonTags {
 
     // Tools
     public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
+    public static final TagKey<Item> TOOLS_SLICER = commonItemTag("tools/slicer");
 
     // Root tags
     public static final TagKey<Item> EGGS = commonItemTag("eggs");
