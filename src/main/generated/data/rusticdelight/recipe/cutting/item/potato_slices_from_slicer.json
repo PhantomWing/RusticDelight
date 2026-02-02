@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "minecraft:potato"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "rusticdelight:potato_slices"
+      }
+    }
+  ],
+  "tool": "#c:tools/slicer"
+}
