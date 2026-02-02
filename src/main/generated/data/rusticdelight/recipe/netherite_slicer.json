@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": "minecraft:netherite_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "MM ",
+    "MS ",
+    "  S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:netherite_slicer"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": "minecraft:flint",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "MM ",
+    "MS ",
+    "  S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:flint_slicer"
+  }
+}
