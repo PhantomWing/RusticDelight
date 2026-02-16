@@ -1,3 +1,7 @@
+# 1.5.3
+### Additions
+- Updated Korean translations (thank you TAILS!)
+
 # 1.5.2
 ### Additions
 - Added Spanish (Argentina) translations (thank you ex0planet!)
