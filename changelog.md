@@ -1,3 +1,7 @@
+# 1.5.4
+### Additions
+- Updated Korean translations (thank you TAILS!)
+
 # 1.5.3
 ### Changes
 - Calamari drops from Squids & Glow Squids are now affected by Looting enchantment.
