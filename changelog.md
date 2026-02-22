@@ -1,3 +1,7 @@
+# 1.5.1
+### Additions
+- Added Korean translations (thank you TAILS!)
+
 # 1.5.0
 ### Additions
 - Added slices for Bell Peppers
