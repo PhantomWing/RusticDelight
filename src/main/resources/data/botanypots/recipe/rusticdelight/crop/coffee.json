@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "botanypots"
+    }
+  ],
+  "bookshelf:load_conditions": [
+    {
+      "type": "bookshelf:item_exists",
+      "values": [
+        "rusticdelight:coffee_beans"
+      ]
+    }
+  ],
+  "type": "botanypots:block_derived_crop",
+  "block": "rusticdelight:coffee"
+}

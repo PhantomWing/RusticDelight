@@ -1,6 +1,15 @@
+# 1.5.4
+### Additions
+- Added Chilean Spanish translations (thank you vlaster666!)
+
+### Fixes
+- Fixed Botany Pots compatibility
+
+
 # 1.5.3
 ### Additions
 - Updated Korean translations (thank you TAILS!)
+
 
 # 1.5.2
 ### Additions
