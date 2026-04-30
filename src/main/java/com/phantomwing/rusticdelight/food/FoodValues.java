@@ -135,7 +135,7 @@ public class FoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 1.0F).build();
     public static final FoodProperties BELL_PEPPER_SOUP = (new FoodProperties.Builder())
             .nutrition(6).saturationMod(0.6f)
-            .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
 
     // Plated foods
     public static final FoodProperties BELL_PEPPER_PASTA = (new FoodProperties.Builder())

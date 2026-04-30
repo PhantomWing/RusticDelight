@@ -64,7 +64,7 @@ public class PancakeBlock extends Block {
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
         if (level.isClientSide) {
-            if (heldStack.is(ModTags.KNIVES)) {
+            if (heldStack.is(ModTags.Items.KNIVES)) {
                 return takeServing(level, pos, state, player);
             }
 
@@ -77,7 +77,7 @@ public class PancakeBlock extends Block {
             }
         }
 
-        if (heldStack.is(ModTags.KNIVES)) {
+        if (heldStack.is(ModTags.Items.KNIVES)) {
             return takeServing(level, pos, state, player);
         }
 

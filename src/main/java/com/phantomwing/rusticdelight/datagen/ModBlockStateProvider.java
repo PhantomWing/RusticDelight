@@ -99,7 +99,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] bellPepperStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((BellPepperCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, resourceBlock("crop_cross"), "cross",
+        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, farmersDelightResourceBlock("template_crop_cross"), "cross",
                 new ResourceLocation(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;
@@ -114,7 +114,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] coffeeStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((CoffeeCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, resourceBlock("crop_cross"), "cross",
+        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, farmersDelightResourceBlock("template_crop_cross"), "cross",
                 new ResourceLocation(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;
@@ -124,6 +124,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         String blockName = blockName(block);
         this.simpleBlock(block,
                 models().cubeBottomTop(blockName, resourceBlock(blockName + "_side"), resourceBlock("crate_bottom"), resourceBlock(blockName + "_top")));
+    }
+
+    public ResourceLocation farmersDelightResourceBlock(String path) {
+        return new ResourceLocation(FarmersDelight.MODID, "block/" + path);
     }
 
     private void canvasBag(Block block) {

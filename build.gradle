@@ -74,7 +74,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'farmersdelight'
 
             mods {
                 "${mod_id}" {
@@ -106,12 +106,17 @@ repositories {
 
     // Farmer's Delight
     maven {url 'https://www.cursemaven.com'}
+
+    // Modrinth Maven (Farmer's Delight)
+    maven {
+        url "https://api.modrinth.com/maven"
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("curse.maven:farmersdelight-398521:${farmersdelight_version}")
+    implementation fg.deobf("maven.modrinth:farmers-delight:${farmersdelight_version}")
 
     // Optional dependencies
     // implementation fg.deobf("curse.maven:farmers-respite-551453:5543547")

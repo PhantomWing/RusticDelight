@@ -1,3 +1,20 @@
+# 1.6.0
+### Additions
+- Added Chilean Spanish translations (thank you vlaster666!)
+
+### Changes
+- Updated for Farmer's Delight 1.3.1 (now required)
+- Bell Pepper Soup now grants Nourishment instead of Comfort, matching Farmer's Delight 1.3 (Comfort was retired)
+- Pancake blocks, cheesecakes, and Rice Roll Royale now show the italicized "Placeable" tooltip, matching Farmer's Delight feasts and pies
+- Cherry Blossom Cheesecake and Syrup Cheesecake slices show a Speed effect tooltip
+
+### Fixes
+- Fixed broken Milk Coffee, Chocolate Coffee, Honey Coffee, and Syrup Coffee tooltips
+- Fixed Fried Rice, Baked Cod Stew, Beef Stew, Mushroom Rice, and Vegetable Soup recipe overrides not applying correctly
+- Fixed broken models for pies, Bell Pepper and Coffee crops
+- Fixed missing Milk tag for recipes: Milk-based recipes now use the `c:drinks/milk` tag instead of `c:foods/milk`
+
+
 # 1.5.1
 ### Additions
 - Added Korean translations (thank you TAILS!)

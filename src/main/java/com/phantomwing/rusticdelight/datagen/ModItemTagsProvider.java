@@ -27,7 +27,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        copy(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS, vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM);
+        copy(vectorwing.farmersdelight.common.tag.ModTags.Blocks.WILD_CROPS, vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
 
         addModTags();
@@ -166,11 +166,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
                 ModItems.SYRUP_CHEESECAKE.get()
         );
-
-        // Farmer's Delight
-        this.tag(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
-                .add(ModItems.POTATO_SLICES.get())
-                .addTag(ForgeTags.VEGETABLES_BELL_PEPPER);
 
         // Serene Seasons
         this.tag(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
