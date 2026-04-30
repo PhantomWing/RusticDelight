@@ -15,7 +15,7 @@ public class ModDataMapProvider extends DataMapProvider {
     }
 
     @Override
-    protected void gather() {
+    protected void gather(HolderLookup.Provider provider) {
         builder(NeoForgeDataMaps.COMPOSTABLES)
                 // 30% chance
                 .add(ModItems.COTTON_SEEDS.getId(), new Compostable(0.3f, true), false)

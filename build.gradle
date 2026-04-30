@@ -26,6 +26,18 @@ repositories {
         }
     }
 
+    // Modrinth Maven (Farmer's Delight)
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+
     // AppleSkin
     maven {
         url "https://maven.ryanliptak.com/"
@@ -104,7 +116,7 @@ configurations {
 
 dependencies {
     // Farmer's Delight
-    implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
+    implementation "maven.modrinth:farmers-delight:${farmersdelight_version}"
 
     // JEI
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}" // compile against the JEI API but do not include it at runtime

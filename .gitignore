@@ -17,6 +17,9 @@ out
 build
 .gradle
 
+# datagen
+.cache
+
 # other
 eclipse
 run

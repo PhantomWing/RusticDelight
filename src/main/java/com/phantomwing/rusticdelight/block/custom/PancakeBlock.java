@@ -61,7 +61,7 @@ public class PancakeBlock extends Block {
 
     @Override
     public @NotNull ItemInteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (heldStack.is(ModTags.KNIVES)) {
+        if (heldStack.is(ModTags.Items.KNIVES)) {
             return takeServing(level, pos, state, player);
         }
 
