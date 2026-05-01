@@ -1,4 +1,4 @@
-# 1.6.0
+# 1.5.0
 ### Additions
 - Overhauled the pancake feature:
   - Added ability to take a single pancake from a pancakes block, with a knife
