@@ -1,5 +1,6 @@
 package com.phantomwing.rusticdelight.util;
 
+import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.loot.LootPool;
@@ -16,6 +17,10 @@ public class EntityLootHelper {
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (!RusticDelightConfig.getBooleanConfigurationValue(RusticDelightConfig.SQUIDS_DROP_CALAMARI_ID)) {
+                return;
+            }
+
             // Allow Squids and glow squids to drop Calamari
             if (SQUID_ID.equals(id) || GLOW_SQUID_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()

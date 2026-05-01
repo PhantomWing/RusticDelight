@@ -1,0 +1,6 @@
+{
+  "parent": "brewinandchewin:block/coaster_cookie",
+  "textures": {
+    "cookie": "rusticdelight:block/coaster/coffee_cookie"
+  }
+}

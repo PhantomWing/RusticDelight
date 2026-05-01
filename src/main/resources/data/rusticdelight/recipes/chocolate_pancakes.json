@@ -3,25 +3,25 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "rusticdelight:batter"
-    },
-    "C": {
-      "item": "minecraft:cocoa_beans"
+      "item": "minecraft:bowl"
     },
     "M": {
+      "item": "rusticdelight:batter"
+    },
+    "T": {
       "tag": "c:milks"
     },
     "X": {
-      "item": "minecraft:sugar"
+      "item": "minecraft:cocoa_beans"
     },
     "Y": {
-      "item": "minecraft:bowl"
+      "item": "minecraft:cocoa_beans"
     }
   },
   "pattern": [
+    " T ",
     "XMX",
-    "CBC",
-    "XYX"
+    "YBY"
   ],
   "result": {
     "item": "rusticdelight:chocolate_pancakes"

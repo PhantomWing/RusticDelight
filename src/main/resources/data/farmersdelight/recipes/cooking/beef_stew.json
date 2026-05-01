@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "tag": "c:foods/vegetables/carrots"
+    },
+    {
+      "tag": "c:foods/vegetables/potatoes"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:beef_stew"
+  }
+}

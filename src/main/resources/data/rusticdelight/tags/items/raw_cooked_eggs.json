@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "#c:eggs",
+      "required": false
+    },
+    {
+      "id": "#c:foods/cooked_egg",
+      "required": false
+    },
+    {
+      "id": "minecraft:egg",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fried_egg",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "brewinandchewin:block/coaster_bowl_full",
+  "textures": {
+    "bowl": "rusticdelight:block/coaster/sweet_salad"
+  }
+}

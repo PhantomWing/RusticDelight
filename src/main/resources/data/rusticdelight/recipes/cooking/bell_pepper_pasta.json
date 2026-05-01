@@ -10,13 +10,13 @@
       "tag": "c:foods/pastas"
     },
     {
-      "item": "rusticdelight:bell_pepper_green"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "item": "rusticdelight:bell_pepper_yellow"
+      "tag": "c:foods/vegetables/bell_peppers"
     },
     {
-      "item": "rusticdelight:bell_pepper_red"
+      "tag": "c:foods/vegetables/bell_peppers"
     }
   ],
   "recipe_book_tab": "meals",

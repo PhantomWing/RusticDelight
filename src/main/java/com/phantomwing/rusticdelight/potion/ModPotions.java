@@ -1,6 +1,7 @@
 package com.phantomwing.rusticdelight.potion;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistry;
 import net.minecraft.entity.effect.StatusEffect;
@@ -34,6 +35,10 @@ public class ModPotions {
     }
 
     public static void registerModPotions() {
+        if (!RusticDelightConfig.getBooleanConfigurationValue(RusticDelightConfig.ENABLE_POTIONS_ID)) {
+            return;
+        }
+
         RusticDelight.LOGGER.info("Registering potions for " + RusticDelight.MOD_ID);
 
         registerPotionRecipes();

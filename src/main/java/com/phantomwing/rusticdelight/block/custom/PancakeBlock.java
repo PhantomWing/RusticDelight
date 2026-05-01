@@ -9,7 +9,9 @@ import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FoodComponent;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -29,13 +31,17 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
+
+import java.util.function.Supplier;
 
 public class PancakeBlock extends Block {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final Integer MAX_SERVINGS = 6;
     public static final IntProperty SERVINGS = IntProperty.of("servings", 0, MAX_SERVINGS - 1);
 
-    public final FoodComponent foodProperties;
+    public final Supplier<Item> servingItem;
 
     protected static final VoxelShape PLATE_SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
     protected static final VoxelShape[] PANCAKES_SHAPES =  new VoxelShape[]{
@@ -47,15 +53,20 @@ public class PancakeBlock extends Block {
             VoxelShapes.combine(PLATE_SHAPE, Block.createCuboidShape(3.0D, 2.0D, 3.0D, 13.0D, 3.0D, 13.0D), BooleanBiFunction.OR)
     };
 
-    public PancakeBlock(FoodComponent foodProperties, Settings settings) {
+    public PancakeBlock(Supplier<Item> servingItem, Settings settings) {
         super(settings);
 
-        this.foodProperties = foodProperties;
+        this.servingItem = servingItem;
         this.setDefaultState(getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(SERVINGS, 0));
     }
 
     @Override
     public @NotNull ActionResult onUse(BlockState state, World level, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hitResult) {
+        ItemStack heldStack = player.getStackInHand(hand);
+        if (heldStack.isIn(ModTags.KNIVES)) {
+            return takeServing(level, pos, state, player);
+        }
+
         if (level.isClient) {
             if (this.consumeServing(level, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
@@ -69,35 +80,60 @@ public class PancakeBlock extends Block {
     }
 
     /**
+     * Drops a single pancake serving item without feeding the player.
+     */
+    protected ActionResult takeServing(World level, BlockPos pos, BlockState state, PlayerEntity player) {
+        Direction direction = player.getHorizontalFacing().getOpposite();
+        ItemUtils.spawnItemEntity(level, this.getServingItem(),
+                pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
+                direction.getOffsetX() * 0.15, 0.05, direction.getOffsetZ() * 0.15);
+
+        this.removeServing(level, pos, state);
+
+        level.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
+
+        return ActionResult.SUCCESS;
+    }
+
+    /**
      * Eats a pancake from the stack, feeding the player.
      */
     protected ActionResult consumeServing(World level, BlockPos pos, BlockState state, PlayerEntity playerIn) {
         if (!playerIn.canConsume(false)) {
             return ActionResult.PASS;
         } else {
-            // Apply food effect to the player
-            if (foodProperties != null) {
-                playerIn.getHungerManager().add(foodProperties.getHunger(), foodProperties.getSaturationModifier());
-                for (Pair<StatusEffectInstance, Float> effect : foodProperties.getStatusEffects()) {
+            ItemStack servingStack = this.getServingItem();
+            FoodComponent foodComp = servingStack.getItem().getFoodComponent();
+
+            if (foodComp != null) {
+                playerIn.getHungerManager().add(foodComp.getHunger(), foodComp.getSaturationModifier());
+                for (Pair<StatusEffectInstance, Float> effect : foodComp.getStatusEffects()) {
                     if (!level.isClient && effect != null && level.random.nextFloat() < effect.getSecond()) {
                         playerIn.addStatusEffect(effect.getFirst());
                     }
                 }
             }
 
-            // Update the block model. If there are no more servings left, destroy the block.
-            int servingsTaken = state.get(SERVINGS);
-            if (servingsTaken < MAX_SERVINGS - 1) {
-                level.setBlockState(pos, state.with(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
-            } else {
-                level.breakBlock(pos, true);
-            }
+            this.removeServing(level, pos, state);
 
-            // Play a sound.
             level.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.PLAYERS, 0.8F, 0.8F);
 
             return ActionResult.SUCCESS;
         }
+    }
+
+    /** Update the block model. If there are no more servings left, destroy the block. */
+    private void removeServing(World level, BlockPos pos, BlockState state) {
+        int servingsTaken = state.get(SERVINGS);
+        if (servingsTaken < MAX_SERVINGS - 1) {
+            level.setBlockState(pos, state.with(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
+        } else {
+            level.breakBlock(pos, true);
+        }
+    }
+
+    public ItemStack getServingItem() {
+        return new ItemStack(this.servingItem.get());
     }
 
     @Override

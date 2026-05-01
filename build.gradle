@@ -15,10 +15,13 @@ loom {
 }
 
 repositories {
-	// Farmer's Delight
+	// Farmer's Delight Refabricated (Modrinth Maven — Greenhouse mirror unreliable)
 	maven {
-		name = "Greenhouse Maven"
-		url = 'https://repo.greenhouse.house/releases/'
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
 	}
 
 	// Porting Lib
@@ -50,6 +53,12 @@ repositories {
 			includeGroup "curse.maven"
 		}
 	}
+
+	// Cloth Config (Shedaniel)
+	maven {
+		name = "Shedaniel Maven"
+		url = "https://maven.shedaniel.me/"
+	}
 }
 
 fabricApi {
@@ -64,8 +73,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Farmer's Delight
-	modImplementation("vectorwing:FarmersDelight:1.20.1-2.1.6+refabricated") {
+	// Farmer's Delight Refabricated
+	modImplementation("maven.modrinth:farmers-delight-refabricated:${project.farmersdelight_version}") {
 		exclude(group: "net.fabricmc")
 	}
 
@@ -74,14 +83,19 @@ dependencies {
 		modApi("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
 	}
 
-	// JEI
-	//modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+	// Fabric ASM (provides com.chocohead.mm.api.ClassTinkerers, required at runtime by Porting Lib)
+	modImplementation("com.github.Chocohead:Fabric-ASM:${fabric_asm_version}")
 
-	// Cloth Config
-	//modLocalRuntime "curse.maven:cloth-config-348521:4973440"
+	// Cloth Config API
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+
+	// JEI
+	modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
 
 	// Appleskin
-	//modLocalRuntime "curse.maven:appleskin-248787:4770825"
+	modLocalRuntime "curse.maven:appleskin-248787:4770825"
 }
 
 processResources {

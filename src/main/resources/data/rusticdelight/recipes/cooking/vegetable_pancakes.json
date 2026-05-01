@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "rusticdelight:batter"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:foods/vegetables"
+    },
+    {
+      "tag": "c:foods/vegetables"
+    },
+    {
+      "tag": "c:foods/vegetables"
+    },
+    {
+      "tag": "c:foods/vegetables"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:vegetable_pancakes"
+  }
+}

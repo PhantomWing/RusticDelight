@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "#dough",
+		"dough": "rusticdelight:block/coaster/wheat_dough"
+	},
+	"elements": [
+		{
+			"name": "dough",
+			"from": [5, 0, 6],
+			"to": [11, 4, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 6]},
+			"faces": {
+				"north": {"uv": [7, 6, 13, 10], "texture": "#dough"},
+				"east": {"uv": [0, 6, 5, 10], "texture": "#dough"},
+				"south": {"uv": [7, 6, 13, 10], "texture": "#dough"},
+				"west": {"uv": [0, 6, 5, 10], "texture": "#dough"},
+				"up": {"uv": [0, 0, 6, 5], "texture": "#dough"},
+				"down": {"uv": [7, 0, 13, 5], "texture": "#dough"}
+			}
+		}
+	]
+}

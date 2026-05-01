@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:cod"
+    },
+    {
+      "tag": "c:foods/vegetables/potatoes"
+    },
+    {
+      "tag": "rusticdelight:raw_cooked_eggs"
+    },
+    {
+      "item": "farmersdelight:tomato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:baked_cod_stew"
+  }
+}

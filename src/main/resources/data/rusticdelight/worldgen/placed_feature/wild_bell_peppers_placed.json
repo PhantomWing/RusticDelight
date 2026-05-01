@@ -2,8 +2,8 @@
   "feature": "rusticdelight:wild_bell_peppers",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 10
+      "type": "rusticdelight:configurable_rarity_filter",
+      "option": "wild_bell_peppers_chance"
     },
     {
       "type": "minecraft:in_square"
@@ -14,10 +14,6 @@
     },
     {
       "type": "minecraft:biome"
-    },
-    {
-      "type": "farmersdelight:biome_tag",
-      "tag": "minecraft:is_overworld"
     }
   ]
 }

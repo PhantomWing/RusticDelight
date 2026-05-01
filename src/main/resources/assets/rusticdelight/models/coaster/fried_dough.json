@@ -1,0 +1,6 @@
+{
+	"parent": "rusticdelight:coaster/wheat_dough",
+	"textures": {
+		"dough": "rusticdelight:block/coaster/fried_dough"
+	}
+}

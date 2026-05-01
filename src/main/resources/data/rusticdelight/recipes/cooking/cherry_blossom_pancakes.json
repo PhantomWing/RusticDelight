@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "rusticdelight:batter"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "rusticdelight:cherry_blossom_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cherry_blossom_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cherry_blossom_ingredients"
+    },
+    {
+      "tag": "rusticdelight:cherry_blossom_ingredients"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:cherry_blossom_pancakes"
+  }
+}

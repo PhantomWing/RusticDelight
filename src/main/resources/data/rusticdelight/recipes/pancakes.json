@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "rusticdelight:batter"
+    },
+    "T": {
+      "tag": "rusticdelight:syrup"
+    },
+    "X": {
+      "item": "minecraft:sugar"
+    },
+    "Y": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "XTX",
+    "XBX",
+    "XYX"
+  ],
+  "result": {
+    "item": "rusticdelight:pancakes"
+  },
+  "show_notification": true
+}

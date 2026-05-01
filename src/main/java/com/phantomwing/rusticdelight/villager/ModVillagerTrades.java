@@ -1,5 +1,6 @@
 package com.phantomwing.rusticdelight.villager;
 
+import com.phantomwing.rusticdelight.RusticDelightConfig;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.ItemStack;
@@ -11,6 +12,10 @@ public class ModVillagerTrades {
     public static float PRICE_MULTIPLIER = 0.05f;
 
     public static void registerVillagerTrades() {
+        if (!RusticDelightConfig.getBooleanConfigurationValue(RusticDelightConfig.ENABLE_VILLAGER_TRADES_ID)) {
+            return;
+        }
+
         // Farmer level 1
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
                 factories -> {
@@ -70,6 +75,10 @@ public class ModVillagerTrades {
     }
 
     public static void registerWanderingTraderTrades() {
+        if (!RusticDelightConfig.getBooleanConfigurationValue(RusticDelightConfig.ENABLE_WANDERING_TRADER_TRADES_ID)) {
+            return;
+        }
+
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
             factories.add(((entity, random) -> new TradeOffer(
                     new ItemStack(Items.EMERALD, 1),

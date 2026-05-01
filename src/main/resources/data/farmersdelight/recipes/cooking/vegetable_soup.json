@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/vegetables/carrots"
+    },
+    {
+      "tag": "c:foods/vegetables/potatoes"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "c:salad_ingredients"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "farmersdelight:vegetable_soup"
+  }
+}

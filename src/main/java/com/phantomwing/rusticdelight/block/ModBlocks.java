@@ -2,7 +2,6 @@ package com.phantomwing.rusticdelight.block;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.custom.*;
-import com.phantomwing.rusticdelight.food.FoodValues;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -37,16 +36,26 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
 
     // Edible blocks
+    public static final Block SYRUP_CHEESECAKE = registerBlock("syrup_cheesecake",
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ModItems.SYRUP_CHEESECAKE_SLICE));
     public static final Block CHERRY_BLOSSOM_CHEESECAKE = registerBlock("cherry_blossom_cheesecake",
             new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
+    public static final Block PANCAKES = registerBlock("pancakes",
+            new PancakeBlock(() -> ModItems.PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
     public static final Block HONEY_PANCAKES = registerBlock("honey_pancakes",
-            new PancakeBlock(FoodValues.HONEY_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
+            new PancakeBlock(() -> ModItems.HONEY_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
     public static final Block CHOCOLATE_PANCAKES = registerBlock("chocolate_pancakes",
-            new PancakeBlock(FoodValues.CHOCOLATE_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
+            new PancakeBlock(() -> ModItems.CHOCOLATE_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
     public static final Block CHERRY_BLOSSOM_PANCAKES = registerBlock("cherry_blossom_pancakes",
-            new PancakeBlock(FoodValues.CHERRY_BLOSSOM_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
+            new PancakeBlock(() -> ModItems.CHERRY_BLOSSOM_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
     public static final Block VEGETABLE_PANCAKES = registerBlock("vegetable_pancakes",
-            new PancakeBlock(FoodValues.VEGETABLE_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
+            new PancakeBlock(() -> ModItems.VEGETABLE_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PUMPKIN_PANCAKES = registerBlock("pumpkin_pancakes",
+            new PancakeBlock(() -> ModItems.PUMPKIN_PANCAKE, AbstractBlock.Settings.copy(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)));
+
+    // Feasts
+    public static final Block RICE_ROLL_ROYALE = registerBlock("rice_roll_royale",
+            new RiceRollRoyaleBlock(AbstractBlock.Settings.copy(Blocks.CAKE)));
 
     // Wild crops
     public static final Block WILD_COTTON = registerBlock("wild_cotton",
