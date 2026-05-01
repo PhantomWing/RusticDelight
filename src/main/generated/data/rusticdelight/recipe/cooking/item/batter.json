@@ -8,7 +8,7 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     },
     {
       "tag": "c:eggs"
@@ -20,7 +20,6 @@
       "item": "minecraft:wheat"
     }
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 2,
     "id": "rusticdelight:batter"

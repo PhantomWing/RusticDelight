@@ -64,7 +64,7 @@ public class ModBlockStateProvider {
     private static void createCrossCrop(BlockModelGenerators g, Block cropBlock, Property<Integer> ageProperty) {
         int[] ageToVisualStageMapping = ageProperty.getPossibleValues().stream().mapToInt(Integer::intValue).toArray();
         Int2ObjectMap<ResourceLocation> int2ObjectMap = new Int2ObjectOpenHashMap<>();
-        ModelTemplate crossModel = new ModelTemplate(Optional.of(farmersDelightResourceBlock("crop_cross")), Optional.empty(), TextureSlot.CROSS);
+        ModelTemplate crossModel = new ModelTemplate(Optional.of(farmersDelightResourceBlock("template_crop_cross")), Optional.empty(), TextureSlot.CROSS);
 
         PropertyDispatch propertyDispatch = PropertyDispatch.property(ageProperty).generate((integer) -> {
             int i = ageToVisualStageMapping[integer];

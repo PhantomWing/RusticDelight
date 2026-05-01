@@ -102,7 +102,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.BOWL)
                 .requires(CommonTags.FOODS_POTATO)
                 .requires(CommonTags.FOODS_ONION)
-                .requires(CommonTags.FOODS_MILK)
+                .requires(CommonTags.DRINKS_MILK)
                 .requires(ConventionalItemTags.EGGS)
                 .unlockedBy(getHasName(Items.POTATO), has(Items.POTATO))
                 .unlockedBy(getHasName(ModItems.POTATO_SLICES), has(ModItems.POTATO_SLICES))
@@ -147,9 +147,9 @@ public class ModRecipeProvider extends RecipeProvider {
         // Pancakes
         pancakeRecipes(output, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
         pancakeRecipes(output, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE, Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SUGAR));
-        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Items.COCOA_BEANS));
-        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ConventionalItemTags.VEGETABLE_FOODS), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
-        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
+        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(Items.COCOA_BEANS));
+        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(ConventionalItemTags.VEGETABLE_FOODS), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
+        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
         pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
 
         // Cotton
@@ -189,7 +189,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_COFFEE, 1)
                 .requires(ModItems.COFFEE)
-                .requires(CommonTags.FOODS_MILK)
+                .requires(CommonTags.DRINKS_MILK)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output);
 
@@ -201,7 +201,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.CHOCOLATE_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_COFFEE, 1)
                 .requires(ModItems.COFFEE)
-                .requires(CommonTags.FOODS_MILK)
+                .requires(CommonTags.DRINKS_MILK)
                 .requires(Items.COCOA_BEANS)
                 .requires(Items.COCOA_BEANS)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
@@ -214,7 +214,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.HONEY_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HONEY_COFFEE, 1)
                 .requires(ModItems.COFFEE)
-                .requires(CommonTags.FOODS_MILK)
+                .requires(CommonTags.DRINKS_MILK)
                 .requires(Items.HONEY_BOTTLE)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output, getRecipeName(ModItems.COFFEE, ModItems.HONEY_COFFEE));
@@ -226,7 +226,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.SYRUP_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE, 1)
                 .requires(ModItems.COFFEE)
-                .requires(CommonTags.FOODS_MILK)
+                .requires(CommonTags.DRINKS_MILK)
                 .requires(ModTags.Items.SYRUP)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output, getRecipeName(ModItems.COFFEE, ModItems.SYRUP_COFFEE));
@@ -342,7 +342,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Batter
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BATTER, 2, FAST_COOKING, SMALL_EXP, Items.BOWL)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(CommonTags.DRINKS_MILK)
                 .addIngredient(ConventionalItemTags.EGGS)
                 .addIngredient(Items.WHEAT)
                 .addIngredient(Items.WHEAT)
@@ -478,7 +478,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Milk Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.MILK_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(CommonTags.DRINKS_MILK)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -488,7 +488,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Chocolate Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHOCOLATE_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(CommonTags.DRINKS_MILK)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -499,7 +499,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Honey Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.HONEY_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(CommonTags.DRINKS_MILK)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -510,7 +510,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Syrup Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
-                .addIngredient(CommonTags.FOODS_MILK)
+                .addIngredient(CommonTags.DRINKS_MILK)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -732,7 +732,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("MMM")
                 .pattern("SCS")
                 .define('T', topping)
-                .define('M', CommonTags.FOODS_MILK)
+                .define('M', CommonTags.DRINKS_MILK)
                 .define('S', Items.SUGAR)
                 .define('C', vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()), has(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get()))

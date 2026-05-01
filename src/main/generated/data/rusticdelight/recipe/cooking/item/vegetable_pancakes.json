@@ -11,7 +11,7 @@
       "item": "rusticdelight:batter"
     },
     {
-      "tag": "c:foods/milk"
+      "tag": "c:drinks/milk"
     },
     {
       "tag": "c:foods/vegetable"
@@ -26,7 +26,6 @@
       "tag": "c:foods/leafy_green"
     }
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 1,
     "id": "rusticdelight:vegetable_pancakes"

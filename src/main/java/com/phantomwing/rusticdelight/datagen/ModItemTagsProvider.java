@@ -188,10 +188,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         );
 
         // Farmer's Delight
-        getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
-            .add(ModItems.POTATO_SLICES)
-            .addTag(CommonTags.FOODS_BELL_PEPPER);
-        getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM)
+        getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS)
             .add(ModItems.WILD_COTTON)
             .add(ModItems.WILD_BELL_PEPPERS)
             .add(ModItems.WILD_COFFEE);

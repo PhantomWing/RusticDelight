@@ -197,13 +197,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                         )
                         // Else, drop the seeds item (including a Fortune bonus).
                         .withPool(LootPool.lootPool()
-                                .when(doesNotHaveShearsOrSilkTouch())
+                                .when(hasShearsOrSilkTouch().invert())
                                 .add(LootItem.lootTableItem(seedsItem)
                                         .apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE))))
                         )
                         // Additionally, add a random chance to drop the grown crop item.
                         .withPool(LootPool.lootPool()
-                                .when(AllOfCondition.allOf(doesNotHaveShearsOrSilkTouch(), LootItemRandomChanceCondition.randomChance(0.3f)))
+                                .when(AllOfCondition.allOf(hasShearsOrSilkTouch().invert(), LootItemRandomChanceCondition.randomChance(0.3f)))
                                 .add(LootItem.lootTableItem(cropItem))
                         )
         );

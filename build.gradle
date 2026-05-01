@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.8-SNAPSHOT'
+	id 'fabric-loom' version '1.17.0-alpha.7'
 	id 'maven-publish'
 }
 
@@ -22,10 +22,13 @@ loom {
 repositories {
 	mavenLocal()
 
+	flatDir {
+		dirs 'libs'
+	}
+
 	maven {
-		// Farmer's Delight Refabricated
-		name = "Greenhouse Maven"
-		url = 'https://repo.greenhouse.house/releases/'
+		// Farmer's Delight Refabricated (Modrinth Maven)
+		url = "https://api.modrinth.com/maven"
 	}
 
 	maven { // Fabric ASM
@@ -45,7 +48,9 @@ repositories {
 }
 
 fabricApi {
-	configureDataGeneration()
+	configureDataGeneration {
+		modId = "rusticdelight"
+	}
 }
 
 dependencies {
@@ -58,12 +63,15 @@ dependencies {
 
 	// Parchment mappings
 	mappings loom.layered() {
-		officialMojangMappings()
-		parchment("org.parchmentmc.data:parchment-${project.parchment_version}")
+		it.officialMojangMappings {
+			setNameSyntheticMembers(false)
+		}
+		it.parchment("org.parchmentmc.data:parchment-${project.parchment_version}")
 	}
 
-	// Farmer's Delight Refabricated
-	modImplementation("vectorwing:FarmersDelight:${project.minecraft_version}-${project.farmersdelight_version}+refabricated") {
+	// Farmer's Delight Refabricated (local patched jar — strips classtweaker enum extensions
+	// that crash loom 1.16+ remap with NPE in EnumExtensionClassVisitor.visitEnd)
+	modImplementation(name: "farmers-delight-refabricated-${project.minecraft_version}-${project.farmersdelight_version}-patched") {
 		exclude(group: "net.fabricmc")
 	}
 
