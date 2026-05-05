@@ -1,3 +1,9 @@
+# 1.7.0
+### Fixes
+- Fix bell peppers dropping only 1 slice when cut, instead of 2
+- Fix Calamari dropping a guaranteed Bone Meal when cut (now has a 10% chance)
+
+
 # 1.6.0
 ### Changes
 - Updated for Farmer's Delight 1.3.1 (now required, along with NeoForge 21.1.219+)

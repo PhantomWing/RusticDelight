@@ -274,25 +274,25 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(output, cuttingId(ModItems.WILD_BELL_PEPPERS.getId()));
 
         // Bell pepper slices
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.BELL_PEPPER_GREEN.getId()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.BELL_PEPPER_YELLOW.getId()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.BELL_PEPPER_RED.getId()));
 
         // Roasted bell pepper slices
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_GREEN.getId()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_YELLOW.getId()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_RED.getId()));
 
         // Coffee
@@ -307,10 +307,10 @@ public class ModRecipeProvider extends RecipeProvider {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAKED_POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BAKED_POTATO_SLICES, 2)
                 .build(output, cuttingId(ModItems.BAKED_POTATO_SLICES.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE, 2)
-                .addResult(Items.BONE_MEAL)
+                .addResultWithChance(Items.BONE_MEAL, 0.1F)
                 .build(output, cuttingId(ModItems.CALAMARI_SLICE.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE, 2)
-                .addResult(Items.BONE_MEAL)
+                .addResultWithChance(Items.BONE_MEAL, 0.1F)
                 .build(output, cuttingId(ModItems.COOKED_CALAMARI_SLICE.getId()));
 
         // Pie
