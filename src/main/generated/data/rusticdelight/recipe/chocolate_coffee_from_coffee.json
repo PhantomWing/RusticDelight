@@ -4,7 +4,6 @@
   "ingredients": [
     "rusticdelight:coffee",
     "#c:drinks/milk",
-    "minecraft:cocoa_beans",
     "minecraft:cocoa_beans"
   ],
   "result": {

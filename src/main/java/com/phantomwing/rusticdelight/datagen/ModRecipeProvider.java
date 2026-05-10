@@ -65,7 +65,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, SMALL_EXP);
                 foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_RED, ModItems.ROASTED_BELL_PEPPER_SLICE_RED, SMALL_EXP);
 
-
                 shapeless(RecipeCategory.FOOD, ModItems.BELL_PEPPER_SOUP, 1)
                         .requires(Items.BOWL)
                         .requires(CommonTags.FOODS_BELL_PEPPER)
@@ -208,13 +207,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_COFFEE, 1)
                         .requires(ModItems.MILK_COFFEE)
                         .requires(Items.COCOA_BEANS)
-                        .requires(Items.COCOA_BEANS)
                         .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
                         .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.CHOCOLATE_COFFEE));
                 shapeless(RecipeCategory.FOOD, ModItems.CHOCOLATE_COFFEE, 1)
                         .requires(ModItems.COFFEE)
                         .requires(CommonTags.FOODS_MILK)
-                        .requires(Items.COCOA_BEANS)
                         .requires(Items.COCOA_BEANS)
                         .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                         .save(output, getRecipeName(ModItems.COFFEE, ModItems.CHOCOLATE_COFFEE));
@@ -485,50 +482,49 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
                         .build(output,ItemUtils.getIdentifier(ModItems.COFFEE));
 
                 // Milk Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.MILK_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .addIngredient(CommonTags.FOODS_MILK)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
                         .build(output, ItemUtils.getIdentifier(ModItems.MILK_COFFEE));
 
                 // Chocolate Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.CHOCOLATE_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .addIngredient(CommonTags.FOODS_MILK)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(Items.COCOA_BEANS, 2)
+                        .addIngredient(Items.COCOA_BEANS)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
                         .build(output, ItemUtils.getIdentifier(ModItems.CHOCOLATE_COFFEE));
 
                 // Honey Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.HONEY_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .addIngredient(CommonTags.FOODS_MILK)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(Items.HONEY_BOTTLE, 1)
+                        .addIngredient(Items.HONEY_BOTTLE)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
                         .build(output, ItemUtils.getIdentifier(ModItems.HONEY_COFFEE));
 
                 // Syrup Coffee
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, ModItems.SYRUP_COFFEE, 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                         .addIngredient(CommonTags.FOODS_MILK)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                        .addIngredient(ModItems.SYRUP, 1)
+                        .addIngredient(ModItems.SYRUP)
                         .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                         .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
                         .build(output, ItemUtils.getIdentifier(ModItems.SYRUP_COFFEE));

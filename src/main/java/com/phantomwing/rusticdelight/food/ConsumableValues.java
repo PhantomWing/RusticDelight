@@ -55,15 +55,15 @@ public class ConsumableValues {
     public static final Consumable CHOCOLATE_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.HOT_COCOA_IGNORED, true))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable HONEY_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
             .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.MILK_BOTTLE_IGNORED))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 0, false, false), 1.0F))
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable SYRUP_COFFEE = Consumables.defaultDrink()
