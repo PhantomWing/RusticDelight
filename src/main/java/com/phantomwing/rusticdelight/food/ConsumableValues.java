@@ -107,7 +107,7 @@ public class ConsumableValues {
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0, false, false), 1.0F))
             .build();
     public static final Consumable BELL_PEPPER_SOUP = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(ModEffects.COMFORT, MEDIUM_DURATION, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(nourishment(MEDIUM_DURATION), 1.0F))
             .build();
 
     // Plated foods

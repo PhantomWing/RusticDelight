@@ -7,7 +7,7 @@
 
 ### Fixes
 - Fixed (Roasted) Bell Peppers only dropping 1 slice instead of 2 when cut with a knife
-
+- Fixed Syrup Coffee having the same effects as Milk Coffee
 
 # 1.5.4
 ### Additions

@@ -77,7 +77,7 @@ public class ModItems {
     public static final Item MILK_COFFEE = registerWithTab("milk_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.MILK_COFFEE, ConsumableValues.MILK_COFFEE));
     public static final Item CHOCOLATE_COFFEE = registerWithTab("chocolate_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.CHOCOLATE_COFFEE, ConsumableValues.CHOCOLATE_COFFEE));
     public static final Item HONEY_COFFEE = registerWithTab("honey_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.HONEY_COFFEE, ConsumableValues.HONEY_COFFEE));
-    public static final Item SYRUP_COFFEE = registerWithTab("syrup_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.SYRUP_COFFEE, ConsumableValues.MILK_COFFEE));
+    public static final Item SYRUP_COFFEE = registerWithTab("syrup_coffee", props -> new ConsumableItem(props, true, true), bottleFoodItem(FoodValues.SYRUP_COFFEE, ConsumableValues.SYRUP_COFFEE));
     public static final Item DARK_COFFEE = registerWithTab("dark_coffee", props -> new ConsumableItem(props, true), bottleFoodItem(FoodValues.DARK_COFFEE, ConsumableValues.DARK_COFFEE));
 
     // Cooking products
