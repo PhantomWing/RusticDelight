@@ -5,11 +5,10 @@
     "minecraft:bowl",
     "#c:foods/potato",
     "#c:foods/onion",
-    "#c:foods/milk",
+    "#c:drinks/milk",
     "#c:eggs"
   ],
   "result": {
-    "count": 1,
     "id": "rusticdelight:potato_salad"
   }
 }

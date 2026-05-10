@@ -55,6 +55,10 @@ public class RusticDelightConfig implements ConfigData {
             case ENABLE_POTIONS_ID -> config.enable_potions;
             case ENABLE_VILLAGER_TRADES_ID ->  config.enable_villager_trades;
             case ENABLE_WANDERING_TRADER_TRADES_ID ->  config.enable_wandering_trader_trades;
+            // Per-feature gates: feature is enabled when its chance is > 0.
+            case CHANCE_WILD_COTTON_ID -> config.wild_cotton_chance > 0;
+            case CHANCE_WILD_BELL_PEPPERS_ID -> config.wild_bell_peppers_chance > 0;
+            case CHANCE_WILD_COFFEE_ID -> config.wild_coffee_chance > 0;
             default -> false;
         };
     }

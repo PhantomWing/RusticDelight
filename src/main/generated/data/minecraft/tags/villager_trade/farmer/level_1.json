@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "rusticdelight:farmer/1/cotton_emerald",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:farmer/1/bell_pepper_emerald",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:farmer/1/coffee_emerald",
+      "required": false
+    }
+  ]
+}

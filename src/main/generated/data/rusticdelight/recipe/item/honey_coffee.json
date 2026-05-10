@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "#c:drinks/milk",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "minecraft:honey_bottle"
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "id": "rusticdelight:honey_coffee"
+  }
+}

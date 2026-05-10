@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "rusticdelight:bell_pepper_red"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "rusticdelight:bell_pepper_slice_red"
+      }
+    },
+    {
+      "chance": 0.3,
+      "item": {
+        "id": "rusticdelight:bell_pepper_seeds"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

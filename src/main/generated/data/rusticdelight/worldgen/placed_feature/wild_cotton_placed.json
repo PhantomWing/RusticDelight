@@ -6,6 +6,10 @@
       "option": "wild_cotton_chance"
     },
     {
+      "type": "minecraft:count",
+      "count": 32
+    },
+    {
       "type": "minecraft:in_square"
     },
     {

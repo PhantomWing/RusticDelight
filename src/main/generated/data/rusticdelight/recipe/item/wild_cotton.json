@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "rusticdelight:wild_cotton"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "rusticdelight:cotton_seeds"
+      }
+    },
+    {
+      "chance": 0.3,
+      "item": {
+        "id": "rusticdelight:cotton_boll"
+      }
+    },
+    {
+      "chance": 0.1,
+      "item": {
+        "id": "minecraft:white_dye"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

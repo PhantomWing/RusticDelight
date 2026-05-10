@@ -1,21 +1,20 @@
 {
-  "type": "farmersdelight:cooking",
-  "container": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  },
-  "cookingtime": 400,
-  "experience": 2.0,
+  "type": "farmersdelight:cutting",
   "ingredients": [
-    "rusticdelight:batter",
-    "#rusticdelight:syrup",
-    "minecraft:sugar",
-    "minecraft:sugar",
-    "minecraft:sugar",
-    "minecraft:sugar"
+    "rusticdelight:pancakes"
   ],
-  "result": {
-    "count": 1,
-    "id": "rusticdelight:pancakes"
-  }
+  "result": [
+    {
+      "item": {
+        "count": 6,
+        "id": "rusticdelight:pancake"
+      }
+    },
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
 }

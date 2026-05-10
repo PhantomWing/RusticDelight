@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "#minecraft:wool_carpets"
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "minecraft:string"
+      }
+    }
+  ],
+  "tool": "#c:tools/shear"
+}

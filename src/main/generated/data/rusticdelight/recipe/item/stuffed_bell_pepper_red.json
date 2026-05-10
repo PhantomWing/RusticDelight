@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    "rusticdelight:bell_pepper_red",
+    "#c:crops/rice",
+    "#rusticdelight:stuffed_bell_pepper_ingredients"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "rusticdelight:stuffed_bell_pepper_red"
+  }
+}

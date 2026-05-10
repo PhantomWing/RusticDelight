@@ -20,6 +20,7 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+import vectorwing.farmersdelight.common.item.PlaceableItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Function;
@@ -99,13 +100,13 @@ public class ModItems {
     public static final Item CALAMARI_SLICE = registerWithTab("calamari_slice", foodItem(FoodValues.CALAMARI_SLICE, ConsumableValues.FAST_FOOD));
     public static final Item COOKED_CALAMARI_SLICE = registerWithTab("cooked_calamari_slice", foodItem(FoodValues.COOKED_CALAMARI_SLICE, ConsumableValues.FAST_FOOD));
     // Pies & cakes
-    public static final Item SYRUP_CHEESECAKE = registerBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
+    public static final Item SYRUP_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
     public static final Item SYRUP_CHEESECAKE_SLICE = registerWithTab("syrup_cheesecake_slice", foodItem(
             vectorwing.farmersdelight.common.FoodValues.PIE_SLICE,
             vectorwing.farmersdelight.common.FoodValues.ConsumableValues.PIE_SLICE
     ));
 
-    public static final Item CHERRY_BLOSSOM_CHEESECAKE = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
+    public static final Item CHERRY_BLOSSOM_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
     public static final Item CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", foodItem(
             vectorwing.farmersdelight.common.FoodValues.PIE_SLICE,
             vectorwing.farmersdelight.common.FoodValues.ConsumableValues.PIE_SLICE
@@ -130,17 +131,17 @@ public class ModItems {
     public static final Item FRUIT_BEIGNET = registerWithTab("fruit_beignet", props -> new ConsumableItem(props, true), foodItem(FoodValues.FRUIT_BEIGNET, ConsumableValues.FRUIT_BEIGNET));
 
     // Pancakes
-    public static final Item PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
+    public static final Item PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PANCAKES, bowlItem());
     public static final Item PANCAKE = registerWithTab("pancake", foodItem(FoodValues.PANCAKE));
-    public static final Item HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
+    public static final Item HONEY_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
     public static final Item HONEY_PANCAKE = registerWithTab("honey_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.HONEY_PANCAKE, ConsumableValues.HONEY_PANCAKE));
-    public static final Item CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
+    public static final Item CHOCOLATE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
     public static final Item CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.CHOCOLATE_PANCAKE, ConsumableValues.CHOCOLATE_PANCAKE));
-    public static final Item CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
+    public static final Item CHERRY_BLOSSOM_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
     public static final Item CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.CHERRY_BLOSSOM_PANCAKE, ConsumableValues.CHERRY_BLOSSOM_PANCAKE));
-    public static final Item VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
+    public static final Item VEGETABLE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
     public static final Item VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.VEGETABLE_PANCAKE, ConsumableValues.VEGETABLE_PANCAKE));
-    public static final Item PUMPKIN_PANCAKES = registerBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
+    public static final Item PUMPKIN_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
     public static final Item PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", props -> new ConsumableItem(props, true), foodItem(FoodValues.PUMPKIN_PANCAKE, ConsumableValues.PUMPKIN_PANCAKE));
 
     // Salads
@@ -181,7 +182,7 @@ public class ModItems {
             bowlFoodItem(FoodValues.COFFEE_BRAISED_BEEF, ConsumableValues.COFFEE_BRAISED_BEEF));
 
     // Feasts
-    public static final Item RICE_ROLL_ROYALE = registerBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
+    public static final Item RICE_ROLL_ROYALE = registerPlaceableBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
 
     // Helper functions
     public static Item.Properties baseItem() {
@@ -243,6 +244,19 @@ public class ModItems {
         props.setId(ResourceKey.create(Registries.ITEM, loc));
 
         BlockItem item = new BlockItem(block, props);
+        CREATIVE_TAB_ITEMS.add(item);
+
+        return Registry.register(BuiltInRegistries.ITEM, loc, item);
+    }
+
+    private static Item registerPlaceableBlockWithTab(Block block, Item.Properties props) {
+        String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
+        Identifier loc = Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name);
+
+        props.useBlockDescriptionPrefix();
+        props.setId(ResourceKey.create(Registries.ITEM, loc));
+
+        PlaceableItem item = new PlaceableItem(block, props);
         CREATIVE_TAB_ITEMS.add(item);
 
         return Registry.register(BuiltInRegistries.ITEM, loc, item);

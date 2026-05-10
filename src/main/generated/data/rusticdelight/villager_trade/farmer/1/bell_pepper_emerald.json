@@ -1,0 +1,22 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "config": "enable_villager_trades"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "config": "wild_bell_peppers_chance"
+    }
+  ],
+  "gives": {
+    "id": "minecraft:emerald"
+  },
+  "max_uses": 16.0,
+  "reputation_discount": 0.05,
+  "wants": {
+    "count": 24.0,
+    "id": "rusticdelight:bell_pepper_red"
+  },
+  "xp": 2.0
+}

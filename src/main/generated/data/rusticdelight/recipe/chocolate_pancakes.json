@@ -4,7 +4,7 @@
   "key": {
     "B": "minecraft:bowl",
     "M": "rusticdelight:batter",
-    "T": "#c:foods/milk",
+    "T": "#c:drinks/milk",
     "X": "minecraft:cocoa_beans",
     "Y": "minecraft:cocoa_beans"
   },
@@ -14,7 +14,6 @@
     "YBY"
   ],
   "result": {
-    "count": 1,
     "id": "rusticdelight:chocolate_pancakes"
   }
 }

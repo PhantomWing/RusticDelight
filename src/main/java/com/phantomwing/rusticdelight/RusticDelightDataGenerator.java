@@ -23,6 +23,8 @@ public class RusticDelightDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModLootTableProvider::new);
 
         pack.addProvider(ModRegistryDataGenerator::new);
+        pack.addProvider(ModVillagerTrades::new);
+        pack.addProvider(ModVillagerTradeTagsProvider::new);
     }
 
     @Override

@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients",
+    "#rusticdelight:cooking_oil_ingredients"
+  ],
+  "result": {
+    "count": 2,
+    "id": "rusticdelight:cooking_oil"
+  }
+}

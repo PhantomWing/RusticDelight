@@ -1,0 +1,23 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "config": "enable_villager_trades"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "config": "wild_coffee_chance"
+    }
+  ],
+  "gives": {
+    "count": 3,
+    "id": "rusticdelight:golden_coffee_beans"
+  },
+  "max_uses": 12.0,
+  "reputation_discount": 0.05,
+  "wants": {
+    "count": 3.0,
+    "id": "minecraft:emerald"
+  },
+  "xp": 30.0
+}

@@ -1,7 +1,7 @@
 package com.phantomwing.rusticdelight.datagen;
 
 import com.phantomwing.rusticdelight.tags.ModTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.tags.BiomeTagsProvider;
@@ -10,7 +10,7 @@ import net.minecraft.tags.BiomeTags;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBiomeTagsProvider extends BiomeTagsProvider {
-    public ModBiomeTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public ModBiomeTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider);
     }
 

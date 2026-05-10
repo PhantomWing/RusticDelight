@@ -1,21 +1,20 @@
 {
-  "type": "farmersdelight:cooking",
-  "container": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  },
-  "cookingtime": 400,
-  "experience": 2.0,
+  "type": "farmersdelight:cutting",
   "ingredients": [
-    "rusticdelight:batter",
-    "#c:foods/milk",
-    "minecraft:cocoa_beans",
-    "minecraft:cocoa_beans",
-    "minecraft:cocoa_beans",
-    "minecraft:cocoa_beans"
+    "rusticdelight:chocolate_pancakes"
   ],
-  "result": {
-    "count": 1,
-    "id": "rusticdelight:chocolate_pancakes"
-  }
+  "result": [
+    {
+      "item": {
+        "count": 6,
+        "id": "rusticdelight:chocolate_pancake"
+      }
+    },
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
 }

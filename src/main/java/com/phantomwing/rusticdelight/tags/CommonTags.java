@@ -22,7 +22,8 @@ public class CommonTags {
     public static final TagKey<Item> FOODS_LEAFY_GREEN = commonItemTag("foods/leafy_green");
     public static final TagKey<Item> FOODS_DOUGH = commonItemTag("foods/dough");
     public static final TagKey<Item> FOODS_PASTA = commonItemTag("foods/pasta");
-    public static final TagKey<Item> FOODS_MILK = commonItemTag("foods/milk");
+    // 26.1: Conventional Tags moved milk from c:foods/milk to c:drinks/milk in 1.21+.
+    public static final TagKey<Item> FOODS_MILK = commonItemTag("drinks/milk");
 
     public static final TagKey<Item> FOODS_RAW_BEEF = commonItemTag("foods/raw_beef");
     public static final TagKey<Item> FOODS_RAW_CHICKEN = commonItemTag("foods/raw_chicken");

@@ -8,7 +8,7 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import vectorwing.farmersdelight.common.item.component.consumable.RemoveRandomStatusEffectsConsumeEffect;
 import vectorwing.farmersdelight.common.registry.ModEffects;
-import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.refabricated.FDRefabricatedTags;
 
 import static vectorwing.farmersdelight.common.FoodValues.*;
 
@@ -47,28 +47,28 @@ public class ConsumableValues {
 
     public static final Consumable MILK_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.MILK_BOTTLE_IGNORED))
+            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.MILK_BOTTLE_IGNORED))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable CHOCOLATE_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.HOT_COCOA_IGNORED, true))
+            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.HOT_COCOA_IGNORED, true))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 0, false, false), 1.0F))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable HONEY_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.MILK_BOTTLE_IGNORED))
+            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.MILK_BOTTLE_IGNORED))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 900, 0, false, false), 1.0F))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 0, false, false), 1.0F))
             .build();
 
     public static final Consumable SYRUP_COFFEE = Consumables.defaultDrink()
             .consumeSeconds(CONSUME_FAST)
-            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(ModTags.MILK_BOTTLE_IGNORED))
+            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.MILK_BOTTLE_IGNORED))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1800, 0, false, false), 1.0F))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1800, 0, false, false), 1.0F))
             .build();

@@ -1,3 +1,3 @@
-accessWidener v2 named
+accessWidener v2 official
 
 mutable field net/minecraft/world/entity/npc/villager/Villager FOOD_POINTS Ljava/util/Map;

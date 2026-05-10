@@ -3,8 +3,8 @@ package com.phantomwing.rusticdelight.datagen;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
@@ -13,8 +13,8 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
-    public ModBlockTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
+    public ModBlockTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider);
     }
 
@@ -99,13 +99,13 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     private void addCompatibilityTags() {
         // Farmers Delight
-        this.valueLookupBuilder(ModTags.STRAW_BLOCKS).add(
+        this.valueLookupBuilder(ModTags.Blocks.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG,
                 ModBlocks.BELL_PEPPER_SEEDS_BAG,
                 ModBlocks.COFFEE_BEANS_BAG,
                 ModBlocks.ROASTED_COFFEE_BEANS_BAG
         );
-        this.valueLookupBuilder(ModTags.WILD_CROPS).add(
+        this.valueLookupBuilder(ModTags.Blocks.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON,
                 ModBlocks.WILD_BELL_PEPPERS,
                 ModBlocks.WILD_COFFEE

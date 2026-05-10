@@ -13,7 +13,8 @@ import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.client.renderer.block.dispatch.VariantMutator;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -68,7 +69,7 @@ public class ModBlockStateProvider {
 
         int[] ageToVisualStageMapping = ageProperty.getPossibleValues().stream().mapToInt(Integer::intValue).toArray();
         Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
-        ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("crop_cross")), Optional.empty(), TextureSlot.CROSS);
+        ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("template_crop_cross")), Optional.empty(), TextureSlot.CROSS);
 
         g.blockStateOutput.accept(MultiVariantGenerator.dispatch(cropBlock).with(PropertyDispatch.initial(ageProperty).generate((integer) -> {
             int i = ageToVisualStageMapping[integer];
@@ -83,10 +84,10 @@ public class ModBlockStateProvider {
     private static void farmersDelightCrate(BlockModelGenerators g, Block block) {
         String blockName = blockName(block);
         TextureMapping mapping = (new TextureMapping())
-                .put(TextureSlot.PARTICLE, blockResource(blockName + "_top"))
-                .put(TextureSlot.SIDE, blockResource(blockName + "_side"))
-                .put(TextureSlot.BOTTOM, blockResourceFD("crate_bottom"))
-                .put(TextureSlot.TOP, blockResource(blockName + "_top"));
+                .put(TextureSlot.PARTICLE, new Material(blockResource(blockName + "_top")))
+                .put(TextureSlot.SIDE, new Material(blockResource(blockName + "_side")))
+                .put(TextureSlot.BOTTOM, new Material(blockResourceFD("crate_bottom")))
+                .put(TextureSlot.TOP, new Material(blockResource(blockName + "_top")));
 
         createBlock(g, block, mapping, ModelTemplates.CUBE_BOTTOM_TOP);
     }
@@ -94,13 +95,13 @@ public class ModBlockStateProvider {
     private static void canvasBag(BlockModelGenerators g, Block block) {
         String blockName = blockName(block);
         TextureMapping mapping = (new TextureMapping())
-                .put(TextureSlot.PARTICLE, blockResource(blockName + "_top"))
-                .put(TextureSlot.DOWN, blockResource(blockName + "_bottom"))
-                .put(TextureSlot.UP, blockResource(blockName + "_top"))
-                .put(TextureSlot.NORTH, blockResource(blockName + "_side_tied"))
-                .put(TextureSlot.SOUTH, blockResource(blockName + "_side_tied"))
-                .put(TextureSlot.EAST, blockResource(blockName + "_side"))
-                .put(TextureSlot.WEST, blockResource(blockName + "_side"));
+                .put(TextureSlot.PARTICLE, new Material(blockResource(blockName + "_top")))
+                .put(TextureSlot.DOWN, new Material(blockResource(blockName + "_bottom")))
+                .put(TextureSlot.UP, new Material(blockResource(blockName + "_top")))
+                .put(TextureSlot.NORTH, new Material(blockResource(blockName + "_side_tied")))
+                .put(TextureSlot.SOUTH, new Material(blockResource(blockName + "_side_tied")))
+                .put(TextureSlot.EAST, new Material(blockResource(blockName + "_side")))
+                .put(TextureSlot.WEST, new Material(blockResource(blockName + "_side")));
 
         createBlock(g, block, mapping, ModelTemplates.CUBE);
     }

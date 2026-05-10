@@ -4,14 +4,15 @@ import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
@@ -19,8 +20,8 @@ import vectorwing.farmersdelight.common.tag.ConventionalTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
-    public ModItemTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
+    public ModItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider);
     }
 
@@ -37,12 +38,12 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .add(ModItems.COTTON_SEEDS, Items.PUMPKIN_SEEDS)
                 .addOptionalTag(CommonTags.SEEDS_CANOLA)
-                .addOptionalTag(CommonTags.SEEDS_SUNFLOWER)
-                .addOptional(compatItem(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_seeds"));
+                .addOptionalTag(CommonTags.SEEDS_SUNFLOWER);
+        addOptionalElement(ModTags.Items.COOKING_OIL_INGREDIENTS, compatItem(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_seeds"));
 
         valueLookupBuilder(ModTags.Items.COOKING_OIL)
-                .add(ModItems.COOKING_OIL)
-                .addOptional(compatItem(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_oil"));
+                .add(ModItems.COOKING_OIL);
+        addOptionalElement(ModTags.Items.COOKING_OIL, compatItem(CompatibilityTags.FRYCOOKS_DELIGHT, "canola_oil"));
 
         // Cherry blossom foods
         valueLookupBuilder(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS).add(
@@ -53,17 +54,17 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
         // Calamari
         valueLookupBuilder(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
-                .add(ModItems.CALAMARI_SLICE)
-                .addOptional(compatItem(CompatibilityTags.MINERS_DELIGHT, "tentacles"));
+                .add(ModItems.CALAMARI_SLICE);
+        addOptionalElement(ModTags.Items.CALAMARI_ROLL_INGREDIENTS, compatItem(CompatibilityTags.MINERS_DELIGHT, "tentacles"));
 
         // Coffee
         valueLookupBuilder(ModTags.Items.COFFEE_INGREDIENTS)
-                .add(ModItems.ROASTED_COFFEE_BEANS)
-                .addOptional(compatItem(CompatibilityTags.FARMERS_RESPITE, "coffee_beans"));
+                .add(ModItems.ROASTED_COFFEE_BEANS);
+        addOptionalElement(ModTags.Items.COFFEE_INGREDIENTS, compatItem(CompatibilityTags.FARMERS_RESPITE, "coffee_beans"));
 
         valueLookupBuilder(ModTags.Items.COFFEE_FOOD_INGREDIENTS)
-                .add(ModItems.COFFEE, ModItems.DARK_COFFEE)
-                .addOptional(compatItem(CompatibilityTags.FARMERS_RESPITE, "coffee"));
+                .add(ModItems.COFFEE, ModItems.DARK_COFFEE);
+        addOptionalElement(ModTags.Items.COFFEE_FOOD_INGREDIENTS, compatItem(CompatibilityTags.FARMERS_RESPITE, "coffee"));
         // Syrup
         valueLookupBuilder(ModTags.Items.SYRUP_INGREDIENTS).add(
                 Items.APPLE
@@ -201,10 +202,8 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         );
 
         // Farmer's Delight
-        valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.CABBAGE_ROLL_INGREDIENTS)
-            .add(ModItems.POTATO_SLICES)
-            .addTag(CommonTags.FOODS_BELL_PEPPER);
-        valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM)
+        // Note: ModTags.CABBAGE_ROLL_INGREDIENTS removed in FDR 3.x — cabbage roll recipes use a different mechanism now.
+        valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS)
             .add(ModItems.WILD_COTTON)
             .add(ModItems.WILD_BELL_PEPPERS)
             .add(ModItems.WILD_COFFEE);
@@ -379,13 +378,13 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
                 .add(
                         ModItems.CALAMARI,
                         ModItems.CALAMARI_SLICE
-                )
-                .addOptional(compatItem(CompatibilityTags.CULTURAL_DELIGHTS,"squid"))
-                .addOptional(compatItem(CompatibilityTags.CULTURAL_DELIGHTS,"glow_squid"))
-                .addOptional(compatItem(CompatibilityTags.CULTURAL_DELIGHTS,"raw_calamari"))
-                .addOptional(compatItem(CompatibilityTags.MINERS_DELIGHT,"squid"))
-                .addOptional(compatItem(CompatibilityTags.MINERS_DELIGHT,"glow_squid"))
-                .addOptional(compatItem(CompatibilityTags.MINERS_DELIGHT,"tentacles"));
+                );
+        addOptionalElement(CommonTags.FOODS_RAW_CALAMARI, compatItem(CompatibilityTags.CULTURAL_DELIGHTS, "squid"));
+        addOptionalElement(CommonTags.FOODS_RAW_CALAMARI, compatItem(CompatibilityTags.CULTURAL_DELIGHTS, "glow_squid"));
+        addOptionalElement(CommonTags.FOODS_RAW_CALAMARI, compatItem(CompatibilityTags.CULTURAL_DELIGHTS, "raw_calamari"));
+        addOptionalElement(CommonTags.FOODS_RAW_CALAMARI, compatItem(CompatibilityTags.MINERS_DELIGHT, "squid"));
+        addOptionalElement(CommonTags.FOODS_RAW_CALAMARI, compatItem(CompatibilityTags.MINERS_DELIGHT, "glow_squid"));
+        addOptionalElement(CommonTags.FOODS_RAW_CALAMARI, compatItem(CompatibilityTags.MINERS_DELIGHT, "tentacles"));
         valueLookupBuilder(CommonTags.FOODS_RAW_SQUID).add(
                 ModItems.CALAMARI,
                 ModItems.CALAMARI_SLICE
@@ -419,9 +418,15 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         );
     }
 
-    private Item compatItem(String namespace, String itemName) {
-        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(namespace, itemName));
-        return new Item(new Item.Properties().setId(key));
+    private Identifier compatItem(String namespace, String itemName) {
+        return Identifier.fromNamespaceAndPath(namespace, itemName);
+    }
+
+    // 26.1: Items can't be instantiated during datagen (intrusive holders disabled). Add optional
+    // compat entries via the ResourceKey-based appender instead. Adds to the same underlying tag
+    // builder as valueLookupBuilder.
+    private void addOptionalElement(TagKey<Item> tagKey, Identifier id) {
+        builder(tagKey).addOptional(ResourceKey.create(Registries.ITEM, id));
     }
 
 }

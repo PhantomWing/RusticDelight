@@ -3,11 +3,10 @@
   "category": "misc",
   "ingredients": [
     "rusticdelight:coffee",
-    "#c:foods/milk",
+    "#c:drinks/milk",
     "#rusticdelight:syrup"
   ],
   "result": {
-    "count": 1,
     "id": "rusticdelight:syrup_coffee"
   }
 }

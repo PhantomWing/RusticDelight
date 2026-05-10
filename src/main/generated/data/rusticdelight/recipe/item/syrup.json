@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    "#rusticdelight:syrup_ingredients",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "rusticdelight:syrup"
+  }
+}

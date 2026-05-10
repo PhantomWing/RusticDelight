@@ -3,11 +3,10 @@
   "category": "misc",
   "ingredients": [
     "rusticdelight:coffee",
-    "#c:foods/milk",
+    "#c:drinks/milk",
     "minecraft:honey_bottle"
   ],
   "result": {
-    "count": 1,
     "id": "rusticdelight:honey_coffee"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "#rusticdelight:cooking_oil",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "#c:foods/onion"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "rusticdelight:fried_mushrooms"
+  }
+}

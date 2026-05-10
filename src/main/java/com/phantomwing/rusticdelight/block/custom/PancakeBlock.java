@@ -30,7 +30,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 import java.util.function.Supplier;
@@ -61,7 +60,10 @@ public class PancakeBlock extends Block {
 
     @Override
     public @NotNull InteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (heldStack.is(ModTags.KNIVES)) {
+        // Use FDR's ItemUtils.isKnife — it checks both the KNIFE_HARVEST ItemAbility and the
+        // farmersdelight:tools/knives tag, so it picks up knives that aren't tagged (e.g.
+        // copper_knife in FDR 3.6.3 isn't in the tag JSON but is a knife via the ability).
+        if (ItemUtils.isKnife(heldStack)) {
             return takeServing(level, pos, state, player);
         }
 

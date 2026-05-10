@@ -1,3 +1,14 @@
+# 1.6.0
+### Changes
+- Updated to Minecraft 26.1 (compile target 26.1.2; minimum supported 26.1)
+- Updated Farmer's Delight Refabricated to 3.6.3
+- Added a "Placeable" tooltip on placeable food blocks (Syrup Cheesecake, Cherry Blossom Cheesecake, all pancake blocks, Rice Roll Royale)
+- Added Chilean Spanish translations (thank you vlaster666!)
+
+### Fixes
+- Fixed (Roasted) Bell Peppers only dropping 1 slice instead of 2 when cut with a knife
+
+
 # 1.5.4
 ### Additions
 - Updated Korean translations (thank you TAILS!)

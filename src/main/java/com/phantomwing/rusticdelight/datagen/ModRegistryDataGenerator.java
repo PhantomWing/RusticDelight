@@ -1,6 +1,6 @@
 package com.phantomwing.rusticdelight.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRegistryDataGenerator extends FabricDynamicRegistryProvider {
-    public ModRegistryDataGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public ModRegistryDataGenerator(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider);
     }
 

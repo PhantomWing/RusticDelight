@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredients": [
+    "#rusticdelight:cooking_oil",
+    "#c:foods/dough",
+    "#rusticdelight:fruits_berries",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "rusticdelight:fruit_beignet"
+  }
+}

@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "experience": 1.0,
   "ingredients": [
     "#c:foods/carrot",
@@ -8,8 +7,8 @@
     "#c:foods/beetroot",
     "#c:foods/leafy_green"
   ],
+  "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
     "id": "farmersdelight:vegetable_soup"
   }
 }

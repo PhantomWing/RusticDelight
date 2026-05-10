@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "farmersdelight:rice",
+    "#rusticdelight:fried_rice_ingredients",
+    "#c:foods/carrot",
+    "#c:foods/onion"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "farmersdelight:fried_rice"
+  }
+}

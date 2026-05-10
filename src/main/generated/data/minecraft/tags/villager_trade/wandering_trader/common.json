@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "rusticdelight:wandering_trader/cotton_seeds_for_emerald",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:wandering_trader/bell_pepper_seeds_for_emerald",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:wandering_trader/coffee_beans_for_emerald",
+      "required": false
+    }
+  ]
+}

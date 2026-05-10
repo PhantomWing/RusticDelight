@@ -6,7 +6,7 @@ import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.ModTags;
 import com.phantomwing.rusticdelight.util.ItemUtils;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
@@ -21,6 +21,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +39,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     public static final float MEDIUM_EXP = 1.0F;
     public static final float LARGE_EXP = 2.0F;
 
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public ModRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider);
     }
 
@@ -286,24 +287,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .build(output, ItemUtils.getIdentifier(ModItems.WILD_BELL_PEPPERS));
 
                 // Bell pepper slices
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_GREEN));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_YELLOW));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_RED));
 
                 // Roasted bell pepper slices
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_GREEN));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_YELLOW));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output,ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_RED));
 
@@ -582,7 +583,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_TOMATO)
                         .unlockedByAnyIngredient(Items.COD, Items.POTATO, vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get(), Items.EGG)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
 
                 // Beef Stew
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, vectorwing.farmersdelight.common.registry.ModItems.BEEF_STEW.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -591,7 +592,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_POTATO)
                         .unlockedByAnyIngredient(Items.BEEF, Items.CARROT, Items.POTATO)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
 
                 // Mushroom Rice
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, vectorwing.farmersdelight.common.registry.ModItems.MUSHROOM_RICE.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -601,7 +602,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.MUSHROOM_RICE_INGREDIENTS)
                         .unlockedByAnyIngredient(Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
 
                 // Vegetable Soup
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, vectorwing.farmersdelight.common.registry.ModItems.VEGETABLE_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -611,7 +612,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_LEAFY_GREEN)
                         .unlockedByAnyIngredient(Items.CARROT, vectorwing.farmersdelight.common.registry.ModItems.ONION.get(), Items.BEETROOT)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
             }
 
             private void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {
@@ -663,21 +664,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
             private void foodSmelting(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience, int cookingTime) {
                 SimpleCookingRecipeBuilder
-                        .generic(Ingredient.of(material), RecipeCategory.FOOD, result, experience, cookingTime, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new)
+                        .generic(Ingredient.of(material), RecipeCategory.FOOD, CookingBookCategory.FOOD, result, experience, cookingTime, SmeltingRecipe::new)
                         .unlockedBy(getHasName(material), has(material))
                         .save(recipeOutput);
             }
 
             private void foodSmoking(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience, int cookingTime) {
                 SimpleCookingRecipeBuilder
-                        .generic(Ingredient.of(material), RecipeCategory.FOOD, result, experience, cookingTime, RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new)
+                        .generic(Ingredient.of(material), RecipeCategory.FOOD, CookingBookCategory.FOOD, result, experience, cookingTime, SmokingRecipe::new)
                         .unlockedBy(getHasName(material), has(material))
                         .save(recipeOutput, RusticDelight.MOD_ID + ":" + getItemName(result) + "_from_smoking");
             }
 
             private void foodCampfireCooking(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience, int cookingTime) {
                 SimpleCookingRecipeBuilder
-                        .generic(Ingredient.of(material), RecipeCategory.FOOD, result, experience, cookingTime, RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new)
+                        .generic(Ingredient.of(material), RecipeCategory.FOOD, CookingBookCategory.FOOD, result, experience, cookingTime, CampfireCookingRecipe::new)
                         .unlockedBy(getHasName(material), has(material))
                         .save(recipeOutput, RusticDelight.MOD_ID + ":" + getItemName(result) + "_from_campfire_cooking");
             }
@@ -721,7 +722,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ingredient2, 2)
                         .unlockedByAnyIngredient(batter)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, ItemUtils.getIdentifier(pancakeBlock)));
+                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, getItemName(pancakeBlock) + "_from_cooking_pot")));
 
                 // Cutting recipe for pancakes to separate them into single pancakes.
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock), tagIngredient(CommonTags.TOOLS_KNIFE), singlePancake, PancakeBlock.MAX_SERVINGS)

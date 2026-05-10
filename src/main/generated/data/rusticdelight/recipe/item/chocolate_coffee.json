@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "#c:drinks/milk",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "#rusticdelight:coffee_ingredients",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans"
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "id": "rusticdelight:chocolate_coffee"
+  }
+}
