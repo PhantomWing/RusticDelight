@@ -23,10 +23,10 @@ public class RusticDelightConfig implements ConfigData {
     public int wild_cotton_chance = 32;
 
     public static final String CHANCE_WILD_BELL_PEPPERS_ID = "wild_bell_peppers_chance";
-    public int wild_bell_peppers_chance = 15;
+    public int wild_bell_peppers_chance = 32;
 
     public static final String CHANCE_WILD_COFFEE_ID = "wild_coffee_chance";
-    public int wild_coffee_chance = 15;
+    public int wild_coffee_chance = 32;
 
     public static RusticDelightConfig get() {
         return AutoConfig.getConfigHolder(RusticDelightConfig.class).getConfig();

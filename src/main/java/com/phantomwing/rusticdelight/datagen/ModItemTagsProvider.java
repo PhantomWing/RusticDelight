@@ -208,6 +208,14 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
             .add(ModItems.WILD_BELL_PEPPERS)
             .add(ModItems.WILD_COFFEE);
 
+        // FDR 3.6.3 ships `copper_knife` but forgets to add it to `c:tools/knife` (only its own
+        // `farmersdelight:tools/knives` JSON, which the convention tag doesn't reference). That
+        // makes `ItemUtils.isKnife()` and any other `c:tools/knife` check skip copper knives —
+        // so e.g. cutting a serving from a pancake block fails. Patch it up here; tag entries
+        // from multiple mods merge so this complements FDR's tag rather than overriding it.
+        addOptionalElement(vectorwing.farmersdelight.common.tag.CommonTags.Items.TOOLS_KNIFE,
+                compatItem("farmersdelight", "copper_knife"));
+
         // Serene Seasons
         valueLookupBuilder(CompatibilityTags.SERENE_SEASONS_SPRING_CROPS).add(
             ModItems.COTTON_SEEDS

@@ -6,11 +6,11 @@
       "option": "wild_bell_peppers_chance"
     },
     {
-      "type": "minecraft:count",
-      "count": 48
+      "type": "minecraft:in_square"
     },
     {
-      "type": "minecraft:in_square"
+      "type": "minecraft:count",
+      "count": 64
     },
     {
       "type": "minecraft:heightmap",

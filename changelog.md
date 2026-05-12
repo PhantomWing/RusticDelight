@@ -2,17 +2,20 @@
 ### Changes
 - Updated to Minecraft 26.1 (compile target 26.1.2; minimum supported 26.1)
 - Updated Farmer's Delight Refabricated to 3.6.3
+- Improved wild crop generation to include Coarse Dirt and bushes
 - Rebalanced/simplified Coffee recipes and effects
   - Coffee now requires 3 coffee beans, instead of 4
   - Chocolate Coffee now requires 1 cocoa beans instead of 2
   - Chocolate & Honey Coffee effects now last 1:00 instead of 0:45
 - Added a "Placeable" tooltip on placeable food blocks (Syrup Cheesecake, Cherry Blossom Cheesecake, all pancake blocks, Rice Roll Royale)
+- Added particles to Pancake blocks when eating/taking a serving
 - Added Chilean Spanish translations (thank you vlaster666!)
 
 ### Fixes
 - Fixed (Roasted) Bell Peppers only dropping 1 slice instead of 2 when cut with a knife
 - Fixed Syrup Coffee having the same effects as Milk Coffee
-- Fixed Bell Pepper Soup crafting recipe
+- Fixed Copper Knife not being recognized as a knife (temporary fix until FDR adds it)
+
 
 # 1.5.4
 ### Additions
