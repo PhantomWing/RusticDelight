@@ -307,10 +307,10 @@ public class ModRecipeProvider extends RecipeProvider {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAKED_POTATO), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BAKED_POTATO_SLICES, 2)
                 .build(output, cuttingId(ModItems.BAKED_POTATO_SLICES.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CALAMARI), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CALAMARI_SLICE, 2)
-                .addResultWithChance(Items.BONE_MEAL, 0.1F)
+                .addResult(Items.BONE_MEAL)
                 .build(output, cuttingId(ModItems.CALAMARI_SLICE.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CALAMARI), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_CALAMARI_SLICE, 2)
-                .addResultWithChance(Items.BONE_MEAL, 0.1F)
+                .addResult(Items.BONE_MEAL)
                 .build(output, cuttingId(ModItems.COOKED_CALAMARI_SLICE.getId()));
 
         // Pie

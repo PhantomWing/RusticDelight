@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.compat.ThirstCompat;
 import com.phantomwing.rusticdelight.loot.LootModifierManager;
 import com.phantomwing.rusticdelight.potions.ModPotions;
 import com.phantomwing.rusticdelight.ui.ModCreativeModTab;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -49,6 +51,10 @@ public class RusticDelight {
         }
 
         NeoForge.EVENT_BUS.register(this);
+
+        if (ModList.get().isLoaded("thirst")) {
+            NeoForge.EVENT_BUS.register(ThirstCompat.class);
+        }
 
         registerManagers(eventBus);
     }

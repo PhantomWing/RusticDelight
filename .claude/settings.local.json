@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:modrinth.com)",
+      "WebFetch(domain:www.curseforge.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh api:*)",
+      "Bash(mkdir -p /tmp/thirst-decompile)",
+      "Bash(unzip -o /tmp/ThirstWasTaken-1.21.1-2.1.5.jar -d .)",
+      "Bash(where javap:*)",
+      "Bash(javap:*)",
+      "Bash(./gradlew compileJava)"
+    ]
+  }
+}

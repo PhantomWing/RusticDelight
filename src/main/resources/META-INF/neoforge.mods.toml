@@ -38,3 +38,10 @@ configBackground = "minecraft:textures/block/bricks.png"
     versionRange="${farmersdelight_version_range}"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="thirst"
+    type="optional"
+    versionRange="[1.21.0-2.0.0,)"
+    ordering="AFTER"
+    side="BOTH"

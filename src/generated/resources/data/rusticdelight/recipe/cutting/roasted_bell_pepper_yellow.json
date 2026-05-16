@@ -8,12 +8,12 @@
   "result": [
     {
       "item": {
-        "count": 1,
+        "count": 2,
         "id": "rusticdelight:roasted_bell_pepper_slice_yellow"
       }
     },
     {
-      "chance": 0.3,
+      "chance": 0.1,
       "item": {
         "count": 1,
         "id": "rusticdelight:bell_pepper_seeds"

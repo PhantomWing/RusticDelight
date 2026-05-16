@@ -1,7 +1,9 @@
-# 1.7.0
+# 1.6.1
+### Additions
+- Added compatibility with Thirst Was Taken
+
 ### Fixes
 - Fix bell peppers dropping only 1 slice when cut, instead of 2
-- Fix Calamari dropping a guaranteed Bone Meal when cut (now has a 10% chance)
 
 
 # 1.6.0
