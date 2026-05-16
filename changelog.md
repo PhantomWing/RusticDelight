@@ -1,3 +1,11 @@
+# 1.6.1
+### Additions
+- Added compatibility with Thirst Was Taken
+
+### Fixes
+- Fix bell peppers dropping only 1 slice when cut, instead of 2
+
+
 # 1.6.0
 ### Additions
 - Added Chilean Spanish translations (thank you vlaster666!)

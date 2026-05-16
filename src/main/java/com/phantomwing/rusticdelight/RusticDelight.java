@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.mojang.logging.LogUtils;
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.compat.ThirstCompat;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.loot.ModLootModifiers;
 import com.phantomwing.rusticdelight.potions.ModBrewingRecipe;
@@ -23,6 +24,7 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -54,6 +56,10 @@ public class RusticDelight
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        if (ModList.get().isLoaded("thirst")) {
+            MinecraftForge.EVENT_BUS.register(ThirstCompat.class);
+        }
 
         registerManagers(modEventBus);
     }

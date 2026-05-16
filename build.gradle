@@ -124,13 +124,17 @@ dependencies {
     // implementation fg.deobf("curse.maven:bookshelf-228525:5423987") // Required by Botany Pots
 
     // compile against the JEI API but do not include it at runtime
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    //compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    //compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     // at runtime, use the full JEI jar for Forge
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
-    compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
+    //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
     runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
+
+    // Thirst Was Taken
+    compileOnly fg.deobf("maven.modrinth:thirst-was-taken:${thirst_version}")
+    runtimeOnly fg.deobf("maven.modrinth:thirst-was-taken:${thirst_version}")
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']

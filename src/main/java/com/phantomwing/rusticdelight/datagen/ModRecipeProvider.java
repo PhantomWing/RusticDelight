@@ -280,25 +280,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(output, getCuttingPath(ModItems.WILD_BELL_PEPPERS.get()));
 
         // Bell pepper slices
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_GREEN.get(), 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_GREEN.get(), 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.1F)
                 .save(output, getCuttingPath(ModItems.BELL_PEPPER_GREEN.get()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_YELLOW.get(), 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_YELLOW.get(), 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.1F)
                 .save(output, getCuttingPath(ModItems.BELL_PEPPER_YELLOW.get()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_RED.get(), 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BELL_PEPPER_SLICE_RED.get(), 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.1F)
                 .save(output, getCuttingPath(ModItems.BELL_PEPPER_RED.get()));
 
         // Roasted bell pepper slices
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN.get(), 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN.get(), 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.1F)
                 .save(output, getCuttingPath(ModItems.ROASTED_BELL_PEPPER_GREEN.get()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW.get(), 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW.get(), 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.1F)
                 .save(output, getCuttingPath(ModItems.ROASTED_BELL_PEPPER_YELLOW.get()));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_RED.get(), 1)
-                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.3F)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.ROASTED_BELL_PEPPER_SLICE_RED.get(), 2)
+                .addResultWithChance(ModItems.BELL_PEPPER_SEEDS.get(), 0.1F)
                 .save(output, getCuttingPath(ModItems.ROASTED_BELL_PEPPER_RED.get()));
 
         // Coffee
