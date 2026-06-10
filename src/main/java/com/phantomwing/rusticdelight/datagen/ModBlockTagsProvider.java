@@ -37,7 +37,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         ModBlocks.COTTON_BOLL_CRATE.get(),
                         ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
                         ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
-                        ModBlocks.BELL_PEPPER_RED_CRATE.get()
+                        ModBlocks.BELL_PEPPER_RED_CRATE.get(),
+                        ModBlocks.CALAMARI_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_GREEN_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_RED_BLOCK.get()
                 );
 
         this.tag(BlockTags.SMALL_FLOWERS).add(
@@ -74,6 +78,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         this.tag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_RED).add(
                 ModBlocks.BELL_PEPPER_RED_CRATE.get()
         );
+        this.tag(CommonTags.STORAGE_BLOCKS_CALAMARI).add(
+                ModBlocks.CALAMARI_CRATE.get()
+        );
         this.tag(CommonTags.STORAGE_BLOCKS_COFFEE_BEANS).add(
                 ModBlocks.COFFEE_BEANS_BAG.get()
         );
@@ -94,6 +101,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN)
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW)
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_RED)
+                .addTag(CommonTags.STORAGE_BLOCKS_CALAMARI)
                 .addTag(CommonTags.STORAGE_BLOCKS_COFFEE_BEANS)
                 .addTag(CommonTags.STORAGE_BLOCKS_COFFEE)
                 .addTag(CommonTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS);

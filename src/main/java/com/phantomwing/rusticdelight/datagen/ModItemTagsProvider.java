@@ -236,6 +236,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED).add(
                 ModItems.BELL_PEPPER_RED_CRATE.get()
         );
+        this.tag(CommonTags.STORAGE_BLOCKS_ITEM_CALAMARI).add(
+                ModItems.CALAMARI_CRATE.get()
+        );
         this.tag(CommonTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS).add(
                 ModItems.COFFEE_BEANS_BAG.get()
         );
@@ -256,6 +259,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_CALAMARI)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_COFFEE)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_ROASTED_COFFEE_BEANS);

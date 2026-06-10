@@ -48,6 +48,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
+        farmersDelightCrate(ModBlocks.CALAMARI_CRATE.get());
+
+        bellPepperBlock(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_RED_BLOCK.get());
 
         pieBlock(ModBlocks.SYRUP_CHEESECAKE.get());
         pieBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get());
@@ -124,6 +129,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         String blockName = blockName(block);
         this.simpleBlock(block,
                 models().cubeBottomTop(blockName, resourceBlock(blockName + "_side"), farmersDelightResourceBlock("crate_bottom"), resourceBlock(blockName + "_top")));
+    }
+
+    // Solid pepper block: textures are bell_pepper_<color>_{side,bottom,top}, so strip the "_block" suffix.
+    private void bellPepperBlock(Block block) {
+        String blockName = blockName(block);
+        String tex = blockName.replace("_block", "");
+        this.simpleBlock(block,
+                models().cubeBottomTop(blockName, resourceBlock(tex + "_side"), resourceBlock(tex + "_bottom"), resourceBlock(tex + "_top")));
     }
 
     private void canvasBag(Block block) {

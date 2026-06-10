@@ -1,3 +1,10 @@
+# 1.7.0
+### Additions
+- Added **Calamari Crate**, a storage block for Calamari
+- Added Bell Pepper Block for each color, a storage block for Bell Pepper Slice
+- Added new types of coffee: Pumpkin Coffee, Cherry Blossom Coffee
+
+
 # 1.6.1
 ### Additions
 - Added compatibility with Thirst Was Taken

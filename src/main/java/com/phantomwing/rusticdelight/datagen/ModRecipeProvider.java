@@ -166,6 +166,12 @@ public class ModRecipeProvider extends RecipeProvider {
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_GREEN_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_YELLOW_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_RED_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.CALAMARI, ModItems.CALAMARI_CRATE);
+
+        // Bell pepper blocks (3x3 slices <-> block)
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_GREEN_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_YELLOW_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_RED_BLOCK);
 
         // Coffee
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
@@ -229,6 +235,30 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ModTags.Items.SYRUP)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
                 .save(output, getRecipeName(ModItems.COFFEE, ModItems.SYRUP_COFFEE));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PUMPKIN_COFFEE, 1)
+                .requires(ModItems.MILK_COFFEE)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get())
+                .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
+                .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.PUMPKIN_COFFEE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PUMPKIN_COFFEE, 1)
+                .requires(ModItems.COFFEE)
+                .requires(CommonTags.DRINKS_MILK)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get())
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .save(output, getRecipeName(ModItems.COFFEE, ModItems.PUMPKIN_COFFEE));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COFFEE, 1)
+                .requires(ModItems.MILK_COFFEE)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
+                .save(output, getRecipeName(ModItems.MILK_COFFEE, ModItems.CHERRY_BLOSSOM_COFFEE));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COFFEE, 1)
+                .requires(ModItems.COFFEE)
+                .requires(CommonTags.DRINKS_MILK)
+                .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
+                .save(output, getRecipeName(ModItems.COFFEE, ModItems.CHERRY_BLOSSOM_COFFEE));
 
         // Syrup-based recipes
         oneToOne(output, RecipeCategory.MISC, ModItems.SYRUP, Items.SUGAR, 3);
@@ -514,6 +544,28 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModItems.SYRUP, 1)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output);
+
+        // Pumpkin Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.PUMPKIN_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(CommonTags.DRINKS_MILK)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get(), 1)
+                .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
+                .save(output);
+
+        // Cherry Blossom Coffee
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHERRY_BLOSSOM_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(CommonTags.DRINKS_MILK)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(output);

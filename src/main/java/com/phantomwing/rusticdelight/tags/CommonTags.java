@@ -68,6 +68,7 @@ public class CommonTags {
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_RED = commonBlockTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_GREEN = commonBlockTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_YELLOW = commonBlockTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Block> STORAGE_BLOCKS_CALAMARI = commonBlockTag("storage_blocks/calamari");
 
     // Storage blocks (items)
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COTTON_SEEDS = commonItemTag("storage_blocks/cotton_seeds");
@@ -79,6 +80,7 @@ public class CommonTags {
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED = commonItemTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN = commonItemTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW = commonItemTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CALAMARI = commonItemTag("storage_blocks/calamari");
 
     // Seeds
     public static final TagKey<Item> SEEDS_COTTON = commonItemTag("seeds/cotton");

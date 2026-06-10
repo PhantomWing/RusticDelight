@@ -33,6 +33,16 @@ public class ModBlocks {
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> BELL_PEPPER_RED_CRATE = BLOCKS.register("bell_pepper_red_crate",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> CALAMARI_CRATE = BLOCKS.register("calamari_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
+    // Bell pepper blocks (9 slices, reversible)
+    public static final DeferredBlock<Block> BELL_PEPPER_GREEN_BLOCK = BLOCKS.register("bell_pepper_green_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_YELLOW_BLOCK = BLOCKS.register("bell_pepper_yellow_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_RED_BLOCK = BLOCKS.register("bell_pepper_red_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
 
     // Edible blocks
     public static final DeferredBlock<Block> SYRUP_CHEESECAKE = BLOCKS.register("syrup_cheesecake",

@@ -41,6 +41,12 @@ public class ModItems {
     public static final DeferredItem<Item> BELL_PEPPER_GREEN_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_GREEN_CRATE);
     public static final DeferredItem<Item> BELL_PEPPER_YELLOW_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
     public static final DeferredItem<Item> BELL_PEPPER_RED_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_RED_CRATE);
+    public static final DeferredItem<Item> CALAMARI_CRATE = registerBlockWithTab(ModBlocks.CALAMARI_CRATE);
+
+    // Bell pepper blocks
+    public static final DeferredItem<Item> BELL_PEPPER_GREEN_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_GREEN_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_YELLOW_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_YELLOW_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_RED_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_RED_BLOCK);
 
     // Wild crops
     public static final DeferredItem<Item> WILD_COTTON = registerBlockWithTab(ModBlocks.WILD_COTTON);
@@ -89,16 +95,21 @@ public class ModItems {
     // Coffee
     public static final DeferredItem<Item> COFFEE = registerWithTab("coffee", () -> new DrinkableItem(
             bottleItem().food(FoodValues.COFFEE), true));
+    public static final DeferredItem<Item> DARK_COFFEE = registerWithTab("dark_coffee", () -> new DrinkableItem(
+            bottleItem().food(FoodValues.DARK_COFFEE), true));
     public static final DeferredItem<Item> MILK_COFFEE = registerWithTab("milk_coffee", () -> new MilkCoffeeItem(
             bottleItem().food(FoodValues.MILK_COFFEE)));
+
     public static final DeferredItem<Item> CHOCOLATE_COFFEE = registerWithTab("chocolate_coffee", () -> new ChocolateCoffeeItem(
             bottleItem().food(FoodValues.CHOCOLATE_COFFEE)));
     public static final DeferredItem<Item> HONEY_COFFEE = registerWithTab("honey_coffee", () -> new MilkCoffeeItem(
             bottleItem().food(FoodValues.HONEY_COFFEE)));
     public static final DeferredItem<Item> SYRUP_COFFEE = registerWithTab("syrup_coffee", () -> new MilkCoffeeItem(
             bottleItem().food(FoodValues.SYRUP_COFFEE)));
-    public static final DeferredItem<Item> DARK_COFFEE = registerWithTab("dark_coffee", () -> new DrinkableItem(
-            bottleItem().food(FoodValues.DARK_COFFEE), true));
+    public static final DeferredItem<Item> PUMPKIN_COFFEE = registerWithTab("pumpkin_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.PUMPKIN_COFFEE)));
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_COFFEE = registerWithTab("cherry_blossom_coffee", () -> new MilkCoffeeItem(
+            bottleItem().food(FoodValues.CHERRY_BLOSSOM_COFFEE)));
 
     // Cooking products
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(

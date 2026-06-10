@@ -85,6 +85,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PANCAKE);
         simpleItem(ModItems.PANCAKES);
         simpleItem(ModItems.SYRUP_COFFEE);
+        simpleItem(ModItems.PUMPKIN_COFFEE);
+        simpleItem(ModItems.CHERRY_BLOSSOM_COFFEE);
         simpleItem(ModItems.SYRUP_COOKIE);
         simpleItem(ModItems.COFFEE_COOKIE);
         simpleItem(ModItems.SYRUP_SANDWICH);
@@ -107,6 +109,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlock(ModBlocks.BELL_PEPPER_GREEN_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
         simpleBlock(ModBlocks.BELL_PEPPER_RED_CRATE);
+        simpleBlock(ModBlocks.CALAMARI_CRATE);
+        simpleBlock(ModBlocks.BELL_PEPPER_GREEN_BLOCK);
+        simpleBlock(ModBlocks.BELL_PEPPER_YELLOW_BLOCK);
+        simpleBlock(ModBlocks.BELL_PEPPER_RED_BLOCK);
     }
 
     // A simple item with a model generated from its sprite.

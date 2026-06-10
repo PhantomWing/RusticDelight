@@ -82,6 +82,18 @@ public class FoodValues {
             .alwaysEdible()
             .fast()
             .build();
+    public static final FoodProperties PUMPKIN_COFFEE = (new FoodProperties.Builder())
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 1), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
+    public static final FoodProperties CHERRY_BLOSSOM_COFFEE = (new FoodProperties.Builder())
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 1), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
 
     // Sweets
     public static final FoodProperties SYRUP_SANDWICH = (new FoodProperties.Builder())

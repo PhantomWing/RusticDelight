@@ -15,6 +15,8 @@ public class ThirstCompat {
         event.addDrink(ModItems.MILK_COFFEE.get(), 6, 10);
         event.addDrink(ModItems.CHOCOLATE_COFFEE.get(), 8, 11);
         event.addDrink(ModItems.HONEY_COFFEE.get(), 8, 11);
+        event.addDrink(ModItems.PUMPKIN_COFFEE.get(), 8, 11);
+        event.addDrink(ModItems.CHERRY_BLOSSOM_COFFEE.get(), 8, 11);
 
         // Drinks - Other liquids
         event.addDrink(ModItems.COOKING_OIL.get(), 2, 3);
