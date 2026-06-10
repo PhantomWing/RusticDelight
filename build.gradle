@@ -4,6 +4,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '1.0.14'
+    id 'me.modmuss50.mod-publish-plugin' version '2.0.0'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -12,6 +13,25 @@ tasks.named('wrapper', Wrapper).configure {
 
 version = mod_version
 group = mod_group_id
+
+// Per-release changelog: notes under the first "# X.Y.Z" header in changelog.md, up to the next "# ".
+ext.latestChangelog = {
+    def f = file('changelog.md')
+    if (!f.exists()) return "See changelog.md"
+    def body = new StringBuilder()
+    boolean started = false, done = false
+    f.eachLine { line ->
+        if (done) return
+        if (line.startsWith('# ')) {
+            if (started) { done = true; return }
+            started = true
+            return
+        }
+        if (started) body.append(line).append('\n')
+    }
+    def out = body.toString().trim()
+    return out.isEmpty() ? "See changelog.md" : out
+}
 
 repositories {
     // CurseMaven
@@ -170,6 +190,35 @@ publishing {
         maven {
             url "file://${project.projectDir}/repo"
         }
+    }
+}
+
+// --- Modrinth + CurseForge release (NeoForge jar) ---
+// ./gradlew publishMods                 (needs MODRINTH_TOKEN / CURSEFORGE_TOKEN; see gradle.properties)
+// ./gradlew publishMods -PpublishDryRun  (stage to build/, upload nothing)
+publishMods {
+    file = jar.archiveFile
+    version = mod_version
+    displayName = "${mod_name} ${mod_version}"
+    changelog = latestChangelog()
+    type = STABLE
+    modLoaders.add("neoforge")
+    dryRun = project.hasProperty("publishDryRun")
+
+    modrinth {
+        projectId = providers.gradleProperty("modrinth_project_id")
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN").orElse(providers.gradleProperty("modrinth_token"))
+        supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+        requires("farmers-delight")
+    }
+    curseforge {
+        projectId = providers.gradleProperty("curseforge_project_id")
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN").orElse(providers.gradleProperty("curseforge_token"))
+        supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+        // CurseForge needs explicit side flags (Modrinth infers them from the jar).
+        client = true
+        server = true
+        requires("farmers-delight")
     }
 }
 
