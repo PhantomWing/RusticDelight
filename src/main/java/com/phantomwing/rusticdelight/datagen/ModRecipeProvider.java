@@ -48,10 +48,22 @@ public class ModRecipeProvider extends RecipeProvider {
         foodCookingRecipes(output, ModItems.BELL_PEPPER_GREEN, ModItems.ROASTED_BELL_PEPPER_GREEN, FOOD_COOKING_EXP);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_YELLOW, ModItems.ROASTED_BELL_PEPPER_YELLOW, FOOD_COOKING_EXP);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_RED, ModItems.ROASTED_BELL_PEPPER_RED, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_ORANGE, ModItems.ROASTED_BELL_PEPPER_ORANGE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_WHITE, ModItems.ROASTED_BELL_PEPPER_WHITE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_PINK, ModItems.ROASTED_BELL_PEPPER_PINK, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_BLUE, ModItems.ROASTED_BELL_PEPPER_BLUE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_PURPLE, ModItems.ROASTED_BELL_PEPPER_PURPLE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_BLACK, ModItems.ROASTED_BELL_PEPPER_BLACK, FOOD_COOKING_EXP);
 
         foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, FOOD_COOKING_EXP);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, FOOD_COOKING_EXP);
         foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_RED, ModItems.ROASTED_BELL_PEPPER_SLICE_RED, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_ORANGE, ModItems.ROASTED_BELL_PEPPER_SLICE_ORANGE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_WHITE, ModItems.ROASTED_BELL_PEPPER_SLICE_WHITE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_PINK, ModItems.ROASTED_BELL_PEPPER_SLICE_PINK, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_BLUE, ModItems.ROASTED_BELL_PEPPER_SLICE_BLUE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_PURPLE, ModItems.ROASTED_BELL_PEPPER_SLICE_PURPLE, FOOD_COOKING_EXP);
+        foodCookingRecipes(output, ModItems.BELL_PEPPER_SLICE_BLACK, ModItems.ROASTED_BELL_PEPPER_SLICE_BLACK, FOOD_COOKING_EXP);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BELL_PEPPER_SOUP, 1)
                 .requires(Items.BOWL)
@@ -74,6 +86,12 @@ public class ModRecipeProvider extends RecipeProvider {
         simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_ROLL_GREEN);
         simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_ROLL_YELLOW);
         simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_ROLL_RED);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_ORANGE, ModItems.BELL_PEPPER_ROLL_ORANGE);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_WHITE, ModItems.BELL_PEPPER_ROLL_WHITE);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_PINK, ModItems.BELL_PEPPER_ROLL_PINK);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_BLUE, ModItems.BELL_PEPPER_ROLL_BLUE);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_PURPLE, ModItems.BELL_PEPPER_ROLL_PURPLE);
+        simpleSushiRoll(output, ModItems.BELL_PEPPER_SLICE_BLACK, ModItems.BELL_PEPPER_ROLL_BLACK);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CALAMARI_ROLL, 2)
                 .requires(ModTags.Items.CALAMARI_ROLL_INGREDIENTS)
@@ -162,16 +180,36 @@ public class ModRecipeProvider extends RecipeProvider {
         oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, Items.GREEN_DYE, 1);
         oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, Items.YELLOW_DYE, 1);
         oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED, Items.RED_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_ORANGE, Items.ORANGE_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_WHITE, Items.WHITE_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_PINK, Items.PINK_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_BLUE, Items.BLUE_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_PURPLE, Items.PURPLE_DYE, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_BLACK, Items.BLACK_DYE, 1);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SEEDS, ModItems.BELL_PEPPER_SEEDS_BAG);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.PALE_BELL_PEPPER_SEEDS, ModItems.PALE_BELL_PEPPER_SEEDS_BAG);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.DARK_BELL_PEPPER_SEEDS, ModItems.DARK_BELL_PEPPER_SEEDS_BAG);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_GREEN_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_YELLOW_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED, ModItems.BELL_PEPPER_RED_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_ORANGE, ModItems.BELL_PEPPER_ORANGE_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_WHITE, ModItems.BELL_PEPPER_WHITE_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_PINK, ModItems.BELL_PEPPER_PINK_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_BLUE, ModItems.BELL_PEPPER_BLUE_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_PURPLE, ModItems.BELL_PEPPER_PURPLE_CRATE);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_BLACK, ModItems.BELL_PEPPER_BLACK_CRATE);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.CALAMARI, ModItems.CALAMARI_CRATE);
 
         // Bell pepper blocks (3x3 slices <-> block)
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_GREEN_BLOCK);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_YELLOW_BLOCK);
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_RED_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_ORANGE, ModItems.BELL_PEPPER_ORANGE_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_WHITE, ModItems.BELL_PEPPER_WHITE_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PINK, ModItems.BELL_PEPPER_PINK_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLUE, ModItems.BELL_PEPPER_BLUE_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PURPLE, ModItems.BELL_PEPPER_PURPLE_BLOCK);
+        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLACK, ModItems.BELL_PEPPER_BLACK_BLOCK);
 
         // Coffee
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
@@ -313,6 +351,24 @@ public class ModRecipeProvider extends RecipeProvider {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 2)
                 .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.BELL_PEPPER_RED.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_ORANGE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_ORANGE, 2)
+                .addResultWithChance(ModItems.PALE_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.BELL_PEPPER_ORANGE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_WHITE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_WHITE, 2)
+                .addResultWithChance(ModItems.PALE_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.BELL_PEPPER_WHITE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_PINK), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_PINK, 2)
+                .addResultWithChance(ModItems.PALE_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.BELL_PEPPER_PINK.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_BLUE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_BLUE, 2)
+                .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.BELL_PEPPER_BLUE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_PURPLE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_PURPLE, 2)
+                .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.BELL_PEPPER_PURPLE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_BLACK), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_BLACK, 2)
+                .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.BELL_PEPPER_BLACK.getId()));
 
         // Roasted bell pepper slices
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 2)
@@ -324,6 +380,24 @@ public class ModRecipeProvider extends RecipeProvider {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 2)
                 .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_RED.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_ORANGE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_ORANGE, 2)
+                .addResultWithChance(ModItems.PALE_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_ORANGE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_WHITE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_WHITE, 2)
+                .addResultWithChance(ModItems.PALE_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_WHITE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_PINK), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_PINK, 2)
+                .addResultWithChance(ModItems.PALE_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_PINK.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_BLUE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_BLUE, 2)
+                .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_BLUE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_PURPLE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_PURPLE, 2)
+                .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_PURPLE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_BLACK), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_BLACK, 2)
+                .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
+                .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_BLACK.getId()));
 
         // Coffee
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
@@ -482,6 +556,48 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(CommonTags.CROPS_RICE)
                 .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_RED)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_ORANGE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_ORANGE)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_ORANGE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_WHITE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_WHITE)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_WHITE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_PINK, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_PINK)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_PINK)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_BLUE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_BLUE)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_BLUE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_PURPLE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_PURPLE)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_PURPLE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_BLACK, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModItems.BELL_PEPPER_BLACK)
+                .addIngredient(CommonTags.CROPS_RICE)
+                .addIngredient(ModTags.Items.STUFFED_BELL_PEPPER_INGREDIENTS)
+                .unlockedByAnyIngredient(ModItems.BELL_PEPPER_BLACK)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output);
 

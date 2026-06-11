@@ -1,0 +1,7 @@
+{
+  "parent": "farmersdelight:block/template_crop_cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "rusticdelight:block/pale_bell_peppers_stage1"
+  }
+}

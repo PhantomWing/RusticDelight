@@ -29,6 +29,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         makeCottonCrop((CropBlock) ModBlocks.COTTON_CROP.get(), "cotton_stage", "cotton_stage");
         makeBellPepperCrop((CropBlock) ModBlocks.BELL_PEPPER_CROP.get(), "bell_peppers_stage", "bell_peppers_stage");
+        makeBellPepperCrop((CropBlock) ModBlocks.PALE_BELL_PEPPER_CROP.get(), "pale_bell_peppers_stage", "pale_bell_peppers_stage");
+        makeBellPepperCrop((CropBlock) ModBlocks.DARK_BELL_PEPPER_CROP.get(), "dark_bell_peppers_stage", "dark_bell_peppers_stage");
         makeCoffeeCrop((CropBlock) ModBlocks.COFFEE_CROP.get(), "coffee_stage", "coffee_stage");
 
         makeWildCrop(ModBlocks.WILD_COTTON.get());
@@ -41,6 +43,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         canvasBag(ModBlocks.COTTON_SEEDS_BAG.get());
         canvasBag(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        canvasBag(ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG.get());
+        canvasBag(ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG.get());
         canvasBag(ModBlocks.COFFEE_BEANS_BAG.get());
         canvasBag(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
 
@@ -48,11 +52,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
         farmersDelightCrate(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         farmersDelightCrate(ModBlocks.BELL_PEPPER_RED_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_ORANGE_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_WHITE_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_PINK_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_BLUE_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_PURPLE_CRATE.get());
+        farmersDelightCrate(ModBlocks.BELL_PEPPER_BLACK_CRATE.get());
         farmersDelightCrate(ModBlocks.CALAMARI_CRATE.get());
 
         bellPepperBlock(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get());
         bellPepperBlock(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get());
         bellPepperBlock(ModBlocks.BELL_PEPPER_RED_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_ORANGE_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_WHITE_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_PINK_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_BLUE_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_PURPLE_BLOCK.get());
+        bellPepperBlock(ModBlocks.BELL_PEPPER_BLACK_BLOCK.get());
 
         pieBlock(ModBlocks.SYRUP_CHEESECAKE.get());
         pieBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get());

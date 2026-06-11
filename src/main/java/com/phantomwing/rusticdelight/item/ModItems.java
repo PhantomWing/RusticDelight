@@ -33,6 +33,8 @@ public class ModItems {
     // Seed bags
     public static final DeferredItem<Item> COTTON_SEEDS_BAG = registerBlockWithTab(ModBlocks.COTTON_SEEDS_BAG);
     public static final DeferredItem<Item> BELL_PEPPER_SEEDS_BAG = registerBlockWithTab(ModBlocks.BELL_PEPPER_SEEDS_BAG);
+    public static final DeferredItem<Item> PALE_BELL_PEPPER_SEEDS_BAG = registerBlockWithTab(ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG);
+    public static final DeferredItem<Item> DARK_BELL_PEPPER_SEEDS_BAG = registerBlockWithTab(ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG);
     public static final DeferredItem<Item> COFFEE_BEANS_BAG = registerBlockWithTab(ModBlocks.COFFEE_BEANS_BAG);
     public static final DeferredItem<Item> ROASTED_COFFEE_BEANS_BAG = registerBlockWithTab(ModBlocks.ROASTED_COFFEE_BEANS_BAG);
 
@@ -41,12 +43,24 @@ public class ModItems {
     public static final DeferredItem<Item> BELL_PEPPER_GREEN_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_GREEN_CRATE);
     public static final DeferredItem<Item> BELL_PEPPER_YELLOW_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_YELLOW_CRATE);
     public static final DeferredItem<Item> BELL_PEPPER_RED_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_RED_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_ORANGE_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_ORANGE_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_WHITE_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_WHITE_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_PINK_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_PINK_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_BLUE_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_BLUE_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_PURPLE_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_PURPLE_CRATE);
+    public static final DeferredItem<Item> BELL_PEPPER_BLACK_CRATE = registerBlockWithTab(ModBlocks.BELL_PEPPER_BLACK_CRATE);
     public static final DeferredItem<Item> CALAMARI_CRATE = registerBlockWithTab(ModBlocks.CALAMARI_CRATE);
 
     // Bell pepper blocks
     public static final DeferredItem<Item> BELL_PEPPER_GREEN_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_GREEN_BLOCK);
     public static final DeferredItem<Item> BELL_PEPPER_YELLOW_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_YELLOW_BLOCK);
     public static final DeferredItem<Item> BELL_PEPPER_RED_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_RED_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_ORANGE_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_ORANGE_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_WHITE_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_WHITE_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_PINK_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_PINK_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_BLUE_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_BLUE_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_PURPLE_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_PURPLE_BLOCK);
+    public static final DeferredItem<Item> BELL_PEPPER_BLACK_BLOCK = registerBlockWithTab(ModBlocks.BELL_PEPPER_BLACK_BLOCK);
 
     // Wild crops
     public static final DeferredItem<Item> WILD_COTTON = registerBlockWithTab(ModBlocks.WILD_COTTON);
@@ -61,6 +75,18 @@ public class ModItems {
             baseItem().food(FoodValues.BELL_PEPPER)));
     public static final DeferredItem<Item> BELL_PEPPER_RED = registerWithTab("bell_pepper_red", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_ORANGE = registerWithTab("bell_pepper_orange", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_WHITE = registerWithTab("bell_pepper_white", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_PINK = registerWithTab("bell_pepper_pink", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_BLUE = registerWithTab("bell_pepper_blue", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_PURPLE = registerWithTab("bell_pepper_purple", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER)));
+    public static final DeferredItem<Item> BELL_PEPPER_BLACK = registerWithTab("bell_pepper_black", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER)));
 
     // Crop seeds
     public static final DeferredItem<Item> COTTON_SEEDS = registerWithTab("cotton_seeds", () -> new ItemNameBlockItem(
@@ -68,6 +94,12 @@ public class ModItems {
             baseItem()));
     public static final DeferredItem<Item> BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", () -> new ItemNameBlockItem(
             ModBlocks.BELL_PEPPER_CROP.get(),
+            baseItem()));
+    public static final DeferredItem<Item> PALE_BELL_PEPPER_SEEDS = registerWithTab("pale_bell_pepper_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.PALE_BELL_PEPPER_CROP.get(),
+            baseItem()));
+    public static final DeferredItem<Item> DARK_BELL_PEPPER_SEEDS = registerWithTab("dark_bell_pepper_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.DARK_BELL_PEPPER_CROP.get(),
             baseItem()));
 
     // Coffee Beans
@@ -90,6 +122,18 @@ public class ModItems {
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_YELLOW = registerWithTab("roasted_bell_pepper_yellow", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_RED = registerWithTab("roasted_bell_pepper_red", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_ORANGE = registerWithTab("roasted_bell_pepper_orange", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_WHITE = registerWithTab("roasted_bell_pepper_white", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_PINK = registerWithTab("roasted_bell_pepper_pink", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_BLUE = registerWithTab("roasted_bell_pepper_blue", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_PURPLE = registerWithTab("roasted_bell_pepper_purple", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_BLACK = registerWithTab("roasted_bell_pepper_black", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)));
 
     // Coffee
@@ -131,12 +175,36 @@ public class ModItems {
             baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
     public static final DeferredItem<Item> BELL_PEPPER_SLICE_RED = registerWithTab("bell_pepper_slice_red", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_ORANGE = registerWithTab("bell_pepper_slice_orange", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_WHITE = registerWithTab("bell_pepper_slice_white", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_PINK = registerWithTab("bell_pepper_slice_pink", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_BLUE = registerWithTab("bell_pepper_slice_blue", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_PURPLE = registerWithTab("bell_pepper_slice_purple", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> BELL_PEPPER_SLICE_BLACK = registerWithTab("bell_pepper_slice_black", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_SLICE)));
 
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_GREEN = registerWithTab("roasted_bell_pepper_slice_green", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_YELLOW = registerWithTab("roasted_bell_pepper_slice_yellow", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_RED = registerWithTab("roasted_bell_pepper_slice_red", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_ORANGE = registerWithTab("roasted_bell_pepper_slice_orange", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_WHITE = registerWithTab("roasted_bell_pepper_slice_white", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_PINK = registerWithTab("roasted_bell_pepper_slice_pink", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_BLUE = registerWithTab("roasted_bell_pepper_slice_blue", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_PURPLE = registerWithTab("roasted_bell_pepper_slice_purple", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
+    public static final DeferredItem<Item> ROASTED_BELL_PEPPER_SLICE_BLACK = registerWithTab("roasted_bell_pepper_slice_black", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER_SLICE)));
 
     public static final DeferredItem<Item> CALAMARI_SLICE = registerWithTab("calamari_slice", () -> new Item(
@@ -200,6 +268,18 @@ public class ModItems {
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
     public static final DeferredItem<Item> STUFFED_BELL_PEPPER_RED = registerWithTab("stuffed_bell_pepper_red", () -> new Item(
             baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_ORANGE = registerWithTab("stuffed_bell_pepper_orange", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_WHITE = registerWithTab("stuffed_bell_pepper_white", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_PINK = registerWithTab("stuffed_bell_pepper_pink", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_BLUE = registerWithTab("stuffed_bell_pepper_blue", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_PURPLE = registerWithTab("stuffed_bell_pepper_purple", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
+    public static final DeferredItem<Item> STUFFED_BELL_PEPPER_BLACK = registerWithTab("stuffed_bell_pepper_black", () -> new Item(
+            baseItem().food(FoodValues.STUFFED_BELL_PEPPER)));
 
     // Fried foods
     public static final DeferredItem<Item> FRIED_DOUGH = registerWithTab("fried_dough", () -> new Item(
@@ -215,6 +295,18 @@ public class ModItems {
     public static final DeferredItem<Item> BELL_PEPPER_ROLL_YELLOW = registerWithTab("bell_pepper_roll_yellow", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
     public static final DeferredItem<Item> BELL_PEPPER_ROLL_RED = registerWithTab("bell_pepper_roll_red", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_ORANGE = registerWithTab("bell_pepper_roll_orange", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_WHITE = registerWithTab("bell_pepper_roll_white", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_PINK = registerWithTab("bell_pepper_roll_pink", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_BLUE = registerWithTab("bell_pepper_roll_blue", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_PURPLE = registerWithTab("bell_pepper_roll_purple", () -> new Item(
+            baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
+    public static final DeferredItem<Item> BELL_PEPPER_ROLL_BLACK = registerWithTab("bell_pepper_roll_black", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER_ROLL)));
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             baseItem().food(FoodValues.CALAMARI_ROLL)));

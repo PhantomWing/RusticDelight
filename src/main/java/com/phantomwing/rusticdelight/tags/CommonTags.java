@@ -61,6 +61,8 @@ public class CommonTags {
     // Storage blocks
     public static final TagKey<Block> STORAGE_BLOCKS_COTTON_SEEDS = commonBlockTag("storage_blocks/cotton_seeds");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/pale_bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/dark_bell_pepper_seeds");
     public static final TagKey<Block> STORAGE_BLOCKS_COFFEE_BEANS = commonBlockTag("storage_blocks/coffee_beans");
     public static final TagKey<Block> STORAGE_BLOCKS_COFFEE = commonBlockTag("storage_blocks/coffee"); // Alternate tag for Coffee Beans, for better compatibility
     public static final TagKey<Block> STORAGE_BLOCKS_ROASTED_COFFEE_BEANS = commonBlockTag("storage_blocks/roasted_coffee_beans");
@@ -68,11 +70,19 @@ public class CommonTags {
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_RED = commonBlockTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_GREEN = commonBlockTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_YELLOW = commonBlockTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_ORANGE = commonBlockTag("storage_blocks/bell_pepper_orange");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_WHITE = commonBlockTag("storage_blocks/bell_pepper_white");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_PINK = commonBlockTag("storage_blocks/bell_pepper_pink");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_BLUE = commonBlockTag("storage_blocks/bell_pepper_blue");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_PURPLE = commonBlockTag("storage_blocks/bell_pepper_purple");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_BLACK = commonBlockTag("storage_blocks/bell_pepper_black");
     public static final TagKey<Block> STORAGE_BLOCKS_CALAMARI = commonBlockTag("storage_blocks/calamari");
 
     // Storage blocks (items)
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COTTON_SEEDS = commonItemTag("storage_blocks/cotton_seeds");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_SEEDS = commonItemTag("storage_blocks/bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS = commonItemTag("storage_blocks/pale_bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS = commonItemTag("storage_blocks/dark_bell_pepper_seeds");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COFFEE_BEANS = commonItemTag("storage_blocks/coffee_beans");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COFFEE = commonItemTag("storage_blocks/coffee"); // Alternate tag for Coffee Beans, for better compatibility
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ROASTED_COFFEE_BEANS = commonItemTag("storage_blocks/roasted_coffee_beans");
@@ -80,6 +90,12 @@ public class CommonTags {
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED = commonItemTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN = commonItemTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW = commonItemTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE = commonItemTag("storage_blocks/bell_pepper_orange");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE = commonItemTag("storage_blocks/bell_pepper_white");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK = commonItemTag("storage_blocks/bell_pepper_pink");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE = commonItemTag("storage_blocks/bell_pepper_blue");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE = commonItemTag("storage_blocks/bell_pepper_purple");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK = commonItemTag("storage_blocks/bell_pepper_black");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CALAMARI = commonItemTag("storage_blocks/calamari");
 
     // Seeds

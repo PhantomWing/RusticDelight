@@ -19,6 +19,10 @@ public class ModBlocks {
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static final DeferredBlock<Block> BELL_PEPPER_SEEDS_BAG = BLOCKS.register("bell_pepper_seeds_bag",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+    public static final DeferredBlock<Block> PALE_BELL_PEPPER_SEEDS_BAG = BLOCKS.register("pale_bell_pepper_seeds_bag",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+    public static final DeferredBlock<Block> DARK_BELL_PEPPER_SEEDS_BAG = BLOCKS.register("dark_bell_pepper_seeds_bag",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static final DeferredBlock<Block> COFFEE_BEANS_BAG = BLOCKS.register("coffee_beans_bag",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static final DeferredBlock<Block> ROASTED_COFFEE_BEANS_BAG = BLOCKS.register("roasted_coffee_beans_bag",
@@ -33,6 +37,18 @@ public class ModBlocks {
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> BELL_PEPPER_RED_CRATE = BLOCKS.register("bell_pepper_red_crate",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_ORANGE_CRATE = BLOCKS.register("bell_pepper_orange_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_WHITE_CRATE = BLOCKS.register("bell_pepper_white_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_PINK_CRATE = BLOCKS.register("bell_pepper_pink_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_BLUE_CRATE = BLOCKS.register("bell_pepper_blue_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_PURPLE_CRATE = BLOCKS.register("bell_pepper_purple_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BELL_PEPPER_BLACK_CRATE = BLOCKS.register("bell_pepper_black_crate",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> CALAMARI_CRATE = BLOCKS.register("calamari_crate",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
@@ -42,6 +58,18 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BELL_PEPPER_YELLOW_BLOCK = BLOCKS.register("bell_pepper_yellow_block",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
     public static final DeferredBlock<Block> BELL_PEPPER_RED_BLOCK = BLOCKS.register("bell_pepper_red_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_ORANGE_BLOCK = BLOCKS.register("bell_pepper_orange_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_WHITE_BLOCK = BLOCKS.register("bell_pepper_white_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_PINK_BLOCK = BLOCKS.register("bell_pepper_pink_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_BLUE_BLOCK = BLOCKS.register("bell_pepper_blue_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_PURPLE_BLOCK = BLOCKS.register("bell_pepper_purple_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
+    public static final DeferredBlock<Block> BELL_PEPPER_BLACK_BLOCK = BLOCKS.register("bell_pepper_black_block",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.MELON)));
 
     // Edible blocks
@@ -78,7 +106,11 @@ public class ModBlocks {
     public static final DeferredBlock<Block> COTTON_CROP = BLOCKS.register("cotton",
             () -> new CottonCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.register("bell_peppers",
-            () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).noOcclusion().noCollission()));
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).noOcclusion().noCollission(), ModItems.BELL_PEPPER_SEEDS));
+    public static final DeferredBlock<Block> PALE_BELL_PEPPER_CROP = BLOCKS.register("pale_bell_peppers",
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).noOcclusion().noCollission(), ModItems.PALE_BELL_PEPPER_SEEDS));
+    public static final DeferredBlock<Block> DARK_BELL_PEPPER_CROP = BLOCKS.register("dark_bell_peppers",
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).noOcclusion().noCollission(), ModItems.DARK_BELL_PEPPER_SEEDS));
     public static final DeferredBlock<Block> COFFEE_CROP = BLOCKS.register("coffee",
             () -> new CoffeeCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).noOcclusion().noCollission()));
 

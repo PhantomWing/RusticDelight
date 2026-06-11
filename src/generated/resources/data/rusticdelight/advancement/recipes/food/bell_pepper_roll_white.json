@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bell_pepper_slice_white": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_slice_white"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cooked_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:cooked_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:bell_pepper_roll_white"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bell_pepper_slice_white",
+      "has_cooked_rice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:bell_pepper_roll_white"
+    ]
+  }
+}

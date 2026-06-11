@@ -30,6 +30,10 @@ public class Configuration {
     public static final String ENABLE_POTIONS_ID = "enable_potions";
     public static ModConfigSpec.BooleanValue ENABLE_POTIONS;
 
+    // Village farm crops
+    public static final String GENERATE_VILLAGE_FARM_CROPS_ID = "generate_village_farm_crops";
+    public static ModConfigSpec.BooleanValue GENERATE_VILLAGE_FARM_CROPS;
+
     public static int getIntConfigurationValue(String id) {
         return switch (id) {
             case CHANCE_WILD_COTTON_ID -> Configuration.CHANCE_WILD_COTTON.get();
@@ -45,6 +49,7 @@ public class Configuration {
             case ENABLE_POTIONS_ID -> Configuration.ENABLE_POTIONS.get();
             case ENABLE_VILLAGER_TRADES_ID -> Configuration.ENABLE_VILLAGER_TRADES.get();
             case ENABLE_WANDERING_TRADER_TRADES_ID -> Configuration.ENABLE_WANDERING_TRADER_TRADES.get();
+            case GENERATE_VILLAGE_FARM_CROPS_ID -> Configuration.GENERATE_VILLAGE_FARM_CROPS.get();
             default -> false;
         };
     }
@@ -57,6 +62,7 @@ public class Configuration {
         ENABLE_VILLAGER_TRADES = COMMON_BUILDER.comment("Should villagers trade Rustic Delight items? (May reduce chances of other trades appearing)").define(ENABLE_VILLAGER_TRADES_ID, true);
         ENABLE_WANDERING_TRADER_TRADES = COMMON_BUILDER.comment("Should the Wandering Trader sell Rustic Delight items?").define(ENABLE_WANDERING_TRADER_TRADES_ID, true);
         ENABLE_POTIONS = COMMON_BUILDER.comment("Should players be able to brew Rustic Delight potions?").define(ENABLE_POTIONS_ID, true);
+        GENERATE_VILLAGE_FARM_CROPS = COMMON_BUILDER.comment("Should Rustic Delight crops (bell peppers, cotton, coffee) generate in village farm plots?").define(GENERATE_VILLAGE_FARM_CROPS_ID, true);
 
         // Crop settings
         CHANCE_WILD_COTTON = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")

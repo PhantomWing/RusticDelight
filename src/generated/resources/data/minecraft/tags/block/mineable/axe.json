@@ -4,9 +4,21 @@
     "rusticdelight:bell_pepper_green_crate",
     "rusticdelight:bell_pepper_yellow_crate",
     "rusticdelight:bell_pepper_red_crate",
+    "rusticdelight:bell_pepper_orange_crate",
+    "rusticdelight:bell_pepper_white_crate",
+    "rusticdelight:bell_pepper_pink_crate",
+    "rusticdelight:bell_pepper_blue_crate",
+    "rusticdelight:bell_pepper_purple_crate",
+    "rusticdelight:bell_pepper_black_crate",
     "rusticdelight:calamari_crate",
     "rusticdelight:bell_pepper_green_block",
     "rusticdelight:bell_pepper_yellow_block",
-    "rusticdelight:bell_pepper_red_block"
+    "rusticdelight:bell_pepper_red_block",
+    "rusticdelight:bell_pepper_orange_block",
+    "rusticdelight:bell_pepper_white_block",
+    "rusticdelight:bell_pepper_pink_block",
+    "rusticdelight:bell_pepper_blue_block",
+    "rusticdelight:bell_pepper_purple_block",
+    "rusticdelight:bell_pepper_black_block"
   ]
 }
