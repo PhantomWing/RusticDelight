@@ -17,6 +17,7 @@ public class ModTags {
         public static final TagKey<Biome> HAS_WILD_COTTON = create("has_wild_cotton");
         public static final TagKey<Biome> HAS_WILD_BELL_PEPPERS = create("has_wild_bell_peppers");
         public static final TagKey<Biome> HAS_WILD_COFFEE = create("has_wild_coffee");
+        public static final TagKey<Biome> HAS_BELL_PEPPER_BLOCK_PATCH = create("has_bell_pepper_block_patch");
 
         private static TagKey<Biome> create(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));

@@ -38,6 +38,17 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.ROASTED_COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
 
+                // Bell pepper blocks (65%)
+                .add(ModItems.BELL_PEPPER_GREEN_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_YELLOW_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_RED_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_ORANGE_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_WHITE_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_PINK_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_BLUE_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_PURPLE_BLOCK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_BLACK_BLOCK.getId(), new Compostable(0.65f, true), false)
+
                 // 85% chance
                 .add(ModItems.COFFEE_COOKIE.getId(), new Compostable(0.85f, true), false)
                 .add(ModItems.SYRUP_COOKIE.getId(), new Compostable(0.85f, true), false)

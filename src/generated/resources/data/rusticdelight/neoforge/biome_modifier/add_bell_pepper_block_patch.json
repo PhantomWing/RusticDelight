@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#rusticdelight:has_bell_pepper_block_patch",
+  "features": "rusticdelight:bell_pepper_block_patch_placed",
+  "step": "vegetal_decoration"
+}

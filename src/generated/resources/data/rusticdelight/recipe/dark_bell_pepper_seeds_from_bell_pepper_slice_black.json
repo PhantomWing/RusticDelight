@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "rusticdelight:bell_pepper_pink_block"
+      "item": "rusticdelight:bell_pepper_slice_black"
     }
   ],
   "result": {
-    "count": 9,
-    "id": "rusticdelight:bell_pepper_slice_pink"
+    "count": 1,
+    "id": "rusticdelight:dark_bell_pepper_seeds"
   }
 }

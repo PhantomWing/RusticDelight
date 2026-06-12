@@ -153,6 +153,10 @@ dependencies {
     compileOnly "maven.modrinth:thirst-was-taken:${thirst_version}"
     if (include_thirst.toBoolean())
         runtimeOnly "maven.modrinth:thirst-was-taken:${thirst_version}"
+
+    // Brewin' and Chewin' (dev runtime only - for testing coaster models)
+    if (include_brewinandchewin.toBoolean())
+        localRuntime "maven.modrinth:brewin-and-chewin:${brewinandchewin_version}"
 }
 
 tasks.withType(ProcessResources).configureEach {

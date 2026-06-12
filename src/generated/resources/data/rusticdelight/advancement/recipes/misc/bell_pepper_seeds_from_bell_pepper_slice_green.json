@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bell_pepper_black_block": {
+    "has_bell_pepper_slice_green": {
       "conditions": {
         "items": [
           {
-            "items": "rusticdelight:bell_pepper_black_block"
+            "items": "rusticdelight:bell_pepper_slice_green"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rusticdelight:bell_pepper_slice_black_from_bell_pepper_black_block"
+        "recipe": "rusticdelight:bell_pepper_seeds_from_bell_pepper_slice_green"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bell_pepper_black_block"
+      "has_bell_pepper_slice_green"
     ]
   ],
   "rewards": {
     "recipes": [
-      "rusticdelight:bell_pepper_slice_black_from_bell_pepper_black_block"
+      "rusticdelight:bell_pepper_seeds_from_bell_pepper_slice_green"
     ]
   }
 }

@@ -1,10 +1,38 @@
 {
   "values": {
+    "rusticdelight:bell_pepper_black_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_blue_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
     "rusticdelight:bell_pepper_green": {
       "can_villager_compost": true,
       "chance": 0.65
     },
+    "rusticdelight:bell_pepper_green_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_orange_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_pink_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_purple_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
     "rusticdelight:bell_pepper_red": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_red_block": {
       "can_villager_compost": true,
       "chance": 0.65
     },
@@ -24,7 +52,15 @@
       "can_villager_compost": true,
       "chance": 0.5
     },
+    "rusticdelight:bell_pepper_white_block": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
     "rusticdelight:bell_pepper_yellow": {
+      "can_villager_compost": true,
+      "chance": 0.65
+    },
+    "rusticdelight:bell_pepper_yellow_block": {
       "can_villager_compost": true,
       "chance": 0.65
     },

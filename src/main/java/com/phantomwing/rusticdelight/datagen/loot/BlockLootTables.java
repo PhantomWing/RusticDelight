@@ -75,15 +75,16 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BELL_PEPPER_PURPLE_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_BLACK_CRATE.get());
         dropSelf(ModBlocks.CALAMARI_CRATE.get());
-        dropSelf(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_RED_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_ORANGE_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_WHITE_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_PINK_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_BLUE_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_PURPLE_BLOCK.get());
-        dropSelf(ModBlocks.BELL_PEPPER_BLACK_BLOCK.get());
+        // Bell pepper blocks drop 1-9 slices of their color (not the block itself).
+        dropSlices(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_GREEN);
+        dropSlices(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_YELLOW);
+        dropSlices(ModBlocks.BELL_PEPPER_RED_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_RED);
+        dropSlices(ModBlocks.BELL_PEPPER_ORANGE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_ORANGE);
+        dropSlices(ModBlocks.BELL_PEPPER_WHITE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_WHITE);
+        dropSlices(ModBlocks.BELL_PEPPER_PINK_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_PINK);
+        dropSlices(ModBlocks.BELL_PEPPER_BLUE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_BLUE);
+        dropSlices(ModBlocks.BELL_PEPPER_PURPLE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_PURPLE);
+        dropSlices(ModBlocks.BELL_PEPPER_BLACK_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_BLACK);
 
         dropFoodBlock(ModBlocks.SYRUP_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get(), PieBlock.BITES);
@@ -318,6 +319,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     private void dropWildCrop(Block block, ItemLike seedsItem, ItemLike cropItem) {
         this.add(block, blockParam -> createWildCropDrops(blockParam, seedsItem, cropItem));
+    }
+
+    // Drops 1-9 slices of the matching color (melon-style), never the block itself.
+    private void dropSlices(Block block, ItemLike slice) {
+        this.add(block, createSingleItemTable(slice, UniformGenerator.between(1.0F, 9.0F)));
     }
 
     private LootTable.Builder createWildCropDrops(Block block, ItemLike seedsItem, ItemLike cropItem) {

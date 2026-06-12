@@ -20,6 +20,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_WILD_COTTON = registerKey("add_wild_cotton");
     public static final ResourceKey<BiomeModifier> ADD_WILD_BELL_PEPPERS = registerKey("add_wild_bell_peppers");
     public static final ResourceKey<BiomeModifier> ADD_WILD_COFFEE = registerKey("add_wild_coffee");
+    public static final ResourceKey<BiomeModifier> ADD_BELL_PEPPER_BLOCK_PATCH = registerKey("add_bell_pepper_block_patch");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context){
         registerWildCrops(context);
@@ -32,6 +33,7 @@ public class ModBiomeModifiers {
         registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_COTTON, ModPlacedFeatures.WILD_COTTON_PLACED_KEY, ModTags.Biomes.HAS_WILD_COTTON);
         registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_BELL_PEPPERS, ModPlacedFeatures.WILD_BELL_PEPPERS_PLACED_KEY, ModTags.Biomes.HAS_WILD_BELL_PEPPERS);
         registerWithBiomeFilter(context, placedFeatures, biomes, ADD_WILD_COFFEE, ModPlacedFeatures.WILD_COFFEE_PLACED_KEY, ModTags.Biomes.HAS_WILD_COFFEE);
+        registerWithBiomeFilter(context, placedFeatures, biomes, ADD_BELL_PEPPER_BLOCK_PATCH, ModPlacedFeatures.BELL_PEPPER_BLOCK_PATCH_PLACED_KEY, ModTags.Biomes.HAS_BELL_PEPPER_BLOCK_PATCH);
     }
 
     private static void registerWithBiomeFilter(BootstrapContext<BiomeModifier> context, HolderGetter<PlacedFeature> placedFeatures, HolderGetter<Biome> biomes, ResourceKey<BiomeModifier> biomeModifierKey, ResourceKey<PlacedFeature> placedFeatureKey, TagKey<Biome> biomeTag) {

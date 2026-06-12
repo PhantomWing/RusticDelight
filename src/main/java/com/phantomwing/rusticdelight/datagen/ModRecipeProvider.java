@@ -201,15 +201,27 @@ public class ModRecipeProvider extends RecipeProvider {
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.CALAMARI, ModItems.CALAMARI_CRATE);
 
         // Bell pepper blocks (3x3 slices <-> block)
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_GREEN_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_YELLOW_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_RED_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_ORANGE, ModItems.BELL_PEPPER_ORANGE_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_WHITE, ModItems.BELL_PEPPER_WHITE_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PINK, ModItems.BELL_PEPPER_PINK_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLUE, ModItems.BELL_PEPPER_BLUE_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PURPLE, ModItems.BELL_PEPPER_PURPLE_BLOCK);
-        storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLACK, ModItems.BELL_PEPPER_BLACK_BLOCK);
+        // Bell pepper blocks: only 3x3 slices -> block. The reverse (block -> 9 slices) is cutting-board only.
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_GREEN_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_YELLOW_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_RED_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_ORANGE, ModItems.BELL_PEPPER_ORANGE_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_WHITE, ModItems.BELL_PEPPER_WHITE_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PINK, ModItems.BELL_PEPPER_PINK_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLUE, ModItems.BELL_PEPPER_BLUE_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PURPLE, ModItems.BELL_PEPPER_PURPLE_BLOCK);
+        compactingRecipe(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLACK, ModItems.BELL_PEPPER_BLACK_BLOCK);
+
+        // Bell pepper slice -> seeds (1 slice = 1 seed of the matching crop)
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_GREEN, ModItems.BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_YELLOW, ModItems.BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_RED, ModItems.BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_ORANGE, ModItems.PALE_BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_WHITE, ModItems.PALE_BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PINK, ModItems.PALE_BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLUE, ModItems.DARK_BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_PURPLE, ModItems.DARK_BELL_PEPPER_SEEDS, 1);
+        oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SLICE_BLACK, ModItems.DARK_BELL_PEPPER_SEEDS, 1);
 
         // Coffee
         storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
@@ -398,6 +410,17 @@ public class ModRecipeProvider extends RecipeProvider {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_BLACK), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_BLACK, 2)
                 .addResultWithChance(ModItems.DARK_BELL_PEPPER_SEEDS, 0.1F)
                 .build(output, cuttingId(ModItems.ROASTED_BELL_PEPPER_BLACK.getId()));
+
+        // Bell pepper blocks -> 9 slices of the same color
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_GREEN_BLOCK, ModItems.BELL_PEPPER_SLICE_GREEN);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_YELLOW_BLOCK, ModItems.BELL_PEPPER_SLICE_YELLOW);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_RED_BLOCK, ModItems.BELL_PEPPER_SLICE_RED);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_ORANGE_BLOCK, ModItems.BELL_PEPPER_SLICE_ORANGE);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_WHITE_BLOCK, ModItems.BELL_PEPPER_SLICE_WHITE);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_PINK_BLOCK, ModItems.BELL_PEPPER_SLICE_PINK);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_BLUE_BLOCK, ModItems.BELL_PEPPER_SLICE_BLUE);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_PURPLE_BLOCK, ModItems.BELL_PEPPER_SLICE_PURPLE);
+        cuttingBellPepperBlock(output, ModItems.BELL_PEPPER_BLACK_BLOCK, ModItems.BELL_PEPPER_SLICE_BLACK);
 
         // Coffee
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
@@ -810,6 +833,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeOutput, getRecipeName(storageItem, item));
     }
 
+    // 3x3 of item -> storageItem only (no reverse crafting recipe).
+    protected static void compactingRecipe(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike storageItem) {
+        ShapedRecipeBuilder.shaped(category, storageItem)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', item)
+                .unlockedBy(getHasName(item), has(item))
+                .save(recipeOutput, getRecipeName(item, storageItem));
+    }
+
     protected static void foodCookingRecipes(@NotNull RecipeOutput recipeOutput, @NotNull ItemLike material, @NotNull ItemLike result, float experience) {
         foodSmelting(recipeOutput, material, result, experience, 200);
         foodSmoking(recipeOutput, material, result, experience, 100); // Smoking is twice as fast
@@ -919,6 +953,12 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private static ResourceLocation cuttingId(ResourceLocation inputId) {
         return ResourceLocation.fromNamespaceAndPath(inputId.getNamespace(), "cutting/" + inputId.getPath());
+    }
+
+    // Cuts a bell pepper block into 9 slices of the same color.
+    private static void cuttingBellPepperBlock(RecipeOutput recipeOutput, DeferredItem<Item> block, ItemLike slice) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(block), Ingredient.of(CommonTags.TOOLS_KNIFE), slice, 9)
+                .build(recipeOutput, cuttingId(block.getId()));
     }
 
     private static Ingredient vegetablesPatch() {

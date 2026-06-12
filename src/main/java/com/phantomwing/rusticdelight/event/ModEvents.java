@@ -136,6 +136,25 @@ public class ModEvents {
                     PRICE_MULTIPLIER
             ));
         }
+
+        // Pale and Dark bell pepper seeds are exotic - offered as rare wandering trader trades.
+        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
+
+        rareTrades.add((trader, random) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 5),
+                new ItemStack(ModItems.PALE_BELL_PEPPER_SEEDS.get(), 1),
+                3,
+                1,
+                PRICE_MULTIPLIER
+        ));
+
+        rareTrades.add((trader, random) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 5),
+                new ItemStack(ModItems.DARK_BELL_PEPPER_SEEDS.get(), 1),
+                3,
+                1,
+                PRICE_MULTIPLIER
+        ));
     }
 
     @SubscribeEvent

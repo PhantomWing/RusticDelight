@@ -18,6 +18,9 @@ public class Configuration {
     public static final String CHANCE_WILD_COFFEE_ID = "wild_coffee_chance";
     public static ModConfigSpec.IntValue CHANCE_WILD_COFFEE;
 
+    public static final String CHANCE_BELL_PEPPER_BLOCK_PATCH_ID = "bell_pepper_block_patch_chance";
+    public static ModConfigSpec.IntValue CHANCE_BELL_PEPPER_BLOCK_PATCH;
+
     // Villager trades
     public static final String ENABLE_VILLAGER_TRADES_ID = "enable_villager_trades";
     public static ModConfigSpec.BooleanValue ENABLE_VILLAGER_TRADES;
@@ -39,6 +42,7 @@ public class Configuration {
             case CHANCE_WILD_COTTON_ID -> Configuration.CHANCE_WILD_COTTON.get();
             case CHANCE_WILD_BELL_PEPPERS_ID -> Configuration.CHANCE_WILD_BELL_PEPPERS.get();
             case CHANCE_WILD_COFFEE_ID -> Configuration.CHANCE_WILD_COFFEE.get();
+            case CHANCE_BELL_PEPPER_BLOCK_PATCH_ID -> Configuration.CHANCE_BELL_PEPPER_BLOCK_PATCH.get();
             default -> 0;
         };
     }
@@ -71,6 +75,8 @@ public class Configuration {
                 .defineInRange(CHANCE_WILD_BELL_PEPPERS_ID, 15, 0, Integer.MAX_VALUE);
         CHANCE_WILD_COFFEE = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")
                 .defineInRange(CHANCE_WILD_COFFEE_ID, 15, 0, Integer.MAX_VALUE);
+        CHANCE_BELL_PEPPER_BLOCK_PATCH = COMMON_BUILDER.comment("Chance of generating a patch of bell pepper blocks in the jungle. Smaller value = more frequent (vanilla melons use 6). Provide zero to disable generation.")
+                .defineInRange(CHANCE_BELL_PEPPER_BLOCK_PATCH_ID, 10, 0, Integer.MAX_VALUE);
 
         // Build config
         COMMON_CONFIG = COMMON_BUILDER.build();

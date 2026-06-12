@@ -6,10 +6,12 @@ This is a major content update, expanding greatly on bell peppers.
   - Pale Bell Pepper Seeds: Yields white, pink and orange bell peppers
   - Dark Bell Pepper Seeds: Yields black, blue and purple bell peppers
 - Added **Calamari Crate**, a storage block for Calamari
-- Added Bell Pepper Block for each color, a storage block for Bell Pepper Slice
+- Added Giant Bell Pepper block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
+  - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
 - Added new types of coffee: Pumpkin Coffee, Cherry Blossom Coffee
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 
 - Added Ukrainian translations (thank you hikarosato!)
+
 
 # 1.6.1
 ### Additions
