@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.event;
 
 import com.phantomwing.rusticdelight.Configuration;
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.item.ItemFamily;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.potions.ModPotions;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -36,7 +37,7 @@ public class ModEvents {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
         if (event.getType() == VillagerProfession.FARMER) {
-            if (Configuration.CHANCE_WILD_COTTON.get() > 0) {
+            if (ItemFamily.COTTON.isEnabled()) {
                 trades.get(1).add((trader, random) -> new MerchantOffer(
                         new ItemCost(ModItems.COTTON_BOLL.get(), 24),
                         new ItemStack(Items.EMERALD, 1),
@@ -46,7 +47,7 @@ public class ModEvents {
                 ));
             }
 
-            if (Configuration.CHANCE_WILD_BELL_PEPPERS.get() > 0) {
+            if (ItemFamily.BELL_PEPPER.isEnabled()) {
                 trades.get(1).add((trader, random) -> new MerchantOffer(
                         new ItemCost(ModItems.BELL_PEPPER_RED.get(), 24),
                         new ItemStack(Items.EMERALD, 1),
@@ -56,7 +57,7 @@ public class ModEvents {
                 ));
             }
 
-            if (Configuration.CHANCE_WILD_COFFEE.get() > 0) {
+            if (ItemFamily.COFFEE.isEnabled()) {
                 trades.get(1).add((trader, random) -> new MerchantOffer(
                         new ItemCost(ModItems.COFFEE_BEANS.get(), 26),
                         new ItemStack(Items.EMERALD, 1),
@@ -107,7 +108,7 @@ public class ModEvents {
 
         List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
 
-        if (Configuration.CHANCE_WILD_COTTON.get() > 0) {
+        if (ItemFamily.COTTON.isEnabled()) {
             genericTrades.add((trader, random) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(ModItems.COTTON_SEEDS.get(), 1),
@@ -117,7 +118,7 @@ public class ModEvents {
             ));
         }
 
-        if (Configuration.CHANCE_WILD_BELL_PEPPERS.get() > 0) {
+        if (ItemFamily.BELL_PEPPER.isEnabled()) {
             genericTrades.add((trader, random) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(ModItems.BELL_PEPPER_SEEDS.get(), 1),
@@ -127,7 +128,7 @@ public class ModEvents {
             ));
         }
 
-        if (Configuration.CHANCE_WILD_COFFEE.get() > 0) {
+        if (ItemFamily.COFFEE.isEnabled()) {
             genericTrades.add((trader, random) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(ModItems.COFFEE_BEANS.get(), 1),
@@ -138,23 +139,25 @@ public class ModEvents {
         }
 
         // Pale and Dark bell pepper seeds are exotic - offered as rare wandering trader trades.
-        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
+        if (ItemFamily.BELL_PEPPER.isEnabled()) {
+            List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
 
-        rareTrades.add((trader, random) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 5),
-                new ItemStack(ModItems.PALE_BELL_PEPPER_SEEDS.get(), 1),
-                3,
-                1,
-                PRICE_MULTIPLIER
-        ));
+            rareTrades.add((trader, random) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 5),
+                    new ItemStack(ModItems.PALE_BELL_PEPPER_SEEDS.get(), 1),
+                    3,
+                    1,
+                    PRICE_MULTIPLIER
+            ));
 
-        rareTrades.add((trader, random) -> new MerchantOffer(
-                new ItemCost(Items.EMERALD, 5),
-                new ItemStack(ModItems.DARK_BELL_PEPPER_SEEDS.get(), 1),
-                3,
-                1,
-                PRICE_MULTIPLIER
-        ));
+            rareTrades.add((trader, random) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 5),
+                    new ItemStack(ModItems.DARK_BELL_PEPPER_SEEDS.get(), 1),
+                    3,
+                    1,
+                    PRICE_MULTIPLIER
+            ));
+        }
     }
 
     @SubscribeEvent
@@ -167,7 +170,7 @@ public class ModEvents {
         PotionBrewing.Builder builder = event.getBuilder();
 
         // Add Potion of Haste recipes. (Only if Coffee feature is enabled)
-        if (Configuration.CHANCE_WILD_COFFEE.get() > 0) {
+        if (ItemFamily.COFFEE.isEnabled()) {
             // Use addMix to add brewing recipes for each potion container type (potion, splash potion, lingering potion, tipped arrow)
             builder.addMix(Potions.AWKWARD, ModItems.GOLDEN_COFFEE_BEANS.get(), ModPotions.HASTE_POTION
             );

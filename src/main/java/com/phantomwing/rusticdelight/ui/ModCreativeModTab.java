@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.ui;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.item.ItemFamily;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.potions.ModPotions;
 import net.minecraft.core.registries.Registries;
@@ -23,8 +24,19 @@ public class ModCreativeModTab {
                     .icon(() -> new ItemStack(ModBlocks.WILD_COTTON.get()))
                     .title(Component.translatable(("itemGroup." + RusticDelight.MOD_ID)))
                     .displayItems((parameters, output) -> {
-                        // Add items to this tab.
-                        ModItems.CREATIVE_TAB_ITEMS.forEach((item) -> output.accept(item.get()));
+                        // Add items to this tab, skipping any whose families aren't all enabled.
+                        ModItems.CREATIVE_TAB_ITEMS.forEach((item, families) -> {
+                            boolean visible = true;
+                            for (ItemFamily family : families) {
+                                if (!family.isEnabled()) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            if (visible) {
+                                output.accept(item.get());
+                            }
+                        });
                     })
                     .build());
 

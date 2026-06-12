@@ -1,5 +1,6 @@
 package com.phantomwing.rusticdelight;
 
+import com.phantomwing.rusticdelight.item.ItemFamily;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class Configuration {
@@ -8,6 +9,22 @@ public class Configuration {
     // COMMON
     public static final String SQUIDS_DROP_CALAMARI_ID = "squids_drop_calamari";
     public static ModConfigSpec.BooleanValue SQUIDS_DROP_CALAMARI;
+
+    // Crop family master toggles
+    public static final String ENABLE_COTTON_ID = "enable_cotton";
+    public static ModConfigSpec.BooleanValue ENABLE_COTTON;
+
+    public static final String ENABLE_COFFEE_ID = "enable_coffee";
+    public static ModConfigSpec.BooleanValue ENABLE_COFFEE;
+
+    public static final String ENABLE_BELL_PEPPERS_ID = "enable_bell_peppers";
+    public static ModConfigSpec.BooleanValue ENABLE_BELL_PEPPERS;
+
+    public static final String ENABLE_POTATO_SLICES_ID = "enable_potato_slices";
+    public static ModConfigSpec.BooleanValue ENABLE_POTATO_SLICES;
+
+    public static final String ENABLE_FRIED_FOODS_ID = "enable_fried_foods";
+    public static ModConfigSpec.BooleanValue ENABLE_FRIED_FOODS;
 
     public static final String CHANCE_WILD_COTTON_ID = "wild_cotton_chance";
     public static ModConfigSpec.IntValue CHANCE_WILD_COTTON;
@@ -54,7 +71,22 @@ public class Configuration {
             case ENABLE_VILLAGER_TRADES_ID -> Configuration.ENABLE_VILLAGER_TRADES.get();
             case ENABLE_WANDERING_TRADER_TRADES_ID -> Configuration.ENABLE_WANDERING_TRADER_TRADES.get();
             case GENERATE_VILLAGE_FARM_CROPS_ID -> Configuration.GENERATE_VILLAGE_FARM_CROPS.get();
+            case ENABLE_COTTON_ID -> Configuration.ENABLE_COTTON.get();
+            case ENABLE_COFFEE_ID -> Configuration.ENABLE_COFFEE.get();
+            case ENABLE_BELL_PEPPERS_ID -> Configuration.ENABLE_BELL_PEPPERS.get();
+            case ENABLE_POTATO_SLICES_ID -> Configuration.ENABLE_POTATO_SLICES.get();
+            case ENABLE_FRIED_FOODS_ID -> Configuration.ENABLE_FRIED_FOODS.get();
             default -> false;
+        };
+    }
+
+    // Maps a wild-gen chance option to its crop family's master toggle.
+    public static boolean isWorldgenFeatureEnabled(String chanceId) {
+        return switch (chanceId) {
+            case CHANCE_WILD_COTTON_ID -> ItemFamily.COTTON.isEnabled();
+            case CHANCE_WILD_COFFEE_ID -> ItemFamily.COFFEE.isEnabled();
+            case CHANCE_WILD_BELL_PEPPERS_ID, CHANCE_BELL_PEPPER_BLOCK_PATCH_ID -> ItemFamily.BELL_PEPPER.isEnabled();
+            default -> true;
         };
     }
 
@@ -62,20 +94,28 @@ public class Configuration {
         ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
         // General settings
-        SQUIDS_DROP_CALAMARI = COMMON_BUILDER.comment("Should squids drop a Calamari item? Also disables villager trades for Calamari.").define(SQUIDS_DROP_CALAMARI_ID, true);
+        SQUIDS_DROP_CALAMARI = COMMON_BUILDER.comment("Should squids drop a Calamari item? Disabling also removes all calamari items from the creative tab and disables Calamari villager trades.").define(SQUIDS_DROP_CALAMARI_ID, true);
         ENABLE_VILLAGER_TRADES = COMMON_BUILDER.comment("Should villagers trade Rustic Delight items? (May reduce chances of other trades appearing)").define(ENABLE_VILLAGER_TRADES_ID, true);
         ENABLE_WANDERING_TRADER_TRADES = COMMON_BUILDER.comment("Should the Wandering Trader sell Rustic Delight items?").define(ENABLE_WANDERING_TRADER_TRADES_ID, true);
         ENABLE_POTIONS = COMMON_BUILDER.comment("Should players be able to brew Rustic Delight potions?").define(ENABLE_POTIONS_ID, true);
         GENERATE_VILLAGE_FARM_CROPS = COMMON_BUILDER.comment("Should Rustic Delight crops (bell peppers, cotton, coffee) generate in village farm plots?").define(GENERATE_VILLAGE_FARM_CROPS_ID, true);
 
-        // Crop settings
-        CHANCE_WILD_COTTON = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")
+        // Crop family master toggles. Disabling a family makes its entire content chain unobtainable:
+        // removed from the creative tab, no wild/giant worldgen, no village-farm gen, and no trades.
+        ENABLE_COTTON = COMMON_BUILDER.comment("Enable the Cotton crop family (cotton, seeds, bag, crate, wild cotton, related trades).").define(ENABLE_COTTON_ID, true);
+        ENABLE_COFFEE = COMMON_BUILDER.comment("Enable the Coffee crop family (coffee beans, all coffee drinks, coffee cookie, coffee-braised beef, Haste potions, related trades).").define(ENABLE_COFFEE_ID, true);
+        ENABLE_BELL_PEPPERS = COMMON_BUILDER.comment("Enable the Bell Pepper crop family (all colors, slices, roasted, rolls, stuffed, soup, pasta, giant blocks, crates, seeds, related trades).").define(ENABLE_BELL_PEPPERS_ID, true);
+        ENABLE_POTATO_SLICES = COMMON_BUILDER.comment("Enable potato slices. Disabling removes potato slices (raw and baked) from the creative tab and disables their cutting-board recipes.").define(ENABLE_POTATO_SLICES_ID, true);
+        ENABLE_FRIED_FOODS = COMMON_BUILDER.comment("Enable fried foods. Disabling removes Cooking Oil and everything fried with it (fried dough, dumplings, spring rolls, beignet, fried calamari/chicken/mushrooms) from the creative tab and disables their recipes.").define(ENABLE_FRIED_FOODS_ID, true);
+
+        // Crop generation rarity. Smaller value = more frequent. (To disable a crop entirely, use its enable_* toggle above.)
+        CHANCE_WILD_COTTON = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent.")
                 .defineInRange(CHANCE_WILD_COTTON_ID, 32, 0, Integer.MAX_VALUE);
-        CHANCE_WILD_BELL_PEPPERS = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")
+        CHANCE_WILD_BELL_PEPPERS = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent.")
                 .defineInRange(CHANCE_WILD_BELL_PEPPERS_ID, 15, 0, Integer.MAX_VALUE);
-        CHANCE_WILD_COFFEE = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent. Provide zero to disable generation.")
+        CHANCE_WILD_COFFEE = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent.")
                 .defineInRange(CHANCE_WILD_COFFEE_ID, 15, 0, Integer.MAX_VALUE);
-        CHANCE_BELL_PEPPER_BLOCK_PATCH = COMMON_BUILDER.comment("Chance of generating a patch of bell pepper blocks in the jungle. Smaller value = more frequent (vanilla melons use 6). Provide zero to disable generation.")
+        CHANCE_BELL_PEPPER_BLOCK_PATCH = COMMON_BUILDER.comment("Chance of generating a patch of bell pepper blocks in the jungle. Smaller value = more frequent (vanilla melons use 6).")
                 .defineInRange(CHANCE_BELL_PEPPER_BLOCK_PATCH_ID, 10, 0, Integer.MAX_VALUE);
 
         // Build config

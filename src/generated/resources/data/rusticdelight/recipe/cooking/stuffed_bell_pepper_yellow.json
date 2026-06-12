@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "experience": 1.0,
   "ingredients": [

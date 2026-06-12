@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.compat.ThirstCompat;
+import com.phantomwing.rusticdelight.condition.ModConditions;
 import com.phantomwing.rusticdelight.loot.LootModifierManager;
 import com.phantomwing.rusticdelight.potions.ModPotions;
 import com.phantomwing.rusticdelight.ui.ModCreativeModTab;
@@ -67,6 +68,7 @@ public class RusticDelight {
         LootModifierManager.register(eventBus);
         ModCreativeModTab.register(eventBus);
         ModPlacementModifiers.register(eventBus);
+        ModConditions.register(eventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

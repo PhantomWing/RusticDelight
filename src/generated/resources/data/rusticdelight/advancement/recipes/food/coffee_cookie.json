@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_roasted_coffee_beans": {

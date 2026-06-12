@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
   "type": "minecraft:campfire_cooking",
   "category": "food",
   "cookingtime": 600,

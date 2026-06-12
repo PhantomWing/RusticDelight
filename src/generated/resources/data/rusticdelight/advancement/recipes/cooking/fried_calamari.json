@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_any_ingredient": {

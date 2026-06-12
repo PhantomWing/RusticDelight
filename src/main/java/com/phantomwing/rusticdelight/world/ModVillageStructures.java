@@ -3,6 +3,7 @@ package com.phantomwing.rusticdelight.world;
 import com.phantomwing.rusticdelight.Configuration;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.item.ItemFamily;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -35,6 +36,15 @@ public class ModVillageStructures {
             return;
         }
 
+        boolean bellPeppers = ItemFamily.BELL_PEPPER.isEnabled();
+        boolean cottonEnabled = ItemFamily.COTTON.isEnabled();
+        boolean coffeeEnabled = ItemFamily.COFFEE.isEnabled();
+
+        // Nothing to inject if every crop family is disabled.
+        if (!bellPeppers && !cottonEnabled && !coffeeEnabled) {
+            return;
+        }
+
         Registry<StructureProcessorList> registry = event.getServer().registryAccess().registryOrThrow(Registries.PROCESSOR_LIST);
 
         BlockState bellPepper = ModBlocks.BELL_PEPPER_CROP.get().defaultBlockState();
@@ -43,36 +53,72 @@ public class ModVillageStructures {
 
         // Temperate (plains, taiga): carrots -> bell pepper, potatoes -> cotton, plus a wheat sprinkle.
         // Wheat-rule order is swapped between the two lists so the first-match bias cancels out.
-        RuleProcessor plains = new RuleProcessor(List.of(
-                rule(Blocks.CARROTS, 0.3F, bellPepper),
-                rule(Blocks.POTATOES, 0.3F, cotton),
-                rule(Blocks.WHEAT, 0.12F, bellPepper),
-                rule(Blocks.WHEAT, 0.12F, cotton)
-        ));
-        RuleProcessor taiga = new RuleProcessor(List.of(
-                rule(Blocks.CARROTS, 0.3F, bellPepper),
-                rule(Blocks.POTATOES, 0.3F, cotton),
-                rule(Blocks.WHEAT, 0.12F, cotton),
-                rule(Blocks.WHEAT, 0.12F, bellPepper)
-        ));
+        List<ProcessorRule> plains = new ArrayList<>();
+        List<ProcessorRule> taiga = new ArrayList<>();
+        if (bellPeppers) {
+            plains.add(rule(Blocks.CARROTS, 0.3F, bellPepper));
+        }
+        if (cottonEnabled) {
+            plains.add(rule(Blocks.POTATOES, 0.3F, cotton));
+        }
+        if (bellPeppers) {
+            plains.add(rule(Blocks.WHEAT, 0.12F, bellPepper));
+        }
+        if (cottonEnabled) {
+            plains.add(rule(Blocks.WHEAT, 0.12F, cotton));
+        }
+        if (bellPeppers) {
+            taiga.add(rule(Blocks.CARROTS, 0.3F, bellPepper));
+        }
+        if (cottonEnabled) {
+            taiga.add(rule(Blocks.POTATOES, 0.3F, cotton));
+        }
+        if (cottonEnabled) {
+            taiga.add(rule(Blocks.WHEAT, 0.12F, cotton));
+        }
+        if (bellPeppers) {
+            taiga.add(rule(Blocks.WHEAT, 0.12F, bellPepper));
+        }
 
         // Arid (savanna, desert): also beetroots -> coffee.
-        RuleProcessor savanna = new RuleProcessor(List.of(
-                rule(Blocks.CARROTS, 0.3F, bellPepper),
-                rule(Blocks.POTATOES, 0.3F, cotton),
-                rule(Blocks.BEETROOTS, 0.3F, coffee),
-                rule(Blocks.WHEAT, 0.1F, bellPepper),
-                rule(Blocks.WHEAT, 0.1F, cotton),
-                rule(Blocks.WHEAT, 0.1F, coffee)
-        ));
-        RuleProcessor desert = new RuleProcessor(List.of(
-                rule(Blocks.CARROTS, 0.3F, bellPepper),
-                rule(Blocks.POTATOES, 0.3F, cotton),
-                rule(Blocks.BEETROOTS, 0.3F, coffee),
-                rule(Blocks.WHEAT, 0.1F, coffee),
-                rule(Blocks.WHEAT, 0.1F, cotton),
-                rule(Blocks.WHEAT, 0.1F, bellPepper)
-        ));
+        List<ProcessorRule> savanna = new ArrayList<>();
+        List<ProcessorRule> desert = new ArrayList<>();
+        if (bellPeppers) {
+            savanna.add(rule(Blocks.CARROTS, 0.3F, bellPepper));
+        }
+        if (cottonEnabled) {
+            savanna.add(rule(Blocks.POTATOES, 0.3F, cotton));
+        }
+        if (coffeeEnabled) {
+            savanna.add(rule(Blocks.BEETROOTS, 0.3F, coffee));
+        }
+        if (bellPeppers) {
+            savanna.add(rule(Blocks.WHEAT, 0.1F, bellPepper));
+        }
+        if (cottonEnabled) {
+            savanna.add(rule(Blocks.WHEAT, 0.1F, cotton));
+        }
+        if (coffeeEnabled) {
+            savanna.add(rule(Blocks.WHEAT, 0.1F, coffee));
+        }
+        if (bellPeppers) {
+            desert.add(rule(Blocks.CARROTS, 0.3F, bellPepper));
+        }
+        if (cottonEnabled) {
+            desert.add(rule(Blocks.POTATOES, 0.3F, cotton));
+        }
+        if (coffeeEnabled) {
+            desert.add(rule(Blocks.BEETROOTS, 0.3F, coffee));
+        }
+        if (coffeeEnabled) {
+            desert.add(rule(Blocks.WHEAT, 0.1F, coffee));
+        }
+        if (cottonEnabled) {
+            desert.add(rule(Blocks.WHEAT, 0.1F, cotton));
+        }
+        if (bellPeppers) {
+            desert.add(rule(Blocks.WHEAT, 0.1F, bellPepper));
+        }
 
         addProcessor(registry, ResourceLocation.withDefaultNamespace("farm_plains"), plains);
         addProcessor(registry, ResourceLocation.withDefaultNamespace("farm_taiga"), taiga);
@@ -84,10 +130,13 @@ public class ModVillageStructures {
         return new ProcessorRule(new RandomBlockMatchTest(from, chance), AlwaysTrueTest.INSTANCE, to);
     }
 
-    private static void addProcessor(Registry<StructureProcessorList> registry, ResourceLocation id, StructureProcessor processor) {
+    private static void addProcessor(Registry<StructureProcessorList> registry, ResourceLocation id, List<ProcessorRule> rules) {
+        if (rules.isEmpty()) {
+            return;
+        }
         registry.getOptional(id).ifPresent(processorList -> {
             List<StructureProcessor> newList = new ArrayList<>(processorList.list());
-            newList.add(processor);
+            newList.add(new RuleProcessor(rules));
             processorList.list = newList;
         });
     }

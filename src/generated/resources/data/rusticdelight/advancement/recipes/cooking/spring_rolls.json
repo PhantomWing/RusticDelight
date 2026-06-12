@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_any_ingredient": {
