@@ -771,14 +771,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output);
 
-        // Fried Egg
+        // Fried Egg (our Cooking Oil variant - gated by the enable_fried_foods toggle)
+        RecipeOutput friedOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_FRIED_FOODS_ID));
         CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get(), 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
                 .addIngredient(Items.EGG)
                 .addIngredient(ModTags.Items.COOKING_OIL)
                 .unlockedByAnyIngredient(ModItems.COOKING_OIL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .setNamespace(RusticDelight.MOD_ID)
-                .save(output, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "cooking/fried_egg_from_cooking_oil"));
+                .save(friedOutput, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "cooking/fried_egg_from_cooking_oil"));
 
         // Baked Cod Stew
         CookingPotRecipeBuilder.cookingPotRecipe(vectorwing.farmersdelight.common.registry.ModItems.BAKED_COD_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)

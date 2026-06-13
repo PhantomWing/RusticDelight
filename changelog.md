@@ -10,6 +10,12 @@ This is a major content update, expanding greatly on bell peppers.
   - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
 - Added new types of coffee: Pumpkin Coffee, Cherry Blossom Coffee
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 
+- Added feature toggles to the config (so you can disable features, making related items unobtainable)
+  - `enable_bell_peppers`
+  - `enable_coffee`
+  - `enable_cotton`
+  - `enable_fried_foods`
+  - `enable_potato_slices`
 - Added Ukrainian translations (thank you hikarosato!)
 
 
