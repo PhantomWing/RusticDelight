@@ -20,6 +20,8 @@ public class ModDataMapProvider extends DataMapProvider {
                 // 30% chance
                 .add(ModItems.COTTON_SEEDS.getId(), new Compostable(0.3f, true), false)
                 .add(ModItems.BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f, true), false)
+                .add(ModItems.PALE_BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f, true), false)
+                .add(ModItems.DARK_BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f, true), false)
 
                 // 50% chance
                 .add(ModItems.COTTON_BOLL.getId(), new Compostable(0.5f, true), false)
@@ -33,6 +35,12 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.BELL_PEPPER_GREEN.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.BELL_PEPPER_YELLOW.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.BELL_PEPPER_RED.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_ORANGE.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_WHITE.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_PINK.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_BLUE.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_PURPLE.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.BELL_PEPPER_BLACK.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_COFFEE.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)

@@ -18,6 +18,9 @@ This is a major content update, expanding greatly on bell peppers.
   - `enable_potato_slices`
 - Added Ukrainian translations (thank you hikarosato!)
 
+### Fixes
+- Villagers can now consume Rustic Delight crops, making them compatible for automated villager farms
+
 
 # 1.6.1
 ### Additions

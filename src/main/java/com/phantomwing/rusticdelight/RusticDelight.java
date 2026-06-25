@@ -1,5 +1,6 @@
 package com.phantomwing.rusticdelight;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.phantomwing.rusticdelight.block.ModBlocks;
@@ -34,6 +35,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 @Mod(RusticDelight.MOD_ID)
@@ -75,6 +78,7 @@ public class RusticDelight {
         event.enqueueWork(() -> {
             addFlowerPots();
             registerItemSetAdditions();
+            registerVillagerFood();
         });
     }
 
@@ -90,14 +94,47 @@ public class RusticDelight {
                 ModItems.BELL_PEPPER_GREEN.get(),
                 ModItems.BELL_PEPPER_YELLOW.get(),
                 ModItems.BELL_PEPPER_RED.get(),
+                ModItems.BELL_PEPPER_ORANGE.get(),
+                ModItems.BELL_PEPPER_WHITE.get(),
+                ModItems.BELL_PEPPER_PINK.get(),
+                ModItems.BELL_PEPPER_BLUE.get(),
+                ModItems.BELL_PEPPER_PURPLE.get(),
+                ModItems.BELL_PEPPER_BLACK.get(),
                 ModItems.COTTON_BOLL.get(),
                 ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.PALE_BELL_PEPPER_SEEDS.get(),
+                ModItems.DARK_BELL_PEPPER_SEEDS.get(),
                 ModItems.COTTON_SEEDS.get(),
                 ModItems.COFFEE_BEANS.get()
         );
 
         newWantedItems.addAll(Villager.WANTED_ITEMS);
         Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
+    }
+
+    /**
+     * Adds Rustic Delight's edible crops to the villager food map so farmer villagers count, share and
+     * breed on them like vanilla crops (Villager.FOOD_POINTS is otherwise hardcoded to bread/potato/carrot/beetroot).
+     * Copies the current map first so additions from other mods are preserved instead of clobbered; runs inside
+     * commonSetup's enqueueWork, which is serialized on the main thread.
+     */
+    public static void registerVillagerFood() {
+        Map<Item, Integer> newFoodPoints = new HashMap<>(Villager.FOOD_POINTS);
+        newFoodPoints.put(ModItems.BELL_PEPPER_GREEN.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_YELLOW.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_RED.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_ORANGE.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_WHITE.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_PINK.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_BLUE.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_PURPLE.get(), 1);
+        newFoodPoints.put(ModItems.BELL_PEPPER_BLACK.get(), 1);
+        // Cotton and coffee aren't truly food, but counting them (value 1) lets farmer villagers reliably
+        // offload them to a partner so they work in automatic farms. The minor realism cost (villagers eating /
+        // breeding on them) is unnoticeable in normal play.
+        newFoodPoints.put(ModItems.COTTON_BOLL.get(), 1);
+        newFoodPoints.put(ModItems.COFFEE_BEANS.get(), 1);
+        Villager.FOOD_POINTS = ImmutableMap.copyOf(newFoodPoints);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
