@@ -1,6 +1,7 @@
 plugins {
 	id 'net.fabricmc.fabric-loom' version '1.17.12'
 	id 'maven-publish'
+	id 'me.modmuss50.mod-publish-plugin' version '2.0.0'
 }
 
 version = project.mod_version
@@ -88,7 +89,11 @@ processResources {
 			mod_id               : mod_id,
 			mod_version          : version,
 			fabric_loader_version: fabric_loader_version,
-			fabric_api_version   : fabric_api_version
+			fabric_api_version   : fabric_api_version,
+			// Stripped of the +build suffix for a clean dependency predicate (0.152.2+26.2 -> 0.152.2).
+			fabric_api_dep        : fabric_api_version.replaceAll(/\+.*$/, ''),
+			cloth_config_version : cloth_config_version,
+			farmersdelight_version: farmersdelight_version
 	]
 
 	inputs.properties replaceProperties
@@ -133,5 +138,59 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+	}
+}
+
+// Per-release changelog: notes under the first "# X.Y.Z" header in changelog.md, up to the next "# ".
+ext.latestChangelog = {
+	def f = file('changelog.md')
+	if (!f.exists()) return "See changelog.md"
+	def body = new StringBuilder()
+	boolean started = false, done = false
+	f.eachLine { line ->
+		if (done) return
+		if (line.startsWith('# ')) {
+			if (started) { done = true; return }
+			started = true
+			return
+		}
+		if (started) body.append(line).append('\n')
+	}
+	def out = body.toString().trim()
+	return out.isEmpty() ? "See changelog.md" : out
+}
+
+// Modrinth / CurseForge publishing. Dry run (no upload): ./gradlew publishMods -PpublishDryRun
+// Real upload needs MODRINTH_TOKEN / CURSEFORGE_TOKEN env vars and the real project IDs in gradle.properties.
+publishMods {
+	// 26.x is unobfuscated: loom has no remapJar, so the `jar` task is the final mod artifact.
+	file = tasks.named("jar", Jar).flatMap { it.archiveFile }
+	version = project.mod_version
+	displayName = "Rustic Delight ${project.mod_version}"
+	changelog = project.ext.latestChangelog()
+	type = STABLE
+	modLoaders.add("fabric")
+	// -PpublishDryRun => stage to build/ without uploading.
+	dryRun = project.hasProperty("publishDryRun")
+
+	modrinth {
+		projectId = providers.gradleProperty("modrinth_project_id")
+		accessToken = providers.environmentVariable("MODRINTH_TOKEN").orElse(providers.gradleProperty("modrinth_token"))
+		// Tag every supported game version on the upload, not just the build target.
+		supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+		requires("fabric-api")
+		requires("cloth-config")
+		requires("farmers-delight-refabricated")
+	}
+	curseforge {
+		projectId = providers.gradleProperty("curseforge_project_id")
+		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN").orElse(providers.gradleProperty("curseforge_token"))
+		supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+		// CurseForge requires explicit side flags (Modrinth infers them from the jar).
+		client = true
+		server = true
+		requires("fabric-api")
+		requires("cloth-config")
+		requires("farmers-delight-refabricated")
 	}
 }

@@ -30,10 +30,10 @@
 	"depends": {
 		"fabricloader": ">=${fabric_loader_version}",
 		"minecraft": ">=${minecraft_min_version} <=${minecraft_max_version}",
-		"java": ">=21",
-		"fabric-api": "*",
-		"farmersdelight": ">=3.6.3",
-		"cloth-config": "*"
+		"java": ">=25",
+		"fabric-api": ">=${fabric_api_dep}",
+		"farmersdelight": ">=${farmersdelight_version}",
+		"cloth-config": ">=${cloth_config_version}"
 	},
 	"breaks": {
 		"rusticdelightrefabricated": "*"

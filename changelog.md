@@ -1,6 +1,5 @@
 # 1.6.0
 ### Changes
-- Updated to Minecraft 26.1 (compile target 26.1.2; minimum supported 26.1)
 - Updated Farmer's Delight Refabricated to 3.6.3
 - Improved wild crop generation to include Coarse Dirt and bushes
 - Rebalanced/simplified Coffee recipes and effects
