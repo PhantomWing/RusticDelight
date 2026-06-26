@@ -9,7 +9,7 @@ import com.phantomwing.rusticdelight.util.ItemUtils;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -171,9 +171,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 storageItemRecipes(output, RecipeCategory.MISC, ModItems.COTTON_BOLL, ModItems.COTTON_BOLL_CRATE);
 
                 // Bell peppers
-                oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, Items.GREEN_DYE, 1);
-                oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, Items.YELLOW_DYE, 1);
-                oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED, Items.RED_DYE, 1);
+                oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, Items.DYE.green(), 1);
+                oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, Items.DYE.yellow(), 1);
+                oneToOne(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_RED, Items.DYE.red(), 1);
                 storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_SEEDS, ModItems.BELL_PEPPER_SEEDS_BAG);
                 storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_GREEN_CRATE);
                 storageItemRecipes(output, RecipeCategory.MISC, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_YELLOW_CRATE);
@@ -183,8 +183,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 storageItemRecipes(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS_BAG);
                 storageItemRecipes(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS_BAG);
 
-                oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.YELLOW_DYE, 1);
-                oneToOne(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS, Items.BROWN_DYE, 1);
+                oneToOne(output, RecipeCategory.MISC, ModItems.COFFEE_BEANS, Items.DYE.yellow(), 1);
+                oneToOne(output, RecipeCategory.MISC, ModItems.ROASTED_COFFEE_BEANS, Items.DYE.brown(), 1);
                 foodCookingRecipes(output, ModItems.COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS, SMALL_EXP);
 
                 var goldenCoffeeBeansIngredient = Ingredient.of(ModItems.COFFEE_BEANS, ModItems.ROASTED_COFFEE_BEANS);
@@ -274,13 +274,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 // Cotton
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COTTON), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.COTTON_SEEDS, 1)
                         .addResultWithChance(ModItems.COTTON_BOLL, 0.3F)
-                        .addResultWithChance(Items.WHITE_DYE, 0.1F)
+                        .addResultWithChance(Items.DYE.white(), 0.1F)
                         .build(output, ItemUtils.getIdentifier(ModItems.WILD_COTTON));
 
                 // Bell pepper
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_BELL_PEPPERS), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SEEDS, 1)
                         .addResultWithChance(ModItems.BELL_PEPPER_RED, 0.3F)
-                        .addResultWithChance(Items.RED_DYE, 0.1F)
+                        .addResultWithChance(Items.DYE.red(), 0.1F)
                         .build(output, ItemUtils.getIdentifier(ModItems.WILD_BELL_PEPPERS));
 
                 // Bell pepper slices
@@ -308,7 +308,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 // Coffee
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_COFFEE), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_BEANS, 1)
                         .addResultWithChance(ModItems.COFFEE_BEANS, 0.3F)
-                        .addResultWithChance(Items.YELLOW_DYE, 0.1F)
+                        .addResultWithChance(Items.DYE.yellow(), 0.1F)
                         .build(output, ItemUtils.getIdentifier(ModItems.WILD_COFFEE));
 
                 // Food

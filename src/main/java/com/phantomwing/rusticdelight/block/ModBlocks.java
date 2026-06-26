@@ -20,10 +20,10 @@ import java.util.function.Function;
 
 public class ModBlocks {
     // Seed bags
-    public static final Block COTTON_SEEDS_BAG = registerBlock("cotton_seeds_bag", Blocks.WHITE_WOOL, Block::new);
-    public static final Block BELL_PEPPER_SEEDS_BAG = registerBlock("bell_pepper_seeds_bag", Blocks.WHITE_WOOL, Block::new);
-    public static final Block COFFEE_BEANS_BAG = registerBlock("coffee_beans_bag", Blocks.WHITE_WOOL, Block::new);
-    public static final Block ROASTED_COFFEE_BEANS_BAG = registerBlock("roasted_coffee_beans_bag", Blocks.WHITE_WOOL, Block::new);
+    public static final Block COTTON_SEEDS_BAG = registerBlock("cotton_seeds_bag", Blocks.WOOL.white(), Block::new);
+    public static final Block BELL_PEPPER_SEEDS_BAG = registerBlock("bell_pepper_seeds_bag", Blocks.WOOL.white(), Block::new);
+    public static final Block COFFEE_BEANS_BAG = registerBlock("coffee_beans_bag", Blocks.WOOL.white(), Block::new);
+    public static final Block ROASTED_COFFEE_BEANS_BAG = registerBlock("roasted_coffee_beans_bag", Blocks.WOOL.white(), Block::new);
 
     // Crop crates
     public static final Block COTTON_BOLL_CRATE = registerBlock("cotton_boll_crate", Blocks.OAK_PLANKS,

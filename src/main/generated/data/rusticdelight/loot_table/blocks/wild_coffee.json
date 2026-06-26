@@ -7,7 +7,6 @@
   ],
   "pools": [
     {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:any_of",
@@ -45,7 +44,6 @@
       "rolls": 1.0
     },
     {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -96,7 +94,6 @@
       "rolls": 1.0
     },
     {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:all_of",

@@ -32,8 +32,8 @@ bin/
 
 run/
 
-# fabric datagen — content-addressed cache, regenerated on each runDatagen
-src/main/generated/.cache/
+# datagen — content-addressed cache, regenerated on each run (any location)
+.cache/
 
 # java
 
