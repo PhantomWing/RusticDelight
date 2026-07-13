@@ -8,7 +8,7 @@ This is a major content update, expanding greatly on bell peppers.
 - Added **Calamari Crate**, a storage block for Calamari
 - Added Giant Bell Pepper block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
   - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
-- Added new types of coffee: Pumpkin Coffee, Cherry Blossom Coffee
+- Added new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 
 - Added feature toggles to the config (so you can disable features, making related items unobtainable)
   - `enable_bell_peppers`
@@ -16,7 +16,12 @@ This is a major content update, expanding greatly on bell peppers.
   - `enable_cotton`
   - `enable_fried_foods`
   - `enable_potato_slices`
+- Added 3D models for many of the new items added in this update (requires Brewin' and Chewin' coaster)
 - Added Ukrainian translations (thank you hikarosato!)
+
+### Changes
+- Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
+- Improved various other textures, such as Cotton Boll
 
 ### Fixes
 - Villagers can now consume Rustic Delight crops, making them compatible for automated villager farms

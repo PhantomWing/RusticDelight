@@ -198,7 +198,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block)
                 .forAllStates(state -> {
                             int servings = RiceRollRoyaleBlock.MAX_SERVINGS - state.getValue(RiceRollRoyaleBlock.ROLL_SERVINGS);
-                            String suffix = servings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftover" : "_stage" + servings;
+                            String suffix = servings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftovers" : "_stage" + servings;
                             return ConfiguredModel.builder()
                                     .modelFile(existingModel(blockName(block) + suffix))
                                     .rotationY(((int) state.getValue(RiceRollRoyaleBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
