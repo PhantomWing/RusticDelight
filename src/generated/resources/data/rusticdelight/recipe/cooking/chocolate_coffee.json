@@ -13,19 +13,16 @@
   "experience": 1.0,
   "ingredients": [
     {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
       "tag": "c:drinks/milk"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "tag": "rusticdelight:coffee_ingredients"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
     },
     {
       "item": "minecraft:cocoa_beans"

@@ -58,15 +58,15 @@ public class FoodValues {
             .fast()
             .build();
     public static final FoodProperties CHOCOLATE_COFFEE = (new FoodProperties.Builder())
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0), 1.0f)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
             .alwaysEdible()
             .fast()
             .build();
     public static final FoodProperties HONEY_COFFEE = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.1F)
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0), 1.0f)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
             .alwaysEdible()
             .fast()
             .build();
