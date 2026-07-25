@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/template_crop_cross",
+  "parent": "rusticdelight:block/template_crop_cross",
   "render_type": "minecraft:cutout",
   "textures": {
     "cross": "rusticdelight:block/dark_bell_peppers_stage4"

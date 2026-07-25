@@ -33,24 +33,31 @@ public class ModConfiguredFeatures {
 
     private static void registerWildCrops(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         registerFlowerPatch(context, WILD_COTTON_KEY, BlockStateProvider.simple(ModBlocks.WILD_COTTON.get()), 32, 6, 4);
-        // Each block in a wild bell pepper patch has a 1% chance to roll the pale or the dark variant.
+        // Each block in a wild bell pepper patch has a 5% chance to roll the pale or the dark variant.
         registerFlowerPatch(context, WILD_BELL_PEPPERS_KEY, new WeightedStateProvider(
                 SimpleWeightedRandomList.<BlockState>builder()
-                        .add(ModBlocks.WILD_BELL_PEPPERS.get().defaultBlockState(), 98)
-                        .add(ModBlocks.WILD_PALE_BELL_PEPPERS.get().defaultBlockState(), 1)
-                        .add(ModBlocks.WILD_DARK_BELL_PEPPERS.get().defaultBlockState(), 1)
+                        .add(ModBlocks.WILD_BELL_PEPPERS.get().defaultBlockState(), 90)
+                        .add(ModBlocks.WILD_PALE_BELL_PEPPERS.get().defaultBlockState(), 5)
+                        .add(ModBlocks.WILD_DARK_BELL_PEPPERS.get().defaultBlockState(), 5)
                         .build()
         ), 48, 4, 4);
         registerFlowerPatch(context, WILD_COFFEE_KEY, BlockStateProvider.simple(ModBlocks.WILD_COFFEE.get()), 48, 6, 4);
     }
 
-    // A melon-like patch of randomly red/yellow/green bell pepper blocks.
+    // A melon-like patch of randomly colored bell pepper blocks. Weights total 300, so the
+    // pale group (orange/pink/white) and the dark group (blue/purple/black) are 5% each.
     private static void registerBellPepperBlockPatch(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, int tries, int xzSpread, int ySpread) {
         WeightedStateProvider provider = new WeightedStateProvider(
                 SimpleWeightedRandomList.<BlockState>builder()
-                        .add(ModBlocks.BELL_PEPPER_RED_BLOCK.get().defaultBlockState(), 1)
-                        .add(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get().defaultBlockState(), 1)
-                        .add(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get().defaultBlockState(), 1)
+                        .add(ModBlocks.BELL_PEPPER_RED_BLOCK.get().defaultBlockState(), 90)
+                        .add(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get().defaultBlockState(), 90)
+                        .add(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get().defaultBlockState(), 90)
+                        .add(ModBlocks.BELL_PEPPER_ORANGE_BLOCK.get().defaultBlockState(), 5)
+                        .add(ModBlocks.BELL_PEPPER_PINK_BLOCK.get().defaultBlockState(), 5)
+                        .add(ModBlocks.BELL_PEPPER_WHITE_BLOCK.get().defaultBlockState(), 5)
+                        .add(ModBlocks.BELL_PEPPER_BLUE_BLOCK.get().defaultBlockState(), 5)
+                        .add(ModBlocks.BELL_PEPPER_PURPLE_BLOCK.get().defaultBlockState(), 5)
+                        .add(ModBlocks.BELL_PEPPER_BLACK_BLOCK.get().defaultBlockState(), 5)
                         .build()
         );
         register(context, key, Feature.RANDOM_PATCH,
@@ -58,12 +65,14 @@ public class ModConfiguredFeatures {
                         tries,
                         xzSpread,
                         ySpread,
-                        // Melon-style: only place where the spot is replaceable and the block below is grass.
+                        // Melon-style: only place on a replaceable, fluid-free spot with grass below.
+                        // noFluid() matters because water is replaceable - without it these spawn submerged.
                         PlacementUtils.filtered(
                                 Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(provider),
                                 BlockPredicate.allOf(
                                         BlockPredicate.replaceable(),
+                                        BlockPredicate.noFluid(),
                                         BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.GRASS_BLOCK)
                                 )
                         )

@@ -12,19 +12,19 @@
                 "data": {
                   "Name": "rusticdelight:wild_bell_peppers"
                 },
-                "weight": 98
+                "weight": 90
               },
               {
                 "data": {
                   "Name": "rusticdelight:wild_pale_bell_peppers"
                 },
-                "weight": 1
+                "weight": 5
               },
               {
                 "data": {
                   "Name": "rusticdelight:wild_dark_bell_peppers"
                 },
-                "weight": 1
+                "weight": 5
               }
             ]
           }

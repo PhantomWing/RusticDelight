@@ -12,19 +12,55 @@
                 "data": {
                   "Name": "rusticdelight:bell_pepper_red_block"
                 },
-                "weight": 1
+                "weight": 90
               },
               {
                 "data": {
                   "Name": "rusticdelight:bell_pepper_yellow_block"
                 },
-                "weight": 1
+                "weight": 90
               },
               {
                 "data": {
                   "Name": "rusticdelight:bell_pepper_green_block"
                 },
-                "weight": 1
+                "weight": 90
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_orange_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_pink_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_white_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_blue_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_purple_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_black_block"
+                },
+                "weight": 5
               }
             ]
           }
@@ -38,6 +74,10 @@
             "predicates": [
               {
                 "type": "minecraft:replaceable"
+              },
+              {
+                "type": "minecraft:matching_fluids",
+                "fluids": "minecraft:empty"
               },
               {
                 "type": "minecraft:matching_blocks",
