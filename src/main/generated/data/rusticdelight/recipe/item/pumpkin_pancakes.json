@@ -1,21 +1,21 @@
 {
-  "type": "farmersdelight:cooking",
-  "container": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  },
-  "cookingtime": 400,
-  "experience": 2.0,
+  "type": "farmersdelight:cutting",
   "ingredients": [
-    "rusticdelight:batter",
-    "#rusticdelight:syrup",
-    "farmersdelight:pumpkin_slice",
-    "farmersdelight:pumpkin_slice",
-    "farmersdelight:pumpkin_slice",
-    "farmersdelight:pumpkin_slice"
+    "rusticdelight:pumpkin_pancakes"
   ],
-  "result": {
-    "count": 1,
-    "id": "rusticdelight:pumpkin_pancakes"
-  }
+  "result": [
+    {
+      "item": {
+        "count": 6,
+        "id": "rusticdelight:pumpkin_pancake"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:bowl"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
 }

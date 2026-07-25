@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    "rusticdelight:batter",
+    "minecraft:honey_bottle",
+    "minecraft:sweet_berries",
+    "minecraft:sweet_berries",
+    "minecraft:sugar",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:honey_pancakes"
+  }
+}

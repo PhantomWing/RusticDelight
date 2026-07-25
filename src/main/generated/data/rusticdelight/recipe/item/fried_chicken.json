@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "#rusticdelight:cooking_oil",
+    "rusticdelight:batter",
+    "#c:foods/raw_chicken",
+    "#c:foods/onion"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:fried_chicken"
+  }
+}

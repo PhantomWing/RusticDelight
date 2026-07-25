@@ -2,14 +2,13 @@
   "type": "farmersdelight:cooking",
   "experience": 1.0,
   "ingredients": [
-    "minecraft:brown_mushroom",
-    "minecraft:red_mushroom",
+    "rusticdelight:bell_pepper_green",
     "#c:crops/rice",
-    "#rusticdelight:mushroom_rice_ingredients"
+    "#rusticdelight:stuffed_bell_pepper_ingredients"
   ],
   "recipe_book_tab": "meals",
   "result": {
     "count": 1,
-    "id": "farmersdelight:mushroom_rice"
+    "id": "rusticdelight:stuffed_bell_pepper_green"
   }
 }

@@ -32,6 +32,9 @@ bin/
 
 run/
 
+# datagen — content-addressed cache, regenerated on each run (any location)
+.cache/
+
 # java
 
 hs_err_*.log

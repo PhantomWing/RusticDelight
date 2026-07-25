@@ -1,6 +1,7 @@
 plugins {
-	id 'fabric-loom' version '1.14-SNAPSHOT'
+	id 'fabric-loom' version '1.16-SNAPSHOT'
 	id 'maven-publish'
+	id 'me.modmuss50.mod-publish-plugin' version '2.0.0'
 }
 
 version = project.mod_version
@@ -23,9 +24,17 @@ repositories {
 	mavenLocal()
 
 	maven {
-		// Farmer's Delight Refabricated
+		// Farmer's Delight Refabricated (repo.greenhouse.house moved here)
 		name = "Greenhouse Maven"
-		url = 'https://repo.greenhouse.house/releases/'
+		url = 'https://maven.greenhouse.lgbt/releases/'
+	}
+
+	maven {
+		// Greenhouse has no 3.6.x build for 1.21.11 yet (newest there is 3.4.9), so FDR comes
+		// from Modrinth instead. Swap back once Greenhouse catches up.
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content { includeGroup "maven.modrinth" }
 	}
 
 	maven { // Fabric ASM
@@ -47,6 +56,9 @@ repositories {
 fabricApi {
 	configureDataGeneration() {
 		client = true
+		// Restrict datagen to our mod so transitive mods (FDR, etc.) don't overwrite shared-namespace
+		// output files like data/minecraft/tags/villager_trade/farmer/level_1.json.
+		modId = mod_id
 	}
 }
 
@@ -65,7 +77,7 @@ dependencies {
 	}
 
 	// Farmer's Delight Refabricated
-	modImplementation("vectorwing:FarmersDelight:${minecraft_version}-${farmersdelight_version}+refabricated") {
+	modImplementation("maven.modrinth:farmers-delight-refabricated:${minecraft_version}-${farmersdelight_version}") {
 		exclude(group: "net.fabricmc")
 	}
 
@@ -136,5 +148,60 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+	}
+}
+
+// Pulls the body of the topmost "# <version>" section out of changelog.md.
+ext.latestChangelog = {
+	def f = file('changelog.md')
+	if (!f.exists()) return "See changelog.md"
+	def body = new StringBuilder()
+	boolean started = false, done = false
+	f.eachLine { line ->
+		if (done) return
+		if (line.startsWith('# ')) {
+			if (started) { done = true; return }
+			started = true
+			return
+		}
+		if (started) body.append(line).append('\n')
+	}
+	def out = body.toString().trim()
+	return out.isEmpty() ? "See changelog.md" : out
+}
+
+// Modrinth / CurseForge publishing. Dry run (no upload): ./gradlew publishMods -PpublishDryRun
+// A real upload needs modrinth_token / curseforge_token in ~/.gradle/gradle.properties (or the
+// MODRINTH_TOKEN / CURSEFORGE_TOKEN env vars).
+publishMods {
+	// 1.21.11 is still obfuscated, so remapJar - not jar - produces the final mod artifact.
+	file = tasks.named("remapJar", net.fabricmc.loom.task.RemapJarTask).flatMap { it.archiveFile }
+	version = project.mod_version
+	displayName = "Rustic Delight ${project.mod_version}"
+	changelog = project.ext.latestChangelog()
+	type = STABLE
+	modLoaders.add("fabric")
+	// -PpublishDryRun => stage to build/ without uploading.
+	dryRun = project.hasProperty("publishDryRun")
+
+	modrinth {
+		projectId = providers.gradleProperty("modrinth_project_id")
+		accessToken = providers.environmentVariable("MODRINTH_TOKEN").orElse(providers.gradleProperty("modrinth_token"))
+		// Tag every supported game version on the upload, not just the build target.
+		supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+		requires("fabric-api")
+		requires("cloth-config")
+		requires("farmers-delight-refabricated")
+	}
+	curseforge {
+		projectId = providers.gradleProperty("curseforge_project_id")
+		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN").orElse(providers.gradleProperty("curseforge_token"))
+		supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+		// CurseForge requires explicit side flags (Modrinth infers them from the jar).
+		client = true
+		server = true
+		requires("fabric-api")
+		requires("cloth-config")
+		requires("farmers-delight-refabricated")
 	}
 }

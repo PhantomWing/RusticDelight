@@ -1,21 +1,21 @@
 {
-  "type": "farmersdelight:cooking",
-  "container": {
-    "count": 1,
-    "id": "minecraft:bowl"
-  },
-  "cookingtime": 400,
-  "experience": 2.0,
+  "type": "farmersdelight:cutting",
   "ingredients": [
-    "rusticdelight:batter",
-    "minecraft:honey_bottle",
-    "minecraft:sweet_berries",
-    "minecraft:sweet_berries",
-    "minecraft:sugar",
-    "minecraft:sugar"
+    "rusticdelight:honey_pancakes"
   ],
-  "result": {
-    "count": 1,
-    "id": "rusticdelight:honey_pancakes"
-  }
+  "result": [
+    {
+      "item": {
+        "count": 6,
+        "id": "rusticdelight:honey_pancake"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:bowl"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
 }

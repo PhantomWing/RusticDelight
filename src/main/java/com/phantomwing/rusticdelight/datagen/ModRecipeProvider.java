@@ -582,7 +582,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_TOMATO)
                         .unlockedByAnyIngredient(Items.COD, Items.POTATO, vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get(), Items.EGG)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
 
                 // Beef Stew
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, vectorwing.farmersdelight.common.registry.ModItems.BEEF_STEW.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -591,7 +591,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_POTATO)
                         .unlockedByAnyIngredient(Items.BEEF, Items.CARROT, Items.POTATO)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
 
                 // Mushroom Rice
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, vectorwing.farmersdelight.common.registry.ModItems.MUSHROOM_RICE.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -601,7 +601,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ModTags.Items.MUSHROOM_RICE_INGREDIENTS)
                         .unlockedByAnyIngredient(Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
 
                 // Vegetable Soup
                 CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, vectorwing.farmersdelight.common.registry.ModItems.VEGETABLE_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
@@ -611,7 +611,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(CommonTags.FOODS_LEAFY_GREEN)
                         .unlockedByAnyIngredient(Items.CARROT, vectorwing.farmersdelight.common.registry.ModItems.ONION.get(), Items.BEETROOT)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                        .build(output);
+                        .save(output);
             }
 
             private void oneToOne(RecipeOutput recipeOutput, RecipeCategory category, ItemLike item, ItemLike result, int count) {
@@ -721,7 +721,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(ingredient2, 2)
                         .unlockedByAnyIngredient(batter)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
-                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE, ItemUtils.getIdentifier(pancakeBlock)));
+                        // Needs its own id: the shaped recipe above already claims the pancake
+                        // block's default id, so both would resolve to rusticdelight:item/<name>.
+                        .save(recipeOutput, ResourceKey.create(Registries.RECIPE,
+                                Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, getItemName(pancakeBlock) + "_from_cooking_pot")));
 
                 // Cutting recipe for pancakes to separate them into single pancakes.
                 CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(pancakeBlock), tagIngredient(CommonTags.TOOLS_KNIFE), singlePancake, PancakeBlock.MAX_SERVINGS)
