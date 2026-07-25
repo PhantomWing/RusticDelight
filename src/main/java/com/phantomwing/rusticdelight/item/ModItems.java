@@ -66,6 +66,8 @@ public class ModItems {
     // Wild crops
     public static final DeferredItem<Item> WILD_COTTON = registerBlockWithTab(ModBlocks.WILD_COTTON, ItemFamily.COTTON);
     public static final DeferredItem<Item> WILD_BELL_PEPPERS = registerBlockWithTab(ModBlocks.WILD_BELL_PEPPERS, ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> WILD_PALE_BELL_PEPPERS = registerBlockWithTab(ModBlocks.WILD_PALE_BELL_PEPPERS, ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> WILD_DARK_BELL_PEPPERS = registerBlockWithTab(ModBlocks.WILD_DARK_BELL_PEPPERS, ItemFamily.BELL_PEPPER);
     public static final DeferredItem<Item> WILD_COFFEE = registerBlockWithTab(ModBlocks.WILD_COFFEE, ItemFamily.COFFEE);
 
     // Crop products

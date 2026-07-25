@@ -370,6 +370,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addResultWithChance(ModItems.BELL_PEPPER_RED, 0.3F)
                 .addResultWithChance(Items.RED_DYE, 0.1F)
                 .build(bellPepperOutput, cuttingId(ModItems.WILD_BELL_PEPPERS.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_PALE_BELL_PEPPERS), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.PALE_BELL_PEPPER_SEEDS, 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_PINK, 0.3F)
+                .addResultWithChance(Items.PINK_DYE, 0.1F)
+                .build(bellPepperOutput, cuttingId(ModItems.WILD_PALE_BELL_PEPPERS.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.WILD_DARK_BELL_PEPPERS), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.DARK_BELL_PEPPER_SEEDS, 1)
+                .addResultWithChance(ModItems.BELL_PEPPER_PURPLE, 0.3F)
+                .addResultWithChance(Items.PURPLE_DYE, 0.1F)
+                .build(bellPepperOutput, cuttingId(ModItems.WILD_DARK_BELL_PEPPERS.getId()));
 
         // Bell pepper slices
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 2)

@@ -79,6 +79,8 @@
   "block.rusticdelight.potted_wild_bell_peppers": "Дикий солодкий перець у горщику",
   "block.rusticdelight.potted_wild_coffee": "Дика кава у горщику",
   "block.rusticdelight.potted_wild_cotton": "Дика бавовна у горщику",
+  "block.rusticdelight.potted_wild_dark_bell_peppers": "Дикий темний солодкий перець у горщику",
+  "block.rusticdelight.potted_wild_pale_bell_peppers": "Дикий блідий солодкий перець у горщику",
   "block.rusticdelight.pumpkin_pancakes": "Млинці з гарбузом",
   "block.rusticdelight.rice_roll_royale": "Рисові роли «Рояль»",
   "block.rusticdelight.roasted_coffee_beans_bag": "Мішок смажених кавових зерен",
@@ -87,6 +89,8 @@
   "block.rusticdelight.wild_bell_peppers": "Дикий солодкий перець",
   "block.rusticdelight.wild_coffee": "Дика кава",
   "block.rusticdelight.wild_cotton": "Дика бавовна",
+  "block.rusticdelight.wild_dark_bell_peppers": "Дикий темний солодкий перець",
+  "block.rusticdelight.wild_pale_bell_peppers": "Дикий блідий солодкий перець",
   
   "tooltip.farmersdelight.chocolate_coffee": "Знімає 1 негативний ефект",
   "tooltip.farmersdelight.honey_coffee": "Знімає 1 ефект",

@@ -35,10 +35,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeWildCrop(ModBlocks.WILD_COTTON.get());
         makeWildCrop(ModBlocks.WILD_BELL_PEPPERS.get());
+        makeWildCrop(ModBlocks.WILD_PALE_BELL_PEPPERS.get());
+        makeWildCrop(ModBlocks.WILD_DARK_BELL_PEPPERS.get());
         makeWildCrop(ModBlocks.WILD_COFFEE.get());
 
         makePottedFlower(ModBlocks.POTTED_WILD_COTTON.get(),ModBlocks.WILD_COTTON.get());
         makePottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+        makePottedFlower(ModBlocks.POTTED_WILD_PALE_BELL_PEPPERS.get(), ModBlocks.WILD_PALE_BELL_PEPPERS.get());
+        makePottedFlower(ModBlocks.POTTED_WILD_DARK_BELL_PEPPERS.get(), ModBlocks.WILD_DARK_BELL_PEPPERS.get());
         makePottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
         canvasBag(ModBlocks.COTTON_SEEDS_BAG.get());

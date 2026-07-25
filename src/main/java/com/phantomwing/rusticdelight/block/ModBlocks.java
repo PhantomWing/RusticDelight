@@ -99,6 +99,10 @@ public class ModBlocks {
             () -> new ModWildCropBlock(MobEffects.WEAVING, 12, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
     public static final DeferredBlock<Block> WILD_BELL_PEPPERS = BLOCKS.register("wild_bell_peppers",
             () -> new ModWildCropBlock(MobEffects.FIRE_RESISTANCE, 10, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+    public static final DeferredBlock<Block> WILD_PALE_BELL_PEPPERS = BLOCKS.register("wild_pale_bell_peppers",
+            () -> new ModWildCropBlock(MobEffects.NIGHT_VISION, 10, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
+    public static final DeferredBlock<Block> WILD_DARK_BELL_PEPPERS = BLOCKS.register("wild_dark_bell_peppers",
+            () -> new ModWildCropBlock(MobEffects.INVISIBILITY, 10, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
     public static final DeferredBlock<Block> WILD_COFFEE = BLOCKS.register("wild_coffee",
             () -> new ModWildCropBlock(MobEffects.MOVEMENT_SPEED, 10, Block.Properties.ofFullCopy(Blocks.TALL_GRASS)));
 
@@ -118,6 +122,10 @@ public class ModBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_COTTON, Block.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).noOcclusion()));
     public static final DeferredBlock<Block> POTTED_WILD_BELL_PEPPERS = BLOCKS.register("potted_wild_bell_peppers",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_BELL_PEPPERS, Block.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final DeferredBlock<Block> POTTED_WILD_PALE_BELL_PEPPERS = BLOCKS.register("potted_wild_pale_bell_peppers",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_PALE_BELL_PEPPERS, Block.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final DeferredBlock<Block> POTTED_WILD_DARK_BELL_PEPPERS = BLOCKS.register("potted_wild_dark_bell_peppers",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_DARK_BELL_PEPPERS, Block.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).noOcclusion()));
     public static final DeferredBlock<Block> POTTED_WILD_COFFEE = BLOCKS.register("potted_wild_coffee",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_COFFEE, Block.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).noOcclusion()));
 

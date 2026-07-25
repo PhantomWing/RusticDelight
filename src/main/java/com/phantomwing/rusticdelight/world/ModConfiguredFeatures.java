@@ -7,7 +7,6 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -33,9 +32,16 @@ public class ModConfiguredFeatures {
     }
 
     private static void registerWildCrops(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-        registerFlowerPatch(context, WILD_COTTON_KEY, ModBlocks.WILD_COTTON.get(), 32, 6, 4);
-        registerFlowerPatch(context, WILD_BELL_PEPPERS_KEY, ModBlocks.WILD_BELL_PEPPERS.get(), 48, 4, 4);
-        registerFlowerPatch(context, WILD_COFFEE_KEY, ModBlocks.WILD_COFFEE.get(), 48, 6, 4);
+        registerFlowerPatch(context, WILD_COTTON_KEY, BlockStateProvider.simple(ModBlocks.WILD_COTTON.get()), 32, 6, 4);
+        // Each block in a wild bell pepper patch has a 1% chance to roll the pale or the dark variant.
+        registerFlowerPatch(context, WILD_BELL_PEPPERS_KEY, new WeightedStateProvider(
+                SimpleWeightedRandomList.<BlockState>builder()
+                        .add(ModBlocks.WILD_BELL_PEPPERS.get().defaultBlockState(), 98)
+                        .add(ModBlocks.WILD_PALE_BELL_PEPPERS.get().defaultBlockState(), 1)
+                        .add(ModBlocks.WILD_DARK_BELL_PEPPERS.get().defaultBlockState(), 1)
+                        .build()
+        ), 48, 4, 4);
+        registerFlowerPatch(context, WILD_COFFEE_KEY, BlockStateProvider.simple(ModBlocks.WILD_COFFEE.get()), 48, 6, 4);
     }
 
     // A melon-like patch of randomly red/yellow/green bell pepper blocks.
@@ -65,7 +71,7 @@ public class ModConfiguredFeatures {
         );
     }
 
-    private static void registerFlowerPatch(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, Block block, int tries, int xzSpread, int ySpread) {
+    private static void registerFlowerPatch(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, BlockStateProvider provider, int tries, int xzSpread, int ySpread) {
         register(context, key, Feature.FLOWER,
                 new RandomPatchConfiguration(
                         tries,
@@ -73,7 +79,7 @@ public class ModConfiguredFeatures {
                         ySpread,
                         PlacementUtils.onlyWhenEmpty(
                                 Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(block))
+                                new SimpleBlockConfiguration(provider)
                         )
                 )
         );

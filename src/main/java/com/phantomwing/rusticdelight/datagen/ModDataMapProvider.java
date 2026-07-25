@@ -44,6 +44,8 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.WILD_COFFEE.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_COTTON.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.WILD_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.WILD_PALE_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
+                .add(ModItems.WILD_DARK_BELL_PEPPERS.getId(), new Compostable(0.65f, true), false)
                 .add(ModItems.ROASTED_COFFEE_BEANS.getId(), new Compostable(0.65f, true), false)
 
                 // Bell pepper blocks (65%)

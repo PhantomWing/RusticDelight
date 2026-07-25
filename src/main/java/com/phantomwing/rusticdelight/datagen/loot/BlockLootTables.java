@@ -51,10 +51,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS, ModItems.COTTON_BOLL);
         dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS, ModItems.BELL_PEPPER_RED);
+        dropWildCrop(ModBlocks.WILD_PALE_BELL_PEPPERS.get(), ModItems.PALE_BELL_PEPPER_SEEDS, ModItems.BELL_PEPPER_PINK);
+        dropWildCrop(ModBlocks.WILD_DARK_BELL_PEPPERS.get(), ModItems.DARK_BELL_PEPPER_SEEDS, ModItems.BELL_PEPPER_PURPLE);
         dropWildCrop(ModBlocks.WILD_COFFEE.get(), ModItems.COFFEE_BEANS, ModItems.COFFEE_BEANS);
 
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_PALE_BELL_PEPPERS.get(), ModBlocks.WILD_PALE_BELL_PEPPERS.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_DARK_BELL_PEPPERS.get(), ModBlocks.WILD_DARK_BELL_PEPPERS.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());

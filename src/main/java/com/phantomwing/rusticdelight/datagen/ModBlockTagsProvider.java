@@ -59,6 +59,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.SMALL_FLOWERS).add(
                 ModBlocks.WILD_COTTON.get(),
                 ModBlocks.WILD_BELL_PEPPERS.get(),
+                ModBlocks.WILD_PALE_BELL_PEPPERS.get(),
+                ModBlocks.WILD_DARK_BELL_PEPPERS.get(),
                 ModBlocks.WILD_COFFEE.get()
         );
 
@@ -166,6 +168,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         this.tag(ModTags.Blocks.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON.get(),
                 ModBlocks.WILD_BELL_PEPPERS.get(),
+                ModBlocks.WILD_PALE_BELL_PEPPERS.get(),
+                ModBlocks.WILD_DARK_BELL_PEPPERS.get(),
                 ModBlocks.WILD_COFFEE.get()
         );
 
