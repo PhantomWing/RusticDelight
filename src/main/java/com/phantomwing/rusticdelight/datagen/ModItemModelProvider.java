@@ -135,6 +135,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FRIED_FISH);
         simpleItem(ModItems.SWEET_SALAD);
         simpleItem(ModItems.RICE_ROLL_ROYALE);
+        simpleItem(ModItems.BELL_PEPPER_MEDLEY);
+        simpleItem(ModItems.PALE_BELL_PEPPER_MEDLEY);
+        simpleItem(ModItems.DARK_BELL_PEPPER_MEDLEY);
 
         // Blocks
         simpleBlock2D(ModBlocks.WILD_COFFEE);

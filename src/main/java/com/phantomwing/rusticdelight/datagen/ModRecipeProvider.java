@@ -348,6 +348,25 @@ public class ModRecipeProvider extends RecipeProvider {
                         ModItems.CHERRY_BLOSSOM_ROLL.get(),
                         vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get()))
                 .save(bellPepperAndCalamariOutput);
+
+        bellPepperMedleyRecipe(bellPepperOutput, ModItems.BELL_PEPPER_MEDLEY,
+                ModItems.STUFFED_BELL_PEPPER_GREEN, ModItems.STUFFED_BELL_PEPPER_YELLOW, ModItems.STUFFED_BELL_PEPPER_RED);
+        bellPepperMedleyRecipe(bellPepperOutput, ModItems.PALE_BELL_PEPPER_MEDLEY,
+                ModItems.STUFFED_BELL_PEPPER_ORANGE, ModItems.STUFFED_BELL_PEPPER_WHITE, ModItems.STUFFED_BELL_PEPPER_PINK);
+        bellPepperMedleyRecipe(bellPepperOutput, ModItems.DARK_BELL_PEPPER_MEDLEY,
+                ModItems.STUFFED_BELL_PEPPER_BLUE, ModItems.STUFFED_BELL_PEPPER_PURPLE, ModItems.STUFFED_BELL_PEPPER_BLACK);
+    }
+
+    // One stuffed bell pepper of each colour in the variant, plus a bowl.
+    private void bellPepperMedleyRecipe(RecipeOutput output, DeferredItem<Item> medley, DeferredItem<Item> first, DeferredItem<Item> second, DeferredItem<Item> third) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, medley)
+                .requires(first.get())
+                .requires(second.get())
+                .requires(third.get())
+                .requires(Items.BOWL)
+                .unlockedBy("has_stuffed_bell_pepper", InventoryChangeTrigger.TriggerInstance.hasItems(
+                        first.get(), second.get(), third.get()))
+                .save(output);
     }
 
     private void buildCuttingRecipes(@NotNull RecipeOutput output) {
@@ -731,21 +750,21 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Pumpkin Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.PUMPKIN_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(CommonTags.DRINKS_MILK)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get(), 1)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get())
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(coffeeOutput);
 
         // Cherry Blossom Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHERRY_BLOSSOM_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(CommonTags.DRINKS_MILK)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)

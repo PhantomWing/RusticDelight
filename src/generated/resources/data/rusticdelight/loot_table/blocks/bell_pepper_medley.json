@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:bell_pepper_medley",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rusticdelight:bell_pepper_medley"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "block": "rusticdelight:bell_pepper_medley",
+            "condition": "minecraft:block_state_property",
+            "properties": {
+              "servings": "3"
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bowl"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rusticdelight:blocks/bell_pepper_medley"
+}

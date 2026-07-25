@@ -11,6 +11,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
+import java.util.List;
+
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(RusticDelight.MOD_ID);
 
@@ -93,6 +95,16 @@ public class ModBlocks {
     // Feasts
     public static final DeferredBlock<Block> RICE_ROLL_ROYALE = BLOCKS.register("rice_roll_royale",
             () -> new RiceRollRoyaleBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
+    // Serving lists are ordered [back-left, back-right, front] to match the stage models.
+    public static final DeferredBlock<Block> BELL_PEPPER_MEDLEY = BLOCKS.register("bell_pepper_medley",
+            () -> new BellPepperMedleyBlock(Block.Properties.ofFullCopy(Blocks.CAKE), List.of(
+                    ModItems.STUFFED_BELL_PEPPER_GREEN, ModItems.STUFFED_BELL_PEPPER_YELLOW, ModItems.STUFFED_BELL_PEPPER_RED)));
+    public static final DeferredBlock<Block> PALE_BELL_PEPPER_MEDLEY = BLOCKS.register("pale_bell_pepper_medley",
+            () -> new BellPepperMedleyBlock(Block.Properties.ofFullCopy(Blocks.CAKE), List.of(
+                    ModItems.STUFFED_BELL_PEPPER_ORANGE, ModItems.STUFFED_BELL_PEPPER_WHITE, ModItems.STUFFED_BELL_PEPPER_PINK)));
+    public static final DeferredBlock<Block> DARK_BELL_PEPPER_MEDLEY = BLOCKS.register("dark_bell_pepper_medley",
+            () -> new BellPepperMedleyBlock(Block.Properties.ofFullCopy(Blocks.CAKE), List.of(
+                    ModItems.STUFFED_BELL_PEPPER_BLUE, ModItems.STUFFED_BELL_PEPPER_PURPLE, ModItems.STUFFED_BELL_PEPPER_BLACK)));
 
     // Wild crops
     public static final DeferredBlock<Block> WILD_COTTON = BLOCKS.register("wild_cotton",

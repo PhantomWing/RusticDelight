@@ -85,6 +85,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         pancakeBlock(ModBlocks.PUMPKIN_PANCAKES.get());
 
         riceRollBlock(ModBlocks.RICE_ROLL_ROYALE.get());
+
+        medleyBlock(ModBlocks.BELL_PEPPER_MEDLEY.get());
+        medleyBlock(ModBlocks.PALE_BELL_PEPPER_MEDLEY.get());
+        medleyBlock(ModBlocks.DARK_BELL_PEPPER_MEDLEY.get());
     }
 
     private void makeWildCrop(Block block) {
@@ -206,6 +210,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             return ConfiguredModel.builder()
                                     .modelFile(existingModel(blockName(block) + suffix))
                                     .rotationY(((int) state.getValue(RiceRollRoyaleBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
+                                    .build();
+                        }
+                );
+    }
+
+    private void medleyBlock(Block block) {
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                            int servings = BellPepperMedleyBlock.MAX_SERVINGS - state.getValue(BellPepperMedleyBlock.MEDLEY_SERVINGS);
+                            String suffix = servings == BellPepperMedleyBlock.MAX_SERVINGS ? "_leftovers" : "_stage" + servings;
+                            return ConfiguredModel.builder()
+                                    .modelFile(existingModel(blockName(block) + suffix))
+                                    .rotationY(((int) state.getValue(BellPepperMedleyBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)
                                     .build();
                         }
                 );

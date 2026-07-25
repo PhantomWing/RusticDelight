@@ -5,10 +5,13 @@ This is a major content update, expanding greatly on bell peppers.
 - Added mutated variants of the bell pepper crop
   - Pale Bell Pepper Seeds: Yields white, pink and orange bell peppers
   - Dark Bell Pepper Seeds: Yields black, blue and purple bell peppers
+- Added Wild Pale Bell Peppers and Wild Dark Bell Peppers, which can be found in jungles (rare)
+- Added Bell Pepper Medley, a new feast crafted with 1 of each stuffed bell pepper color
 - Added **Calamari Crate**, a storage block for Calamari
 - Added Giant Bell Pepper block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
   - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
 - Added new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
+- Added Fried Fish: new fried food crafted with any safe fish, Batter and Cooking Oil
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 
 - Added feature toggles to the config (so you can disable features, making related items unobtainable)
   - `enable_bell_peppers`
@@ -21,6 +24,7 @@ This is a major content update, expanding greatly on bell peppers.
 
 ### Changes
 - Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
+- Rebalanced coffee recipes & effects
 - Improved various other textures, such as Cotton Boll
 
 ### Fixes

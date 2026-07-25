@@ -336,6 +336,9 @@ public class ModItems {
 
     // Feasts
     public static final DeferredItem<Item> RICE_ROLL_ROYALE = registerPlaceableBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem(), ItemFamily.BELL_PEPPER, ItemFamily.CALAMARI);
+    public static final DeferredItem<Item> BELL_PEPPER_MEDLEY = registerPlaceableBlockWithTab(ModBlocks.BELL_PEPPER_MEDLEY, feastItem(), ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> PALE_BELL_PEPPER_MEDLEY = registerPlaceableBlockWithTab(ModBlocks.PALE_BELL_PEPPER_MEDLEY, feastItem(), ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> DARK_BELL_PEPPER_MEDLEY = registerPlaceableBlockWithTab(ModBlocks.DARK_BELL_PEPPER_MEDLEY, feastItem(), ItemFamily.BELL_PEPPER);
 
     // Helper functions
     public static Item.Properties baseItem() {

@@ -101,6 +101,9 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropFoodBlock(ModBlocks.PUMPKIN_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
 
         dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, RiceRollRoyaleBlock.MAX_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.PALE_BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.DARK_BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
     }
 
     // The contents of this Iterable are used for validation.
