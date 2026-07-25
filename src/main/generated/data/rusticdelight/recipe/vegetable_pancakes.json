@@ -4,7 +4,7 @@
   "key": {
     "B": "minecraft:bowl",
     "M": "rusticdelight:batter",
-    "T": "#c:foods/milk",
+    "T": "#c:drinks/milk",
     "X": "#c:foods/vegetable",
     "Y": "#c:foods/leafy_green"
   },

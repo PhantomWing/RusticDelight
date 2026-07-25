@@ -7,7 +7,7 @@
   "cookingtime": 100,
   "experience": 0.35,
   "ingredients": [
-    "#c:foods/milk",
+    "#c:drinks/milk",
     "#c:eggs",
     "minecraft:wheat",
     "minecraft:wheat"

@@ -5,7 +5,7 @@
     "minecraft:bowl",
     "#c:foods/potato",
     "#c:foods/onion",
-    "#c:foods/milk",
+    "#c:drinks/milk",
     "#c:eggs"
   ],
   "result": {

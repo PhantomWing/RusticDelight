@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     "rusticdelight:coffee",
-    "#c:foods/milk"
+    "#c:drinks/milk"
   ],
   "result": {
     "count": 1,
