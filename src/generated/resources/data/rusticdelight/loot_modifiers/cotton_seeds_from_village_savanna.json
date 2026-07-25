@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "generate_random_loot"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ],
+  "type": "farmersdelight:replace_item",
+  "added_item": "rusticdelight:cotton_seeds",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_savanna_house"
+    }
+  ],
+  "removed_item": "minecraft:wheat_seeds"
+}

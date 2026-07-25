@@ -1,7 +1,15 @@
 {
   "entries": [
     "rusticdelight:calamari_from_squid",
-    "rusticdelight:calamari_from_glow_squid"
+    "rusticdelight:calamari_from_glow_squid",
+    "rusticdelight:cotton_seeds_from_village_savanna",
+    "rusticdelight:cotton_seeds_from_village_taiga",
+    "rusticdelight:cotton_seeds_from_village_snowy",
+    "rusticdelight:cotton_seeds_from_abandoned_mineshaft",
+    "rusticdelight:cotton_seeds_from_shipwreck_supply",
+    "rusticdelight:coffee_beans_from_jungle_temple",
+    "rusticdelight:pale_bell_pepper_seeds_from_jungle_temple",
+    "rusticdelight:dark_bell_pepper_seeds_from_jungle_temple"
   ],
   "replace": false
 }

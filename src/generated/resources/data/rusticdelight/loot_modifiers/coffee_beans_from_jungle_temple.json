@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "generate_random_loot"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
+  "type": "farmersdelight:replace_item",
+  "added_item": "rusticdelight:coffee_beans",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/jungle_temple"
+    },
+    {
+      "chance": 0.5,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "count": 2,
+  "removed_item": "minecraft:bamboo"
+}

@@ -54,6 +54,10 @@ public class Configuration {
     public static final String GENERATE_VILLAGE_FARM_CROPS_ID = "generate_village_farm_crops";
     public static ModConfigSpec.BooleanValue GENERATE_VILLAGE_FARM_CROPS;
 
+    // Structure chest loot
+    public static final String GENERATE_RANDOM_LOOT_ID = "generate_random_loot";
+    public static ModConfigSpec.BooleanValue GENERATE_RANDOM_LOOT;
+
     public static int getIntConfigurationValue(String id) {
         return switch (id) {
             case CHANCE_WILD_COTTON_ID -> Configuration.CHANCE_WILD_COTTON.get();
@@ -71,6 +75,7 @@ public class Configuration {
             case ENABLE_VILLAGER_TRADES_ID -> Configuration.ENABLE_VILLAGER_TRADES.get();
             case ENABLE_WANDERING_TRADER_TRADES_ID -> Configuration.ENABLE_WANDERING_TRADER_TRADES.get();
             case GENERATE_VILLAGE_FARM_CROPS_ID -> Configuration.GENERATE_VILLAGE_FARM_CROPS.get();
+            case GENERATE_RANDOM_LOOT_ID -> Configuration.GENERATE_RANDOM_LOOT.get();
             case ENABLE_COTTON_ID -> Configuration.ENABLE_COTTON.get();
             case ENABLE_COFFEE_ID -> Configuration.ENABLE_COFFEE.get();
             case ENABLE_BELL_PEPPERS_ID -> Configuration.ENABLE_BELL_PEPPERS.get();
@@ -99,6 +104,7 @@ public class Configuration {
         ENABLE_WANDERING_TRADER_TRADES = COMMON_BUILDER.comment("Should the Wandering Trader sell Rustic Delight items?").define(ENABLE_WANDERING_TRADER_TRADES_ID, true);
         ENABLE_POTIONS = COMMON_BUILDER.comment("Should players be able to brew Rustic Delight potions?").define(ENABLE_POTIONS_ID, true);
         GENERATE_VILLAGE_FARM_CROPS = COMMON_BUILDER.comment("Should Rustic Delight crops (bell peppers, cotton, coffee) generate in village farm plots?").define(GENERATE_VILLAGE_FARM_CROPS_ID, true);
+        GENERATE_RANDOM_LOOT = COMMON_BUILDER.comment("Should Rustic Delight items appear in structure chests? They replace an existing item (for example wheat seeds become cotton seeds) rather than being added, so chests never end up fuller than vanilla.").define(GENERATE_RANDOM_LOOT_ID, true);
 
         // Crop family master toggles. Disabling a family makes its entire content chain unobtainable:
         // removed from the creative tab, no wild/giant worldgen, no village-farm gen, and no trades.

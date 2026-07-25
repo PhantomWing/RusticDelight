@@ -13,6 +13,7 @@ This is a major content update, expanding greatly on bell peppers.
 - Added new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
 - Added Fried Fish: new fried food crafted with any safe fish, Batter and Cooking Oil
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 
+- Rustic Delight's items now randomly generate as loot in chests (turn off with the `generate_random_loot` config option)
 - Added feature toggles to the config (so you can disable features, making related items unobtainable)
   - `enable_bell_peppers`
   - `enable_coffee`
