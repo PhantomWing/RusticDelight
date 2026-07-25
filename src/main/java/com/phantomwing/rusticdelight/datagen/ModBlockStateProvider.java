@@ -68,7 +68,7 @@ public class ModBlockStateProvider {
 
         int[] ageToVisualStageMapping = ageProperty.getPossibleValues().stream().mapToInt(Integer::intValue).toArray();
         Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
-        ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("crop_cross")), Optional.empty(), TextureSlot.CROSS);
+        ModelTemplate crossModel = new ModelTemplate(Optional.of(blockResourceFD("template_crop_cross")), Optional.empty(), TextureSlot.CROSS);
 
         g.blockStateOutput.accept(MultiVariantGenerator.dispatch(cropBlock).with(PropertyDispatch.initial(ageProperty).generate((integer) -> {
             int i = ageToVisualStageMapping[integer];

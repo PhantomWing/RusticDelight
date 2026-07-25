@@ -27,6 +27,8 @@ public class ModPlacedFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        // Scattering lives in the WildCropConfiguration (tries/xzSpread/ySpread), so the placement
+        // chain only has to pick one anchor point per chunk.
         registerWildCrop(context, configuredFeatures, WILD_COTTON_PLACED_KEY, ModConfiguredFeatures.WILD_COTTON_KEY, RusticDelightConfig.CHANCE_WILD_COTTON_ID);
         registerWildCrop(context, configuredFeatures, WILD_BELL_PEPPERS_PLACED_KEY, ModConfiguredFeatures.WILD_BELL_PEPPERS_KEY, RusticDelightConfig.CHANCE_WILD_BELL_PEPPERS_ID);
         registerWildCrop(context, configuredFeatures, WILD_COFFEE_PLACED_KEY, ModConfiguredFeatures.WILD_COFFEE_KEY, RusticDelightConfig.CHANCE_WILD_COFFEE_ID);

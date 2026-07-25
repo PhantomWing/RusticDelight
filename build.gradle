@@ -86,8 +86,8 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
-	// JEI
-	//modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+	// JEI — dev-runtime only, for checking recipes in game. Not a shipped dependency.
+	modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
 	//modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}")
 
 	// Appleskin

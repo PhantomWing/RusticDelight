@@ -6,10 +6,10 @@
   },
   "experience": 1.0,
   "ingredients": [
-    "#c:foods/milk",
     "#rusticdelight:coffee_ingredients",
     "#rusticdelight:coffee_ingredients",
-    "#rusticdelight:coffee_ingredients"
+    "#rusticdelight:coffee_ingredients",
+    "#c:foods/milk"
   ],
   "recipe_book_tab": "drinks",
   "result": {
