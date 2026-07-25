@@ -88,8 +88,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void makeWildCrop(Block block) {
-        simpleBlockWithItem(block, models().singleTexture(blockTexture(block).getPath(),
-                resourceBlock("template_cross"), "cross", blockTexture(block)).renderType("cutout"));
+        simpleBlockWithItem(block, models().cross(blockTexture(block).getPath(),
+                blockTexture(block)).renderType("cutout"));
     }
 
     private void makePottedFlower(Block pottedBlock, Block block) {
@@ -124,7 +124,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] bellPepperStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((BellPepperCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, resourceBlock("template_crop_cross"), "cross",
+        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, farmersDelightResourceBlock("template_crop_cross"), "cross",
                 ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;
@@ -139,7 +139,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] coffeeStates(BlockState state, CropBlock block, String modelName, String textureName) {
         var ageProperty = state.getValue(((CoffeeCropBlock) block).getAgeProperty());
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, resourceBlock("template_crop_cross"), "cross",
+        models[0] = new ConfiguredModel(models().singleTexture(modelName + ageProperty, farmersDelightResourceBlock("template_crop_cross"), "cross",
                 ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, "block/" + textureName + ageProperty)).renderType("cutout"));
 
         return models;

@@ -291,6 +291,8 @@ public class ModItems {
             baseItem().food(FoodValues.FRIED_DUMPLINGS)), ItemFamily.FRIED_FOODS);
     public static final DeferredItem<Item> SPRING_ROLLS = registerWithTab("spring_rolls", () -> new Item(
             baseItem().food(FoodValues.SPRING_ROLLS)), ItemFamily.FRIED_FOODS);
+    public static final DeferredItem<Item> FRIED_FISH = registerWithTab("fried_fish", () -> new Item(
+            baseItem().food(FoodValues.FRIED_FISH)), ItemFamily.FRIED_FOODS);
 
     // Sushi rolls
     public static final DeferredItem<Item> BELL_PEPPER_ROLL_GREEN = registerWithTab("bell_pepper_roll_green", () -> new Item(

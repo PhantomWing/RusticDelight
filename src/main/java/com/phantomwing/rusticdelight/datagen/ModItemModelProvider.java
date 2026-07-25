@@ -132,6 +132,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SYRUP_CHEESECAKE_SLICE);
         simpleItem(ModItems.FRIED_DOUGH);
         simpleItem(ModItems.FRIED_DUMPLINGS);
+        simpleItem(ModItems.FRIED_FISH);
         simpleItem(ModItems.SWEET_SALAD);
         simpleItem(ModItems.RICE_ROLL_ROYALE);
 

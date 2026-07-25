@@ -134,6 +134,8 @@ public class FoodValues {
             .nutrition(6).saturationModifier(0.5F).build();
     public static final FoodProperties SPRING_ROLLS = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F).build();
+    public static final FoodProperties FRIED_FISH = (new FoodProperties.Builder())
+            .nutrition(8).saturationModifier(0.7F).build();
     public static final FoodProperties FRIED_DUMPLINGS = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.8F).build();
 

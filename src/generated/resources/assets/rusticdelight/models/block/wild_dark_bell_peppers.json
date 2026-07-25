@@ -1,5 +1,5 @@
 {
-  "parent": "rusticdelight:block/template_cross",
+  "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
     "cross": "rusticdelight:block/wild_dark_bell_peppers"

@@ -546,6 +546,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(friedOutput);
 
+        // Fried Fish - any raw fish or fish slice, minus pufferfish (the c: tag already excludes it).
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_FISH, 1, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
+                .addIngredient(ModTags.Items.COOKING_OIL)
+                .addIngredient(ModItems.BATTER)
+                .addIngredient(CommonTags.FOODS_SAFE_RAW_FISH)
+                .unlockedByAnyIngredient(ModItems.COOKING_OIL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(friedOutput);
+
         // Fruit Beignet
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRUIT_BEIGNET, 1, CookingRecipes.FAST_COOKING, CookingRecipes.MEDIUM_EXP)
                 .addIngredient(ModTags.Items.COOKING_OIL)
