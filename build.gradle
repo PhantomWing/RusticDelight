@@ -103,7 +103,14 @@ processResources {
 			mod_id               : mod_id,
 			mod_version          : version,
 			fabric_loader_version: fabric_loader_version,
-			fabric_api_version   : fabric_api_version
+			fabric_api_version   : fabric_api_version,
+			// Fabric API declares itself as e.g. "0.139.4+1.21.11"; strip any +build suffix from
+			// our property so the dependency predicate stays a clean version.
+			fabric_api_dep       : fabric_api_version.replaceAll(/\+.*$/, ''),
+			cloth_config_version : cloth_config_version,
+			// FDR declares itself as "<mc>-<ver>+refabricated" (e.g. 1.21.11-3.6.10+refabricated),
+			// so a bare ">=3.6.10" would compare against major version 1 and never match.
+			farmersdelight_dep   : "${minecraft_version}-${farmersdelight_version}"
 	]
 
 	inputs.properties replaceProperties

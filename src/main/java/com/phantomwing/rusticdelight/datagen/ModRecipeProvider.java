@@ -284,24 +284,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .build(output, ItemUtils.getIdentifier(ModItems.WILD_BELL_PEPPERS));
 
                 // Bell pepper slices
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_GREEN, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_GREEN));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_YELLOW, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_YELLOW));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.BELL_PEPPER_SLICE_RED, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.BELL_PEPPER_RED));
 
                 // Roasted bell pepper slices
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_GREEN), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_GREEN));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_YELLOW), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output, ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_YELLOW));
-                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 1)
+                CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ROASTED_BELL_PEPPER_RED), tagIngredient(CommonTags.TOOLS_KNIFE), ModItems.ROASTED_BELL_PEPPER_SLICE_RED, 2)
                         .addResultWithChance(ModItems.BELL_PEPPER_SEEDS, 0.3F)
                         .build(output,ItemUtils.getIdentifier(ModItems.ROASTED_BELL_PEPPER_RED));
 
