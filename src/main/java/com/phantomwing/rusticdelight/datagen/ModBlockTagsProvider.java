@@ -4,6 +4,7 @@ import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.block.ModBlocks;
 import com.phantomwing.rusticdelight.tags.CommonTags;
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
+import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -11,7 +12,6 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -29,6 +29,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     }
 
     private void addModTags() {
+        this.tag(ModTags.Blocks.PANCAKES).add(
+                ModBlocks.PANCAKES.get(),
+                ModBlocks.HONEY_PANCAKES.get(),
+                ModBlocks.CHOCOLATE_PANCAKES.get(),
+                ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(),
+                ModBlocks.VEGETABLE_PANCAKES.get(),
+                ModBlocks.PUMPKIN_PANCAKES.get()
+        );
     }
 
     private void addMinecraftTags() {
@@ -157,7 +165,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     private void addCompatibilityTags() {
         // Farmers Delight
-        this.tag(ModTags.Blocks.STRAW_BLOCKS).add(
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.Blocks.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG.get(),
                 ModBlocks.BELL_PEPPER_SEEDS_BAG.get(),
                 ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG.get(),
@@ -165,7 +173,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COFFEE_BEANS_BAG.get(),
                 ModBlocks.ROASTED_COFFEE_BEANS_BAG.get()
         );
-        this.tag(ModTags.Blocks.WILD_CROPS).add(
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.Blocks.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON.get(),
                 ModBlocks.WILD_BELL_PEPPERS.get(),
                 ModBlocks.WILD_PALE_BELL_PEPPERS.get(),

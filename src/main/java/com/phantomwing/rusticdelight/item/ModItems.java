@@ -70,6 +70,20 @@ public class ModItems {
     public static final DeferredItem<Item> WILD_DARK_BELL_PEPPERS = registerBlockWithTab(ModBlocks.WILD_DARK_BELL_PEPPERS, ItemFamily.BELL_PEPPER);
     public static final DeferredItem<Item> WILD_COFFEE = registerBlockWithTab(ModBlocks.WILD_COFFEE, ItemFamily.COFFEE);
 
+    // Crop seeds
+    public static final DeferredItem<Item> COTTON_SEEDS = registerWithTab("cotton_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.COTTON_CROP.get(),
+            baseItem()), ItemFamily.COTTON);
+    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.BELL_PEPPER_CROP.get(),
+            baseItem()), ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> PALE_BELL_PEPPER_SEEDS = registerWithTab("pale_bell_pepper_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.PALE_BELL_PEPPER_CROP.get(),
+            baseItem()), ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> DARK_BELL_PEPPER_SEEDS = registerWithTab("dark_bell_pepper_seeds", () -> new ItemNameBlockItem(
+            ModBlocks.DARK_BELL_PEPPER_CROP.get(),
+            baseItem()), ItemFamily.BELL_PEPPER);
+
     // Crop products
     public static final DeferredItem<Item> COTTON_BOLL = registerWithTab("cotton_boll", () -> new FuelItem(100, baseItem()), ItemFamily.COTTON);
     public static final DeferredItem<Item> BELL_PEPPER_GREEN = registerWithTab("bell_pepper_green", () -> new Item(
@@ -90,20 +104,6 @@ public class ModItems {
             baseItem().food(FoodValues.BELL_PEPPER)), ItemFamily.BELL_PEPPER);
     public static final DeferredItem<Item> BELL_PEPPER_BLACK = registerWithTab("bell_pepper_black", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER)), ItemFamily.BELL_PEPPER);
-
-    // Crop seeds
-    public static final DeferredItem<Item> COTTON_SEEDS = registerWithTab("cotton_seeds", () -> new ItemNameBlockItem(
-            ModBlocks.COTTON_CROP.get(),
-            baseItem()), ItemFamily.COTTON);
-    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = registerWithTab("bell_pepper_seeds", () -> new ItemNameBlockItem(
-            ModBlocks.BELL_PEPPER_CROP.get(),
-            baseItem()), ItemFamily.BELL_PEPPER);
-    public static final DeferredItem<Item> PALE_BELL_PEPPER_SEEDS = registerWithTab("pale_bell_pepper_seeds", () -> new ItemNameBlockItem(
-            ModBlocks.PALE_BELL_PEPPER_CROP.get(),
-            baseItem()), ItemFamily.BELL_PEPPER);
-    public static final DeferredItem<Item> DARK_BELL_PEPPER_SEEDS = registerWithTab("dark_bell_pepper_seeds", () -> new ItemNameBlockItem(
-            ModBlocks.DARK_BELL_PEPPER_CROP.get(),
-            baseItem()), ItemFamily.BELL_PEPPER);
 
     // Coffee Beans
     public static final DeferredItem<Item> COFFEE_BEANS = registerWithTab("coffee_beans", () -> new ItemNameBlockItem(

@@ -46,6 +46,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(output, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(output, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModAdvancements(output, lookupProvider));
 
         generator.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(output, lookupProvider, registrySetBuilder, Set.of(RusticDelight.MOD_ID)));
     }

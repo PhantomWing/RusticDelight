@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ],
+  "parent": "rusticdelight:main/cotton",
+  "criteria": {
+    "string_from_cotton": {
+      "conditions": {
+        "recipe_id": "rusticdelight:string_from_cotton_boll"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.string.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:string"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.string.title"
+    }
+  },
+  "requirements": [
+    [
+      "string_from_cotton"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

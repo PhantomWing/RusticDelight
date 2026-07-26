@@ -1,0 +1,33 @@
+{
+  "parent": "rusticdelight:main/syrup",
+  "criteria": {
+    "pancakes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#rusticdelight:pancakes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.pancakes.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "rusticdelight:pancakes"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.pancakes.title"
+    }
+  },
+  "requirements": [
+    [
+      "pancakes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -29,6 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         copy(vectorwing.farmersdelight.common.tag.ModTags.Blocks.WILD_CROPS, vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
+        copy(ModTags.Blocks.PANCAKES, ModTags.Items.PANCAKES);
 
         addModTags();
         addMinecraftTags();

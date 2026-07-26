@@ -26,6 +26,9 @@ public class ModTags {
 
     // Block tags
     public static class Blocks {
+        // Every pancake stack. Mirrored to the item tag of the same name via copy().
+        public static final TagKey<Block> PANCAKES = tag("pancakes");
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }
@@ -50,6 +53,9 @@ public class ModTags {
 
         // Combines raw and cooked eggs together in a single tag
         public static final TagKey<Item> RAW_AND_COOKED_EGGS = tag("raw_cooked_eggs");
+
+        // Filled by copying the block tag of the same name.
+        public static final TagKey<Item> PANCAKES = tag("pancakes");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));

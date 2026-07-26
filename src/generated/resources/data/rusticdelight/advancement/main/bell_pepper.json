@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "parent": "rusticdelight:main/root",
+  "criteria": {
+    "bell_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:bell_pepper_green",
+              "rusticdelight:bell_pepper_yellow",
+              "rusticdelight:bell_pepper_red",
+              "rusticdelight:bell_pepper_orange",
+              "rusticdelight:bell_pepper_white",
+              "rusticdelight:bell_pepper_pink",
+              "rusticdelight:bell_pepper_blue",
+              "rusticdelight:bell_pepper_purple",
+              "rusticdelight:bell_pepper_black"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.bell_pepper.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "rusticdelight:bell_pepper_red"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.bell_pepper.title"
+    }
+  },
+  "requirements": [
+    [
+      "bell_pepper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
