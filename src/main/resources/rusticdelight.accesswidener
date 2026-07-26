@@ -2,3 +2,7 @@ accessWidener v2 named
 
 accessible field net/minecraft/world/entity/npc/Villager WANTED_ITEMS Ljava/util/Set;
 mutable field net/minecraft/world/entity/npc/Villager WANTED_ITEMS Ljava/util/Set;
+
+# Needed to append our crops to the vanilla village farm processor lists.
+accessible field net/minecraft/world/level/levelgen/structure/templatesystem/StructureProcessorList list Ljava/util/List;
+mutable field net/minecraft/world/level/levelgen/structure/templatesystem/StructureProcessorList list Ljava/util/List;

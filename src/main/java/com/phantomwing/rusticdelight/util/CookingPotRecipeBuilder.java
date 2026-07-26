@@ -115,8 +115,13 @@ public class CookingPotRecipeBuilder implements RecipeBuilder {
     }
 
     public void build(RecipeOutput output) {
-        ResourceLocation location = BuiltInRegistries.ITEM.getKey(this.result);
-        this.save(output, ResourceLocation.fromNamespaceAndPath("farmersdelight", location.getPath()));
+        this.save(output);
+    }
+
+    // Named after the result, in the result's own namespace - so overriding a Farmer's Delight
+    // recipe lands in the farmersdelight namespace and replaces it.
+    public void save(RecipeOutput output) {
+        this.save(output, BuiltInRegistries.ITEM.getKey(this.result));
     }
 
     public void build(RecipeOutput outputIn, String save) {

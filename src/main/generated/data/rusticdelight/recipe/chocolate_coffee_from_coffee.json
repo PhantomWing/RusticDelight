@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
@@ -7,9 +13,6 @@
     },
     {
       "tag": "c:drinks/milk"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
     },
     {
       "item": "minecraft:cocoa_beans"

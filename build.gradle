@@ -69,8 +69,9 @@ dependencies {
 		it.parchment("org.parchmentmc.data:parchment-${project.parchment_version}")
 	}
 
-	// Farmer's Delight Refabricated (local patched jar — strips classtweaker enum extensions
-	// that crash loom 1.16+ remap with NPE in EnumExtensionClassVisitor.visitEnd)
+	// Farmer's Delight Refabricated (local patched jar — strips the 5 transitive-extend-enum lines
+	// from farmersdelight.classtweaker, which still crash loom's remap with an NPE in
+	// EnumExtensionClassVisitor. Re-checked against 3.3.3: the upstream issue is not fixed.)
 	modImplementation(name: "farmers-delight-refabricated-${project.minecraft_version}-${project.farmersdelight_version}-patched") {
 		exclude(group: "net.fabricmc")
 	}

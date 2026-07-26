@@ -21,6 +21,7 @@ public class RusticDelightDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModLootTableProvider::new);
+        pack.addProvider(ModAdvancements::new);
 
         pack.addProvider(ModRegistryDataGenerator::new);
     }

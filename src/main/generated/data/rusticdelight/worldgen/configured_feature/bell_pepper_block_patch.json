@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_red_block"
+                },
+                "weight": 90
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_yellow_block"
+                },
+                "weight": 90
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_green_block"
+                },
+                "weight": 90
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_orange_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_pink_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_white_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_blue_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_purple_block"
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "rusticdelight:bell_pepper_black_block"
+                },
+                "weight": 5
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:replaceable"
+              },
+              {
+                "type": "minecraft:matching_fluids",
+                "fluids": "minecraft:empty"
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:grass_block",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 48,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

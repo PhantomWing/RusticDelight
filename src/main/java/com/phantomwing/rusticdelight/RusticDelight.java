@@ -1,14 +1,18 @@
 package com.phantomwing.rusticdelight;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.condition.ModConditions;
+import com.phantomwing.rusticdelight.event.ModEvents;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.itemGroup.ModItemGroups;
 import com.phantomwing.rusticdelight.potion.ModPotions;
+import com.phantomwing.rusticdelight.util.ChestLootHelper;
 import com.phantomwing.rusticdelight.util.ComposterHelper;
 import com.phantomwing.rusticdelight.util.EntityLootHelper;
 import com.phantomwing.rusticdelight.util.VillagerHelper;
 import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
 import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
+import com.phantomwing.rusticdelight.world.ModVillageStructures;
 import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -25,6 +29,9 @@ public class RusticDelight implements ModInitializer {
 		// Register the config file.
 		RusticDelightConfig.register();
 
+		// Datapack conditions, so config-gated recipes/loot/advancements can load conditionally.
+		ModConditions.registerModConditions();
+
 		// Items
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
@@ -33,6 +40,10 @@ public class RusticDelight implements ModInitializer {
 		// World
 		ModWorldGeneration.registerModWorldGeneration();
 		ModPlacementModifiers.registerPlacementModfiiers();
+		ModVillageStructures.registerVillageCrops();
+
+		// Interaction
+		ModEvents.registerModEvents();
 
 		// Trades
 		ModVillagerTrades.registerVillagerTrades();
@@ -43,6 +54,7 @@ public class RusticDelight implements ModInitializer {
 
 		ComposterHelper.registerCompostableItems();
 		EntityLootHelper.modifyLootTables();
+		ChestLootHelper.modifyLootTables();
 		VillagerHelper.registerGatherableItems();
 
 		// Fuel

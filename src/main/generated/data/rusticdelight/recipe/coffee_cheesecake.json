@@ -1,0 +1,33 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "M": {
+      "tag": "c:drinks/milk"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "T": {
+      "tag": "rusticdelight:coffee_food_ingredients"
+    }
+  },
+  "pattern": [
+    " T ",
+    "SSS",
+    "MCM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:coffee_cheesecake"
+  }
+}

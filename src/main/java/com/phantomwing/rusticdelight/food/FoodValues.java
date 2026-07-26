@@ -3,7 +3,6 @@ package com.phantomwing.rusticdelight.food;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import static vectorwing.farmersdelight.common.FoodValues.*;
 
@@ -17,7 +16,7 @@ public class FoodValues {
             .effect(new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 0.5f).fast().build();
     public static final FoodProperties SYRUP = (new FoodProperties.Builder())
             .nutrition(2).saturationModifier(0.2F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0), 1.0F).fast().build();
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0, false, false), 1.0F).fast().build();
 
     // Basic foods
     public static final FoodProperties BELL_PEPPER = (new FoodProperties.Builder())
@@ -59,15 +58,15 @@ public class FoodValues {
             .fast()
             .build();
     public static final FoodProperties CHOCOLATE_COFFEE = (new FoodProperties.Builder())
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0), 1.0f)
-            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
             .alwaysEdible()
             .fast()
             .build();
     public static final FoodProperties HONEY_COFFEE = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.1F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0), 1.0f)
-            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 900, 0), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
             .alwaysEdible()
             .fast()
             .build();
@@ -83,30 +82,51 @@ public class FoodValues {
             .alwaysEdible()
             .fast()
             .build();
+    public static final FoodProperties PUMPKIN_COFFEE = (new FoodProperties.Builder())
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 1), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
+    public static final FoodProperties CHERRY_BLOSSOM_COFFEE = (new FoodProperties.Builder())
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 1), 1.0f)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0f)
+            .alwaysEdible()
+            .fast()
+            .build();
 
     // Sweets
     public static final FoodProperties SYRUP_SANDWICH = (new FoodProperties.Builder())
             .nutrition(8).saturationModifier(0.7F).build();
     public static final FoodProperties FRUIT_BEIGNET = (new FoodProperties.Builder())
-            .nutrition(6).saturationModifier(0.6F)
+            .nutrition(7).saturationModifier(0.6F)
             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F).build();
     public static final FoodProperties HONEY_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F).build();
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0, false, false), 1.0F).build();
     public static final FoodProperties CHOCOLATE_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0, false, false), 1.0F).build();
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 900, 0, false, false), 1.0F).build();
     public static final FoodProperties CHERRY_BLOSSOM_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
             .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties VEGETABLE_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
-            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0, false, false), 1.0F).build();
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0, false, false), 1.0F).build();
     public static final FoodProperties PUMPKIN_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
             .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
+    // Carries the coffee family's Haste rather than a pancake effect.
+    public static final FoodProperties COFFEE_PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0, false, false), 1.0F).build();
+    // Farmer's Delight's PIE_SLICE, plus the Haste every other coffee item carries.
+    public static final FoodProperties COFFEE_CHEESECAKE_SLICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationModifier(0.3F).fast()
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0, false, false), 1.0F).build();
 
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder())
@@ -123,6 +143,8 @@ public class FoodValues {
             .nutrition(6).saturationModifier(0.5F).build();
     public static final FoodProperties SPRING_ROLLS = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6F).build();
+    public static final FoodProperties FRIED_FISH = (new FoodProperties.Builder())
+            .nutrition(8).saturationModifier(0.7F).build();
     public static final FoodProperties FRIED_DUMPLINGS = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.8F).build();
 
@@ -135,7 +157,11 @@ public class FoodValues {
             .effect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 1.0F).build();
     public static final FoodProperties BELL_PEPPER_SOUP = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6f)
-            .effect(nourishment(MEDIUM_DURATION), 1.0F).build();
+            .effect(nourishment(MEDIUM_DURATION), 1.0f).build();
+    // Heartier than the vegetable soup, since it carries calamari, potato and milk.
+    public static final FoodProperties CALAMARI_SOUP = (new FoodProperties.Builder())
+            .nutrition(10).saturationModifier(0.8f)
+            .effect(nourishment(MEDIUM_DURATION), 1.0f).build();
 
     // Plated foods
     public static final FoodProperties BELL_PEPPER_PASTA = (new FoodProperties.Builder())

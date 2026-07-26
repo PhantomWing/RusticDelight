@@ -1,0 +1,18 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "rusticdelight:bell_pepper_slice_pink"
+  },
+  "result": {
+    "id": "rusticdelight:roasted_bell_pepper_slice_pink"
+  }
+}

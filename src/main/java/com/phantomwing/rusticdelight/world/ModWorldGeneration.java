@@ -27,5 +27,11 @@ public class ModWorldGeneration {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 ModPlacedFeatures.WILD_COFFEE_PLACED_KEY
         );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(ModTags.Biomes.HAS_BELL_PEPPER_BLOCK_PATCH),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ModPlacedFeatures.BELL_PEPPER_BLOCK_PATCH_PLACED_KEY
+        );
     }
 }

@@ -29,6 +29,17 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     private void addModTags() {
+        // Mirrors the block tag of the same name.
+        getOrCreateTagBuilder(ModTags.Items.PANCAKES).add(
+                ModItems.PANCAKES,
+                ModItems.HONEY_PANCAKES,
+                ModItems.CHOCOLATE_PANCAKES,
+                ModItems.CHERRY_BLOSSOM_PANCAKES,
+                ModItems.VEGETABLE_PANCAKES,
+                ModItems.PUMPKIN_PANCAKES,
+                ModItems.COFFEE_PANCAKES
+        );
+
         // Cooking oil
         getOrCreateTagBuilder(ModTags.Items.COOKING_OIL_INGREDIENTS)
                 .add(ModItems.COTTON_SEEDS, Items.PUMPKIN_SEEDS)
@@ -125,23 +136,31 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
             ModItems.COTTON_SEEDS,
             ModItems.BELL_PEPPER_SEEDS,
+            ModItems.PALE_BELL_PEPPER_SEEDS,
+            ModItems.DARK_BELL_PEPPER_SEEDS,
             ModItems.COFFEE_BEANS
         );
 
         this.getOrCreateTagBuilder(ItemTags.SMALL_FLOWERS).add(
             ModItems.WILD_COTTON,
             ModItems.WILD_BELL_PEPPERS,
+            ModItems.WILD_PALE_BELL_PEPPERS,
+            ModItems.WILD_DARK_BELL_PEPPERS,
             ModItems.WILD_COFFEE
         );
 
         // Animal food
         getOrCreateTagBuilder(ItemTags.CHICKEN_FOOD).add(
             ModItems.COTTON_SEEDS,
-            ModItems.BELL_PEPPER_SEEDS
+            ModItems.BELL_PEPPER_SEEDS,
+            ModItems.PALE_BELL_PEPPER_SEEDS,
+            ModItems.DARK_BELL_PEPPER_SEEDS
         );
         getOrCreateTagBuilder(ItemTags.PARROT_FOOD).add(
             ModItems.COTTON_SEEDS,
-            ModItems.BELL_PEPPER_SEEDS
+            ModItems.BELL_PEPPER_SEEDS,
+            ModItems.PALE_BELL_PEPPER_SEEDS,
+            ModItems.DARK_BELL_PEPPER_SEEDS
         );
         getOrCreateTagBuilder(ItemTags.CAT_FOOD).add(
             ModItems.CALAMARI
@@ -183,14 +202,19 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
             ModItems.HONEY_COFFEE,
             ModItems.SYRUP_COFFEE,
             ModItems.DARK_COFFEE,
+            ModItems.PUMPKIN_COFFEE,
+            ModItems.CHERRY_BLOSSOM_COFFEE,
             ModItems.CHERRY_BLOSSOM_CHEESECAKE,
-            ModItems.SYRUP_CHEESECAKE
+            ModItems.SYRUP_CHEESECAKE,
+            ModItems.COFFEE_CHEESECAKE
         );
 
         // Farmer's Delight
         getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS)
             .add(ModItems.WILD_COTTON)
             .add(ModItems.WILD_BELL_PEPPERS)
+            .add(ModItems.WILD_PALE_BELL_PEPPERS)
+            .add(ModItems.WILD_DARK_BELL_PEPPERS)
             .add(ModItems.WILD_COFFEE);
 
         // Serene Seasons
@@ -200,10 +224,14 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS).add(
             ModItems.COTTON_SEEDS,
             ModItems.BELL_PEPPER_SEEDS,
+            ModItems.PALE_BELL_PEPPER_SEEDS,
+            ModItems.DARK_BELL_PEPPER_SEEDS,
             ModItems.COFFEE_BEANS
         );
         getOrCreateTagBuilder(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS).add(
                 ModItems.BELL_PEPPER_SEEDS,
+                ModItems.PALE_BELL_PEPPER_SEEDS,
+                ModItems.DARK_BELL_PEPPER_SEEDS,
                 ModItems.COFFEE_BEANS
         );
 
@@ -238,6 +266,12 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_SEEDS).add(
                 ModItems.BELL_PEPPER_SEEDS_BAG
         );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS).add(
+                ModItems.PALE_BELL_PEPPER_SEEDS_BAG
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS).add(
+                ModItems.DARK_BELL_PEPPER_SEEDS_BAG
+        );
         getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN).add(
                 ModItems.BELL_PEPPER_GREEN_CRATE
         );
@@ -246,6 +280,27 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         );
         getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED).add(
                 ModItems.BELL_PEPPER_RED_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE).add(
+                ModItems.BELL_PEPPER_ORANGE_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE).add(
+                ModItems.BELL_PEPPER_WHITE_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK).add(
+                ModItems.BELL_PEPPER_PINK_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE).add(
+                ModItems.BELL_PEPPER_BLUE_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE).add(
+                ModItems.BELL_PEPPER_PURPLE_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK).add(
+                ModItems.BELL_PEPPER_BLACK_CRATE
+        );
+        getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_CALAMARI).add(
+                ModItems.CALAMARI_CRATE
         );
         getOrCreateTagBuilder(CommonTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS).add(
                 ModItems.COFFEE_BEANS_BAG
@@ -264,9 +319,18 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_COTTON_SEEDS)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_COTTON)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_SEEDS)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK)
+                .addTag(CommonTags.STORAGE_BLOCKS_ITEM_CALAMARI)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_COFFEE)
                 .addTag(CommonTags.STORAGE_BLOCKS_ITEM_ROASTED_COFFEE_BEANS);
@@ -277,7 +341,9 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
                 ModItems.COTTON_SEEDS
         );
         getOrCreateTagBuilder(CommonTags.SEEDS_BELL_PEPPER).add(
-                ModItems.BELL_PEPPER_SEEDS
+                ModItems.BELL_PEPPER_SEEDS,
+                ModItems.PALE_BELL_PEPPER_SEEDS,
+                ModItems.DARK_BELL_PEPPER_SEEDS
         );
         getOrCreateTagBuilder(CommonTags.SEEDS_COFFEE_BEANS).add(
                 ModItems.COFFEE_BEANS
@@ -302,7 +368,13 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(CommonTags.CROPS_BELL_PEPPER).add(
                 ModItems.BELL_PEPPER_GREEN,
                 ModItems.BELL_PEPPER_YELLOW,
-                ModItems.BELL_PEPPER_RED
+                ModItems.BELL_PEPPER_RED,
+                ModItems.BELL_PEPPER_ORANGE,
+                ModItems.BELL_PEPPER_WHITE,
+                ModItems.BELL_PEPPER_PINK,
+                ModItems.BELL_PEPPER_BLUE,
+                ModItems.BELL_PEPPER_PURPLE,
+                ModItems.BELL_PEPPER_BLACK
         );
 
         // Coffee
@@ -339,7 +411,13 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         ).add(
                 ModItems.BELL_PEPPER_SLICE_GREEN,
                 ModItems.BELL_PEPPER_SLICE_YELLOW,
-                ModItems.BELL_PEPPER_SLICE_RED
+                ModItems.BELL_PEPPER_SLICE_RED,
+                ModItems.BELL_PEPPER_SLICE_ORANGE,
+                ModItems.BELL_PEPPER_SLICE_WHITE,
+                ModItems.BELL_PEPPER_SLICE_PINK,
+                ModItems.BELL_PEPPER_SLICE_BLUE,
+                ModItems.BELL_PEPPER_SLICE_PURPLE,
+                ModItems.BELL_PEPPER_SLICE_BLACK
         );
 
         getOrCreateTagBuilder(CommonTags.FOODS_POTATO).addTag(
@@ -393,7 +471,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
         // Soups
         getOrCreateTagBuilder(ConventionalItemTags.SOUP_FOODS)
-                .add(ModItems.BELL_PEPPER_SOUP);
+                .add(ModItems.BELL_PEPPER_SOUP, ModItems.CALAMARI_SOUP);
 
         // Cookies
         getOrCreateTagBuilder(ConventionalItemTags.COOKIE_FOODS).add(

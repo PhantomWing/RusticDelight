@@ -32,5 +32,9 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
         this.tag(ModTags.Biomes.HAS_WILD_BELL_PEPPERS)
             .addOptionalTag(BiomeTags.IS_JUNGLE.location())
             .addOptionalTag(ConventionalBiomeTags.IS_JUNGLE.location());
+
+        this.tag(ModTags.Biomes.HAS_BELL_PEPPER_BLOCK_PATCH)
+            .addOptionalTag(BiomeTags.IS_JUNGLE.location())
+            .addOptionalTag(ConventionalBiomeTags.IS_JUNGLE.location());
     }
 }

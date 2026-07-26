@@ -1,3 +1,53 @@
+# 1.7.0
+From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed with vibrant new bell pepper varieties, comforting recipes, world generation improvements, and plenty of delightful surprises waiting to be discovered.
+
+### Additions
+- Added mutated variants of the bell pepper crop
+  - **Pale Bell Pepper Seeds**: Yields white, pink and orange bell peppers
+  - **Dark Bell Pepper Seeds**: Yields black, blue and purple bell peppers
+- Added **Wild Pale Bell Peppers** and **Wild Dark Bell Peppers**, which can be found in jungles (rare)
+- Added **Bell Pepper Medley**, a new feast crafted with 1 of each stuffed bell pepper color
+- Added **Giant Bell Pepper** block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
+  - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
+- Added two new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
+- Added **Fried Fish**: new fried food crafted with any safe fish, Batter and Cooking Oil
+- Added **Coffee Cheesecake** and **Slice of Coffee Cheesecake**
+- Added **Coffee Pancakes** and **Coffee Pancake**
+  - In addition, you can now add additional pancakes onto a default pile of 6, by shift-right-clicking while holding a pancake (to a maximum of 12).
+- Added **Calamari Soup**
+- Added **Calamari Crate**, a storage block for Calamari
+- Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option)
+- Rustic Delight's items now randomly generate as loot in chests (turn off with the `generate_random_loot` config option)
+- Added advancements to guide new players through the features of Rustic Delight (gated by the various feature toggles)
+- Added new feature toggles to the config (so you can disable features, making related items unobtainable)
+  - `enable_bell_peppers`
+  - `enable_cherry_blossom_foods`
+  - `enable_coffee`
+  - `enable_cotton`
+  - `enable_fried_foods`
+  - `enable_pancakes`
+  - `enable_potato_slices`
+  - `enable_syrup_foods`
+- Added 3D models for many of the new items added in this update (requires Brewin' and Chewin' coaster)
+- Added Ukrainian translations (thank you hikarosato!)
+
+### Changes
+- You no longer need a knife to get a single pancake: Pancakes are now taken from the block by right-clicking, instead of being eaten directly.
+- Breaking a pancake block now drops the remaining pancakes as individual pancake items
+- Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
+- Rebalanced coffee recipes & effects
+- Rebalanced cheesecake recipes
+- Improved Cherry Blossom Pancakes model
+- Improved various textures, such as Cotton Boll, Wild Bell Peppers, Coffee Beans
+- Added particles when eating/taking pancakes from the placed block
+- Villagers can now consume Rustic Delight crops, making them compatible for automated villager farms
+- Pancake block models are now named after the number of pancakes on the stack (`<flavour>_stack_6` rather than `<flavour>_stage0`), which resource packs targeting them will need to follow
+
+### Fixes
+- Fixed bell peppers dropping only 1 slice when cut, instead of 2
+- Potion of Haste is now brewed from an Awkward Potion rather than straight from a Water Bottle, matching every other potion
+
+
 # 1.6.0
 ### Additions
 - Added Chilean Spanish translations (thank you vlaster666!)

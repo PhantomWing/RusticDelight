@@ -1,7 +1,7 @@
 {
   "variants": {
     "facing=east,servings=0": {
-      "model": "rusticdelight:block/rice_roll_royale_leftover",
+      "model": "rusticdelight:block/rice_roll_royale_leftovers",
       "y": 90
     },
     "facing=east,servings=1": {
@@ -37,7 +37,7 @@
       "y": 90
     },
     "facing=north,servings=0": {
-      "model": "rusticdelight:block/rice_roll_royale_leftover",
+      "model": "rusticdelight:block/rice_roll_royale_leftovers",
       "y": 0
     },
     "facing=north,servings=1": {
@@ -73,7 +73,7 @@
       "y": 0
     },
     "facing=south,servings=0": {
-      "model": "rusticdelight:block/rice_roll_royale_leftover",
+      "model": "rusticdelight:block/rice_roll_royale_leftovers",
       "y": 180
     },
     "facing=south,servings=1": {
@@ -109,7 +109,7 @@
       "y": 180
     },
     "facing=west,servings=0": {
-      "model": "rusticdelight:block/rice_roll_royale_leftover",
+      "model": "rusticdelight:block/rice_roll_royale_leftovers",
       "y": 270
     },
     "facing=west,servings=1": {

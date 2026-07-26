@@ -3,17 +3,21 @@ package com.phantomwing.rusticdelight.tags;
 import com.phantomwing.rusticdelight.RusticDelight;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
-    // Biome tags
+    // Block tags
     public static class Biomes {
         public static final TagKey<Biome> HAS_WILD_COTTON = create("has_wild_cotton");
         public static final TagKey<Biome> HAS_WILD_BELL_PEPPERS = create("has_wild_bell_peppers");
         public static final TagKey<Biome> HAS_WILD_COFFEE = create("has_wild_coffee");
+        public static final TagKey<Biome> HAS_BELL_PEPPER_BLOCK_PATCH = create("has_bell_pepper_block_patch");
 
         private static TagKey<Biome> create(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
@@ -22,6 +26,9 @@ public class ModTags {
 
     // Block tags
     public static class Blocks {
+        // Every pancake stack. Mirrored to the item tag of the same name via copy().
+        public static final TagKey<Block> PANCAKES = tag("pancakes");
+
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }
@@ -38,8 +45,6 @@ public class ModTags {
         public static final TagKey<Item> COFFEE_FOOD_INGREDIENTS = tag("coffee_food_ingredients");
         public static final TagKey<Item> SPRING_ROLL_INGREDIENTS = tag("spring_roll_ingredients");
         public static final TagKey<Item> STUFFED_BELL_PEPPER_INGREDIENTS = tag("stuffed_bell_pepper_ingredients");
-        public static final TagKey<Item> FRIED_RICE_INGREDIENTS = tag("fried_rice_ingredients");
-        public static final TagKey<Item> MUSHROOM_RICE_INGREDIENTS = tag("mushroom_rice_ingredients");
 
         // Tags to improve compatibility
         public static final TagKey<Item> COOKING_OIL = tag("cooking_oil");
@@ -48,6 +53,13 @@ public class ModTags {
 
         // Combines raw and cooked eggs together in a single tag
         public static final TagKey<Item> RAW_AND_COOKED_EGGS = tag("raw_cooked_eggs");
+
+        // Filled by copying the block tag of the same name.
+        public static final TagKey<Item> PANCAKES = tag("pancakes");
+
+        // Fabric-only: used by this branch's Farmer's Delight recipe overrides and Sweet Salad.
+        public static final TagKey<Item> FRIED_RICE_INGREDIENTS = tag("fried_rice_ingredients");
+        public static final TagKey<Item> MUSHROOM_RICE_INGREDIENTS = tag("mushroom_rice_ingredients");
         public static final TagKey<Item> FRUITS_AND_BERRIES = tag("fruits_berries");
 
         private static TagKey<Item> tag(String name) {

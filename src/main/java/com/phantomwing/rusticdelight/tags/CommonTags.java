@@ -1,7 +1,10 @@
 package com.phantomwing.rusticdelight.tags;
 
+import com.phantomwing.rusticdelight.RusticDelight;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -24,20 +27,30 @@ public class CommonTags {
     public static final TagKey<Item> FOODS_PASTA = commonItemTag("foods/pasta");
     public static final TagKey<Item> DRINKS_MILK = commonItemTag("drinks/milk");
 
+    public static final TagKey<Item> FOODS_RAW_BACON = commonItemTag("foods/raw_bacon");
     public static final TagKey<Item> FOODS_RAW_BEEF = commonItemTag("foods/raw_beef");
     public static final TagKey<Item> FOODS_RAW_CHICKEN = commonItemTag("foods/raw_chicken");
     public static final TagKey<Item> FOODS_RAW_PORK = commonItemTag("foods/raw_pork");
     public static final TagKey<Item> FOODS_RAW_MUTTON = commonItemTag("foods/raw_mutton");
     public static final TagKey<Item> FOODS_SAFE_RAW_FISH = commonItemTag("foods/safe_raw_fish");
     public static final TagKey<Item> FOODS_RAW_COD = commonItemTag("foods/raw_cod");
+    public static final TagKey<Item> FOODS_RAW_SALMON = commonItemTag("foods/raw_salmon");
     public static final TagKey<Item> FOODS_RAW_CALAMARI = commonItemTag("foods/raw_calamari");
     public static final TagKey<Item> FOODS_RAW_SQUID = commonItemTag("foods/raw_squid");
 
+    public static final TagKey<Item> FOODS_COOKED_BACON = commonItemTag("foods/cooked_bacon");
+    public static final TagKey<Item> FOODS_COOKED_BEEF = commonItemTag("foods/cooked_beef");
+    public static final TagKey<Item> FOODS_COOKED_CHICKEN = commonItemTag("foods/cooked_chicken");
+    public static final TagKey<Item> FOODS_COOKED_PORK = commonItemTag("foods/cooked_pork");
+    public static final TagKey<Item> FOODS_COOKED_MUTTON = commonItemTag("foods/cooked_mutton");
     public static final TagKey<Item> FOODS_COOKED_EGG = commonItemTag("foods/cooked_egg");
+    public static final TagKey<Item> FOODS_COOKED_COD = commonItemTag("foods/cooked_cod");
+    public static final TagKey<Item> FOODS_COOKED_SALMON = commonItemTag("foods/cooked_salmon");
     public static final TagKey<Item> FOODS_COOKED_CALAMARI = commonItemTag("foods/cooked_calamari");
     public static final TagKey<Item> FOODS_COOKED_SQUID = commonItemTag("foods/cooked_squid");
 
-    // Tags under the "crops" subgroup.
+    public static final TagKey<Item> FOODS_COOKIE = commonItemTag("foods/cookie");
+
     public static final TagKey<Item> CROPS_COTTON = commonItemTag("crops/cotton");
     public static final TagKey<Item> CROPS_BELL_PEPPER = commonItemTag("crops/bell_pepper");
     public static final TagKey<Item> CROPS_COFFEE_BEANS = commonItemTag("crops/coffee_beans");
@@ -45,12 +58,13 @@ public class CommonTags {
     public static final TagKey<Item> CROPS_RICE = commonItemTag("crops/rice");
     public static final TagKey<Item> CROPS_POTATO = commonItemTag("crops/potato");
 
-    // Tools
     public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
 
     // Storage blocks
     public static final TagKey<Block> STORAGE_BLOCKS_COTTON_SEEDS = commonBlockTag("storage_blocks/cotton_seeds");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/pale_bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS = commonBlockTag("storage_blocks/dark_bell_pepper_seeds");
     public static final TagKey<Block> STORAGE_BLOCKS_COFFEE_BEANS = commonBlockTag("storage_blocks/coffee_beans");
     public static final TagKey<Block> STORAGE_BLOCKS_COFFEE = commonBlockTag("storage_blocks/coffee"); // Alternate tag for Coffee Beans, for better compatibility
     public static final TagKey<Block> STORAGE_BLOCKS_ROASTED_COFFEE_BEANS = commonBlockTag("storage_blocks/roasted_coffee_beans");
@@ -58,10 +72,19 @@ public class CommonTags {
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_RED = commonBlockTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_GREEN = commonBlockTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_YELLOW = commonBlockTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_ORANGE = commonBlockTag("storage_blocks/bell_pepper_orange");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_WHITE = commonBlockTag("storage_blocks/bell_pepper_white");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_PINK = commonBlockTag("storage_blocks/bell_pepper_pink");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_BLUE = commonBlockTag("storage_blocks/bell_pepper_blue");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_PURPLE = commonBlockTag("storage_blocks/bell_pepper_purple");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_BLACK = commonBlockTag("storage_blocks/bell_pepper_black");
+    public static final TagKey<Block> STORAGE_BLOCKS_CALAMARI = commonBlockTag("storage_blocks/calamari");
 
     // Storage blocks (items)
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COTTON_SEEDS = commonItemTag("storage_blocks/cotton_seeds");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_SEEDS = commonItemTag("storage_blocks/bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS = commonItemTag("storage_blocks/pale_bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS = commonItemTag("storage_blocks/dark_bell_pepper_seeds");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COFFEE_BEANS = commonItemTag("storage_blocks/coffee_beans");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COFFEE = commonItemTag("storage_blocks/coffee"); // Alternate tag for Coffee Beans, for better compatibility
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_ROASTED_COFFEE_BEANS = commonItemTag("storage_blocks/roasted_coffee_beans");
@@ -69,6 +92,13 @@ public class CommonTags {
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED = commonItemTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN = commonItemTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW = commonItemTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE = commonItemTag("storage_blocks/bell_pepper_orange");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE = commonItemTag("storage_blocks/bell_pepper_white");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK = commonItemTag("storage_blocks/bell_pepper_pink");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE = commonItemTag("storage_blocks/bell_pepper_blue");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE = commonItemTag("storage_blocks/bell_pepper_purple");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK = commonItemTag("storage_blocks/bell_pepper_black");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CALAMARI = commonItemTag("storage_blocks/calamari");
 
     // Seeds
     public static final TagKey<Item> SEEDS_COTTON = commonItemTag("seeds/cotton");
@@ -79,6 +109,11 @@ public class CommonTags {
     // Compatibility
     public static final TagKey<Item> SEEDS_CANOLA = commonItemTag("seeds/canola");
     public static final TagKey<Item> SEEDS_SUNFLOWER = commonItemTag("seeds/sunflower");
+
+    // Biomes
+    public static final TagKey<Biome> IS_FOREST = commonBiomeTag("is_forest");
+    public static final TagKey<Biome> IS_JUNGLE = commonBiomeTag("is_jungle");
+
 
     private static TagKey<Block> commonBlockTag(String path) {
         return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(COMMON_TAGS_NAMESPACE, path));
