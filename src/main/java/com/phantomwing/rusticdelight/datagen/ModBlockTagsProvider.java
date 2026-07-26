@@ -35,7 +35,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.CHOCOLATE_PANCAKES.get(),
                 ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(),
                 ModBlocks.VEGETABLE_PANCAKES.get(),
-                ModBlocks.PUMPKIN_PANCAKES.get()
+                ModBlocks.PUMPKIN_PANCAKES.get(),
+                ModBlocks.COFFEE_PANCAKES.get()
         );
     }
 

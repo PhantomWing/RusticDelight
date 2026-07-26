@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:coffee_pancakes"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 6,
+        "id": "rusticdelight:coffee_pancake"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:bowl"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

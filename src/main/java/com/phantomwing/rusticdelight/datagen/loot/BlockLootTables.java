@@ -101,6 +101,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropPancakeBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), ModItems.CHERRY_BLOSSOM_PANCAKE);
         dropPancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get(), ModItems.VEGETABLE_PANCAKE);
         dropPancakeBlock(ModBlocks.PUMPKIN_PANCAKES.get(), ModItems.PUMPKIN_PANCAKE);
+        dropPancakeBlock(ModBlocks.COFFEE_PANCAKES.get(), ModItems.COFFEE_PANCAKE);
 
         dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, RiceRollRoyaleBlock.MAX_SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);

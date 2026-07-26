@@ -64,6 +64,9 @@ public class ModRecipeProvider extends RecipeProvider {
         RecipeOutput cherryBlossomPancakesOutput = output.withConditions(
                 new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID),
                 new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID));
+        RecipeOutput coffeePancakesOutput = output.withConditions(
+                new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID));
         RecipeOutput coffeeAndSyrupOutput = output.withConditions(
                 new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID),
                 new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID));
@@ -203,6 +206,8 @@ public class ModRecipeProvider extends RecipeProvider {
         pancakeRecipes(pancakesOutput, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), vegetablesPatch(), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
         pancakeRecipes(cherryBlossomPancakesOutput, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
         pancakeRecipes(pancakesAndSyrupOutput, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
+        // Milk on top for the crema, roasted beans through the batter.
+        pancakeRecipes(coffeePancakesOutput, ModItems.COFFEE_PANCAKES, ModItems.COFFEE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(ModTags.Items.COFFEE_INGREDIENTS));
 
         // Cotton
         oneToOne(cottonOutput, RecipeCategory.MISC, ModItems.COTTON_BOLL, Items.STRING, 1);

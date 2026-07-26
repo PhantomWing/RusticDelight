@@ -261,6 +261,9 @@ public class ModItems {
     public static final DeferredItem<Item> PUMPKIN_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem(), ItemFamily.PANCAKES, ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", () -> new ConsumableItem(
             baseItem().food(FoodValues.PUMPKIN_PANCAKE), true), ItemFamily.PANCAKES, ItemFamily.SYRUP_FOODS);
+    public static final DeferredItem<Item> COFFEE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.COFFEE_PANCAKES, bowlItem(), ItemFamily.PANCAKES, ItemFamily.COFFEE);
+    public static final DeferredItem<Item> COFFEE_PANCAKE = registerWithTab("coffee_pancake", () -> new ConsumableItem(
+            baseItem().food(FoodValues.COFFEE_PANCAKE), true), ItemFamily.PANCAKES, ItemFamily.COFFEE);
 
     // Salads
     public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new ConsumableItem(

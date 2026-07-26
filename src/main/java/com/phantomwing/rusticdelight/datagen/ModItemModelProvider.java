@@ -88,6 +88,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.POTATO_SLICES);
         simpleItem(ModItems.PUMPKIN_PANCAKE);
         simpleItem(ModItems.PUMPKIN_PANCAKES);
+        simpleItem(ModItems.COFFEE_PANCAKE);
+        simpleItem(ModItems.COFFEE_PANCAKES);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_GREEN);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_YELLOW);
         simpleItem(ModItems.ROASTED_BELL_PEPPER_RED);

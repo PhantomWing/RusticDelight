@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:coffee_pancakes"
+  }
+}

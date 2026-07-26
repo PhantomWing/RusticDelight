@@ -93,6 +93,8 @@ public class ModBlocks {
             () -> new PancakeBlock(ModItems.VEGETABLE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> PUMPKIN_PANCAKES = BLOCKS.register("pumpkin_pancakes",
             () -> new PancakeBlock(ModItems.PUMPKIN_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> COFFEE_PANCAKES = BLOCKS.register("coffee_pancakes",
+            () -> new PancakeBlock(ModItems.COFFEE_PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
 
     // Feasts
     public static final DeferredBlock<Block> RICE_ROLL_ROYALE = BLOCKS.register("rice_roll_royale",

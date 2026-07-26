@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rusticdelight:block/cherry_blossom_pancakes_tray_top",
+		"0": "rusticdelight:block/pancakes_tray_top",
 		"1": "rusticdelight:block/tray_bottom",
-		"2": "rusticdelight:block/cherry_blossom_pancakes_pancake",
-		"3": "rusticdelight:block/cherry_blossom_pancakes_topping",
-		"particle": "rusticdelight:block/cherry_blossom_pancakes_pancake"
+		"2": "rusticdelight:block/pancakes_pancake",
+		"3": "rusticdelight:block/pancakes_topping",
+		"particle": "rusticdelight:block/pancakes_pancake"
 	},
 	"elements": [
 		{
@@ -87,14 +87,14 @@
 			}
 		},
 		{
-			"name": "topping_cream_0",
+			"name": "topping_cream",
 			"from": [
-				6,
+				7,
 				13,
 				7
 			],
 			"to": [
-				10,
+				11,
 				14,
 				11
 			],
@@ -947,12 +947,12 @@
 		{
 			"name": "pancake_10",
 			"from": [
-				4,
+				5,
 				12,
 				5
 			],
 			"to": [
-				12,
+				13,
 				13,
 				13
 			],
@@ -960,7 +960,7 @@
 				"angle": 0,
 				"axis": "y",
 				"origin": [
-					7,
+					8,
 					12,
 					8
 				]

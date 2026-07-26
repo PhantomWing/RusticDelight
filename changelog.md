@@ -12,6 +12,8 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
 - Added two new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
 - Added **Fried Fish**: new fried food crafted with any safe fish, Batter and Cooking Oil
 - Added **Coffee Cheesecake** and **Slice of Coffee Cheesecake**
+- Added **Coffee Pancakes** and **Coffee Pancake**
+  - In addition, you can now add additional pancakes onto a default pile of 6, by shift-right-clicking while holding a pancake (to a maximum of 12).
 - Added **Calamari Soup**
 - Added **Calamari Crate**, a storage block for Calamari
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 

@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rusticdelight:block/pumpkin_pancakes_tray_top",
+		"0": "rusticdelight:block/vegetable_pancakes_tray_top",
 		"1": "rusticdelight:block/tray_bottom",
-		"2": "rusticdelight:block/pumpkin_pancakes_pancake",
-		"3": "rusticdelight:block/pumpkin_pancakes_topping",
-		"particle": "rusticdelight:block/pumpkin_pancakes_pancake"
+		"2": "rusticdelight:block/vegetable_pancakes_pancake",
+		"3": "rusticdelight:block/vegetable_pancakes_topping",
+		"particle": "rusticdelight:block/vegetable_pancakes_pancake"
 	},
 	"elements": [
 		{
@@ -87,624 +87,78 @@
 			}
 		},
 		{
-			"name": "topping_cream_0",
+			"name": "topping_cream",
 			"from": [
 				7,
-				14,
-				6
-			],
-			"to": [
-				11,
-				15,
-				10
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					9,
-					14,
-					7
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						0,
-						4,
-						4,
-						5
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						0,
-						4,
-						4,
-						5
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						0,
-						4,
-						4,
-						5
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						0,
-						4,
-						4,
-						5
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						0,
-						0,
-						4,
-						4
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						0,
-						0,
-						4,
-						4
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_0",
-			"from": [
-				8,
-				15,
-				8
-			],
-			"to": [
-				9,
-				16,
-				9
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					9,
-					15,
-					7
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						6,
-						1,
-						7,
-						2
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						6,
-						0,
-						7,
-						1
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_1",
-			"from": [
-				9,
-				15,
+				13,
 				7
 			],
 			"to": [
-				10,
-				16,
-				8
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					10,
-					15,
-					6
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						6,
-						1,
-						7,
-						2
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						6,
-						0,
-						7,
-						1
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_2",
-			"from": [
-				3,
-				2,
-				10
-			],
-			"to": [
-				4,
-				3,
-				11
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					4,
-					2,
-					9
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						6,
-						1,
-						7,
-						2
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						6,
-						0,
-						7,
-						1
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_3",
-			"from": [
-				13,
-				2,
-				5
-			],
-			"to": [
-				14,
-				3,
-				6
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					14,
-					2,
-					4
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						6,
-						1,
-						7,
-						2
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						6,
-						0,
-						7,
-						1
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_4",
-			"from": [
-				10,
-				2,
-				3
-			],
-			"to": [
 				11,
-				3,
-				4
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					11,
-					2,
-					2
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						6,
-						1,
-						7,
-						2
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						6,
-						0,
-						7,
-						1
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_5",
-			"from": [
-				2,
-				2,
-				12
-			],
-			"to": [
-				3,
-				3,
-				13
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					3,
-					2,
-					11
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"east": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"south": {
-					"uv": [
-						6,
-						1,
-						7,
-						2
-					],
-					"texture": "#3"
-				},
-				"west": {
-					"uv": [
-						5,
-						0,
-						6,
-						1
-					],
-					"texture": "#3"
-				},
-				"up": {
-					"uv": [
-						5,
-						1,
-						6,
-						2
-					],
-					"texture": "#3"
-				},
-				"down": {
-					"uv": [
-						6,
-						0,
-						7,
-						1
-					],
-					"texture": "#3"
-				}
-			}
-		},
-		{
-			"name": "topping_pumpkin_5",
-			"from": [
-				12,
-				2,
-				10
-			],
-			"to": [
-				13,
-				3,
+				14,
 				11
 			],
 			"rotation": {
 				"angle": 0,
 				"axis": "y",
 				"origin": [
+					9,
 					13,
-					2,
-					9
+					8
 				]
 			},
 			"faces": {
 				"north": {
 					"uv": [
-						5,
-						1,
-						6,
-						2
+						0,
+						4,
+						4,
+						5
 					],
 					"texture": "#3"
 				},
 				"east": {
 					"uv": [
-						5,
 						0,
-						6,
-						1
+						4,
+						4,
+						5
 					],
 					"texture": "#3"
 				},
 				"south": {
 					"uv": [
-						6,
-						1,
-						7,
-						2
+						0,
+						4,
+						4,
+						5
 					],
 					"texture": "#3"
 				},
 				"west": {
 					"uv": [
-						5,
 						0,
-						6,
-						1
+						4,
+						4,
+						5
 					],
 					"texture": "#3"
 				},
 				"up": {
 					"uv": [
-						5,
-						1,
-						6,
-						2
+						0,
+						0,
+						4,
+						4
 					],
 					"texture": "#3"
 				},
 				"down": {
 					"uv": [
-						6,
 						0,
-						7,
-						1
+						0,
+						4,
+						4
 					],
 					"texture": "#3"
 				}
@@ -1493,12 +947,12 @@
 		{
 			"name": "pancake_10",
 			"from": [
-				4,
+				5,
 				12,
 				5
 			],
 			"to": [
-				12,
+				13,
 				13,
 				13
 			],
@@ -1506,7 +960,7 @@
 				"angle": 0,
 				"axis": "y",
 				"origin": [
-					7,
+					8,
 					12,
 					8
 				]
@@ -1545,84 +999,6 @@
 						3,
 						12,
 						4
-					],
-					"texture": "#2"
-				},
-				"up": {
-					"uv": [
-						4,
-						4,
-						12,
-						12
-					],
-					"texture": "#2"
-				},
-				"down": {
-					"uv": [
-						4,
-						4,
-						12,
-						12
-					],
-					"texture": "#2"
-				}
-			}
-		},
-		{
-			"name": "pancake_11",
-			"from": [
-				5,
-				13,
-				4
-			],
-			"to": [
-				13,
-				14,
-				12
-			],
-			"rotation": {
-				"angle": 0,
-				"axis": "y",
-				"origin": [
-					8,
-					13,
-					7
-				]
-			},
-			"faces": {
-				"north": {
-					"uv": [
-						4,
-						3,
-						12,
-						4
-					],
-					"texture": "#2"
-				},
-				"east": {
-					"uv": [
-						4,
-						11,
-						12,
-						12
-					],
-					"texture": "#2"
-				},
-				"south": {
-					"uv": [
-						4,
-						3,
-						12,
-						4
-					],
-					"texture": "#2"
-				},
-				"west": {
-					"uv": [
-						4,
-						4,
-						12,
-						5
 					],
 					"texture": "#2"
 				},

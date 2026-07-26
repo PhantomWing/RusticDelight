@@ -118,6 +118,10 @@ public class FoodValues {
     public static final FoodProperties PUMPKIN_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
+    // Carries the coffee family's Haste rather than a pancake effect.
+    public static final FoodProperties COFFEE_PANCAKE = (new FoodProperties.Builder())
+            .nutrition(4).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0, false, false), 1.0F).build();
     // Farmer's Delight's PIE_SLICE, plus the Haste every other coffee item carries.
     public static final FoodProperties COFFEE_CHEESECAKE_SLICE = (new FoodProperties.Builder())
             .nutrition(3).saturationModifier(0.3F).fast()
