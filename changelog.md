@@ -1,3 +1,10 @@
+# 1.6.1
+### Changes
+- Lowered the minimum required dependency versions so the mod works without updating everything to the latest:
+  - Farmer's Delight Refabricated 3.6.9 (was 3.6.10)
+  - Fabric Loader 0.19 (was 0.19.3)
+
+
 # 1.6.0
 ### Changes
 - Updated Farmer's Delight Refabricated to 3.6.10
