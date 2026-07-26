@@ -26,6 +26,15 @@ public class Configuration {
     public static final String ENABLE_FRIED_FOODS_ID = "enable_fried_foods";
     public static ModConfigSpec.BooleanValue ENABLE_FRIED_FOODS;
 
+    public static final String ENABLE_CHERRY_BLOSSOM_FOODS_ID = "enable_cherry_blossom_foods";
+    public static ModConfigSpec.BooleanValue ENABLE_CHERRY_BLOSSOM_FOODS;
+
+    public static final String ENABLE_PANCAKES_ID = "enable_pancakes";
+    public static ModConfigSpec.BooleanValue ENABLE_PANCAKES;
+
+    public static final String ENABLE_SYRUP_FOODS_ID = "enable_syrup_foods";
+    public static ModConfigSpec.BooleanValue ENABLE_SYRUP_FOODS;
+
     public static final String CHANCE_WILD_COTTON_ID = "wild_cotton_chance";
     public static ModConfigSpec.IntValue CHANCE_WILD_COTTON;
 
@@ -81,6 +90,9 @@ public class Configuration {
             case ENABLE_BELL_PEPPERS_ID -> Configuration.ENABLE_BELL_PEPPERS.get();
             case ENABLE_POTATO_SLICES_ID -> Configuration.ENABLE_POTATO_SLICES.get();
             case ENABLE_FRIED_FOODS_ID -> Configuration.ENABLE_FRIED_FOODS.get();
+            case ENABLE_CHERRY_BLOSSOM_FOODS_ID -> Configuration.ENABLE_CHERRY_BLOSSOM_FOODS.get();
+            case ENABLE_PANCAKES_ID -> Configuration.ENABLE_PANCAKES.get();
+            case ENABLE_SYRUP_FOODS_ID -> Configuration.ENABLE_SYRUP_FOODS.get();
             default -> false;
         };
     }
@@ -113,6 +125,9 @@ public class Configuration {
         ENABLE_BELL_PEPPERS = COMMON_BUILDER.comment("Enable the Bell Pepper crop family (all colors, slices, roasted, rolls, stuffed, soup, pasta, giant blocks, crates, seeds, related trades).").define(ENABLE_BELL_PEPPERS_ID, true);
         ENABLE_POTATO_SLICES = COMMON_BUILDER.comment("Enable potato slices. Disabling removes potato slices (raw and baked) from the creative tab and disables their cutting-board recipes.").define(ENABLE_POTATO_SLICES_ID, true);
         ENABLE_FRIED_FOODS = COMMON_BUILDER.comment("Enable fried foods. Disabling removes Cooking Oil and everything fried with it (fried dough, dumplings, spring rolls, beignet, fried calamari/chicken/mushrooms) from the creative tab and disables their recipes.").define(ENABLE_FRIED_FOODS_ID, true);
+        ENABLE_CHERRY_BLOSSOM_FOODS = COMMON_BUILDER.comment("Enable cherry blossom foods (cherry blossom roll, cookie, pancakes, cheesecake, coffee). Disabling also removes Rice Roll Royale, which needs a Cherry Blossom Roll.").define(ENABLE_CHERRY_BLOSSOM_FOODS_ID, true);
+        ENABLE_PANCAKES = COMMON_BUILDER.comment("Enable pancakes (plain, honey, chocolate, cherry blossom, vegetable, pumpkin).").define(ENABLE_PANCAKES_ID, true);
+        ENABLE_SYRUP_FOODS = COMMON_BUILDER.comment("Enable Syrup and the foods made from it (syrup cookie, sandwich, cheesecake, coffee). Disabling also removes plain and pumpkin pancakes, which are topped with Syrup.").define(ENABLE_SYRUP_FOODS_ID, true);
 
         // Crop generation rarity. Smaller value = more frequent. (To disable a crop entirely, use its enable_* toggle above.)
         CHANCE_WILD_COTTON = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent.")

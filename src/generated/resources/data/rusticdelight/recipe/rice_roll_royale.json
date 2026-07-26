@@ -7,6 +7,10 @@
     {
       "type": "rusticdelight:config_boolean",
       "settingId": "squids_drop_calamari"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
     }
   ],
   "type": "minecraft:crafting_shapeless",

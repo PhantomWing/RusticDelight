@@ -28,6 +28,9 @@ import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
+import net.neoforged.neoforge.common.conditions.OrCondition;
+
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider {
@@ -51,9 +54,27 @@ public class ModRecipeProvider extends RecipeProvider {
         RecipeOutput coffeeOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID));
         RecipeOutput bellPepperOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_BELL_PEPPERS_ID));
         RecipeOutput calamariOutput = output.withConditions(new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID));
-        RecipeOutput bellPepperAndCalamariOutput = output.withConditions(
+        RecipeOutput cherryBlossomOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID));
+        RecipeOutput pancakesOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID));
+        RecipeOutput syrupOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID));
+        // Plain and pumpkin pancakes are topped with Syrup, so they follow both toggles.
+        RecipeOutput pancakesAndSyrupOutput = output.withConditions(
+                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID));
+        RecipeOutput cherryBlossomPancakesOutput = output.withConditions(
+                new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID));
+        RecipeOutput coffeeAndSyrupOutput = output.withConditions(
+                new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID));
+        RecipeOutput coffeeAndCherryBlossomOutput = output.withConditions(
+                new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID));
+        // Rice Roll Royale needs a roll from each of the three families.
+        RecipeOutput royaleOutput = output.withConditions(
                 new ConfigBooleanCondition(Configuration.ENABLE_BELL_PEPPERS_ID),
-                new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID));
+                new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID));
 
         // Bell pepper foods
         foodCookingRecipes(bellPepperOutput, ModItems.BELL_PEPPER_GREEN, ModItems.ROASTED_BELL_PEPPER_GREEN, FOOD_COOKING_EXP);
@@ -120,7 +141,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
                 .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
                 .unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()), has(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get()))
-                .save(output);
+                .save(cherryBlossomOutput);
 
         // Potato (slices gated by the enable_potato_slices toggle)
         RecipeOutput potatoSlicesOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_POTATO_SLICES_ID));
@@ -155,7 +176,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
                 .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
                 .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
-                .save(output);
+                .save(cherryBlossomOutput);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COFFEE_COOKIE, 8)
                 .requires(ModTags.Items.COFFEE_INGREDIENTS)
                 .requires(Items.WHEAT)
@@ -167,21 +188,21 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.WHEAT)
                 .requires(Items.WHEAT)
                 .unlockedBy(getHasName(ModItems.SYRUP), has(ModItems.SYRUP))
-                .save(output);
+                .save(syrupOutput);
 
         // Pies
-        pieRecipes(output, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP), " T ");
-        pieRecipes(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS), "TTT");
+        pieRecipes(syrupOutput, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP), " T ");
+        pieRecipes(cherryBlossomOutput, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS), "TTT");
         // Unlike the other two cheesecakes this one is part of the coffee family, so it follows its toggle.
         pieRecipes(coffeeOutput, ModItems.COFFEE_CHEESECAKE, ModItems.COFFEE_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.COFFEE_FOOD_INGREDIENTS), " T ");
 
         // Pancakes
-        pancakeRecipes(output, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
-        pancakeRecipes(output, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE, Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SUGAR));
-        pancakeRecipes(output, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(Items.COCOA_BEANS));
-        pancakeRecipes(output, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), vegetablesPatch(), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
-        pancakeRecipes(output, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
-        pancakeRecipes(output, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
+        pancakeRecipes(pancakesAndSyrupOutput, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
+        pancakeRecipes(pancakesOutput, ModItems.HONEY_PANCAKES, ModItems.HONEY_PANCAKE, Ingredient.of(Items.HONEY_BOTTLE), Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SUGAR));
+        pancakeRecipes(pancakesOutput, ModItems.CHOCOLATE_PANCAKES, ModItems.CHOCOLATE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(Items.COCOA_BEANS));
+        pancakeRecipes(pancakesOutput, ModItems.VEGETABLE_PANCAKES, ModItems.VEGETABLE_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), vegetablesPatch(), Ingredient.of(CommonTags.FOODS_LEAFY_GREEN));
+        pancakeRecipes(cherryBlossomPancakesOutput, ModItems.CHERRY_BLOSSOM_PANCAKES, ModItems.CHERRY_BLOSSOM_PANCAKE, Ingredient.of(CommonTags.DRINKS_MILK), Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
+        pancakeRecipes(pancakesAndSyrupOutput, ModItems.PUMPKIN_PANCAKES, ModItems.PUMPKIN_PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.PUMPKIN_SLICE.get()));
 
         // Cotton
         oneToOne(cottonOutput, RecipeCategory.MISC, ModItems.COTTON_BOLL, Items.STRING, 1);
@@ -290,13 +311,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ModItems.MILK_COFFEE)
                 .requires(ModTags.Items.SYRUP)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
-                .save(coffeeOutput, getRecipeName(ModItems.MILK_COFFEE, ModItems.SYRUP_COFFEE));
+                .save(coffeeAndSyrupOutput, getRecipeName(ModItems.MILK_COFFEE, ModItems.SYRUP_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.DRINKS_MILK)
                 .requires(ModTags.Items.SYRUP)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
-                .save(coffeeOutput, getRecipeName(ModItems.COFFEE, ModItems.SYRUP_COFFEE));
+                .save(coffeeAndSyrupOutput, getRecipeName(ModItems.COFFEE, ModItems.SYRUP_COFFEE));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.PUMPKIN_COFFEE, 1)
                 .requires(ModItems.MILK_COFFEE)
@@ -314,22 +335,22 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ModItems.MILK_COFFEE)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .unlockedBy(getHasName(ModItems.MILK_COFFEE), has(ModItems.MILK_COFFEE))
-                .save(coffeeOutput, getRecipeName(ModItems.MILK_COFFEE, ModItems.CHERRY_BLOSSOM_COFFEE));
+                .save(coffeeAndCherryBlossomOutput, getRecipeName(ModItems.MILK_COFFEE, ModItems.CHERRY_BLOSSOM_COFFEE));
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COFFEE, 1)
                 .requires(ModItems.COFFEE)
                 .requires(CommonTags.DRINKS_MILK)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .unlockedBy(getHasName(ModItems.COFFEE), has(ModItems.COFFEE))
-                .save(coffeeOutput, getRecipeName(ModItems.COFFEE, ModItems.CHERRY_BLOSSOM_COFFEE));
+                .save(coffeeAndCherryBlossomOutput, getRecipeName(ModItems.COFFEE, ModItems.CHERRY_BLOSSOM_COFFEE));
 
         // Syrup-based recipes
-        oneToOne(output, RecipeCategory.MISC, ModItems.SYRUP, Items.SUGAR, 3);
+        oneToOne(syrupOutput, RecipeCategory.MISC, ModItems.SYRUP, Items.SUGAR, 3);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SYRUP_SANDWICH, 1)
                 .requires(Tags.Items.FOODS_BREAD)
                 .requires(ModTags.Items.SYRUP)
                 .requires(Items.SUGAR)
                 .unlockedBy(getHasName(ModItems.SYRUP), has(ModItems.SYRUP))
-                .save(output);
+                .save(syrupOutput);
 
         // Feasts
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RICE_ROLL_ROYALE)
@@ -349,7 +370,7 @@ public class ModRecipeProvider extends RecipeProvider {
                         ModItems.CALAMARI_ROLL.get(),
                         ModItems.CHERRY_BLOSSOM_ROLL.get(),
                         vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL_SLICE.get()))
-                .save(bellPepperAndCalamariOutput);
+                .save(royaleOutput);
 
         bellPepperMedleyRecipe(bellPepperOutput, ModItems.BELL_PEPPER_MEDLEY,
                 ModItems.STUFFED_BELL_PEPPER_GREEN, ModItems.STUFFED_BELL_PEPPER_YELLOW, ModItems.STUFFED_BELL_PEPPER_RED);
@@ -488,9 +509,11 @@ public class ModRecipeProvider extends RecipeProvider {
 
         // Pie
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CHERRY_BLOSSOM_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, 4)
-                .build(output, cuttingId(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId()));
+                .build(output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID)),
+                        cuttingId(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.SYRUP_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.SYRUP_CHEESECAKE_SLICE, 4)
-                .build(output, cuttingId(ModItems.SYRUP_CHEESECAKE_SLICE.getId()));
+                .build(output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID)),
+                        cuttingId(ModItems.SYRUP_CHEESECAKE_SLICE.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COFFEE_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_CHEESECAKE_SLICE, 4)
                 .build(coffeeOutput, cuttingId(ModItems.COFFEE_CHEESECAKE_SLICE.getId()));
 
@@ -524,7 +547,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .save(friedOutput);
 
-        // Batter
+        // Batter feeds both fried foods and pancakes, so it only disappears once both are off.
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BATTER, 2, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.BOWL)
                 .addIngredient(CommonTags.DRINKS_MILK)
                 .addIngredient(Tags.Items.EGGS)
@@ -532,7 +555,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(Items.WHEAT)
                 .unlockedByAnyIngredient(Items.MILK_BUCKET, vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .save(output);
+                .save(output.withConditions(new OrCondition(List.of(
+                        new ConfigBooleanCondition(Configuration.ENABLE_FRIED_FOODS_ID),
+                        new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID)))));
 
         // Syrup
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP, 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP, Items.GLASS_BOTTLE)
@@ -540,7 +565,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(Items.SUGAR)
                 .unlockedByAnyIngredient(Items.APPLE, Items.BEETROOT, Items.SUGAR)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .save(output);
+                .save(output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID)));
 
         // Fried Dough
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FRIED_DOUGH, 1, CookingRecipes.FAST_COOKING, CookingRecipes.SMALL_EXP)
@@ -761,7 +786,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModItems.SYRUP)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
-                .save(coffeeOutput);
+                .save(output.withConditions(
+                        new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID),
+                        new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID)));
 
         // Pumpkin Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.PUMPKIN_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
@@ -774,7 +801,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(coffeeOutput);
 
-        // Cherry Blossom Coffee
+        // Cherry Blossom Coffee - in both the coffee and cherry blossom families.
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHERRY_BLOSSOM_COFFEE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
@@ -783,7 +810,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
-                .save(coffeeOutput);
+                .save(output.withConditions(
+                        new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID),
+                        new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID)));
 
         // Dark Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.DARK_COFFEE, 1, CookingRecipes.SLOW_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)

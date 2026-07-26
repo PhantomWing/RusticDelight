@@ -3,6 +3,10 @@
     {
       "type": "rusticdelight:config_boolean",
       "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
     }
   ],
   "type": "farmersdelight:cooking",

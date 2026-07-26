@@ -152,19 +152,19 @@ public class ModItems {
     public static final DeferredItem<Item> HONEY_COFFEE = registerWithTab("honey_coffee", () -> new MilkCoffeeItem(
             bottleItem().food(FoodValues.HONEY_COFFEE)), ItemFamily.COFFEE);
     public static final DeferredItem<Item> SYRUP_COFFEE = registerWithTab("syrup_coffee", () -> new MilkCoffeeItem(
-            bottleItem().food(FoodValues.SYRUP_COFFEE)), ItemFamily.COFFEE);
+            bottleItem().food(FoodValues.SYRUP_COFFEE)), ItemFamily.COFFEE, ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> PUMPKIN_COFFEE = registerWithTab("pumpkin_coffee", () -> new MilkCoffeeItem(
             bottleItem().food(FoodValues.PUMPKIN_COFFEE)), ItemFamily.COFFEE);
     public static final DeferredItem<Item> CHERRY_BLOSSOM_COFFEE = registerWithTab("cherry_blossom_coffee", () -> new MilkCoffeeItem(
-            bottleItem().food(FoodValues.CHERRY_BLOSSOM_COFFEE)), ItemFamily.COFFEE);
+            bottleItem().food(FoodValues.CHERRY_BLOSSOM_COFFEE)), ItemFamily.COFFEE, ItemFamily.CHERRY_BLOSSOM_FOODS);
 
     // Cooking products
     public static final DeferredItem<Item> COOKING_OIL = registerWithTab("cooking_oil", () -> new DrinkableItem(
             bottleItem().food(FoodValues.COOKING_OIL)), ItemFamily.FRIED_FOODS);
     public static final DeferredItem<Item> SYRUP = registerWithTab("syrup", () -> new DrinkableItem(
-            bottleItem().food(FoodValues.SYRUP), true));
+            bottleItem().food(FoodValues.SYRUP), true), ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> BATTER = registerWithTab("batter", () -> new Item(
-            bowlItem().food(FoodValues.BATTER)));
+            bowlItem().food(FoodValues.BATTER)), ItemFamily.BATTER);
 
     // Sliced foods
     public static final DeferredItem<Item> POTATO_SLICES = registerWithTab("potato_slices", () -> new Item(
@@ -216,13 +216,13 @@ public class ModItems {
             baseItem().food(FoodValues.COOKED_CALAMARI_SLICE)), ItemFamily.CALAMARI);
 
     // Pies & cakes
-    public static final DeferredItem<Item> SYRUP_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
+    public static final DeferredItem<Item> SYRUP_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem(), ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> SYRUP_CHEESECAKE_SLICE = registerWithTab("syrup_cheesecake_slice", () -> new ConsumableItem(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)), ItemFamily.SYRUP_FOODS);
 
-    public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem(), ItemFamily.CHERRY_BLOSSOM_FOODS);
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new ConsumableItem(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)), ItemFamily.CHERRY_BLOSSOM_FOODS);
 
     public static final DeferredItem<Item> COFFEE_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.COFFEE_CHEESECAKE, baseItem(), ItemFamily.COFFEE);
     public static final DeferredItem<Item> COFFEE_CHEESECAKE_SLICE = registerWithTab("coffee_cheesecake_slice", () -> new ConsumableItem(
@@ -230,37 +230,37 @@ public class ModItems {
 
     // Cookies
     public static final DeferredItem<Item> SYRUP_COOKIE = registerWithTab("syrup_cookie", () -> new Item(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)), ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> CHERRY_BLOSSOM_COOKIE = registerWithTab("cherry_blossom_cookie", () -> new Item(
-            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
+            baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)), ItemFamily.CHERRY_BLOSSOM_FOODS);
     public static final DeferredItem<Item> COFFEE_COOKIE = registerWithTab("coffee_cookie", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)), ItemFamily.COFFEE);
 
     // Sweets
     public static final DeferredItem<Item> SYRUP_SANDWICH = registerWithTab("syrup_sandwich", () -> new Item(
-            baseItem().food(FoodValues.SYRUP_SANDWICH)));
+            baseItem().food(FoodValues.SYRUP_SANDWICH)), ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> FRUIT_BEIGNET = registerWithTab("fruit_beignet", () -> new ConsumableItem(
             baseItem().food(FoodValues.FRUIT_BEIGNET), true), ItemFamily.FRIED_FOODS);
 
     // Pancakes
-    public static final DeferredItem<Item> PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PANCAKES, bowlItem());
+    public static final DeferredItem<Item> PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PANCAKES, bowlItem(), ItemFamily.PANCAKES, ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> PANCAKE = registerWithTab("pancake", () -> new Item(
-            baseItem().food(FoodValues.PANCAKE)));
-    public static final DeferredItem<Item> HONEY_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
+            baseItem().food(FoodValues.PANCAKE)), ItemFamily.PANCAKES, ItemFamily.SYRUP_FOODS);
+    public static final DeferredItem<Item> HONEY_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem(), ItemFamily.PANCAKES);
     public static final DeferredItem<Item> HONEY_PANCAKE = registerWithTab("honey_pancake", () -> new ConsumableItem(
-            baseItem().food(FoodValues.HONEY_PANCAKE), true));
-    public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
+            baseItem().food(FoodValues.HONEY_PANCAKE), true), ItemFamily.PANCAKES);
+    public static final DeferredItem<Item> CHOCOLATE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem(), ItemFamily.PANCAKES);
     public static final DeferredItem<Item> CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", () -> new ConsumableItem(
-            baseItem().food(FoodValues.CHOCOLATE_PANCAKE), true));
-    public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
+            baseItem().food(FoodValues.CHOCOLATE_PANCAKE), true), ItemFamily.PANCAKES);
+    public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem(), ItemFamily.CHERRY_BLOSSOM_FOODS, ItemFamily.PANCAKES);
     public static final DeferredItem<Item> CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", () -> new ConsumableItem(
-            baseItem().food(FoodValues.CHERRY_BLOSSOM_PANCAKE), true));
-    public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
+            baseItem().food(FoodValues.CHERRY_BLOSSOM_PANCAKE), true), ItemFamily.CHERRY_BLOSSOM_FOODS, ItemFamily.PANCAKES);
+    public static final DeferredItem<Item> VEGETABLE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem(), ItemFamily.PANCAKES);
     public static final DeferredItem<Item> VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", () -> new ConsumableItem(
-            baseItem().food(FoodValues.VEGETABLE_PANCAKE), true));
-    public static final DeferredItem<Item> PUMPKIN_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
+            baseItem().food(FoodValues.VEGETABLE_PANCAKE), true), ItemFamily.PANCAKES);
+    public static final DeferredItem<Item> PUMPKIN_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem(), ItemFamily.PANCAKES, ItemFamily.SYRUP_FOODS);
     public static final DeferredItem<Item> PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", () -> new ConsumableItem(
-            baseItem().food(FoodValues.PUMPKIN_PANCAKE), true));
+            baseItem().food(FoodValues.PUMPKIN_PANCAKE), true), ItemFamily.PANCAKES, ItemFamily.SYRUP_FOODS);
 
     // Salads
     public static final DeferredItem<Item> POTATO_SALAD = registerWithTab("potato_salad", () -> new ConsumableItem(
@@ -320,7 +320,7 @@ public class ModItems {
     public static final DeferredItem<Item> CALAMARI_ROLL = registerWithTab("calamari_roll", () -> new Item(
             baseItem().food(FoodValues.CALAMARI_ROLL)), ItemFamily.CALAMARI);
     public static final DeferredItem<Item> CHERRY_BLOSSOM_ROLL = registerWithTab("cherry_blossom_roll", () -> new Item(
-            baseItem().food(FoodValues.CHERRY_BLOSSOM_ROLL)));
+            baseItem().food(FoodValues.CHERRY_BLOSSOM_ROLL)), ItemFamily.CHERRY_BLOSSOM_FOODS);
 
     // Soups and stews
     public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new ConsumableItem(
@@ -341,7 +341,8 @@ public class ModItems {
             bowlItem().food(FoodValues.COFFEE_BRAISED_BEEF), true), ItemFamily.COFFEE);
 
     // Feasts
-    public static final DeferredItem<Item> RICE_ROLL_ROYALE = registerPlaceableBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem(), ItemFamily.BELL_PEPPER, ItemFamily.CALAMARI);
+    // Also needs a Cherry Blossom Roll, so it follows that family too.
+    public static final DeferredItem<Item> RICE_ROLL_ROYALE = registerPlaceableBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem(), ItemFamily.BELL_PEPPER, ItemFamily.CALAMARI, ItemFamily.CHERRY_BLOSSOM_FOODS);
     public static final DeferredItem<Item> BELL_PEPPER_MEDLEY = registerPlaceableBlockWithTab(ModBlocks.BELL_PEPPER_MEDLEY, feastItem(), ItemFamily.BELL_PEPPER);
     public static final DeferredItem<Item> PALE_BELL_PEPPER_MEDLEY = registerPlaceableBlockWithTab(ModBlocks.PALE_BELL_PEPPER_MEDLEY, feastItem(), ItemFamily.BELL_PEPPER);
     public static final DeferredItem<Item> DARK_BELL_PEPPER_MEDLEY = registerPlaceableBlockWithTab(ModBlocks.DARK_BELL_PEPPER_MEDLEY, feastItem(), ItemFamily.BELL_PEPPER);

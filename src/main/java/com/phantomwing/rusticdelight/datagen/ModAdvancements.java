@@ -19,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.conditions.ICondition;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -46,9 +47,11 @@ public class ModAdvancements extends ModAdvancementProvider {
         bellPepper(root);
         coffee(root);
 
-        // Syrup and pancakes belong to no crop family and nothing gates them, so they stay ungated.
-        AdvancementHolder syrup = obtainTag(root, "syrup", ModItems.SYRUP.get(), ModTags.Items.SYRUP);
-        obtainTag(syrup, "pancakes", ModItems.PANCAKES.get(), ModTags.Items.PANCAKES);
+        ConfigBooleanCondition syrupEnabled = new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID);
+        AdvancementHolder syrup = obtainTag(root, "syrup", ModItems.SYRUP.get(), ModTags.Items.SYRUP, syrupEnabled);
+        // Carries its parent's condition as well: a child whose parent was conditioned away fails to load.
+        obtainTag(syrup, "pancakes", ModItems.PANCAKES.get(), ModTags.Items.PANCAKES,
+                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID), syrupEnabled);
     }
 
     private void cotton(AdvancementHolder root) {
@@ -97,15 +100,17 @@ public class ModAdvancements extends ModAdvancementProvider {
                 ModItems.BELL_PEPPER_MEDLEY.get(), ModItems.PALE_BELL_PEPPER_MEDLEY.get(), ModItems.DARK_BELL_PEPPER_MEDLEY.get());
 
         // Hangs off the peppers rather than the stuffed ones, since the rolls are made straight from
-        // Bell Peppers. It also contains a Calamari Roll, so it needs both toggles - which is why this
-        // one is written out instead of using the single-condition obtain() helper.
+        // Bell Peppers. It takes a roll from three families though, so it needs all three toggles -
+        // which is why this one is written out instead of using the single-condition obtain() helper.
         save(Advancement.Builder.advancement()
                         .parent(pepper)
                         .display(ModItems.RICE_ROLL_ROYALE.get(), title("rice_roll_royale"), description("rice_roll_royale"),
                                 null, AdvancementType.GOAL, true, true, false)
                         .addCriterion("rice_roll_royale", InventoryChangeTrigger.TriggerInstance.hasItems(
                                 ItemPredicate.Builder.item().of(ModItems.RICE_ROLL_ROYALE.get()))),
-                "main/rice_roll_royale", enabled, new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID));
+                "main/rice_roll_royale", enabled,
+                new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_CHERRY_BLOSSOM_FOODS_ID));
     }
 
     private void coffee(AdvancementHolder root) {
@@ -130,14 +135,14 @@ public class ModAdvancements extends ModAdvancementProvider {
                 AdvancementType.TASK, enabled, ModItems.GOLDEN_COFFEE_BEANS.get());
     }
 
-    /** An ungated advancement matched on a tag, so datapacks and add-ons can grant it with their own items. */
-    private AdvancementHolder obtainTag(AdvancementHolder parent, String name, Item icon, TagKey<Item> tag) {
+    /** An advancement matched on a tag, so datapacks and add-ons can grant it with their own items. */
+    private AdvancementHolder obtainTag(AdvancementHolder parent, String name, Item icon, TagKey<Item> tag, ICondition... conditions) {
         return save(Advancement.Builder.advancement()
                         .parent(parent)
                         .display(icon, title(name), description(name), null, AdvancementType.TASK, true, true, false)
                         .addCriterion(name, InventoryChangeTrigger.TriggerInstance.hasItems(
                                 ItemPredicate.Builder.item().of(tag))),
-                "main/" + name);
+                "main/" + name, conditions);
     }
 
     /** An advancement granted by picking up any one of {@code items}. */
