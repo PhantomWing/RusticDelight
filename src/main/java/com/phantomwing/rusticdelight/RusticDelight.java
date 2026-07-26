@@ -56,6 +56,7 @@ public class RusticDelight implements ModInitializer {
 		EntityLootHelper.modifyLootTables();
 		ChestLootHelper.modifyLootTables();
 		VillagerHelper.registerGatherableItems();
+		VillagerHelper.registerVillagerFood();
 
 		// Fuel
 		FuelRegistry.INSTANCE.add(ModItems.COTTON_BOLL, 100);

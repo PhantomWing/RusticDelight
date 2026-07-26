@@ -4,7 +4,6 @@ import com.phantomwing.rusticdelight.item.ModItems;
 import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
 public class ModItemModelProvider {
     public static void registerModels(ItemModelGenerators g) {
@@ -132,10 +131,5 @@ public class ModItemModelProvider {
     // A simple item with a model generated from its sprite.
     private static void simpleItem(ItemModelGenerators generator, Item item) {
         generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM);
-    }
-
-    // For blocks that appear as a block in-world but as an item in-hand
-    private static void simpleBlock2D(ItemModelGenerators generator, Block block) {
-        generator.generateFlatItem(block.asItem(), ModelTemplates.FLAT_ITEM);
     }
 }
