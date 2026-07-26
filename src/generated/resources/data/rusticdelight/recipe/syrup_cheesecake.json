@@ -16,9 +16,9 @@
     }
   },
   "pattern": [
-    "TTT",
-    "MMM",
-    "SCS"
+    " T ",
+    "SSS",
+    "MCM"
   ],
   "result": {
     "count": 1,

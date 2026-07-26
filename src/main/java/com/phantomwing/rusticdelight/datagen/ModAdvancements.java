@@ -95,6 +95,17 @@ public class ModAdvancements extends ModAdvancementProvider {
         obtain(stuffed, "bell_pepper_medley", ModItems.BELL_PEPPER_MEDLEY.get(),
                 AdvancementType.GOAL, enabled,
                 ModItems.BELL_PEPPER_MEDLEY.get(), ModItems.PALE_BELL_PEPPER_MEDLEY.get(), ModItems.DARK_BELL_PEPPER_MEDLEY.get());
+
+        // Hangs off the peppers rather than the stuffed ones, since the rolls are made straight from
+        // Bell Peppers. It also contains a Calamari Roll, so it needs both toggles - which is why this
+        // one is written out instead of using the single-condition obtain() helper.
+        save(Advancement.Builder.advancement()
+                        .parent(pepper)
+                        .display(ModItems.RICE_ROLL_ROYALE.get(), title("rice_roll_royale"), description("rice_roll_royale"),
+                                null, AdvancementType.GOAL, true, true, false)
+                        .addCriterion("rice_roll_royale", InventoryChangeTrigger.TriggerInstance.hasItems(
+                                ItemPredicate.Builder.item().of(ModItems.RICE_ROLL_ROYALE.get()))),
+                "main/rice_roll_royale", enabled, new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID));
     }
 
     private void coffee(AdvancementHolder root) {

@@ -60,6 +60,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CALAMARI);
         simpleItem(ModItems.CALAMARI_ROLL);
         simpleItem(ModItems.CALAMARI_SLICE);
+        simpleItem(ModItems.CALAMARI_SOUP);
         simpleItem(ModItems.CHERRY_BLOSSOM_CHEESECAKE);
         simpleItem(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE);
         simpleItem(ModItems.CHERRY_BLOSSOM_COOKIE);
@@ -130,6 +131,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SYRUP_SANDWICH);
         simpleItem(ModItems.SYRUP_CHEESECAKE);
         simpleItem(ModItems.SYRUP_CHEESECAKE_SLICE);
+        simpleItem(ModItems.COFFEE_CHEESECAKE);
+        simpleItem(ModItems.COFFEE_CHEESECAKE_SLICE);
         simpleItem(ModItems.FRIED_DOUGH);
         simpleItem(ModItems.FRIED_DUMPLINGS);
         simpleItem(ModItems.FRIED_FISH);

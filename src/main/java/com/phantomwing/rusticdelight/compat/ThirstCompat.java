@@ -26,6 +26,7 @@ public class ThirstCompat {
 
         // Soups and stews (moderate hydration)
         event.addFood(ModItems.BELL_PEPPER_SOUP.get(), 5, 6);
+        event.addFood(ModItems.CALAMARI_SOUP.get(), 5, 6);
 
         // Salads (moderate hydration)
         event.addFood(ModItems.SWEET_SALAD.get(), 4, 5);

@@ -1,17 +1,19 @@
 # 1.7.0
-This is a major content update, expanding greatly on bell peppers.
+From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed with vibrant new bell pepper varieties, comforting recipes, world generation improvements, and plenty of delightful surprises waiting to be discovered.
 
 ### Additions
 - Added mutated variants of the bell pepper crop
-  - Pale Bell Pepper Seeds: Yields white, pink and orange bell peppers
-  - Dark Bell Pepper Seeds: Yields black, blue and purple bell peppers
-- Added Wild Pale Bell Peppers and Wild Dark Bell Peppers, which can be found in jungles (rare)
-- Added Bell Pepper Medley, a new feast crafted with 1 of each stuffed bell pepper color
-- Added **Calamari Crate**, a storage block for Calamari
-- Added Giant Bell Pepper block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
+  - **Pale Bell Pepper Seeds**: Yields white, pink and orange bell peppers
+  - **Dark Bell Pepper Seeds**: Yields black, blue and purple bell peppers
+- Added **Wild Pale Bell Peppers** and **Wild Dark Bell Peppers**, which can be found in jungles (rare)
+- Added **Bell Pepper Medley**, a new feast crafted with 1 of each stuffed bell pepper color
+- Added **Giant Bell Pepper** block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
   - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
 - Added two new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
-- Added Fried Fish: new fried food crafted with any safe fish, Batter and Cooking Oil
+- Added **Fried Fish**: new fried food crafted with any safe fish, Batter and Cooking Oil
+- Added **Coffee Cheesecake** and **Slice of Coffee Cheesecake**
+- Added **Calamari Soup**
+- Added **Calamari Crate**, a storage block for Calamari
 - Rustic Delight's crops now randomly spawn in village farms (turn off with the `generate_village_farm_crops` config option) 
 - Rustic Delight's items now randomly generate as loot in chests (turn off with the `generate_random_loot` config option)
 - Added advancements to guide new players through the features of Rustic Delight (gated by the various feature toggles)
@@ -27,7 +29,9 @@ This is a major content update, expanding greatly on bell peppers.
 ### Changes
 - Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
 - Rebalanced coffee recipes & effects
+- Rebalanced cheesecake recipes
 - Improved various textures, such as Cotton Boll
+- Added particles when eating/taking pancakes from the placed block
 - Villagers can now consume Rustic Delight crops, making them compatible for automated villager farms
 
 

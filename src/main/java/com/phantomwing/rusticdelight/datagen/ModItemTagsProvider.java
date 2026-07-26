@@ -186,7 +186,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             ModItems.SYRUP_COFFEE.get(),
             ModItems.DARK_COFFEE.get(),
             ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
-            ModItems.SYRUP_CHEESECAKE.get()
+            ModItems.SYRUP_CHEESECAKE.get(),
+            ModItems.COFFEE_CHEESECAKE.get()
         );
 
         // Serene Seasons

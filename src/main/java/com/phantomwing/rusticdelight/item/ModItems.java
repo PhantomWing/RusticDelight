@@ -224,6 +224,10 @@ public class ModItems {
     public static final DeferredItem<Item> CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", () -> new ConsumableItem(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
 
+    public static final DeferredItem<Item> COFFEE_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.COFFEE_CHEESECAKE, baseItem(), ItemFamily.COFFEE);
+    public static final DeferredItem<Item> COFFEE_CHEESECAKE_SLICE = registerWithTab("coffee_cheesecake_slice", () -> new ConsumableItem(
+            baseItem().food(FoodValues.COFFEE_CHEESECAKE_SLICE)), ItemFamily.COFFEE);
+
     // Cookies
     public static final DeferredItem<Item> SYRUP_COOKIE = registerWithTab("syrup_cookie", () -> new Item(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.COOKIES)));
@@ -321,6 +325,8 @@ public class ModItems {
     // Soups and stews
     public static final DeferredItem<Item> BELL_PEPPER_SOUP = registerWithTab("bell_pepper_soup", () -> new ConsumableItem(
             bowlItem().food(FoodValues.BELL_PEPPER_SOUP), true), ItemFamily.BELL_PEPPER);
+    public static final DeferredItem<Item> CALAMARI_SOUP = registerWithTab("calamari_soup", () -> new ConsumableItem(
+            bowlItem().food(FoodValues.CALAMARI_SOUP), true), ItemFamily.CALAMARI);
 
     // Plated meals
     public static final DeferredItem<Item> BELL_PEPPER_PASTA = registerWithTab("bell_pepper_pasta", () -> new ConsumableItem(

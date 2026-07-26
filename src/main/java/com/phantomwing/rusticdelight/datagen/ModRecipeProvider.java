@@ -170,8 +170,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output);
 
         // Pies
-        pieRecipes(output, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP));
-        pieRecipes(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
+        pieRecipes(output, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP), " T ");
+        pieRecipes(output, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS), "TTT");
+        // Unlike the other two cheesecakes this one is part of the coffee family, so it follows its toggle.
+        pieRecipes(coffeeOutput, ModItems.COFFEE_CHEESECAKE, ModItems.COFFEE_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.COFFEE_FOOD_INGREDIENTS), " T ");
 
         // Pancakes
         pancakeRecipes(output, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
@@ -489,6 +491,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(output, cuttingId(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.SYRUP_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.SYRUP_CHEESECAKE_SLICE, 4)
                 .build(output, cuttingId(ModItems.SYRUP_CHEESECAKE_SLICE.getId()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COFFEE_CHEESECAKE), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COFFEE_CHEESECAKE_SLICE, 4)
+                .build(coffeeOutput, cuttingId(ModItems.COFFEE_CHEESECAKE_SLICE.getId()));
 
         // Salvaging
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ItemTags.WOOL), Ingredient.of(Tags.Items.TOOLS_SHEAR), Items.STRING, 2)
@@ -502,6 +506,7 @@ public class ModRecipeProvider extends RecipeProvider {
         RecipeOutput friedOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_FRIED_FOODS_ID));
         RecipeOutput coffeeOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_COFFEE_ID));
         RecipeOutput bellPepperOutput = output.withConditions(new ConfigBooleanCondition(Configuration.ENABLE_BELL_PEPPERS_ID));
+        RecipeOutput calamariOutput = output.withConditions(new ConfigBooleanCondition(Configuration.SQUIDS_DROP_CALAMARI_ID));
         // Fried Calamari needs both Cooking Oil and Calamari.
         RecipeOutput friedAndCalamariOutput = output.withConditions(
                 new ConfigBooleanCondition(Configuration.ENABLE_FRIED_FOODS_ID),
@@ -620,6 +625,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedByAnyIngredient(ModItems.BELL_PEPPER_GREEN, ModItems.BELL_PEPPER_YELLOW, ModItems.BELL_PEPPER_RED)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(bellPepperOutput);
+
+        // Calamari Soup
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CALAMARI_SOUP, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.BOWL)
+                .addIngredient(CommonTags.FOODS_RAW_CALAMARI)
+                .addIngredient(CommonTags.FOODS_POTATO)
+                .addIngredient(CommonTags.FOODS_ONION)
+                .addIngredient(CommonTags.DRINKS_MILK)
+                .unlockedByAnyIngredient(ModItems.CALAMARI)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(calamariOutput);
 
         // Stuffed Bell Peppers
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_BELL_PEPPER_GREEN, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
@@ -990,11 +1005,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeOutput, getRecipeName(singlePancake, pancakeBlock));
     }
 
-    protected static void pieRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pieBlock, @NotNull DeferredItem<Item> sliceItem, Ingredient topping) {
+    /**
+     * Layered like Farmer's Delight's Sweet Berry Cheesecake ({@code sss/sss/mOm}): the topping on
+     * top, sugar in the middle, and milk either side of the crust. {@code toppingRow} lets a potent
+     * topping take a single centre slot instead of the full row.
+     */
+    protected static void pieRecipes(@NotNull RecipeOutput recipeOutput, @NotNull DeferredItem<Item> pieBlock, @NotNull DeferredItem<Item> sliceItem, Ingredient topping, String toppingRow) {
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pieBlock, 1)
-                .pattern("TTT")
-                .pattern("MMM")
-                .pattern("SCS")
+                .pattern(toppingRow)
+                .pattern("SSS")
+                .pattern("MCM")
                 .define('T', topping)
                 .define('M', CommonTags.DRINKS_MILK)
                 .define('S', Items.SUGAR)

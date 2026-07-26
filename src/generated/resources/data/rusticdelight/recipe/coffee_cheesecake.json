@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
@@ -12,16 +18,16 @@
       "item": "minecraft:sugar"
     },
     "T": {
-      "tag": "rusticdelight:cherry_blossom_ingredients"
+      "tag": "rusticdelight:coffee_food_ingredients"
     }
   },
   "pattern": [
-    "TTT",
+    " T ",
     "SSS",
     "MCM"
   ],
   "result": {
     "count": 1,
-    "id": "rusticdelight:cherry_blossom_cheesecake"
+    "id": "rusticdelight:coffee_cheesecake"
   }
 }

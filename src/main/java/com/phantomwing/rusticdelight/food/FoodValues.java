@@ -118,6 +118,11 @@ public class FoodValues {
     public static final FoodProperties PUMPKIN_PANCAKE = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.6F)
             .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
+    // Farmer's Delight's PIE_SLICE, plus the Haste every other coffee item carries.
+    public static final FoodProperties COFFEE_CHEESECAKE_SLICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationModifier(0.3F).fast()
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 0, false, false), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0, false, false), 1.0F).build();
 
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = (new FoodProperties.Builder())
@@ -148,6 +153,10 @@ public class FoodValues {
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 1.0F).build();
     public static final FoodProperties BELL_PEPPER_SOUP = (new FoodProperties.Builder())
             .nutrition(6).saturationModifier(0.6f)
+            .effect(() -> nourishment(MEDIUM_DURATION), 1.0f).build();
+    // Heartier than the vegetable soup, since it carries calamari, potato and milk.
+    public static final FoodProperties CALAMARI_SOUP = (new FoodProperties.Builder())
+            .nutrition(10).saturationModifier(0.8f)
             .effect(() -> nourishment(MEDIUM_DURATION), 1.0f).build();
 
     // Plated foods

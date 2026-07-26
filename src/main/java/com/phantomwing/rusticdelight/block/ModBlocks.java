@@ -79,6 +79,8 @@ public class ModBlocks {
             () -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ModItems.SYRUP_CHEESECAKE_SLICE));
     public static final DeferredBlock<Block> CHERRY_BLOSSOM_CHEESECAKE = BLOCKS.register("cherry_blossom_cheesecake",
             () -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
+    public static final DeferredBlock<Block> COFFEE_CHEESECAKE = BLOCKS.register("coffee_cheesecake",
+            () -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ModItems.COFFEE_CHEESECAKE_SLICE));
     public static final DeferredBlock<Block> PANCAKES = BLOCKS.register("pancakes",
             () -> new PancakeBlock(ModItems.PANCAKE, Block.Properties.ofFullCopy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",

@@ -65,10 +65,12 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.CHERRY_BLOSSOM_COOKIE.getId(), new Compostable(0.85f, true), false)
                 .add(ModItems.SYRUP_CHEESECAKE_SLICE.getId(), new Compostable(0.85f, true), false)
                 .add(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE.getId(), new Compostable(0.85f, true), false)
+                .add(ModItems.COFFEE_CHEESECAKE_SLICE.getId(), new Compostable(0.85f, true), false)
 
                 // 100% chance
                 .add(ModItems.SYRUP_CHEESECAKE.getId(), new Compostable(1.0f, true), false)
                 .add(ModItems.CHERRY_BLOSSOM_CHEESECAKE.getId(), new Compostable(1.0f, true), false)
+                .add(ModItems.COFFEE_CHEESECAKE.getId(), new Compostable(1.0f, true), false)
         ;
     }
 }

@@ -104,6 +104,14 @@
       "can_villager_compost": true,
       "chance": 0.5
     },
+    "rusticdelight:coffee_cheesecake": {
+      "can_villager_compost": true,
+      "chance": 1.0
+    },
+    "rusticdelight:coffee_cheesecake_slice": {
+      "can_villager_compost": true,
+      "chance": 0.85
+    },
     "rusticdelight:coffee_cookie": {
       "can_villager_compost": true,
       "chance": 0.85

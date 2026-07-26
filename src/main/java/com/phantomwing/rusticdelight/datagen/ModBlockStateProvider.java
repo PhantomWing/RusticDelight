@@ -76,6 +76,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         pieBlock(ModBlocks.SYRUP_CHEESECAKE.get());
         pieBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get());
+        pieBlock(ModBlocks.COFFEE_CHEESECAKE.get());
 
         pancakeBlock(ModBlocks.PANCAKES.get());
         pancakeBlock(ModBlocks.HONEY_PANCAKES.get());
