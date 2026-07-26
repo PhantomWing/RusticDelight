@@ -60,8 +60,15 @@ public class ModAdvancements extends ModAdvancementProvider {
         AdvancementHolder cotton = obtain(root, "cotton", ModItems.COTTON_BOLL.get(),
                 AdvancementType.TASK, enabled, ModItems.COTTON_BOLL.get());
 
-        obtain(cotton, "cooking_oil", ModItems.COOKING_OIL.get(),
-                AdvancementType.TASK, enabled, ModItems.COOKING_OIL.get());
+        // Cooking Oil is made from Cotton Seeds but belongs to the fried foods family, so it needs
+        // that toggle as well as its parent's - otherwise it hangs here unobtainable.
+        save(Advancement.Builder.advancement()
+                        .parent(cotton)
+                        .display(ModItems.COOKING_OIL.get(), title("cooking_oil"), description("cooking_oil"),
+                                null, AdvancementType.TASK, true, true, false)
+                        .addCriterion("cooking_oil", InventoryChangeTrigger.TriggerInstance.hasItems(
+                                ItemPredicate.Builder.item().of(ModItems.COOKING_OIL.get()))),
+                "main/cooking_oil", enabled, new ConfigBooleanCondition(Configuration.ENABLE_FRIED_FOODS_ID));
 
         // Keyed off the recipe rather than the item, so any old string doesn't grant it.
         save(Advancement.Builder.advancement()

@@ -185,6 +185,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             ModItems.HONEY_COFFEE.get(),
             ModItems.SYRUP_COFFEE.get(),
             ModItems.DARK_COFFEE.get(),
+            ModItems.PUMPKIN_COFFEE.get(),
+            ModItems.CHERRY_BLOSSOM_COFFEE.get(),
             ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
             ModItems.SYRUP_CHEESECAKE.get(),
             ModItems.COFFEE_CHEESECAKE.get()

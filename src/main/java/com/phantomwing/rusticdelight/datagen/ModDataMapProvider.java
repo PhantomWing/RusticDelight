@@ -30,6 +30,12 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.BELL_PEPPER_SLICE_GREEN.getId(), new Compostable(0.5f, true), false)
                 .add(ModItems.BELL_PEPPER_SLICE_YELLOW.getId(), new Compostable(0.5f, true), false)
                 .add(ModItems.BELL_PEPPER_SLICE_RED.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.BELL_PEPPER_SLICE_ORANGE.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.BELL_PEPPER_SLICE_WHITE.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.BELL_PEPPER_SLICE_PINK.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.BELL_PEPPER_SLICE_BLUE.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.BELL_PEPPER_SLICE_PURPLE.getId(), new Compostable(0.5f, true), false)
+                .add(ModItems.BELL_PEPPER_SLICE_BLACK.getId(), new Compostable(0.5f, true), false)
 
                 // 65% chance
                 .add(ModItems.BELL_PEPPER_GREEN.getId(), new Compostable(0.65f, true), false)

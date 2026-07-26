@@ -60,11 +60,35 @@
       "can_villager_compost": true,
       "chance": 0.3
     },
+    "rusticdelight:bell_pepper_slice_black": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:bell_pepper_slice_blue": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
     "rusticdelight:bell_pepper_slice_green": {
       "can_villager_compost": true,
       "chance": 0.5
     },
+    "rusticdelight:bell_pepper_slice_orange": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:bell_pepper_slice_pink": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:bell_pepper_slice_purple": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
     "rusticdelight:bell_pepper_slice_red": {
+      "can_villager_compost": true,
+      "chance": 0.5
+    },
+    "rusticdelight:bell_pepper_slice_white": {
       "can_villager_compost": true,
       "chance": 0.5
     },
