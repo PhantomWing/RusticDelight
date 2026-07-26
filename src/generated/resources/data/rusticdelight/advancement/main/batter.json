@@ -1,10 +1,6 @@
 {
   "neoforge:conditions": [
     {
-      "type": "rusticdelight:config_boolean",
-      "settingId": "enable_pancakes"
-    },
-    {
       "type": "neoforge:or",
       "values": [
         {
@@ -18,13 +14,13 @@
       ]
     }
   ],
-  "parent": "rusticdelight:main/batter",
+  "parent": "rusticdelight:main/root",
   "criteria": {
-    "pancakes": {
+    "batter": {
       "conditions": {
         "items": [
           {
-            "items": "#rusticdelight:pancakes"
+            "items": "rusticdelight:batter"
           }
         ]
       },
@@ -33,19 +29,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.rusticdelight.pancakes.description"
+      "translate": "advancements.rusticdelight.batter.description"
     },
     "icon": {
       "count": 1,
-      "id": "rusticdelight:pancakes"
+      "id": "rusticdelight:batter"
     },
     "title": {
-      "translate": "advancements.rusticdelight.pancakes.title"
+      "translate": "advancements.rusticdelight.batter.title"
     }
   },
   "requirements": [
     [
-      "pancakes"
+      "batter"
     ]
   ],
   "sends_telemetry_event": true

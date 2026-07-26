@@ -16,11 +16,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.OrCondition;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModAdvancements extends ModAdvancementProvider {
@@ -47,11 +48,20 @@ public class ModAdvancements extends ModAdvancementProvider {
         bellPepper(root);
         coffee(root);
 
-        ConfigBooleanCondition syrupEnabled = new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID);
-        AdvancementHolder syrup = obtainTag(root, "syrup", ModItems.SYRUP.get(), ModTags.Items.SYRUP, syrupEnabled);
-        // Carries its parent's condition as well: a child whose parent was conditioned away fails to load.
-        obtainTag(syrup, "pancakes", ModItems.PANCAKES.get(), ModTags.Items.PANCAKES,
-                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID), syrupEnabled);
+        // Batter feeds both fried foods and pancakes, so it survives while either family is on -
+        // the same OR the block and its recipe use.
+        ICondition batterEnabled = new OrCondition(List.of(
+                new ConfigBooleanCondition(Configuration.ENABLE_FRIED_FOODS_ID),
+                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID)));
+        AdvancementHolder batter = obtainMatching(root, "batter", ModItems.BATTER.get(),
+                ItemPredicate.Builder.item().of(ModItems.BATTER.get()), batterEnabled);
+
+        // Both hang off Batter, and each repeats its parent's condition: a child whose parent was
+        // conditioned away fails to load.
+        obtainMatching(batter, "syrup", ModItems.SYRUP.get(), ItemPredicate.Builder.item().of(ModTags.Items.SYRUP),
+                new ConfigBooleanCondition(Configuration.ENABLE_SYRUP_FOODS_ID), batterEnabled);
+        obtainMatching(batter, "pancakes", ModItems.PANCAKES.get(), ItemPredicate.Builder.item().of(ModTags.Items.PANCAKES),
+                new ConfigBooleanCondition(Configuration.ENABLE_PANCAKES_ID), batterEnabled);
     }
 
     private void cotton(AdvancementHolder root) {
@@ -142,13 +152,16 @@ public class ModAdvancements extends ModAdvancementProvider {
                 AdvancementType.TASK, enabled, ModItems.GOLDEN_COFFEE_BEANS.get());
     }
 
-    /** An advancement matched on a tag, so datapacks and add-ons can grant it with their own items. */
-    private AdvancementHolder obtainTag(AdvancementHolder parent, String name, Item icon, TagKey<Item> tag, ICondition... conditions) {
+    /**
+     * An advancement granted by picking up anything matching {@code match}. Pass a tag predicate so
+     * datapacks and add-ons can grant it with their own items, or an item predicate for a one-off.
+     */
+    private AdvancementHolder obtainMatching(AdvancementHolder parent, String name, Item icon,
+                                             ItemPredicate.Builder match, ICondition... conditions) {
         return save(Advancement.Builder.advancement()
                         .parent(parent)
                         .display(icon, title(name), description(name), null, AdvancementType.TASK, true, true, false)
-                        .addCriterion(name, InventoryChangeTrigger.TriggerInstance.hasItems(
-                                ItemPredicate.Builder.item().of(tag))),
+                        .addCriterion(name, InventoryChangeTrigger.TriggerInstance.hasItems(match)),
                 "main/" + name, conditions);
     }
 

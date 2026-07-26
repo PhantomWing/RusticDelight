@@ -33,10 +33,12 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
 
 ### Changes
 - You no longer need a knife to get a single pancake: Pancakes are now taken from the block by right-clicking, instead of being eaten directly.
+- Breaking a pancake block now drops the remaining pancakes as individual pancake items
 - Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
 - Rebalanced coffee recipes & effects
 - Rebalanced cheesecake recipes
-- Improved various textures, such as Cotton Boll
+- Improved Cherry Blossom Pancakes model
+- Improved various textures, such as Cotton Boll, Wild Bell Peppers, Coffee Beans
 - Added particles when eating/taking pancakes from the placed block
 - Villagers can now consume Rustic Delight crops, making them compatible for automated villager farms
 
