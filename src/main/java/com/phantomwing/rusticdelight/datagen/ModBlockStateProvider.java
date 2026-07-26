@@ -193,8 +193,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void pancakeBlock(Block block) {
         getVariantBuilder(block)
                 .forAllStates(state -> {
-                            int servings = state.getValue(PancakeBlock.SERVINGS);
-                            String suffix = "_stage" + servings;
+                            // Up to a full plate keeps the original _stageN models, so resource packs
+                            // that override them still apply; taller stacks use the new _stackN ones.
+                            int present = PancakeBlock.getPancakesPresent(state);
+                            String suffix = present <= PancakeBlock.MAX_SERVINGS
+                                    ? "_stage" + (PancakeBlock.MAX_SERVINGS - present)
+                                    : "_stack" + present;
                             return ConfiguredModel.builder()
                                     .modelFile(existingModel(blockName(block) + suffix))
                                     .rotationY(((int) state.getValue(PancakeBlock.FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360)

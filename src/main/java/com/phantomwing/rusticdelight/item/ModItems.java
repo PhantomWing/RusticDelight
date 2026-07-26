@@ -105,20 +105,6 @@ public class ModItems {
     public static final DeferredItem<Item> BELL_PEPPER_BLACK = registerWithTab("bell_pepper_black", () -> new Item(
             baseItem().food(FoodValues.BELL_PEPPER)), ItemFamily.BELL_PEPPER);
 
-    // Coffee Beans
-    public static final DeferredItem<Item> COFFEE_BEANS = registerWithTab("coffee_beans", () -> new ItemNameBlockItem(
-            ModBlocks.COFFEE_CROP.get(), baseItem()), ItemFamily.COFFEE);
-    public static final DeferredItem<Item> ROASTED_COFFEE_BEANS = registerWithTab("roasted_coffee_beans", () -> new Item(
-            baseItem().food(FoodValues.ROASTED_COFFEE_BEANS)), ItemFamily.COFFEE);
-    public static final DeferredItem<Item> GOLDEN_COFFEE_BEANS = registerWithTab("golden_coffee_beans", () -> new Item(
-            baseItem().food(FoodValues.GOLDEN_COFFEE_BEANS)), ItemFamily.COFFEE);
-
-    // Calamari
-    public static final DeferredItem<Item> CALAMARI = registerWithTab("calamari", () -> new Item(
-            baseItem().food(FoodValues.CALAMARI)), ItemFamily.CALAMARI);
-    public static final DeferredItem<Item> COOKED_CALAMARI = registerWithTab("cooked_calamari", () -> new Item(
-            baseItem().food(FoodValues.COOKED_CALAMARI)), ItemFamily.CALAMARI);
-
     // Roasted bell peppers
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_GREEN = registerWithTab("roasted_bell_pepper_green", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)), ItemFamily.BELL_PEPPER);
@@ -138,6 +124,20 @@ public class ModItems {
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)), ItemFamily.BELL_PEPPER);
     public static final DeferredItem<Item> ROASTED_BELL_PEPPER_BLACK = registerWithTab("roasted_bell_pepper_black", () -> new Item(
             baseItem().food(FoodValues.ROASTED_BELL_PEPPER)), ItemFamily.BELL_PEPPER);
+
+    // Calamari
+    public static final DeferredItem<Item> CALAMARI = registerWithTab("calamari", () -> new Item(
+            baseItem().food(FoodValues.CALAMARI)), ItemFamily.CALAMARI);
+    public static final DeferredItem<Item> COOKED_CALAMARI = registerWithTab("cooked_calamari", () -> new Item(
+            baseItem().food(FoodValues.COOKED_CALAMARI)), ItemFamily.CALAMARI);
+
+    // Coffee Beans
+    public static final DeferredItem<Item> COFFEE_BEANS = registerWithTab("coffee_beans", () -> new ItemNameBlockItem(
+            ModBlocks.COFFEE_CROP.get(), baseItem()), ItemFamily.COFFEE);
+    public static final DeferredItem<Item> ROASTED_COFFEE_BEANS = registerWithTab("roasted_coffee_beans", () -> new Item(
+            baseItem().food(FoodValues.ROASTED_COFFEE_BEANS)), ItemFamily.COFFEE);
+    public static final DeferredItem<Item> GOLDEN_COFFEE_BEANS = registerWithTab("golden_coffee_beans", () -> new Item(
+            baseItem().food(FoodValues.GOLDEN_COFFEE_BEANS)), ItemFamily.COFFEE);
 
     // Coffee
     public static final DeferredItem<Item> COFFEE = registerWithTab("coffee", () -> new DrinkableItem(

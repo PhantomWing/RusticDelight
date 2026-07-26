@@ -19,14 +19,18 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
 - Added advancements to guide new players through the features of Rustic Delight (gated by the various feature toggles)
 - Added new feature toggles to the config (so you can disable features, making related items unobtainable)
   - `enable_bell_peppers`
+  - `enable_cherry_blossom_foods`
   - `enable_coffee`
   - `enable_cotton`
   - `enable_fried_foods`
+  - `enable_pancakes`
   - `enable_potato_slices`
+  - `enable_syrup_foods`
 - Added 3D models for many of the new items added in this update (requires Brewin' and Chewin' coaster)
 - Added Ukrainian translations (thank you hikarosato!)
 
 ### Changes
+- You no longer need a knife to get a single pancake: Pancakes are now taken from the block by right-clicking, instead of being eaten directly.
 - Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
 - Rebalanced coffee recipes & effects
 - Rebalanced cheesecake recipes

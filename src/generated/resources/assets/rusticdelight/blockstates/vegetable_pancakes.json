@@ -8,6 +8,14 @@
       "model": "rusticdelight:block/vegetable_pancakes_stage1",
       "y": 90
     },
+    "facing=east,servings=10": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack11",
+      "y": 90
+    },
+    "facing=east,servings=11": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack12",
+      "y": 90
+    },
     "facing=east,servings=2": {
       "model": "rusticdelight:block/vegetable_pancakes_stage2",
       "y": 90
@@ -24,11 +32,33 @@
       "model": "rusticdelight:block/vegetable_pancakes_stage5",
       "y": 90
     },
+    "facing=east,servings=6": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack7",
+      "y": 90
+    },
+    "facing=east,servings=7": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack8",
+      "y": 90
+    },
+    "facing=east,servings=8": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack9",
+      "y": 90
+    },
+    "facing=east,servings=9": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack10",
+      "y": 90
+    },
     "facing=north,servings=0": {
       "model": "rusticdelight:block/vegetable_pancakes_stage0"
     },
     "facing=north,servings=1": {
       "model": "rusticdelight:block/vegetable_pancakes_stage1"
+    },
+    "facing=north,servings=10": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack11"
+    },
+    "facing=north,servings=11": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack12"
     },
     "facing=north,servings=2": {
       "model": "rusticdelight:block/vegetable_pancakes_stage2"
@@ -42,12 +72,32 @@
     "facing=north,servings=5": {
       "model": "rusticdelight:block/vegetable_pancakes_stage5"
     },
+    "facing=north,servings=6": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack7"
+    },
+    "facing=north,servings=7": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack8"
+    },
+    "facing=north,servings=8": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack9"
+    },
+    "facing=north,servings=9": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack10"
+    },
     "facing=south,servings=0": {
       "model": "rusticdelight:block/vegetable_pancakes_stage0",
       "y": 180
     },
     "facing=south,servings=1": {
       "model": "rusticdelight:block/vegetable_pancakes_stage1",
+      "y": 180
+    },
+    "facing=south,servings=10": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack11",
+      "y": 180
+    },
+    "facing=south,servings=11": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack12",
       "y": 180
     },
     "facing=south,servings=2": {
@@ -66,12 +116,36 @@
       "model": "rusticdelight:block/vegetable_pancakes_stage5",
       "y": 180
     },
+    "facing=south,servings=6": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack7",
+      "y": 180
+    },
+    "facing=south,servings=7": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack8",
+      "y": 180
+    },
+    "facing=south,servings=8": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack9",
+      "y": 180
+    },
+    "facing=south,servings=9": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack10",
+      "y": 180
+    },
     "facing=west,servings=0": {
       "model": "rusticdelight:block/vegetable_pancakes_stage0",
       "y": 270
     },
     "facing=west,servings=1": {
       "model": "rusticdelight:block/vegetable_pancakes_stage1",
+      "y": 270
+    },
+    "facing=west,servings=10": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack11",
+      "y": 270
+    },
+    "facing=west,servings=11": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack12",
       "y": 270
     },
     "facing=west,servings=2": {
@@ -88,6 +162,22 @@
     },
     "facing=west,servings=5": {
       "model": "rusticdelight:block/vegetable_pancakes_stage5",
+      "y": 270
+    },
+    "facing=west,servings=6": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack7",
+      "y": 270
+    },
+    "facing=west,servings=7": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack8",
+      "y": 270
+    },
+    "facing=west,servings=8": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack9",
+      "y": 270
+    },
+    "facing=west,servings=9": {
+      "model": "rusticdelight:block/vegetable_pancakes_stack10",
       "y": 270
     }
   }

@@ -108,9 +108,9 @@
 		},
 		{
 			"name": "topping_cream",
-			"from": [6, 7, 6],
+			"from": [6, 8, 6],
 			"to": [10, 9, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7, 7]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 7]},
 			"faces": {
 				"north": {"uv": [0, 4, 4, 5], "texture": "#3"},
 				"east": {"uv": [0, 4, 4, 5], "texture": "#3"},

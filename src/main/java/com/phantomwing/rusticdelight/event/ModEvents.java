@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.event;
 
 import com.phantomwing.rusticdelight.Configuration;
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.block.custom.PancakeBlock;
 import com.phantomwing.rusticdelight.item.ItemFamily;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.potions.ModPotions;
@@ -16,7 +17,9 @@ import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 
@@ -157,6 +160,26 @@ public class ModEvents {
                     1,
                     PRICE_MULTIPLIER
             ));
+        }
+    }
+
+    /**
+     * Vanilla skips the block interaction entirely when a player sneaks with something in hand, so
+     * putting a pancake back would never reach {@link PancakeBlock#useItemOn}. Force the block
+     * through for that one case: sneaking with the pancake that belongs on the targeted stack.
+     */
+    @SubscribeEvent
+    public static void allowPuttingPancakesBack(PlayerInteractEvent.RightClickBlock event) {
+        if (!event.getEntity().isSecondaryUseActive()) {
+            return;
+        }
+
+        if (!(event.getLevel().getBlockState(event.getPos()).getBlock() instanceof PancakeBlock pancake)) {
+            return;
+        }
+
+        if (event.getItemStack().is(pancake.servingItem.get())) {
+            event.setUseBlock(TriState.TRUE);
         }
     }
 

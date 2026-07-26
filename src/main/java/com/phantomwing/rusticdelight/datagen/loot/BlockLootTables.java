@@ -21,6 +21,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -94,12 +95,12 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.COFFEE_CHEESECAKE.get(), PieBlock.BITES);
 
-        dropFoodBlock(ModBlocks.PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.PUMPKIN_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropPancakeBlock(ModBlocks.PANCAKES.get(), ModItems.PANCAKE);
+        dropPancakeBlock(ModBlocks.HONEY_PANCAKES.get(), ModItems.HONEY_PANCAKE);
+        dropPancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), ModItems.CHOCOLATE_PANCAKE);
+        dropPancakeBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), ModItems.CHERRY_BLOSSOM_PANCAKE);
+        dropPancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get(), ModItems.VEGETABLE_PANCAKE);
+        dropPancakeBlock(ModBlocks.PUMPKIN_PANCAKES.get(), ModItems.PUMPKIN_PANCAKE);
 
         dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, RiceRollRoyaleBlock.MAX_SERVINGS, Items.BOWL);
         dropFoodBlock(ModBlocks.BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
@@ -141,6 +142,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     private void dropFoodBlock(Block block, IntegerProperty servings, ItemLike containerItem) {
         this.add(block, blockParam -> createFoodBlockDrops(blockParam, servings, 0, containerItem));
+    }
+
+    private void dropPancakeBlock(Block block, ItemLike pancakeItem) {
+        this.add(block, blockParam -> createPancakeDrops(blockParam, pancakeItem));
     }
 
     private void dropFoodBlock(Block block, IntegerProperty servings, int defaultServings, ItemLike containerItem) {
@@ -357,6 +362,40 @@ public class BlockLootTables extends BlockLootSubProvider {
                                 .add(LootItem.lootTableItem(cropItem))
                         )
         );
+    }
+
+    /**
+     * A pancake stack holds 1 to {@link PancakeBlock#MAX_TOTAL_SERVINGS} pancakes. Breaking one that
+     * is exactly a crafted plate returns the placeable block; any other height returns the loose
+     * pancakes plus the bowl, which previously went missing entirely.
+     */
+    private LootTable.Builder createPancakeDrops(Block block, ItemLike pancakeItem) {
+        LootItemCondition.Builder isCraftedPlate = servingsIs(block, 0);
+
+        LootTable.Builder lootTable = LootTable.lootTable()
+                // An untouched plate drops the block itself, matching what the recipe produces.
+                .withPool(LootPool.lootPool().when(isCraftedPlate).add(LootItem.lootTableItem(block)));
+
+        for (int servings = 1; servings < PancakeBlock.MAX_TOTAL_SERVINGS; servings++) {
+            lootTable.withPool(LootPool.lootPool()
+                    .when(servingsIs(block, servings))
+                    .add(LootItem.lootTableItem(pancakeItem)
+                            .apply(SetItemCountFunction.setCount(
+                                    ConstantValue.exactly(PancakeBlock.pancakesPresentFor(servings))))));
+        }
+
+        // The plate is only left over once the stack is no longer a whole crafted block.
+        lootTable.withPool(LootPool.lootPool()
+                .when(InvertedLootItemCondition.invert(isCraftedPlate))
+                .add(LootItem.lootTableItem(Items.BOWL)));
+
+        return this.applyExplosionDecay(block, lootTable);
+    }
+
+    private static LootItemCondition.Builder servingsIs(Block block, int servings) {
+        return LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                .setProperties(StatePropertiesPredicate.Builder.properties()
+                        .hasProperty(PancakeBlock.SERVINGS, servings));
     }
 
     private LootTable.Builder createFoodBlockDrops(Block block, IntegerProperty servings, int defaultServings, ItemLike containerItem) {
