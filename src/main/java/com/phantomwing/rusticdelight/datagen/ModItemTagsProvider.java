@@ -391,7 +391,13 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(CommonTags.CROPS_BELL_PEPPER).add(
                 ModItems.BELL_PEPPER_GREEN,
                 ModItems.BELL_PEPPER_YELLOW,
-                ModItems.BELL_PEPPER_RED
+                ModItems.BELL_PEPPER_RED,
+                ModItems.BELL_PEPPER_ORANGE,
+                ModItems.BELL_PEPPER_WHITE,
+                ModItems.BELL_PEPPER_PINK,
+                ModItems.BELL_PEPPER_BLUE,
+                ModItems.BELL_PEPPER_PURPLE,
+                ModItems.BELL_PEPPER_BLACK
         );
 
         // Coffee

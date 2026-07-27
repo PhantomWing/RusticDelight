@@ -6,7 +6,7 @@
   },
   "display": {
     "announce_to_chat": false,
-    "background": "minecraft:textures/block/dirt_path_top.png",
+    "background": "minecraft:block/dirt_path_top",
     "description": {
       "translate": "advancements.rusticdelight.root.description"
     },

@@ -15,13 +15,19 @@ public class RusticDelightClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlocks(
                 ChunkSectionLayer.CUTOUT,
                 ModBlocks.WILD_BELL_PEPPERS,
+                ModBlocks.WILD_PALE_BELL_PEPPERS,
+                ModBlocks.WILD_DARK_BELL_PEPPERS,
                 ModBlocks.WILD_COTTON,
                 ModBlocks.WILD_COFFEE,
                 ModBlocks.COTTON_CROP,
                 ModBlocks.BELL_PEPPER_CROP,
+                ModBlocks.PALE_BELL_PEPPER_CROP,
+                ModBlocks.DARK_BELL_PEPPER_CROP,
                 ModBlocks.COFFEE_CROP,
                 ModBlocks.POTTED_WILD_COTTON,
                 ModBlocks.POTTED_WILD_BELL_PEPPERS,
+                ModBlocks.POTTED_WILD_PALE_BELL_PEPPERS,
+                ModBlocks.POTTED_WILD_DARK_BELL_PEPPERS,
                 ModBlocks.POTTED_WILD_COFFEE
         );
     }

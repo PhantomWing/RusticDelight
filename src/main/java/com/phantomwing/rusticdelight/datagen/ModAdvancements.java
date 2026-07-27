@@ -30,8 +30,10 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class ModAdvancements extends FabricAdvancementProvider {
+    // 1.21.11 takes a ClientAsset id here, not a texture path: it resolves to
+    // assets/<namespace>/textures/<path>.png, so no "textures/" prefix and no ".png" suffix.
     private static final Identifier BACKGROUND =
-            Identifier.withDefaultNamespace("textures/block/dirt_path_top.png");
+            Identifier.withDefaultNamespace("block/dirt_path_top");
 
     // 1.21.11 resolves item predicates through a HolderGetter rather than raw items.
     private HolderGetter<Item> itemGetter;
