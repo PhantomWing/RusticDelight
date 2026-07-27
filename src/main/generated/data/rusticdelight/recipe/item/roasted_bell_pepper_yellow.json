@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     "rusticdelight:roasted_bell_pepper_yellow"
@@ -11,7 +17,7 @@
       }
     },
     {
-      "chance": 0.3,
+      "chance": 0.1,
       "item": {
         "count": 1,
         "id": "rusticdelight:bell_pepper_seeds"

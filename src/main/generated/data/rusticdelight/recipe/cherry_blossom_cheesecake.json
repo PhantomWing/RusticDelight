@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
@@ -9,8 +15,8 @@
   },
   "pattern": [
     "TTT",
-    "MMM",
-    "SCS"
+    "SSS",
+    "MCM"
   ],
   "result": {
     "count": 1,

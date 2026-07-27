@@ -2,21 +2,17 @@ package com.phantomwing.rusticdelight.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.component.DataComponents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.Consumable;
-import net.minecraft.world.item.component.ConsumableListener;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
@@ -39,53 +35,69 @@ import java.util.function.Supplier;
 
 public class PancakeBlock extends Block {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
+    /** Pancakes on a freshly crafted plate. Also what the block item is worth in the recipes. */
     public static final Integer MAX_SERVINGS = 6;
-    public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, MAX_SERVINGS - 1);
+
+    /** The tallest stack that still fits inside a single block. */
+    public static final int MAX_TOTAL_SERVINGS = 12;
+
+    /**
+     * Stack height, stored in two halves so existing worlds keep working. Values 0-5 are the
+     * original "servings eaten off a plate of {@link #MAX_SERVINGS}" and are left untouched, so a
+     * saved block still means exactly what it did. Values 6-11 continue past a full plate and hold
+     * 7-12 pancakes. Use {@link #getPancakesPresent} rather than reading this directly.
+     */
+    public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, MAX_TOTAL_SERVINGS - 1);
 
     public final Supplier<Item> servingItem;
 
     protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
-    protected static final VoxelShape[] PANCAKES_SHAPES =  new VoxelShape[]{
-            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 8.0D, 13.0D), BooleanOp.OR),
-            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 7.0D, 13.0D), BooleanOp.OR),
-            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 6.0D, 13.0D), BooleanOp.OR),
-            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 5.0D, 13.0D), BooleanOp.OR),
-            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 4.0D, 13.0D), BooleanOp.OR),
-            Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(3.0D, 2.0D, 3.0D, 13.0D, 3.0D, 13.0D), BooleanOp.OR)
-    };
+    /** Indexed by pancakes present; each one is 1px tall, sitting on the 2px plate. */
+    protected static final VoxelShape[] PANCAKES_SHAPES = buildShapes();
+
+    private static VoxelShape[] buildShapes() {
+        VoxelShape[] shapes = new VoxelShape[MAX_TOTAL_SERVINGS + 1];
+        for (int present = 0; present < shapes.length; present++) {
+            double top = 2.0D + Math.max(present, 1);
+            shapes[present] = Shapes.joinUnoptimized(PLATE_SHAPE,
+                    Block.box(3.0D, 2.0D, 3.0D, 13.0D, top, 13.0D), BooleanOp.OR);
+        }
+        return shapes;
+    }
 
     public PancakeBlock(Supplier<Item> servingItem, Properties properties) {
         super(properties);
 
         this.servingItem = servingItem;
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SERVINGS, 0));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(SERVINGS, 0));
+    }
+
+    /** How many pancakes the block is currently showing. */
+    public static int getPancakesPresent(BlockState state) {
+        return pancakesPresentFor(state.getValue(SERVINGS));
+    }
+
+    /** Decodes the {@link #SERVINGS} value: eaten-from-a-plate below {@link #MAX_SERVINGS}, stacked above it. */
+    public static int pancakesPresentFor(int servings) {
+        return servings < MAX_SERVINGS ? MAX_SERVINGS - servings : servings + 1;
+    }
+
+    private static int servingsFor(int pancakesPresent) {
+        return pancakesPresent <= MAX_SERVINGS ? MAX_SERVINGS - pancakesPresent : pancakesPresent - 1;
     }
 
     @Override
     public @NotNull InteractionResult useItemOn(ItemStack heldStack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        // Use FDR's ItemUtils.isKnife — it checks both the KNIFE_HARVEST ItemAbility and the
-        // farmersdelight:tools/knives tag, so it picks up knives that aren't tagged (e.g.
-        // copper_knife in FDR 3.6 isn't in the tag JSON but is a knife via the ability).
-        if (ItemUtils.isKnife(heldStack)) {
-            return takeServing(level, pos, state, player);
+        // Sneaking with a matching pancake puts one back onto the stack. Vanilla normally skips the
+        // block interaction when sneaking with a full hand, so ModEvents forces it through.
+        if (player.isSecondaryUseActive() && heldStack.is(this.servingItem.get())) {
+            return addServing(level, pos, state, heldStack, player);
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
-    }
-
-    @Override
-    protected @NotNull InteractionResult useWithoutItem(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull BlockHitResult hitResult) {
-        if (level.isClientSide()) {
-            if (consumeServing(level, pos, state, player).consumesAction()) {
-                return InteractionResult.SUCCESS;
-            }
-
-            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
-                return InteractionResult.CONSUME;
-            }
-        }
-
-        return consumeServing(level, pos, state, player);
+        // Everything else takes a pancake, the same way Farmer's Delight feasts hand out servings.
+        return takeServing(level, pos, state, player);
     }
 
     protected InteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
@@ -94,8 +106,8 @@ public class PancakeBlock extends Block {
         ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
                 direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
 
-        // Spawn crumb particles using the pancake's texture — matches FDR's PieBlock/FeastBlock.
-        spawnEatingParticles(level, pos, state);
+        // Spawn crumb particles using the pancake's texture — matches FD's PieBlock/FeastBlock.
+        spawnServingParticles(level, pos, state);
 
         // Remove a serving from the block.
         this.removeServing(level, pos, state);
@@ -106,46 +118,31 @@ public class PancakeBlock extends Block {
         return InteractionResult.SUCCESS;
     }
 
-    /**
-     * Eats a pancake from the stack, feeding the player.
-     */
-    protected InteractionResult consumeServing(Level level, BlockPos pos, BlockState state, Player playerIn) {
-        if (!playerIn.canEat(false)) {
-            // If the player is full, no interaction is possible.
-            return InteractionResult.PASS;
-        } else {
-            ItemStack servingStack = this.getServingItem();
-            FoodProperties foodProperties = servingStack.get(DataComponents.FOOD);
-            Consumable consumable = servingStack.get(DataComponents.CONSUMABLE);
-
-            // Apply food effect to the player
-            if (foodProperties != null && consumable != null) {
-                playerIn.getFoodData().eat(foodProperties);
-                servingStack.getAllOfType(ConsumableListener.class).forEach(consumableListener -> consumableListener.onConsume(level, playerIn, servingStack, consumable));
-                if (!level.isClientSide()) {
-                    consumable.onConsumeEffects().forEach(consumeEffect -> consumeEffect.apply(level, servingStack, playerIn));
-                }
-            }
-
-            // Spawn crumb particles using the pancake's texture — matches FDR's PieBlock/FeastBlock.
-            spawnEatingParticles(level, pos, state);
-
-            // Remove a serving from the block.
-            this.removeServing(level, pos, state);
-
-            // Play a sound.
-            level.playSound(null, pos, SoundEvents.GENERIC_EAT.value(), SoundSource.PLAYERS, 0.8F, 0.8F);
-
-            return InteractionResult.SUCCESS;
+    /** Puts a pancake back on, up to the height the block can show. */
+    protected InteractionResult addServing(Level level, BlockPos pos, BlockState state, ItemStack heldStack, Player player) {
+        int present = getPancakesPresent(state);
+        if (present >= MAX_TOTAL_SERVINGS) {
+            // Stacked as high as the block allows - consume so the held pancake isn't eaten instead.
+            return InteractionResult.CONSUME;
         }
+
+        level.setBlock(pos, state.setValue(SERVINGS, servingsFor(present + 1)), Block.UPDATE_ALL);
+
+        if (!player.getAbilities().instabuild) {
+            heldStack.shrink(1);
+        }
+
+        level.playSound(null, pos, SoundEvents.WOOL_PLACE, SoundSource.PLAYERS, 0.8F, 0.8F);
+
+        return InteractionResult.SUCCESS;
     }
 
     /**
      * Server-side: emit 3 small block-texture particles above the pancake plate, matching the
-     * crumb effect FDR's {@code PieBlock} / {@code FeastBlock} spawn when a bite is consumed.
-     * Same magic numbers as FDR (count 3, spread 0.1, speed 0.001, y offset +0.3).
+     * crumb effect FD's {@code PieBlock} / {@code FeastBlock} spawn when a serving is taken.
+     * Same magic numbers as FD (count 3, spread 0.1, speed 0.001, y offset +0.3).
      */
-    private void spawnEatingParticles(Level level, BlockPos pos, BlockState state) {
+    private void spawnServingParticles(Level level, BlockPos pos, BlockState state) {
         if (level instanceof ServerLevel serverLevel) {
             serverLevel.sendParticles(
                     new BlockParticleOption(ParticleTypes.BLOCK, state),
@@ -156,11 +153,11 @@ public class PancakeBlock extends Block {
         }
     }
 
-    /** Update the block model. If there are no more servings left, destroy the block. */
+    /** Takes the topmost pancake off, destroying the block once the plate is empty. */
     private void removeServing(Level level, BlockPos pos, BlockState state) {
-        int servingsTaken = state.getValue(SERVINGS);
-        if (servingsTaken < MAX_SERVINGS - 1) {
-            level.setBlock(pos, state.setValue(SERVINGS, servingsTaken + 1), MAX_SERVINGS - 1);
+        int present = getPancakesPresent(state);
+        if (present > 1) {
+            level.setBlock(pos, state.setValue(SERVINGS, servingsFor(present - 1)), Block.UPDATE_ALL);
         } else {
             level.destroyBlock(pos, true);
         }
@@ -172,7 +169,7 @@ public class PancakeBlock extends Block {
 
     @Override
     public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        return PANCAKES_SHAPES[state.getValue(SERVINGS)];
+        return PANCAKES_SHAPES[getPancakesPresent(state)];
     }
 
     @Override

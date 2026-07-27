@@ -1,0 +1,17 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "rusticdelight:dark_bell_pepper_seeds_bag"
+  ],
+  "result": {
+    "count": 9,
+    "id": "rusticdelight:dark_bell_pepper_seeds"
+  }
+}

@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_cotton_boll": {

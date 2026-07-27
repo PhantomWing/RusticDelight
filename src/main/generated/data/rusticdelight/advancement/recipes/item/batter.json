@@ -1,4 +1,19 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:or",
+      "values": [
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_fried_foods"
+        },
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_pancakes"
+        }
+      ]
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_any_ingredient": {

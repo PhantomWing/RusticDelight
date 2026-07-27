@@ -72,6 +72,33 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
         this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_RED).add(
                 ModBlocks.BELL_PEPPER_RED_CRATE
         );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS).add(
+                ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS).add(
+                ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_ORANGE).add(
+                ModBlocks.BELL_PEPPER_ORANGE_CRATE
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_WHITE).add(
+                ModBlocks.BELL_PEPPER_WHITE_CRATE
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_PINK).add(
+                ModBlocks.BELL_PEPPER_PINK_CRATE
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_BLUE).add(
+                ModBlocks.BELL_PEPPER_BLUE_CRATE
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_PURPLE).add(
+                ModBlocks.BELL_PEPPER_PURPLE_CRATE
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_BLACK).add(
+                ModBlocks.BELL_PEPPER_BLACK_CRATE
+        );
+        this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_CALAMARI).add(
+                ModBlocks.CALAMARI_CRATE
+        );
         this.valueLookupBuilder(CommonTags.STORAGE_BLOCKS_COFFEE_BEANS).add(
                 ModBlocks.COFFEE_BEANS_BAG
         );
@@ -92,6 +119,15 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN)
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW)
                 .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_RED)
+                .addTag(CommonTags.STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS)
+                .addTag(CommonTags.STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS)
+                .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_ORANGE)
+                .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_WHITE)
+                .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_PINK)
+                .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_BLUE)
+                .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_PURPLE)
+                .addTag(CommonTags.STORAGE_BLOCKS_BELL_PEPPER_BLACK)
+                .addTag(CommonTags.STORAGE_BLOCKS_CALAMARI)
                 .addTag(CommonTags.STORAGE_BLOCKS_COFFEE_BEANS)
                 .addTag(CommonTags.STORAGE_BLOCKS_COFFEE)
                 .addTag(CommonTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS);

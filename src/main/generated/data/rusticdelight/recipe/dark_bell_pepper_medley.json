@@ -1,0 +1,20 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "rusticdelight:stuffed_bell_pepper_blue",
+    "rusticdelight:stuffed_bell_pepper_purple",
+    "rusticdelight:stuffed_bell_pepper_black",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:dark_bell_pepper_medley"
+  }
+}

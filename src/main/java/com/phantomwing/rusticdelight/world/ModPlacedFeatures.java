@@ -23,6 +23,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> WILD_BELL_PEPPERS_PLACED_KEY = registerKey("wild_bell_peppers_placed");
     public static final ResourceKey<PlacedFeature> WILD_COTTON_PLACED_KEY = registerKey("wild_cotton_placed");
     public static final ResourceKey<PlacedFeature> WILD_COFFEE_PLACED_KEY = registerKey("wild_coffee_placed");
+    public static final ResourceKey<PlacedFeature> BELL_PEPPER_BLOCK_PATCH_PLACED_KEY = registerKey("bell_pepper_block_patch_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -32,6 +33,7 @@ public class ModPlacedFeatures {
         registerWildCrop(context, configuredFeatures, WILD_COTTON_PLACED_KEY, ModConfiguredFeatures.WILD_COTTON_KEY, RusticDelightConfig.CHANCE_WILD_COTTON_ID);
         registerWildCrop(context, configuredFeatures, WILD_BELL_PEPPERS_PLACED_KEY, ModConfiguredFeatures.WILD_BELL_PEPPERS_KEY, RusticDelightConfig.CHANCE_WILD_BELL_PEPPERS_ID);
         registerWildCrop(context, configuredFeatures, WILD_COFFEE_PLACED_KEY, ModConfiguredFeatures.WILD_COFFEE_KEY, RusticDelightConfig.CHANCE_WILD_COFFEE_ID);
+        registerWildCrop(context, configuredFeatures, BELL_PEPPER_BLOCK_PATCH_PLACED_KEY, ModConfiguredFeatures.BELL_PEPPER_BLOCK_PATCH_KEY, RusticDelightConfig.CHANCE_BELL_PEPPER_BLOCK_PATCH_ID);
     }
 
     private static void registerWildCrop(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures, ResourceKey<PlacedFeature> placedFeatureKey, ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, String configuredChanceId) {

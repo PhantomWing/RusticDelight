@@ -29,6 +29,292 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 3.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "4"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "5"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "6"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 7.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "7"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 8.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "8"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 9.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "9"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 10.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "10"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 11.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "rusticdelight:cherry_blossom_pancakes",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "servings": "11"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 12.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "rusticdelight:cherry_blossom_pancake"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
           "condition": "minecraft:inverted",
           "term": {
             "block": "rusticdelight:cherry_blossom_pancakes",
@@ -47,5 +333,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "rusticdelight:blocks/cherry_blossom_pancakes"
 }

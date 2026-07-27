@@ -1,0 +1,8 @@
+{
+  "parent": "rusticdelight:block/bell_pepper_medley_stage0",
+  "textures": {
+    "pepper_back_left": "rusticdelight:block/coaster/stuffed_bell_pepper_orange",
+    "pepper_back_right": "rusticdelight:block/coaster/stuffed_bell_pepper_white",
+    "pepper_front": "rusticdelight:block/coaster/stuffed_bell_pepper_pink"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "rusticdelight:coffee",
+    "#c:drinks/milk",
+    "farmersdelight:pumpkin_slice"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rusticdelight:pumpkin_coffee"
+  }
+}
