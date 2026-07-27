@@ -1,0 +1,43 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "parent": "rusticdelight:main/stuffed_bell_pepper",
+  "criteria": {
+    "bell_pepper_medley": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:bell_pepper_medley",
+              "rusticdelight:pale_bell_pepper_medley",
+              "rusticdelight:dark_bell_pepper_medley"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.bell_pepper_medley.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "rusticdelight:bell_pepper_medley"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.bell_pepper_medley.title"
+    }
+  },
+  "requirements": [
+    [
+      "bell_pepper_medley"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

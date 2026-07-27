@@ -1,0 +1,26 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "rusticdelight:coffee_pancake",
+    "rusticdelight:coffee_pancake",
+    "rusticdelight:coffee_pancake",
+    "rusticdelight:coffee_pancake",
+    "rusticdelight:coffee_pancake",
+    "rusticdelight:coffee_pancake",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "rusticdelight:coffee_pancakes"
+  }
+}

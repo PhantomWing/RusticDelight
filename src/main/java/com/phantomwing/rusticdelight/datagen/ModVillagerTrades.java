@@ -56,11 +56,15 @@ public class ModVillagerTrades extends FabricDynamicRegistryProvider {
     public static final ResourceKey<VillagerTrade> WANDERING_BELL_PEPPER_SEEDS = key("wandering_trader/bell_pepper_seeds_for_emerald");
     public static final ResourceKey<VillagerTrade> WANDERING_COFFEE_BEANS = key("wandering_trader/coffee_beans_for_emerald");
 
+    // Wandering trader, uncommon tier: the exotic mutated seeds
+    public static final ResourceKey<VillagerTrade> WANDERING_PALE_BELL_PEPPER_SEEDS = key("wandering_trader/pale_bell_pepper_seeds_for_emerald");
+    public static final ResourceKey<VillagerTrade> WANDERING_DARK_BELL_PEPPER_SEEDS = key("wandering_trader/dark_bell_pepper_seeds_for_emerald");
+
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
-        ResourceCondition cottonEnabled = featureEnabled(RusticDelightConfig.CHANCE_WILD_COTTON_ID);
-        ResourceCondition bellPepperEnabled = featureEnabled(RusticDelightConfig.CHANCE_WILD_BELL_PEPPERS_ID);
-        ResourceCondition coffeeEnabled = featureEnabled(RusticDelightConfig.CHANCE_WILD_COFFEE_ID);
+        ResourceCondition cottonEnabled = featureEnabled(RusticDelightConfig.ENABLE_COTTON_ID);
+        ResourceCondition bellPepperEnabled = featureEnabled(RusticDelightConfig.ENABLE_BELL_PEPPERS_ID);
+        ResourceCondition coffeeEnabled = featureEnabled(RusticDelightConfig.ENABLE_COFFEE_ID);
         ResourceCondition calamariEnabled = featureEnabled(RusticDelightConfig.SQUIDS_DROP_CALAMARI_ID);
 
         // Farmer level 1: 24 cotton -> 1 emerald, 24 bell peppers -> 1 emerald, 26 coffee -> 1 emerald
@@ -81,6 +85,10 @@ public class ModVillagerTrades extends FabricDynamicRegistryProvider {
         addWanderingTrade(entries, WANDERING_COTTON_SEEDS, itemsForEmeralds(ModItems.COTTON_SEEDS, 1, 1, 12, 2), cottonEnabled);
         addWanderingTrade(entries, WANDERING_BELL_PEPPER_SEEDS, itemsForEmeralds(ModItems.BELL_PEPPER_SEEDS, 1, 1, 12, 2), bellPepperEnabled);
         addWanderingTrade(entries, WANDERING_COFFEE_BEANS, itemsForEmeralds(ModItems.COFFEE_BEANS, 1, 1, 12, 2), coffeeEnabled);
+
+        // Pale and Dark bell pepper seeds are exotic - 5 emeralds, and only from the uncommon pool.
+        addWanderingTrade(entries, WANDERING_PALE_BELL_PEPPER_SEEDS, itemsForEmeralds(ModItems.PALE_BELL_PEPPER_SEEDS, 1, 5, 3, 1), bellPepperEnabled);
+        addWanderingTrade(entries, WANDERING_DARK_BELL_PEPPER_SEEDS, itemsForEmeralds(ModItems.DARK_BELL_PEPPER_SEEDS, 1, 5, 3, 1), bellPepperEnabled);
     }
 
     @Override

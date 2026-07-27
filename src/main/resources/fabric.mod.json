@@ -32,7 +32,7 @@
 		"minecraft": ">=${minecraft_min_version} <=${minecraft_max_version}",
 		"java": ">=21",
 		"fabric-api": "*",
-		"farmersdelight": ">=3.6.3",
+		"farmersdelight": ">=${farmersdelight_dep}",
 		"cloth-config": "*"
 	},
 	"breaks": {

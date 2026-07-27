@@ -14,6 +14,7 @@ public class ModTags {
         public static final TagKey<Biome> HAS_WILD_COTTON = create("has_wild_cotton");
         public static final TagKey<Biome> HAS_WILD_BELL_PEPPERS = create("has_wild_bell_peppers");
         public static final TagKey<Biome> HAS_WILD_COFFEE = create("has_wild_coffee");
+        public static final TagKey<Biome> HAS_BELL_PEPPER_BLOCK_PATCH = create("has_bell_pepper_block_patch");
 
         private static TagKey<Biome> create(String name) {
             return TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
@@ -22,6 +23,9 @@ public class ModTags {
 
     // Block tags
     public static class Blocks {
+        // Every pancake stack. Mirrored to the item tag of the same name via copy().
+        public static final TagKey<Block> PANCAKES = tag("pancakes");
+
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(RusticDelight.MOD_ID, name));
         }
@@ -48,6 +52,9 @@ public class ModTags {
 
         // Combines raw and cooked eggs together in a single tag
         public static final TagKey<Item> RAW_AND_COOKED_EGGS = tag("raw_cooked_eggs");
+
+        // Filled by copying the block tag of the same name.
+        public static final TagKey<Item> PANCAKES = tag("pancakes");
         public static final TagKey<Item> FRUITS_AND_BERRIES = tag("fruits_berries");
 
         private static TagKey<Item> tag(String name) {

@@ -1,0 +1,19 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredients": [
+    "#rusticdelight:cooking_oil",
+    "rusticdelight:batter",
+    "#c:foods/safe_raw_fish"
+  ],
+  "result": {
+    "id": "rusticdelight:fried_fish"
+  }
+}

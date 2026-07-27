@@ -1,0 +1,6 @@
+{
+  "parent": "farmersdelight:block/template_crop_cross",
+  "textures": {
+    "cross": "rusticdelight:block/pale_bell_peppers_stage7"
+  }
+}

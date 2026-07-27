@@ -2,11 +2,11 @@
   "fabric:load_conditions": [
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "enable_wandering_trader_trades"
+      "settingId": "enable_wandering_trader_trades"
     },
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "wild_cotton_chance"
+      "settingId": "enable_cotton"
     }
   ],
   "gives": {

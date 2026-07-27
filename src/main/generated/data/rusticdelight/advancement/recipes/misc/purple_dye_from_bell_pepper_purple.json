@@ -1,0 +1,38 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bell_pepper_purple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_purple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:purple_dye_from_bell_pepper_purple"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bell_pepper_purple"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:purple_dye_from_bell_pepper_purple"
+    ]
+  }
+}

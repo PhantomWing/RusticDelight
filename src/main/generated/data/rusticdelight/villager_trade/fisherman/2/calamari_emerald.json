@@ -2,11 +2,11 @@
   "fabric:load_conditions": [
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "enable_villager_trades"
+      "settingId": "enable_villager_trades"
     },
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "squids_drop_calamari"
+      "settingId": "squids_drop_calamari"
     }
   ],
   "gives": {

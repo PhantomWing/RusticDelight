@@ -1,128 +1,17 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"tray_top": "rusticdelight:block/rice_roll_royale_tray_top",
 		"particle": "rusticdelight:block/rice_roll_royale",
 		"food": "rusticdelight:block/rice_roll_royale",
-		"tray_bottom": "rusticdelight:block/tray_bottom"
+		"platter": "rusticdelight:block/rice_roll_royale_platter"
 	},
 	"elements": [
 		{
-			"name": "tray",
-			"from": [1, 0, 1],
-			"to": [15, 2, 15],
-			"faces": {
-				"north": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
-				"east": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
-				"south": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
-				"west": {"uv": [1, 11, 15, 13], "texture": "#tray_bottom"},
-				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
-				"down": {"uv": [1, 1, 15, 15], "texture": "#tray_top"}
-			}
-		},
-		{
-			"name": "kelp roll 2",
-			"from": [2, 2, 6],
-			"to": [5, 5, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [-9, 0, 0]},
-			"faces": {
-				"north": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"east": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"south": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"west": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"up": {"uv": [12, 4, 15, 7], "texture": "#food"},
-				"down": {"uv": [12, 4, 15, 7], "texture": "#food"}
-			}
-		},
-		{
-			"name": "kelp roll 3",
-			"from": [2, 2, 10],
-			"to": [5, 5, 13],
-			"rotation": {"angle": 0, "axis": "y", "origin": [-9, 0, 4]},
-			"faces": {
-				"north": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"east": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"south": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"west": {"uv": [12, 0, 15, 3], "texture": "#food"},
-				"up": {"uv": [12, 4, 15, 7], "texture": "#food"},
-				"down": {"uv": [12, 4, 15, 7], "texture": "#food"}
-			}
-		},
-		{
-			"name": "green bell pepper roll",
-			"from": [6, 2, 2],
-			"to": [8, 4, 7],
-			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 0, 0]},
-			"faces": {
-				"north": {"uv": [4, 5, 6, 7], "texture": "#food"},
-				"east": {"uv": [6, 4, 11, 6], "texture": "#food"},
-				"south": {"uv": [4, 5, 6, 7], "texture": "#food"},
-				"west": {"uv": [6, 4, 11, 6], "texture": "#food"},
-				"up": {"uv": [4, 0, 6, 5], "texture": "#food"},
-				"down": {"uv": [4, 0, 6, 5], "texture": "#food"}
-			}
-		},
-		{
-			"name": "red bell pepper roll",
-			"from": [9, 2, 2],
-			"to": [11, 4, 7],
-			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 0]},
-			"faces": {
-				"north": {"uv": [2, 5, 4, 7], "texture": "#food"},
-				"east": {"uv": [6, 2, 11, 4], "texture": "#food"},
-				"south": {"uv": [2, 5, 4, 7], "texture": "#food"},
-				"west": {"uv": [6, 2, 11, 4], "texture": "#food"},
-				"up": {"uv": [2, 0, 4, 5], "texture": "#food"},
-				"down": {"uv": [2, 0, 4, 5], "texture": "#food"}
-			}
-		},
-		{
-			"name": "yellow bell pepper roll",
-			"from": [12, 2, 2],
-			"to": [14, 4, 7],
-			"rotation": {"angle": 0, "axis": "y", "origin": [10, 0, 0]},
-			"faces": {
-				"north": {"uv": [0, 5, 2, 7], "texture": "#food"},
-				"east": {"uv": [6, 0, 11, 2], "texture": "#food"},
-				"south": {"uv": [0, 5, 2, 7], "texture": "#food"},
-				"west": {"uv": [6, 0, 11, 2], "texture": "#food"},
-				"up": {"uv": [0, 0, 2, 5], "texture": "#food"},
-				"down": {"uv": [0, 0, 2, 5], "texture": "#food"}
-			}
-		},
-		{
-			"name": "cherry blossom roll",
-			"from": [9, 2, 9],
-			"to": [11, 4, 14],
-			"rotation": {"angle": 0, "axis": "y", "origin": [11, 3, 11.5]},
-			"faces": {
-				"north": {"uv": [2, 13, 4, 15], "texture": "#food"},
-				"east": {"uv": [6, 10, 11, 12], "texture": "#food"},
-				"south": {"uv": [2, 13, 4, 15], "texture": "#food"},
-				"west": {"uv": [6, 10, 11, 12], "texture": "#food"},
-				"up": {"uv": [2, 8, 4, 13], "rotation": 180, "texture": "#food"},
-				"down": {"uv": [2, 8, 4, 13], "rotation": 180, "texture": "#food"}
-			}
-		},
-		{
-			"name": "calamari roll",
-			"from": [6, 2, 9],
-			"to": [8, 4, 14],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 11.5]},
-			"faces": {
-				"north": {"uv": [0, 13, 2, 15], "texture": "#food"},
-				"east": {"uv": [6, 8, 11, 10], "texture": "#food"},
-				"south": {"uv": [0, 13, 2, 15], "texture": "#food"},
-				"west": {"uv": [6, 8, 11, 10], "texture": "#food"},
-				"up": {"uv": [0, 8, 2, 13], "rotation": 180, "texture": "#food"},
-				"down": {"uv": [0, 8, 2, 13], "rotation": 180, "texture": "#food"}
-			}
-		},
-		{
 			"name": "container",
-			"from": [12, 2, 12],
-			"to": [14, 6, 14],
-			"rotation": {"angle": 0, "axis": "y", "origin": [12, 3, 12]},
+			"from": [12, 3, 11],
+			"to": [14, 7, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 4, 11]},
 			"faces": {
 				"north": {"uv": [12, 8, 14, 12], "texture": "#food"},
 				"east": {"uv": [12, 8, 14, 12], "texture": "#food"},
@@ -134,9 +23,9 @@
 		},
 		{
 			"name": "chopstick 1",
-			"from": [13, 6, 12],
-			"to": [14, 11, 13],
-			"rotation": {"angle": 0, "axis": "y", "origin": [13, 7, 13]},
+			"from": [13, 7, 11],
+			"to": [14, 12, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 8, 12]},
 			"faces": {
 				"north": {"uv": [15, 8, 16, 12], "texture": "#food"},
 				"east": {"uv": [14, 8, 15, 12], "texture": "#food"},
@@ -148,9 +37,9 @@
 		},
 		{
 			"name": "chopstick 2",
-			"from": [12, 6, 13],
-			"to": [13, 11, 14],
-			"rotation": {"angle": 0, "axis": "y", "origin": [12, 7, 14]},
+			"from": [12, 7, 12],
+			"to": [13, 12, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 8, 13]},
 			"faces": {
 				"north": {"uv": [15, 8, 16, 12], "texture": "#food"},
 				"east": {"uv": [14, 8, 15, 12], "texture": "#food"},
@@ -159,23 +48,164 @@
 				"up": {"uv": [15, 12, 16, 13], "texture": "#food"},
 				"down": {"uv": [14, 12, 15, 13], "texture": "#food"}
 			}
+		},
+		{
+			"name": "base",
+			"from": [1, 1, 2],
+			"to": [15, 3, 14],
+			"faces": {
+				"north": {"uv": [0, 12, 14, 14], "texture": "#platter"},
+				"east": {"uv": [14, 0, 16, 12], "rotation": 90, "texture": "#platter"},
+				"south": {"uv": [0, 12, 14, 14], "texture": "#platter"},
+				"west": {"uv": [14, 12, 16, 0], "rotation": 90, "texture": "#platter"},
+				"up": {"uv": [0, 0, 14, 12], "texture": "#platter"},
+				"down": {"uv": [0, 0, 14, 12], "texture": "#platter"}
+			}
+		},
+		{
+			"name": "east_support",
+			"from": [11, 0, 2],
+			"to": [13, 1, 14],
+			"faces": {
+				"north": {"uv": [14, 15, 16, 16], "texture": "#platter"},
+				"east": {"uv": [2, 15, 14, 16], "texture": "#platter"},
+				"south": {"uv": [0, 15, 2, 16], "texture": "#platter"},
+				"west": {"uv": [2, 15, 14, 16], "texture": "#platter"},
+				"down": {"uv": [2, 14, 14, 16], "rotation": 90, "texture": "#platter", "cullface": "down"}
+			}
+		},
+		{
+			"name": "west_support",
+			"from": [3, 0, 2],
+			"to": [5, 1, 14],
+			"faces": {
+				"north": {"uv": [14, 15, 16, 16], "texture": "#platter"},
+				"east": {"uv": [2, 15, 14, 16], "texture": "#platter"},
+				"south": {"uv": [0, 15, 2, 16], "texture": "#platter"},
+				"west": {"uv": [2, 15, 14, 16], "texture": "#platter"},
+				"down": {"uv": [2, 14, 14, 16], "rotation": 90, "texture": "#platter", "cullface": "down"}
+			}
+		},
+		{
+			"name": "kelp roll 2",
+			"from": [2, 3, 7],
+			"to": [5, 6, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-9, 1, 1]},
+			"faces": {
+				"north": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"east": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"south": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"west": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"up": {"uv": [12, 4, 15, 7], "texture": "#food"},
+				"down": {"uv": [12, 4, 15, 7], "texture": "#food"}
+			}
+		},
+		{
+			"name": "kelp roll 3",
+			"from": [3, 3, 10],
+			"to": [6, 6, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-8, 1, 4]},
+			"faces": {
+				"north": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"east": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"south": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"west": {"uv": [12, 0, 15, 3], "texture": "#food"},
+				"up": {"uv": [12, 4, 15, 7], "texture": "#food"},
+				"down": {"uv": [12, 4, 15, 7], "texture": "#food"}
+			}
+		},
+		{
+			"name": "green bell pepper roll",
+			"from": [6, 3, 3],
+			"to": [8, 5, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 1, 1]},
+			"faces": {
+				"north": {"uv": [4, 5, 6, 7], "texture": "#food"},
+				"east": {"uv": [6, 4, 11, 6], "texture": "#food"},
+				"south": {"uv": [4, 5, 6, 7], "texture": "#food"},
+				"west": {"uv": [6, 4, 11, 6], "texture": "#food"},
+				"up": {"uv": [4, 0, 6, 5], "texture": "#food"},
+				"down": {"uv": [4, 0, 6, 5], "texture": "#food"}
+			}
+		},
+		{
+			"name": "red bell pepper roll",
+			"from": [9, 3, 3],
+			"to": [11, 5, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 1, 1]},
+			"faces": {
+				"north": {"uv": [2, 5, 4, 7], "texture": "#food"},
+				"east": {"uv": [6, 2, 11, 4], "texture": "#food"},
+				"south": {"uv": [2, 5, 4, 7], "texture": "#food"},
+				"west": {"uv": [6, 2, 11, 4], "texture": "#food"},
+				"up": {"uv": [2, 0, 4, 5], "texture": "#food"},
+				"down": {"uv": [2, 0, 4, 5], "texture": "#food"}
+			}
+		},
+		{
+			"name": "yellow bell pepper roll",
+			"from": [12, 3, 3],
+			"to": [14, 5, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [10, 1, 1]},
+			"faces": {
+				"north": {"uv": [0, 5, 2, 7], "texture": "#food"},
+				"east": {"uv": [6, 0, 11, 2], "texture": "#food"},
+				"south": {"uv": [0, 5, 2, 7], "texture": "#food"},
+				"west": {"uv": [6, 0, 11, 2], "texture": "#food"},
+				"up": {"uv": [0, 0, 2, 5], "texture": "#food"},
+				"down": {"uv": [0, 0, 2, 5], "texture": "#food"}
+			}
+		},
+		{
+			"name": "cherry blossom roll",
+			"from": [10, 3, 8],
+			"to": [12, 5, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 4, 10.5]},
+			"faces": {
+				"north": {"uv": [2, 13, 4, 15], "texture": "#food"},
+				"east": {"uv": [6, 10, 11, 12], "texture": "#food"},
+				"south": {"uv": [2, 13, 4, 15], "texture": "#food"},
+				"west": {"uv": [6, 10, 11, 12], "texture": "#food"},
+				"up": {"uv": [2, 8, 4, 13], "rotation": 180, "texture": "#food"},
+				"down": {"uv": [2, 8, 4, 13], "rotation": 180, "texture": "#food"}
+			}
+		},
+		{
+			"name": "calamari roll",
+			"from": [7, 3, 8],
+			"to": [9, 5, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 4, 10.5]},
+			"faces": {
+				"north": {"uv": [0, 13, 2, 15], "texture": "#food"},
+				"east": {"uv": [6, 8, 11, 10], "texture": "#food"},
+				"south": {"uv": [0, 13, 2, 15], "texture": "#food"},
+				"west": {"uv": [6, 8, 11, 10], "texture": "#food"},
+				"up": {"uv": [0, 8, 2, 13], "rotation": 180, "texture": "#food"},
+				"down": {"uv": [0, 8, 2, 13], "rotation": 180, "texture": "#food"}
+			}
 		}
 	],
 	"groups": [
-		0,
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
 		{
 			"name": "chopsticks",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
-			"children": [9, 10, 11]
+			"children": [0, 1, 2]
+		},
+		{
+			"name": "platter",
+			"origin": [1, 1, 1],
+			"scope": 0,
+			"color": 0,
+			"children": [3, 4, 5]
+		},
+		{
+			"name": "sushi",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [6, 7, 8, 9, 10, 11, 12, 13]
 		}
 	]
 }

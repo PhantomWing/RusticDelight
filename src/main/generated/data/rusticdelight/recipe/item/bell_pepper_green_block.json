@@ -1,0 +1,21 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "rusticdelight:bell_pepper_green_block"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 9,
+        "id": "rusticdelight:bell_pepper_slice_green"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

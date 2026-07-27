@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "rusticdelight:wandering_trader/pale_bell_pepper_seeds_for_emerald",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:wandering_trader/dark_bell_pepper_seeds_for_emerald",
+      "required": false
+    }
+  ]
+}

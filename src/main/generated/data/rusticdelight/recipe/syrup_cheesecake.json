@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
@@ -8,9 +14,9 @@
     "T": "#rusticdelight:syrup"
   },
   "pattern": [
-    "TTT",
-    "MMM",
-    "SCS"
+    " T ",
+    "SSS",
+    "MCM"
   ],
   "result": {
     "id": "rusticdelight:syrup_cheesecake"

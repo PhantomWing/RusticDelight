@@ -79,6 +79,21 @@ public class ConsumableValues {
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 900, 1, false, false), 1.0F))
             .build();
 
+    // Leans on Haste, where Cherry Blossom Coffee leans on Speed.
+    public static final Consumable PUMPKIN_COFFEE = Consumables.defaultDrink()
+            .consumeSeconds(CONSUME_FAST)
+            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.MILK_BOTTLE_IGNORED))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 1, false, false), 1.0F))
+            .build();
+
+    public static final Consumable CHERRY_BLOSSOM_COFFEE = Consumables.defaultDrink()
+            .consumeSeconds(CONSUME_FAST)
+            .onConsume(new RemoveRandomStatusEffectsConsumeEffect(FDRefabricatedTags.MobEffects.MILK_BOTTLE_IGNORED))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 1, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 0, false, false), 1.0F))
+            .build();
+
     // Sweets
     public static final Consumable FRUIT_BEIGNET = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 600, 0,false, false), 1.0F))
@@ -98,6 +113,16 @@ public class ConsumableValues {
     public static final Consumable PUMPKIN_PANCAKE = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F))
             .build();
+    // Carries the coffee family's Haste rather than a pancake effect.
+    public static final Consumable COFFEE_PANCAKE = Consumables.defaultFood()
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 600, 0, false, false), 1.0F))
+            .build();
+    // Farmer's Delight's pie slice, plus the Haste every other coffee item carries.
+    public static final Consumable COFFEE_CHEESECAKE_SLICE = Consumables.defaultFood()
+            .consumeSeconds(CONSUME_FAST)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 600, 0, false, false), 1.0F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 600, 0, false, false), 1.0F))
+            .build();
 
     // Bowl foods
     public static final Consumable POTATO_SALAD = Consumables.defaultFood()
@@ -107,6 +132,9 @@ public class ConsumableValues {
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0, false, false), 1.0F))
             .build();
     public static final Consumable BELL_PEPPER_SOUP = Consumables.defaultFood()
+            .onConsume(new ApplyStatusEffectsConsumeEffect(nourishment(MEDIUM_DURATION), 1.0F))
+            .build();
+    public static final Consumable CALAMARI_SOUP = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(nourishment(MEDIUM_DURATION), 1.0F))
             .build();
 
