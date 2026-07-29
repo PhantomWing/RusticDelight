@@ -1,3 +1,11 @@
+# 1.7.1
+### Changes
+- Updated Japanese translations (thank you HayaKoh!)
+
+### Fixes
+- Fixed Squids & Glow Squids not dropping Calamari
+
+
 # 1.7.0
 From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed with vibrant new bell pepper varieties, comforting recipes, world generation improvements, and plenty of delightful surprises waiting to be discovered.
 
