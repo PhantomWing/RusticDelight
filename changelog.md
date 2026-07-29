@@ -45,6 +45,7 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
 - Pancake block models are now named after the number of pancakes on the stack (`<flavour>_stack_6` rather than `<flavour>_stage0`), which resource packs targeting them will need to follow
 
 ### Fixes
+- Fixed the Fisherman's Cooked Calamari trade having its costs in the wrong order, matching vanilla's cooked fish trades
 - Potion of Haste is now brewed from an Awkward Potion rather than straight from a Water Bottle, matching every other potion
 
 

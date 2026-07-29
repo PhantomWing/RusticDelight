@@ -112,6 +112,11 @@ public class RusticDelightConfig implements ConfigData {
             case ENABLE_CHERRY_BLOSSOM_FOODS_ID -> config.enable_cherry_blossom_foods;
             case ENABLE_PANCAKES_ID -> config.enable_pancakes;
             case ENABLE_SYRUP_FOODS_ID -> config.enable_syrup_foods;
+            // Per-feature gates: a chance of zero disables the feature, not just its spawning.
+            case CHANCE_WILD_COTTON_ID -> config.wild_cotton_chance > 0;
+            case CHANCE_WILD_BELL_PEPPERS_ID -> config.wild_bell_peppers_chance > 0;
+            case CHANCE_WILD_COFFEE_ID -> config.wild_coffee_chance > 0;
+            case CHANCE_BELL_PEPPER_BLOCK_PATCH_ID -> config.bell_pepper_block_patch_chance > 0;
             default -> false;
         };
     }

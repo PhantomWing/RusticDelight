@@ -62,10 +62,18 @@ public class ModVillagerTrades extends FabricDynamicRegistryProvider {
 
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
-        ResourceCondition cottonEnabled = featureEnabled(RusticDelightConfig.ENABLE_COTTON_ID);
-        ResourceCondition bellPepperEnabled = featureEnabled(RusticDelightConfig.ENABLE_BELL_PEPPERS_ID);
-        ResourceCondition coffeeEnabled = featureEnabled(RusticDelightConfig.ENABLE_COFFEE_ID);
-        ResourceCondition calamariEnabled = featureEnabled(RusticDelightConfig.SQUIDS_DROP_CALAMARI_ID);
+        // A family's trades need both its master toggle AND a non-zero wild-gen chance: setting the
+        // chance to zero has always disabled the whole feature, trades included.
+        ResourceCondition[] cottonEnabled = {
+                featureEnabled(RusticDelightConfig.ENABLE_COTTON_ID),
+                featureEnabled(RusticDelightConfig.CHANCE_WILD_COTTON_ID)};
+        ResourceCondition[] bellPepperEnabled = {
+                featureEnabled(RusticDelightConfig.ENABLE_BELL_PEPPERS_ID),
+                featureEnabled(RusticDelightConfig.CHANCE_WILD_BELL_PEPPERS_ID)};
+        ResourceCondition[] coffeeEnabled = {
+                featureEnabled(RusticDelightConfig.ENABLE_COFFEE_ID),
+                featureEnabled(RusticDelightConfig.CHANCE_WILD_COFFEE_ID)};
+        ResourceCondition[] calamariEnabled = {featureEnabled(RusticDelightConfig.SQUIDS_DROP_CALAMARI_ID)};
 
         // Farmer level 1: 24 cotton -> 1 emerald, 24 bell peppers -> 1 emerald, 26 coffee -> 1 emerald
         addVillagerTrade(entries, FARMER_1_COTTON_EMERALD, emeraldsFor(ModItems.COTTON_BOLL, 24, 16, 2), cottonEnabled);
@@ -75,8 +83,11 @@ public class ModVillagerTrades extends FabricDynamicRegistryProvider {
         // Farmer level 5: 3 emeralds -> 3 golden coffee beans
         addVillagerTrade(entries, FARMER_5_GOLDEN_COFFEE_BEANS, itemsForEmeralds(ModItems.GOLDEN_COFFEE_BEANS, 3, 3, 12, 30), coffeeEnabled);
 
-        // Fisherman level 1: 1 emerald + 6 raw calamari -> 6 cooked calamari
-        addVillagerTrade(entries, FISHERMAN_1_COOKED_CALAMARI, compoundTrade(Items.EMERALD, 1, ModItems.CALAMARI, 6, ModItems.COOKED_CALAMARI, 6, 16, 1), calamariEnabled);
+        // Fisherman level 1: 6 raw calamari + 1 emerald -> 6 cooked calamari.
+        // Order matters: vanilla's cooked-fish trades put the fish in `wants` and the emerald in
+        // `additional_wants` (see minecraft:fisherman/1/raw_cod_and_emerald_cooked_cod), so this
+        // reads the same way round as every other fish trade in the villager UI.
+        addVillagerTrade(entries, FISHERMAN_1_COOKED_CALAMARI, compoundTrade(ModItems.CALAMARI, 6, Items.EMERALD, 1, ModItems.COOKED_CALAMARI, 6, 16, 1), calamariEnabled);
 
         // Fisherman level 2: 15 raw calamari -> 1 emerald
         addVillagerTrade(entries, FISHERMAN_2_CALAMARI_EMERALD, emeraldsFor(ModItems.CALAMARI, 15, 16, 10), calamariEnabled);

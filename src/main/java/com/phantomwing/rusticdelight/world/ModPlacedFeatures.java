@@ -35,8 +35,6 @@ public class ModPlacedFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        // Scattering for the wild crops lives in the IN_ORDER sub-features, so their placement
-        // chain only has to pick one anchor point per chunk.
         registerWildCrop(context, configuredFeatures, WILD_COTTON_PLACED_KEY, ModConfiguredFeatures.WILD_COTTON_KEY, RusticDelightConfig.CHANCE_WILD_COTTON_ID);
         registerWildCrop(context, configuredFeatures, WILD_BELL_PEPPERS_PLACED_KEY, ModConfiguredFeatures.WILD_BELL_PEPPERS_KEY, RusticDelightConfig.CHANCE_WILD_BELL_PEPPERS_ID);
         registerWildCrop(context, configuredFeatures, WILD_COFFEE_PLACED_KEY, ModConfiguredFeatures.WILD_COFFEE_KEY, RusticDelightConfig.CHANCE_WILD_COFFEE_ID);
@@ -73,9 +71,14 @@ public class ModPlacedFeatures {
                 ));
     }
 
+    /**
+     * The IN_ORDER sub-features only offset around the position they are given, so without the
+     * count the whole patch gets a single placement attempt per chunk and almost never survives
+     * its block predicates.
+     */
     private static void registerWildCrop(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures, ResourceKey<PlacedFeature> placedFeatureKey, ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, String configuredChanceId) {
         register(context, placedFeatureKey, configuredFeatures.getOrThrow(configuredFeatureKey), List.of(ConfigurableRarityFilter.withConfigurableChance(configuredChanceId),
-                InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())
+                InSquarePlacement.spread(), CountPlacement.of(64), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())
         );
     }
 
