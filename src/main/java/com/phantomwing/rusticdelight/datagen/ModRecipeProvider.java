@@ -659,9 +659,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         // Honey Coffee
         coffeeDrink(coffeeOutput, ModItems.HONEY_COFFEE, Ingredient.of(Items.HONEY_BOTTLE));
 
-        // Syrup Coffee
+        // Syrup Coffee - the tag, so modded syrups work here like they do in the crafted variants.
         coffeeDrink(family(output, RusticDelightConfig.ENABLE_COFFEE_ID, RusticDelightConfig.ENABLE_SYRUP_FOODS_ID),
-                ModItems.SYRUP_COFFEE, Ingredient.of(ModItems.SYRUP));
+                ModItems.SYRUP_COFFEE, Ingredient.of(ModTags.Items.SYRUP));
 
         // Pumpkin Coffee
         coffeeDrink(coffeeOutput, ModItems.PUMPKIN_COFFEE,
