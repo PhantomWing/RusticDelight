@@ -20,7 +20,7 @@
     "#rusticdelight:coffee_ingredients",
     "#rusticdelight:coffee_ingredients",
     "#c:drinks/milk",
-    "rusticdelight:syrup"
+    "#rusticdelight:syrup"
   ],
   "recipe_book_tab": "drinks",
   "result": {

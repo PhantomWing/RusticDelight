@@ -1,3 +1,15 @@
+# 1.7.2
+### Additions
+- Added compatibility with Hearth and Harvest: its Syrup Bottle can be used in place of Syrup
+
+### Changes
+- Taking a pancake from a placed stack now puts it straight into your inventory
+
+### Fixes
+- Fixed taking the last pancake from a placed stack giving two pancakes
+- Fixed the Fisherman's Cooked Calamari trade having its costs in the wrong order, matching vanilla's cooked fish trades
+
+
 # 1.7.1
 ### Changes
 - Updated Japanese translations (thank you HayaKoh!)

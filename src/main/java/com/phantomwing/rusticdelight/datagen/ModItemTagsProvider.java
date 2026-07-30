@@ -84,6 +84,8 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.SYRUP).add(
                 ModItems.SYRUP
         );
+        // Hearth and Harvest's syrup bottle works anywhere our syrup does.
+        addOptionalElement(ModTags.Items.SYRUP, compatItem(CompatibilityTags.HEARTH_AND_HARVEST, "syrup_bottle"));
 
         valueLookupBuilder(ModTags.Items.SWEET_LIQUIDS).add(
                 Items.HONEY_BOTTLE

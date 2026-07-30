@@ -102,9 +102,11 @@ public class ModVillagers {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 1,
                 factories -> {
                     if (ItemFamily.CALAMARI.isEnabled()) {
+                        // Fish first, emerald second, matching vanilla's cooked fish trades. Costs
+                        // are discounted on the primary slot only, so the order is not cosmetic.
                         factories.add(((world, entity, random) -> new MerchantOffer(
-                                new ItemCost(Items.EMERALD, 1),
-                                Optional.of(new ItemCost(ModItems.CALAMARI, 6)),
+                                new ItemCost(ModItems.CALAMARI, 6),
+                                Optional.of(new ItemCost(Items.EMERALD, 1)),
                                 new ItemStack(ModItems.COOKED_CALAMARI, 6),
                                 16, 1, PRICE_MULTIPLIER
                         )));
