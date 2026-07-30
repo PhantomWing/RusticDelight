@@ -29,6 +29,7 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
   - `enable_potato_slices`
   - `enable_syrup_foods`
 - Added 3D models for many of the new items added in this update (requires Brewin' and Chewin' coaster)
+- Added compatibility with Hearth and Harvest: its Syrup Bottle can be used in place of Syrup
 - Added Ukrainian translations (thank you hikarosato!)
 
 ### Changes

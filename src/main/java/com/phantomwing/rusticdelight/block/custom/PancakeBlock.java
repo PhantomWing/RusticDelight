@@ -29,7 +29,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 import java.util.function.Supplier;
 
@@ -101,10 +100,14 @@ public class PancakeBlock extends Block {
     }
 
     protected InteractionResult takeServing(Level level, BlockPos pos, BlockState state, Player player) {
-        // Drop the serving item.
-        Direction direction = player.getDirection().getOpposite();
-        ItemUtils.spawnItemEntity(level, this.getServingItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5,
-                direction.getStepX() * 0.15, 0.05, direction.getStepZ() * 0.15);
+        // Straight into the inventory, dropping only what doesn't fit — same as FD's FeastBlock,
+        // which Rice Roll Royale and the Bell Pepper Medleys already inherit.
+        if (!level.isClientSide()) {
+            ItemStack serving = this.getServingItem();
+            if (!player.getInventory().add(serving)) {
+                player.drop(serving, false);
+            }
+        }
 
         // Spawn crumb particles using the pancake's texture — matches FD's PieBlock/FeastBlock.
         spawnServingParticles(level, pos, state);
@@ -159,7 +162,9 @@ public class PancakeBlock extends Block {
         if (present > 1) {
             level.setBlock(pos, state.setValue(SERVINGS, servingsFor(present - 1)), Block.UPDATE_ALL);
         } else {
-            level.destroyBlock(pos, true);
+            // No loot: takeServing already handed the player this last pancake, and the loot table
+            // would drop the block's remaining serving a second time.
+            level.destroyBlock(pos, false);
         }
     }
 

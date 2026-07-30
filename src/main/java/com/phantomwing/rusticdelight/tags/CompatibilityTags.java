@@ -52,6 +52,9 @@ public class CompatibilityTags
     public static final TagKey<Item> BREWIN_AND_CHEWIN_PIZZA_TOPPING = externalItemTag(BREWIN_AND_CHEWIN, "foods/pizza_topping");
     public static final TagKey<Item> BREWIN_AND_CHEWIN_CHEESE_WEDGE = externalItemTag(BREWIN_AND_CHEWIN, "foods/cheese_wedge");
 
+    // Hearth and Harvest
+    public static final String HEARTH_AND_HARVEST = "hearthandharvest";
+
     private static TagKey<Item> externalItemTag(String modId, String path) {
         return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(modId, path));
     }
