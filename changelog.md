@@ -4,6 +4,7 @@
 
 ### Changes
 - Taking a pancake from a placed stack now puts it straight into your inventory
+- Updated Japanese translations (thank you HayaKoh!)
 
 ### Fixes
 - Fixed taking the last pancake from a placed stack giving two pancakes
