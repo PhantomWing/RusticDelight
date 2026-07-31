@@ -175,6 +175,21 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
             ModItems.WILD_COFFEE
         );
 
+        // Sulphur Cubes: the giant bell peppers are gourds, so they grant the same archetype
+        // vanilla gives Melon and Pumpkin. This tag is a member of sulfur_cube_swallowable,
+        // so no separate entry is needed there.
+        itemTag(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_FLAT).add(
+            ModItems.BELL_PEPPER_GREEN_BLOCK,
+            ModItems.BELL_PEPPER_YELLOW_BLOCK,
+            ModItems.BELL_PEPPER_RED_BLOCK,
+            ModItems.BELL_PEPPER_ORANGE_BLOCK,
+            ModItems.BELL_PEPPER_WHITE_BLOCK,
+            ModItems.BELL_PEPPER_PINK_BLOCK,
+            ModItems.BELL_PEPPER_BLUE_BLOCK,
+            ModItems.BELL_PEPPER_PURPLE_BLOCK,
+            ModItems.BELL_PEPPER_BLACK_BLOCK
+        );
+
         // Animal food
         itemTag(ItemTags.CHICKEN_FOOD).add(
             ModItems.COTTON_SEEDS,

@@ -9,6 +9,7 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
 - Added **Bell Pepper Medley**, a new feast crafted with 1 of each stuffed bell pepper color
 - Added **Giant Bell Pepper** block for each color, crafted with Bell Pepper Slice and randomly found in jungles (rare)
   - Configurable with the `bell_pepper_block_patch_chance` config option (set to zero to turn off spawning)
+  - Sulfur Cubes can swallow them, with the same effects as a Melon or Pumpkin
 - Added two new types of coffee: **Pumpkin Coffee** and **Cherry Blossom Coffee**
 - Added **Fried Fish**: new fried food crafted with any safe fish, Batter and Cooking Oil
 - Added **Coffee Cheesecake** and **Slice of Coffee Cheesecake**
