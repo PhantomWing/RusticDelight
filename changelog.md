@@ -35,12 +35,13 @@ From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed 
 ### Changes
 - Updated Farmer's Delight Refabricated to 3.6.5 (now the minimum required version)
 - Updated Japanese translations (thank you HayaKoh!)
-- You no longer need a knife to get a single pancake: Pancakes are now taken from the block by right-clicking, instead of being eaten directly.
+- You no longer need a knife to get a single pancake: Pancakes are now taken from the block by right-clicking, and go straight into your inventory
 - Breaking a pancake block now drops the remaining pancakes as individual pancake items
 - Updated Rice Roll Royale texture & models to match Farmer's Delight latest Rice Roll Medley changes
 - Rebalanced cheesecake recipes
 - Improved Cherry Blossom Pancakes model
 - Improved various textures, such as Cotton Boll, Wild Bell Peppers, Coffee Beans
+- Wild Coffee and Wild Bell Peppers now spawn about twice as often
 - Villagers can now consume Rustic Delight crops, making them compatible for automated villager farms
 - Wandering traders now rarely offer Pale and Dark Bell Pepper Seeds
 - Pancake block models are now named after the number of pancakes on the stack (`<flavour>_stack_6` rather than `<flavour>_stage0`), which resource packs targeting them will need to follow
