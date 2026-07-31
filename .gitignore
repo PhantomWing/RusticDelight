@@ -20,6 +20,9 @@ build
 # datagen
 .cache
 
+# local jars, ignored on every branch so switching branches does not delete them
+libs
+
 # other
 eclipse
 run
