@@ -32,8 +32,11 @@ bin/
 
 run/
 
-# datagen — content-addressed cache, regenerated on each run (any location)
+# datagen, content-addressed cache, regenerated on each run (any location)
 .cache/
+
+# local jars, ignored on every branch so switching branches does not delete them
+libs/
 
 # java
 
