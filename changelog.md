@@ -1,3 +1,16 @@
+# 1.7.1
+### Additions
+- Added compatibility with Hearth and Harvest: its Syrup Bottle can be used in place of Syrup
+
+### Changes
+- Taking a pancake from a placed stack now puts it straight into your inventory
+- Updated Japanese translations (thank you HayaKoh!)
+
+### Fixes
+- Fixed taking the last pancake from a placed stack giving two pancakes
+- Fixed the Fisherman's Cooked Calamari trade having its costs in the wrong order, matching vanilla's cooked fish trades
+
+
 # 1.7.0
 From colorful bell peppers to cozy cups of coffee, Rustic Delight 1.7 is packed with vibrant new bell pepper varieties, comforting recipes, world generation improvements, and plenty of delightful surprises waiting to be discovered.
 

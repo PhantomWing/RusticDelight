@@ -81,9 +81,11 @@ public class ModEvents {
         } else if (event.getType() == VillagerProfession.FISHERMAN) {
             if (Configuration.SQUIDS_DROP_CALAMARI.get()) {
                 // Level 1 trades
+                // Fish first, emerald second, matching vanilla's cooked fish trades. Costs
+                // are discounted on the primary slot only, so the order is not cosmetic.
                 trades.get(1).add((trader, random) -> new MerchantOffer(
-                        new ItemCost(Items.EMERALD, 1),
-                        Optional.of(new ItemCost(ModItems.CALAMARI.get(), 6)),
+                        new ItemCost(ModItems.CALAMARI.get(), 6),
+                        Optional.of(new ItemCost(Items.EMERALD, 1)),
                         new ItemStack(ModItems.COOKED_CALAMARI.get(), 6),
                         16,
                         1,

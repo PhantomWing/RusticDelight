@@ -29,7 +29,7 @@
       "tag": "c:drinks/milk"
     },
     {
-      "item": "rusticdelight:syrup"
+      "tag": "rusticdelight:syrup"
     }
   ],
   "recipe_book_tab": "drinks",

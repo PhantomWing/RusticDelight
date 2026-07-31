@@ -80,7 +80,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         this.tag(ModTags.Items.SYRUP).add(
                 ModItems.SYRUP.get()
-        );
+        // Hearth and Harvest's syrup bottle works anywhere our syrup does.
+        ).addOptional(ResourceLocation.fromNamespaceAndPath(CompatibilityTags.HEARTH_AND_HARVEST, "syrup_bottle"));
 
         this.tag(ModTags.Items.SWEET_LIQUIDS).add(
                 Items.HONEY_BOTTLE

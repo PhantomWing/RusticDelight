@@ -48,6 +48,9 @@ public class CompatibilityTags
     // Farmer's Respite
     public static final String FARMERS_RESPITE = "farmersrespite";
 
+    // Hearth and Harvest
+    public static final String HEARTH_AND_HARVEST = "hearthandharvest";
+
     // Brewin' and Chewin'
     public static final String BREWIN_AND_CHEWIN = "brewinandchewin";
     public static final TagKey<Item> BREWIN_AND_CHEWIN_PIZZA_TOPPING = externalItemTag(BREWIN_AND_CHEWIN, "foods/pizza_topping");

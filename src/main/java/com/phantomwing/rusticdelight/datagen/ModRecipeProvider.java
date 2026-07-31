@@ -788,7 +788,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(CommonTags.DRINKS_MILK)
-                .addIngredient(ModItems.SYRUP)
+                .addIngredient(ModTags.Items.SYRUP)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS)
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(output.withConditions(
