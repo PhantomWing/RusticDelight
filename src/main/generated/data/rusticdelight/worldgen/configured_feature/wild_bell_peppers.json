@@ -62,10 +62,27 @@
           "type": "minecraft:simple_block",
           "config": {
             "to_place": {
-              "type": "minecraft:simple_state_provider",
-              "state": {
-                "Name": "rusticdelight:wild_bell_peppers"
-              }
+              "type": "minecraft:weighted_state_provider",
+              "entries": [
+                {
+                  "data": {
+                    "Name": "rusticdelight:wild_bell_peppers"
+                  },
+                  "weight": 90
+                },
+                {
+                  "data": {
+                    "Name": "rusticdelight:wild_pale_bell_peppers"
+                  },
+                  "weight": 5
+                },
+                {
+                  "data": {
+                    "Name": "rusticdelight:wild_dark_bell_peppers"
+                  },
+                  "weight": 5
+                }
+              ]
             }
           }
         },

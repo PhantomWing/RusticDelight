@@ -1,0 +1,18 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "rusticdelight:bell_pepper_slice_pink",
+    "rusticdelight:bell_pepper_slice_pink",
+    "farmersdelight:cooked_rice"
+  ],
+  "result": {
+    "count": 2,
+    "id": "rusticdelight:bell_pepper_roll_pink"
+  }
+}

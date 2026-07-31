@@ -1,3 +1,7 @@
 accessWidener v2 official
 
 mutable field net/minecraft/world/entity/npc/villager/Villager FOOD_POINTS Ljava/util/Map;
+
+# Needed to append our crops to the vanilla village farm processor lists.
+accessible field net/minecraft/world/level/levelgen/structure/templatesystem/StructureProcessorList list Ljava/util/List;
+mutable field net/minecraft/world/level/levelgen/structure/templatesystem/StructureProcessorList list Ljava/util/List;

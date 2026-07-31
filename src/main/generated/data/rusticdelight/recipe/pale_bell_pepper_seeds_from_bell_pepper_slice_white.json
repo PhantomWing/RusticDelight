@@ -1,0 +1,15 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "rusticdelight:bell_pepper_slice_white"
+  ],
+  "result": {
+    "id": "rusticdelight:pale_bell_pepper_seeds"
+  }
+}

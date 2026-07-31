@@ -1,0 +1,38 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ],
+  "parent": "rusticdelight:main/root",
+  "criteria": {
+    "cotton": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:cotton_boll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.cotton.description"
+    },
+    "icon": {
+      "id": "rusticdelight:cotton_boll"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.cotton.title"
+    }
+  },
+  "requirements": [
+    [
+      "cotton"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

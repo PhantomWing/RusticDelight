@@ -1,0 +1,38 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
+  "parent": "rusticdelight:main/root",
+  "criteria": {
+    "coffee_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:coffee_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.coffee_beans.description"
+    },
+    "icon": {
+      "id": "rusticdelight:coffee_beans"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.coffee_beans.title"
+    }
+  },
+  "requirements": [
+    [
+      "coffee_beans"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

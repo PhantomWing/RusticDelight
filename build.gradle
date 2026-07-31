@@ -91,9 +91,14 @@ processResources {
 			fabric_loader_version: fabric_loader_version,
 			fabric_api_version   : fabric_api_version,
 			// Stripped of the +build suffix for a clean dependency predicate (0.152.2+26.2 -> 0.152.2).
-			fabric_api_dep        : fabric_api_version.replaceAll(/\+.*$/, ''),
+			fabric_api_dep       : fabric_api_version.replaceAll(/\+.*$/, ''),
 			cloth_config_version : cloth_config_version,
-			farmersdelight_version: farmersdelight_version
+
+			// FDR declares its version as "26.2-3.6.6+refabricated", which semver reads as version
+			// 26.2 with prerelease 3.6.6, so a bare ">=3.6.6" compares against the 26.2 and admits
+			// every FDR built for this Minecraft version. Match the full coordinate string instead
+			// so the bound actually constrains the Farmer's Delight version.
+			farmersdelight_dep   : "${minecraft_min_version}-${farmersdelight_version}"
 	]
 
 	inputs.properties replaceProperties
@@ -161,7 +166,8 @@ ext.latestChangelog = {
 }
 
 // Modrinth / CurseForge publishing. Dry run (no upload): ./gradlew publishMods -PpublishDryRun
-// Real upload needs MODRINTH_TOKEN / CURSEFORGE_TOKEN env vars and the real project IDs in gradle.properties.
+// A real upload needs modrinth_token / curseforge_token in ~/.gradle/gradle.properties (or the
+// MODRINTH_TOKEN / CURSEFORGE_TOKEN env vars).
 publishMods {
 	// 26.x is unobfuscated: loom has no remapJar, so the `jar` task is the final mod artifact.
 	file = tasks.named("jar", Jar).flatMap { it.archiveFile }

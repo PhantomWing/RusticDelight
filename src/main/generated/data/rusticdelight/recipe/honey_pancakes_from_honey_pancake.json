@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     "rusticdelight:honey_pancake",

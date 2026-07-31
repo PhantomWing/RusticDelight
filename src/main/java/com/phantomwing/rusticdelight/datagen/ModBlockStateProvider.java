@@ -6,6 +6,7 @@ import com.phantomwing.rusticdelight.block.custom.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
@@ -14,7 +15,6 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.renderer.block.dispatch.VariantMutator;
-import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -31,14 +31,20 @@ public class ModBlockStateProvider {
     public static void registerStatesAndModels(BlockModelGenerators g) {
         createClassicCrop(g, ModBlocks.COTTON_CROP, CottonCropBlock.AGE);
         createCrossCrop(g, ModBlocks.BELL_PEPPER_CROP, BellPepperCropBlock.AGE);
+        createCrossCrop(g, ModBlocks.PALE_BELL_PEPPER_CROP, BellPepperCropBlock.AGE);
+        createCrossCrop(g, ModBlocks.DARK_BELL_PEPPER_CROP, BellPepperCropBlock.AGE);
         createCrossCrop(g, ModBlocks.COFFEE_CROP, CoffeeCropBlock.AGE);
 
         makePottedFlower(g, ModBlocks.POTTED_WILD_COTTON, ModBlocks.WILD_COTTON);
         makePottedFlower(g, ModBlocks.POTTED_WILD_BELL_PEPPERS, ModBlocks.WILD_BELL_PEPPERS);
+        makePottedFlower(g, ModBlocks.POTTED_WILD_PALE_BELL_PEPPERS, ModBlocks.WILD_PALE_BELL_PEPPERS);
+        makePottedFlower(g, ModBlocks.POTTED_WILD_DARK_BELL_PEPPERS, ModBlocks.WILD_DARK_BELL_PEPPERS);
         makePottedFlower(g, ModBlocks.POTTED_WILD_COFFEE, ModBlocks.WILD_COFFEE);
 
         canvasBag(g, ModBlocks.COTTON_SEEDS_BAG);
         canvasBag(g, ModBlocks.BELL_PEPPER_SEEDS_BAG);
+        canvasBag(g, ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG);
+        canvasBag(g, ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG);
         canvasBag(g, ModBlocks.COFFEE_BEANS_BAG);
         canvasBag(g, ModBlocks.ROASTED_COFFEE_BEANS_BAG);
 
@@ -46,9 +52,17 @@ public class ModBlockStateProvider {
         farmersDelightCrate(g, ModBlocks.BELL_PEPPER_GREEN_CRATE);
         farmersDelightCrate(g, ModBlocks.BELL_PEPPER_YELLOW_CRATE);
         farmersDelightCrate(g, ModBlocks.BELL_PEPPER_RED_CRATE);
+        farmersDelightCrate(g, ModBlocks.BELL_PEPPER_ORANGE_CRATE);
+        farmersDelightCrate(g, ModBlocks.BELL_PEPPER_WHITE_CRATE);
+        farmersDelightCrate(g, ModBlocks.BELL_PEPPER_PINK_CRATE);
+        farmersDelightCrate(g, ModBlocks.BELL_PEPPER_BLUE_CRATE);
+        farmersDelightCrate(g, ModBlocks.BELL_PEPPER_PURPLE_CRATE);
+        farmersDelightCrate(g, ModBlocks.BELL_PEPPER_BLACK_CRATE);
+        farmersDelightCrate(g, ModBlocks.CALAMARI_CRATE);
 
         pieBlock(g, ModBlocks.SYRUP_CHEESECAKE);
         pieBlock(g, ModBlocks.CHERRY_BLOSSOM_CHEESECAKE);
+        pieBlock(g, ModBlocks.COFFEE_CHEESECAKE);
 
         pancakeBlock(g, ModBlocks.PANCAKES);
         pancakeBlock(g, ModBlocks.HONEY_PANCAKES);
@@ -56,8 +70,20 @@ public class ModBlockStateProvider {
         pancakeBlock(g, ModBlocks.CHERRY_BLOSSOM_PANCAKES);
         pancakeBlock(g, ModBlocks.VEGETABLE_PANCAKES);
         pancakeBlock(g, ModBlocks.PUMPKIN_PANCAKES);
+        pancakeBlock(g, ModBlocks.COFFEE_PANCAKES);
 
         riceRollBlock(g, ModBlocks.RICE_ROLL_ROYALE);
+        medleyBlock(g, ModBlocks.BELL_PEPPER_MEDLEY);
+        medleyBlock(g, ModBlocks.PALE_BELL_PEPPER_MEDLEY);
+        medleyBlock(g, ModBlocks.DARK_BELL_PEPPER_MEDLEY);
+
+        // Giant bell pepper blocks - plain cubes with a matching top texture.
+        for (Block giant : new Block[]{ ModBlocks.BELL_PEPPER_GREEN_BLOCK, ModBlocks.BELL_PEPPER_YELLOW_BLOCK,
+                ModBlocks.BELL_PEPPER_RED_BLOCK, ModBlocks.BELL_PEPPER_ORANGE_BLOCK, ModBlocks.BELL_PEPPER_WHITE_BLOCK,
+                ModBlocks.BELL_PEPPER_PINK_BLOCK, ModBlocks.BELL_PEPPER_BLUE_BLOCK, ModBlocks.BELL_PEPPER_PURPLE_BLOCK,
+                ModBlocks.BELL_PEPPER_BLACK_BLOCK }) {
+            bellPepperBlock(g, giant);
+        }
     }
 
     private static void createClassicCrop(BlockModelGenerators g, Block cropBlock, Property<Integer> ageProperty) {
@@ -129,7 +155,8 @@ public class ModBlockStateProvider {
         MultiVariantGenerator generator = MultiVariantGenerator.dispatch(block)
                 .with(PropertyDispatch.initial(PancakeBlock.FACING, PancakeBlock.SERVINGS)
                         .generate((direction, servings) -> {
-                            String suffix = "_stage" + servings;
+                            // Models are named after the pancakes on show, not the raw property value.
+                            String suffix = "_stack_" + PancakeBlock.pancakesPresentFor(servings);
 
                             Identifier modelLoc = blockResource(blockName(block) + suffix);
                             MultiVariant variant = plainVariant(modelLoc);
@@ -149,7 +176,7 @@ public class ModBlockStateProvider {
                 .with(PropertyDispatch.initial(RiceRollRoyaleBlock.FACING, RiceRollRoyaleBlock.ROLL_SERVINGS)
                         .generate((direction, servings) -> {
                             int invertedServings = RiceRollRoyaleBlock.MAX_SERVINGS - servings;
-                            String suffix = invertedServings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftover" : "_stage" + invertedServings;
+                            String suffix = invertedServings == RiceRollRoyaleBlock.MAX_SERVINGS ? "_leftovers" : "_stage" + invertedServings;
 
                             Identifier modelLoc = blockResource(blockName(block) + suffix);
                             MultiVariant variant = plainVariant(modelLoc);
@@ -162,6 +189,37 @@ public class ModBlockStateProvider {
                         })
                 );
         g.blockStateOutput.accept(generator);
+    }
+
+    private static void medleyBlock(BlockModelGenerators g, Block block) {
+        MultiVariantGenerator generator = MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(BellPepperMedleyBlock.FACING, BellPepperMedleyBlock.MEDLEY_SERVINGS)
+                        .generate((direction, servings) -> {
+                            int remaining = BellPepperMedleyBlock.MAX_SERVINGS - servings;
+                            String suffix = remaining == BellPepperMedleyBlock.MAX_SERVINGS ? "_leftovers" : "_stage" + remaining;
+
+                            MultiVariant variant = plainVariant(blockResource(blockName(block) + suffix));
+                            VariantMutator rotation = dirToRot(direction);
+                            if (rotation != null) {
+                                variant = variant.with(rotation);
+                            }
+
+                            return variant;
+                        })
+                );
+        g.blockStateOutput.accept(generator);
+    }
+
+    /** A plain cube whose textures are named after the pepper colour, not the block. */
+    private static void bellPepperBlock(BlockModelGenerators g, Block block) {
+        String tex = blockName(block).replace("_block", "");
+        TextureMapping mapping = (new TextureMapping())
+                .put(TextureSlot.PARTICLE, new Material(blockResource(tex + "_top")))
+                .put(TextureSlot.SIDE, new Material(blockResource(tex + "_side")))
+                .put(TextureSlot.BOTTOM, new Material(blockResource(tex + "_bottom")))
+                .put(TextureSlot.TOP, new Material(blockResource(tex + "_top")));
+
+        createBlock(g, block, mapping, ModelTemplates.CUBE_BOTTOM_TOP);
     }
 
     private static String blockName(Block block) {

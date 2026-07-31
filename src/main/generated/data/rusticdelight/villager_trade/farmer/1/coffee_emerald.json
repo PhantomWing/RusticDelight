@@ -2,11 +2,15 @@
   "fabric:load_conditions": [
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "enable_villager_trades"
+      "settingId": "enable_villager_trades"
     },
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "wild_coffee_chance"
+      "settingId": "enable_coffee"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "wild_coffee_chance"
     }
   ],
   "gives": {

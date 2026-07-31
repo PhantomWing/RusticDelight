@@ -1,0 +1,15 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "minecraft:smoking",
+  "category": "food",
+  "experience": 0.35,
+  "ingredient": "rusticdelight:bell_pepper_orange",
+  "result": {
+    "id": "rusticdelight:roasted_bell_pepper_orange"
+  }
+}

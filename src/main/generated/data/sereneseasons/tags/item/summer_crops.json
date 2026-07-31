@@ -2,6 +2,8 @@
   "values": [
     "rusticdelight:cotton_seeds",
     "rusticdelight:bell_pepper_seeds",
+    "rusticdelight:pale_bell_pepper_seeds",
+    "rusticdelight:dark_bell_pepper_seeds",
     "rusticdelight:coffee_beans"
   ]
 }

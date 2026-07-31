@@ -1,0 +1,143 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "parent": "rusticdelight:main/bell_pepper",
+  "criteria": {
+    "bell_pepper_black": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_black"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_blue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_green"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_orange"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_pink": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_pink"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_purple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_purple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_red"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_white": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_white"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bell_pepper_yellow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:bell_pepper_yellow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.all_bell_peppers.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "rusticdelight:bell_pepper_purple"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.all_bell_peppers.title"
+    }
+  },
+  "requirements": [
+    [
+      "bell_pepper_green"
+    ],
+    [
+      "bell_pepper_yellow"
+    ],
+    [
+      "bell_pepper_red"
+    ],
+    [
+      "bell_pepper_orange"
+    ],
+    [
+      "bell_pepper_white"
+    ],
+    [
+      "bell_pepper_pink"
+    ],
+    [
+      "bell_pepper_blue"
+    ],
+    [
+      "bell_pepper_purple"
+    ],
+    [
+      "bell_pepper_black"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

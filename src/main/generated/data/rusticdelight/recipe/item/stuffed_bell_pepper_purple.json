@@ -1,0 +1,19 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    "rusticdelight:bell_pepper_purple",
+    "#c:crops/rice",
+    "#rusticdelight:stuffed_bell_pepper_ingredients"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "rusticdelight:stuffed_bell_pepper_purple"
+  }
+}

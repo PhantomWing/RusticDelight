@@ -43,5 +43,10 @@ public class ModVillagerTradeTagsProvider extends FabricTagsProvider<VillagerTra
                 .addOptional(ModVillagerTrades.WANDERING_COTTON_SEEDS)
                 .addOptional(ModVillagerTrades.WANDERING_BELL_PEPPER_SEEDS)
                 .addOptional(ModVillagerTrades.WANDERING_COFFEE_BEANS);
+
+        // The mutated seeds sit in the uncommon pool so they show up far more rarely.
+        builder(VillagerTradeTags.WANDERING_TRADER_UNCOMMON)
+                .addOptional(ModVillagerTrades.WANDERING_PALE_BELL_PEPPER_SEEDS)
+                .addOptional(ModVillagerTrades.WANDERING_DARK_BELL_PEPPER_SEEDS);
     }
 }

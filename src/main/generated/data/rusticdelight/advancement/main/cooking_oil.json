@@ -1,0 +1,42 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ],
+  "parent": "rusticdelight:main/cotton",
+  "criteria": {
+    "cooking_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rusticdelight:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.cooking_oil.description"
+    },
+    "icon": {
+      "id": "rusticdelight:cooking_oil"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.cooking_oil.title"
+    }
+  },
+  "requirements": [
+    [
+      "cooking_oil"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

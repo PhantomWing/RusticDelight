@@ -1,0 +1,51 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    },
+    {
+      "condition": "fabric:or",
+      "values": [
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_fried_foods"
+        },
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_pancakes"
+        }
+      ]
+    }
+  ],
+  "parent": "rusticdelight:main/batter",
+  "criteria": {
+    "pancakes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#rusticdelight:pancakes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.rusticdelight.pancakes.description"
+    },
+    "icon": {
+      "id": "rusticdelight:pancakes"
+    },
+    "title": {
+      "translate": "advancements.rusticdelight.pancakes.title"
+    }
+  },
+  "requirements": [
+    [
+      "pancakes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -2,16 +2,15 @@
   "fabric:load_conditions": [
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "enable_villager_trades"
+      "settingId": "enable_villager_trades"
     },
     {
       "condition": "rusticdelight:config_boolean",
-      "config": "squids_drop_calamari"
+      "settingId": "squids_drop_calamari"
     }
   ],
   "additional_wants": {
-    "count": 6.0,
-    "id": "rusticdelight:calamari"
+    "id": "minecraft:emerald"
   },
   "gives": {
     "count": 6,
@@ -20,6 +19,7 @@
   "max_uses": 16.0,
   "reputation_discount": 0.05,
   "wants": {
-    "id": "minecraft:emerald"
+    "count": 6.0,
+    "id": "rusticdelight:calamari"
   }
 }

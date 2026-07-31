@@ -30,6 +30,8 @@ public class FoodValues {
     public static final FoodProperties HONEY_COFFEE = alwaysEdibleFood(6, FoodConstants.FOOD_SATURATION_LOW);
     public static final FoodProperties SYRUP_COFFEE = alwaysEdibleFood();
     public static final FoodProperties DARK_COFFEE = alwaysEdibleFood();
+    public static final FoodProperties PUMPKIN_COFFEE = alwaysEdibleFood();
+    public static final FoodProperties CHERRY_BLOSSOM_COFFEE = alwaysEdibleFood();
 
     // Sweets
     public static final FoodProperties SYRUP_SANDWICH = food(8, 0.7f);
@@ -40,6 +42,7 @@ public class FoodValues {
     public static final FoodProperties CHERRY_BLOSSOM_PANCAKE = food(4, FoodConstants.FOOD_SATURATION_NORMAL);
     public static final FoodProperties VEGETABLE_PANCAKE = food(4, FoodConstants.FOOD_SATURATION_NORMAL);
     public static final FoodProperties PUMPKIN_PANCAKE = food(4, FoodConstants.FOOD_SATURATION_NORMAL);
+    public static final FoodProperties COFFEE_PANCAKE = food(4, FoodConstants.FOOD_SATURATION_NORMAL);
 
     // Handheld foods
     public static final FoodProperties CALAMARI_ROLL = food(7, FoodConstants.FOOD_SATURATION_NORMAL);
@@ -51,11 +54,14 @@ public class FoodValues {
     public static final FoodProperties FRIED_DOUGH = food(6, 0.5f);
     public static final FoodProperties SPRING_ROLLS = food(6, FoodConstants.FOOD_SATURATION_NORMAL);
     public static final FoodProperties FRIED_DUMPLINGS = food(10, FoodConstants.FOOD_SATURATION_GOOD);
+    public static final FoodProperties FRIED_FISH = food(8, 0.7f);
 
     // Bowl foods
     public static final FoodProperties POTATO_SALAD = food(8, 0.7f);
     public static final FoodProperties SWEET_SALAD = food(8, 0.7f);
     public static final FoodProperties BELL_PEPPER_SOUP = food(6, FoodConstants.FOOD_SATURATION_NORMAL);
+    // Heartier than the vegetable soup, since it carries calamari, potato and milk.
+    public static final FoodProperties CALAMARI_SOUP = food(10, FoodConstants.FOOD_SATURATION_GOOD);
 
     // Plated foods
     public static final FoodProperties BELL_PEPPER_PASTA = food(12, FoodConstants.FOOD_SATURATION_GOOD);

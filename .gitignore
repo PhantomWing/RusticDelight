@@ -32,7 +32,7 @@ bin/
 
 run/
 
-# datagen — content-addressed cache, regenerated on each run (any location)
+# datagen, content-addressed cache, regenerated on each run (any location)
 .cache/
 
 # java

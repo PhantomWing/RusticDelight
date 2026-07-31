@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "any_item": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:block/dirt_path_top",
+    "description": {
+      "translate": "advancements.rusticdelight.root.description"
+    },
+    "icon": {
+      "id": "rusticdelight:wild_cotton"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.rusticdelight.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "any_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
