@@ -137,7 +137,7 @@ public class Configuration {
         CHANCE_WILD_COFFEE = COMMON_BUILDER.comment("Chance of generating clusters. Smaller value = more frequent.")
                 .defineInRange(CHANCE_WILD_COFFEE_ID, 15, 0, Integer.MAX_VALUE);
         CHANCE_BELL_PEPPER_BLOCK_PATCH = COMMON_BUILDER.comment("Chance of generating a patch of bell pepper blocks in the jungle. Smaller value = more frequent (vanilla melons use 6).")
-                .defineInRange(CHANCE_BELL_PEPPER_BLOCK_PATCH_ID, 10, 0, Integer.MAX_VALUE);
+                .defineInRange(CHANCE_BELL_PEPPER_BLOCK_PATCH_ID, 16, 0, Integer.MAX_VALUE);
 
         // Build config
         COMMON_CONFIG = COMMON_BUILDER.build();
