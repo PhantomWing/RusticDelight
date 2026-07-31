@@ -62,7 +62,7 @@ public class RusticDelightConfig implements ConfigData {
     public int wild_coffee_chance = 15;
 
     public static final String CHANCE_BELL_PEPPER_BLOCK_PATCH_ID = "bell_pepper_block_patch_chance";
-    public int bell_pepper_block_patch_chance = 10;
+    public int bell_pepper_block_patch_chance = 16;
 
     public static RusticDelightConfig get() {
         return AutoConfig.getConfigHolder(RusticDelightConfig.class).getConfig();
