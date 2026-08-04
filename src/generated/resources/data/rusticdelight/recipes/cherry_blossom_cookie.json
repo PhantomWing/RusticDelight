@@ -9,13 +9,13 @@
   ],
   "ingredients": [
     {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
       "tag": "rusticdelight:cherry_blossom_ingredients"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
     }
   ],
   "result": {

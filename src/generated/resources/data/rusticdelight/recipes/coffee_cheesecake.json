@@ -18,13 +18,13 @@
       "item": "minecraft:sugar"
     },
     "T": {
-      "tag": "rusticdelight:coffee_ingredients"
+      "tag": "rusticdelight:coffee_food_ingredients"
     }
   },
   "pattern": [
-    "TTT",
-    "MMM",
-    "SCS"
+    " T ",
+    "SSS",
+    "MCM"
   ],
   "result": {
     "item": "rusticdelight:coffee_cheesecake"

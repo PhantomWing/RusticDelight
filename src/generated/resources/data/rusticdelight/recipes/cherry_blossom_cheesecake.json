@@ -23,8 +23,8 @@
   },
   "pattern": [
     "TTT",
-    "MMM",
-    "SCS"
+    "SSS",
+    "MCM"
   ],
   "result": {
     "item": "rusticdelight:cherry_blossom_cheesecake"

@@ -22,9 +22,9 @@
     }
   },
   "pattern": [
-    "TTT",
-    "MMM",
-    "SCS"
+    " T ",
+    "SSS",
+    "MCM"
   ],
   "result": {
     "item": "rusticdelight:syrup_cheesecake"

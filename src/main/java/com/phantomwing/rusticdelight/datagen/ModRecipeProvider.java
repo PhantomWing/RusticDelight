@@ -232,9 +232,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Cookies
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CHERRY_BLOSSOM_COOKIE.get(), 8)
-                .requires(Items.WHEAT)
-                .requires(Items.WHEAT)
                 .requires(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS)
+                .requires(Items.WHEAT)
+                .requires(Items.WHEAT)
                 .unlockedBy(getHasName(Items.PINK_PETALS), has(Items.PINK_PETALS))
                 .unlockedBy(getHasName(Items.CHERRY_SAPLING), has(Items.CHERRY_SAPLING))
                 .unlockedBy(getHasName(Items.CHERRY_LEAVES), has(Items.CHERRY_LEAVES))
@@ -253,9 +253,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(syrupOutput);
 
         // Pies
-        pieRecipes(syrupOutput, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP));
-        pieRecipes(cherryBlossomOutput, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS));
-        pieRecipes(coffeeOutput, ModItems.COFFEE_CHEESECAKE, ModItems.COFFEE_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.COFFEE_INGREDIENTS));
+        pieRecipes(syrupOutput, ModItems.SYRUP_CHEESECAKE, ModItems.SYRUP_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.SYRUP), " T ");
+        pieRecipes(cherryBlossomOutput, ModItems.CHERRY_BLOSSOM_CHEESECAKE, ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.CHERRY_BLOSSOM_INGREDIENTS), "TTT");
+        pieRecipes(coffeeOutput, ModItems.COFFEE_CHEESECAKE, ModItems.COFFEE_CHEESECAKE_SLICE, Ingredient.of(ModTags.Items.COFFEE_FOOD_INGREDIENTS), " T ");
 
         // Pancakes
         pancakeRecipes(pancakesAndSyrupOutput, ModItems.PANCAKES, ModItems.PANCAKE, Ingredient.of(ModTags.Items.SYRUP), Ingredient.of(Items.SUGAR));
@@ -760,38 +760,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(coffeeOutput, ModItems.COFFEE.getId());
 
         // Milk Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.MILK_COFFEE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ForgeTags.MILK)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(coffeeOutput, ModItems.MILK_COFFEE.getId());
 
         // Chocolate Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CHOCOLATE_COFFEE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ForgeTags.MILK)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(Items.COCOA_BEANS, 2)
+                .addIngredient(Items.COCOA_BEANS)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(coffeeOutput, ModItems.CHOCOLATE_COFFEE.getId());
 
         // Honey Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.HONEY_COFFEE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ForgeTags.MILK)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(Items.HONEY_BOTTLE, 1)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
@@ -799,11 +798,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // Syrup Coffee
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SYRUP_COFFEE.get(), 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
+                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
                 .addIngredient(ForgeTags.MILK)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModTags.Items.COFFEE_INGREDIENTS)
-                .addIngredient(ModItems.SYRUP.get(), 1)
+                .addIngredient(ModTags.Items.SYRUP)
                 .unlockedByAnyIngredient(ModItems.ROASTED_COFFEE_BEANS.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(coffeeAndSyrupOutput, ModItems.SYRUP_COFFEE.getId());
@@ -1053,11 +1052,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, getRecipeName(singlePancake.get(), pancakeBlock.get()));
     }
 
-    protected static void pieRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput, @NotNull RegistryObject<Item> pieBlock, @NotNull RegistryObject<Item> sliceItem, Ingredient topping) {
+    protected static void pieRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput, @NotNull RegistryObject<Item> pieBlock, @NotNull RegistryObject<Item> sliceItem, Ingredient topping, String toppingRow) {
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pieBlock.get(), 1)
-                .pattern("TTT")
-                .pattern("MMM")
-                .pattern("SCS")
+                .pattern(toppingRow)
+                .pattern("SSS")
+                .pattern("MCM")
                 .define('T', topping)
                 .define('M', ForgeTags.MILK)
                 .define('S', Items.SUGAR)
