@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:coffee_cheesecake"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "rusticdelight:coffee_cheesecake_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

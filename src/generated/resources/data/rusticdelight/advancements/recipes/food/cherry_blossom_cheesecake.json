@@ -1,5 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ],
   "criteria": {
     "has_pie_crust": {
       "conditions": {

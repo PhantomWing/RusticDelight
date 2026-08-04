@@ -1,6 +1,12 @@
 {
   "type": "minecraft:campfire_cooking",
   "category": "food",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
   "cookingtime": 600,
   "experience": 0.35,
   "ingredient": {

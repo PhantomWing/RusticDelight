@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:calamari_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "rusticdelight:calamari"
+  }
+}

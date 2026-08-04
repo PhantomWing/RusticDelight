@@ -1,5 +1,15 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
   "criteria": {
     "has_cherry_blossom_pancake": {
       "conditions": {

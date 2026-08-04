@@ -1,0 +1,52 @@
+{
+  "parent": "rusticdelight:main/bell_pepper",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "criteria": {
+    "stuffed_bell_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:stuffed_bell_pepper_green",
+              "rusticdelight:stuffed_bell_pepper_yellow",
+              "rusticdelight:stuffed_bell_pepper_red",
+              "rusticdelight:stuffed_bell_pepper_orange",
+              "rusticdelight:stuffed_bell_pepper_white",
+              "rusticdelight:stuffed_bell_pepper_pink",
+              "rusticdelight:stuffed_bell_pepper_blue",
+              "rusticdelight:stuffed_bell_pepper_purple",
+              "rusticdelight:stuffed_bell_pepper_black"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.stuffed_bell_pepper.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:stuffed_bell_pepper_red"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.stuffed_bell_pepper.title"
+    }
+  },
+  "requirements": [
+    [
+      "stuffed_bell_pepper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

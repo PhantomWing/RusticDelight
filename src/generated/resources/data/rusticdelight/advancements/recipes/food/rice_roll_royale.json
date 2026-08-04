@@ -1,5 +1,19 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ],
   "criteria": {
     "has_rice_roll": {
       "conditions": {

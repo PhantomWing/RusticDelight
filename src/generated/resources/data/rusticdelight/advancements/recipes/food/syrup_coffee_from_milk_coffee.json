@@ -1,5 +1,15 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ],
   "criteria": {
     "has_milk_coffee": {
       "conditions": {

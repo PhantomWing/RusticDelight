@@ -1,10 +1,12 @@
 package com.phantomwing.rusticdelight.tags;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class ForgeTags {
@@ -108,6 +110,15 @@ public class ForgeTags {
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_RED = forgeBlockTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_GREEN = forgeBlockTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_YELLOW = forgeBlockTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Block> STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS = forgeBlockTag("storage_blocks/pale_bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS = forgeBlockTag("storage_blocks/dark_bell_pepper_seeds");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_ORANGE = forgeBlockTag("storage_blocks/bell_pepper_orange");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_WHITE = forgeBlockTag("storage_blocks/bell_pepper_white");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_PINK = forgeBlockTag("storage_blocks/bell_pepper_pink");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_BLUE = forgeBlockTag("storage_blocks/bell_pepper_blue");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_PURPLE = forgeBlockTag("storage_blocks/bell_pepper_purple");
+    public static final TagKey<Block> STORAGE_BLOCKS_BELL_PEPPER_BLACK = forgeBlockTag("storage_blocks/bell_pepper_black");
+    public static final TagKey<Block> STORAGE_BLOCKS_CALAMARI = forgeBlockTag("storage_blocks/calamari");
 
     // Storage blocks (items)
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_COTTON_SEEDS = forgeItemTag("storage_blocks/cotton_seeds");
@@ -119,6 +130,20 @@ public class ForgeTags {
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED = forgeItemTag("storage_blocks/bell_pepper_red");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN = forgeItemTag("storage_blocks/bell_pepper_green");
     public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW = forgeItemTag("storage_blocks/bell_pepper_yellow");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS = forgeItemTag("storage_blocks/pale_bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS = forgeItemTag("storage_blocks/dark_bell_pepper_seeds");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE = forgeItemTag("storage_blocks/bell_pepper_orange");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE = forgeItemTag("storage_blocks/bell_pepper_white");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK = forgeItemTag("storage_blocks/bell_pepper_pink");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE = forgeItemTag("storage_blocks/bell_pepper_blue");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE = forgeItemTag("storage_blocks/bell_pepper_purple");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK = forgeItemTag("storage_blocks/bell_pepper_black");
+    public static final TagKey<Item> STORAGE_BLOCKS_ITEM_CALAMARI = forgeItemTag("storage_blocks/calamari");
+
+    // Forge declares no constants for these, but biome mods populate them by convention, so wild
+    // crops reach modded forests and jungles too. Harmless when nothing populates them.
+    public static final TagKey<Biome> IS_FOREST = forgeBiomeTag("is_forest");
+    public static final TagKey<Biome> IS_JUNGLE = forgeBiomeTag("is_jungle");
 
     private static TagKey<Block> forgeBlockTag(String path) {
         return BlockTags.create(new ResourceLocation("forge", path));
@@ -126,5 +151,9 @@ public class ForgeTags {
 
     private static TagKey<Item> forgeItemTag(String path) {
         return ItemTags.create(new ResourceLocation("forge", path));
+    }
+
+    private static TagKey<Biome> forgeBiomeTag(String path) {
+        return TagKey.create(Registries.BIOME, new ResourceLocation("forge", path));
     }
 }

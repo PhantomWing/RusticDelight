@@ -18,6 +18,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
@@ -39,6 +40,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 ModItems.COTTON_SEEDS.get(), UniformGenerator.between(1.0F, 3.0F),
                 ModItems.COTTON_BOLL.get(), UniformGenerator.between(1.0F, 3.0F));
         dropBellPepperCrop(ModBlocks.BELL_PEPPER_CROP.get());
+        dropPaleBellPepperCrop(ModBlocks.PALE_BELL_PEPPER_CROP.get());
+        dropDarkBellPepperCrop(ModBlocks.DARK_BELL_PEPPER_CROP.get());
         dropCrop(
                 ModBlocks.COFFEE_CROP.get(), CoffeeCropBlock.AGE, CoffeeCropBlock.MAX_AGE,
                 ModItems.COFFEE_BEANS.get(), UniformGenerator.between(1.0F, 1.0F),
@@ -46,14 +49,20 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         dropWildCrop(ModBlocks.WILD_COTTON.get(), ModItems.COTTON_SEEDS.get(), ModItems.COTTON_BOLL.get());
         dropWildCrop(ModBlocks.WILD_BELL_PEPPERS.get(), ModItems.BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_RED.get());
+        dropWildCrop(ModBlocks.WILD_PALE_BELL_PEPPERS.get(), ModItems.PALE_BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_PINK.get());
+        dropWildCrop(ModBlocks.WILD_DARK_BELL_PEPPERS.get(), ModItems.DARK_BELL_PEPPER_SEEDS.get(), ModItems.BELL_PEPPER_PURPLE.get());
         dropWildCrop(ModBlocks.WILD_COFFEE.get(), ModItems.COFFEE_BEANS.get(), ModItems.COFFEE_BEANS.get());
 
         dropPottedFlower(ModBlocks.POTTED_WILD_COTTON.get(), ModBlocks.WILD_COTTON.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_BELL_PEPPERS.get(), ModBlocks.WILD_BELL_PEPPERS.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_PALE_BELL_PEPPERS.get(), ModBlocks.WILD_PALE_BELL_PEPPERS.get());
+        dropPottedFlower(ModBlocks.POTTED_WILD_DARK_BELL_PEPPERS.get(), ModBlocks.WILD_DARK_BELL_PEPPERS.get());
         dropPottedFlower(ModBlocks.POTTED_WILD_COFFEE.get(), ModBlocks.WILD_COFFEE.get());
 
         dropSelf(ModBlocks.COTTON_SEEDS_BAG.get());
         dropSelf(ModBlocks.BELL_PEPPER_SEEDS_BAG.get());
+        dropSelf(ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG.get());
+        dropSelf(ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG.get());
         dropSelf(ModBlocks.COFFEE_BEANS_BAG.get());
         dropSelf(ModBlocks.ROASTED_COFFEE_BEANS_BAG.get());
 
@@ -61,17 +70,41 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.BELL_PEPPER_GREEN_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_YELLOW_CRATE.get());
         dropSelf(ModBlocks.BELL_PEPPER_RED_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_ORANGE_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_WHITE_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_PINK_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_BLUE_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_PURPLE_CRATE.get());
+        dropSelf(ModBlocks.BELL_PEPPER_BLACK_CRATE.get());
+        dropSelf(ModBlocks.CALAMARI_CRATE.get());
+
+        // Bell pepper blocks drop 1-9 slices of their color (not the block itself).
+        dropSlices(ModBlocks.BELL_PEPPER_GREEN_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_GREEN.get());
+        dropSlices(ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_YELLOW.get());
+        dropSlices(ModBlocks.BELL_PEPPER_RED_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_RED.get());
+        dropSlices(ModBlocks.BELL_PEPPER_ORANGE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_ORANGE.get());
+        dropSlices(ModBlocks.BELL_PEPPER_WHITE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_WHITE.get());
+        dropSlices(ModBlocks.BELL_PEPPER_PINK_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_PINK.get());
+        dropSlices(ModBlocks.BELL_PEPPER_BLUE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_BLUE.get());
+        dropSlices(ModBlocks.BELL_PEPPER_PURPLE_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_PURPLE.get());
+        dropSlices(ModBlocks.BELL_PEPPER_BLACK_BLOCK.get(), ModItems.BELL_PEPPER_SLICE_BLACK.get());
 
         dropFoodBlock(ModBlocks.SYRUP_CHEESECAKE.get(), PieBlock.BITES);
         dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE.get(), PieBlock.BITES);
+        dropFoodBlock(ModBlocks.COFFEE_CHEESECAKE.get(), PieBlock.BITES);
 
-        dropFoodBlock(ModBlocks.PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.HONEY_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.VEGETABLE_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
-        dropFoodBlock(ModBlocks.PUMPKIN_PANCAKES.get(), PancakeBlock.SERVINGS, Items.BOWL);
+        dropPancakeBlock(ModBlocks.PANCAKES.get(), ModItems.PANCAKE.get());
+        dropPancakeBlock(ModBlocks.HONEY_PANCAKES.get(), ModItems.HONEY_PANCAKE.get());
+        dropPancakeBlock(ModBlocks.CHOCOLATE_PANCAKES.get(), ModItems.CHOCOLATE_PANCAKE.get());
+        dropPancakeBlock(ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(), ModItems.CHERRY_BLOSSOM_PANCAKE.get());
+        dropPancakeBlock(ModBlocks.VEGETABLE_PANCAKES.get(), ModItems.VEGETABLE_PANCAKE.get());
+        dropPancakeBlock(ModBlocks.PUMPKIN_PANCAKES.get(), ModItems.PUMPKIN_PANCAKE.get());
+        dropPancakeBlock(ModBlocks.COFFEE_PANCAKES.get(), ModItems.COFFEE_PANCAKE.get());
+
         dropFoodBlock(ModBlocks.RICE_ROLL_ROYALE.get(), RiceRollRoyaleBlock.ROLL_SERVINGS, RiceRollRoyaleBlock.MAX_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.PALE_BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
+        dropFoodBlock(ModBlocks.DARK_BELL_PEPPER_MEDLEY.get(), BellPepperMedleyBlock.MEDLEY_SERVINGS, BellPepperMedleyBlock.MAX_SERVINGS, Items.BOWL);
     }
 
     @Override
@@ -178,6 +211,93 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 .add(LootItem.lootTableItem(ModItems.BELL_PEPPER_YELLOW.get()))
                         )
         );
+    }
+
+    private void dropPaleBellPepperCrop(Block block) {
+        this.add(block, this::createPaleBellPepperDrops);
+    }
+
+    private void dropDarkBellPepperCrop(Block block) {
+        this.add(block, this::createDarkBellPepperDrops);
+    }
+
+    /** Shared by the pale and dark crops: same shape as the base crop, different seed and colors. */
+    private LootTable.Builder createMutatedBellPepperDrops(Block cropBlock, ItemLike seedItem, ItemLike first, ItemLike second, ItemLike third) {
+        LootItemCondition.Builder dropGrownCropCondition = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(cropBlock)
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, BellPepperCropBlock.MAX_AGE));
+
+        return this.applyExplosionDecay(
+                cropBlock,
+                LootTable.lootTable()
+                        // When not fully grown, drop the original seed.
+                        .withPool(LootPool.lootPool()
+                                .when(InvertedLootItemCondition.invert(dropGrownCropCondition))
+                                .add(LootItem.lootTableItem(seedItem))
+                        )
+                        // When fully grown, drop additional seeds (including a Fortune bonus).
+                        .withPool(LootPool.lootPool()
+                                .when(dropGrownCropCondition)
+                                .add(LootItem.lootTableItem(seedItem)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))
+                                )
+                        )
+                        // When fully grown, drop one bell pepper of the group (equal chance).
+                        .withPool(LootPool.lootPool()
+                                .when(dropGrownCropCondition)
+                                .add(LootItem.lootTableItem(first))
+                                .add(LootItem.lootTableItem(second))
+                                .add(LootItem.lootTableItem(third))
+                        )
+        );
+    }
+
+    private LootTable.Builder createPaleBellPepperDrops(Block cropBlock) {
+        return createMutatedBellPepperDrops(cropBlock, ModItems.PALE_BELL_PEPPER_SEEDS.get(),
+                ModItems.BELL_PEPPER_ORANGE.get(), ModItems.BELL_PEPPER_WHITE.get(), ModItems.BELL_PEPPER_PINK.get());
+    }
+
+    private LootTable.Builder createDarkBellPepperDrops(Block cropBlock) {
+        return createMutatedBellPepperDrops(cropBlock, ModItems.DARK_BELL_PEPPER_SEEDS.get(),
+                ModItems.BELL_PEPPER_BLUE.get(), ModItems.BELL_PEPPER_PURPLE.get(), ModItems.BELL_PEPPER_BLACK.get());
+    }
+
+    private void dropSlices(Block block, ItemLike slice) {
+        this.add(block, createSingleItemTable(slice, UniformGenerator.between(1.0F, 9.0F)));
+    }
+
+    private void dropPancakeBlock(Block block, ItemLike pancakeItem) {
+        this.add(block, blockParam -> createPancakeDrops(blockParam, pancakeItem));
+    }
+
+    private LootTable.Builder createPancakeDrops(Block block, ItemLike pancakeItem) {
+        LootItemCondition.Builder isCraftedPlate = servingsIs(block, 0);
+
+        LootTable.Builder lootTable = LootTable.lootTable()
+                // An untouched plate drops the block itself, matching what the recipe produces.
+                .withPool(LootPool.lootPool().when(isCraftedPlate).add(LootItem.lootTableItem(block)));
+
+        for (int servings = 1; servings < PancakeBlock.MAX_TOTAL_SERVINGS; servings++) {
+            lootTable.withPool(LootPool.lootPool()
+                    .when(servingsIs(block, servings))
+                    .add(LootItem.lootTableItem(pancakeItem)
+                            .apply(SetItemCountFunction.setCount(
+                                    ConstantValue.exactly(PancakeBlock.pancakesPresentFor(servings))))));
+        }
+
+        // The plate is only left over once the stack is no longer a whole crafted block.
+        lootTable.withPool(LootPool.lootPool()
+                .when(InvertedLootItemCondition.invert(isCraftedPlate))
+                .add(LootItem.lootTableItem(Items.BOWL)));
+
+        return this.applyExplosionDecay(block, lootTable);
+    }
+
+    private static LootItemCondition.Builder servingsIs(Block block, int servings) {
+        return LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                .setProperties(StatePropertiesPredicate.Builder.properties()
+                        .hasProperty(PancakeBlock.SERVINGS, servings));
     }
 
     private void dropWildCrop(Block block, ItemLike seedsItem, ItemLike cropItem) {

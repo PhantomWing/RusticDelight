@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "rusticdelight:bell_pepper_blue"
+  },
+  "result": "rusticdelight:roasted_bell_pepper_blue"
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "key": {
+    "#": {
+      "item": "rusticdelight:bell_pepper_orange"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "rusticdelight:bell_pepper_orange_crate"
+  },
+  "show_notification": true
+}

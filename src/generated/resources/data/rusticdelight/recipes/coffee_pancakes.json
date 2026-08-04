@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "M": {
+      "item": "rusticdelight:batter"
+    },
+    "T": {
+      "tag": "forge:milk"
+    },
+    "X": {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    "Y": {
+      "tag": "rusticdelight:coffee_ingredients"
+    }
+  },
+  "pattern": [
+    " T ",
+    "XMX",
+    "YBY"
+  ],
+  "result": {
+    "item": "rusticdelight:coffee_pancakes"
+  },
+  "show_notification": true
+}

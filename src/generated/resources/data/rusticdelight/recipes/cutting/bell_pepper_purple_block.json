@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_purple_block"
+    }
+  ],
+  "result": [
+    {
+      "count": 9,
+      "item": "rusticdelight:bell_pepper_slice_purple"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

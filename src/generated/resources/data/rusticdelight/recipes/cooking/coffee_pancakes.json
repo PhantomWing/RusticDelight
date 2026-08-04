@@ -1,0 +1,42 @@
+{
+  "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "rusticdelight:batter"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "rusticdelight:coffee_pancakes"
+  }
+}

@@ -1,5 +1,15 @@
 {
   "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
   "container": {
     "item": "minecraft:bowl"
   },

@@ -1,6 +1,16 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ],
   "ingredients": [
     {
       "item": "rusticdelight:coffee"

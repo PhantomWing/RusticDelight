@@ -1,5 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
   "criteria": {
     "has_roasted_coffee_beans": {
       "conditions": {

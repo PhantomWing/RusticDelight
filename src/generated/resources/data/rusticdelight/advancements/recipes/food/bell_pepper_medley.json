@@ -1,0 +1,51 @@
+{
+  "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "criteria": {
+    "has_stuffed_bell_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:stuffed_bell_pepper_green"
+            ]
+          },
+          {
+            "items": [
+              "rusticdelight:stuffed_bell_pepper_yellow"
+            ]
+          },
+          {
+            "items": [
+              "rusticdelight:stuffed_bell_pepper_red"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:bell_pepper_medley"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_stuffed_bell_pepper",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:bell_pepper_medley"
+    ]
+  },
+  "sends_telemetry_event": false
+}

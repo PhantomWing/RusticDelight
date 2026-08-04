@@ -1,5 +1,20 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "rusticdelight:config_boolean",
+          "settingId": "enable_fried_foods"
+        },
+        {
+          "type": "rusticdelight:config_boolean",
+          "settingId": "enable_pancakes"
+        }
+      ]
+    }
+  ],
   "criteria": {
     "has_any_ingredient": {
       "conditions": {

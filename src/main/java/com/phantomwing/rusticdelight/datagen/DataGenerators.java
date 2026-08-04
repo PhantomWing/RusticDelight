@@ -43,6 +43,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModBiomeTagsProvider(output, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(output));
+        generator.addProvider(event.includeServer(), new ModAdvancements(output, lookupProvider));
 
         generator.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(output, lookupProvider, registrySetBuilder, Set.of(RusticDelight.MOD_ID)));
     }

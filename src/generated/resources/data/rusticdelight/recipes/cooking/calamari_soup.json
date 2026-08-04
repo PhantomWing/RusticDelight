@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes/calamari"
+    },
+    {
+      "tag": "forge:vegetables/potato"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "rusticdelight:calamari_soup"
+  }
+}

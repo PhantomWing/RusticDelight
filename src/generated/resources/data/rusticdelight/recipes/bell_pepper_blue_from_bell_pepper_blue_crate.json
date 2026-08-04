@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_blue_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "rusticdelight:bell_pepper_blue"
+  }
+}

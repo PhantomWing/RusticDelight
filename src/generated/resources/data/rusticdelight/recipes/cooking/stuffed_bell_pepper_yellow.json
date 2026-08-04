@@ -1,5 +1,11 @@
 {
   "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [

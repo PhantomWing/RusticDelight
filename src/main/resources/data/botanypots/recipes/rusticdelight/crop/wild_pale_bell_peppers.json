@@ -1,0 +1,61 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "botanypots"
+        }
+      ],
+      "recipe": {
+        "bookshelf:load_conditions": [
+          {
+            "type": "bookshelf:item_exists",
+            "values": [
+              "rusticdelight:wild_pale_bell_peppers"
+            ]
+          }
+        ],
+        "type": "botanypots:crop",
+        "seed": {
+          "item": "rusticdelight:wild_pale_bell_peppers"
+        },
+        "categories": [
+          "dirt"
+        ],
+        "growthTicks": 1200,
+        "display": {
+          "type": "botanypots:aging",
+          "block": "rusticdelight:wild_pale_bell_peppers"
+        },
+        "drops": [
+          {
+            "chance": 1.00,
+            "output": {
+              "item": "rusticdelight:bell_pepper_orange"
+            },
+            "minRolls": 1,
+            "maxRolls": 1
+          },
+          {
+            "chance": 1.00,
+            "output": {
+              "item": "rusticdelight:bell_pepper_white"
+            },
+            "minRolls": 1,
+            "maxRolls": 1
+          },
+          {
+            "chance": 0.15,
+            "output": {
+              "item": "rusticdelight:bell_pepper_pink"
+            },
+            "minRolls": 1,
+            "maxRolls": 1
+          }
+        ]
+      }
+    }
+  ]
+}

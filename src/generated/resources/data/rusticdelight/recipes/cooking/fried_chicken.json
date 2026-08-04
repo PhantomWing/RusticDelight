@@ -1,5 +1,11 @@
 {
   "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ],
   "container": {
     "item": "minecraft:bowl"
   },

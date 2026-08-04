@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:roasted_bell_pepper_orange"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "rusticdelight:roasted_bell_pepper_slice_orange"
+    },
+    {
+      "chance": 0.1,
+      "item": "rusticdelight:pale_bell_pepper_seeds"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

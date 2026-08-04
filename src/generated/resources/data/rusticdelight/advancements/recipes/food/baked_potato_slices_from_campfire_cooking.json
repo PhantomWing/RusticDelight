@@ -1,5 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_potato_slices"
+    }
+  ],
   "criteria": {
     "has_potato_slices": {
       "conditions": {

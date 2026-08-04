@@ -1,5 +1,11 @@
 {
   "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
   "ingredients": [
     {
       "item": "rusticdelight:calamari"

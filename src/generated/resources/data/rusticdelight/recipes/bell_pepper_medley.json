@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:stuffed_bell_pepper_green"
+    },
+    {
+      "item": "rusticdelight:stuffed_bell_pepper_yellow"
+    },
+    {
+      "item": "rusticdelight:stuffed_bell_pepper_red"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:bell_pepper_medley"
+  }
+}

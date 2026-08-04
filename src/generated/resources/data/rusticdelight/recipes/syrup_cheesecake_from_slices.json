@@ -1,6 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ],
   "key": {
     "#": {
       "item": "rusticdelight:syrup_cheesecake_slice"

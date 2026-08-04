@@ -1,5 +1,11 @@
 {
   "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ],
   "ingredients": [
     {
       "item": "rusticdelight:cherry_blossom_cheesecake"

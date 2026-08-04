@@ -1,6 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ],
   "ingredients": [
     {
       "tag": "rusticdelight:calamari_roll_ingredients"

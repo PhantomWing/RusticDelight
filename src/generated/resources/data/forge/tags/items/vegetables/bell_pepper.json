@@ -3,6 +3,12 @@
     "#forge:crops/bell_pepper",
     "rusticdelight:bell_pepper_slice_green",
     "rusticdelight:bell_pepper_slice_yellow",
-    "rusticdelight:bell_pepper_slice_red"
+    "rusticdelight:bell_pepper_slice_red",
+    "rusticdelight:bell_pepper_slice_orange",
+    "rusticdelight:bell_pepper_slice_white",
+    "rusticdelight:bell_pepper_slice_pink",
+    "rusticdelight:bell_pepper_slice_blue",
+    "rusticdelight:bell_pepper_slice_purple",
+    "rusticdelight:bell_pepper_slice_black"
   ]
 }

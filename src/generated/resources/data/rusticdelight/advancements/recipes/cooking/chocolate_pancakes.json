@@ -1,5 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ],
   "criteria": {
     "has_any_ingredient": {
       "conditions": {

@@ -29,6 +29,11 @@ public class ConfigurableRarityFilter extends PlacementFilter {
     }
 
     protected boolean shouldPlace(@NotNull PlacementContext context, RandomSource random, @NotNull BlockPos pos) {
+        // Skip entirely when the crop family is disabled.
+        if (!Configuration.isWorldgenFeatureEnabled(this.chance)) {
+            return false;
+        }
+
         int configuredValue = Configuration.getIntConfigurationValue(this.chance);
 
         // When the user has entered zero chance, nothing should be placed.

@@ -1,0 +1,55 @@
+{
+  "parent": "rusticdelight:main/batter",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "rusticdelight:config_boolean",
+          "settingId": "enable_fried_foods"
+        },
+        {
+          "type": "rusticdelight:config_boolean",
+          "settingId": "enable_pancakes"
+        }
+      ]
+    }
+  ],
+  "criteria": {
+    "syrup": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "rusticdelight:syrup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.syrup.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:syrup"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.syrup.title"
+    }
+  },
+  "requirements": [
+    [
+      "syrup"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

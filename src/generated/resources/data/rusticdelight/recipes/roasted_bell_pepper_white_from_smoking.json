@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "rusticdelight:bell_pepper_white"
+  },
+  "result": "rusticdelight:roasted_bell_pepper_white"
+}

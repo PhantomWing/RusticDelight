@@ -1,5 +1,11 @@
 {
   "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ],
   "cookingtime": 100,
   "experience": 1.0,
   "ingredients": [

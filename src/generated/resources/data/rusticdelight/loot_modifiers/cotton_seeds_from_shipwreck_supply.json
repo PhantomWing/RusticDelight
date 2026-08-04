@@ -1,0 +1,13 @@
+{
+  "type": "rusticdelight:configurable_replace_item_modifier",
+  "added": "rusticdelight:cotton_seeds",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_supply"
+    }
+  ],
+  "count": 1,
+  "removed": "minecraft:wheat",
+  "settingId": "enable_cotton"
+}

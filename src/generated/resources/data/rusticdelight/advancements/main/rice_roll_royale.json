@@ -1,0 +1,52 @@
+{
+  "parent": "rusticdelight:main/bell_pepper",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ],
+  "criteria": {
+    "rice_roll_royale": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:rice_roll_royale"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.rice_roll_royale.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:rice_roll_royale"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.rice_roll_royale.title"
+    }
+  },
+  "requirements": [
+    [
+      "rice_roll_royale"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

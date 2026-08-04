@@ -5,6 +5,7 @@ import com.phantomwing.rusticdelight.block.ModBlocks;
 
 import com.phantomwing.rusticdelight.tags.CompatibilityTags;
 import com.phantomwing.rusticdelight.tags.ForgeTags;
+import com.phantomwing.rusticdelight.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -12,7 +13,6 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -30,6 +30,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     }
 
     private void addModTags() {
+        this.tag(ModTags.Blocks.PANCAKES).add(
+                ModBlocks.PANCAKES.get(),
+                ModBlocks.HONEY_PANCAKES.get(),
+                ModBlocks.CHOCOLATE_PANCAKES.get(),
+                ModBlocks.CHERRY_BLOSSOM_PANCAKES.get(),
+                ModBlocks.VEGETABLE_PANCAKES.get(),
+                ModBlocks.PUMPKIN_PANCAKES.get(),
+                ModBlocks.COFFEE_PANCAKES.get()
+        );
     }
 
     private void addMinecraftTags() {
@@ -38,12 +47,30 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         ModBlocks.COTTON_BOLL_CRATE.get(),
                         ModBlocks.BELL_PEPPER_GREEN_CRATE.get(),
                         ModBlocks.BELL_PEPPER_YELLOW_CRATE.get(),
-                        ModBlocks.BELL_PEPPER_RED_CRATE.get()
+                        ModBlocks.BELL_PEPPER_RED_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_ORANGE_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_WHITE_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_PINK_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_BLUE_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_PURPLE_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_BLACK_CRATE.get(),
+                        ModBlocks.CALAMARI_CRATE.get(),
+                        ModBlocks.BELL_PEPPER_GREEN_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_YELLOW_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_RED_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_ORANGE_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_WHITE_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_PINK_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_BLUE_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_PURPLE_BLOCK.get(),
+                        ModBlocks.BELL_PEPPER_BLACK_BLOCK.get()
                 );
 
         this.tag(BlockTags.SMALL_FLOWERS).add(
                 ModBlocks.WILD_COTTON.get(),
                 ModBlocks.WILD_BELL_PEPPERS.get(),
+                ModBlocks.WILD_PALE_BELL_PEPPERS.get(),
+                ModBlocks.WILD_DARK_BELL_PEPPERS.get(),
                 ModBlocks.WILD_COFFEE.get()
         );
 
@@ -51,6 +78,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(
                         ModBlocks.COTTON_CROP.get(),
                         ModBlocks.BELL_PEPPER_CROP.get(),
+                        ModBlocks.PALE_BELL_PEPPER_CROP.get(),
+                        ModBlocks.DARK_BELL_PEPPER_CROP.get(),
                         ModBlocks.COFFEE_CROP.get()
                 );
     }
@@ -75,6 +104,33 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_RED).add(
                 ModBlocks.BELL_PEPPER_RED_CRATE.get()
         );
+        this.tag(ForgeTags.STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS).add(
+                ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS).add(
+                ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_ORANGE).add(
+                ModBlocks.BELL_PEPPER_ORANGE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_WHITE).add(
+                ModBlocks.BELL_PEPPER_WHITE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_PINK).add(
+                ModBlocks.BELL_PEPPER_PINK_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_BLUE).add(
+                ModBlocks.BELL_PEPPER_BLUE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_PURPLE).add(
+                ModBlocks.BELL_PEPPER_PURPLE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_BLACK).add(
+                ModBlocks.BELL_PEPPER_BLACK_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_CALAMARI).add(
+                ModBlocks.CALAMARI_CRATE.get()
+        );
         this.tag(ForgeTags.STORAGE_BLOCKS_COFFEE_BEANS).add(
                 ModBlocks.COFFEE_BEANS_BAG.get()
         );
@@ -95,6 +151,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_GREEN)
                 .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_YELLOW)
                 .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_RED)
+                .addTag(ForgeTags.STORAGE_BLOCKS_PALE_BELL_PEPPER_SEEDS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_DARK_BELL_PEPPER_SEEDS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_ORANGE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_WHITE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_PINK)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_BLUE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_PURPLE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_BELL_PEPPER_BLACK)
+                .addTag(ForgeTags.STORAGE_BLOCKS_CALAMARI)
                 .addTag(ForgeTags.STORAGE_BLOCKS_COFFEE_BEANS)
                 .addTag(ForgeTags.STORAGE_BLOCKS_COFFEE)
                 .addTag(ForgeTags.STORAGE_BLOCKS_ROASTED_COFFEE_BEANS);
@@ -102,15 +167,19 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     private void addCompatibilityTags() {
         // Farmers Delight
-        this.tag(ModTags.Blocks.STRAW_BLOCKS).add(
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.Blocks.STRAW_BLOCKS).add(
                 ModBlocks.COTTON_SEEDS_BAG.get(),
                 ModBlocks.BELL_PEPPER_SEEDS_BAG.get(),
+                ModBlocks.PALE_BELL_PEPPER_SEEDS_BAG.get(),
+                ModBlocks.DARK_BELL_PEPPER_SEEDS_BAG.get(),
                 ModBlocks.COFFEE_BEANS_BAG.get(),
                 ModBlocks.ROASTED_COFFEE_BEANS_BAG.get()
         );
-        this.tag(ModTags.Blocks.WILD_CROPS).add(
+        this.tag(vectorwing.farmersdelight.common.tag.ModTags.Blocks.WILD_CROPS).add(
                 ModBlocks.WILD_COTTON.get(),
                 ModBlocks.WILD_BELL_PEPPERS.get(),
+                ModBlocks.WILD_PALE_BELL_PEPPERS.get(),
+                ModBlocks.WILD_DARK_BELL_PEPPERS.get(),
                 ModBlocks.WILD_COFFEE.get()
         );
 
@@ -121,10 +190,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS_BLOCK).add(
                 ModBlocks.COTTON_CROP.get(),
                 ModBlocks.BELL_PEPPER_CROP.get(),
+                ModBlocks.PALE_BELL_PEPPER_CROP.get(),
+                ModBlocks.DARK_BELL_PEPPER_CROP.get(),
                 ModBlocks.COFFEE_CROP.get()
         );
         tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS_BLOCK).add(
                 ModBlocks.BELL_PEPPER_CROP.get(),
+                ModBlocks.PALE_BELL_PEPPER_CROP.get(),
+                ModBlocks.DARK_BELL_PEPPER_CROP.get(),
                 ModBlocks.COFFEE_CROP.get()
         );
     }

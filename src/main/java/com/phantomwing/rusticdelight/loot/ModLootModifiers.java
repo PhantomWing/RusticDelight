@@ -15,6 +15,9 @@ public class ModLootModifiers {
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> SQUID_DROPS_CALAMARI_MODIFIER =
             LOOT_MODIFIER_SERIALIZERS.register("squids_drop_calamari_modifier", SquidsDropCalamariModifier.CODEC);
 
+    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> CONFIGURABLE_REPLACE_ITEM_MODIFIER =
+            LOOT_MODIFIER_SERIALIZERS.register("configurable_replace_item_modifier", ConfigurableReplaceItemModifier.CODEC);
+
     public static void register(IEventBus eventBus) {
         LOOT_MODIFIER_SERIALIZERS.register(eventBus);
     }

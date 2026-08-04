@@ -1,0 +1,35 @@
+{
+  "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ],
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "rusticdelight:pumpkin_coffee"
+  }
+}

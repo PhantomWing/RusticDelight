@@ -1,5 +1,11 @@
 {
   "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
   "ingredients": [
     {
       "item": "rusticdelight:bell_pepper_red"

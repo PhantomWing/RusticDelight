@@ -1,5 +1,15 @@
 {
   "type": "farmersdelight:cooking",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    },
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ],
   "container": {
     "item": "minecraft:bowl"
   },

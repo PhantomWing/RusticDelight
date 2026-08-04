@@ -1,0 +1,13 @@
+{
+  "type": "rusticdelight:configurable_replace_item_modifier",
+  "added": "rusticdelight:cotton_seeds",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_savanna_house"
+    }
+  ],
+  "count": 1,
+  "removed": "minecraft:wheat_seeds",
+  "settingId": "enable_cotton"
+}

@@ -29,6 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         copy(vectorwing.farmersdelight.common.tag.ModTags.Blocks.WILD_CROPS, vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS);
         copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
+        copy(ModTags.Blocks.PANCAKES, ModTags.Items.PANCAKES);
 
         addModTags();
         addMinecraftTags();
@@ -81,7 +82,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         this.tag(ModTags.Items.SYRUP).add(
                 ModItems.SYRUP.get()
-        );
+        // Hearth and Harvest's syrup bottle works anywhere our syrup does.
+        ).addOptional(new ResourceLocation(CompatibilityTags.HEARTH_AND_HARVEST, "syrup_bottle"));
 
         this.tag(ModTags.Items.SWEET_LIQUIDS).add(
                 Items.HONEY_BOTTLE
@@ -129,6 +131,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(
                 ModItems.COTTON_SEEDS.get(),
                 ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.PALE_BELL_PEPPER_SEEDS.get(),
+                ModItems.DARK_BELL_PEPPER_SEEDS.get(),
                 ModItems.COFFEE_BEANS.get()
         );
 
@@ -163,8 +167,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.CHOCOLATE_COFFEE.get(),
                 ModItems.SYRUP_COFFEE.get(),
                 ModItems.DARK_COFFEE.get(),
+                ModItems.PUMPKIN_COFFEE.get(),
+                ModItems.CHERRY_BLOSSOM_COFFEE.get(),
                 ModItems.CHERRY_BLOSSOM_CHEESECAKE.get(),
-                ModItems.SYRUP_CHEESECAKE.get()
+                ModItems.SYRUP_CHEESECAKE.get(),
+                ModItems.COFFEE_CHEESECAKE.get()
         );
 
         // Serene Seasons
@@ -174,10 +181,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(CompatibilityTags.SERENE_SEASONS_SUMMER_CROPS).add(
                 ModItems.COTTON_SEEDS.get(),
                 ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.PALE_BELL_PEPPER_SEEDS.get(),
+                ModItems.DARK_BELL_PEPPER_SEEDS.get(),
                 ModItems.COFFEE_BEANS.get()
         );
         this.tag(CompatibilityTags.SERENE_SEASONS_AUTUMN_CROPS).add(
                 ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.PALE_BELL_PEPPER_SEEDS.get(),
+                ModItems.DARK_BELL_PEPPER_SEEDS.get(),
                 ModItems.COFFEE_BEANS.get()
         );
 
@@ -226,6 +237,33 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED).add(
                 ModItems.BELL_PEPPER_RED_CRATE.get()
         );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS).add(
+                ModItems.PALE_BELL_PEPPER_SEEDS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS).add(
+                ModItems.DARK_BELL_PEPPER_SEEDS_BAG.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE).add(
+                ModItems.BELL_PEPPER_ORANGE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE).add(
+                ModItems.BELL_PEPPER_WHITE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK).add(
+                ModItems.BELL_PEPPER_PINK_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE).add(
+                ModItems.BELL_PEPPER_BLUE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE).add(
+                ModItems.BELL_PEPPER_PURPLE_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK).add(
+                ModItems.BELL_PEPPER_BLACK_CRATE.get()
+        );
+        this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_CALAMARI).add(
+                ModItems.CALAMARI_CRATE.get()
+        );
         this.tag(ForgeTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS).add(
                 ModItems.COFFEE_BEANS_BAG.get()
         );
@@ -246,6 +284,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_GREEN)
                 .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_YELLOW)
                 .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_RED)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_PALE_BELL_PEPPER_SEEDS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_DARK_BELL_PEPPER_SEEDS)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_ORANGE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_WHITE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PINK)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLUE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_PURPLE)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_BELL_PEPPER_BLACK)
+                .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_CALAMARI)
                 .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_COFFEE_BEANS)
                 .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_COFFEE)
                 .addTag(ForgeTags.STORAGE_BLOCKS_ITEM_ROASTED_COFFEE_BEANS);
@@ -256,7 +303,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModItems.COTTON_SEEDS.get()
         );
         this.tag(ForgeTags.SEEDS_BELL_PEPPER).add(
-                ModItems.BELL_PEPPER_SEEDS.get()
+                ModItems.BELL_PEPPER_SEEDS.get(),
+                ModItems.PALE_BELL_PEPPER_SEEDS.get(),
+                ModItems.DARK_BELL_PEPPER_SEEDS.get()
         );
         this.tag(ForgeTags.SEEDS_COFFEE_BEANS).add(
                 ModItems.COFFEE_BEANS.get()
@@ -281,7 +330,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(ForgeTags.CROPS_BELL_PEPPER).add(
                 ModItems.BELL_PEPPER_GREEN.get(),
                 ModItems.BELL_PEPPER_YELLOW.get(),
-                ModItems.BELL_PEPPER_RED.get()
+                ModItems.BELL_PEPPER_RED.get(),
+                ModItems.BELL_PEPPER_ORANGE.get(),
+                ModItems.BELL_PEPPER_WHITE.get(),
+                ModItems.BELL_PEPPER_PINK.get(),
+                ModItems.BELL_PEPPER_BLUE.get(),
+                ModItems.BELL_PEPPER_PURPLE.get(),
+                ModItems.BELL_PEPPER_BLACK.get()
         );
 
         // Coffee
@@ -337,7 +392,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         ).add(
                 ModItems.BELL_PEPPER_SLICE_GREEN.get(),
                 ModItems.BELL_PEPPER_SLICE_YELLOW.get(),
-                ModItems.BELL_PEPPER_SLICE_RED.get()
+                ModItems.BELL_PEPPER_SLICE_RED.get(),
+                ModItems.BELL_PEPPER_SLICE_ORANGE.get(),
+                ModItems.BELL_PEPPER_SLICE_WHITE.get(),
+                ModItems.BELL_PEPPER_SLICE_PINK.get(),
+                ModItems.BELL_PEPPER_SLICE_BLUE.get(),
+                ModItems.BELL_PEPPER_SLICE_PURPLE.get(),
+                ModItems.BELL_PEPPER_SLICE_BLACK.get()
         );
 
         // Cookies

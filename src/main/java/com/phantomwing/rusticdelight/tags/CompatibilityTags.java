@@ -47,6 +47,9 @@ public class CompatibilityTags
     // Farmer's Respite
     public static final String FARMERS_RESPITE = "farmersrespite";
 
+    // Hearth and Harvest
+    public static final String HEARTH_AND_HARVEST = "hearthandharvest";
+
     // Supplementaries
     public static final String SUPPLEMENTARIES = "supplementaries";
     public static final TagKey<Item> COOKIES = externalItemTag(SUPPLEMENTARIES, "cookies");

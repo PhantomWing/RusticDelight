@@ -16,6 +16,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
+import java.util.List;
+
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, RusticDelight.MOD_ID);
@@ -24,6 +26,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> COTTON_SEEDS_BAG = BLOCKS.register("cotton_seeds_bag",
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
     public static final RegistryObject<Block> BELL_PEPPER_SEEDS_BAG = BLOCKS.register("bell_pepper_seeds_bag",
+            () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<Block> PALE_BELL_PEPPER_SEEDS_BAG = BLOCKS.register("pale_bell_pepper_seeds_bag",
+            () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<Block> DARK_BELL_PEPPER_SEEDS_BAG = BLOCKS.register("dark_bell_pepper_seeds_bag",
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
     public static final RegistryObject<Block> COFFEE_BEANS_BAG = BLOCKS.register("coffee_beans_bag",
             () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
@@ -39,12 +45,48 @@ public class ModBlocks {
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> BELL_PEPPER_RED_CRATE = BLOCKS.register("bell_pepper_red_crate",
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BELL_PEPPER_ORANGE_CRATE = BLOCKS.register("bell_pepper_orange_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BELL_PEPPER_WHITE_CRATE = BLOCKS.register("bell_pepper_white_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BELL_PEPPER_PINK_CRATE = BLOCKS.register("bell_pepper_pink_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BELL_PEPPER_BLUE_CRATE = BLOCKS.register("bell_pepper_blue_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BELL_PEPPER_PURPLE_CRATE = BLOCKS.register("bell_pepper_purple_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> BELL_PEPPER_BLACK_CRATE = BLOCKS.register("bell_pepper_black_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> CALAMARI_CRATE = BLOCKS.register("calamari_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
+    // Bell pepper blocks (9 slices, reversible)
+    public static final RegistryObject<Block> BELL_PEPPER_GREEN_BLOCK = BLOCKS.register("bell_pepper_green_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_YELLOW_BLOCK = BLOCKS.register("bell_pepper_yellow_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_RED_BLOCK = BLOCKS.register("bell_pepper_red_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_ORANGE_BLOCK = BLOCKS.register("bell_pepper_orange_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_WHITE_BLOCK = BLOCKS.register("bell_pepper_white_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_PINK_BLOCK = BLOCKS.register("bell_pepper_pink_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_BLUE_BLOCK = BLOCKS.register("bell_pepper_blue_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_PURPLE_BLOCK = BLOCKS.register("bell_pepper_purple_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
+    public static final RegistryObject<Block> BELL_PEPPER_BLACK_BLOCK = BLOCKS.register("bell_pepper_black_block",
+            () -> new Block(Block.Properties.copy(Blocks.MELON)));
 
     // Edible blocks
     public static final RegistryObject<Block> SYRUP_CHEESECAKE = BLOCKS.register("syrup_cheesecake",
             () -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ModItems.SYRUP_CHEESECAKE_SLICE));
     public static final RegistryObject<Block> CHERRY_BLOSSOM_CHEESECAKE = BLOCKS.register("cherry_blossom_cheesecake",
             () -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE));
+    public static final RegistryObject<Block> COFFEE_CHEESECAKE = BLOCKS.register("coffee_cheesecake",
+            () -> new PieBlock(Block.Properties.copy(Blocks.CAKE), ModItems.COFFEE_CHEESECAKE_SLICE));
     public static final RegistryObject<Block> PANCAKES = BLOCKS.register("pancakes",
             () -> new PancakeBlock(ModItems.PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> HONEY_PANCAKES = BLOCKS.register("honey_pancakes",
@@ -57,24 +99,46 @@ public class ModBlocks {
             () -> new PancakeBlock(ModItems.VEGETABLE_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> PUMPKIN_PANCAKES = BLOCKS.register("pumpkin_pancakes",
             () -> new PancakeBlock(ModItems.PUMPKIN_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> COFFEE_PANCAKES = BLOCKS.register("coffee_pancakes",
+            () -> new PancakeBlock(ModItems.COFFEE_PANCAKE, Block.Properties.copy(Blocks.CAKE).sound(SoundType.WOOD)));
 
     // Feasts
     public static final RegistryObject<Block> RICE_ROLL_ROYALE = BLOCKS.register("rice_roll_royale",
             () -> new RiceRollRoyaleBlock(Block.Properties.copy(Blocks.CAKE)));
+    // Serving lists are ordered [back-left, back-right, front] to match the stage models.
+    public static final RegistryObject<Block> BELL_PEPPER_MEDLEY = BLOCKS.register("bell_pepper_medley",
+            () -> new BellPepperMedleyBlock(Block.Properties.copy(Blocks.CAKE), List.of(
+                    ModItems.STUFFED_BELL_PEPPER_GREEN, ModItems.STUFFED_BELL_PEPPER_YELLOW, ModItems.STUFFED_BELL_PEPPER_RED)));
+    public static final RegistryObject<Block> PALE_BELL_PEPPER_MEDLEY = BLOCKS.register("pale_bell_pepper_medley",
+            () -> new BellPepperMedleyBlock(Block.Properties.copy(Blocks.CAKE), List.of(
+                    ModItems.STUFFED_BELL_PEPPER_ORANGE, ModItems.STUFFED_BELL_PEPPER_WHITE, ModItems.STUFFED_BELL_PEPPER_PINK)));
+    public static final RegistryObject<Block> DARK_BELL_PEPPER_MEDLEY = BLOCKS.register("dark_bell_pepper_medley",
+            () -> new BellPepperMedleyBlock(Block.Properties.copy(Blocks.CAKE), List.of(
+                    ModItems.STUFFED_BELL_PEPPER_BLUE, ModItems.STUFFED_BELL_PEPPER_PURPLE, ModItems.STUFFED_BELL_PEPPER_BLACK)));
 
     // Wild crops
+    // 1.21 gives Wild Cotton the Weaving effect, which does not exist in 1.20.1, so this keeps
+    // Jump Boost and takes only the rebalanced duration.
     public static final RegistryObject<Block> WILD_COTTON = BLOCKS.register("wild_cotton",
-            () -> new ModWildCropBlock(MobEffects.JUMP, 5, Block.Properties.copy(Blocks.TALL_GRASS)));
+            () -> new ModWildCropBlock(MobEffects.JUMP, 12, Block.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistryObject<Block> WILD_BELL_PEPPERS = BLOCKS.register("wild_bell_peppers",
-            () -> new ModWildCropBlock(MobEffects.FIRE_RESISTANCE, 6, Block.Properties.copy(Blocks.TALL_GRASS)));
+            () -> new ModWildCropBlock(MobEffects.FIRE_RESISTANCE, 10, Block.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistryObject<Block> WILD_PALE_BELL_PEPPERS = BLOCKS.register("wild_pale_bell_peppers",
+            () -> new ModWildCropBlock(MobEffects.NIGHT_VISION, 10, Block.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistryObject<Block> WILD_DARK_BELL_PEPPERS = BLOCKS.register("wild_dark_bell_peppers",
+            () -> new ModWildCropBlock(MobEffects.INVISIBILITY, 10, Block.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistryObject<Block> WILD_COFFEE = BLOCKS.register("wild_coffee",
-            () -> new ModWildCropBlock(MobEffects.DIG_SPEED, 8, Block.Properties.copy(Blocks.TALL_GRASS)));
+            () -> new ModWildCropBlock(MobEffects.MOVEMENT_SPEED, 10, Block.Properties.copy(Blocks.TALL_GRASS)));
 
     // Unobtainable blocks
     public static final RegistryObject<Block> COTTON_CROP = BLOCKS.register("cotton",
             () -> new CottonCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission()));
     public static final RegistryObject<Block> BELL_PEPPER_CROP = BLOCKS.register("bell_peppers",
-            () -> new BellPepperCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission()));
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission(), ModItems.BELL_PEPPER_SEEDS));
+    public static final RegistryObject<Block> PALE_BELL_PEPPER_CROP = BLOCKS.register("pale_bell_peppers",
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission(), ModItems.PALE_BELL_PEPPER_SEEDS));
+    public static final RegistryObject<Block> DARK_BELL_PEPPER_CROP = BLOCKS.register("dark_bell_peppers",
+            () -> new BellPepperCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission(), ModItems.DARK_BELL_PEPPER_SEEDS));
     public static final RegistryObject<Block> COFFEE_CROP = BLOCKS.register("coffee",
             () -> new CoffeeCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion().noCollission()));
 
@@ -82,6 +146,10 @@ public class ModBlocks {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_COTTON, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
     public static final RegistryObject<Block> POTTED_WILD_BELL_PEPPERS = BLOCKS.register("potted_wild_bell_peppers",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_BELL_PEPPERS, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final RegistryObject<Block> POTTED_WILD_PALE_BELL_PEPPERS = BLOCKS.register("potted_wild_pale_bell_peppers",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_PALE_BELL_PEPPERS, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final RegistryObject<Block> POTTED_WILD_DARK_BELL_PEPPERS = BLOCKS.register("potted_wild_dark_bell_peppers",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_DARK_BELL_PEPPERS, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
     public static final RegistryObject<Block> POTTED_WILD_COFFEE = BLOCKS.register("potted_wild_coffee",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.WILD_COFFEE, Block.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 

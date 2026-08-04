@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_slice_orange"
+    },
+    {
+      "item": "rusticdelight:bell_pepper_slice_orange"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "rusticdelight:bell_pepper_roll_orange"
+  }
+}

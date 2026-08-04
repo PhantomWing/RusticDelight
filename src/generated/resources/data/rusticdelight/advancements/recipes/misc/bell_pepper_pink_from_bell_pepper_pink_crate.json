@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "criteria": {
+    "has_bell_pepper_pink_crate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:bell_pepper_pink_crate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:bell_pepper_pink_from_bell_pepper_pink_crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bell_pepper_pink_crate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:bell_pepper_pink_from_bell_pepper_pink_crate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

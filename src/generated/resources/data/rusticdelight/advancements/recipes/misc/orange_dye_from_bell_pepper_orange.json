@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ],
+  "criteria": {
+    "has_bell_pepper_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:bell_pepper_orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:orange_dye_from_bell_pepper_orange"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bell_pepper_orange",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:orange_dye_from_bell_pepper_orange"
+    ]
+  },
+  "sends_telemetry_event": false
+}
