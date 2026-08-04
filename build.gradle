@@ -5,6 +5,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.7.+'
+    id 'me.modmuss50.mod-publish-plugin' version '2.0.0'
 }
 
 version = mod_version
@@ -143,7 +144,14 @@ def replaceProperties = [
         forge_version: forge_version, forge_version_range: forge_version_range,
         loader_version_range: loader_version_range,
         mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-        mod_authors: mod_authors, mod_description: mod_description
+        mod_authors: mod_authors, mod_description: mod_description,
+
+        // Farmer's Delight declares its version as the full coordinate ("1.20.1-1.3.1"), which a
+        // Maven range reads as version 1.20.1 with qualifier 1.3.1. A bare "[1.3.1,)" therefore
+        // compares against the 1.20.1 and admits every FD built for this Minecraft version, so the
+        // bound has to carry the coordinate too. Derived from farmersdelight_version so the two
+        // cannot drift apart.
+        farmersdelight_version_range: "[${farmersdelight_version},)"
 ]
 processResources {
     inputs.properties replaceProperties
@@ -186,3 +194,57 @@ publishing {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+// Per-release changelog: notes under the first "# X.Y.Z" header in changelog.md, up to the next "# ".
+ext.latestChangelog = {
+    def f = file('changelog.md')
+    if (!f.exists()) return "See changelog.md"
+    def body = new StringBuilder()
+    boolean started = false, done = false
+    f.eachLine { line ->
+        if (done) return
+        if (line.startsWith('# ')) {
+            if (started) { done = true; return }
+            started = true
+            return
+        }
+        if (started) body.append(line).append('\n')
+    }
+    def out = body.toString().trim()
+    return out.isEmpty() ? "See changelog.md" : out
+}
+
+// Modrinth / CurseForge publishing. Dry run (no upload): ./gradlew publishMods -PpublishDryRun
+// A real upload needs modrinth_token / curseforge_token in ~/.gradle/gradle.properties (or the
+// MODRINTH_TOKEN / CURSEFORGE_TOKEN env vars).
+publishMods {
+    file = jar.archiveFile
+    version = mod_version
+    displayName = "${mod_name} ${mod_version}"
+    changelog = latestChangelog()
+    type = STABLE
+    modLoaders.add("forge")
+    dryRun = project.hasProperty("publishDryRun")
+
+    modrinth {
+        projectId = providers.gradleProperty("modrinth_project_id")
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN").orElse(providers.gradleProperty("modrinth_token"))
+        supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+        requires("farmers-delight")
+    }
+    curseforge {
+        projectId = providers.gradleProperty("curseforge_project_id")
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN").orElse(providers.gradleProperty("curseforge_token"))
+        supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+        // CurseForge needs explicit side flags (Modrinth infers them from the jar).
+        client = true
+        server = true
+        requires("farmers-delight")
+    }
+}
+
+// Unlike the newer branches, ForgeGradle reobfuscates the jar in place through a `jar` finalizer.
+// Depending on `jar` alone does not order a task after that finalizer, so without this an upload
+// can grab the un-reobfuscated dev jar, which is broken at runtime.
+tasks.named('publishModrinth') { dependsOn('reobfJar') }
+tasks.named('publishCurseforge') { dependsOn('reobfJar') }
