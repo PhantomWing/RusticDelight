@@ -1,6 +1,6 @@
 {
   "type": "farmersdelight:cooking",
-  "experience": 1.0,
+  "experience": 1,
   "ingredients": [
     {
       "item": "minecraft:brown_mushroom"
@@ -9,7 +9,7 @@
       "item": "minecraft:red_mushroom"
     },
     {
-      "item": "farmersdelight:rice"
+      "tag": "c:grains/rices"
     },
     {
       "tag": "rusticdelight:mushroom_rice_ingredients"

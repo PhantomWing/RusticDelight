@@ -4,7 +4,7 @@
     "item": "minecraft:bowl"
   },
   "cookingtime": 400,
-  "experience": 2.0,
+  "experience": 2,
   "ingredients": [
     {
       "item": "rusticdelight:batter"
@@ -19,10 +19,10 @@
       "tag": "c:foods/vegetables"
     },
     {
-      "tag": "c:foods/vegetables"
+      "tag": "c:salad_ingredients"
     },
     {
-      "tag": "c:foods/vegetables"
+      "tag": "c:salad_ingredients"
     }
   ],
   "result": {

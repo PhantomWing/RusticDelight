@@ -22,7 +22,10 @@ public class ComposterHelper {
         registerCompostableItems(0.5f,
                 ModItems.COTTON_BOLL,
                 ModItems.POTATO_SLICES,
-                ModItems.COFFEE_BEANS
+                ModItems.COFFEE_BEANS,
+                ModItems.BELL_PEPPER_SLICE_GREEN,
+                ModItems.BELL_PEPPER_SLICE_YELLOW,
+                ModItems.BELL_PEPPER_SLICE_RED
         );
 
         // 65% chance
@@ -30,6 +33,7 @@ public class ComposterHelper {
                 ModItems.BELL_PEPPER_GREEN,
                 ModItems.BELL_PEPPER_YELLOW,
                 ModItems.BELL_PEPPER_RED,
+                ModItems.ROASTED_COFFEE_BEANS,
                 ModItems.WILD_COFFEE,
                 ModItems.WILD_COTTON,
                 ModItems.WILD_BELL_PEPPERS
@@ -38,12 +42,16 @@ public class ComposterHelper {
         // 85% chance
         registerCompostableItems(0.85f,
                 ModItems.CHERRY_BLOSSOM_COOKIE,
-                ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE
+                ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE,
+                ModItems.COFFEE_COOKIE,
+                ModItems.SYRUP_COOKIE,
+                ModItems.SYRUP_CHEESECAKE_SLICE
         );
 
         // 100% chance
         registerCompostableItems(1.0f,
-                ModItems.CHERRY_BLOSSOM_CHEESECAKE
+                ModItems.CHERRY_BLOSSOM_CHEESECAKE,
+                ModItems.SYRUP_CHEESECAKE
         );
     }
 }

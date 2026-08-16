@@ -3,6 +3,9 @@
   "category": "misc",
   "key": {
     "B": {
+      "item": "minecraft:bowl"
+    },
+    "M": {
       "item": "rusticdelight:batter"
     },
     "T": {
@@ -12,13 +15,13 @@
       "item": "minecraft:sugar"
     },
     "Y": {
-      "item": "minecraft:bowl"
+      "item": "minecraft:sugar"
     }
   },
   "pattern": [
-    "XTX",
-    "XBX",
-    "XYX"
+    " T ",
+    "XMX",
+    "YBY"
   ],
   "result": {
     "item": "rusticdelight:pancakes"

@@ -1,6 +1,8 @@
 {
   "values": [
     "rusticdelight:roasted_coffee_beans",
+    "#c:crops/coffee",
+    "#c:crops/coffee_beans",
     {
       "id": "farmersrespite:coffee_beans",
       "required": false

@@ -6,8 +6,26 @@
 - Cherry Blossom Cheesecake and Syrup Cheesecake slices show a Speed effect tooltip
 - Updated Bell Pepper and Honey Coffee textures
 
+- Honey Coffee no longer requires Sugar, matching the other editions
+- Simplified the Pancakes and Pumpkin Pancakes crafting patterns, matching the other editions
+- Raw Coffee Beans can now be used to brew coffee
+- Cooking Oil can now also be made from Pumpkin Seeds (plus canola and sunflower seed support for other mods)
+- Syrup can now also be made from beetroots
+- Whole Calamari can now be used to craft Calamari Rolls
+- Made more items compostable: bell pepper slices, Roasted Coffee Beans, Coffee Cookie, Syrup Cookie, Syrup Cheesecake and its slice
+- Wild Bell Peppers patches now generate slightly larger
+- Updated the pancake block models and various textures to match the NeoForge edition
+
 ### Fixes
 - Fixed bell peppers dropping only 1 slice when cut, instead of 2
+- Fixed Bell Pepper Soup recipes: the crafting recipe requires 6 bell peppers again, and the Cooking Pot recipe needs 3 instead of 4
+- Fixed Vegetable Pancakes and Sweet Salad requiring the wrong mix of vegetables and greens
+- Fixed food stats deviating from the other editions: Golden Coffee Beans, Fruit Beignet, Honey/Chocolate/Vegetable Pancake effects, salad Regeneration, Bell Pepper Pasta Nourishment
+- Fixed the coffee crop tags marking Roasted Coffee Beans as the crop instead of Coffee Beans
+- Fixed Coffee Cookie and Syrup Cookie missing from the cookie tag
+- Fixed Syrup Sandwich only accepting plain bread instead of any bread
+- Fixed the Roasted Coffee Beans Bag missing from the straw blocks and storage blocks tags
+- Fixed syrup items missing from Create's belt display tag
 - Added missing Cutting Board recipes: Roasted Bell Peppers can now be cut into slices, and placeable pancake stacks can be cut into single pancakes
 - Added missing recipe unlock advancements for pancakes, syrup foods, fried foods, bell pepper rolls and more
 - Fixed broken Milk Coffee, Chocolate Coffee, Honey Coffee, and Syrup Coffee tooltips in English
