@@ -1,6 +1,9 @@
 plugins {
-	id 'fabric-loom' version '1.8-SNAPSHOT'
+	// architectury-loom is a drop-in fabric-loom fork; used here only because it honours
+	// loom.ignoreDependencyLoomVersionValidation, which upstream fabric-loom does not expose.
+	id 'dev.architectury.loom' version '1.10.455'
 	id 'maven-publish'
+	id 'me.modmuss50.mod-publish-plugin' version '2.0.0'
 }
 
 version = project.mod_version
@@ -141,5 +144,58 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+	}
+}
+
+// Per-release changelog: notes under the first "# X.Y.Z" header in changelog.md, up to the next "# ".
+ext.latestChangelog = {
+	def f = file('changelog.md')
+	if (!f.exists()) return "See changelog.md"
+	def body = new StringBuilder()
+	boolean started = false, done = false
+	f.eachLine { line ->
+		if (done) return
+		if (line.startsWith('# ')) {
+			if (started) { done = true; return }
+			started = true
+			return
+		}
+		if (started) body.append(line).append('\n')
+	}
+	def out = body.toString().trim()
+	return out.isEmpty() ? "See changelog.md" : out
+}
+
+// --- Modrinth + CurseForge release (Fabric jar) ---
+// ./gradlew publishMods                  (needs modrinth_token / curseforge_token in ~/.gradle/gradle.properties)
+// ./gradlew publishMods -PpublishDryRun  (stage to build/, upload nothing)
+publishMods {
+	// remapJar, not jar: the plain jar still carries named mappings and will not run in production.
+	file = remapJar.archiveFile
+	version = mod_version
+	displayName = "${mod_name} ${mod_version}"
+	changelog = latestChangelog()
+	type = STABLE
+	modLoaders.add("fabric")
+	dryRun = project.hasProperty("publishDryRun")
+
+	modrinth {
+		projectId = providers.gradleProperty("modrinth_project_id")
+		accessToken = providers.environmentVariable("MODRINTH_TOKEN").orElse(providers.gradleProperty("modrinth_token"))
+		supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+		requires("fabric-api")
+		requires("farmers-delight-refabricated")
+		requires("cloth-config")
+	}
+	curseforge {
+		projectId = providers.gradleProperty("curseforge_project_id")
+		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN").orElse(providers.gradleProperty("curseforge_token"))
+		supported_minecraft_versions.tokenize(' ,').each { minecraftVersions.add(it) }
+		// CurseForge needs explicit side flags (Modrinth infers them from the jar).
+		client = true
+		server = true
+		requires("fabric-api")
+		requires("farmers-delight-refabricated")
+		requires("cloth-config")
 	}
 }

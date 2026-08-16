@@ -28,11 +28,11 @@
 	"mixins": [],
 	"accessWidener" : "rusticdelight.accesswidener",
 	"depends": {
-		"fabricloader": ">=0.16.9",
+		"fabricloader": ">=0.18.2",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*",
-		"farmersdelight": "*",
-		"cloth-config": "*"
+		"fabric-api": ">=0.92.8",
+		"farmersdelight": ">=1.20.1-2.5.5",
+		"cloth-config": ">=11.1.118"
 	}
 }

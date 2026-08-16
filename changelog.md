@@ -1,3 +1,23 @@
+# 1.6.0
+### Changes
+- Updated to Farmer's Delight Refabricated 2.5.5 (now required, along with Fabric Loader 0.18.2+ and Fabric API 0.92.8+)
+- Bell Pepper Soup now grants Nourishment instead of Comfort, matching Farmer's Delight 1.3 (Comfort was retired)
+- Pancake blocks, cheesecakes, and Rice Roll Royale now show the italicized "Placeable" tooltip, matching Farmer's Delight feasts and pies
+- Cherry Blossom Cheesecake and Syrup Cheesecake slices show a Speed effect tooltip
+- Updated Bell Pepper and Honey Coffee textures
+
+### Fixes
+- Fixed bell peppers dropping only 1 slice when cut, instead of 2
+- Added missing Cutting Board recipes: Roasted Bell Peppers can now be cut into slices, and placeable pancake stacks can be cut into single pancakes
+- Added missing recipe unlock advancements for pancakes, syrup foods, fried foods, bell pepper rolls and more
+- Fixed broken Milk Coffee, Chocolate Coffee, Honey Coffee, and Syrup Coffee tooltips in English
+- Fixed broken models for cheesecakes, Bell Pepper and Coffee crops
+- Fixed Spring Rolls and Stuffed Bell Peppers being uncraftable, after Farmer's Delight removed its cabbage roll ingredients tag
+- Fixed Batter, Potato Salad and Fried Rice being uncraftable, as they required an egg tag that does not exist on this version
+- Fixed the creative tab name not being translated outside English
+- Added missing tag translations (Fried Rice Ingredients, Fruits and Berries, Mushroom Rice Ingredients) to all languages
+- Removed a duplicate Fried Rice recipe
+
 # 1.5.0
 ### Additions
 - Overhauled the pancake feature:

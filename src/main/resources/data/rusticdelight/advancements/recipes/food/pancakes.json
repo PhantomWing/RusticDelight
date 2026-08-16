@@ -1,16 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_batter": {
       "conditions": {
         "items": [
           {
             "items": [
-              "farmersdelight:rice",
-              "minecraft:egg",
-              "minecraft:carrot",
-              "farmersdelight:onion",
-              "rusticdelight:cooking_oil"
+              "rusticdelight:batter"
             ]
           }
         ]
@@ -19,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rusticdelight:cooking/fried_rice_from_cooking_oil"
+        "recipe": "rusticdelight:pancakes"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -27,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_any_ingredient"
+      "has_batter"
     ]
   ],
   "rewards": {
     "recipes": [
-      "rusticdelight:cooking/fried_rice_from_cooking_oil"
+      "rusticdelight:pancakes"
     ]
   }
 }

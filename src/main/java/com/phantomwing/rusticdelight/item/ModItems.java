@@ -16,6 +16,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.item.PlaceableItem;
 
 import java.util.LinkedHashSet;
 
@@ -127,10 +128,10 @@ public class ModItems {
             baseItem().food(FoodValues.COOKED_CALAMARI_SLICE)));
 
     // Pies & cakes
-    public static final Item SYRUP_CHEESECAKE = registerBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
+    public static final Item SYRUP_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.SYRUP_CHEESECAKE, baseItem());
     public static final Item SYRUP_CHEESECAKE_SLICE = registerWithTab("syrup_cheesecake_slice", new ConsumableItem(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
-    public static final Item CHERRY_BLOSSOM_CHEESECAKE = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
+    public static final Item CHERRY_BLOSSOM_CHEESECAKE = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE, baseItem());
     public static final Item CHERRY_BLOSSOM_CHEESECAKE_SLICE = registerWithTab("cherry_blossom_cheesecake_slice", new ConsumableItem(
             baseItem().food(vectorwing.farmersdelight.common.FoodValues.PIE_SLICE)));
 
@@ -149,17 +150,17 @@ public class ModItems {
             baseItem().food(FoodValues.FRUIT_BEIGNET), true));
 
     // Pancakes
-    public static final Item PANCAKES = registerBlockWithTab(ModBlocks.PANCAKES, bowlItem());
+    public static final Item PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PANCAKES, bowlItem());
     public static final Item PANCAKE = registerWithTab("pancake", new Item(baseItem().food(FoodValues.PANCAKE)));
-    public static final Item HONEY_PANCAKES = registerBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
+    public static final Item HONEY_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.HONEY_PANCAKES, bowlItem());
     public static final Item HONEY_PANCAKE = registerWithTab("honey_pancake", new ConsumableItem(baseItem().food(FoodValues.HONEY_PANCAKE), true));
-    public static final Item CHOCOLATE_PANCAKES = registerBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
+    public static final Item CHOCOLATE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHOCOLATE_PANCAKES, bowlItem());
     public static final Item CHOCOLATE_PANCAKE = registerWithTab("chocolate_pancake", new ConsumableItem(baseItem().food(FoodValues.CHOCOLATE_PANCAKE), true));
-    public static final Item CHERRY_BLOSSOM_PANCAKES = registerBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
+    public static final Item CHERRY_BLOSSOM_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.CHERRY_BLOSSOM_PANCAKES, bowlItem());
     public static final Item CHERRY_BLOSSOM_PANCAKE = registerWithTab("cherry_blossom_pancake", new ConsumableItem(baseItem().food(FoodValues.CHERRY_BLOSSOM_PANCAKE), true));
-    public static final Item VEGETABLE_PANCAKES = registerBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
+    public static final Item VEGETABLE_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.VEGETABLE_PANCAKES, bowlItem());
     public static final Item VEGETABLE_PANCAKE = registerWithTab("vegetable_pancake", new ConsumableItem(baseItem().food(FoodValues.VEGETABLE_PANCAKE), true));
-    public static final Item PUMPKIN_PANCAKES = registerBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
+    public static final Item PUMPKIN_PANCAKES = registerPlaceableBlockWithTab(ModBlocks.PUMPKIN_PANCAKES, bowlItem());
     public static final Item PUMPKIN_PANCAKE = registerWithTab("pumpkin_pancake", new ConsumableItem(baseItem().food(FoodValues.PUMPKIN_PANCAKE), true));
 
     // Basic meals
@@ -205,7 +206,7 @@ public class ModItems {
             bowlItem().food(FoodValues.COFFEE_BRAISED_BEEF), true));
 
     // Feasts
-    public static final Item RICE_ROLL_ROYALE = registerBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
+    public static final Item RICE_ROLL_ROYALE = registerPlaceableBlockWithTab(ModBlocks.RICE_ROLL_ROYALE, feastItem());
 
     // Helper functions
     public static Item.Settings baseItem() {
@@ -246,6 +247,17 @@ public class ModItems {
         String name = Registries.BLOCK.getId(block).getPath();
         Item item = Registry.register(Registries.ITEM, Identifier.of(RusticDelight.MOD_ID, name),
                 new BlockItem(block, settings));
+
+        CREATIVE_TAB_ITEMS.add(item);
+
+        return item;
+    }
+
+    // Same as registerBlockWithTab, but adds Farmer's Delight's italicized "Placeable" tooltip.
+    private static Item registerPlaceableBlockWithTab(Block block, Item.Settings settings) {
+        String name = Registries.BLOCK.getId(block).getPath();
+        Item item = Registry.register(Registries.ITEM, Identifier.of(RusticDelight.MOD_ID, name),
+                new PlaceableItem(block, settings));
 
         CREATIVE_TAB_ITEMS.add(item);
 

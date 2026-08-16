@@ -1,0 +1,59 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rice_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:bell_pepper_roll_green"
+            ]
+          },
+          {
+            "items": [
+              "rusticdelight:bell_pepper_roll_yellow"
+            ]
+          },
+          {
+            "items": [
+              "rusticdelight:bell_pepper_roll_red"
+            ]
+          },
+          {
+            "items": [
+              "rusticdelight:calamari_roll"
+            ]
+          },
+          {
+            "items": [
+              "rusticdelight:cherry_blossom_roll"
+            ]
+          },
+          {
+            "items": [
+              "farmersdelight:kelp_roll_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:rice_roll_royale"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rice_roll"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:rice_roll_royale"
+    ]
+  }
+}

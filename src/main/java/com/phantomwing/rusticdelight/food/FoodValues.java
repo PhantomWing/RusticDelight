@@ -133,7 +133,7 @@ public class FoodValues {
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 120, 0), 1.0F).build();
     public static final FoodComponent BELL_PEPPER_SOUP = (new FoodComponent.Builder())
             .hunger(6).saturationModifier(0.6f)
-            .statusEffect(new StatusEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+            .statusEffect(nourishment(MEDIUM_DURATION), 1.0F).build();
 
     // Plated foods
     public static final FoodComponent BELL_PEPPER_PASTA = (new FoodComponent.Builder())

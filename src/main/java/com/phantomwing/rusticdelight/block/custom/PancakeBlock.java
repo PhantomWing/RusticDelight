@@ -63,7 +63,7 @@ public class PancakeBlock extends Block {
     @Override
     public @NotNull ActionResult onUse(BlockState state, World level, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hitResult) {
         ItemStack heldStack = player.getStackInHand(hand);
-        if (heldStack.isIn(ModTags.KNIVES)) {
+        if (heldStack.isIn(ModTags.Items.KNIVES)) {
             return takeServing(level, pos, state, player);
         }
 

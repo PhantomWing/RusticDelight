@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/pie_slice1",
+  "parent": "farmersdelight:block/template_pie_slice1",
   "textures": {
     "particle": "rusticdelight:block/syrup_cheesecake_top",
     "bottom": "rusticdelight:block/syrup_cheesecake_bottom",
