@@ -22,13 +22,24 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_pumpkin_pancake"
+      "has_pumpkin_pancake",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:pumpkin_pancakes_from_pumpkin_pancake"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ]
 }

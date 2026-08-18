@@ -26,5 +26,15 @@
   "result": {
     "item": "rusticdelight:pancakes"
   },
-  "show_notification": true
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ]
 }

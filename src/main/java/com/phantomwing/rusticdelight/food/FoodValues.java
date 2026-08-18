@@ -17,7 +17,7 @@ public class FoodValues {
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 400, 0), 0.5f).snack().build();
     public static final FoodComponent SYRUP = (new FoodComponent.Builder())
             .hunger(2).saturationModifier(0.2F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 300, 0), 1.0F).snack().build();
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 300, 0, false, false), 1.0F).snack().build();
 
     // Basic foods
     public static final FoodComponent BELL_PEPPER = (new FoodComponent.Builder())
@@ -59,15 +59,15 @@ public class FoodValues {
             .snack()
             .build();
     public static final FoodComponent CHOCOLATE_COFFEE = (new FoodComponent.Builder())
-            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 900, 0), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 900, 0), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0), 1.0f)
             .alwaysEdible()
             .snack()
             .build();
     public static final FoodComponent HONEY_COFFEE = (new FoodComponent.Builder())
             .hunger(6).saturationModifier(0.1F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 900, 0), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 900, 0), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0), 1.0f)
             .alwaysEdible()
             .snack()
             .build();
@@ -80,6 +80,18 @@ public class FoodValues {
     public static final FoodComponent SYRUP_COFFEE = (new FoodComponent.Builder())
             .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1800, 0), 1.0f)
             .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1800, 0), 1.0f)
+            .alwaysEdible()
+            .snack()
+            .build();
+    public static final FoodComponent PUMPKIN_COFFEE = (new FoodComponent.Builder())
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 1), 1.0f)
+            .alwaysEdible()
+            .snack()
+            .build();
+    public static final FoodComponent CHERRY_BLOSSOM_COFFEE = (new FoodComponent.Builder())
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 1), 1.0f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0), 1.0f)
             .alwaysEdible()
             .snack()
             .build();
@@ -107,6 +119,15 @@ public class FoodValues {
     public static final FoodComponent PUMPKIN_PANCAKE = (new FoodComponent.Builder())
             .hunger(4).saturationModifier(0.6F)
             .statusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 600, 0, false, false), 1.0F).build();
+    // Carries the coffee family's Haste rather than a pancake effect.
+    public static final FoodComponent COFFEE_PANCAKE = (new FoodComponent.Builder())
+            .hunger(4).saturationModifier(0.6F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0, false, false), 1.0F).build();
+    // Farmer's Delight's PIE_SLICE, plus the Haste every other coffee item carries.
+    public static final FoodComponent COFFEE_CHEESECAKE_SLICE = (new FoodComponent.Builder())
+            .hunger(3).saturationModifier(0.3F).snack()
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0, false, false), 1.0F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0, false, false), 1.0F).build();
 
     // Handheld foods
     public static final FoodComponent CALAMARI_ROLL = (new FoodComponent.Builder())
@@ -121,6 +142,8 @@ public class FoodValues {
             .hunger(6).saturationModifier(0.5F).build();
     public static final FoodComponent FRIED_DUMPLINGS = (new FoodComponent.Builder())
             .hunger(10).saturationModifier(0.8F).build();
+    public static final FoodComponent FRIED_FISH = (new FoodComponent.Builder())
+            .hunger(8).saturationModifier(0.7F).build();
     public static final FoodComponent STUFFED_BELL_PEPPER = (new FoodComponent.Builder())
             .hunger(10).saturationModifier(0.7F).build();
 
@@ -134,6 +157,10 @@ public class FoodValues {
     public static final FoodComponent BELL_PEPPER_SOUP = (new FoodComponent.Builder())
             .hunger(6).saturationModifier(0.6f)
             .statusEffect(nourishment(MEDIUM_DURATION), 1.0F).build();
+    // Heartier than the vegetable soup, since it carries calamari, potato and milk.
+    public static final FoodComponent CALAMARI_SOUP = (new FoodComponent.Builder())
+            .hunger(10).saturationModifier(0.8f)
+            .statusEffect(nourishment(MEDIUM_DURATION), 1.0f).build();
 
     // Plated foods
     public static final FoodComponent BELL_PEPPER_PASTA = (new FoodComponent.Builder())

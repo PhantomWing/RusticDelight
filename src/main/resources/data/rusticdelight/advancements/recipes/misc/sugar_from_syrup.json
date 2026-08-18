@@ -22,13 +22,20 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_syrup"
+      "has_syrup",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:sugar_from_syrup"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ]
 }

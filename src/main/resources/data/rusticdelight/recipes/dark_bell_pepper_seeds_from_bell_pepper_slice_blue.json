@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_slice_blue"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:dark_bell_pepper_seeds"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
+}

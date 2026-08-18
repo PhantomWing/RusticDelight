@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "rusticdelight:cooking_oil"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "farmersdelight:fried_egg"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ]
+}

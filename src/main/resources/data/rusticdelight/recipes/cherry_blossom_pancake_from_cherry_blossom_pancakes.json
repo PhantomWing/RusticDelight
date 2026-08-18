@@ -9,5 +9,15 @@
   "result": {
     "count": 6,
     "item": "rusticdelight:cherry_blossom_pancake"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

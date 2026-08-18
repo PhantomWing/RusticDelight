@@ -15,5 +15,11 @@
   "result": {
     "count": 2,
     "item": "rusticdelight:cherry_blossom_roll"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ]
 }

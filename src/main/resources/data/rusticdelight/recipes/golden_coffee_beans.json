@@ -21,5 +21,12 @@
   ],
   "result": {
     "item": "rusticdelight:golden_coffee_beans"
-  }
+  },
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

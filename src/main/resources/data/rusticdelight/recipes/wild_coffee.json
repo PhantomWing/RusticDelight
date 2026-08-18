@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:wild_coffee"
+    }
+  ],
+  "result": [
+    {
+      "item": "rusticdelight:coffee_beans"
+    },
+    {
+      "chance": 0.3,
+      "item": "rusticdelight:coffee_beans"
+    },
+    {
+      "chance": 0.1,
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
+}

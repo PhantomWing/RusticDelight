@@ -1,12 +1,4 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "botanypots"
-      ]
-    }
-  ],
   "bookshelf:load_conditions": [
     {
       "type": "bookshelf:item_exists",
@@ -29,12 +21,20 @@
   },
   "drops": [
     {
-      "chance": 1.00,
+      "chance": 1,
       "output": {
         "item": "rusticdelight:coffee_beans"
       },
       "minRolls": 1,
       "maxRolls": 2
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "botanypots"
+      ]
     }
   ]
 }

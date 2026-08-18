@@ -1,11 +1,21 @@
 {
   "values": [
-    "rusticdelight:cotton_seeds_bag",
-    "rusticdelight:cotton_boll_crate",
+    "rusticdelight:bell_pepper_black_crate",
+    "rusticdelight:bell_pepper_blue_crate",
     "rusticdelight:bell_pepper_green_crate",
-    "rusticdelight:bell_pepper_yellow_crate",
+    "rusticdelight:bell_pepper_orange_crate",
+    "rusticdelight:bell_pepper_pink_crate",
+    "rusticdelight:bell_pepper_purple_crate",
     "rusticdelight:bell_pepper_red_crate",
+    "rusticdelight:bell_pepper_seeds_bag",
+    "rusticdelight:bell_pepper_white_crate",
+    "rusticdelight:bell_pepper_yellow_crate",
+    "rusticdelight:calamari_crate",
     "rusticdelight:coffee_beans_bag",
+    "rusticdelight:cotton_boll_crate",
+    "rusticdelight:cotton_seeds_bag",
+    "rusticdelight:dark_bell_pepper_seeds_bag",
+    "rusticdelight:pale_bell_pepper_seeds_bag",
     "rusticdelight:roasted_coffee_beans_bag"
   ]
 }

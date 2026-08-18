@@ -1,0 +1,44 @@
+{
+  "parent": "rusticdelight:main/coffee_beans",
+  "criteria": {
+    "golden_coffee_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:golden_coffee_beans"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.golden_coffee_beans.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:golden_coffee_beans"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.golden_coffee_beans.title"
+    }
+  },
+  "requirements": [
+    [
+      "golden_coffee_beans"
+    ]
+  ],
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
+}

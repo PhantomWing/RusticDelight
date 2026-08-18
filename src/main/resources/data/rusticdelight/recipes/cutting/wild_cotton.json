@@ -20,5 +20,11 @@
   ],
   "tool": {
     "tag": "c:tools/knives"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ]
 }

@@ -8,5 +8,11 @@
   ],
   "result": {
     "item": "minecraft:string"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ]
 }

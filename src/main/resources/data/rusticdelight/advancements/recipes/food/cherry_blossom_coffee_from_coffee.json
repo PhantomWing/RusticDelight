@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:coffee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:cherry_blossom_coffee_from_coffee"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coffee",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:cherry_blossom_coffee_from_coffee"
+    ]
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ]
+}

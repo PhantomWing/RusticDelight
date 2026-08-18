@@ -15,5 +15,11 @@
   "result": {
     "count": 2,
     "item": "rusticdelight:bell_pepper_roll_green"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

@@ -17,5 +17,11 @@
   ],
   "result": {
     "item": "rusticdelight:chocolate_coffee"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

@@ -22,13 +22,20 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_bell_pepper_seeds"
+      "has_bell_pepper_seeds",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:bell_pepper_seeds_bag_from_bell_pepper_seeds"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

@@ -4,7 +4,7 @@
     "item": "minecraft:bowl"
   },
   "cookingtime": 400,
-  "experience": 2.0,
+  "experience": 2,
   "ingredients": [
     {
       "item": "rusticdelight:batter"
@@ -25,7 +25,14 @@
       "item": "minecraft:sugar"
     }
   ],
+  "recipe_book_tab": "misc",
   "result": {
     "item": "rusticdelight:honey_pancakes"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

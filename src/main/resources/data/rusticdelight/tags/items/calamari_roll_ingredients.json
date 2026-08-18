@@ -1,5 +1,12 @@
 {
+  "remove": [
+    "rusticdelight:calamari"
+  ],
   "values": [
-    "#c:foods/raw_fishes/calamari"
+    "#c:foods/raw_fishes/calamari",
+    {
+      "id": "miners_delight:tentacles",
+      "required": false
+    }
   ]
 }

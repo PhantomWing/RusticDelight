@@ -1,0 +1,43 @@
+{
+  "parent": "rusticdelight:main/root",
+  "criteria": {
+    "batter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:batter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.batter.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:batter"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.batter.title"
+    }
+  },
+  "requirements": [
+    [
+      "batter"
+    ]
+  ],
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "forge:or"
+    }
+  ]
+}

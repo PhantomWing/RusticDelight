@@ -32,5 +32,10 @@
       "rusticdelight:cooking/batter"
     ]
   },
-  "sends_telemetry_event": true
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "forge:or"
+    }
+  ]
 }

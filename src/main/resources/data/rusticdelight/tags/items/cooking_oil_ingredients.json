@@ -3,15 +3,15 @@
     "rusticdelight:cotton_seeds",
     "minecraft:pumpkin_seeds",
     {
-      "id": "frycooks_delight:canola_seeds",
-      "required": false
-    },
-    {
       "id": "#c:seeds/canola",
       "required": false
     },
     {
       "id": "#c:seeds/sunflower",
+      "required": false
+    },
+    {
+      "id": "frycooks_delight:canola_seeds",
       "required": false
     }
   ]

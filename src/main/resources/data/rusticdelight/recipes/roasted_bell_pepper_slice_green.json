@@ -6,5 +6,11 @@
   "ingredient": {
     "item": "rusticdelight:bell_pepper_slice_green"
   },
-  "result": "rusticdelight:roasted_bell_pepper_slice_green"
+  "result": "rusticdelight:roasted_bell_pepper_slice_green",
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

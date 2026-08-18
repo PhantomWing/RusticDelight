@@ -57,5 +57,11 @@
       "rusticdelight:bell_pepper_soup"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

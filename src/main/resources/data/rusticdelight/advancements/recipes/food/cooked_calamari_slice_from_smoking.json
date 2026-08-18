@@ -31,5 +31,11 @@
       "rusticdelight:cooked_calamari_slice_from_smoking"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ]
 }

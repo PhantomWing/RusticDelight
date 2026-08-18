@@ -14,5 +14,11 @@
   ],
   "result": {
     "item": "rusticdelight:syrup_sandwich"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ]
 }

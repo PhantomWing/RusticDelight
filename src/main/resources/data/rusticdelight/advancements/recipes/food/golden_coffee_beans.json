@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_roasted_coffee_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:roasted_coffee_beans"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "rusticdelight:golden_coffee_beans"
@@ -22,13 +34,21 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_coffee_beans"
+      "has_coffee_beans",
+      "has_roasted_coffee_beans",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:golden_coffee_beans"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

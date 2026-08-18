@@ -1,15 +1,32 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1,
   "ingredients": [
     {
-      "item": "rusticdelight:coffee"
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
     },
     {
       "tag": "c:milks"
     }
   ],
+  "recipe_book_tab": "drinks",
   "result": {
     "item": "rusticdelight:milk_coffee"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

@@ -22,13 +22,24 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_cherry_blossom_pancake"
+      "has_cherry_blossom_pancake",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:cherry_blossom_pancakes_from_cherry_blossom_pancake"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

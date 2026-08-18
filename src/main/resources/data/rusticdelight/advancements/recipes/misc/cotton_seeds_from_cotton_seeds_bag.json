@@ -22,13 +22,20 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_cotton_seeds_bag"
+      "has_cotton_seeds_bag",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:cotton_seeds_from_cotton_seeds_bag"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ]
 }

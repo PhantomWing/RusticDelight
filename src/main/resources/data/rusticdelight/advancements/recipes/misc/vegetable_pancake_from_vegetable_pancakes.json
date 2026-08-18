@@ -22,13 +22,20 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_vegetable_pancakes"
+      "has_vegetable_pancakes",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:vegetable_pancake_from_vegetable_pancakes"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

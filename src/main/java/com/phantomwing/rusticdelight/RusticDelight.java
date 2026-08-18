@@ -1,15 +1,19 @@
 package com.phantomwing.rusticdelight;
 
 import com.phantomwing.rusticdelight.block.ModBlocks;
+import com.phantomwing.rusticdelight.condition.ModConditions;
+import com.phantomwing.rusticdelight.event.ModEvents;
 import com.phantomwing.rusticdelight.item.ModItems;
 import com.phantomwing.rusticdelight.itemGroup.ModItemGroups;
 import com.phantomwing.rusticdelight.potion.ModPotions;
 import com.phantomwing.rusticdelight.util.AnimalFoodHelper;
+import com.phantomwing.rusticdelight.util.ChestLootHelper;
 import com.phantomwing.rusticdelight.util.ComposterHelper;
 import com.phantomwing.rusticdelight.util.EntityLootHelper;
 import com.phantomwing.rusticdelight.util.VillagerHelper;
 import com.phantomwing.rusticdelight.villager.ModVillagerTrades;
 import com.phantomwing.rusticdelight.world.ModPlacementModifiers;
+import com.phantomwing.rusticdelight.world.ModVillageStructures;
 import com.phantomwing.rusticdelight.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -24,6 +28,7 @@ public class RusticDelight implements ModInitializer {
 	public void onInitialize() {
 		// Configuration
 		RusticDelightConfig.register();
+		ModConditions.register();
 
 		// Items
 		ModItems.registerModItems();
@@ -33,6 +38,7 @@ public class RusticDelight implements ModInitializer {
 		// World
 		ModPlacementModifiers.registerPlacementModifiers();
 		ModWorldGeneration.registerModWorldGeneration();
+		ModVillageStructures.registerVillageCrops();
 
 		// Trades
 		ModVillagerTrades.registerVillagerTrades();
@@ -44,6 +50,9 @@ public class RusticDelight implements ModInitializer {
 		ComposterHelper.registerCompostableItems();
 		AnimalFoodHelper.registerAnimalFood();
 		VillagerHelper.registerGatherableItems();
+		VillagerHelper.registerVillagerFood();
+		ModEvents.registerModEvents();
 		EntityLootHelper.modifyLootTables();
+		ChestLootHelper.modifyLootTables();
 	}
 }

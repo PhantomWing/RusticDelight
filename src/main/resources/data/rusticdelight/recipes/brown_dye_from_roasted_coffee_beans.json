@@ -7,7 +7,12 @@
     }
   ],
   "result": {
-    "count": 1,
     "item": "minecraft:brown_dye"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

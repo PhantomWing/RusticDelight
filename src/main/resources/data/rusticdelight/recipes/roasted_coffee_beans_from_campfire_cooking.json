@@ -6,5 +6,11 @@
   "ingredient": {
     "item": "rusticdelight:coffee_beans"
   },
-  "result": "rusticdelight:roasted_coffee_beans"
+  "result": "rusticdelight:roasted_coffee_beans",
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

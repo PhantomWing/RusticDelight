@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "rusticdelight:coffee_beans"
@@ -13,5 +13,12 @@
   ],
   "result": {
     "item": "rusticdelight:coffee_beans_bag"
-  }
+  },
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

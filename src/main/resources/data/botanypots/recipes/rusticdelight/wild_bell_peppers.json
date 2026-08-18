@@ -1,12 +1,4 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "botanypots"
-      ]
-    }
-  ],
   "bookshelf:load_conditions": [
     {
       "type": "bookshelf:item_exists",
@@ -29,7 +21,7 @@
   },
   "drops": [
     {
-      "chance": 1.00,
+      "chance": 1,
       "output": {
         "item": "rusticdelight:bell_pepper_yellow"
       },
@@ -37,7 +29,7 @@
       "maxRolls": 1
     },
     {
-      "chance": 1.00,
+      "chance": 1,
       "output": {
         "item": "rusticdelight:bell_pepper_green"
       },
@@ -51,6 +43,14 @@
       },
       "minRolls": 1,
       "maxRolls": 1
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "botanypots"
+      ]
     }
   ]
 }

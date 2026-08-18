@@ -22,13 +22,20 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_bell_pepper_green"
+      "has_bell_pepper_green",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:green_dye_from_bell_pepper_green"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

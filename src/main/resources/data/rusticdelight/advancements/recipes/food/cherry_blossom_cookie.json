@@ -57,5 +57,11 @@
       "rusticdelight:cherry_blossom_cookie"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ]
 }

@@ -1,9 +1,10 @@
 {
   "type": "farmersdelight:cooking",
-  "experience": 1.0,
+  "cookingtime": 200,
+  "experience": 1,
   "ingredients": [
     {
-      "item": "minecraft:cod"
+      "tag": "c:foods/raw_fishes/cod"
     },
     {
       "tag": "c:foods/vegetables/potatoes"
@@ -12,7 +13,7 @@
       "tag": "rusticdelight:raw_cooked_eggs"
     },
     {
-      "item": "farmersdelight:tomato"
+      "tag": "c:foods/vegetables/tomatoes"
     }
   ],
   "recipe_book_tab": "meals",

@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:coffee_pancakes"
+    }
+  ],
+  "result": [
+    {
+      "count": 6,
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
+}

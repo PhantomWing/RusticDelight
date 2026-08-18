@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
   "cookingtime": 200,
-  "experience": 1.0,
+  "experience": 1,
   "ingredients": [
     {
       "item": "rusticdelight:bell_pepper_yellow"
@@ -16,5 +16,11 @@
   "recipe_book_tab": "meals",
   "result": {
     "item": "rusticdelight:stuffed_bell_pepper_yellow"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

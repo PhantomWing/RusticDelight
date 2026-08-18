@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "rusticdelight:coffee_pancake"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "rusticdelight:coffee_pancakes"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ package com.phantomwing.rusticdelight.potion;
 
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.RusticDelightConfig;
+import com.phantomwing.rusticdelight.item.ItemFamily;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistry;
 import net.minecraft.entity.effect.StatusEffect;
@@ -29,13 +30,16 @@ public class ModPotions {
     }
 
     public static void registerPotionRecipes() {
-        FabricBrewingRecipeRegistry.registerPotionRecipe(Potions.WATER, Ingredient.ofItems(ModItems.GOLDEN_COFFEE_BEANS), Registries.POTION.getEntry(HASTE_POTION).value());
+        // Brewed from an Awkward Potion, matching every other potion.
+        FabricBrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, Ingredient.ofItems(ModItems.GOLDEN_COFFEE_BEANS), Registries.POTION.getEntry(HASTE_POTION).value());
         FabricBrewingRecipeRegistry.registerPotionRecipe(Registries.POTION.getEntry(HASTE_POTION).value(), Ingredient.ofItems(Items.REDSTONE), Registries.POTION.getEntry(LONG_HASTE_POTION).value());
         FabricBrewingRecipeRegistry.registerPotionRecipe(Registries.POTION.getEntry(HASTE_POTION).value(), Ingredient.ofItems(Items.GLOWSTONE_DUST), Registries.POTION.getEntry(STRONG_HASTE_POTION).value());
     }
 
     public static void registerModPotions() {
-        if (!RusticDelightConfig.getBooleanConfigurationValue(RusticDelightConfig.ENABLE_POTIONS_ID)) {
+        // Golden Coffee Beans are the only brewing ingredient, so the coffee family gates this too.
+        if (!RusticDelightConfig.getBooleanConfigurationValue(RusticDelightConfig.ENABLE_POTIONS_ID)
+                || !ItemFamily.COFFEE.isEnabled()) {
             return;
         }
 

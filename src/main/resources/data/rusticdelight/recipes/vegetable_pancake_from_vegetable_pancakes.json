@@ -9,5 +9,11 @@
   "result": {
     "count": 6,
     "item": "rusticdelight:vegetable_pancake"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

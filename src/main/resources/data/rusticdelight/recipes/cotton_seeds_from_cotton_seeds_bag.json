@@ -9,5 +9,11 @@
   "result": {
     "count": 9,
     "item": "rusticdelight:cotton_seeds"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ]
 }

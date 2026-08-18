@@ -22,13 +22,24 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_milk_coffee"
+      "has_milk_coffee",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:syrup_coffee_from_milk_coffee"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ]
 }

@@ -23,5 +23,10 @@
   "result": {
     "count": 2,
     "item": "rusticdelight:batter"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "forge:or"
+    }
+  ]
 }

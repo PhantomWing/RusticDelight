@@ -11,11 +11,16 @@
       "item": "rusticdelight:chocolate_pancake"
     },
     {
-      "count": 1,
       "item": "minecraft:bowl"
     }
   ],
   "tool": {
     "tag": "c:tools/knives"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

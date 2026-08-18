@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bell_pepper_slice_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:bell_pepper_slice_orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cooked_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "farmersdelight:cooked_rice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rusticdelight:bell_pepper_roll_orange"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_bell_pepper_slice_orange",
+      "has_cooked_rice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rusticdelight:bell_pepper_roll_orange"
+    ]
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
+}

@@ -6,5 +6,11 @@
   "ingredient": {
     "item": "rusticdelight:potato_slices"
   },
-  "result": "rusticdelight:baked_potato_slices"
+  "result": "rusticdelight:baked_potato_slices",
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_potato_slices"
+    }
+  ]
 }

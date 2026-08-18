@@ -25,7 +25,14 @@
       "tag": "c:salad_ingredients"
     }
   ],
+  "recipe_book_tab": "misc",
   "result": {
     "item": "rusticdelight:vegetable_pancakes"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

@@ -16,5 +16,11 @@
   ],
   "tool": {
     "tag": "c:tools/knives"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ]
 }

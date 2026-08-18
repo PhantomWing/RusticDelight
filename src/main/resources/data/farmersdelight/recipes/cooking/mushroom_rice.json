@@ -1,5 +1,6 @@
 {
   "type": "farmersdelight:cooking",
+  "cookingtime": 200,
   "experience": 1,
   "ingredients": [
     {
@@ -11,9 +12,14 @@
     {
       "tag": "c:grains/rices"
     },
-    {
-      "tag": "rusticdelight:mushroom_rice_ingredients"
-    }
+    [
+      {
+        "tag": "c:foods/vegetables/carrots"
+      },
+      {
+        "tag": "c:foods/vegetables/potatoes"
+      }
+    ]
   ],
   "recipe_book_tab": "meals",
   "result": {

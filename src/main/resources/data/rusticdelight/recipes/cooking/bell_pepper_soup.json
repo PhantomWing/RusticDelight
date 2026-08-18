@@ -19,5 +19,11 @@
   "recipe_book_tab": "meals",
   "result": {
     "item": "rusticdelight:bell_pepper_soup"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

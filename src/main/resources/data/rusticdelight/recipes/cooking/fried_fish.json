@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 1,
+  "ingredients": [
+    {
+      "tag": "rusticdelight:cooking_oil"
+    },
+    {
+      "item": "rusticdelight:batter"
+    },
+    {
+      "tag": "c:foods/raw_fishes"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "rusticdelight:fried_fish"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ]
+}

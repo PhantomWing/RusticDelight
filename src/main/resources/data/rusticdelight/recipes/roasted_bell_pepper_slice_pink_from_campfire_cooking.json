@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "rusticdelight:bell_pepper_slice_pink"
+  },
+  "result": "rusticdelight:roasted_bell_pepper_slice_pink",
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
+}

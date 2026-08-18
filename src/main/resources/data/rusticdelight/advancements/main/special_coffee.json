@@ -1,0 +1,50 @@
+{
+  "parent": "rusticdelight:main/coffee",
+  "criteria": {
+    "special_coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:milk_coffee",
+              "rusticdelight:chocolate_coffee",
+              "rusticdelight:honey_coffee",
+              "rusticdelight:syrup_coffee",
+              "rusticdelight:pumpkin_coffee",
+              "rusticdelight:cherry_blossom_coffee",
+              "rusticdelight:dark_coffee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.special_coffee.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:honey_coffee"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.special_coffee.title"
+    }
+  },
+  "requirements": [
+    [
+      "special_coffee"
+    ]
+  ],
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
+}

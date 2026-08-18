@@ -1,0 +1,44 @@
+{
+  "parent": "rusticdelight:main/roasted_coffee_beans",
+  "criteria": {
+    "coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rusticdelight:coffee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.rusticdelight.coffee.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "rusticdelight:coffee"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.rusticdelight.coffee.title"
+    }
+  },
+  "requirements": [
+    [
+      "coffee"
+    ]
+  ],
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
+}

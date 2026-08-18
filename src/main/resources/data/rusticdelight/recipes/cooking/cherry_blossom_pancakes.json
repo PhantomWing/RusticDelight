@@ -4,7 +4,7 @@
     "item": "minecraft:bowl"
   },
   "cookingtime": 400,
-  "experience": 2.0,
+  "experience": 2,
   "ingredients": [
     {
       "item": "rusticdelight:batter"
@@ -25,7 +25,18 @@
       "tag": "rusticdelight:cherry_blossom_ingredients"
     }
   ],
+  "recipe_book_tab": "misc",
   "result": {
     "item": "rusticdelight:cherry_blossom_pancakes"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

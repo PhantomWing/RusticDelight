@@ -1,0 +1,483 @@
+{
+  "__comment": "Platter from farmersdelight:block/rice_roll_medley_block_leftovers; stuffed peppers from rusticdelight:coaster/stuffed_bell_pepper_*.",
+  "parent": "block/block",
+  "textures": {
+    "particle": "rusticdelight:block/platter",
+    "platter": "rusticdelight:block/platter",
+    "pepper_back_left": "rusticdelight:block/coaster/stuffed_bell_pepper_green",
+    "pepper_back_right": "rusticdelight:block/coaster/stuffed_bell_pepper_yellow"
+  },
+  "elements": [
+    {
+      "name": "base",
+      "from": [
+        1,
+        1,
+        2
+      ],
+      "to": [
+        15,
+        3,
+        14
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            14,
+            14
+          ],
+          "texture": "#platter"
+        },
+        "east": {
+          "uv": [
+            14,
+            0,
+            16,
+            12
+          ],
+          "rotation": 90,
+          "texture": "#platter"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            14,
+            14
+          ],
+          "texture": "#platter"
+        },
+        "west": {
+          "uv": [
+            14,
+            12,
+            16,
+            0
+          ],
+          "rotation": 90,
+          "texture": "#platter"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            14,
+            12
+          ],
+          "texture": "#platter"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            14,
+            12
+          ],
+          "texture": "#platter"
+        }
+      }
+    },
+    {
+      "name": "east_support",
+      "from": [
+        11,
+        0,
+        2
+      ],
+      "to": [
+        13,
+        1,
+        14
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            15,
+            16,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "east": {
+          "uv": [
+            2,
+            15,
+            14,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "south": {
+          "uv": [
+            0,
+            15,
+            2,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "west": {
+          "uv": [
+            2,
+            15,
+            14,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "down": {
+          "uv": [
+            2,
+            14,
+            14,
+            16
+          ],
+          "rotation": 90,
+          "texture": "#platter",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "name": "west_support",
+      "from": [
+        3,
+        0,
+        2
+      ],
+      "to": [
+        5,
+        1,
+        14
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            15,
+            16,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "east": {
+          "uv": [
+            2,
+            15,
+            14,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "south": {
+          "uv": [
+            0,
+            15,
+            2,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "west": {
+          "uv": [
+            2,
+            15,
+            14,
+            16
+          ],
+          "texture": "#platter"
+        },
+        "down": {
+          "uv": [
+            2,
+            14,
+            14,
+            16
+          ],
+          "rotation": 90,
+          "texture": "#platter",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "name": "back_left_pepper",
+      "from": [
+        2,
+        3,
+        8
+      ],
+      "to": [
+        7,
+        8,
+        13
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "east": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "south": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "west": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            5,
+            5
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "down": {
+          "uv": [
+            0,
+            11,
+            5,
+            16
+          ],
+          "texture": "#pepper_back_left"
+        }
+      }
+    },
+    {
+      "name": "back_left_stuffing",
+      "from": [
+        3,
+        8,
+        9
+      ],
+      "to": [
+        6,
+        9,
+        12
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            5,
+            9,
+            6
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "east": {
+          "uv": [
+            6,
+            7,
+            9,
+            8
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "south": {
+          "uv": [
+            6,
+            11,
+            9,
+            12
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "west": {
+          "uv": [
+            6,
+            9,
+            9,
+            10
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "up": {
+          "uv": [
+            6,
+            1,
+            9,
+            4
+          ],
+          "texture": "#pepper_back_left"
+        },
+        "down": {
+          "uv": [
+            6,
+            1,
+            9,
+            4
+          ],
+          "texture": "#pepper_back_left"
+        }
+      }
+    },
+    {
+      "name": "back_right_pepper",
+      "from": [
+        9,
+        3,
+        8
+      ],
+      "to": [
+        14,
+        8,
+        13
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "east": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "south": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "west": {
+          "uv": [
+            0,
+            6,
+            5,
+            11
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            5,
+            5
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "down": {
+          "uv": [
+            0,
+            11,
+            5,
+            16
+          ],
+          "texture": "#pepper_back_right"
+        }
+      }
+    },
+    {
+      "name": "back_right_stuffing",
+      "from": [
+        10,
+        8,
+        9
+      ],
+      "to": [
+        13,
+        9,
+        12
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            5,
+            9,
+            6
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "east": {
+          "uv": [
+            6,
+            7,
+            9,
+            8
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "south": {
+          "uv": [
+            6,
+            11,
+            9,
+            12
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "west": {
+          "uv": [
+            6,
+            9,
+            9,
+            10
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "up": {
+          "uv": [
+            6,
+            1,
+            9,
+            4
+          ],
+          "texture": "#pepper_back_right"
+        },
+        "down": {
+          "uv": [
+            6,
+            1,
+            9,
+            4
+          ],
+          "texture": "#pepper_back_right"
+        }
+      }
+    }
+  ]
+}

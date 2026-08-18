@@ -3,19 +3,25 @@
   "container": {
     "item": "minecraft:bowl"
   },
-  "experience": 1.0,
+  "cookingtime": 200,
+  "experience": 1,
   "ingredients": [
     {
       "item": "farmersdelight:rice"
     },
-    {
-      "tag": "rusticdelight:fried_rice_ingredients"
-    },
+    [
+      {
+        "tag": "rusticdelight:raw_cooked_eggs"
+      },
+      {
+        "tag": "rusticdelight:cooking_oil"
+      }
+    ],
     {
       "tag": "c:foods/vegetables/carrots"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:foods/vegetables/onions"
     }
   ],
   "recipe_book_tab": "meals",

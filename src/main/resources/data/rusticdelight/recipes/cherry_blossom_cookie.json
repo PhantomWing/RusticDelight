@@ -3,17 +3,23 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
       "tag": "rusticdelight:cherry_blossom_ingredients"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
     }
   ],
   "result": {
     "count": 8,
     "item": "rusticdelight:cherry_blossom_cookie"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cherry_blossom_foods"
+    }
+  ]
 }

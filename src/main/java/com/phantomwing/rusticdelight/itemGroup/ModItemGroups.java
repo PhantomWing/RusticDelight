@@ -1,6 +1,7 @@
 package com.phantomwing.rusticdelight.itemGroup;
 
 import com.phantomwing.rusticdelight.RusticDelight;
+import com.phantomwing.rusticdelight.item.ItemFamily;
 import com.phantomwing.rusticdelight.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -16,8 +17,15 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.WILD_COTTON))
                     .displayName(Text.translatable("itemgroup." + RusticDelight.MOD_ID))
                     .entries((displayContext, entries) -> {
-                        // Add items to this tab.
-                        ModItems.CREATIVE_TAB_ITEMS.forEach(entries::add);
+                        // Add items to this tab, skipping any whose families aren't all enabled.
+                        ModItems.CREATIVE_TAB_ITEMS.forEach((item, families) -> {
+                            for (ItemFamily family : families) {
+                                if (!family.isEnabled()) {
+                                    return;
+                                }
+                            }
+                            entries.add(item);
+                        });
                     })
                     .build());
 

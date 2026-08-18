@@ -29,5 +29,11 @@
   "result": {
     "count": 2,
     "item": "rusticdelight:cooking_oil"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ]
 }

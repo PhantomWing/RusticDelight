@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:wild_dark_bell_peppers"
+    }
+  ],
+  "result": [
+    {
+      "item": "rusticdelight:dark_bell_pepper_seeds"
+    },
+    {
+      "chance": 0.3,
+      "item": "rusticdelight:bell_pepper_purple"
+    },
+    {
+      "chance": 0.1,
+      "item": "minecraft:purple_dye"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
+}

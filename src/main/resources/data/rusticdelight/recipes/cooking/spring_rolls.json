@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
   "cookingtime": 100,
-  "experience": 1.0,
+  "experience": 1,
   "ingredients": [
     {
       "tag": "rusticdelight:cooking_oil"
@@ -20,5 +20,11 @@
   "result": {
     "count": 2,
     "item": "rusticdelight:spring_rolls"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ]
 }

@@ -15,10 +15,10 @@
       "tag": "c:foods/vegetables"
     },
     {
-      "tag": "rusticdelight:fruits_berries"
+      "tag": "c:foods/berries"
     },
     {
-      "tag": "rusticdelight:fruits_berries"
+      "tag": "c:foods/berries"
     }
   ],
   "result": {

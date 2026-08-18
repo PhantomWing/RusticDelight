@@ -1,6 +1,7 @@
 {
   "type": "farmersdelight:cooking",
-  "experience": 1.0,
+  "cookingtime": 200,
+  "experience": 1,
   "ingredients": [
     {
       "tag": "c:foods/vegetables/carrots"
@@ -9,7 +10,7 @@
       "tag": "c:foods/vegetables/potatoes"
     },
     {
-      "item": "minecraft:beetroot"
+      "tag": "c:foods/vegetables/beetroots"
     },
     {
       "tag": "c:salad_ingredients"

@@ -1,14 +1,17 @@
 {
   "values": [
-    "rusticdelight:cherry_blossom_cheesecake",
-    "rusticdelight:chocolate_coffee",
-    "rusticdelight:coffee",
     "rusticdelight:cooking_oil",
-    "rusticdelight:dark_coffee",
-    "rusticdelight:honey_coffee",
-    "rusticdelight:milk_coffee",
     "rusticdelight:syrup",
+    "rusticdelight:coffee",
+    "rusticdelight:milk_coffee",
+    "rusticdelight:honey_coffee",
+    "rusticdelight:chocolate_coffee",
+    "rusticdelight:syrup_coffee",
+    "rusticdelight:dark_coffee",
+    "rusticdelight:pumpkin_coffee",
+    "rusticdelight:cherry_blossom_coffee",
+    "rusticdelight:cherry_blossom_cheesecake",
     "rusticdelight:syrup_cheesecake",
-    "rusticdelight:syrup_coffee"
+    "rusticdelight:coffee_cheesecake"
   ]
 }

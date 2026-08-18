@@ -13,5 +13,11 @@
     "count": 3,
     "item": "minecraft:paper"
   },
-  "show_notification": true
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_cotton"
+    }
+  ]
 }

@@ -34,14 +34,21 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_bell_pepper_slice_green",
-      "has_cooked_rice"
+      "has_cooked_rice",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:bell_pepper_roll_green"
     ]
-  }
+  },
+  "sends_telemetry_event": false,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

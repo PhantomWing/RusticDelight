@@ -31,5 +31,11 @@
       "rusticdelight:cooking/stuffed_bell_pepper_yellow"
     ]
   },
-  "sends_telemetry_event": true
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

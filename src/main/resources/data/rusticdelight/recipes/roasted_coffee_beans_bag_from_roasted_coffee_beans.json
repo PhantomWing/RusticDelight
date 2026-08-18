@@ -12,7 +12,13 @@
     "###"
   ],
   "result": {
-    "count": 1,
     "item": "rusticdelight:roasted_coffee_beans_bag"
-  }
+  },
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
 }

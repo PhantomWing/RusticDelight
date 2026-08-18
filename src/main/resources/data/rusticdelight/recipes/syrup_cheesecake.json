@@ -2,26 +2,32 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "O": {
+    "C": {
       "item": "farmersdelight:pie_crust"
     },
-    "c": {
-      "tag": "rusticdelight:syrup"
-    },
-    "m": {
+    "M": {
       "tag": "c:milks"
     },
-    "s": {
+    "S": {
       "item": "minecraft:sugar"
+    },
+    "T": {
+      "tag": "rusticdelight:syrup"
     }
   },
   "pattern": [
-    "ccc",
-    "mmm",
-    "sOs"
+    " T ",
+    "SSS",
+    "MCM"
   ],
   "result": {
     "item": "rusticdelight:syrup_cheesecake"
   },
-  "show_notification": true
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_syrup_foods"
+    }
+  ]
 }

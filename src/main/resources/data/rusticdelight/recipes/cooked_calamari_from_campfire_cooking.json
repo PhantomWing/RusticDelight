@@ -6,5 +6,11 @@
   "ingredient": {
     "item": "rusticdelight:calamari"
   },
-  "result": "rusticdelight:cooked_calamari"
+  "result": "rusticdelight:cooked_calamari",
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ]
 }

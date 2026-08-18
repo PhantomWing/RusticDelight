@@ -8,5 +8,11 @@
   ],
   "result": {
     "item": "minecraft:red_dye"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

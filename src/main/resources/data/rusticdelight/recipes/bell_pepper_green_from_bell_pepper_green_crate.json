@@ -9,5 +9,11 @@
   "result": {
     "count": 9,
     "item": "rusticdelight:bell_pepper_green"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
 }

@@ -26,5 +26,11 @@
   "result": {
     "item": "rusticdelight:chocolate_pancakes"
   },
-  "show_notification": true
+  "show_notification": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_pancakes"
+    }
+  ]
 }

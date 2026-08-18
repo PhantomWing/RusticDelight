@@ -16,3 +16,11 @@ accessible field net/minecraft/entity/passive/ParrotEntity TAMING_INGREDIENTS Lj
 
 accessible field net/minecraft/entity/passive/VillagerEntity GATHERABLE_ITEMS Ljava/util/Set;
 mutable field net/minecraft/entity/passive/VillagerEntity GATHERABLE_ITEMS Ljava/util/Set;
+
+# Needed so farmer villagers count our crops as food, making them work in automatic farms.
+accessible field net/minecraft/entity/passive/VillagerEntity ITEM_FOOD_VALUES Ljava/util/Map;
+mutable field net/minecraft/entity/passive/VillagerEntity ITEM_FOOD_VALUES Ljava/util/Map;
+
+# Needed to append our crops to the vanilla village farm processor lists.
+accessible field net/minecraft/structure/processor/StructureProcessorList list Ljava/util/List;
+mutable field net/minecraft/structure/processor/StructureProcessorList list Ljava/util/List;

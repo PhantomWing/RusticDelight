@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "rusticdelight:bell_pepper_white_block"
+    }
+  ],
+  "result": [
+    {
+      "count": 9,
+      "item": "rusticdelight:bell_pepper_slice_white"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_bell_peppers"
+    }
+  ]
+}

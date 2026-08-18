@@ -31,5 +31,15 @@
       "rusticdelight:cooking/fried_calamari"
     ]
   },
-  "sends_telemetry_event": true
+  "sends_telemetry_event": true,
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    },
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "squids_drop_calamari"
+    }
+  ]
 }

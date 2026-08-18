@@ -1,0 +1,35 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1,
+  "ingredients": [
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "rusticdelight:coffee_ingredients"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "rusticdelight:chocolate_coffee"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_coffee"
+    }
+  ]
+}

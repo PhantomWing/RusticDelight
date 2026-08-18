@@ -34,14 +34,15 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_honey_bottle",
-      "has_syrup"
+      "has_syrup",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "rusticdelight:sweet_salad"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

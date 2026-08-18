@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
   "cookingtime": 100,
-  "experience": 1.0,
+  "experience": 1,
   "ingredients": [
     {
       "tag": "rusticdelight:cooking_oil"
@@ -19,5 +19,11 @@
   "recipe_book_tab": "misc",
   "result": {
     "item": "rusticdelight:fruit_beignet"
-  }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "rusticdelight:config_boolean",
+      "settingId": "enable_fried_foods"
+    }
+  ]
 }
