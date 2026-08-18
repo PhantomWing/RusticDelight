@@ -1,10 +1,5 @@
 {
-  "remove": [
-    "rusticdelight:coffee_beans"
-  ],
   "values": [
-    "#c:crops/coffee",
-    "#c:crops/coffee_beans",
     "rusticdelight:roasted_coffee_beans",
     {
       "id": "farmersrespite:coffee_beans",

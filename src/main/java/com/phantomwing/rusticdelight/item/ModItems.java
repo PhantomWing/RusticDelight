@@ -365,21 +365,17 @@ public class ModItems {
     }
 
     // Registry functions
-    public static Item registerWithTab(final String name, final Item item, final ItemFamily... families) {
+    private static Item registerWithTab(final String name, final Item item, final ItemFamily... families) {
         Item registered = Registry.register(Registries.ITEM, Identifier.of(RusticDelight.MOD_ID, name), item);
         CREATIVE_TAB_ITEMS.put(registered, families);
         return registered;
     }
 
-    public static Item registerBlockWithTab(Block block, ItemFamily... families) {
-        return registerWithTab(Registries.BLOCK.getId(block).getPath(), new BlockItem(block, new Item.Settings()), families);
+    private static Item registerBlockWithTab(Block block, ItemFamily... families) {
+        return registerWithTab(Registries.BLOCK.getId(block).getPath(), new BlockItem(block, baseItem()), families);
     }
 
-    public static Item registerBlockWithTab(Block block, Item.Settings settings) {
-        return registerWithTab(Registries.BLOCK.getId(block).getPath(), new BlockItem(block, settings));
-    }
-
-    public static Item registerPlaceableBlockWithTab(Block block, Item.Settings settings, ItemFamily... families) {
+    private static Item registerPlaceableBlockWithTab(Block block, Item.Settings settings, ItemFamily... families) {
         return registerWithTab(Registries.BLOCK.getId(block).getPath(), new PlaceableItem(block, settings), families);
     }
 

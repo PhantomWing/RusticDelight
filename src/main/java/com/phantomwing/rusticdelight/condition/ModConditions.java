@@ -1,5 +1,7 @@
 package com.phantomwing.rusticdelight.condition;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
 import com.phantomwing.rusticdelight.RusticDelight;
 import com.phantomwing.rusticdelight.RusticDelightConfig;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
@@ -12,7 +14,12 @@ public class ModConditions {
     public static final Identifier CONFIG_BOOLEAN_ID = Identifier.of(RusticDelight.MOD_ID, "config_boolean");
 
     public static void register() {
-        ResourceConditions.register(CONFIG_BOOLEAN_ID, json ->
-                RusticDelightConfig.getBooleanConfigurationValue(json.get("settingId").getAsString()));
+        ResourceConditions.register(CONFIG_BOOLEAN_ID, json -> {
+            JsonElement settingId = json.get("settingId");
+            if (settingId == null) {
+                throw new JsonParseException("rusticdelight:config_boolean condition requires a settingId");
+            }
+            return RusticDelightConfig.getBooleanConfigurationValue(settingId.getAsString());
+        });
     }
 }

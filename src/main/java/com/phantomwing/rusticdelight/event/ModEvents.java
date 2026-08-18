@@ -19,7 +19,8 @@ public class ModEvents {
      */
     private static void allowPuttingPancakesBack() {
         UseBlockCallback.EVENT.register((player, level, hand, hit) -> {
-            if (!player.shouldCancelInteraction()) {
+            // This event fires before vanilla's spectator check, so spectators must be filtered here.
+            if (player.isSpectator() || !player.shouldCancelInteraction()) {
                 return ActionResult.PASS;
             }
 

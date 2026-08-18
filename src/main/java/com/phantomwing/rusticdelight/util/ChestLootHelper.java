@@ -19,14 +19,14 @@ import java.util.List;
  * Seeds our crops into vanilla structure chests.
  *
  * <p>The NeoForge build does this with {@code farmersdelight:replace_item} loot modifiers, which
- * swap a vanilla item out for ours. Fabric's loot events can only append pools, never remove an
- * existing entry, so each entry here adds its item on a chance roll instead of replacing one. The
- * chances below reproduce NeoForge's where it set one; the rest use {@link #DEFAULT_CHANCE}, which
- * stands in for "however often the item it replaced would have rolled".
+ * swap a vanilla item out for ours and apply unconditionally unless given a chance. This port
+ * appends a pool per entry instead, using the same chances (1.0 where the modifier had none), so
+ * item frequencies match; the one remaining divergence is that the vanilla items the modifiers
+ * would have removed still drop alongside ours.
  */
 public class ChestLootHelper {
-    /** Used where the NeoForge modifier replaced an entry outright rather than rolling for it. */
-    private static final float DEFAULT_CHANCE = 0.5f;
+    /** Matches the unconditional replace_item modifiers, which fire in every generated chest. */
+    private static final float DEFAULT_CHANCE = 1.0f;
 
     private static final List<Entry> ENTRIES = new ArrayList<>();
 

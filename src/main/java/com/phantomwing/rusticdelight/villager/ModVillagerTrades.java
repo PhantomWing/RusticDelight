@@ -119,6 +119,23 @@ public class ModVillagerTrades {
                 )));
             }
         });
+
+        // Pale and Dark bell pepper seeds are exotic - offered as rare wandering trader trades.
+        TradeOfferHelper.registerWanderingTraderOffers(2, factories -> {
+            if (ItemFamily.BELL_PEPPER.isEnabled()) {
+                factories.add(((entity, random) -> new TradeOffer(
+                        new ItemStack(Items.EMERALD, 5),
+                        new ItemStack(ModItems.PALE_BELL_PEPPER_SEEDS, 1),
+                        3, 1, PRICE_MULTIPLIER
+                )));
+
+                factories.add(((entity, random) -> new TradeOffer(
+                        new ItemStack(Items.EMERALD, 5),
+                        new ItemStack(ModItems.DARK_BELL_PEPPER_SEEDS, 1),
+                        3, 1, PRICE_MULTIPLIER
+                )));
+            }
+        });
     }
 
 }
