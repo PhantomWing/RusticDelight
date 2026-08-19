@@ -26,7 +26,17 @@
   },
   "fabric:load_conditions": [
     {
-      "condition": "forge:or"
+      "condition": "fabric:or",
+      "values": [
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_fried_foods"
+        },
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_pancakes"
+        }
+      ]
     }
   ]
 }

@@ -39,7 +39,17 @@
       "settingId": "enable_pancakes"
     },
     {
-      "condition": "forge:or"
+      "condition": "fabric:or",
+      "values": [
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_fried_foods"
+        },
+        {
+          "condition": "rusticdelight:config_boolean",
+          "settingId": "enable_pancakes"
+        }
+      ]
     }
   ]
 }

@@ -63,11 +63,12 @@ public class ModVillagerTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 1,
                 factories -> {
                     if (ItemFamily.CALAMARI.isEnabled()) {
-                        // Fish first, emerald second, matching vanilla's cooked fish trades. Costs
-                        // are discounted on the primary slot only, so the order is not cosmetic.
+                        // Emerald first, fish second: that is the slot order vanilla's ProcessItemFactory
+                        // builds on 1.20.1, and the discount applies to the first slot. The newer branches
+                        // put the fish first because Mojang swapped the order in 1.20.5.
                         factories.add(((entity, random) -> new TradeOffer(
-                                new ItemStack(ModItems.CALAMARI, 6),
                                 new ItemStack(Items.EMERALD, 1),
+                                new ItemStack(ModItems.CALAMARI, 6),
                                 new ItemStack(ModItems.COOKED_CALAMARI, 6),
                                 16, 1, PRICE_MULTIPLIER
                         )));
