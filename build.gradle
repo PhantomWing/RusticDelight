@@ -19,6 +19,16 @@ base {
 
 loom {
 	accessWidenerPath = file("src/main/resources/rusticdelight.accesswidener")
+
+	// Two JVM arguments from Mojang's 26.3 version manifest that Loom doesn't pass to dev runs (the portal
+	// adds them to its runs too). Without StackShadowPages=32 the client died natively on Windows in about
+	// 4 of 10 starts while compiling shaders; the export puts LWJGL on its production memory backend.
+	runs {
+		configureEach {
+			vmArg '-XX:StackShadowPages=32'
+			vmArgs '--add-exports', 'java.base/jdk.internal.misc=ALL-UNNAMED'
+		}
+	}
 }
 
 repositories {
